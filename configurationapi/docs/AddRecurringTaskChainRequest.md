@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ChainName** | **string** | Name of the new Recurring Task Chain | 
 **Schemas** | Pointer to [**[]EnumrecurringTaskChainSchemaUrn**](EnumrecurringTaskChainSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task Chain | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired. | [optional] 
@@ -17,12 +16,13 @@ Name | Type | Description | Notes
 **TimeZone** | Pointer to **string** | The time zone that will be used to interpret the scheduled-time-of-day values. If no value is provided, then the JVM&#39;s default time zone will be used. | [optional] 
 **InterruptedByShutdownBehavior** | Pointer to [**EnumrecurringTaskChainInterruptedByShutdownBehaviorProp**](EnumrecurringTaskChainInterruptedByShutdownBehaviorProp.md) |  | [optional] 
 **ServerOfflineAtStartTimeBehavior** | Pointer to [**EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp**](EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp.md) |  | [optional] 
+**ChainName** | **string** | Name of the new Recurring Task Chain | 
 
 ## Methods
 
 ### NewAddRecurringTaskChainRequest
 
-`func NewAddRecurringTaskChainRequest(chainName string, recurringTask []string, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string, ) *AddRecurringTaskChainRequest`
+`func NewAddRecurringTaskChainRequest(recurringTask []string, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string, chainName string, ) *AddRecurringTaskChainRequest`
 
 NewAddRecurringTaskChainRequest instantiates a new AddRecurringTaskChainRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,26 +36,6 @@ will change when the set of required properties is changed
 NewAddRecurringTaskChainRequestWithDefaults instantiates a new AddRecurringTaskChainRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetChainName
-
-`func (o *AddRecurringTaskChainRequest) GetChainName() string`
-
-GetChainName returns the ChainName field if non-nil, zero value otherwise.
-
-### GetChainNameOk
-
-`func (o *AddRecurringTaskChainRequest) GetChainNameOk() (*string, bool)`
-
-GetChainNameOk returns a tuple with the ChainName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetChainName
-
-`func (o *AddRecurringTaskChainRequest) SetChainName(v string)`
-
-SetChainName sets ChainName field to given value.
-
 
 ### GetSchemas
 
@@ -341,6 +321,26 @@ SetServerOfflineAtStartTimeBehavior sets ServerOfflineAtStartTimeBehavior field 
 `func (o *AddRecurringTaskChainRequest) HasServerOfflineAtStartTimeBehavior() bool`
 
 HasServerOfflineAtStartTimeBehavior returns a boolean if a field has been set.
+
+### GetChainName
+
+`func (o *AddRecurringTaskChainRequest) GetChainName() string`
+
+GetChainName returns the ChainName field if non-nil, zero value otherwise.
+
+### GetChainNameOk
+
+`func (o *AddRecurringTaskChainRequest) GetChainNameOk() (*string, bool)`
+
+GetChainNameOk returns a tuple with the ChainName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChainName
+
+`func (o *AddRecurringTaskChainRequest) SetChainName(v string)`
+
+SetChainName sets ChainName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Data Security Auditor | 
 **Schemas** | [**[]EnumidleAccountDataSecurityAuditorSchemaUrn**](EnumidleAccountDataSecurityAuditorSchemaUrn.md) |  | 
 **ReportFile** | **string** | Specifies the name of the detailed report file. | 
 **IdleAccountWarningInterval** | **string** | The length of time to use as the warning interval for idle accounts. If the length of time since a user last authenticated is greater than the warning interval but less than the error interval (or if it is greater than the warning interval and no error interval is defined), then a warning will be generated for that account. | 
@@ -17,12 +16,13 @@ Name | Type | Description | Notes
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Data Security Auditor | 
 
 ## Methods
 
 ### NewIdleAccountDataSecurityAuditorResponse
 
-`func NewIdleAccountDataSecurityAuditorResponse(id string, schemas []EnumidleAccountDataSecurityAuditorSchemaUrn, reportFile string, idleAccountWarningInterval string, enabled bool, ) *IdleAccountDataSecurityAuditorResponse`
+`func NewIdleAccountDataSecurityAuditorResponse(schemas []EnumidleAccountDataSecurityAuditorSchemaUrn, reportFile string, idleAccountWarningInterval string, enabled bool, id string, ) *IdleAccountDataSecurityAuditorResponse`
 
 NewIdleAccountDataSecurityAuditorResponse instantiates a new IdleAccountDataSecurityAuditorResponse object
 This constructor will assign default values to properties that have it defined,
@@ -36,26 +36,6 @@ will change when the set of required properties is changed
 NewIdleAccountDataSecurityAuditorResponseWithDefaults instantiates a new IdleAccountDataSecurityAuditorResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *IdleAccountDataSecurityAuditorResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *IdleAccountDataSecurityAuditorResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *IdleAccountDataSecurityAuditorResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -336,6 +316,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *IdleAccountDataSecurityAuditorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *IdleAccountDataSecurityAuditorResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *IdleAccountDataSecurityAuditorResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *IdleAccountDataSecurityAuditorResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

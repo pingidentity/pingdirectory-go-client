@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Uncached Entry Criteria | 
 **Schemas** | [**[]EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn**](EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn.md) |  | 
 **AccessTimeThreshold** | **string** | Specifies the maximum length of time that has passed since an entry was last accessed that it should still be included in the id2entry database. Entries that have not been accessed in more than this length of time may be written into the uncached-id2entry database. | 
 **Description** | Pointer to **string** | A description for this Uncached Entry Criteria | [optional] 
 **Enabled** | **bool** | Indicates whether this Uncached Entry Criteria is enabled for use in the server. | 
+**CriteriaName** | **string** | Name of the new Uncached Entry Criteria | 
 
 ## Methods
 
 ### NewAddLastAccessTimeUncachedEntryCriteriaRequest
 
-`func NewAddLastAccessTimeUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn, accessTimeThreshold string, enabled bool, ) *AddLastAccessTimeUncachedEntryCriteriaRequest`
+`func NewAddLastAccessTimeUncachedEntryCriteriaRequest(schemas []EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn, accessTimeThreshold string, enabled bool, criteriaName string, ) *AddLastAccessTimeUncachedEntryCriteriaRequest`
 
 NewAddLastAccessTimeUncachedEntryCriteriaRequest instantiates a new AddLastAccessTimeUncachedEntryCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddLastAccessTimeUncachedEntryCriteriaRequestWithDefaults instantiates a new AddLastAccessTimeUncachedEntryCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -132,6 +112,26 @@ and a boolean to check if the value has been set.
 `func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetCriteriaName
+
+`func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
 
 
 

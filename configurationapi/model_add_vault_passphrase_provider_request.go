@@ -19,9 +19,7 @@ var _ MappedNullable = &AddVaultPassphraseProviderRequest{}
 
 // AddVaultPassphraseProviderRequest struct for AddVaultPassphraseProviderRequest
 type AddVaultPassphraseProviderRequest struct {
-	// Name of the new Passphrase Provider
-	ProviderName string                                 `json:"providerName"`
-	Schemas      []EnumvaultPassphraseProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumvaultPassphraseProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase.
 	VaultExternalServer string `json:"vaultExternalServer"`
 	// The path to the desired secret in the Vault service. This will be appended to the value of the base-url property for the associated Vault external server.
@@ -34,20 +32,22 @@ type AddVaultPassphraseProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Passphrase Provider is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Passphrase Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddVaultPassphraseProviderRequest instantiates a new AddVaultPassphraseProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddVaultPassphraseProviderRequest(providerName string, schemas []EnumvaultPassphraseProviderSchemaUrn, vaultExternalServer string, vaultSecretPath string, vaultSecretFieldName string, enabled bool) *AddVaultPassphraseProviderRequest {
+func NewAddVaultPassphraseProviderRequest(schemas []EnumvaultPassphraseProviderSchemaUrn, vaultExternalServer string, vaultSecretPath string, vaultSecretFieldName string, enabled bool, providerName string) *AddVaultPassphraseProviderRequest {
 	this := AddVaultPassphraseProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.VaultExternalServer = vaultExternalServer
 	this.VaultSecretPath = vaultSecretPath
 	this.VaultSecretFieldName = vaultSecretFieldName
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewAddVaultPassphraseProviderRequest(providerName string, schemas []Enumvau
 func NewAddVaultPassphraseProviderRequestWithDefaults() *AddVaultPassphraseProviderRequest {
 	this := AddVaultPassphraseProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddVaultPassphraseProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddVaultPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddVaultPassphraseProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -267,6 +243,30 @@ func (o *AddVaultPassphraseProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddVaultPassphraseProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddVaultPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddVaultPassphraseProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddVaultPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -277,7 +277,6 @@ func (o AddVaultPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddVaultPassphraseProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["vaultExternalServer"] = o.VaultExternalServer
 	toSerialize["vaultSecretPath"] = o.VaultSecretPath
@@ -289,6 +288,7 @@ func (o AddVaultPassphraseProviderRequest) ToMap() (map[string]interface{}, erro
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumsyslogExternalServerSchemaUrn**](EnumsyslogExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The address of the syslog server. | 
 **ServerPort** | Pointer to **int64** | The port on which the syslog server accepts connections. | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **MaxConnectionAge** | Pointer to **string** | The maximum length of time that TCP connections should remain established. This will be ignored for UDP-based connections. A zero duration indicates that no maximum age will be imposed. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | A trust manager provider that will be used to determine whether to trust the certificate chain presented by the syslog server when communication is encrypted with TLS. This property will be ignored when not using TLS encryption. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
+**ServerName** | **string** | Name of the new External Server | 
 
 ## Methods
 
 ### NewAddSyslogExternalServerRequest
 
-`func NewAddSyslogExternalServerRequest(serverName string, schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp, ) *AddSyslogExternalServerRequest`
+`func NewAddSyslogExternalServerRequest(schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp, serverName string, ) *AddSyslogExternalServerRequest`
 
 NewAddSyslogExternalServerRequest instantiates a new AddSyslogExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddSyslogExternalServerRequestWithDefaults instantiates a new AddSyslogExternalServerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetServerName
-
-`func (o *AddSyslogExternalServerRequest) GetServerName() string`
-
-GetServerName returns the ServerName field if non-nil, zero value otherwise.
-
-### GetServerNameOk
-
-`func (o *AddSyslogExternalServerRequest) GetServerNameOk() (*string, bool)`
-
-GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerName
-
-`func (o *AddSyslogExternalServerRequest) SetServerName(v string)`
-
-SetServerName sets ServerName field to given value.
-
 
 ### GetSchemas
 
@@ -237,6 +217,26 @@ SetDescription sets Description field to given value.
 `func (o *AddSyslogExternalServerRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetServerName
+
+`func (o *AddSyslogExternalServerRequest) GetServerName() string`
+
+GetServerName returns the ServerName field if non-nil, zero value otherwise.
+
+### GetServerNameOk
+
+`func (o *AddSyslogExternalServerRequest) GetServerNameOk() (*string, bool)`
+
+GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerName
+
+`func (o *AddSyslogExternalServerRequest) SetServerName(v string)`
+
+SetServerName sets ServerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

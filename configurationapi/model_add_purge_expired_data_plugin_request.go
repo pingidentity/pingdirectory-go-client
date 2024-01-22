@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPurgeExpiredDataPluginRequest{}
 
 // AddPurgeExpiredDataPluginRequest struct for AddPurgeExpiredDataPluginRequest
 type AddPurgeExpiredDataPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                `json:"pluginName"`
-	Schemas    []EnumpurgeExpiredDataPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumpurgeExpiredDataPluginSchemaUrn `json:"schemas"`
 	// The LDAP attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted.
 	DatetimeAttribute string `json:"datetimeAttribute"`
 	// The top-level JSON field within the configured datetime-attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted.
@@ -50,19 +48,21 @@ type AddPurgeExpiredDataPluginRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddPurgeExpiredDataPluginRequest instantiates a new AddPurgeExpiredDataPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPurgeExpiredDataPluginRequest(pluginName string, schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, expirationOffset string, enabled bool) *AddPurgeExpiredDataPluginRequest {
+func NewAddPurgeExpiredDataPluginRequest(schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, expirationOffset string, enabled bool, pluginName string) *AddPurgeExpiredDataPluginRequest {
 	this := AddPurgeExpiredDataPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.DatetimeAttribute = datetimeAttribute
 	this.ExpirationOffset = expirationOffset
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -72,30 +72,6 @@ func NewAddPurgeExpiredDataPluginRequest(pluginName string, schemas []EnumpurgeE
 func NewAddPurgeExpiredDataPluginRequestWithDefaults() *AddPurgeExpiredDataPluginRequest {
 	this := AddPurgeExpiredDataPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddPurgeExpiredDataPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddPurgeExpiredDataPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddPurgeExpiredDataPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -578,6 +554,30 @@ func (o *AddPurgeExpiredDataPluginRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddPurgeExpiredDataPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddPurgeExpiredDataPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddPurgeExpiredDataPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddPurgeExpiredDataPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -588,7 +588,6 @@ func (o AddPurgeExpiredDataPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPurgeExpiredDataPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["datetimeAttribute"] = o.DatetimeAttribute
 	if !IsNil(o.DatetimeJSONField) {
@@ -629,6 +628,7 @@ func (o AddPurgeExpiredDataPluginRequest) ToMap() (map[string]interface{}, error
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

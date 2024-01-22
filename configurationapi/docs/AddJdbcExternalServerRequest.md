@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumjdbcExternalServerSchemaUrn**](EnumjdbcExternalServerSchemaUrn.md) |  | 
 **JdbcDriverType** | [**EnumexternalServerJdbcDriverTypeProp**](EnumexternalServerJdbcDriverTypeProp.md) |  | 
 **JdbcDriverURL** | Pointer to **string** | Specify the complete JDBC URL which will be used instead of the automatic URL format. You must select type &#39;other&#39; for the jdbc-driver-type. | [optional] 
@@ -19,12 +18,13 @@ Name | Type | Description | Notes
 **JdbcConnectionProperties** | Pointer to **[]string** | Specifies the connection properties for the JDBC datasource. | [optional] 
 **TransactionIsolationLevel** | Pointer to [**EnumexternalServerTransactionIsolationLevelProp**](EnumexternalServerTransactionIsolationLevelProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
+**ServerName** | **string** | Name of the new External Server | 
 
 ## Methods
 
 ### NewAddJdbcExternalServerRequest
 
-`func NewAddJdbcExternalServerRequest(serverName string, schemas []EnumjdbcExternalServerSchemaUrn, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, ) *AddJdbcExternalServerRequest`
+`func NewAddJdbcExternalServerRequest(schemas []EnumjdbcExternalServerSchemaUrn, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, serverName string, ) *AddJdbcExternalServerRequest`
 
 NewAddJdbcExternalServerRequest instantiates a new AddJdbcExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,26 +38,6 @@ will change when the set of required properties is changed
 NewAddJdbcExternalServerRequestWithDefaults instantiates a new AddJdbcExternalServerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetServerName
-
-`func (o *AddJdbcExternalServerRequest) GetServerName() string`
-
-GetServerName returns the ServerName field if non-nil, zero value otherwise.
-
-### GetServerNameOk
-
-`func (o *AddJdbcExternalServerRequest) GetServerNameOk() (*string, bool)`
-
-GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerName
-
-`func (o *AddJdbcExternalServerRequest) SetServerName(v string)`
-
-SetServerName sets ServerName field to given value.
-
 
 ### GetSchemas
 
@@ -398,6 +378,26 @@ SetDescription sets Description field to given value.
 `func (o *AddJdbcExternalServerRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetServerName
+
+`func (o *AddJdbcExternalServerRequest) GetServerName() string`
+
+GetServerName returns the ServerName field if non-nil, zero value otherwise.
+
+### GetServerNameOk
+
+`func (o *AddJdbcExternalServerRequest) GetServerNameOk() (*string, bool)`
+
+GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerName
+
+`func (o *AddJdbcExternalServerRequest) SetServerName(v string)`
+
+SetServerName sets ServerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

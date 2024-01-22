@@ -19,8 +19,6 @@ var _ MappedNullable = &ExportReversiblePasswordsExtendedOperationHandlerRespons
 
 // ExportReversiblePasswordsExtendedOperationHandlerResponse struct for ExportReversiblePasswordsExtendedOperationHandlerResponse
 type ExportReversiblePasswordsExtendedOperationHandlerResponse struct {
-	// Name of the Extended Operation Handler
-	Id      string                                                           `json:"id"`
 	Schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`
@@ -28,17 +26,19 @@ type ExportReversiblePasswordsExtendedOperationHandlerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Extended Operation Handler
+	Id string `json:"id"`
 }
 
 // NewExportReversiblePasswordsExtendedOperationHandlerResponse instantiates a new ExportReversiblePasswordsExtendedOperationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExportReversiblePasswordsExtendedOperationHandlerResponse(id string, schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, enabled bool) *ExportReversiblePasswordsExtendedOperationHandlerResponse {
+func NewExportReversiblePasswordsExtendedOperationHandlerResponse(schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, enabled bool, id string) *ExportReversiblePasswordsExtendedOperationHandlerResponse {
 	this := ExportReversiblePasswordsExtendedOperationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewExportReversiblePasswordsExtendedOperationHandlerResponse(id string, sch
 func NewExportReversiblePasswordsExtendedOperationHandlerResponseWithDefaults() *ExportReversiblePasswordsExtendedOperationHandlerResponse {
 	this := ExportReversiblePasswordsExtendedOperationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) SetUrnpingid
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ExportReversiblePasswordsExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o ExportReversiblePasswordsExtendedOperationHandlerResponse) MarshalJSON()
 
 func (o ExportReversiblePasswordsExtendedOperationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -240,6 +239,7 @@ func (o ExportReversiblePasswordsExtendedOperationHandlerResponse) ToMap() (map[
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

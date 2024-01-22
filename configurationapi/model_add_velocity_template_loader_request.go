@@ -19,9 +19,7 @@ var _ MappedNullable = &AddVelocityTemplateLoaderRequest{}
 
 // AddVelocityTemplateLoaderRequest struct for AddVelocityTemplateLoaderRequest
 type AddVelocityTemplateLoaderRequest struct {
-	// Name of the new Velocity Template Loader
-	LoaderName string                                `json:"loaderName"`
-	Schemas    []EnumvelocityTemplateLoaderSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumvelocityTemplateLoaderSchemaUrn `json:"schemas,omitempty"`
 	// Indicates whether this Velocity Template Loader is enabled.
 	Enabled *bool `json:"enabled,omitempty"`
 	// This property determines the evaluation order for determining the correct Velocity Template Loader to load a template for generating content for a particular request.
@@ -34,16 +32,18 @@ type AddVelocityTemplateLoaderRequest struct {
 	TemplateSuffix *string `json:"templateSuffix,omitempty"`
 	// Specifies the directory in which to search for the template files.
 	TemplateDirectory *string `json:"templateDirectory,omitempty"`
+	// Name of the new Velocity Template Loader
+	LoaderName string `json:"loaderName"`
 }
 
 // NewAddVelocityTemplateLoaderRequest instantiates a new AddVelocityTemplateLoaderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddVelocityTemplateLoaderRequest(loaderName string, mimeTypeMatcher string) *AddVelocityTemplateLoaderRequest {
+func NewAddVelocityTemplateLoaderRequest(mimeTypeMatcher string, loaderName string) *AddVelocityTemplateLoaderRequest {
 	this := AddVelocityTemplateLoaderRequest{}
-	this.LoaderName = loaderName
 	this.MimeTypeMatcher = mimeTypeMatcher
+	this.LoaderName = loaderName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddVelocityTemplateLoaderRequest(loaderName string, mimeTypeMatcher stri
 func NewAddVelocityTemplateLoaderRequestWithDefaults() *AddVelocityTemplateLoaderRequest {
 	this := AddVelocityTemplateLoaderRequest{}
 	return &this
-}
-
-// GetLoaderName returns the LoaderName field value
-func (o *AddVelocityTemplateLoaderRequest) GetLoaderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.LoaderName
-}
-
-// GetLoaderNameOk returns a tuple with the LoaderName field value
-// and a boolean to check if the value has been set.
-func (o *AddVelocityTemplateLoaderRequest) GetLoaderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.LoaderName, true
-}
-
-// SetLoaderName sets field value
-func (o *AddVelocityTemplateLoaderRequest) SetLoaderName(v string) {
-	o.LoaderName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -295,6 +271,30 @@ func (o *AddVelocityTemplateLoaderRequest) SetTemplateDirectory(v string) {
 	o.TemplateDirectory = &v
 }
 
+// GetLoaderName returns the LoaderName field value
+func (o *AddVelocityTemplateLoaderRequest) GetLoaderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.LoaderName
+}
+
+// GetLoaderNameOk returns a tuple with the LoaderName field value
+// and a boolean to check if the value has been set.
+func (o *AddVelocityTemplateLoaderRequest) GetLoaderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.LoaderName, true
+}
+
+// SetLoaderName sets field value
+func (o *AddVelocityTemplateLoaderRequest) SetLoaderName(v string) {
+	o.LoaderName = v
+}
+
 func (o AddVelocityTemplateLoaderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -305,7 +305,6 @@ func (o AddVelocityTemplateLoaderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddVelocityTemplateLoaderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["loaderName"] = o.LoaderName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -325,6 +324,7 @@ func (o AddVelocityTemplateLoaderRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.TemplateDirectory) {
 		toSerialize["templateDirectory"] = o.TemplateDirectory
 	}
+	toSerialize["loaderName"] = o.LoaderName
 	return toSerialize, nil
 }
 

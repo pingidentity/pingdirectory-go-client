@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ListenerName** | **string** | Name of the new Log File Rotation Listener | 
 **Schemas** | [**[]EnumthirdPartyLogFileRotationListenerSchemaUrn**](EnumthirdPartyLogFileRotationListenerSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Log File Rotation Listener. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Log File Rotation Listener. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Log File Rotation Listener | [optional] 
 **Enabled** | **bool** | Indicates whether the Log File Rotation Listener is enabled for use. | 
+**ListenerName** | **string** | Name of the new Log File Rotation Listener | 
 
 ## Methods
 
 ### NewAddThirdPartyLogFileRotationListenerRequest
 
-`func NewAddThirdPartyLogFileRotationListenerRequest(listenerName string, schemas []EnumthirdPartyLogFileRotationListenerSchemaUrn, extensionClass string, enabled bool, ) *AddThirdPartyLogFileRotationListenerRequest`
+`func NewAddThirdPartyLogFileRotationListenerRequest(schemas []EnumthirdPartyLogFileRotationListenerSchemaUrn, extensionClass string, enabled bool, listenerName string, ) *AddThirdPartyLogFileRotationListenerRequest`
 
 NewAddThirdPartyLogFileRotationListenerRequest instantiates a new AddThirdPartyLogFileRotationListenerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyLogFileRotationListenerRequestWithDefaults instantiates a new AddThirdPartyLogFileRotationListenerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetListenerName
-
-`func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerName() string`
-
-GetListenerName returns the ListenerName field if non-nil, zero value otherwise.
-
-### GetListenerNameOk
-
-`func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool)`
-
-GetListenerNameOk returns a tuple with the ListenerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetListenerName
-
-`func (o *AddThirdPartyLogFileRotationListenerRequest) SetListenerName(v string)`
-
-SetListenerName sets ListenerName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddThirdPartyLogFileRotationListenerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetListenerName
+
+`func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerName() string`
+
+GetListenerName returns the ListenerName field if non-nil, zero value otherwise.
+
+### GetListenerNameOk
+
+`func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool)`
+
+GetListenerNameOk returns a tuple with the ListenerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetListenerName
+
+`func (o *AddThirdPartyLogFileRotationListenerRequest) SetListenerName(v string)`
+
+SetListenerName sets ListenerName field to given value.
 
 
 

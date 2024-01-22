@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LocalDbCompositeIndexApiService LocalDbCompositeIndexApi service
-type LocalDbCompositeIndexApiService service
+// LocalDbCompositeIndexAPIService LocalDbCompositeIndexAPI service
+type LocalDbCompositeIndexAPIService service
 
 type ApiAddLocalDbCompositeIndexRequest struct {
 	ctx                             context.Context
-	ApiService                      *LocalDbCompositeIndexApiService
+	ApiService                      *LocalDbCompositeIndexAPIService
 	backendName                     string
 	addLocalDbCompositeIndexRequest *AddLocalDbCompositeIndexRequest
 }
@@ -46,7 +46,7 @@ AddLocalDbCompositeIndex Add a new Local DB Composite Index to the config
 	@param backendName Name of the Backend
 	@return ApiAddLocalDbCompositeIndexRequest
 */
-func (a *LocalDbCompositeIndexApiService) AddLocalDbCompositeIndex(ctx context.Context, backendName string) ApiAddLocalDbCompositeIndexRequest {
+func (a *LocalDbCompositeIndexAPIService) AddLocalDbCompositeIndex(ctx context.Context, backendName string) ApiAddLocalDbCompositeIndexRequest {
 	return ApiAddLocalDbCompositeIndexRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -57,7 +57,7 @@ func (a *LocalDbCompositeIndexApiService) AddLocalDbCompositeIndex(ctx context.C
 // Execute executes the request
 //
 //	@return LocalDbCompositeIndexResponse
-func (a *LocalDbCompositeIndexApiService) AddLocalDbCompositeIndexExecute(r ApiAddLocalDbCompositeIndexRequest) (*LocalDbCompositeIndexResponse, *http.Response, error) {
+func (a *LocalDbCompositeIndexAPIService) AddLocalDbCompositeIndexExecute(r ApiAddLocalDbCompositeIndexRequest) (*LocalDbCompositeIndexResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *LocalDbCompositeIndexApiService) AddLocalDbCompositeIndexExecute(r ApiA
 		localVarReturnValue *LocalDbCompositeIndexResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexApiService.AddLocalDbCompositeIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexAPIService.AddLocalDbCompositeIndex")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *LocalDbCompositeIndexApiService) AddLocalDbCompositeIndexExecute(r ApiA
 
 type ApiDeleteLocalDbCompositeIndexRequest struct {
 	ctx                       context.Context
-	ApiService                *LocalDbCompositeIndexApiService
+	ApiService                *LocalDbCompositeIndexAPIService
 	localDbCompositeIndexName string
 	backendName               string
 }
@@ -155,7 +155,7 @@ DeleteLocalDbCompositeIndex Delete a Local DB Composite Index
 	@param backendName Name of the Backend
 	@return ApiDeleteLocalDbCompositeIndexRequest
 */
-func (a *LocalDbCompositeIndexApiService) DeleteLocalDbCompositeIndex(ctx context.Context, localDbCompositeIndexName string, backendName string) ApiDeleteLocalDbCompositeIndexRequest {
+func (a *LocalDbCompositeIndexAPIService) DeleteLocalDbCompositeIndex(ctx context.Context, localDbCompositeIndexName string, backendName string) ApiDeleteLocalDbCompositeIndexRequest {
 	return ApiDeleteLocalDbCompositeIndexRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -165,14 +165,14 @@ func (a *LocalDbCompositeIndexApiService) DeleteLocalDbCompositeIndex(ctx contex
 }
 
 // Execute executes the request
-func (a *LocalDbCompositeIndexApiService) DeleteLocalDbCompositeIndexExecute(r ApiDeleteLocalDbCompositeIndexRequest) (*http.Response, error) {
+func (a *LocalDbCompositeIndexAPIService) DeleteLocalDbCompositeIndexExecute(r ApiDeleteLocalDbCompositeIndexRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexApiService.DeleteLocalDbCompositeIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexAPIService.DeleteLocalDbCompositeIndex")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *LocalDbCompositeIndexApiService) DeleteLocalDbCompositeIndexExecute(r A
 
 type ApiGetLocalDbCompositeIndexRequest struct {
 	ctx                       context.Context
-	ApiService                *LocalDbCompositeIndexApiService
+	ApiService                *LocalDbCompositeIndexAPIService
 	localDbCompositeIndexName string
 	backendName               string
 }
@@ -249,7 +249,7 @@ GetLocalDbCompositeIndex Returns a single Local DB Composite Index
 	@param backendName Name of the Backend
 	@return ApiGetLocalDbCompositeIndexRequest
 */
-func (a *LocalDbCompositeIndexApiService) GetLocalDbCompositeIndex(ctx context.Context, localDbCompositeIndexName string, backendName string) ApiGetLocalDbCompositeIndexRequest {
+func (a *LocalDbCompositeIndexAPIService) GetLocalDbCompositeIndex(ctx context.Context, localDbCompositeIndexName string, backendName string) ApiGetLocalDbCompositeIndexRequest {
 	return ApiGetLocalDbCompositeIndexRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -261,7 +261,7 @@ func (a *LocalDbCompositeIndexApiService) GetLocalDbCompositeIndex(ctx context.C
 // Execute executes the request
 //
 //	@return LocalDbCompositeIndexResponse
-func (a *LocalDbCompositeIndexApiService) GetLocalDbCompositeIndexExecute(r ApiGetLocalDbCompositeIndexRequest) (*LocalDbCompositeIndexResponse, *http.Response, error) {
+func (a *LocalDbCompositeIndexAPIService) GetLocalDbCompositeIndexExecute(r ApiGetLocalDbCompositeIndexRequest) (*LocalDbCompositeIndexResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *LocalDbCompositeIndexApiService) GetLocalDbCompositeIndexExecute(r ApiG
 		localVarReturnValue *LocalDbCompositeIndexResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexApiService.GetLocalDbCompositeIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexAPIService.GetLocalDbCompositeIndex")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *LocalDbCompositeIndexApiService) GetLocalDbCompositeIndexExecute(r ApiG
 
 type ApiListLocalDbCompositeIndexesRequest struct {
 	ctx         context.Context
-	ApiService  *LocalDbCompositeIndexApiService
+	ApiService  *LocalDbCompositeIndexAPIService
 	backendName string
 	filter      *string
 }
@@ -360,7 +360,7 @@ ListLocalDbCompositeIndexes Returns a list of all Local DB Composite Index objec
 	@param backendName Name of the Backend
 	@return ApiListLocalDbCompositeIndexesRequest
 */
-func (a *LocalDbCompositeIndexApiService) ListLocalDbCompositeIndexes(ctx context.Context, backendName string) ApiListLocalDbCompositeIndexesRequest {
+func (a *LocalDbCompositeIndexAPIService) ListLocalDbCompositeIndexes(ctx context.Context, backendName string) ApiListLocalDbCompositeIndexesRequest {
 	return ApiListLocalDbCompositeIndexesRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -371,7 +371,7 @@ func (a *LocalDbCompositeIndexApiService) ListLocalDbCompositeIndexes(ctx contex
 // Execute executes the request
 //
 //	@return LocalDbCompositeIndexListResponse
-func (a *LocalDbCompositeIndexApiService) ListLocalDbCompositeIndexesExecute(r ApiListLocalDbCompositeIndexesRequest) (*LocalDbCompositeIndexListResponse, *http.Response, error) {
+func (a *LocalDbCompositeIndexAPIService) ListLocalDbCompositeIndexesExecute(r ApiListLocalDbCompositeIndexesRequest) (*LocalDbCompositeIndexListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *LocalDbCompositeIndexApiService) ListLocalDbCompositeIndexesExecute(r A
 		localVarReturnValue *LocalDbCompositeIndexListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexApiService.ListLocalDbCompositeIndexes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexAPIService.ListLocalDbCompositeIndexes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *LocalDbCompositeIndexApiService) ListLocalDbCompositeIndexesExecute(r A
 
 type ApiUpdateLocalDbCompositeIndexRequest struct {
 	ctx                       context.Context
-	ApiService                *LocalDbCompositeIndexApiService
+	ApiService                *LocalDbCompositeIndexAPIService
 	localDbCompositeIndexName string
 	backendName               string
 	updateRequest             *UpdateRequest
@@ -474,7 +474,7 @@ UpdateLocalDbCompositeIndex Update an existing Local DB Composite Index by name
 	@param backendName Name of the Backend
 	@return ApiUpdateLocalDbCompositeIndexRequest
 */
-func (a *LocalDbCompositeIndexApiService) UpdateLocalDbCompositeIndex(ctx context.Context, localDbCompositeIndexName string, backendName string) ApiUpdateLocalDbCompositeIndexRequest {
+func (a *LocalDbCompositeIndexAPIService) UpdateLocalDbCompositeIndex(ctx context.Context, localDbCompositeIndexName string, backendName string) ApiUpdateLocalDbCompositeIndexRequest {
 	return ApiUpdateLocalDbCompositeIndexRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -486,7 +486,7 @@ func (a *LocalDbCompositeIndexApiService) UpdateLocalDbCompositeIndex(ctx contex
 // Execute executes the request
 //
 //	@return LocalDbCompositeIndexResponse
-func (a *LocalDbCompositeIndexApiService) UpdateLocalDbCompositeIndexExecute(r ApiUpdateLocalDbCompositeIndexRequest) (*LocalDbCompositeIndexResponse, *http.Response, error) {
+func (a *LocalDbCompositeIndexAPIService) UpdateLocalDbCompositeIndexExecute(r ApiUpdateLocalDbCompositeIndexRequest) (*LocalDbCompositeIndexResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *LocalDbCompositeIndexApiService) UpdateLocalDbCompositeIndexExecute(r A
 		localVarReturnValue *LocalDbCompositeIndexResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexApiService.UpdateLocalDbCompositeIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexAPIService.UpdateLocalDbCompositeIndex")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

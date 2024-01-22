@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedCertificateMapperRequest{}
 
 // AddGroovyScriptedCertificateMapperRequest struct for AddGroovyScriptedCertificateMapperRequest
 type AddGroovyScriptedCertificateMapperRequest struct {
-	// Name of the new Certificate Mapper
-	MapperName string                                         `json:"mapperName"`
-	Schemas    []EnumgroovyScriptedCertificateMapperSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedCertificateMapperSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Certificate Mapper.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Certificate Mapper. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddGroovyScriptedCertificateMapperRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Certificate Mapper is enabled.
 	Enabled bool `json:"enabled"`
+	// Name of the new Certificate Mapper
+	MapperName string `json:"mapperName"`
 }
 
 // NewAddGroovyScriptedCertificateMapperRequest instantiates a new AddGroovyScriptedCertificateMapperRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedCertificateMapperRequest(mapperName string, schemas []EnumgroovyScriptedCertificateMapperSchemaUrn, scriptClass string, enabled bool) *AddGroovyScriptedCertificateMapperRequest {
+func NewAddGroovyScriptedCertificateMapperRequest(schemas []EnumgroovyScriptedCertificateMapperSchemaUrn, scriptClass string, enabled bool, mapperName string) *AddGroovyScriptedCertificateMapperRequest {
 	this := AddGroovyScriptedCertificateMapperRequest{}
-	this.MapperName = mapperName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.MapperName = mapperName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddGroovyScriptedCertificateMapperRequest(mapperName string, schemas []E
 func NewAddGroovyScriptedCertificateMapperRequestWithDefaults() *AddGroovyScriptedCertificateMapperRequest {
 	this := AddGroovyScriptedCertificateMapperRequest{}
 	return &this
-}
-
-// GetMapperName returns the MapperName field value
-func (o *AddGroovyScriptedCertificateMapperRequest) GetMapperName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MapperName
-}
-
-// GetMapperNameOk returns a tuple with the MapperName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MapperName, true
-}
-
-// SetMapperName sets field value
-func (o *AddGroovyScriptedCertificateMapperRequest) SetMapperName(v string) {
-	o.MapperName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddGroovyScriptedCertificateMapperRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMapperName returns the MapperName field value
+func (o *AddGroovyScriptedCertificateMapperRequest) GetMapperName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MapperName
+}
+
+// GetMapperNameOk returns a tuple with the MapperName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MapperName, true
+}
+
+// SetMapperName sets field value
+func (o *AddGroovyScriptedCertificateMapperRequest) SetMapperName(v string) {
+	o.MapperName = v
+}
+
 func (o AddGroovyScriptedCertificateMapperRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddGroovyScriptedCertificateMapperRequest) MarshalJSON() ([]byte, error)
 
 func (o AddGroovyScriptedCertificateMapperRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mapperName"] = o.MapperName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -233,6 +232,7 @@ func (o AddGroovyScriptedCertificateMapperRequest) ToMap() (map[string]interface
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["mapperName"] = o.MapperName
 	return toSerialize, nil
 }
 

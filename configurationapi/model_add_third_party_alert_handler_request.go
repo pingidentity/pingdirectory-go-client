@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyAlertHandlerRequest{}
 
 // AddThirdPartyAlertHandlerRequest struct for AddThirdPartyAlertHandlerRequest
 type AddThirdPartyAlertHandlerRequest struct {
-	// Name of the new Alert Handler
-	HandlerName string                                `json:"handlerName"`
-	Schemas     []EnumthirdPartyAlertHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyAlertHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Alert Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Alert Handler. Each configuration property should be given in the form 'name=value'.
@@ -35,18 +33,20 @@ type AddThirdPartyAlertHandlerRequest struct {
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
 	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
 	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
+	// Name of the new Alert Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddThirdPartyAlertHandlerRequest instantiates a new AddThirdPartyAlertHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyAlertHandlerRequest(handlerName string, schemas []EnumthirdPartyAlertHandlerSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyAlertHandlerRequest {
+func NewAddThirdPartyAlertHandlerRequest(schemas []EnumthirdPartyAlertHandlerSchemaUrn, extensionClass string, enabled bool, handlerName string) *AddThirdPartyAlertHandlerRequest {
 	this := AddThirdPartyAlertHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddThirdPartyAlertHandlerRequest(handlerName string, schemas []Enumthird
 func NewAddThirdPartyAlertHandlerRequestWithDefaults() *AddThirdPartyAlertHandlerRequest {
 	this := AddThirdPartyAlertHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddThirdPartyAlertHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddThirdPartyAlertHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -346,6 +322,30 @@ func (o *AddThirdPartyAlertHandlerRequest) SetDisabledAlertType(v []EnumalertHan
 	o.DisabledAlertType = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddThirdPartyAlertHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddThirdPartyAlertHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddThirdPartyAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -356,7 +356,6 @@ func (o AddThirdPartyAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -378,6 +377,7 @@ func (o AddThirdPartyAlertHandlerRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.DisabledAlertType) {
 		toSerialize["disabledAlertType"] = o.DisabledAlertType
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

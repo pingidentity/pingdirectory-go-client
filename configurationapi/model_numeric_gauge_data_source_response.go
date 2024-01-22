@@ -19,8 +19,6 @@ var _ MappedNullable = &NumericGaugeDataSourceResponse{}
 
 // NumericGaugeDataSourceResponse struct for NumericGaugeDataSourceResponse
 type NumericGaugeDataSourceResponse struct {
-	// Name of the Gauge Data Source
-	Id              string                                  `json:"id"`
 	Schemas         []EnumnumericGaugeDataSourceSchemaUrn   `json:"schemas"`
 	DataOrientation *EnumgaugeDataSourceDataOrientationProp `json:"dataOrientation,omitempty"`
 	StatisticType   EnumgaugeDataSourceStatisticTypeProp    `json:"statisticType"`
@@ -48,19 +46,21 @@ type NumericGaugeDataSourceResponse struct {
 	MinimumUpdateInterval                         *string                                            `json:"minimumUpdateInterval,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Gauge Data Source
+	Id string `json:"id"`
 }
 
 // NewNumericGaugeDataSourceResponse instantiates a new NumericGaugeDataSourceResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNumericGaugeDataSourceResponse(id string, schemas []EnumnumericGaugeDataSourceSchemaUrn, statisticType EnumgaugeDataSourceStatisticTypeProp, monitorObjectclass string, monitorAttribute string) *NumericGaugeDataSourceResponse {
+func NewNumericGaugeDataSourceResponse(schemas []EnumnumericGaugeDataSourceSchemaUrn, statisticType EnumgaugeDataSourceStatisticTypeProp, monitorObjectclass string, monitorAttribute string, id string) *NumericGaugeDataSourceResponse {
 	this := NumericGaugeDataSourceResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.StatisticType = statisticType
 	this.MonitorObjectclass = monitorObjectclass
 	this.MonitorAttribute = monitorAttribute
+	this.Id = id
 	return &this
 }
 
@@ -70,30 +70,6 @@ func NewNumericGaugeDataSourceResponse(id string, schemas []EnumnumericGaugeData
 func NewNumericGaugeDataSourceResponseWithDefaults() *NumericGaugeDataSourceResponse {
 	this := NumericGaugeDataSourceResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *NumericGaugeDataSourceResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *NumericGaugeDataSourceResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *NumericGaugeDataSourceResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -576,6 +552,30 @@ func (o *NumericGaugeDataSourceResponse) SetUrnpingidentityschemasconfigurationm
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *NumericGaugeDataSourceResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *NumericGaugeDataSourceResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *NumericGaugeDataSourceResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o NumericGaugeDataSourceResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -586,7 +586,6 @@ func (o NumericGaugeDataSourceResponse) MarshalJSON() ([]byte, error) {
 
 func (o NumericGaugeDataSourceResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.DataOrientation) {
 		toSerialize["dataOrientation"] = o.DataOrientation
@@ -627,6 +626,7 @@ func (o NumericGaugeDataSourceResponse) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

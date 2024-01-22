@@ -1,14 +1,14 @@
-# \LogFileRotationListenerApi
+# \LogFileRotationListenerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLogFileRotationListener**](LogFileRotationListenerApi.md#AddLogFileRotationListener) | **Post** /log-file-rotation-listeners | Add a new Log File Rotation Listener to the config
-[**DeleteLogFileRotationListener**](LogFileRotationListenerApi.md#DeleteLogFileRotationListener) | **Delete** /log-file-rotation-listeners/{log-file-rotation-listener-name} | Delete a Log File Rotation Listener
-[**GetLogFileRotationListener**](LogFileRotationListenerApi.md#GetLogFileRotationListener) | **Get** /log-file-rotation-listeners/{log-file-rotation-listener-name} | Returns a single Log File Rotation Listener
-[**ListLogFileRotationListeners**](LogFileRotationListenerApi.md#ListLogFileRotationListeners) | **Get** /log-file-rotation-listeners | Returns a list of all Log File Rotation Listener objects
-[**UpdateLogFileRotationListener**](LogFileRotationListenerApi.md#UpdateLogFileRotationListener) | **Patch** /log-file-rotation-listeners/{log-file-rotation-listener-name} | Update an existing Log File Rotation Listener by name
+[**AddLogFileRotationListener**](LogFileRotationListenerAPI.md#AddLogFileRotationListener) | **Post** /log-file-rotation-listeners | Add a new Log File Rotation Listener to the config
+[**DeleteLogFileRotationListener**](LogFileRotationListenerAPI.md#DeleteLogFileRotationListener) | **Delete** /log-file-rotation-listeners/{log-file-rotation-listener-name} | Delete a Log File Rotation Listener
+[**GetLogFileRotationListener**](LogFileRotationListenerAPI.md#GetLogFileRotationListener) | **Get** /log-file-rotation-listeners/{log-file-rotation-listener-name} | Returns a single Log File Rotation Listener
+[**ListLogFileRotationListeners**](LogFileRotationListenerAPI.md#ListLogFileRotationListeners) | **Get** /log-file-rotation-listeners | Returns a list of all Log File Rotation Listener objects
+[**UpdateLogFileRotationListener**](LogFileRotationListenerAPI.md#UpdateLogFileRotationListener) | **Patch** /log-file-rotation-listeners/{log-file-rotation-listener-name} | Update an existing Log File Rotation Listener by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addLogFileRotationListenerRequest := openapiclient.add_log_file_rotation_listener_request{AddCopyLogFileRotationListenerRequest: openapiclient.NewAddCopyLogFileRotationListenerRequest("ListenerName_example", []openapiclient.EnumcopyLogFileRotationListenerSchemaUrn{openapiclient.Enumcopy-log-file-rotation-listenerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:copy")}, "CopyToDirectory_example", false)} // AddLogFileRotationListenerRequest | Create a new Log File Rotation Listener in the config
+    addLogFileRotationListenerRequest := openapiclient.add_log_file_rotation_listener_request{AddCopyLogFileRotationListenerRequest: openapiclient.NewAddCopyLogFileRotationListenerRequest([]openapiclient.EnumcopyLogFileRotationListenerSchemaUrn{openapiclient.Enumcopy-log-file-rotation-listenerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:copy")}, "CopyToDirectory_example", false, "ListenerName_example")} // AddLogFileRotationListenerRequest | Create a new Log File Rotation Listener in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFileRotationListenerApi.AddLogFileRotationListener(context.Background()).AddLogFileRotationListenerRequest(addLogFileRotationListenerRequest).Execute()
+    resp, r, err := apiClient.LogFileRotationListenerAPI.AddLogFileRotationListener(context.Background()).AddLogFileRotationListenerRequest(addLogFileRotationListenerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerApi.AddLogFileRotationListener``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerAPI.AddLogFileRotationListener``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLogFileRotationListener`: AddLogFileRotationListener200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFileRotationListenerApi.AddLogFileRotationListener`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFileRotationListenerAPI.AddLogFileRotationListener`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LogFileRotationListenerApi.DeleteLogFileRotationListener(context.Background(), logFileRotationListenerName).Execute()
+    r, err := apiClient.LogFileRotationListenerAPI.DeleteLogFileRotationListener(context.Background(), logFileRotationListenerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerApi.DeleteLogFileRotationListener``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerAPI.DeleteLogFileRotationListener``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFileRotationListenerApi.GetLogFileRotationListener(context.Background(), logFileRotationListenerName).Execute()
+    resp, r, err := apiClient.LogFileRotationListenerAPI.GetLogFileRotationListener(context.Background(), logFileRotationListenerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerApi.GetLogFileRotationListener``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerAPI.GetLogFileRotationListener``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLogFileRotationListener`: AddLogFileRotationListener200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFileRotationListenerApi.GetLogFileRotationListener`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFileRotationListenerAPI.GetLogFileRotationListener`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFileRotationListenerApi.ListLogFileRotationListeners(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.LogFileRotationListenerAPI.ListLogFileRotationListeners(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerApi.ListLogFileRotationListeners``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerAPI.ListLogFileRotationListeners``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLogFileRotationListeners`: LogFileRotationListenerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LogFileRotationListenerApi.ListLogFileRotationListeners`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFileRotationListenerAPI.ListLogFileRotationListeners`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFileRotationListenerApi.UpdateLogFileRotationListener(context.Background(), logFileRotationListenerName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LogFileRotationListenerAPI.UpdateLogFileRotationListener(context.Background(), logFileRotationListenerName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerApi.UpdateLogFileRotationListener``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerAPI.UpdateLogFileRotationListener``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLogFileRotationListener`: AddLogFileRotationListener200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFileRotationListenerApi.UpdateLogFileRotationListener`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFileRotationListenerAPI.UpdateLogFileRotationListener`: %v\n", resp)
 }
 ```
 

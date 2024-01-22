@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyTrustManagerProviderRequest{}
 
 // AddThirdPartyTrustManagerProviderRequest struct for AddThirdPartyTrustManagerProviderRequest
 type AddThirdPartyTrustManagerProviderRequest struct {
-	// Name of the new Trust Manager Provider
-	ProviderName string                                        `json:"providerName"`
-	Schemas      []EnumthirdPartyTrustManagerProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyTrustManagerProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Trust Manager Provider.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Trust Manager Provider. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddThirdPartyTrustManagerProviderRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
 	IncludeJVMDefaultIssuers *bool `json:"includeJVMDefaultIssuers,omitempty"`
+	// Name of the new Trust Manager Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddThirdPartyTrustManagerProviderRequest instantiates a new AddThirdPartyTrustManagerProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyTrustManagerProviderRequest(providerName string, schemas []EnumthirdPartyTrustManagerProviderSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyTrustManagerProviderRequest {
+func NewAddThirdPartyTrustManagerProviderRequest(schemas []EnumthirdPartyTrustManagerProviderSchemaUrn, extensionClass string, enabled bool, providerName string) *AddThirdPartyTrustManagerProviderRequest {
 	this := AddThirdPartyTrustManagerProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddThirdPartyTrustManagerProviderRequest(providerName string, schemas []
 func NewAddThirdPartyTrustManagerProviderRequestWithDefaults() *AddThirdPartyTrustManagerProviderRequest {
 	this := AddThirdPartyTrustManagerProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddThirdPartyTrustManagerProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddThirdPartyTrustManagerProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddThirdPartyTrustManagerProviderRequest) SetIncludeJVMDefaultIssuers(v
 	o.IncludeJVMDefaultIssuers = &v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddThirdPartyTrustManagerProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddThirdPartyTrustManagerProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddThirdPartyTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddThirdPartyTrustManagerProviderRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddThirdPartyTrustManagerProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -233,6 +232,7 @@ func (o AddThirdPartyTrustManagerProviderRequest) ToMap() (map[string]interface{
 	if !IsNil(o.IncludeJVMDefaultIssuers) {
 		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
 	}
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

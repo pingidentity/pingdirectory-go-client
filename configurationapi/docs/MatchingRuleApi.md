@@ -1,12 +1,12 @@
-# \MatchingRuleApi
+# \MatchingRuleAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMatchingRule**](MatchingRuleApi.md#GetMatchingRule) | **Get** /matching-rules/{matching-rule-name} | Returns a single Matching Rule
-[**ListMatchingRules**](MatchingRuleApi.md#ListMatchingRules) | **Get** /matching-rules | Returns a list of all Matching Rule objects
-[**UpdateMatchingRule**](MatchingRuleApi.md#UpdateMatchingRule) | **Patch** /matching-rules/{matching-rule-name} | Update an existing Matching Rule by name
+[**GetMatchingRule**](MatchingRuleAPI.md#GetMatchingRule) | **Get** /matching-rules/{matching-rule-name} | Returns a single Matching Rule
+[**ListMatchingRules**](MatchingRuleAPI.md#ListMatchingRules) | **Get** /matching-rules | Returns a list of all Matching Rule objects
+[**UpdateMatchingRule**](MatchingRuleAPI.md#UpdateMatchingRule) | **Patch** /matching-rules/{matching-rule-name} | Update an existing Matching Rule by name
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MatchingRuleApi.GetMatchingRule(context.Background(), matchingRuleName).Execute()
+    resp, r, err := apiClient.MatchingRuleAPI.GetMatchingRule(context.Background(), matchingRuleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MatchingRuleApi.GetMatchingRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MatchingRuleAPI.GetMatchingRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMatchingRule`: GetMatchingRule200Response
-    fmt.Fprintf(os.Stdout, "Response from `MatchingRuleApi.GetMatchingRule`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MatchingRuleAPI.GetMatchingRule`: %v\n", resp)
 }
 ```
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MatchingRuleApi.ListMatchingRules(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.MatchingRuleAPI.ListMatchingRules(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MatchingRuleApi.ListMatchingRules``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MatchingRuleAPI.ListMatchingRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListMatchingRules`: MatchingRuleListResponse
-    fmt.Fprintf(os.Stdout, "Response from `MatchingRuleApi.ListMatchingRules`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MatchingRuleAPI.ListMatchingRules`: %v\n", resp)
 }
 ```
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MatchingRuleApi.UpdateMatchingRule(context.Background(), matchingRuleName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.MatchingRuleAPI.UpdateMatchingRule(context.Background(), matchingRuleName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MatchingRuleApi.UpdateMatchingRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MatchingRuleAPI.UpdateMatchingRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateMatchingRule`: GetMatchingRule200Response
-    fmt.Fprintf(os.Stdout, "Response from `MatchingRuleApi.UpdateMatchingRule`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MatchingRuleAPI.UpdateMatchingRule`: %v\n", resp)
 }
 ```
 

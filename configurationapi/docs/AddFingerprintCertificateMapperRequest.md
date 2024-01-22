@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MapperName** | **string** | Name of the new Certificate Mapper | 
 **Schemas** | [**[]EnumfingerprintCertificateMapperSchemaUrn**](EnumfingerprintCertificateMapperSchemaUrn.md) |  | 
 **FingerprintAttribute** | Pointer to **string** | Specifies the attribute in which to look for the fingerprint. | [optional] 
 **FingerprintAlgorithm** | [**EnumcertificateMapperFingerprintAlgorithmProp**](EnumcertificateMapperFingerprintAlgorithmProp.md) |  | 
 **UserBaseDN** | Pointer to **[]string** | Specifies the set of base DNs below which to search for users. | [optional] 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
+**MapperName** | **string** | Name of the new Certificate Mapper | 
 
 ## Methods
 
 ### NewAddFingerprintCertificateMapperRequest
 
-`func NewAddFingerprintCertificateMapperRequest(mapperName string, schemas []EnumfingerprintCertificateMapperSchemaUrn, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, enabled bool, ) *AddFingerprintCertificateMapperRequest`
+`func NewAddFingerprintCertificateMapperRequest(schemas []EnumfingerprintCertificateMapperSchemaUrn, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, enabled bool, mapperName string, ) *AddFingerprintCertificateMapperRequest`
 
 NewAddFingerprintCertificateMapperRequest instantiates a new AddFingerprintCertificateMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddFingerprintCertificateMapperRequestWithDefaults instantiates a new AddFingerprintCertificateMapperRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMapperName
-
-`func (o *AddFingerprintCertificateMapperRequest) GetMapperName() string`
-
-GetMapperName returns the MapperName field if non-nil, zero value otherwise.
-
-### GetMapperNameOk
-
-`func (o *AddFingerprintCertificateMapperRequest) GetMapperNameOk() (*string, bool)`
-
-GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMapperName
-
-`func (o *AddFingerprintCertificateMapperRequest) SetMapperName(v string)`
-
-SetMapperName sets MapperName field to given value.
-
 
 ### GetSchemas
 
@@ -184,6 +164,26 @@ and a boolean to check if the value has been set.
 `func (o *AddFingerprintCertificateMapperRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetMapperName
+
+`func (o *AddFingerprintCertificateMapperRequest) GetMapperName() string`
+
+GetMapperName returns the MapperName field if non-nil, zero value otherwise.
+
+### GetMapperNameOk
+
+`func (o *AddFingerprintCertificateMapperRequest) GetMapperNameOk() (*string, bool)`
+
+GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMapperName
+
+`func (o *AddFingerprintCertificateMapperRequest) SetMapperName(v string)`
+
+SetMapperName sets MapperName field to given value.
 
 
 

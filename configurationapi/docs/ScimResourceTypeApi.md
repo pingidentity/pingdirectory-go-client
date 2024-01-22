@@ -1,14 +1,14 @@
-# \ScimResourceTypeApi
+# \ScimResourceTypeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddScimResourceType**](ScimResourceTypeApi.md#AddScimResourceType) | **Post** /scim-resource-types | Add a new SCIM Resource Type to the config
-[**DeleteScimResourceType**](ScimResourceTypeApi.md#DeleteScimResourceType) | **Delete** /scim-resource-types/{scim-resource-type-name} | Delete a SCIM Resource Type
-[**GetScimResourceType**](ScimResourceTypeApi.md#GetScimResourceType) | **Get** /scim-resource-types/{scim-resource-type-name} | Returns a single SCIM Resource Type
-[**ListScimResourceTypes**](ScimResourceTypeApi.md#ListScimResourceTypes) | **Get** /scim-resource-types | Returns a list of all SCIM Resource Type objects
-[**UpdateScimResourceType**](ScimResourceTypeApi.md#UpdateScimResourceType) | **Patch** /scim-resource-types/{scim-resource-type-name} | Update an existing SCIM Resource Type by name
+[**AddScimResourceType**](ScimResourceTypeAPI.md#AddScimResourceType) | **Post** /scim-resource-types | Add a new SCIM Resource Type to the config
+[**DeleteScimResourceType**](ScimResourceTypeAPI.md#DeleteScimResourceType) | **Delete** /scim-resource-types/{scim-resource-type-name} | Delete a SCIM Resource Type
+[**GetScimResourceType**](ScimResourceTypeAPI.md#GetScimResourceType) | **Get** /scim-resource-types/{scim-resource-type-name} | Returns a single SCIM Resource Type
+[**ListScimResourceTypes**](ScimResourceTypeAPI.md#ListScimResourceTypes) | **Get** /scim-resource-types | Returns a list of all SCIM Resource Type objects
+[**UpdateScimResourceType**](ScimResourceTypeAPI.md#UpdateScimResourceType) | **Patch** /scim-resource-types/{scim-resource-type-name} | Update an existing SCIM Resource Type by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addScimResourceTypeRequest := openapiclient.add_scim_resource_type_request{AddLdapMappingScimResourceTypeRequest: openapiclient.NewAddLdapMappingScimResourceTypeRequest("TypeName_example", []openapiclient.EnumldapMappingScimResourceTypeSchemaUrn{openapiclient.Enumldap-mapping-scim-resource-typeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:scim-resource-type:ldap-mapping")}, "CoreSchema_example", false, "Endpoint_example")} // AddScimResourceTypeRequest | Create a new SCIM Resource Type in the config
+    addScimResourceTypeRequest := openapiclient.add_scim_resource_type_request{AddLdapMappingScimResourceTypeRequest: openapiclient.NewAddLdapMappingScimResourceTypeRequest([]openapiclient.EnumldapMappingScimResourceTypeSchemaUrn{openapiclient.Enumldap-mapping-scim-resource-typeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:scim-resource-type:ldap-mapping")}, "CoreSchema_example", false, "Endpoint_example", "TypeName_example")} // AddScimResourceTypeRequest | Create a new SCIM Resource Type in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimResourceTypeApi.AddScimResourceType(context.Background()).AddScimResourceTypeRequest(addScimResourceTypeRequest).Execute()
+    resp, r, err := apiClient.ScimResourceTypeAPI.AddScimResourceType(context.Background()).AddScimResourceTypeRequest(addScimResourceTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeApi.AddScimResourceType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeAPI.AddScimResourceType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddScimResourceType`: AddScimResourceType200Response
-    fmt.Fprintf(os.Stdout, "Response from `ScimResourceTypeApi.AddScimResourceType`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimResourceTypeAPI.AddScimResourceType`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ScimResourceTypeApi.DeleteScimResourceType(context.Background(), scimResourceTypeName).Execute()
+    r, err := apiClient.ScimResourceTypeAPI.DeleteScimResourceType(context.Background(), scimResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeApi.DeleteScimResourceType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeAPI.DeleteScimResourceType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimResourceTypeApi.GetScimResourceType(context.Background(), scimResourceTypeName).Execute()
+    resp, r, err := apiClient.ScimResourceTypeAPI.GetScimResourceType(context.Background(), scimResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeApi.GetScimResourceType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeAPI.GetScimResourceType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetScimResourceType`: AddScimResourceType200Response
-    fmt.Fprintf(os.Stdout, "Response from `ScimResourceTypeApi.GetScimResourceType`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimResourceTypeAPI.GetScimResourceType`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimResourceTypeApi.ListScimResourceTypes(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ScimResourceTypeAPI.ListScimResourceTypes(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeApi.ListScimResourceTypes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeAPI.ListScimResourceTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListScimResourceTypes`: ScimResourceTypeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimResourceTypeApi.ListScimResourceTypes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimResourceTypeAPI.ListScimResourceTypes`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimResourceTypeApi.UpdateScimResourceType(context.Background(), scimResourceTypeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ScimResourceTypeAPI.UpdateScimResourceType(context.Background(), scimResourceTypeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeApi.UpdateScimResourceType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeAPI.UpdateScimResourceType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateScimResourceType`: AddScimResourceType200Response
-    fmt.Fprintf(os.Stdout, "Response from `ScimResourceTypeApi.UpdateScimResourceType`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimResourceTypeAPI.UpdateScimResourceType`: %v\n", resp)
 }
 ```
 

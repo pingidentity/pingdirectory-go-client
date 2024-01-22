@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Passphrase Provider | 
 **Schemas** | [**[]EnumconjurPassphraseProviderSchemaUrn**](EnumconjurPassphraseProviderSchemaUrn.md) |  | 
 **ConjurExternalServer** | **string** | An external server definition with information needed to connect and authenticate to the Conjur instance containing the passphrase. | 
 **ConjurSecretRelativePath** | **string** | The portion of the path that follows the account name in the URI needed to obtain the desired secret. Any special characters in the path must be URL-encoded. | 
 **MaxCacheDuration** | Pointer to **string** | The maximum length of time that the passphrase provider may cache the passphrase that has been read from Conjur. A value of zero seconds indicates that the provider should always attempt to read the passphrase from Conjur. | [optional] 
 **Description** | Pointer to **string** | A description for this Passphrase Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Passphrase Provider is enabled for use in the server. | 
+**ProviderName** | **string** | Name of the new Passphrase Provider | 
 
 ## Methods
 
 ### NewAddConjurPassphraseProviderRequest
 
-`func NewAddConjurPassphraseProviderRequest(providerName string, schemas []EnumconjurPassphraseProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, enabled bool, ) *AddConjurPassphraseProviderRequest`
+`func NewAddConjurPassphraseProviderRequest(schemas []EnumconjurPassphraseProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, enabled bool, providerName string, ) *AddConjurPassphraseProviderRequest`
 
 NewAddConjurPassphraseProviderRequest instantiates a new AddConjurPassphraseProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddConjurPassphraseProviderRequestWithDefaults instantiates a new AddConjurPassphraseProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddConjurPassphraseProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddConjurPassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddConjurPassphraseProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -179,6 +159,26 @@ and a boolean to check if the value has been set.
 `func (o *AddConjurPassphraseProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddConjurPassphraseProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddConjurPassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddConjurPassphraseProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

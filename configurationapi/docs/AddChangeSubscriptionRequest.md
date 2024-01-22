@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SubscriptionName** | **string** | Name of the new Change Subscription | 
 **Schemas** | Pointer to [**[]EnumchangeSubscriptionSchemaUrn**](EnumchangeSubscriptionSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Change Subscription | [optional] 
 **ConnectionCriteria** | Pointer to **string** | Specifies a set of connection criteria that must match the client connection associated with an operation in order for that operation to be processed by a change subscription handler. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria that must match the request associated with an operation in order for that operation to be processed by a change subscription handler. | [optional] 
 **ResultCriteria** | Pointer to **string** | Specifies a set of result criteria that must match the result associated with an operation in order for that operation to be processed by a change subscription handler. | [optional] 
 **ExpirationTime** | Pointer to **string** | Specifies a timestamp that provides an expiration time for this change subscription. If an expiration time is provided, then the change subscription will not be active after that time has passed. | [optional] 
+**SubscriptionName** | **string** | Name of the new Change Subscription | 
 
 ## Methods
 
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddChangeSubscriptionRequestWithDefaults instantiates a new AddChangeSubscriptionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSubscriptionName
-
-`func (o *AddChangeSubscriptionRequest) GetSubscriptionName() string`
-
-GetSubscriptionName returns the SubscriptionName field if non-nil, zero value otherwise.
-
-### GetSubscriptionNameOk
-
-`func (o *AddChangeSubscriptionRequest) GetSubscriptionNameOk() (*string, bool)`
-
-GetSubscriptionNameOk returns a tuple with the SubscriptionName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubscriptionName
-
-`func (o *AddChangeSubscriptionRequest) SetSubscriptionName(v string)`
-
-SetSubscriptionName sets SubscriptionName field to given value.
-
 
 ### GetSchemas
 
@@ -200,6 +180,26 @@ SetExpirationTime sets ExpirationTime field to given value.
 `func (o *AddChangeSubscriptionRequest) HasExpirationTime() bool`
 
 HasExpirationTime returns a boolean if a field has been set.
+
+### GetSubscriptionName
+
+`func (o *AddChangeSubscriptionRequest) GetSubscriptionName() string`
+
+GetSubscriptionName returns the SubscriptionName field if non-nil, zero value otherwise.
+
+### GetSubscriptionNameOk
+
+`func (o *AddChangeSubscriptionRequest) GetSubscriptionNameOk() (*string, bool)`
+
+GetSubscriptionNameOk returns a tuple with the SubscriptionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionName
+
+`func (o *AddChangeSubscriptionRequest) SetSubscriptionName(v string)`
+
+SetSubscriptionName sets SubscriptionName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

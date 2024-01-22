@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MapperName** | **string** | Name of the new Identity Mapper | 
 **Schemas** | [**[]EnumexactMatchIdentityMapperSchemaUrn**](EnumexactMatchIdentityMapperSchemaUrn.md) |  | 
 **MatchAttribute** | Pointer to **[]string** | Specifies the attribute whose value should exactly match the ID string provided to this identity mapper. | [optional] 
 **MatchBaseDN** | Pointer to **[]string** | Specifies the set of base DNs below which to search for users. | [optional] 
 **MatchFilter** | Pointer to **string** | An optional filter that mapped users must match. | [optional] 
 **Description** | Pointer to **string** | A description for this Identity Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Identity Mapper is enabled for use. | 
+**MapperName** | **string** | Name of the new Identity Mapper | 
 
 ## Methods
 
 ### NewAddExactMatchIdentityMapperRequest
 
-`func NewAddExactMatchIdentityMapperRequest(mapperName string, schemas []EnumexactMatchIdentityMapperSchemaUrn, enabled bool, ) *AddExactMatchIdentityMapperRequest`
+`func NewAddExactMatchIdentityMapperRequest(schemas []EnumexactMatchIdentityMapperSchemaUrn, enabled bool, mapperName string, ) *AddExactMatchIdentityMapperRequest`
 
 NewAddExactMatchIdentityMapperRequest instantiates a new AddExactMatchIdentityMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddExactMatchIdentityMapperRequestWithDefaults instantiates a new AddExactMatchIdentityMapperRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMapperName
-
-`func (o *AddExactMatchIdentityMapperRequest) GetMapperName() string`
-
-GetMapperName returns the MapperName field if non-nil, zero value otherwise.
-
-### GetMapperNameOk
-
-`func (o *AddExactMatchIdentityMapperRequest) GetMapperNameOk() (*string, bool)`
-
-GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMapperName
-
-`func (o *AddExactMatchIdentityMapperRequest) SetMapperName(v string)`
-
-SetMapperName sets MapperName field to given value.
-
 
 ### GetSchemas
 
@@ -189,6 +169,26 @@ and a boolean to check if the value has been set.
 `func (o *AddExactMatchIdentityMapperRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetMapperName
+
+`func (o *AddExactMatchIdentityMapperRequest) GetMapperName() string`
+
+GetMapperName returns the MapperName field if non-nil, zero value otherwise.
+
+### GetMapperNameOk
+
+`func (o *AddExactMatchIdentityMapperRequest) GetMapperNameOk() (*string, bool)`
+
+GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMapperName
+
+`func (o *AddExactMatchIdentityMapperRequest) SetMapperName(v string)`
+
+SetMapperName sets MapperName field to given value.
 
 
 

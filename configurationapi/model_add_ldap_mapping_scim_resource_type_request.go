@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLdapMappingScimResourceTypeRequest{}
 
 // AddLdapMappingScimResourceTypeRequest struct for AddLdapMappingScimResourceTypeRequest
 type AddLdapMappingScimResourceTypeRequest struct {
-	// Name of the new SCIM Resource Type
-	TypeName string                                     `json:"typeName"`
-	Schemas  []EnumldapMappingScimResourceTypeSchemaUrn `json:"schemas"`
+	Schemas []EnumldapMappingScimResourceTypeSchemaUrn `json:"schemas"`
 	// The core schema enforced on core attributes at the top level of a SCIM resource representation exposed by thisMapping SCIM Resource Type.
 	CoreSchema string `json:"coreSchema"`
 	// Required additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type.
@@ -49,19 +47,21 @@ type AddLdapMappingScimResourceTypeRequest struct {
 	IncludeOperationalAttribute []string `json:"includeOperationalAttribute,omitempty"`
 	// Specifies the template to use for the DN when creating new entries.
 	CreateDNPattern *string `json:"createDNPattern,omitempty"`
+	// Name of the new SCIM Resource Type
+	TypeName string `json:"typeName"`
 }
 
 // NewAddLdapMappingScimResourceTypeRequest instantiates a new AddLdapMappingScimResourceTypeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapMappingScimResourceTypeRequest(typeName string, schemas []EnumldapMappingScimResourceTypeSchemaUrn, coreSchema string, enabled bool, endpoint string) *AddLdapMappingScimResourceTypeRequest {
+func NewAddLdapMappingScimResourceTypeRequest(schemas []EnumldapMappingScimResourceTypeSchemaUrn, coreSchema string, enabled bool, endpoint string, typeName string) *AddLdapMappingScimResourceTypeRequest {
 	this := AddLdapMappingScimResourceTypeRequest{}
-	this.TypeName = typeName
 	this.Schemas = schemas
 	this.CoreSchema = coreSchema
 	this.Enabled = enabled
 	this.Endpoint = endpoint
+	this.TypeName = typeName
 	return &this
 }
 
@@ -71,30 +71,6 @@ func NewAddLdapMappingScimResourceTypeRequest(typeName string, schemas []Enumlda
 func NewAddLdapMappingScimResourceTypeRequestWithDefaults() *AddLdapMappingScimResourceTypeRequest {
 	this := AddLdapMappingScimResourceTypeRequest{}
 	return &this
-}
-
-// GetTypeName returns the TypeName field value
-func (o *AddLdapMappingScimResourceTypeRequest) GetTypeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TypeName
-}
-
-// GetTypeNameOk returns a tuple with the TypeName field value
-// and a boolean to check if the value has been set.
-func (o *AddLdapMappingScimResourceTypeRequest) GetTypeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TypeName, true
-}
-
-// SetTypeName sets field value
-func (o *AddLdapMappingScimResourceTypeRequest) SetTypeName(v string) {
-	o.TypeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -545,6 +521,30 @@ func (o *AddLdapMappingScimResourceTypeRequest) SetCreateDNPattern(v string) {
 	o.CreateDNPattern = &v
 }
 
+// GetTypeName returns the TypeName field value
+func (o *AddLdapMappingScimResourceTypeRequest) GetTypeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TypeName
+}
+
+// GetTypeNameOk returns a tuple with the TypeName field value
+// and a boolean to check if the value has been set.
+func (o *AddLdapMappingScimResourceTypeRequest) GetTypeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TypeName, true
+}
+
+// SetTypeName sets field value
+func (o *AddLdapMappingScimResourceTypeRequest) SetTypeName(v string) {
+	o.TypeName = v
+}
+
 func (o AddLdapMappingScimResourceTypeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -555,7 +555,6 @@ func (o AddLdapMappingScimResourceTypeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLdapMappingScimResourceTypeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["typeName"] = o.TypeName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["coreSchema"] = o.CoreSchema
 	if !IsNil(o.RequiredSchemaExtension) {
@@ -593,6 +592,7 @@ func (o AddLdapMappingScimResourceTypeRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.CreateDNPattern) {
 		toSerialize["createDNPattern"] = o.CreateDNPattern
 	}
+	toSerialize["typeName"] = o.TypeName
 	return toSerialize, nil
 }
 

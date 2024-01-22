@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Account Status Notification Handler | 
 **Schemas** | [**[]EnumsmtpAccountStatusNotificationHandlerSchemaUrn**](EnumsmtpAccountStatusNotificationHandlerSchemaUrn.md) |  | 
 **EmailAddressAttributeType** | Pointer to **[]string** | Specifies which attribute in the user&#39;s entries may be used to obtain the email address when notifying the end user. | [optional] 
 **EmailAddressJSONField** | Pointer to **string** | The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string. | [optional] 
@@ -21,12 +20,13 @@ Name | Type | Description | Notes
 **AccountCreationNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which add requests should result in account creation notifications for this handler. | [optional] 
 **AccountDeletionNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which delete requests should result in account deletion notifications for this handler. | [optional] 
 **AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
+**HandlerName** | **string** | Name of the new Account Status Notification Handler | 
 
 ## Methods
 
 ### NewAddSmtpAccountStatusNotificationHandlerRequest
 
-`func NewAddSmtpAccountStatusNotificationHandlerRequest(handlerName string, schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn, senderAddress string, messageSubject []string, messageTemplateFile []string, enabled bool, ) *AddSmtpAccountStatusNotificationHandlerRequest`
+`func NewAddSmtpAccountStatusNotificationHandlerRequest(schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn, senderAddress string, messageSubject []string, messageTemplateFile []string, enabled bool, handlerName string, ) *AddSmtpAccountStatusNotificationHandlerRequest`
 
 NewAddSmtpAccountStatusNotificationHandlerRequest instantiates a new AddSmtpAccountStatusNotificationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -40,26 +40,6 @@ will change when the set of required properties is changed
 NewAddSmtpAccountStatusNotificationHandlerRequestWithDefaults instantiates a new AddSmtpAccountStatusNotificationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -435,6 +415,26 @@ SetAccountUpdateNotificationRequestCriteria sets AccountUpdateNotificationReques
 `func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasAccountUpdateNotificationRequestCriteria() bool`
 
 HasAccountUpdateNotificationRequestCriteria returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

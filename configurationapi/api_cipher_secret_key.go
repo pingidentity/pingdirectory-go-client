@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// CipherSecretKeyApiService CipherSecretKeyApi service
-type CipherSecretKeyApiService service
+// CipherSecretKeyAPIService CipherSecretKeyAPI service
+type CipherSecretKeyAPIService service
 
 type ApiGetCipherSecretKeyRequest struct {
 	ctx                 context.Context
-	ApiService          *CipherSecretKeyApiService
+	ApiService          *CipherSecretKeyAPIService
 	cipherSecretKeyName string
 	serverInstanceName  string
 }
@@ -41,7 +41,7 @@ GetCipherSecretKey Returns a single Cipher Secret Key
 	@param serverInstanceName Name of the Server Instance
 	@return ApiGetCipherSecretKeyRequest
 */
-func (a *CipherSecretKeyApiService) GetCipherSecretKey(ctx context.Context, cipherSecretKeyName string, serverInstanceName string) ApiGetCipherSecretKeyRequest {
+func (a *CipherSecretKeyAPIService) GetCipherSecretKey(ctx context.Context, cipherSecretKeyName string, serverInstanceName string) ApiGetCipherSecretKeyRequest {
 	return ApiGetCipherSecretKeyRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -53,7 +53,7 @@ func (a *CipherSecretKeyApiService) GetCipherSecretKey(ctx context.Context, ciph
 // Execute executes the request
 //
 //	@return CipherSecretKeyResponse
-func (a *CipherSecretKeyApiService) GetCipherSecretKeyExecute(r ApiGetCipherSecretKeyRequest) (*CipherSecretKeyResponse, *http.Response, error) {
+func (a *CipherSecretKeyAPIService) GetCipherSecretKeyExecute(r ApiGetCipherSecretKeyRequest) (*CipherSecretKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -61,7 +61,7 @@ func (a *CipherSecretKeyApiService) GetCipherSecretKeyExecute(r ApiGetCipherSecr
 		localVarReturnValue *CipherSecretKeyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherSecretKeyApiService.GetCipherSecretKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherSecretKeyAPIService.GetCipherSecretKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -130,7 +130,7 @@ func (a *CipherSecretKeyApiService) GetCipherSecretKeyExecute(r ApiGetCipherSecr
 
 type ApiListCipherSecretKeysRequest struct {
 	ctx                context.Context
-	ApiService         *CipherSecretKeyApiService
+	ApiService         *CipherSecretKeyAPIService
 	serverInstanceName string
 	filter             *string
 }
@@ -152,7 +152,7 @@ ListCipherSecretKeys Returns a list of all Cipher Secret Key objects
 	@param serverInstanceName Name of the Server Instance
 	@return ApiListCipherSecretKeysRequest
 */
-func (a *CipherSecretKeyApiService) ListCipherSecretKeys(ctx context.Context, serverInstanceName string) ApiListCipherSecretKeysRequest {
+func (a *CipherSecretKeyAPIService) ListCipherSecretKeys(ctx context.Context, serverInstanceName string) ApiListCipherSecretKeysRequest {
 	return ApiListCipherSecretKeysRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -163,7 +163,7 @@ func (a *CipherSecretKeyApiService) ListCipherSecretKeys(ctx context.Context, se
 // Execute executes the request
 //
 //	@return CipherSecretKeyListResponse
-func (a *CipherSecretKeyApiService) ListCipherSecretKeysExecute(r ApiListCipherSecretKeysRequest) (*CipherSecretKeyListResponse, *http.Response, error) {
+func (a *CipherSecretKeyAPIService) ListCipherSecretKeysExecute(r ApiListCipherSecretKeysRequest) (*CipherSecretKeyListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -171,7 +171,7 @@ func (a *CipherSecretKeyApiService) ListCipherSecretKeysExecute(r ApiListCipherS
 		localVarReturnValue *CipherSecretKeyListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherSecretKeyApiService.ListCipherSecretKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherSecretKeyAPIService.ListCipherSecretKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -242,7 +242,7 @@ func (a *CipherSecretKeyApiService) ListCipherSecretKeysExecute(r ApiListCipherS
 
 type ApiUpdateCipherSecretKeyRequest struct {
 	ctx                 context.Context
-	ApiService          *CipherSecretKeyApiService
+	ApiService          *CipherSecretKeyAPIService
 	cipherSecretKeyName string
 	serverInstanceName  string
 	updateRequest       *UpdateRequest
@@ -266,7 +266,7 @@ UpdateCipherSecretKey Update an existing Cipher Secret Key by name
 	@param serverInstanceName Name of the Server Instance
 	@return ApiUpdateCipherSecretKeyRequest
 */
-func (a *CipherSecretKeyApiService) UpdateCipherSecretKey(ctx context.Context, cipherSecretKeyName string, serverInstanceName string) ApiUpdateCipherSecretKeyRequest {
+func (a *CipherSecretKeyAPIService) UpdateCipherSecretKey(ctx context.Context, cipherSecretKeyName string, serverInstanceName string) ApiUpdateCipherSecretKeyRequest {
 	return ApiUpdateCipherSecretKeyRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -278,7 +278,7 @@ func (a *CipherSecretKeyApiService) UpdateCipherSecretKey(ctx context.Context, c
 // Execute executes the request
 //
 //	@return CipherSecretKeyResponse
-func (a *CipherSecretKeyApiService) UpdateCipherSecretKeyExecute(r ApiUpdateCipherSecretKeyRequest) (*CipherSecretKeyResponse, *http.Response, error) {
+func (a *CipherSecretKeyAPIService) UpdateCipherSecretKeyExecute(r ApiUpdateCipherSecretKeyRequest) (*CipherSecretKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -286,7 +286,7 @@ func (a *CipherSecretKeyApiService) UpdateCipherSecretKeyExecute(r ApiUpdateCiph
 		localVarReturnValue *CipherSecretKeyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherSecretKeyApiService.UpdateCipherSecretKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherSecretKeyAPIService.UpdateCipherSecretKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

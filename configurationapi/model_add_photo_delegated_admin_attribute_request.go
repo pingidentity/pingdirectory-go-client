@@ -19,12 +19,12 @@ var _ MappedNullable = &AddPhotoDelegatedAdminAttributeRequest{}
 
 // AddPhotoDelegatedAdminAttributeRequest struct for AddPhotoDelegatedAdminAttributeRequest
 type AddPhotoDelegatedAdminAttributeRequest struct {
-	// Specifies the name or OID of the LDAP attribute type.
-	AttributeType   string                                                `json:"attributeType"`
 	Schemas         []EnumphotoDelegatedAdminAttributeSchemaUrn           `json:"schemas"`
 	AllowedMIMEType []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`
 	// A description for this Delegated Admin Attribute
 	Description *string `json:"description,omitempty"`
+	// Name of the new Delegated Admin Attribute
+	AttributeType string `json:"attributeType"`
 	// A human readable display name for this Delegated Admin Attribute.
 	DisplayName string                                     `json:"displayName"`
 	Mutability  *EnumdelegatedAdminAttributeMutabilityProp `json:"mutability,omitempty"`
@@ -45,10 +45,10 @@ type AddPhotoDelegatedAdminAttributeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPhotoDelegatedAdminAttributeRequest(attributeType string, schemas []EnumphotoDelegatedAdminAttributeSchemaUrn, displayName string) *AddPhotoDelegatedAdminAttributeRequest {
+func NewAddPhotoDelegatedAdminAttributeRequest(schemas []EnumphotoDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string) *AddPhotoDelegatedAdminAttributeRequest {
 	this := AddPhotoDelegatedAdminAttributeRequest{}
-	this.AttributeType = attributeType
 	this.Schemas = schemas
+	this.AttributeType = attributeType
 	this.DisplayName = displayName
 	return &this
 }
@@ -59,30 +59,6 @@ func NewAddPhotoDelegatedAdminAttributeRequest(attributeType string, schemas []E
 func NewAddPhotoDelegatedAdminAttributeRequestWithDefaults() *AddPhotoDelegatedAdminAttributeRequest {
 	this := AddPhotoDelegatedAdminAttributeRequest{}
 	return &this
-}
-
-// GetAttributeType returns the AttributeType field value
-func (o *AddPhotoDelegatedAdminAttributeRequest) GetAttributeType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AttributeType
-}
-
-// GetAttributeTypeOk returns a tuple with the AttributeType field value
-// and a boolean to check if the value has been set.
-func (o *AddPhotoDelegatedAdminAttributeRequest) GetAttributeTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeType, true
-}
-
-// SetAttributeType sets field value
-func (o *AddPhotoDelegatedAdminAttributeRequest) SetAttributeType(v string) {
-	o.AttributeType = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -171,6 +147,30 @@ func (o *AddPhotoDelegatedAdminAttributeRequest) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddPhotoDelegatedAdminAttributeRequest) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetAttributeType returns the AttributeType field value
+func (o *AddPhotoDelegatedAdminAttributeRequest) GetAttributeType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AttributeType
+}
+
+// GetAttributeTypeOk returns a tuple with the AttributeType field value
+// and a boolean to check if the value has been set.
+func (o *AddPhotoDelegatedAdminAttributeRequest) GetAttributeTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeType, true
+}
+
+// SetAttributeType sets field value
+func (o *AddPhotoDelegatedAdminAttributeRequest) SetAttributeType(v string) {
+	o.AttributeType = v
 }
 
 // GetDisplayName returns the DisplayName field value
@@ -431,7 +431,6 @@ func (o AddPhotoDelegatedAdminAttributeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPhotoDelegatedAdminAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["attributeType"] = o.AttributeType
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllowedMIMEType) {
 		toSerialize["allowedMIMEType"] = o.AllowedMIMEType
@@ -439,6 +438,7 @@ func (o AddPhotoDelegatedAdminAttributeRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["attributeType"] = o.AttributeType
 	toSerialize["displayName"] = o.DisplayName
 	if !IsNil(o.Mutability) {
 		toSerialize["mutability"] = o.Mutability

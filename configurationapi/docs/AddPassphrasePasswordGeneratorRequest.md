@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GeneratorName** | **string** | Name of the new Password Generator | 
 **Schemas** | [**[]EnumpassphrasePasswordGeneratorSchemaUrn**](EnumpassphrasePasswordGeneratorSchemaUrn.md) |  | 
 **DictionaryFile** | **string** | The path to the dictionary file that will be used to obtain the words for use in generated passwords. | 
 **MinimumPasswordCharacters** | Pointer to **int64** | The minimum number of characters that generated passwords will be required to have. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **CapitalizeWords** | Pointer to **bool** | Indicates whether to capitalize each word used in the generated password. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Generator | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Generator is enabled for use. | 
+**GeneratorName** | **string** | Name of the new Password Generator | 
 
 ## Methods
 
 ### NewAddPassphrasePasswordGeneratorRequest
 
-`func NewAddPassphrasePasswordGeneratorRequest(generatorName string, schemas []EnumpassphrasePasswordGeneratorSchemaUrn, dictionaryFile string, enabled bool, ) *AddPassphrasePasswordGeneratorRequest`
+`func NewAddPassphrasePasswordGeneratorRequest(schemas []EnumpassphrasePasswordGeneratorSchemaUrn, dictionaryFile string, enabled bool, generatorName string, ) *AddPassphrasePasswordGeneratorRequest`
 
 NewAddPassphrasePasswordGeneratorRequest instantiates a new AddPassphrasePasswordGeneratorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddPassphrasePasswordGeneratorRequestWithDefaults instantiates a new AddPassphrasePasswordGeneratorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetGeneratorName
-
-`func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorName() string`
-
-GetGeneratorName returns the GeneratorName field if non-nil, zero value otherwise.
-
-### GetGeneratorNameOk
-
-`func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool)`
-
-GetGeneratorNameOk returns a tuple with the GeneratorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGeneratorName
-
-`func (o *AddPassphrasePasswordGeneratorRequest) SetGeneratorName(v string)`
-
-SetGeneratorName sets GeneratorName field to given value.
-
 
 ### GetSchemas
 
@@ -210,6 +190,26 @@ and a boolean to check if the value has been set.
 `func (o *AddPassphrasePasswordGeneratorRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetGeneratorName
+
+`func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorName() string`
+
+GetGeneratorName returns the GeneratorName field if non-nil, zero value otherwise.
+
+### GetGeneratorNameOk
+
+`func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool)`
+
+GetGeneratorNameOk returns a tuple with the GeneratorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGeneratorName
+
+`func (o *AddPassphrasePasswordGeneratorRequest) SetGeneratorName(v string)`
+
+SetGeneratorName sets GeneratorName field to given value.
 
 
 

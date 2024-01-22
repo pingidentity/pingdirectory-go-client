@@ -19,24 +19,24 @@ var _ MappedNullable = &RootDseRequestCriteriaResponse{}
 
 // RootDseRequestCriteriaResponse struct for RootDseRequestCriteriaResponse
 type RootDseRequestCriteriaResponse struct {
-	// Name of the Request Criteria
-	Id            string                                        `json:"id"`
 	Schemas       []EnumrootDseRequestCriteriaSchemaUrn         `json:"schemas"`
 	OperationType []EnumrequestCriteriaRootDseOperationTypeProp `json:"operationType,omitempty"`
 	// A description for this Request Criteria
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Request Criteria
+	Id string `json:"id"`
 }
 
 // NewRootDseRequestCriteriaResponse instantiates a new RootDseRequestCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRootDseRequestCriteriaResponse(id string, schemas []EnumrootDseRequestCriteriaSchemaUrn) *RootDseRequestCriteriaResponse {
+func NewRootDseRequestCriteriaResponse(schemas []EnumrootDseRequestCriteriaSchemaUrn, id string) *RootDseRequestCriteriaResponse {
 	this := RootDseRequestCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewRootDseRequestCriteriaResponse(id string, schemas []EnumrootDseRequestCr
 func NewRootDseRequestCriteriaResponseWithDefaults() *RootDseRequestCriteriaResponse {
 	this := RootDseRequestCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *RootDseRequestCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *RootDseRequestCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *RootDseRequestCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -224,6 +200,30 @@ func (o *RootDseRequestCriteriaResponse) SetUrnpingidentityschemasconfigurationm
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *RootDseRequestCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *RootDseRequestCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *RootDseRequestCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o RootDseRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -234,7 +234,6 @@ func (o RootDseRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o RootDseRequestCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.OperationType) {
 		toSerialize["operationType"] = o.OperationType
@@ -248,6 +247,7 @@ func (o RootDseRequestCriteriaResponse) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

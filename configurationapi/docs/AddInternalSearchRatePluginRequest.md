@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnuminternalSearchRatePluginSchemaUrn**](EnuminternalSearchRatePluginSchemaUrn.md) |  | 
 **PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **NumThreads** | Pointer to **int64** | Specifies the number of concurrent threads that should be used to process the search operations. | [optional] 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddInternalSearchRatePluginRequest
 
-`func NewAddInternalSearchRatePluginRequest(pluginName string, schemas []EnuminternalSearchRatePluginSchemaUrn, baseDN string, filterPrefix string, enabled bool, ) *AddInternalSearchRatePluginRequest`
+`func NewAddInternalSearchRatePluginRequest(schemas []EnuminternalSearchRatePluginSchemaUrn, baseDN string, filterPrefix string, enabled bool, pluginName string, ) *AddInternalSearchRatePluginRequest`
 
 NewAddInternalSearchRatePluginRequest instantiates a new AddInternalSearchRatePluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewAddInternalSearchRatePluginRequestWithDefaults instantiates a new AddInternalSearchRatePluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddInternalSearchRatePluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddInternalSearchRatePluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddInternalSearchRatePluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -310,6 +290,26 @@ SetInvokeForInternalOperations sets InvokeForInternalOperations field to given v
 `func (o *AddInternalSearchRatePluginRequest) HasInvokeForInternalOperations() bool`
 
 HasInvokeForInternalOperations returns a boolean if a field has been set.
+
+### GetPluginName
+
+`func (o *AddInternalSearchRatePluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddInternalSearchRatePluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddInternalSearchRatePluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

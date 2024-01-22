@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Trust Manager Provider | 
 **Schemas** | [**[]EnumjvmDefaultTrustManagerProviderSchemaUrn**](EnumjvmDefaultTrustManagerProviderSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicate whether the Trust Manager Provider is enabled for use. | 
+**ProviderName** | **string** | Name of the new Trust Manager Provider | 
 
 ## Methods
 
 ### NewAddJvmDefaultTrustManagerProviderRequest
 
-`func NewAddJvmDefaultTrustManagerProviderRequest(providerName string, schemas []EnumjvmDefaultTrustManagerProviderSchemaUrn, enabled bool, ) *AddJvmDefaultTrustManagerProviderRequest`
+`func NewAddJvmDefaultTrustManagerProviderRequest(schemas []EnumjvmDefaultTrustManagerProviderSchemaUrn, enabled bool, providerName string, ) *AddJvmDefaultTrustManagerProviderRequest`
 
 NewAddJvmDefaultTrustManagerProviderRequest instantiates a new AddJvmDefaultTrustManagerProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -26,26 +26,6 @@ will change when the set of required properties is changed
 NewAddJvmDefaultTrustManagerProviderRequestWithDefaults instantiates a new AddJvmDefaultTrustManagerProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddJvmDefaultTrustManagerProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -85,6 +65,26 @@ and a boolean to check if the value has been set.
 `func (o *AddJvmDefaultTrustManagerProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddJvmDefaultTrustManagerProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

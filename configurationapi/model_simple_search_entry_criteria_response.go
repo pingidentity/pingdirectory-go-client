@@ -19,8 +19,6 @@ var _ MappedNullable = &SimpleSearchEntryCriteriaResponse{}
 
 // SimpleSearchEntryCriteriaResponse struct for SimpleSearchEntryCriteriaResponse
 type SimpleSearchEntryCriteriaResponse struct {
-	// Name of the Search Entry Criteria
-	Id      string                                   `json:"id"`
 	Schemas []EnumsimpleSearchEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for entries included in this Simple Search Entry Criteria. of them.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
@@ -56,16 +54,18 @@ type SimpleSearchEntryCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Search Entry Criteria
+	Id string `json:"id"`
 }
 
 // NewSimpleSearchEntryCriteriaResponse instantiates a new SimpleSearchEntryCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSimpleSearchEntryCriteriaResponse(id string, schemas []EnumsimpleSearchEntryCriteriaSchemaUrn) *SimpleSearchEntryCriteriaResponse {
+func NewSimpleSearchEntryCriteriaResponse(schemas []EnumsimpleSearchEntryCriteriaSchemaUrn, id string) *SimpleSearchEntryCriteriaResponse {
 	this := SimpleSearchEntryCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -75,30 +75,6 @@ func NewSimpleSearchEntryCriteriaResponse(id string, schemas []EnumsimpleSearchE
 func NewSimpleSearchEntryCriteriaResponseWithDefaults() *SimpleSearchEntryCriteriaResponse {
 	this := SimpleSearchEntryCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SimpleSearchEntryCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SimpleSearchEntryCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SimpleSearchEntryCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -701,6 +677,30 @@ func (o *SimpleSearchEntryCriteriaResponse) SetUrnpingidentityschemasconfigurati
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SimpleSearchEntryCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SimpleSearchEntryCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SimpleSearchEntryCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SimpleSearchEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -711,7 +711,6 @@ func (o SimpleSearchEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o SimpleSearchEntryCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
@@ -767,6 +766,7 @@ func (o SimpleSearchEntryCriteriaResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

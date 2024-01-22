@@ -19,8 +19,6 @@ var _ MappedNullable = &AddComposedAttributePluginRequest{}
 
 // AddComposedAttributePluginRequest struct for AddComposedAttributePluginRequest
 type AddComposedAttributePluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                 `json:"pluginName"`
 	Schemas    []EnumcomposedAttributePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp             `json:"pluginType,omitempty"`
 	// The name or OID of the attribute type for which values are to be generated.
@@ -49,19 +47,21 @@ type AddComposedAttributePluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddComposedAttributePluginRequest instantiates a new AddComposedAttributePluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddComposedAttributePluginRequest(pluginName string, schemas []EnumcomposedAttributePluginSchemaUrn, attributeType string, valuePattern []string, enabled bool) *AddComposedAttributePluginRequest {
+func NewAddComposedAttributePluginRequest(schemas []EnumcomposedAttributePluginSchemaUrn, attributeType string, valuePattern []string, enabled bool, pluginName string) *AddComposedAttributePluginRequest {
 	this := AddComposedAttributePluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.AttributeType = attributeType
 	this.ValuePattern = valuePattern
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -71,30 +71,6 @@ func NewAddComposedAttributePluginRequest(pluginName string, schemas []Enumcompo
 func NewAddComposedAttributePluginRequestWithDefaults() *AddComposedAttributePluginRequest {
 	this := AddComposedAttributePluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddComposedAttributePluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddComposedAttributePluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddComposedAttributePluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -673,6 +649,30 @@ func (o *AddComposedAttributePluginRequest) SetInvokeForInternalOperations(v boo
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddComposedAttributePluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddComposedAttributePluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddComposedAttributePluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddComposedAttributePluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -683,7 +683,6 @@ func (o AddComposedAttributePluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddComposedAttributePluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
@@ -733,6 +732,7 @@ func (o AddComposedAttributePluginRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

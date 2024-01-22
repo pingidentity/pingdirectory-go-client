@@ -19,8 +19,6 @@ var _ MappedNullable = &AddPassThroughAuthenticationPluginRequest{}
 
 // AddPassThroughAuthenticationPluginRequest struct for AddPassThroughAuthenticationPluginRequest
 type AddPassThroughAuthenticationPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                         `json:"pluginName"`
 	Schemas    []EnumpassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp                     `json:"pluginType,omitempty"`
 	// Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
@@ -58,18 +56,20 @@ type AddPassThroughAuthenticationPluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddPassThroughAuthenticationPluginRequest instantiates a new AddPassThroughAuthenticationPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPassThroughAuthenticationPluginRequest(pluginName string, schemas []EnumpassThroughAuthenticationPluginSchemaUrn, server []string, enabled bool) *AddPassThroughAuthenticationPluginRequest {
+func NewAddPassThroughAuthenticationPluginRequest(schemas []EnumpassThroughAuthenticationPluginSchemaUrn, server []string, enabled bool, pluginName string) *AddPassThroughAuthenticationPluginRequest {
 	this := AddPassThroughAuthenticationPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.Server = server
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -79,30 +79,6 @@ func NewAddPassThroughAuthenticationPluginRequest(pluginName string, schemas []E
 func NewAddPassThroughAuthenticationPluginRequestWithDefaults() *AddPassThroughAuthenticationPluginRequest {
 	this := AddPassThroughAuthenticationPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddPassThroughAuthenticationPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddPassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddPassThroughAuthenticationPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -721,6 +697,30 @@ func (o *AddPassThroughAuthenticationPluginRequest) SetInvokeForInternalOperatio
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddPassThroughAuthenticationPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddPassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddPassThroughAuthenticationPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddPassThroughAuthenticationPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -731,7 +731,6 @@ func (o AddPassThroughAuthenticationPluginRequest) MarshalJSON() ([]byte, error)
 
 func (o AddPassThroughAuthenticationPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
@@ -786,6 +785,7 @@ func (o AddPassThroughAuthenticationPluginRequest) ToMap() (map[string]interface
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

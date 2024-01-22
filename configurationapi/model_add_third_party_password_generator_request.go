@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyPasswordGeneratorRequest{}
 
 // AddThirdPartyPasswordGeneratorRequest struct for AddThirdPartyPasswordGeneratorRequest
 type AddThirdPartyPasswordGeneratorRequest struct {
-	// Name of the new Password Generator
-	GeneratorName string                                     `json:"generatorName"`
-	Schemas       []EnumthirdPartyPasswordGeneratorSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyPasswordGeneratorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Password Generator.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Password Generator. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddThirdPartyPasswordGeneratorRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Generator is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Generator
+	GeneratorName string `json:"generatorName"`
 }
 
 // NewAddThirdPartyPasswordGeneratorRequest instantiates a new AddThirdPartyPasswordGeneratorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyPasswordGeneratorRequest(generatorName string, schemas []EnumthirdPartyPasswordGeneratorSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyPasswordGeneratorRequest {
+func NewAddThirdPartyPasswordGeneratorRequest(schemas []EnumthirdPartyPasswordGeneratorSchemaUrn, extensionClass string, enabled bool, generatorName string) *AddThirdPartyPasswordGeneratorRequest {
 	this := AddThirdPartyPasswordGeneratorRequest{}
-	this.GeneratorName = generatorName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.GeneratorName = generatorName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddThirdPartyPasswordGeneratorRequest(generatorName string, schemas []En
 func NewAddThirdPartyPasswordGeneratorRequestWithDefaults() *AddThirdPartyPasswordGeneratorRequest {
 	this := AddThirdPartyPasswordGeneratorRequest{}
 	return &this
-}
-
-// GetGeneratorName returns the GeneratorName field value
-func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.GeneratorName
-}
-
-// GetGeneratorNameOk returns a tuple with the GeneratorName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GeneratorName, true
-}
-
-// SetGeneratorName sets field value
-func (o *AddThirdPartyPasswordGeneratorRequest) SetGeneratorName(v string) {
-	o.GeneratorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddThirdPartyPasswordGeneratorRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetGeneratorName returns the GeneratorName field value
+func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.GeneratorName
+}
+
+// GetGeneratorNameOk returns a tuple with the GeneratorName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GeneratorName, true
+}
+
+// SetGeneratorName sets field value
+func (o *AddThirdPartyPasswordGeneratorRequest) SetGeneratorName(v string) {
+	o.GeneratorName = v
+}
+
 func (o AddThirdPartyPasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddThirdPartyPasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyPasswordGeneratorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["generatorName"] = o.GeneratorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -233,6 +232,7 @@ func (o AddThirdPartyPasswordGeneratorRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["generatorName"] = o.GeneratorName
 	return toSerialize, nil
 }
 

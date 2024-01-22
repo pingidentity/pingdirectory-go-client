@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Data Security Auditor | 
 **Schemas** | [**[]EnumfilterDataSecurityAuditorSchemaUrn**](EnumfilterDataSecurityAuditorSchemaUrn.md) |  | 
 **ReportFile** | **string** | Specifies the name of the detailed report file. | 
 **Filter** | **[]string** | The filter to use to identify entries that should be reported. Multiple filters may be configured, and each reported entry will indicate which of these filter(s) matched that entry. | 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Data Security Auditor | 
 
 ## Methods
 
 ### NewFilterDataSecurityAuditorResponse
 
-`func NewFilterDataSecurityAuditorResponse(id string, schemas []EnumfilterDataSecurityAuditorSchemaUrn, reportFile string, filter []string, enabled bool, ) *FilterDataSecurityAuditorResponse`
+`func NewFilterDataSecurityAuditorResponse(schemas []EnumfilterDataSecurityAuditorSchemaUrn, reportFile string, filter []string, enabled bool, id string, ) *FilterDataSecurityAuditorResponse`
 
 NewFilterDataSecurityAuditorResponse instantiates a new FilterDataSecurityAuditorResponse object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewFilterDataSecurityAuditorResponseWithDefaults instantiates a new FilterDataSecurityAuditorResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *FilterDataSecurityAuditorResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *FilterDataSecurityAuditorResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *FilterDataSecurityAuditorResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -258,6 +238,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *FilterDataSecurityAuditorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *FilterDataSecurityAuditorResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *FilterDataSecurityAuditorResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *FilterDataSecurityAuditorResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

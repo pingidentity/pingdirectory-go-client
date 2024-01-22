@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ValidationName** | **string** | Name of the new Token Claim Validation | 
 **Schemas** | [**[]EnumbooleanTokenClaimValidationSchemaUrn**](EnumbooleanTokenClaimValidationSchemaUrn.md) |  | 
 **RequiredValue** | [**EnumtokenClaimValidationRequiredValueProp**](EnumtokenClaimValidationRequiredValueProp.md) |  | 
 **Description** | Pointer to **string** | A description for this Token Claim Validation | [optional] 
 **ClaimName** | **string** | The name of the claim to be validated. | 
+**ValidationName** | **string** | Name of the new Token Claim Validation | 
 
 ## Methods
 
 ### NewAddBooleanTokenClaimValidationRequest
 
-`func NewAddBooleanTokenClaimValidationRequest(validationName string, schemas []EnumbooleanTokenClaimValidationSchemaUrn, requiredValue EnumtokenClaimValidationRequiredValueProp, claimName string, ) *AddBooleanTokenClaimValidationRequest`
+`func NewAddBooleanTokenClaimValidationRequest(schemas []EnumbooleanTokenClaimValidationSchemaUrn, requiredValue EnumtokenClaimValidationRequiredValueProp, claimName string, validationName string, ) *AddBooleanTokenClaimValidationRequest`
 
 NewAddBooleanTokenClaimValidationRequest instantiates a new AddBooleanTokenClaimValidationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddBooleanTokenClaimValidationRequestWithDefaults instantiates a new AddBooleanTokenClaimValidationRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetValidationName
-
-`func (o *AddBooleanTokenClaimValidationRequest) GetValidationName() string`
-
-GetValidationName returns the ValidationName field if non-nil, zero value otherwise.
-
-### GetValidationNameOk
-
-`func (o *AddBooleanTokenClaimValidationRequest) GetValidationNameOk() (*string, bool)`
-
-GetValidationNameOk returns a tuple with the ValidationName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValidationName
-
-`func (o *AddBooleanTokenClaimValidationRequest) SetValidationName(v string)`
-
-SetValidationName sets ValidationName field to given value.
-
 
 ### GetSchemas
 
@@ -132,6 +112,26 @@ and a boolean to check if the value has been set.
 `func (o *AddBooleanTokenClaimValidationRequest) SetClaimName(v string)`
 
 SetClaimName sets ClaimName field to given value.
+
+
+### GetValidationName
+
+`func (o *AddBooleanTokenClaimValidationRequest) GetValidationName() string`
+
+GetValidationName returns the ValidationName field if non-nil, zero value otherwise.
+
+### GetValidationNameOk
+
+`func (o *AddBooleanTokenClaimValidationRequest) GetValidationNameOk() (*string, bool)`
+
+GetValidationNameOk returns a tuple with the ValidationName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidationName
+
+`func (o *AddBooleanTokenClaimValidationRequest) SetValidationName(v string)`
+
+SetValidationName sets ValidationName field to given value.
 
 
 

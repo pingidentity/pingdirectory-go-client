@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Log Retention Policy | 
 **Schemas** | [**[]EnumfileCountLogRetentionPolicySchemaUrn**](EnumfileCountLogRetentionPolicySchemaUrn.md) |  | 
 **NumberOfFiles** | **int64** | Specifies the number of archived log files to retain before the oldest ones are cleaned. | 
 **Description** | Pointer to **string** | A description for this Log Retention Policy | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Log Retention Policy | 
 
 ## Methods
 
 ### NewFileCountLogRetentionPolicyResponse
 
-`func NewFileCountLogRetentionPolicyResponse(id string, schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int64, ) *FileCountLogRetentionPolicyResponse`
+`func NewFileCountLogRetentionPolicyResponse(schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int64, id string, ) *FileCountLogRetentionPolicyResponse`
 
 NewFileCountLogRetentionPolicyResponse instantiates a new FileCountLogRetentionPolicyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewFileCountLogRetentionPolicyResponseWithDefaults instantiates a new FileCountLogRetentionPolicyResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *FileCountLogRetentionPolicyResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *FileCountLogRetentionPolicyResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *FileCountLogRetentionPolicyResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -164,6 +144,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *FileCountLogRetentionPolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *FileCountLogRetentionPolicyResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *FileCountLogRetentionPolicyResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *FileCountLogRetentionPolicyResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

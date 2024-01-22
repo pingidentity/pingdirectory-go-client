@@ -19,8 +19,6 @@ var _ MappedNullable = &SimpleToExternalBindPluginResponse{}
 
 // SimpleToExternalBindPluginResponse struct for SimpleToExternalBindPluginResponse
 type SimpleToExternalBindPluginResponse struct {
-	// Name of the Plugin
-	Id      string                                    `json:"id"`
 	Schemas []EnumsimpleToExternalBindPluginSchemaUrn `json:"schemas"`
 	// Specifies a connection criteria object that may be used to indicate the set of clients for which this plugin should be used. If a value is provided, then this plugin will only be used for requests from client connections matching this criteria.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
@@ -32,17 +30,19 @@ type SimpleToExternalBindPluginResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewSimpleToExternalBindPluginResponse instantiates a new SimpleToExternalBindPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSimpleToExternalBindPluginResponse(id string, schemas []EnumsimpleToExternalBindPluginSchemaUrn, enabled bool) *SimpleToExternalBindPluginResponse {
+func NewSimpleToExternalBindPluginResponse(schemas []EnumsimpleToExternalBindPluginSchemaUrn, enabled bool, id string) *SimpleToExternalBindPluginResponse {
 	this := SimpleToExternalBindPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewSimpleToExternalBindPluginResponse(id string, schemas []EnumsimpleToExte
 func NewSimpleToExternalBindPluginResponseWithDefaults() *SimpleToExternalBindPluginResponse {
 	this := SimpleToExternalBindPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SimpleToExternalBindPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SimpleToExternalBindPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SimpleToExternalBindPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -286,6 +262,30 @@ func (o *SimpleToExternalBindPluginResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SimpleToExternalBindPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SimpleToExternalBindPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SimpleToExternalBindPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SimpleToExternalBindPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -296,7 +296,6 @@ func (o SimpleToExternalBindPluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o SimpleToExternalBindPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ConnectionCriteria) {
 		toSerialize["connectionCriteria"] = o.ConnectionCriteria
@@ -314,6 +313,7 @@ func (o SimpleToExternalBindPluginResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

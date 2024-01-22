@@ -19,8 +19,6 @@ var _ MappedNullable = &PrometheusMonitorAttributeMetricResponse{}
 
 // PrometheusMonitorAttributeMetricResponse struct for PrometheusMonitorAttributeMetricResponse
 type PrometheusMonitorAttributeMetricResponse struct {
-	// Name of the Prometheus Monitor Attribute Metric
-	Id      string                                          `json:"id"`
 	Schemas []EnumprometheusMonitorAttributeMetricSchemaUrn `json:"schemas,omitempty"`
 	// The name that will be used in the metric to be consumed by Prometheus.
 	MetricName string `json:"metricName"`
@@ -37,19 +35,21 @@ type PrometheusMonitorAttributeMetricResponse struct {
 	LabelNameValuePair                            []string                                           `json:"labelNameValuePair,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Prometheus Monitor Attribute Metric
+	Id string `json:"id"`
 }
 
 // NewPrometheusMonitorAttributeMetricResponse instantiates a new PrometheusMonitorAttributeMetricResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPrometheusMonitorAttributeMetricResponse(id string, metricName string, monitorAttributeName string, monitorObjectClassName string, metricType EnumprometheusMonitorAttributeMetricMetricTypeProp) *PrometheusMonitorAttributeMetricResponse {
+func NewPrometheusMonitorAttributeMetricResponse(metricName string, monitorAttributeName string, monitorObjectClassName string, metricType EnumprometheusMonitorAttributeMetricMetricTypeProp, id string) *PrometheusMonitorAttributeMetricResponse {
 	this := PrometheusMonitorAttributeMetricResponse{}
-	this.Id = id
 	this.MetricName = metricName
 	this.MonitorAttributeName = monitorAttributeName
 	this.MonitorObjectClassName = monitorObjectClassName
 	this.MetricType = metricType
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewPrometheusMonitorAttributeMetricResponse(id string, metricName string, m
 func NewPrometheusMonitorAttributeMetricResponseWithDefaults() *PrometheusMonitorAttributeMetricResponse {
 	this := PrometheusMonitorAttributeMetricResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *PrometheusMonitorAttributeMetricResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PrometheusMonitorAttributeMetricResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *PrometheusMonitorAttributeMetricResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -373,6 +349,30 @@ func (o *PrometheusMonitorAttributeMetricResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *PrometheusMonitorAttributeMetricResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *PrometheusMonitorAttributeMetricResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *PrometheusMonitorAttributeMetricResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o PrometheusMonitorAttributeMetricResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -383,7 +383,6 @@ func (o PrometheusMonitorAttributeMetricResponse) MarshalJSON() ([]byte, error) 
 
 func (o PrometheusMonitorAttributeMetricResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -406,6 +405,7 @@ func (o PrometheusMonitorAttributeMetricResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

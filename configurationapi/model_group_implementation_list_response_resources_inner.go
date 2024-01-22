@@ -17,15 +17,23 @@ import (
 
 // GroupImplementationListResponseResourcesInner - struct for GroupImplementationListResponseResourcesInner
 type GroupImplementationListResponseResourcesInner struct {
-	DynamicGroupImplementationResponse       *DynamicGroupImplementationResponse
-	StaticGroupImplementationResponse        *StaticGroupImplementationResponse
-	VirtualStaticGroupImplementationResponse *VirtualStaticGroupImplementationResponse
+	DynamicGroupImplementationResponse        *DynamicGroupImplementationResponse
+	InvertedStaticGroupImplementationResponse *InvertedStaticGroupImplementationResponse
+	StaticGroupImplementationResponse         *StaticGroupImplementationResponse
+	VirtualStaticGroupImplementationResponse  *VirtualStaticGroupImplementationResponse
 }
 
 // DynamicGroupImplementationResponseAsGroupImplementationListResponseResourcesInner is a convenience function that returns DynamicGroupImplementationResponse wrapped in GroupImplementationListResponseResourcesInner
 func DynamicGroupImplementationResponseAsGroupImplementationListResponseResourcesInner(v *DynamicGroupImplementationResponse) GroupImplementationListResponseResourcesInner {
 	return GroupImplementationListResponseResourcesInner{
 		DynamicGroupImplementationResponse: v,
+	}
+}
+
+// InvertedStaticGroupImplementationResponseAsGroupImplementationListResponseResourcesInner is a convenience function that returns InvertedStaticGroupImplementationResponse wrapped in GroupImplementationListResponseResourcesInner
+func InvertedStaticGroupImplementationResponseAsGroupImplementationListResponseResourcesInner(v *InvertedStaticGroupImplementationResponse) GroupImplementationListResponseResourcesInner {
+	return GroupImplementationListResponseResourcesInner{
+		InvertedStaticGroupImplementationResponse: v,
 	}
 }
 
@@ -60,6 +68,19 @@ func (dst *GroupImplementationListResponseResourcesInner) UnmarshalJSON(data []b
 		dst.DynamicGroupImplementationResponse = nil
 	}
 
+	// try to unmarshal data into InvertedStaticGroupImplementationResponse
+	err = newStrictDecoder(data).Decode(&dst.InvertedStaticGroupImplementationResponse)
+	if err == nil {
+		jsonInvertedStaticGroupImplementationResponse, _ := json.Marshal(dst.InvertedStaticGroupImplementationResponse)
+		if string(jsonInvertedStaticGroupImplementationResponse) == "{}" { // empty struct
+			dst.InvertedStaticGroupImplementationResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.InvertedStaticGroupImplementationResponse = nil
+	}
+
 	// try to unmarshal data into StaticGroupImplementationResponse
 	err = newStrictDecoder(data).Decode(&dst.StaticGroupImplementationResponse)
 	if err == nil {
@@ -89,6 +110,7 @@ func (dst *GroupImplementationListResponseResourcesInner) UnmarshalJSON(data []b
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.DynamicGroupImplementationResponse = nil
+		dst.InvertedStaticGroupImplementationResponse = nil
 		dst.StaticGroupImplementationResponse = nil
 		dst.VirtualStaticGroupImplementationResponse = nil
 
@@ -104,6 +126,10 @@ func (dst *GroupImplementationListResponseResourcesInner) UnmarshalJSON(data []b
 func (src GroupImplementationListResponseResourcesInner) MarshalJSON() ([]byte, error) {
 	if src.DynamicGroupImplementationResponse != nil {
 		return json.Marshal(&src.DynamicGroupImplementationResponse)
+	}
+
+	if src.InvertedStaticGroupImplementationResponse != nil {
+		return json.Marshal(&src.InvertedStaticGroupImplementationResponse)
 	}
 
 	if src.StaticGroupImplementationResponse != nil {
@@ -124,6 +150,10 @@ func (obj *GroupImplementationListResponseResourcesInner) GetActualInstance() in
 	}
 	if obj.DynamicGroupImplementationResponse != nil {
 		return obj.DynamicGroupImplementationResponse
+	}
+
+	if obj.InvertedStaticGroupImplementationResponse != nil {
+		return obj.InvertedStaticGroupImplementationResponse
 	}
 
 	if obj.StaticGroupImplementationResponse != nil {

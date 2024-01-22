@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Key Manager Provider | 
 **Schemas** | [**[]EnumfileBasedKeyManagerProviderSchemaUrn**](EnumfileBasedKeyManagerProviderSchemaUrn.md) |  | 
 **KeyStoreFile** | **string** | Specifies the path to the file that contains the private key information. This may be an absolute path, or a path that is relative to the Directory Server instance root. | 
 **KeyStoreType** | Pointer to **string** | Specifies the format for the data in the key store file. | [optional] 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **PrivateKeyPinPassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN. | [optional] 
 **Description** | Pointer to **string** | A description for this Key Manager Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Key Manager Provider is enabled for use. | 
+**ProviderName** | **string** | Name of the new Key Manager Provider | 
 
 ## Methods
 
 ### NewAddFileBasedKeyManagerProviderRequest
 
-`func NewAddFileBasedKeyManagerProviderRequest(providerName string, schemas []EnumfileBasedKeyManagerProviderSchemaUrn, keyStoreFile string, enabled bool, ) *AddFileBasedKeyManagerProviderRequest`
+`func NewAddFileBasedKeyManagerProviderRequest(schemas []EnumfileBasedKeyManagerProviderSchemaUrn, keyStoreFile string, enabled bool, providerName string, ) *AddFileBasedKeyManagerProviderRequest`
 
 NewAddFileBasedKeyManagerProviderRequest instantiates a new AddFileBasedKeyManagerProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewAddFileBasedKeyManagerProviderRequestWithDefaults instantiates a new AddFileBasedKeyManagerProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddFileBasedKeyManagerProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddFileBasedKeyManagerProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddFileBasedKeyManagerProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -314,6 +294,26 @@ and a boolean to check if the value has been set.
 `func (o *AddFileBasedKeyManagerProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddFileBasedKeyManagerProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddFileBasedKeyManagerProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddFileBasedKeyManagerProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

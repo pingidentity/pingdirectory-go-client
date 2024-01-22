@@ -1,14 +1,14 @@
-# \MonitoringEndpointApi
+# \MonitoringEndpointAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddMonitoringEndpoint**](MonitoringEndpointApi.md#AddMonitoringEndpoint) | **Post** /monitoring-endpoints | Add a new Monitoring Endpoint to the config
-[**DeleteMonitoringEndpoint**](MonitoringEndpointApi.md#DeleteMonitoringEndpoint) | **Delete** /monitoring-endpoints/{monitoring-endpoint-name} | Delete a Monitoring Endpoint
-[**GetMonitoringEndpoint**](MonitoringEndpointApi.md#GetMonitoringEndpoint) | **Get** /monitoring-endpoints/{monitoring-endpoint-name} | Returns a single Monitoring Endpoint
-[**ListMonitoringEndpoints**](MonitoringEndpointApi.md#ListMonitoringEndpoints) | **Get** /monitoring-endpoints | Returns a list of all Monitoring Endpoint objects
-[**UpdateMonitoringEndpoint**](MonitoringEndpointApi.md#UpdateMonitoringEndpoint) | **Patch** /monitoring-endpoints/{monitoring-endpoint-name} | Update an existing Monitoring Endpoint by name
+[**AddMonitoringEndpoint**](MonitoringEndpointAPI.md#AddMonitoringEndpoint) | **Post** /monitoring-endpoints | Add a new Monitoring Endpoint to the config
+[**DeleteMonitoringEndpoint**](MonitoringEndpointAPI.md#DeleteMonitoringEndpoint) | **Delete** /monitoring-endpoints/{monitoring-endpoint-name} | Delete a Monitoring Endpoint
+[**GetMonitoringEndpoint**](MonitoringEndpointAPI.md#GetMonitoringEndpoint) | **Get** /monitoring-endpoints/{monitoring-endpoint-name} | Returns a single Monitoring Endpoint
+[**ListMonitoringEndpoints**](MonitoringEndpointAPI.md#ListMonitoringEndpoints) | **Get** /monitoring-endpoints | Returns a list of all Monitoring Endpoint objects
+[**UpdateMonitoringEndpoint**](MonitoringEndpointAPI.md#UpdateMonitoringEndpoint) | **Patch** /monitoring-endpoints/{monitoring-endpoint-name} | Update an existing Monitoring Endpoint by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addStatsdMonitoringEndpointRequest := *openapiclient.NewAddStatsdMonitoringEndpointRequest("EndpointName_example", []openapiclient.EnumstatsdMonitoringEndpointSchemaUrn{openapiclient.Enumstatsd-monitoring-endpointSchemaUrn("urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd")}, "Hostname_example", false) // AddStatsdMonitoringEndpointRequest | Create a new Monitoring Endpoint in the config
+    addStatsdMonitoringEndpointRequest := *openapiclient.NewAddStatsdMonitoringEndpointRequest([]openapiclient.EnumstatsdMonitoringEndpointSchemaUrn{openapiclient.Enumstatsd-monitoring-endpointSchemaUrn("urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd")}, "Hostname_example", false, "EndpointName_example") // AddStatsdMonitoringEndpointRequest | Create a new Monitoring Endpoint in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringEndpointApi.AddMonitoringEndpoint(context.Background()).AddStatsdMonitoringEndpointRequest(addStatsdMonitoringEndpointRequest).Execute()
+    resp, r, err := apiClient.MonitoringEndpointAPI.AddMonitoringEndpoint(context.Background()).AddStatsdMonitoringEndpointRequest(addStatsdMonitoringEndpointRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointApi.AddMonitoringEndpoint``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointAPI.AddMonitoringEndpoint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddMonitoringEndpoint`: StatsdMonitoringEndpointResponse
-    fmt.Fprintf(os.Stdout, "Response from `MonitoringEndpointApi.AddMonitoringEndpoint`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MonitoringEndpointAPI.AddMonitoringEndpoint`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MonitoringEndpointApi.DeleteMonitoringEndpoint(context.Background(), monitoringEndpointName).Execute()
+    r, err := apiClient.MonitoringEndpointAPI.DeleteMonitoringEndpoint(context.Background(), monitoringEndpointName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointApi.DeleteMonitoringEndpoint``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointAPI.DeleteMonitoringEndpoint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringEndpointApi.GetMonitoringEndpoint(context.Background(), monitoringEndpointName).Execute()
+    resp, r, err := apiClient.MonitoringEndpointAPI.GetMonitoringEndpoint(context.Background(), monitoringEndpointName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointApi.GetMonitoringEndpoint``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointAPI.GetMonitoringEndpoint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMonitoringEndpoint`: StatsdMonitoringEndpointResponse
-    fmt.Fprintf(os.Stdout, "Response from `MonitoringEndpointApi.GetMonitoringEndpoint`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MonitoringEndpointAPI.GetMonitoringEndpoint`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringEndpointApi.ListMonitoringEndpoints(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.MonitoringEndpointAPI.ListMonitoringEndpoints(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointApi.ListMonitoringEndpoints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointAPI.ListMonitoringEndpoints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListMonitoringEndpoints`: MonitoringEndpointListResponse
-    fmt.Fprintf(os.Stdout, "Response from `MonitoringEndpointApi.ListMonitoringEndpoints`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MonitoringEndpointAPI.ListMonitoringEndpoints`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringEndpointApi.UpdateMonitoringEndpoint(context.Background(), monitoringEndpointName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.MonitoringEndpointAPI.UpdateMonitoringEndpoint(context.Background(), monitoringEndpointName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointApi.UpdateMonitoringEndpoint``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointAPI.UpdateMonitoringEndpoint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateMonitoringEndpoint`: StatsdMonitoringEndpointResponse
-    fmt.Fprintf(os.Stdout, "Response from `MonitoringEndpointApi.UpdateMonitoringEndpoint`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MonitoringEndpointAPI.UpdateMonitoringEndpoint`: %v\n", resp)
 }
 ```
 

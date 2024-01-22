@@ -1,14 +1,14 @@
-# \KeyPairApi
+# \KeyPairAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddKeyPair**](KeyPairApi.md#AddKeyPair) | **Post** /key-pairs | Add a new Key Pair to the config
-[**DeleteKeyPair**](KeyPairApi.md#DeleteKeyPair) | **Delete** /key-pairs/{key-pair-name} | Delete a Key Pair
-[**GetKeyPair**](KeyPairApi.md#GetKeyPair) | **Get** /key-pairs/{key-pair-name} | Returns a single Key Pair
-[**ListKeyPairs**](KeyPairApi.md#ListKeyPairs) | **Get** /key-pairs | Returns a list of all Key Pair objects
-[**UpdateKeyPair**](KeyPairApi.md#UpdateKeyPair) | **Patch** /key-pairs/{key-pair-name} | Update an existing Key Pair by name
+[**AddKeyPair**](KeyPairAPI.md#AddKeyPair) | **Post** /key-pairs | Add a new Key Pair to the config
+[**DeleteKeyPair**](KeyPairAPI.md#DeleteKeyPair) | **Delete** /key-pairs/{key-pair-name} | Delete a Key Pair
+[**GetKeyPair**](KeyPairAPI.md#GetKeyPair) | **Get** /key-pairs/{key-pair-name} | Returns a single Key Pair
+[**ListKeyPairs**](KeyPairAPI.md#ListKeyPairs) | **Get** /key-pairs | Returns a list of all Key Pair objects
+[**UpdateKeyPair**](KeyPairAPI.md#UpdateKeyPair) | **Patch** /key-pairs/{key-pair-name} | Update an existing Key Pair by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairApi.AddKeyPair(context.Background()).AddKeyPairRequest(addKeyPairRequest).Execute()
+    resp, r, err := apiClient.KeyPairAPI.AddKeyPair(context.Background()).AddKeyPairRequest(addKeyPairRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairApi.AddKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairAPI.AddKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddKeyPair`: KeyPairResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairApi.AddKeyPair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairAPI.AddKeyPair`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KeyPairApi.DeleteKeyPair(context.Background(), keyPairName).Execute()
+    r, err := apiClient.KeyPairAPI.DeleteKeyPair(context.Background(), keyPairName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairApi.DeleteKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairAPI.DeleteKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairApi.GetKeyPair(context.Background(), keyPairName).Execute()
+    resp, r, err := apiClient.KeyPairAPI.GetKeyPair(context.Background(), keyPairName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairApi.GetKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairAPI.GetKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetKeyPair`: KeyPairResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairApi.GetKeyPair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairAPI.GetKeyPair`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairApi.ListKeyPairs(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.KeyPairAPI.ListKeyPairs(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairApi.ListKeyPairs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairAPI.ListKeyPairs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListKeyPairs`: KeyPairListResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairApi.ListKeyPairs`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairAPI.ListKeyPairs`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyPairApi.UpdateKeyPair(context.Background(), keyPairName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.KeyPairAPI.UpdateKeyPair(context.Background(), keyPairName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairApi.UpdateKeyPair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairAPI.UpdateKeyPair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateKeyPair`: KeyPairResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyPairApi.UpdateKeyPair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairAPI.UpdateKeyPair`: %v\n", resp)
 }
 ```
 

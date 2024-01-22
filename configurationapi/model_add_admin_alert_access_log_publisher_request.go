@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAdminAlertAccessLogPublisherRequest{}
 
 // AddAdminAlertAccessLogPublisherRequest struct for AddAdminAlertAccessLogPublisherRequest
 type AddAdminAlertAccessLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName string                                      `json:"publisherName"`
-	Schemas       []EnumadminAlertAccessLogPublisherSchemaUrn `json:"schemas"`
+	Schemas []EnumadminAlertAccessLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether to log information about connections established to the server.
 	LogConnects *bool `json:"logConnects,omitempty"`
 	// Indicates whether to log information about connections that have been closed by the client or terminated by the server.
@@ -111,17 +109,19 @@ type AddAdminAlertAccessLogPublisherRequest struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddAdminAlertAccessLogPublisherRequest instantiates a new AddAdminAlertAccessLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAdminAlertAccessLogPublisherRequest(publisherName string, schemas []EnumadminAlertAccessLogPublisherSchemaUrn, enabled bool) *AddAdminAlertAccessLogPublisherRequest {
+func NewAddAdminAlertAccessLogPublisherRequest(schemas []EnumadminAlertAccessLogPublisherSchemaUrn, enabled bool, publisherName string) *AddAdminAlertAccessLogPublisherRequest {
 	this := AddAdminAlertAccessLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -131,30 +131,6 @@ func NewAddAdminAlertAccessLogPublisherRequest(publisherName string, schemas []E
 func NewAddAdminAlertAccessLogPublisherRequestWithDefaults() *AddAdminAlertAccessLogPublisherRequest {
 	this := AddAdminAlertAccessLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddAdminAlertAccessLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddAdminAlertAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddAdminAlertAccessLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1613,6 +1589,30 @@ func (o *AddAdminAlertAccessLogPublisherRequest) SetLoggingErrorBehavior(v Enuml
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddAdminAlertAccessLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddAdminAlertAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddAdminAlertAccessLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddAdminAlertAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1623,7 +1623,6 @@ func (o AddAdminAlertAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddAdminAlertAccessLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.LogConnects) {
 		toSerialize["logConnects"] = o.LogConnects
@@ -1758,6 +1757,7 @@ func (o AddAdminAlertAccessLogPublisherRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

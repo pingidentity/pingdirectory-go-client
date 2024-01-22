@@ -19,8 +19,6 @@ var _ MappedNullable = &CollectSupportDataExtendedOperationHandlerResponse{}
 
 // CollectSupportDataExtendedOperationHandlerResponse struct for CollectSupportDataExtendedOperationHandlerResponse
 type CollectSupportDataExtendedOperationHandlerResponse struct {
-	// Name of the Extended Operation Handler
-	Id      string                                                    `json:"id"`
 	Schemas []EnumcollectSupportDataExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`
@@ -28,17 +26,19 @@ type CollectSupportDataExtendedOperationHandlerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Extended Operation Handler
+	Id string `json:"id"`
 }
 
 // NewCollectSupportDataExtendedOperationHandlerResponse instantiates a new CollectSupportDataExtendedOperationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCollectSupportDataExtendedOperationHandlerResponse(id string, schemas []EnumcollectSupportDataExtendedOperationHandlerSchemaUrn, enabled bool) *CollectSupportDataExtendedOperationHandlerResponse {
+func NewCollectSupportDataExtendedOperationHandlerResponse(schemas []EnumcollectSupportDataExtendedOperationHandlerSchemaUrn, enabled bool, id string) *CollectSupportDataExtendedOperationHandlerResponse {
 	this := CollectSupportDataExtendedOperationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewCollectSupportDataExtendedOperationHandlerResponse(id string, schemas []
 func NewCollectSupportDataExtendedOperationHandlerResponseWithDefaults() *CollectSupportDataExtendedOperationHandlerResponse {
 	this := CollectSupportDataExtendedOperationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CollectSupportDataExtendedOperationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CollectSupportDataExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CollectSupportDataExtendedOperationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *CollectSupportDataExtendedOperationHandlerResponse) SetUrnpingidentitys
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *CollectSupportDataExtendedOperationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CollectSupportDataExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CollectSupportDataExtendedOperationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o CollectSupportDataExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o CollectSupportDataExtendedOperationHandlerResponse) MarshalJSON() ([]byt
 
 func (o CollectSupportDataExtendedOperationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -240,6 +239,7 @@ func (o CollectSupportDataExtendedOperationHandlerResponse) ToMap() (map[string]
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

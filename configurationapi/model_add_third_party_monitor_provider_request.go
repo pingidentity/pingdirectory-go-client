@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyMonitorProviderRequest{}
 
 // AddThirdPartyMonitorProviderRequest struct for AddThirdPartyMonitorProviderRequest
 type AddThirdPartyMonitorProviderRequest struct {
-	// Name of the new Monitor Provider
-	ProviderName string                                   `json:"providerName"`
-	Schemas      []EnumthirdPartyMonitorProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyMonitorProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Monitor Provider.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Monitor Provider. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddThirdPartyMonitorProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Monitor Provider is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Monitor Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddThirdPartyMonitorProviderRequest instantiates a new AddThirdPartyMonitorProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyMonitorProviderRequest(providerName string, schemas []EnumthirdPartyMonitorProviderSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyMonitorProviderRequest {
+func NewAddThirdPartyMonitorProviderRequest(schemas []EnumthirdPartyMonitorProviderSchemaUrn, extensionClass string, enabled bool, providerName string) *AddThirdPartyMonitorProviderRequest {
 	this := AddThirdPartyMonitorProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddThirdPartyMonitorProviderRequest(providerName string, schemas []Enumt
 func NewAddThirdPartyMonitorProviderRequestWithDefaults() *AddThirdPartyMonitorProviderRequest {
 	this := AddThirdPartyMonitorProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddThirdPartyMonitorProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyMonitorProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddThirdPartyMonitorProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddThirdPartyMonitorProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddThirdPartyMonitorProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyMonitorProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddThirdPartyMonitorProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddThirdPartyMonitorProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddThirdPartyMonitorProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyMonitorProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -233,6 +232,7 @@ func (o AddThirdPartyMonitorProviderRequest) ToMap() (map[string]interface{}, er
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

@@ -29,6 +29,7 @@ const (
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTVALUECOMPONENTSFIELDPROP_ASSURANCE_TIMEOUT_MILLIS                                                   EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp = "assurance-timeout-millis"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTVALUECOMPONENTSFIELDPROP_AUTHORIZATION_DN                                                           EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp = "authorization-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTVALUECOMPONENTSFIELDPROP_AUTO_AUTHENTICATED_AS                                                      EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp = "auto-authenticated-as"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTVALUECOMPONENTSFIELDPROP_BIND_ACCESS_TOKEN_ORIGINAL_AUTHENTICATION_TYPE                             EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp = "bind-access-token-original-authentication-type"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTVALUECOMPONENTSFIELDPROP_BIND_AUTHENTICATION_DN                                                     EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp = "bind-authentication-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTVALUECOMPONENTSFIELDPROP_BIND_AUTHENTICATION_FAILURE_ID                                             EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp = "bind-authentication-failure-id"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTVALUECOMPONENTSFIELDPROP_BIND_AUTHENTICATION_FAILURE_NAME                                           EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp = "bind-authentication-failure-name"
@@ -287,6 +288,7 @@ var AllowedEnumlogFieldBehaviorTextAccessRedactValueComponentsFieldPropEnumValue
 	"assurance-timeout-millis",
 	"authorization-dn",
 	"auto-authenticated-as",
+	"bind-access-token-original-authentication-type",
 	"bind-authentication-dn",
 	"bind-authentication-failure-id",
 	"bind-authentication-failure-name",

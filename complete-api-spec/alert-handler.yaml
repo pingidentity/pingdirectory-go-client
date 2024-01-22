@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
 tags:
 - description: Access alert-handlers
   name: alert-handler
@@ -242,6 +242,11 @@ components:
       - "alarm-major"
       - "alarm-minor"
       - "alarm-warning"
+      - "amazon-s3-create-bucket-failed"
+      - "amazon-s3-download-file-failed"
+      - "amazon-s3-remove-bucket-failed"
+      - "amazon-s3-remove-file-failed"
+      - "amazon-s3-upload-file-failed"
       - "backend-disabled"
       - "backend-initialization-failed"
       - "backup-failed"
@@ -422,6 +427,7 @@ components:
       - "replace-certificate-failed"
       - "replication-missing-changes-risk"
       - "replication-not-purging-obsolete-replicas"
+      - "replication-missing-changes-action"
       description: >-
           Specifies the names of the alert types that are enabled for this alert handler.
     Enumalert-handler-disabledAlertTypeProp:
@@ -437,6 +443,11 @@ components:
       - "alarm-major"
       - "alarm-minor"
       - "alarm-warning"
+      - "amazon-s3-create-bucket-failed"
+      - "amazon-s3-download-file-failed"
+      - "amazon-s3-remove-bucket-failed"
+      - "amazon-s3-remove-file-failed"
+      - "amazon-s3-upload-file-failed"
       - "backend-disabled"
       - "backend-initialization-failed"
       - "backup-failed"
@@ -617,6 +628,7 @@ components:
       - "replace-certificate-failed"
       - "replication-missing-changes-risk"
       - "replication-not-purging-obsolete-replicas"
+      - "replication-missing-changes-action"
       description: >-
           Specifies the names of the alert types that are disabled for this alert handler.
     output-alert-handler-response:

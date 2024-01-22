@@ -19,8 +19,6 @@ var _ MappedNullable = &FingerprintCertificateMapperResponse{}
 
 // FingerprintCertificateMapperResponse struct for FingerprintCertificateMapperResponse
 type FingerprintCertificateMapperResponse struct {
-	// Name of the Certificate Mapper
-	Id      string                                      `json:"id"`
 	Schemas []EnumfingerprintCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies the attribute in which to look for the fingerprint.
 	FingerprintAttribute string                                        `json:"fingerprintAttribute"`
@@ -33,19 +31,21 @@ type FingerprintCertificateMapperResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Certificate Mapper
+	Id string `json:"id"`
 }
 
 // NewFingerprintCertificateMapperResponse instantiates a new FingerprintCertificateMapperResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFingerprintCertificateMapperResponse(id string, schemas []EnumfingerprintCertificateMapperSchemaUrn, fingerprintAttribute string, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, enabled bool) *FingerprintCertificateMapperResponse {
+func NewFingerprintCertificateMapperResponse(schemas []EnumfingerprintCertificateMapperSchemaUrn, fingerprintAttribute string, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, enabled bool, id string) *FingerprintCertificateMapperResponse {
 	this := FingerprintCertificateMapperResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.FingerprintAttribute = fingerprintAttribute
 	this.FingerprintAlgorithm = fingerprintAlgorithm
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewFingerprintCertificateMapperResponse(id string, schemas []Enumfingerprin
 func NewFingerprintCertificateMapperResponseWithDefaults() *FingerprintCertificateMapperResponse {
 	this := FingerprintCertificateMapperResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *FingerprintCertificateMapperResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *FingerprintCertificateMapperResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *FingerprintCertificateMapperResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -305,6 +281,30 @@ func (o *FingerprintCertificateMapperResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *FingerprintCertificateMapperResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *FingerprintCertificateMapperResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *FingerprintCertificateMapperResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o FingerprintCertificateMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -315,7 +315,6 @@ func (o FingerprintCertificateMapperResponse) MarshalJSON() ([]byte, error) {
 
 func (o FingerprintCertificateMapperResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["fingerprintAttribute"] = o.FingerprintAttribute
 	toSerialize["fingerprintAlgorithm"] = o.FingerprintAlgorithm
@@ -332,6 +331,7 @@ func (o FingerprintCertificateMapperResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

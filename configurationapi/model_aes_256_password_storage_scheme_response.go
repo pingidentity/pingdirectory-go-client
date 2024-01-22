@@ -19,8 +19,6 @@ var _ MappedNullable = &Aes256PasswordStorageSchemeResponse{}
 
 // Aes256PasswordStorageSchemeResponse struct for Aes256PasswordStorageSchemeResponse
 type Aes256PasswordStorageSchemeResponse struct {
-	// Name of the Password Storage Scheme
-	Id      string                                     `json:"id"`
 	Schemas []Enumaes256PasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The identifier for the encryption settings definition that should be used to derive the encryption key to use when encrypting new passwords. If this is not provided, the server's preferred encryption settings definition will be used.
 	EncryptionSettingsDefinitionID *string `json:"encryptionSettingsDefinitionID,omitempty"`
@@ -30,17 +28,19 @@ type Aes256PasswordStorageSchemeResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Storage Scheme
+	Id string `json:"id"`
 }
 
 // NewAes256PasswordStorageSchemeResponse instantiates a new Aes256PasswordStorageSchemeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAes256PasswordStorageSchemeResponse(id string, schemas []Enumaes256PasswordStorageSchemeSchemaUrn, enabled bool) *Aes256PasswordStorageSchemeResponse {
+func NewAes256PasswordStorageSchemeResponse(schemas []Enumaes256PasswordStorageSchemeSchemaUrn, enabled bool, id string) *Aes256PasswordStorageSchemeResponse {
 	this := Aes256PasswordStorageSchemeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewAes256PasswordStorageSchemeResponse(id string, schemas []Enumaes256Passw
 func NewAes256PasswordStorageSchemeResponseWithDefaults() *Aes256PasswordStorageSchemeResponse {
 	this := Aes256PasswordStorageSchemeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *Aes256PasswordStorageSchemeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *Aes256PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *Aes256PasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -252,6 +228,30 @@ func (o *Aes256PasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *Aes256PasswordStorageSchemeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *Aes256PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *Aes256PasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o Aes256PasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -262,7 +262,6 @@ func (o Aes256PasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 
 func (o Aes256PasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.EncryptionSettingsDefinitionID) {
 		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
@@ -277,6 +276,7 @@ func (o Aes256PasswordStorageSchemeResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

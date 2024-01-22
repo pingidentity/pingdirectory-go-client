@@ -19,8 +19,6 @@ var _ MappedNullable = &AddPasswordPolicyStateJsonVirtualAttributeRequest{}
 
 // AddPasswordPolicyStateJsonVirtualAttributeRequest struct for AddPasswordPolicyStateJsonVirtualAttributeRequest
 type AddPasswordPolicyStateJsonVirtualAttributeRequest struct {
-	// Name of the new Virtual Attribute
-	Name    string                                                 `json:"name"`
 	Schemas []EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn `json:"schemas"`
 	// A description for this Virtual Attribute
 	Description *string `json:"description,omitempty"`
@@ -38,17 +36,19 @@ type AddPasswordPolicyStateJsonVirtualAttributeRequest struct {
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
 	MultipleVirtualAttributeEvaluationOrderIndex *int64 `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	// Name of the new Virtual Attribute
+	Name string `json:"name"`
 }
 
 // NewAddPasswordPolicyStateJsonVirtualAttributeRequest instantiates a new AddPasswordPolicyStateJsonVirtualAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPasswordPolicyStateJsonVirtualAttributeRequest(name string, schemas []EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn, enabled bool) *AddPasswordPolicyStateJsonVirtualAttributeRequest {
+func NewAddPasswordPolicyStateJsonVirtualAttributeRequest(schemas []EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn, enabled bool, name string) *AddPasswordPolicyStateJsonVirtualAttributeRequest {
 	this := AddPasswordPolicyStateJsonVirtualAttributeRequest{}
-	this.Name = name
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Name = name
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewAddPasswordPolicyStateJsonVirtualAttributeRequest(name string, schemas [
 func NewAddPasswordPolicyStateJsonVirtualAttributeRequestWithDefaults() *AddPasswordPolicyStateJsonVirtualAttributeRequest {
 	this := AddPasswordPolicyStateJsonVirtualAttributeRequest{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddPasswordPolicyStateJsonVirtualAttributeRequest) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddPasswordPolicyStateJsonVirtualAttributeRequest) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddPasswordPolicyStateJsonVirtualAttributeRequest) SetName(v string) {
-	o.Name = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -356,6 +332,30 @@ func (o *AddPasswordPolicyStateJsonVirtualAttributeRequest) SetMultipleVirtualAt
 	o.MultipleVirtualAttributeEvaluationOrderIndex = &v
 }
 
+// GetName returns the Name field value
+func (o *AddPasswordPolicyStateJsonVirtualAttributeRequest) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *AddPasswordPolicyStateJsonVirtualAttributeRequest) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *AddPasswordPolicyStateJsonVirtualAttributeRequest) SetName(v string) {
+	o.Name = v
+}
+
 func (o AddPasswordPolicyStateJsonVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -366,7 +366,6 @@ func (o AddPasswordPolicyStateJsonVirtualAttributeRequest) MarshalJSON() ([]byte
 
 func (o AddPasswordPolicyStateJsonVirtualAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -390,6 +389,7 @@ func (o AddPasswordPolicyStateJsonVirtualAttributeRequest) ToMap() (map[string]i
 	if !IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
 	}
+	toSerialize["name"] = o.Name
 	return toSerialize, nil
 }
 

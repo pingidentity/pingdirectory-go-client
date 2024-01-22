@@ -1,14 +1,14 @@
-# \ConsentDefinitionLocalizationApi
+# \ConsentDefinitionLocalizationAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddConsentDefinitionLocalization**](ConsentDefinitionLocalizationApi.md#AddConsentDefinitionLocalization) | **Post** /consent-definitions/{consent-definition-name}/consent-definition-localizations | Add a new Consent Definition Localization to the config
-[**DeleteConsentDefinitionLocalization**](ConsentDefinitionLocalizationApi.md#DeleteConsentDefinitionLocalization) | **Delete** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Delete a Consent Definition Localization
-[**GetConsentDefinitionLocalization**](ConsentDefinitionLocalizationApi.md#GetConsentDefinitionLocalization) | **Get** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Returns a single Consent Definition Localization
-[**ListConsentDefinitionLocalizations**](ConsentDefinitionLocalizationApi.md#ListConsentDefinitionLocalizations) | **Get** /consent-definitions/{consent-definition-name}/consent-definition-localizations | Returns a list of all Consent Definition Localization objects
-[**UpdateConsentDefinitionLocalization**](ConsentDefinitionLocalizationApi.md#UpdateConsentDefinitionLocalization) | **Patch** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Update an existing Consent Definition Localization by name
+[**AddConsentDefinitionLocalization**](ConsentDefinitionLocalizationAPI.md#AddConsentDefinitionLocalization) | **Post** /consent-definitions/{consent-definition-name}/consent-definition-localizations | Add a new Consent Definition Localization to the config
+[**DeleteConsentDefinitionLocalization**](ConsentDefinitionLocalizationAPI.md#DeleteConsentDefinitionLocalization) | **Delete** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Delete a Consent Definition Localization
+[**GetConsentDefinitionLocalization**](ConsentDefinitionLocalizationAPI.md#GetConsentDefinitionLocalization) | **Get** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Returns a single Consent Definition Localization
+[**ListConsentDefinitionLocalizations**](ConsentDefinitionLocalizationAPI.md#ListConsentDefinitionLocalizations) | **Get** /consent-definitions/{consent-definition-name}/consent-definition-localizations | Returns a list of all Consent Definition Localization objects
+[**UpdateConsentDefinitionLocalization**](ConsentDefinitionLocalizationAPI.md#UpdateConsentDefinitionLocalization) | **Patch** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Update an existing Consent Definition Localization by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     consentDefinitionName := "consentDefinitionName_example" // string | Name of the Consent Definition
-    addConsentDefinitionLocalizationRequest := *openapiclient.NewAddConsentDefinitionLocalizationRequest("LocalizationName_example", "Locale_example", "Version_example", "DataText_example", "PurposeText_example") // AddConsentDefinitionLocalizationRequest | Create a new Consent Definition Localization in the config
+    addConsentDefinitionLocalizationRequest := *openapiclient.NewAddConsentDefinitionLocalizationRequest("Locale_example", "Version_example", "DataText_example", "PurposeText_example", "LocalizationName_example") // AddConsentDefinitionLocalizationRequest | Create a new Consent Definition Localization in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentDefinitionLocalizationApi.AddConsentDefinitionLocalization(context.Background(), consentDefinitionName).AddConsentDefinitionLocalizationRequest(addConsentDefinitionLocalizationRequest).Execute()
+    resp, r, err := apiClient.ConsentDefinitionLocalizationAPI.AddConsentDefinitionLocalization(context.Background(), consentDefinitionName).AddConsentDefinitionLocalizationRequest(addConsentDefinitionLocalizationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationApi.AddConsentDefinitionLocalization``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationAPI.AddConsentDefinitionLocalization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddConsentDefinitionLocalization`: ConsentDefinitionLocalizationResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionLocalizationApi.AddConsentDefinitionLocalization`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionLocalizationAPI.AddConsentDefinitionLocalization`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConsentDefinitionLocalizationApi.DeleteConsentDefinitionLocalization(context.Background(), consentDefinitionLocalizationName, consentDefinitionName).Execute()
+    r, err := apiClient.ConsentDefinitionLocalizationAPI.DeleteConsentDefinitionLocalization(context.Background(), consentDefinitionLocalizationName, consentDefinitionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationApi.DeleteConsentDefinitionLocalization``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationAPI.DeleteConsentDefinitionLocalization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentDefinitionLocalizationApi.GetConsentDefinitionLocalization(context.Background(), consentDefinitionLocalizationName, consentDefinitionName).Execute()
+    resp, r, err := apiClient.ConsentDefinitionLocalizationAPI.GetConsentDefinitionLocalization(context.Background(), consentDefinitionLocalizationName, consentDefinitionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationApi.GetConsentDefinitionLocalization``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationAPI.GetConsentDefinitionLocalization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetConsentDefinitionLocalization`: ConsentDefinitionLocalizationResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionLocalizationApi.GetConsentDefinitionLocalization`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionLocalizationAPI.GetConsentDefinitionLocalization`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentDefinitionLocalizationApi.ListConsentDefinitionLocalizations(context.Background(), consentDefinitionName).Filter(filter).Execute()
+    resp, r, err := apiClient.ConsentDefinitionLocalizationAPI.ListConsentDefinitionLocalizations(context.Background(), consentDefinitionName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationApi.ListConsentDefinitionLocalizations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationAPI.ListConsentDefinitionLocalizations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListConsentDefinitionLocalizations`: ConsentDefinitionLocalizationListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionLocalizationApi.ListConsentDefinitionLocalizations`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionLocalizationAPI.ListConsentDefinitionLocalizations`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentDefinitionLocalizationApi.UpdateConsentDefinitionLocalization(context.Background(), consentDefinitionLocalizationName, consentDefinitionName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ConsentDefinitionLocalizationAPI.UpdateConsentDefinitionLocalization(context.Background(), consentDefinitionLocalizationName, consentDefinitionName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationApi.UpdateConsentDefinitionLocalization``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationAPI.UpdateConsentDefinitionLocalization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateConsentDefinitionLocalization`: ConsentDefinitionLocalizationResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionLocalizationApi.UpdateConsentDefinitionLocalization`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionLocalizationAPI.UpdateConsentDefinitionLocalization`: %v\n", resp)
 }
 ```
 

@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new SASL Mechanism Handler | 
 **Schemas** | [**[]EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn**](EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn.md) |  | 
 **IdentityMapper** | **string** | The identity mapper that should be used to identify the entry associated with the username provided in the bind request. | 
 **Description** | Pointer to **string** | A description for this SASL Mechanism Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the SASL mechanism handler is enabled for use. | 
+**HandlerName** | **string** | Name of the new SASL Mechanism Handler | 
 
 ## Methods
 
 ### NewAddUnboundidMsChapV2SaslMechanismHandlerRequest
 
-`func NewAddUnboundidMsChapV2SaslMechanismHandlerRequest(handlerName string, schemas []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, ) *AddUnboundidMsChapV2SaslMechanismHandlerRequest`
+`func NewAddUnboundidMsChapV2SaslMechanismHandlerRequest(schemas []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, handlerName string, ) *AddUnboundidMsChapV2SaslMechanismHandlerRequest`
 
 NewAddUnboundidMsChapV2SaslMechanismHandlerRequest instantiates a new AddUnboundidMsChapV2SaslMechanismHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddUnboundidMsChapV2SaslMechanismHandlerRequestWithDefaults instantiates a new AddUnboundidMsChapV2SaslMechanismHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -132,6 +112,26 @@ and a boolean to check if the value has been set.
 `func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetHandlerName
+
+`func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
 
 
 

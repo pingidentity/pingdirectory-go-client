@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
 tags:
 - description: Access the Global Configuration
   name: global-configuration
@@ -418,6 +418,14 @@ components:
                 Specifies the length of time that must expire before duplicate messages are sent via the administrative alert framework.
           writabilityMode:
             $ref: '#/components/schemas/Enumglobal-configuration-writabilityModeProp'
+          useSharedDatabaseCacheAcrossAllLocalDBBackends:
+            type: boolean
+            description: >-
+                Indicates whether the server should use a common database cache that is shared across all local DB backends instead of maintaining a separate cache for each backend.
+          sharedLocalDBBackendDatabaseCachePercent:
+            type: integer
+            description: >-
+                Specifies the percentage of the JVM memory to allocate to the database cache that is shared across all local DB backends.
           unrecoverableDatabaseErrorMode:
             $ref: '#/components/schemas/Enumglobal-configuration-unrecoverableDatabaseErrorModeProp'
           databaseOnVirtualizedOrNetworkStorage:

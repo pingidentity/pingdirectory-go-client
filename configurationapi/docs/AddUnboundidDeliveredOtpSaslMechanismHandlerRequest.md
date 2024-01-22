@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new SASL Mechanism Handler | 
 **Schemas** | [**[]EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn**](EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn.md) |  | 
 **IdentityMapper** | **string** | The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \&quot;u:\&quot;-style identities. | 
 **OtpValidityDuration** | Pointer to **string** | The maximum length of time that a one-time password value should be considered valid. | [optional] 
 **Description** | Pointer to **string** | A description for this SASL Mechanism Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the SASL mechanism handler is enabled for use. | 
+**HandlerName** | **string** | Name of the new SASL Mechanism Handler | 
 
 ## Methods
 
 ### NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest
 
-`func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest(handlerName string, schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, ) *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest`
+`func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest(schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, handlerName string, ) *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest`
 
 NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest instantiates a new AddUnboundidDeliveredOtpSaslMechanismHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequestWithDefaults instantiates a new AddUnboundidDeliveredOtpSaslMechanismHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetHandlerName
+
+`func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
 
 
 

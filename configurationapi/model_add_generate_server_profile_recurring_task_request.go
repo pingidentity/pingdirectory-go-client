@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGenerateServerProfileRecurringTaskRequest{}
 
 // AddGenerateServerProfileRecurringTaskRequest struct for AddGenerateServerProfileRecurringTaskRequest
 type AddGenerateServerProfileRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                                            `json:"taskName"`
-	Schemas  []EnumgenerateServerProfileRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which the generated server profiles will be placed. The files will be named with the pattern \"server-profile-{timestamp}.zip\", where \"{timestamp}\" represents the time that the profile was generated.
 	ProfileDirectory string `json:"profileDirectory"`
 	// An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root.
@@ -46,17 +44,19 @@ type AddGenerateServerProfileRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddGenerateServerProfileRecurringTaskRequest instantiates a new AddGenerateServerProfileRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGenerateServerProfileRecurringTaskRequest(taskName string, schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn, profileDirectory string) *AddGenerateServerProfileRecurringTaskRequest {
+func NewAddGenerateServerProfileRecurringTaskRequest(schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn, profileDirectory string, taskName string) *AddGenerateServerProfileRecurringTaskRequest {
 	this := AddGenerateServerProfileRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
 	this.ProfileDirectory = profileDirectory
+	this.TaskName = taskName
 	return &this
 }
 
@@ -66,30 +66,6 @@ func NewAddGenerateServerProfileRecurringTaskRequest(taskName string, schemas []
 func NewAddGenerateServerProfileRecurringTaskRequestWithDefaults() *AddGenerateServerProfileRecurringTaskRequest {
 	this := AddGenerateServerProfileRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddGenerateServerProfileRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -492,6 +468,30 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) SetAlertOnFailure(v bool)
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddGenerateServerProfileRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddGenerateServerProfileRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -502,7 +502,6 @@ func (o AddGenerateServerProfileRecurringTaskRequest) MarshalJSON() ([]byte, err
 
 func (o AddGenerateServerProfileRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["profileDirectory"] = o.ProfileDirectory
 	if !IsNil(o.IncludePath) {
@@ -538,6 +537,7 @@ func (o AddGenerateServerProfileRecurringTaskRequest) ToMap() (map[string]interf
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

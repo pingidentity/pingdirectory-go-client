@@ -1,14 +1,14 @@
-# \LocalDbVlvIndexApi
+# \LocalDbVlvIndexAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLocalDbVlvIndex**](LocalDbVlvIndexApi.md#AddLocalDbVlvIndex) | **Post** /backends/{backend-name}/local-db-vlv-indexes | Add a new Local DB VLV Index to the config
-[**DeleteLocalDbVlvIndex**](LocalDbVlvIndexApi.md#DeleteLocalDbVlvIndex) | **Delete** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Delete a Local DB VLV Index
-[**GetLocalDbVlvIndex**](LocalDbVlvIndexApi.md#GetLocalDbVlvIndex) | **Get** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Returns a single Local DB VLV Index
-[**ListLocalDbVlvIndexes**](LocalDbVlvIndexApi.md#ListLocalDbVlvIndexes) | **Get** /backends/{backend-name}/local-db-vlv-indexes | Returns a list of all Local DB VLV Index objects
-[**UpdateLocalDbVlvIndex**](LocalDbVlvIndexApi.md#UpdateLocalDbVlvIndex) | **Patch** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Update an existing Local DB VLV Index by name
+[**AddLocalDbVlvIndex**](LocalDbVlvIndexAPI.md#AddLocalDbVlvIndex) | **Post** /backends/{backend-name}/local-db-vlv-indexes | Add a new Local DB VLV Index to the config
+[**DeleteLocalDbVlvIndex**](LocalDbVlvIndexAPI.md#DeleteLocalDbVlvIndex) | **Delete** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Delete a Local DB VLV Index
+[**GetLocalDbVlvIndex**](LocalDbVlvIndexAPI.md#GetLocalDbVlvIndex) | **Get** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Returns a single Local DB VLV Index
+[**ListLocalDbVlvIndexes**](LocalDbVlvIndexAPI.md#ListLocalDbVlvIndexes) | **Get** /backends/{backend-name}/local-db-vlv-indexes | Returns a list of all Local DB VLV Index objects
+[**UpdateLocalDbVlvIndex**](LocalDbVlvIndexAPI.md#UpdateLocalDbVlvIndex) | **Patch** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Update an existing Local DB VLV Index by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     backendName := "backendName_example" // string | Name of the Backend
-    addLocalDbVlvIndexRequest := *openapiclient.NewAddLocalDbVlvIndexRequest("IndexName_example", "BaseDN_example", openapiclient.Enumlocal-db-vlv-index-scopeProp("base-object"), "Filter_example", "SortOrder_example", "Name_example") // AddLocalDbVlvIndexRequest | Create a new Local DB VLV Index in the config
+    addLocalDbVlvIndexRequest := *openapiclient.NewAddLocalDbVlvIndexRequest("BaseDN_example", openapiclient.Enumlocal-db-vlv-index-scopeProp("base-object"), "Filter_example", "SortOrder_example", "Name_example", "IndexName_example") // AddLocalDbVlvIndexRequest | Create a new Local DB VLV Index in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbVlvIndexApi.AddLocalDbVlvIndex(context.Background(), backendName).AddLocalDbVlvIndexRequest(addLocalDbVlvIndexRequest).Execute()
+    resp, r, err := apiClient.LocalDbVlvIndexAPI.AddLocalDbVlvIndex(context.Background(), backendName).AddLocalDbVlvIndexRequest(addLocalDbVlvIndexRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexApi.AddLocalDbVlvIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexAPI.AddLocalDbVlvIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLocalDbVlvIndex`: LocalDbVlvIndexResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbVlvIndexApi.AddLocalDbVlvIndex`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbVlvIndexAPI.AddLocalDbVlvIndex`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LocalDbVlvIndexApi.DeleteLocalDbVlvIndex(context.Background(), localDbVlvIndexName, backendName).Execute()
+    r, err := apiClient.LocalDbVlvIndexAPI.DeleteLocalDbVlvIndex(context.Background(), localDbVlvIndexName, backendName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexApi.DeleteLocalDbVlvIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexAPI.DeleteLocalDbVlvIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbVlvIndexApi.GetLocalDbVlvIndex(context.Background(), localDbVlvIndexName, backendName).Execute()
+    resp, r, err := apiClient.LocalDbVlvIndexAPI.GetLocalDbVlvIndex(context.Background(), localDbVlvIndexName, backendName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexApi.GetLocalDbVlvIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexAPI.GetLocalDbVlvIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLocalDbVlvIndex`: LocalDbVlvIndexResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbVlvIndexApi.GetLocalDbVlvIndex`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbVlvIndexAPI.GetLocalDbVlvIndex`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbVlvIndexApi.ListLocalDbVlvIndexes(context.Background(), backendName).Filter(filter).Execute()
+    resp, r, err := apiClient.LocalDbVlvIndexAPI.ListLocalDbVlvIndexes(context.Background(), backendName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexApi.ListLocalDbVlvIndexes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexAPI.ListLocalDbVlvIndexes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLocalDbVlvIndexes`: LocalDbVlvIndexListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbVlvIndexApi.ListLocalDbVlvIndexes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbVlvIndexAPI.ListLocalDbVlvIndexes`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbVlvIndexApi.UpdateLocalDbVlvIndex(context.Background(), localDbVlvIndexName, backendName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LocalDbVlvIndexAPI.UpdateLocalDbVlvIndex(context.Background(), localDbVlvIndexName, backendName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexApi.UpdateLocalDbVlvIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexAPI.UpdateLocalDbVlvIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLocalDbVlvIndex`: LocalDbVlvIndexResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbVlvIndexApi.UpdateLocalDbVlvIndex`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbVlvIndexAPI.UpdateLocalDbVlvIndex`: %v\n", resp)
 }
 ```
 

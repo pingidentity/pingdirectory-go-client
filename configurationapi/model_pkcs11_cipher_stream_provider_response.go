@@ -19,8 +19,6 @@ var _ MappedNullable = &Pkcs11CipherStreamProviderResponse{}
 
 // Pkcs11CipherStreamProviderResponse struct for Pkcs11CipherStreamProviderResponse
 type Pkcs11CipherStreamProviderResponse struct {
-	// Name of the Cipher Stream Provider
-	Id      string                                    `json:"id"`
 	Schemas []Enumpkcs11CipherStreamProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
 	Pkcs11ProviderClass *string `json:"pkcs11ProviderClass,omitempty"`
@@ -46,19 +44,21 @@ type Pkcs11CipherStreamProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Cipher Stream Provider
+	Id string `json:"id"`
 }
 
 // NewPkcs11CipherStreamProviderResponse instantiates a new Pkcs11CipherStreamProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPkcs11CipherStreamProviderResponse(id string, schemas []Enumpkcs11CipherStreamProviderSchemaUrn, sslCertNickname string, encryptionMetadataFile string, enabled bool) *Pkcs11CipherStreamProviderResponse {
+func NewPkcs11CipherStreamProviderResponse(schemas []Enumpkcs11CipherStreamProviderSchemaUrn, sslCertNickname string, encryptionMetadataFile string, enabled bool, id string) *Pkcs11CipherStreamProviderResponse {
 	this := Pkcs11CipherStreamProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.SslCertNickname = sslCertNickname
 	this.EncryptionMetadataFile = encryptionMetadataFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -68,30 +68,6 @@ func NewPkcs11CipherStreamProviderResponse(id string, schemas []Enumpkcs11Cipher
 func NewPkcs11CipherStreamProviderResponseWithDefaults() *Pkcs11CipherStreamProviderResponse {
 	this := Pkcs11CipherStreamProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *Pkcs11CipherStreamProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *Pkcs11CipherStreamProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *Pkcs11CipherStreamProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -510,6 +486,30 @@ func (o *Pkcs11CipherStreamProviderResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *Pkcs11CipherStreamProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *Pkcs11CipherStreamProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *Pkcs11CipherStreamProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o Pkcs11CipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -520,7 +520,6 @@ func (o Pkcs11CipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o Pkcs11CipherStreamProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Pkcs11ProviderClass) {
 		toSerialize["pkcs11ProviderClass"] = o.Pkcs11ProviderClass
@@ -555,6 +554,7 @@ func (o Pkcs11CipherStreamProviderResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

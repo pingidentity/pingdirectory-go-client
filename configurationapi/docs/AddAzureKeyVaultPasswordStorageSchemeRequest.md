@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]EnumazureKeyVaultPasswordStorageSchemeSchemaUrn**](EnumazureKeyVaultPasswordStorageSchemeSchemaUrn.md) |  | 
 **KeyVaultURI** | **string** | The URI that identifies the Azure Key Vault from which the secret is to be retrieved. | 
 **AzureAuthenticationMethod** | **string** | The mechanism used to authenticate to the Azure service. | 
 **HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Azure service. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
+**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 
 ## Methods
 
 ### NewAddAzureKeyVaultPasswordStorageSchemeRequest
 
-`func NewAddAzureKeyVaultPasswordStorageSchemeRequest(schemeName string, schemas []EnumazureKeyVaultPasswordStorageSchemeSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, enabled bool, ) *AddAzureKeyVaultPasswordStorageSchemeRequest`
+`func NewAddAzureKeyVaultPasswordStorageSchemeRequest(schemas []EnumazureKeyVaultPasswordStorageSchemeSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, enabled bool, schemeName string, ) *AddAzureKeyVaultPasswordStorageSchemeRequest`
 
 NewAddAzureKeyVaultPasswordStorageSchemeRequest instantiates a new AddAzureKeyVaultPasswordStorageSchemeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddAzureKeyVaultPasswordStorageSchemeRequestWithDefaults instantiates a new AddAzureKeyVaultPasswordStorageSchemeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSchemeName
-
-`func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeName() string`
-
-GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
-
-### GetSchemeNameOk
-
-`func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
-
-GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchemeName
-
-`func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetSchemeName(v string)`
-
-SetSchemeName sets SchemeName field to given value.
-
 
 ### GetSchemas
 
@@ -179,6 +159,26 @@ and a boolean to check if the value has been set.
 `func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetSchemeName
+
+`func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeName() string`
+
+GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
+
+### GetSchemeNameOk
+
+`func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
+
+GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemeName
+
+`func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetSchemeName(v string)`
+
+SetSchemeName sets SchemeName field to given value.
 
 
 

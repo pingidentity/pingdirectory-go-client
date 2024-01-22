@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Cipher Stream Provider | 
 **Schemas** | [**[]EnumazureKeyVaultCipherStreamProviderSchemaUrn**](EnumazureKeyVaultCipherStreamProviderSchemaUrn.md) |  | 
 **KeyVaultURI** | **string** | The URI that identifies the Azure Key Vault from which the secret is to be retrieved. | 
 **AzureAuthenticationMethod** | **string** | The mechanism used to authenticate to the Azure service. | 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Cipher Stream Provider | 
 
 ## Methods
 
 ### NewAzureKeyVaultCipherStreamProviderResponse
 
-`func NewAzureKeyVaultCipherStreamProviderResponse(id string, schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, encryptionMetadataFile string, enabled bool, ) *AzureKeyVaultCipherStreamProviderResponse`
+`func NewAzureKeyVaultCipherStreamProviderResponse(schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, encryptionMetadataFile string, enabled bool, id string, ) *AzureKeyVaultCipherStreamProviderResponse`
 
 NewAzureKeyVaultCipherStreamProviderResponse instantiates a new AzureKeyVaultCipherStreamProviderResponse object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewAzureKeyVaultCipherStreamProviderResponseWithDefaults instantiates a new AzureKeyVaultCipherStreamProviderResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *AzureKeyVaultCipherStreamProviderResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AzureKeyVaultCipherStreamProviderResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AzureKeyVaultCipherStreamProviderResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -300,6 +280,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *AzureKeyVaultCipherStreamProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *AzureKeyVaultCipherStreamProviderResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *AzureKeyVaultCipherStreamProviderResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *AzureKeyVaultCipherStreamProviderResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

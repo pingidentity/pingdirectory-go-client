@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PolicyName** | **string** | Name of the new Client Connection Policy | 
 **Schemas** | Pointer to [**[]EnumclientConnectionPolicySchemaUrn**](EnumclientConnectionPolicySchemaUrn.md) |  | [optional] 
 **PolicyID** | **string** | Specifies a name which uniquely identifies this Client Connection Policy in the server. | 
 **Description** | Pointer to **string** | A description for this Client Connection Policy | [optional] 
@@ -47,12 +46,13 @@ Name | Type | Description | Notes
 **MaximumSearchLookthroughLimit** | Pointer to **int64** | Specifies the maximum number of entries that may be examined by a backend in the course of processing a search requested by clients associated with this Client Connection Policy. | [optional] 
 **MaximumLDAPJoinSizeLimit** | Pointer to **int64** | Specifies the maximum number of entries that may be joined with any single search result entry for a search request performed by a client associated with this Client Connection Policy. | [optional] 
 **MaximumSortSizeLimitWithoutVLVIndex** | Pointer to **int64** | Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced. | [optional] 
+**PolicyName** | **string** | Name of the new Client Connection Policy | 
 
 ## Methods
 
 ### NewAddClientConnectionPolicyRequest
 
-`func NewAddClientConnectionPolicyRequest(policyName string, policyID string, enabled bool, evaluationOrderIndex int64, ) *AddClientConnectionPolicyRequest`
+`func NewAddClientConnectionPolicyRequest(policyID string, enabled bool, evaluationOrderIndex int64, policyName string, ) *AddClientConnectionPolicyRequest`
 
 NewAddClientConnectionPolicyRequest instantiates a new AddClientConnectionPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -66,26 +66,6 @@ will change when the set of required properties is changed
 NewAddClientConnectionPolicyRequestWithDefaults instantiates a new AddClientConnectionPolicyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPolicyName
-
-`func (o *AddClientConnectionPolicyRequest) GetPolicyName() string`
-
-GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
-
-### GetPolicyNameOk
-
-`func (o *AddClientConnectionPolicyRequest) GetPolicyNameOk() (*string, bool)`
-
-GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPolicyName
-
-`func (o *AddClientConnectionPolicyRequest) SetPolicyName(v string)`
-
-SetPolicyName sets PolicyName field to given value.
-
 
 ### GetSchemas
 
@@ -1121,6 +1101,26 @@ SetMaximumSortSizeLimitWithoutVLVIndex sets MaximumSortSizeLimitWithoutVLVIndex 
 `func (o *AddClientConnectionPolicyRequest) HasMaximumSortSizeLimitWithoutVLVIndex() bool`
 
 HasMaximumSortSizeLimitWithoutVLVIndex returns a boolean if a field has been set.
+
+### GetPolicyName
+
+`func (o *AddClientConnectionPolicyRequest) GetPolicyName() string`
+
+GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
+
+### GetPolicyNameOk
+
+`func (o *AddClientConnectionPolicyRequest) GetPolicyNameOk() (*string, bool)`
+
+GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyName
+
+`func (o *AddClientConnectionPolicyRequest) SetPolicyName(v string)`
+
+SetPolicyName sets PolicyName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

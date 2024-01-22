@@ -1,14 +1,14 @@
-# \EntryCacheApi
+# \EntryCacheAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddEntryCache**](EntryCacheApi.md#AddEntryCache) | **Post** /entry-caches | Add a new Entry Cache to the config
-[**DeleteEntryCache**](EntryCacheApi.md#DeleteEntryCache) | **Delete** /entry-caches/{entry-cache-name} | Delete a Entry Cache
-[**GetEntryCache**](EntryCacheApi.md#GetEntryCache) | **Get** /entry-caches/{entry-cache-name} | Returns a single Entry Cache
-[**ListEntryCaches**](EntryCacheApi.md#ListEntryCaches) | **Get** /entry-caches | Returns a list of all Entry Cache objects
-[**UpdateEntryCache**](EntryCacheApi.md#UpdateEntryCache) | **Patch** /entry-caches/{entry-cache-name} | Update an existing Entry Cache by name
+[**AddEntryCache**](EntryCacheAPI.md#AddEntryCache) | **Post** /entry-caches | Add a new Entry Cache to the config
+[**DeleteEntryCache**](EntryCacheAPI.md#DeleteEntryCache) | **Delete** /entry-caches/{entry-cache-name} | Delete a Entry Cache
+[**GetEntryCache**](EntryCacheAPI.md#GetEntryCache) | **Get** /entry-caches/{entry-cache-name} | Returns a single Entry Cache
+[**ListEntryCaches**](EntryCacheAPI.md#ListEntryCaches) | **Get** /entry-caches | Returns a list of all Entry Cache objects
+[**UpdateEntryCache**](EntryCacheAPI.md#UpdateEntryCache) | **Patch** /entry-caches/{entry-cache-name} | Update an existing Entry Cache by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addFifoEntryCacheRequest := *openapiclient.NewAddFifoEntryCacheRequest("CacheName_example", []openapiclient.EnumfifoEntryCacheSchemaUrn{openapiclient.Enumfifo-entry-cacheSchemaUrn("urn:pingidentity:schemas:configuration:2.0:entry-cache:fifo")}, false, int64(123)) // AddFifoEntryCacheRequest | Create a new Entry Cache in the config
+    addFifoEntryCacheRequest := *openapiclient.NewAddFifoEntryCacheRequest([]openapiclient.EnumfifoEntryCacheSchemaUrn{openapiclient.Enumfifo-entry-cacheSchemaUrn("urn:pingidentity:schemas:configuration:2.0:entry-cache:fifo")}, false, int64(123), "CacheName_example") // AddFifoEntryCacheRequest | Create a new Entry Cache in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EntryCacheApi.AddEntryCache(context.Background()).AddFifoEntryCacheRequest(addFifoEntryCacheRequest).Execute()
+    resp, r, err := apiClient.EntryCacheAPI.AddEntryCache(context.Background()).AddFifoEntryCacheRequest(addFifoEntryCacheRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheApi.AddEntryCache``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheAPI.AddEntryCache``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddEntryCache`: FifoEntryCacheResponse
-    fmt.Fprintf(os.Stdout, "Response from `EntryCacheApi.AddEntryCache`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EntryCacheAPI.AddEntryCache`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.EntryCacheApi.DeleteEntryCache(context.Background(), entryCacheName).Execute()
+    r, err := apiClient.EntryCacheAPI.DeleteEntryCache(context.Background(), entryCacheName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheApi.DeleteEntryCache``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheAPI.DeleteEntryCache``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EntryCacheApi.GetEntryCache(context.Background(), entryCacheName).Execute()
+    resp, r, err := apiClient.EntryCacheAPI.GetEntryCache(context.Background(), entryCacheName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheApi.GetEntryCache``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheAPI.GetEntryCache``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetEntryCache`: FifoEntryCacheResponse
-    fmt.Fprintf(os.Stdout, "Response from `EntryCacheApi.GetEntryCache`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EntryCacheAPI.GetEntryCache`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EntryCacheApi.ListEntryCaches(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.EntryCacheAPI.ListEntryCaches(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheApi.ListEntryCaches``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheAPI.ListEntryCaches``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListEntryCaches`: EntryCacheListResponse
-    fmt.Fprintf(os.Stdout, "Response from `EntryCacheApi.ListEntryCaches`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EntryCacheAPI.ListEntryCaches`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EntryCacheApi.UpdateEntryCache(context.Background(), entryCacheName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.EntryCacheAPI.UpdateEntryCache(context.Background(), entryCacheName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheApi.UpdateEntryCache``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheAPI.UpdateEntryCache``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateEntryCache`: FifoEntryCacheResponse
-    fmt.Fprintf(os.Stdout, "Response from `EntryCacheApi.UpdateEntryCache`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `EntryCacheAPI.UpdateEntryCache`: %v\n", resp)
 }
 ```
 

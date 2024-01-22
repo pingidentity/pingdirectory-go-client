@@ -19,8 +19,6 @@ var _ MappedNullable = &OauthBearerSaslMechanismHandlerResponse{}
 
 // OauthBearerSaslMechanismHandlerResponse struct for OauthBearerSaslMechanismHandlerResponse
 type OauthBearerSaslMechanismHandlerResponse struct {
-	// Name of the SASL Mechanism Handler
-	Id      string                                         `json:"id"`
 	Schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// An access token validator that will ensure that each presented OAuth access token is authentic and trustworthy. It must be configured with an identity mapper that will be used to map the access token to a local entry.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
@@ -43,17 +41,19 @@ type OauthBearerSaslMechanismHandlerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the SASL Mechanism Handler
+	Id string `json:"id"`
 }
 
 // NewOauthBearerSaslMechanismHandlerResponse instantiates a new OauthBearerSaslMechanismHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOauthBearerSaslMechanismHandlerResponse(id string, schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn, enabled bool) *OauthBearerSaslMechanismHandlerResponse {
+func NewOauthBearerSaslMechanismHandlerResponse(schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn, enabled bool, id string) *OauthBearerSaslMechanismHandlerResponse {
 	this := OauthBearerSaslMechanismHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewOauthBearerSaslMechanismHandlerResponse(id string, schemas []EnumoauthBe
 func NewOauthBearerSaslMechanismHandlerResponseWithDefaults() *OauthBearerSaslMechanismHandlerResponse {
 	this := OauthBearerSaslMechanismHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *OauthBearerSaslMechanismHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *OauthBearerSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *OauthBearerSaslMechanismHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -489,6 +465,30 @@ func (o *OauthBearerSaslMechanismHandlerResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *OauthBearerSaslMechanismHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *OauthBearerSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *OauthBearerSaslMechanismHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o OauthBearerSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -499,7 +499,6 @@ func (o OauthBearerSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o OauthBearerSaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AccessTokenValidator) {
 		toSerialize["accessTokenValidator"] = o.AccessTokenValidator
@@ -535,6 +534,7 @@ func (o OauthBearerSaslMechanismHandlerResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

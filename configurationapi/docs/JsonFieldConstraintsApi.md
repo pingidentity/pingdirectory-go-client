@@ -1,14 +1,14 @@
-# \JsonFieldConstraintsApi
+# \JsonFieldConstraintsAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddJsonFieldConstraints**](JsonFieldConstraintsApi.md#AddJsonFieldConstraints) | **Post** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints | Add a new JSON Field Constraints to the config
-[**DeleteJsonFieldConstraints**](JsonFieldConstraintsApi.md#DeleteJsonFieldConstraints) | **Delete** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name} | Delete a JSON Field Constraints
-[**GetJsonFieldConstraints**](JsonFieldConstraintsApi.md#GetJsonFieldConstraints) | **Get** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name} | Returns a single JSON Field Constraints
-[**ListJsonFieldConstraints**](JsonFieldConstraintsApi.md#ListJsonFieldConstraints) | **Get** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints | Returns a list of all JSON Field Constraints objects
-[**UpdateJsonFieldConstraints**](JsonFieldConstraintsApi.md#UpdateJsonFieldConstraints) | **Patch** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name} | Update an existing JSON Field Constraints by name
+[**AddJsonFieldConstraints**](JsonFieldConstraintsAPI.md#AddJsonFieldConstraints) | **Post** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints | Add a new JSON Field Constraints to the config
+[**DeleteJsonFieldConstraints**](JsonFieldConstraintsAPI.md#DeleteJsonFieldConstraints) | **Delete** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name} | Delete a JSON Field Constraints
+[**GetJsonFieldConstraints**](JsonFieldConstraintsAPI.md#GetJsonFieldConstraints) | **Get** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name} | Returns a single JSON Field Constraints
+[**ListJsonFieldConstraints**](JsonFieldConstraintsAPI.md#ListJsonFieldConstraints) | **Get** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints | Returns a list of all JSON Field Constraints objects
+[**UpdateJsonFieldConstraints**](JsonFieldConstraintsAPI.md#UpdateJsonFieldConstraints) | **Patch** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name} | Update an existing JSON Field Constraints by name
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.JsonFieldConstraintsApi.AddJsonFieldConstraints(context.Background(), jsonAttributeConstraintsName).AddJsonFieldConstraintsRequest(addJsonFieldConstraintsRequest).Execute()
+    resp, r, err := apiClient.JsonFieldConstraintsAPI.AddJsonFieldConstraints(context.Background(), jsonAttributeConstraintsName).AddJsonFieldConstraintsRequest(addJsonFieldConstraintsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsApi.AddJsonFieldConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsAPI.AddJsonFieldConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddJsonFieldConstraints`: JsonFieldConstraintsResponse
-    fmt.Fprintf(os.Stdout, "Response from `JsonFieldConstraintsApi.AddJsonFieldConstraints`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `JsonFieldConstraintsAPI.AddJsonFieldConstraints`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.JsonFieldConstraintsApi.DeleteJsonFieldConstraints(context.Background(), jsonFieldConstraintsName, jsonAttributeConstraintsName).Execute()
+    r, err := apiClient.JsonFieldConstraintsAPI.DeleteJsonFieldConstraints(context.Background(), jsonFieldConstraintsName, jsonAttributeConstraintsName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsApi.DeleteJsonFieldConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsAPI.DeleteJsonFieldConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.JsonFieldConstraintsApi.GetJsonFieldConstraints(context.Background(), jsonFieldConstraintsName, jsonAttributeConstraintsName).Execute()
+    resp, r, err := apiClient.JsonFieldConstraintsAPI.GetJsonFieldConstraints(context.Background(), jsonFieldConstraintsName, jsonAttributeConstraintsName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsApi.GetJsonFieldConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsAPI.GetJsonFieldConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetJsonFieldConstraints`: JsonFieldConstraintsResponse
-    fmt.Fprintf(os.Stdout, "Response from `JsonFieldConstraintsApi.GetJsonFieldConstraints`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `JsonFieldConstraintsAPI.GetJsonFieldConstraints`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.JsonFieldConstraintsApi.ListJsonFieldConstraints(context.Background(), jsonAttributeConstraintsName).Filter(filter).Execute()
+    resp, r, err := apiClient.JsonFieldConstraintsAPI.ListJsonFieldConstraints(context.Background(), jsonAttributeConstraintsName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsApi.ListJsonFieldConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsAPI.ListJsonFieldConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListJsonFieldConstraints`: JsonFieldConstraintsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `JsonFieldConstraintsApi.ListJsonFieldConstraints`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `JsonFieldConstraintsAPI.ListJsonFieldConstraints`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.JsonFieldConstraintsApi.UpdateJsonFieldConstraints(context.Background(), jsonFieldConstraintsName, jsonAttributeConstraintsName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.JsonFieldConstraintsAPI.UpdateJsonFieldConstraints(context.Background(), jsonFieldConstraintsName, jsonAttributeConstraintsName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsApi.UpdateJsonFieldConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonFieldConstraintsAPI.UpdateJsonFieldConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateJsonFieldConstraints`: JsonFieldConstraintsResponse
-    fmt.Fprintf(os.Stdout, "Response from `JsonFieldConstraintsApi.UpdateJsonFieldConstraints`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `JsonFieldConstraintsAPI.UpdateJsonFieldConstraints`: %v\n", resp)
 }
 ```
 

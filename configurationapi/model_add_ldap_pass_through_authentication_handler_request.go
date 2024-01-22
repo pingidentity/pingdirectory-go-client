@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLdapPassThroughAuthenticationHandlerRequest{}
 
 // AddLdapPassThroughAuthenticationHandlerRequest struct for AddLdapPassThroughAuthenticationHandlerRequest
 type AddLdapPassThroughAuthenticationHandlerRequest struct {
-	// Name of the new Pass Through Authentication Handler
-	HandlerName string                                              `json:"handlerName"`
-	Schemas     []EnumldapPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
 	Server           []string                                                  `json:"server"`
 	ServerAccessMode *EnumpassThroughAuthenticationHandlerServerAccessModeProp `json:"serverAccessMode,omitempty"`
@@ -53,17 +51,19 @@ type AddLdapPassThroughAuthenticationHandlerRequest struct {
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
+	// Name of the new Pass Through Authentication Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddLdapPassThroughAuthenticationHandlerRequest instantiates a new AddLdapPassThroughAuthenticationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapPassThroughAuthenticationHandlerRequest(handlerName string, schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn, server []string) *AddLdapPassThroughAuthenticationHandlerRequest {
+func NewAddLdapPassThroughAuthenticationHandlerRequest(schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn, server []string, handlerName string) *AddLdapPassThroughAuthenticationHandlerRequest {
 	this := AddLdapPassThroughAuthenticationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.Server = server
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -73,30 +73,6 @@ func NewAddLdapPassThroughAuthenticationHandlerRequest(handlerName string, schem
 func NewAddLdapPassThroughAuthenticationHandlerRequestWithDefaults() *AddLdapPassThroughAuthenticationHandlerRequest {
 	this := AddLdapPassThroughAuthenticationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -627,6 +603,30 @@ func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetRequestCriteria(v st
 	o.RequestCriteria = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddLdapPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -637,7 +637,6 @@ func (o AddLdapPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, e
 
 func (o AddLdapPassThroughAuthenticationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["server"] = o.Server
 	if !IsNil(o.ServerAccessMode) {
@@ -685,6 +684,7 @@ func (o AddLdapPassThroughAuthenticationHandlerRequest) ToMap() (map[string]inte
 	if !IsNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

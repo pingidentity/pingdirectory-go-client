@@ -19,8 +19,6 @@ var _ MappedNullable = &VaultCipherStreamProviderResponse{}
 
 // VaultCipherStreamProviderResponse struct for VaultCipherStreamProviderResponse
 type VaultCipherStreamProviderResponse struct {
-	// Name of the Cipher Stream Provider
-	Id      string                                   `json:"id"`
 	Schemas []EnumvaultCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault server.
 	VaultExternalServer *string `json:"vaultExternalServer,omitempty"`
@@ -48,20 +46,22 @@ type VaultCipherStreamProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Cipher Stream Provider
+	Id string `json:"id"`
 }
 
 // NewVaultCipherStreamProviderResponse instantiates a new VaultCipherStreamProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVaultCipherStreamProviderResponse(id string, schemas []EnumvaultCipherStreamProviderSchemaUrn, vaultSecretPath string, vaultSecretFieldName string, vaultEncryptionMetadataFile string, enabled bool) *VaultCipherStreamProviderResponse {
+func NewVaultCipherStreamProviderResponse(schemas []EnumvaultCipherStreamProviderSchemaUrn, vaultSecretPath string, vaultSecretFieldName string, vaultEncryptionMetadataFile string, enabled bool, id string) *VaultCipherStreamProviderResponse {
 	this := VaultCipherStreamProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.VaultSecretPath = vaultSecretPath
 	this.VaultSecretFieldName = vaultSecretFieldName
 	this.VaultEncryptionMetadataFile = vaultEncryptionMetadataFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -71,30 +71,6 @@ func NewVaultCipherStreamProviderResponse(id string, schemas []EnumvaultCipherSt
 func NewVaultCipherStreamProviderResponseWithDefaults() *VaultCipherStreamProviderResponse {
 	this := VaultCipherStreamProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *VaultCipherStreamProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *VaultCipherStreamProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *VaultCipherStreamProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -537,6 +513,30 @@ func (o *VaultCipherStreamProviderResponse) SetUrnpingidentityschemasconfigurati
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *VaultCipherStreamProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *VaultCipherStreamProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *VaultCipherStreamProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o VaultCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -547,7 +547,6 @@ func (o VaultCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o VaultCipherStreamProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.VaultExternalServer) {
 		toSerialize["vaultExternalServer"] = o.VaultExternalServer
@@ -583,6 +582,7 @@ func (o VaultCipherStreamProviderResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

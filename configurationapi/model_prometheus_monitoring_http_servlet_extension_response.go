@@ -19,8 +19,6 @@ var _ MappedNullable = &PrometheusMonitoringHttpServletExtensionResponse{}
 
 // PrometheusMonitoringHttpServletExtensionResponse struct for PrometheusMonitoringHttpServletExtensionResponse
 type PrometheusMonitoringHttpServletExtensionResponse struct {
-	// Name of the HTTP Servlet Extension
-	Id      string                                                  `json:"id"`
 	Schemas []EnumprometheusMonitoringHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
@@ -48,17 +46,19 @@ type PrometheusMonitoringHttpServletExtensionResponse struct {
 	CorrelationIDResponseHeader                   *string                                            `json:"correlationIDResponseHeader,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the HTTP Servlet Extension
+	Id string `json:"id"`
 }
 
 // NewPrometheusMonitoringHttpServletExtensionResponse instantiates a new PrometheusMonitoringHttpServletExtensionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPrometheusMonitoringHttpServletExtensionResponse(id string, schemas []EnumprometheusMonitoringHttpServletExtensionSchemaUrn, baseContextPath string) *PrometheusMonitoringHttpServletExtensionResponse {
+func NewPrometheusMonitoringHttpServletExtensionResponse(schemas []EnumprometheusMonitoringHttpServletExtensionSchemaUrn, baseContextPath string, id string) *PrometheusMonitoringHttpServletExtensionResponse {
 	this := PrometheusMonitoringHttpServletExtensionResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.BaseContextPath = baseContextPath
+	this.Id = id
 	return &this
 }
 
@@ -68,30 +68,6 @@ func NewPrometheusMonitoringHttpServletExtensionResponse(id string, schemas []En
 func NewPrometheusMonitoringHttpServletExtensionResponseWithDefaults() *PrometheusMonitoringHttpServletExtensionResponse {
 	this := PrometheusMonitoringHttpServletExtensionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *PrometheusMonitoringHttpServletExtensionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PrometheusMonitoringHttpServletExtensionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *PrometheusMonitoringHttpServletExtensionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -558,6 +534,30 @@ func (o *PrometheusMonitoringHttpServletExtensionResponse) SetUrnpingidentitysch
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *PrometheusMonitoringHttpServletExtensionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *PrometheusMonitoringHttpServletExtensionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *PrometheusMonitoringHttpServletExtensionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o PrometheusMonitoringHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -568,7 +568,6 @@ func (o PrometheusMonitoringHttpServletExtensionResponse) MarshalJSON() ([]byte,
 
 func (o PrometheusMonitoringHttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["baseContextPath"] = o.BaseContextPath
 	if !IsNil(o.IncludeInstanceNameLabel) {
@@ -610,6 +609,7 @@ func (o PrometheusMonitoringHttpServletExtensionResponse) ToMap() (map[string]in
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

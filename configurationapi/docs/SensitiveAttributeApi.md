@@ -1,14 +1,14 @@
-# \SensitiveAttributeApi
+# \SensitiveAttributeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddSensitiveAttribute**](SensitiveAttributeApi.md#AddSensitiveAttribute) | **Post** /sensitive-attributes | Add a new Sensitive Attribute to the config
-[**DeleteSensitiveAttribute**](SensitiveAttributeApi.md#DeleteSensitiveAttribute) | **Delete** /sensitive-attributes/{sensitive-attribute-name} | Delete a Sensitive Attribute
-[**GetSensitiveAttribute**](SensitiveAttributeApi.md#GetSensitiveAttribute) | **Get** /sensitive-attributes/{sensitive-attribute-name} | Returns a single Sensitive Attribute
-[**ListSensitiveAttributes**](SensitiveAttributeApi.md#ListSensitiveAttributes) | **Get** /sensitive-attributes | Returns a list of all Sensitive Attribute objects
-[**UpdateSensitiveAttribute**](SensitiveAttributeApi.md#UpdateSensitiveAttribute) | **Patch** /sensitive-attributes/{sensitive-attribute-name} | Update an existing Sensitive Attribute by name
+[**AddSensitiveAttribute**](SensitiveAttributeAPI.md#AddSensitiveAttribute) | **Post** /sensitive-attributes | Add a new Sensitive Attribute to the config
+[**DeleteSensitiveAttribute**](SensitiveAttributeAPI.md#DeleteSensitiveAttribute) | **Delete** /sensitive-attributes/{sensitive-attribute-name} | Delete a Sensitive Attribute
+[**GetSensitiveAttribute**](SensitiveAttributeAPI.md#GetSensitiveAttribute) | **Get** /sensitive-attributes/{sensitive-attribute-name} | Returns a single Sensitive Attribute
+[**ListSensitiveAttributes**](SensitiveAttributeAPI.md#ListSensitiveAttributes) | **Get** /sensitive-attributes | Returns a list of all Sensitive Attribute objects
+[**UpdateSensitiveAttribute**](SensitiveAttributeAPI.md#UpdateSensitiveAttribute) | **Patch** /sensitive-attributes/{sensitive-attribute-name} | Update an existing Sensitive Attribute by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addSensitiveAttributeRequest := *openapiclient.NewAddSensitiveAttributeRequest("AttributeName_example", []string{"AttributeType_example"}) // AddSensitiveAttributeRequest | Create a new Sensitive Attribute in the config
+    addSensitiveAttributeRequest := *openapiclient.NewAddSensitiveAttributeRequest([]string{"AttributeType_example"}, "AttributeName_example") // AddSensitiveAttributeRequest | Create a new Sensitive Attribute in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SensitiveAttributeApi.AddSensitiveAttribute(context.Background()).AddSensitiveAttributeRequest(addSensitiveAttributeRequest).Execute()
+    resp, r, err := apiClient.SensitiveAttributeAPI.AddSensitiveAttribute(context.Background()).AddSensitiveAttributeRequest(addSensitiveAttributeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeApi.AddSensitiveAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeAPI.AddSensitiveAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddSensitiveAttribute`: SensitiveAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `SensitiveAttributeApi.AddSensitiveAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SensitiveAttributeAPI.AddSensitiveAttribute`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SensitiveAttributeApi.DeleteSensitiveAttribute(context.Background(), sensitiveAttributeName).Execute()
+    r, err := apiClient.SensitiveAttributeAPI.DeleteSensitiveAttribute(context.Background(), sensitiveAttributeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeApi.DeleteSensitiveAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeAPI.DeleteSensitiveAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SensitiveAttributeApi.GetSensitiveAttribute(context.Background(), sensitiveAttributeName).Execute()
+    resp, r, err := apiClient.SensitiveAttributeAPI.GetSensitiveAttribute(context.Background(), sensitiveAttributeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeApi.GetSensitiveAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeAPI.GetSensitiveAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSensitiveAttribute`: SensitiveAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `SensitiveAttributeApi.GetSensitiveAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SensitiveAttributeAPI.GetSensitiveAttribute`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SensitiveAttributeApi.ListSensitiveAttributes(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.SensitiveAttributeAPI.ListSensitiveAttributes(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeApi.ListSensitiveAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeAPI.ListSensitiveAttributes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListSensitiveAttributes`: SensitiveAttributeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `SensitiveAttributeApi.ListSensitiveAttributes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SensitiveAttributeAPI.ListSensitiveAttributes`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SensitiveAttributeApi.UpdateSensitiveAttribute(context.Background(), sensitiveAttributeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.SensitiveAttributeAPI.UpdateSensitiveAttribute(context.Background(), sensitiveAttributeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeApi.UpdateSensitiveAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeAPI.UpdateSensitiveAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSensitiveAttribute`: SensitiveAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `SensitiveAttributeApi.UpdateSensitiveAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SensitiveAttributeAPI.UpdateSensitiveAttribute`: %v\n", resp)
 }
 ```
 

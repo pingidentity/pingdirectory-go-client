@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the SCIM Schema | 
 **Schemas** | Pointer to [**[]EnumscimSchemaSchemaUrn**](EnumscimSchemaSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this SCIM Schema | [optional] 
 **SchemaURN** | **string** | The URN which identifies this SCIM Schema. | 
 **DisplayName** | Pointer to **string** | The human readable name for this SCIM Schema. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the SCIM Schema | 
 
 ## Methods
 
 ### NewScimSchemaResponse
 
-`func NewScimSchemaResponse(id string, schemaURN string, ) *ScimSchemaResponse`
+`func NewScimSchemaResponse(schemaURN string, id string, ) *ScimSchemaResponse`
 
 NewScimSchemaResponse instantiates a new ScimSchemaResponse object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewScimSchemaResponseWithDefaults instantiates a new ScimSchemaResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ScimSchemaResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ScimSchemaResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ScimSchemaResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -195,6 +175,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ScimSchemaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ScimSchemaResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ScimSchemaResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ScimSchemaResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

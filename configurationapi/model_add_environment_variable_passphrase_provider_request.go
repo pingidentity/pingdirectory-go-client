@@ -19,27 +19,27 @@ var _ MappedNullable = &AddEnvironmentVariablePassphraseProviderRequest{}
 
 // AddEnvironmentVariablePassphraseProviderRequest struct for AddEnvironmentVariablePassphraseProviderRequest
 type AddEnvironmentVariablePassphraseProviderRequest struct {
-	// Name of the new Passphrase Provider
-	ProviderName string                                               `json:"providerName"`
-	Schemas      []EnumenvironmentVariablePassphraseProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumenvironmentVariablePassphraseProviderSchemaUrn `json:"schemas"`
 	// The name of the environment variable that is expected to hold the passphrase.
 	EnvironmentVariable string `json:"environmentVariable"`
 	// A description for this Passphrase Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Passphrase Provider is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Passphrase Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddEnvironmentVariablePassphraseProviderRequest instantiates a new AddEnvironmentVariablePassphraseProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddEnvironmentVariablePassphraseProviderRequest(providerName string, schemas []EnumenvironmentVariablePassphraseProviderSchemaUrn, environmentVariable string, enabled bool) *AddEnvironmentVariablePassphraseProviderRequest {
+func NewAddEnvironmentVariablePassphraseProviderRequest(schemas []EnumenvironmentVariablePassphraseProviderSchemaUrn, environmentVariable string, enabled bool, providerName string) *AddEnvironmentVariablePassphraseProviderRequest {
 	this := AddEnvironmentVariablePassphraseProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.EnvironmentVariable = environmentVariable
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -49,30 +49,6 @@ func NewAddEnvironmentVariablePassphraseProviderRequest(providerName string, sch
 func NewAddEnvironmentVariablePassphraseProviderRequestWithDefaults() *AddEnvironmentVariablePassphraseProviderRequest {
 	this := AddEnvironmentVariablePassphraseProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddEnvironmentVariablePassphraseProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddEnvironmentVariablePassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddEnvironmentVariablePassphraseProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -179,6 +155,30 @@ func (o *AddEnvironmentVariablePassphraseProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddEnvironmentVariablePassphraseProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddEnvironmentVariablePassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddEnvironmentVariablePassphraseProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddEnvironmentVariablePassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -189,13 +189,13 @@ func (o AddEnvironmentVariablePassphraseProviderRequest) MarshalJSON() ([]byte, 
 
 func (o AddEnvironmentVariablePassphraseProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["environmentVariable"] = o.EnvironmentVariable
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

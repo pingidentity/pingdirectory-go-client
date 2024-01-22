@@ -19,9 +19,7 @@ var _ MappedNullable = &AddConsentDefinitionRequest{}
 
 // AddConsentDefinitionRequest struct for AddConsentDefinitionRequest
 type AddConsentDefinitionRequest struct {
-	// Name of the new Consent Definition
-	DefinitionName string                           `json:"definitionName"`
-	Schemas        []EnumconsentDefinitionSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumconsentDefinitionSchemaUrn `json:"schemas,omitempty"`
 	// A version-independent unique identifier for this Consent Definition.
 	UniqueID string `json:"uniqueID"`
 	// A human-readable display name for this Consent Definition.
@@ -30,16 +28,18 @@ type AddConsentDefinitionRequest struct {
 	Parameter []string `json:"parameter,omitempty"`
 	// A description for this Consent Definition
 	Description *string `json:"description,omitempty"`
+	// Name of the new Consent Definition
+	DefinitionName string `json:"definitionName"`
 }
 
 // NewAddConsentDefinitionRequest instantiates a new AddConsentDefinitionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConsentDefinitionRequest(definitionName string, uniqueID string) *AddConsentDefinitionRequest {
+func NewAddConsentDefinitionRequest(uniqueID string, definitionName string) *AddConsentDefinitionRequest {
 	this := AddConsentDefinitionRequest{}
-	this.DefinitionName = definitionName
 	this.UniqueID = uniqueID
+	this.DefinitionName = definitionName
 	return &this
 }
 
@@ -49,30 +49,6 @@ func NewAddConsentDefinitionRequest(definitionName string, uniqueID string) *Add
 func NewAddConsentDefinitionRequestWithDefaults() *AddConsentDefinitionRequest {
 	this := AddConsentDefinitionRequest{}
 	return &this
-}
-
-// GetDefinitionName returns the DefinitionName field value
-func (o *AddConsentDefinitionRequest) GetDefinitionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.DefinitionName
-}
-
-// GetDefinitionNameOk returns a tuple with the DefinitionName field value
-// and a boolean to check if the value has been set.
-func (o *AddConsentDefinitionRequest) GetDefinitionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.DefinitionName, true
-}
-
-// SetDefinitionName sets field value
-func (o *AddConsentDefinitionRequest) SetDefinitionName(v string) {
-	o.DefinitionName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -227,6 +203,30 @@ func (o *AddConsentDefinitionRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetDefinitionName returns the DefinitionName field value
+func (o *AddConsentDefinitionRequest) GetDefinitionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.DefinitionName
+}
+
+// GetDefinitionNameOk returns a tuple with the DefinitionName field value
+// and a boolean to check if the value has been set.
+func (o *AddConsentDefinitionRequest) GetDefinitionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DefinitionName, true
+}
+
+// SetDefinitionName sets field value
+func (o *AddConsentDefinitionRequest) SetDefinitionName(v string) {
+	o.DefinitionName = v
+}
+
 func (o AddConsentDefinitionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -237,7 +237,6 @@ func (o AddConsentDefinitionRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddConsentDefinitionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["definitionName"] = o.DefinitionName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -251,6 +250,7 @@ func (o AddConsentDefinitionRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["definitionName"] = o.DefinitionName
 	return toSerialize, nil
 }
 

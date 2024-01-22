@@ -19,8 +19,6 @@ var _ MappedNullable = &AggregateRequestCriteriaResponse{}
 
 // AggregateRequestCriteriaResponse struct for AggregateRequestCriteriaResponse
 type AggregateRequestCriteriaResponse struct {
-	// Name of the Request Criteria
-	Id      string                                  `json:"id"`
 	Schemas []EnumaggregateRequestCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated operation request in order to match the aggregate request criteria. If one or more all-included request criteria objects are provided, then an operation request must match all of them in order to match the aggregate request criteria.
 	AllIncludedRequestCriteria []string `json:"allIncludedRequestCriteria,omitempty"`
@@ -34,16 +32,18 @@ type AggregateRequestCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Request Criteria
+	Id string `json:"id"`
 }
 
 // NewAggregateRequestCriteriaResponse instantiates a new AggregateRequestCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAggregateRequestCriteriaResponse(id string, schemas []EnumaggregateRequestCriteriaSchemaUrn) *AggregateRequestCriteriaResponse {
+func NewAggregateRequestCriteriaResponse(schemas []EnumaggregateRequestCriteriaSchemaUrn, id string) *AggregateRequestCriteriaResponse {
 	this := AggregateRequestCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAggregateRequestCriteriaResponse(id string, schemas []EnumaggregateReque
 func NewAggregateRequestCriteriaResponseWithDefaults() *AggregateRequestCriteriaResponse {
 	this := AggregateRequestCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AggregateRequestCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AggregateRequestCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AggregateRequestCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -327,6 +303,30 @@ func (o *AggregateRequestCriteriaResponse) SetUrnpingidentityschemasconfiguratio
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AggregateRequestCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AggregateRequestCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AggregateRequestCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AggregateRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -337,7 +337,6 @@ func (o AggregateRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o AggregateRequestCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllIncludedRequestCriteria) {
 		toSerialize["allIncludedRequestCriteria"] = o.AllIncludedRequestCriteria
@@ -360,6 +359,7 @@ func (o AggregateRequestCriteriaResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

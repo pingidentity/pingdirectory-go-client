@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Result Criteria | 
 **Schemas** | [**[]EnumsuccessfulBindResultCriteriaSchemaUrn**](EnumsuccessfulBindResultCriteriaSchemaUrn.md) |  | 
 **RequestCriteria** | Pointer to **string** | Specifies a request criteria object that must match the associated request for operations included in this Successful Bind Result Criteria. | [optional] 
 **IncludeAnonymousBinds** | Pointer to **bool** | Indicates whether this criteria will be permitted to match bind operations that resulted in anonymous authentication. | [optional] 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **IncludedUserGroupDN** | Pointer to **[]string** | The DNs of the groups whose members will be permitted to match this criteria. | [optional] 
 **ExcludedUserGroupDN** | Pointer to **[]string** | The DNs of the groups whose members will not be permitted to match this criteria. | [optional] 
 **Description** | Pointer to **string** | A description for this Result Criteria | [optional] 
+**CriteriaName** | **string** | Name of the new Result Criteria | 
 
 ## Methods
 
 ### NewAddSuccessfulBindResultCriteriaRequest
 
-`func NewAddSuccessfulBindResultCriteriaRequest(criteriaName string, schemas []EnumsuccessfulBindResultCriteriaSchemaUrn, ) *AddSuccessfulBindResultCriteriaRequest`
+`func NewAddSuccessfulBindResultCriteriaRequest(schemas []EnumsuccessfulBindResultCriteriaSchemaUrn, criteriaName string, ) *AddSuccessfulBindResultCriteriaRequest`
 
 NewAddSuccessfulBindResultCriteriaRequest instantiates a new AddSuccessfulBindResultCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewAddSuccessfulBindResultCriteriaRequestWithDefaults instantiates a new AddSuccessfulBindResultCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddSuccessfulBindResultCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddSuccessfulBindResultCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddSuccessfulBindResultCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -299,6 +279,26 @@ SetDescription sets Description field to given value.
 `func (o *AddSuccessfulBindResultCriteriaRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetCriteriaName
+
+`func (o *AddSuccessfulBindResultCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddSuccessfulBindResultCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddSuccessfulBindResultCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

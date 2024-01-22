@@ -1,12 +1,12 @@
-# \GroupImplementationApi
+# \GroupImplementationAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGroupImplementation**](GroupImplementationApi.md#GetGroupImplementation) | **Get** /group-implementations/{group-implementation-name} | Returns a single Group Implementation
-[**ListGroupImplementations**](GroupImplementationApi.md#ListGroupImplementations) | **Get** /group-implementations | Returns a list of all Group Implementation objects
-[**UpdateGroupImplementation**](GroupImplementationApi.md#UpdateGroupImplementation) | **Patch** /group-implementations/{group-implementation-name} | Update an existing Group Implementation by name
+[**GetGroupImplementation**](GroupImplementationAPI.md#GetGroupImplementation) | **Get** /group-implementations/{group-implementation-name} | Returns a single Group Implementation
+[**ListGroupImplementations**](GroupImplementationAPI.md#ListGroupImplementations) | **Get** /group-implementations | Returns a list of all Group Implementation objects
+[**UpdateGroupImplementation**](GroupImplementationAPI.md#UpdateGroupImplementation) | **Patch** /group-implementations/{group-implementation-name} | Update an existing Group Implementation by name
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupImplementationApi.GetGroupImplementation(context.Background(), groupImplementationName).Execute()
+    resp, r, err := apiClient.GroupImplementationAPI.GetGroupImplementation(context.Background(), groupImplementationName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupImplementationApi.GetGroupImplementation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GroupImplementationAPI.GetGroupImplementation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetGroupImplementation`: GetGroupImplementation200Response
-    fmt.Fprintf(os.Stdout, "Response from `GroupImplementationApi.GetGroupImplementation`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GroupImplementationAPI.GetGroupImplementation`: %v\n", resp)
 }
 ```
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupImplementationApi.ListGroupImplementations(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.GroupImplementationAPI.ListGroupImplementations(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupImplementationApi.ListGroupImplementations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GroupImplementationAPI.ListGroupImplementations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListGroupImplementations`: GroupImplementationListResponse
-    fmt.Fprintf(os.Stdout, "Response from `GroupImplementationApi.ListGroupImplementations`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GroupImplementationAPI.ListGroupImplementations`: %v\n", resp)
 }
 ```
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GroupImplementationApi.UpdateGroupImplementation(context.Background(), groupImplementationName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.GroupImplementationAPI.UpdateGroupImplementation(context.Background(), groupImplementationName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GroupImplementationApi.UpdateGroupImplementation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GroupImplementationAPI.UpdateGroupImplementation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateGroupImplementation`: GetGroupImplementation200Response
-    fmt.Fprintf(os.Stdout, "Response from `GroupImplementationApi.UpdateGroupImplementation`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GroupImplementationAPI.UpdateGroupImplementation`: %v\n", resp)
 }
 ```
 

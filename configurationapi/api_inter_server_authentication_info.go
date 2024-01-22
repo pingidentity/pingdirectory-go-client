@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// InterServerAuthenticationInfoApiService InterServerAuthenticationInfoApi service
-type InterServerAuthenticationInfoApiService service
+// InterServerAuthenticationInfoAPIService InterServerAuthenticationInfoAPI service
+type InterServerAuthenticationInfoAPIService service
 
 type ApiGetInterServerAuthenticationInfoRequest struct {
 	ctx                               context.Context
-	ApiService                        *InterServerAuthenticationInfoApiService
+	ApiService                        *InterServerAuthenticationInfoAPIService
 	interServerAuthenticationInfoName string
 	serverInstanceListenerName        string
 	serverInstanceName                string
@@ -43,7 +43,7 @@ GetInterServerAuthenticationInfo Returns a single Inter Server Authentication In
 	@param serverInstanceName Name of the Server Instance
 	@return ApiGetInterServerAuthenticationInfoRequest
 */
-func (a *InterServerAuthenticationInfoApiService) GetInterServerAuthenticationInfo(ctx context.Context, interServerAuthenticationInfoName string, serverInstanceListenerName string, serverInstanceName string) ApiGetInterServerAuthenticationInfoRequest {
+func (a *InterServerAuthenticationInfoAPIService) GetInterServerAuthenticationInfo(ctx context.Context, interServerAuthenticationInfoName string, serverInstanceListenerName string, serverInstanceName string) ApiGetInterServerAuthenticationInfoRequest {
 	return ApiGetInterServerAuthenticationInfoRequest{
 		ApiService:                        a,
 		ctx:                               ctx,
@@ -56,7 +56,7 @@ func (a *InterServerAuthenticationInfoApiService) GetInterServerAuthenticationIn
 // Execute executes the request
 //
 //	@return GetInterServerAuthenticationInfo200Response
-func (a *InterServerAuthenticationInfoApiService) GetInterServerAuthenticationInfoExecute(r ApiGetInterServerAuthenticationInfoRequest) (*GetInterServerAuthenticationInfo200Response, *http.Response, error) {
+func (a *InterServerAuthenticationInfoAPIService) GetInterServerAuthenticationInfoExecute(r ApiGetInterServerAuthenticationInfoRequest) (*GetInterServerAuthenticationInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -64,7 +64,7 @@ func (a *InterServerAuthenticationInfoApiService) GetInterServerAuthenticationIn
 		localVarReturnValue *GetInterServerAuthenticationInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterServerAuthenticationInfoApiService.GetInterServerAuthenticationInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterServerAuthenticationInfoAPIService.GetInterServerAuthenticationInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *InterServerAuthenticationInfoApiService) GetInterServerAuthenticationIn
 
 type ApiListInterServerAuthenticationInfoRequest struct {
 	ctx                        context.Context
-	ApiService                 *InterServerAuthenticationInfoApiService
+	ApiService                 *InterServerAuthenticationInfoAPIService
 	serverInstanceListenerName string
 	serverInstanceName         string
 	filter                     *string
@@ -158,7 +158,7 @@ ListInterServerAuthenticationInfo Returns a list of all Inter Server Authenticat
 	@param serverInstanceName Name of the Server Instance
 	@return ApiListInterServerAuthenticationInfoRequest
 */
-func (a *InterServerAuthenticationInfoApiService) ListInterServerAuthenticationInfo(ctx context.Context, serverInstanceListenerName string, serverInstanceName string) ApiListInterServerAuthenticationInfoRequest {
+func (a *InterServerAuthenticationInfoAPIService) ListInterServerAuthenticationInfo(ctx context.Context, serverInstanceListenerName string, serverInstanceName string) ApiListInterServerAuthenticationInfoRequest {
 	return ApiListInterServerAuthenticationInfoRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -170,7 +170,7 @@ func (a *InterServerAuthenticationInfoApiService) ListInterServerAuthenticationI
 // Execute executes the request
 //
 //	@return InterServerAuthenticationInfoListResponse
-func (a *InterServerAuthenticationInfoApiService) ListInterServerAuthenticationInfoExecute(r ApiListInterServerAuthenticationInfoRequest) (*InterServerAuthenticationInfoListResponse, *http.Response, error) {
+func (a *InterServerAuthenticationInfoAPIService) ListInterServerAuthenticationInfoExecute(r ApiListInterServerAuthenticationInfoRequest) (*InterServerAuthenticationInfoListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -178,7 +178,7 @@ func (a *InterServerAuthenticationInfoApiService) ListInterServerAuthenticationI
 		localVarReturnValue *InterServerAuthenticationInfoListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterServerAuthenticationInfoApiService.ListInterServerAuthenticationInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterServerAuthenticationInfoAPIService.ListInterServerAuthenticationInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -250,7 +250,7 @@ func (a *InterServerAuthenticationInfoApiService) ListInterServerAuthenticationI
 
 type ApiUpdateInterServerAuthenticationInfoRequest struct {
 	ctx                               context.Context
-	ApiService                        *InterServerAuthenticationInfoApiService
+	ApiService                        *InterServerAuthenticationInfoAPIService
 	interServerAuthenticationInfoName string
 	serverInstanceListenerName        string
 	serverInstanceName                string
@@ -276,7 +276,7 @@ UpdateInterServerAuthenticationInfo Update an existing Inter Server Authenticati
 	@param serverInstanceName Name of the Server Instance
 	@return ApiUpdateInterServerAuthenticationInfoRequest
 */
-func (a *InterServerAuthenticationInfoApiService) UpdateInterServerAuthenticationInfo(ctx context.Context, interServerAuthenticationInfoName string, serverInstanceListenerName string, serverInstanceName string) ApiUpdateInterServerAuthenticationInfoRequest {
+func (a *InterServerAuthenticationInfoAPIService) UpdateInterServerAuthenticationInfo(ctx context.Context, interServerAuthenticationInfoName string, serverInstanceListenerName string, serverInstanceName string) ApiUpdateInterServerAuthenticationInfoRequest {
 	return ApiUpdateInterServerAuthenticationInfoRequest{
 		ApiService:                        a,
 		ctx:                               ctx,
@@ -289,7 +289,7 @@ func (a *InterServerAuthenticationInfoApiService) UpdateInterServerAuthenticatio
 // Execute executes the request
 //
 //	@return GetInterServerAuthenticationInfo200Response
-func (a *InterServerAuthenticationInfoApiService) UpdateInterServerAuthenticationInfoExecute(r ApiUpdateInterServerAuthenticationInfoRequest) (*GetInterServerAuthenticationInfo200Response, *http.Response, error) {
+func (a *InterServerAuthenticationInfoAPIService) UpdateInterServerAuthenticationInfoExecute(r ApiUpdateInterServerAuthenticationInfoRequest) (*GetInterServerAuthenticationInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -297,7 +297,7 @@ func (a *InterServerAuthenticationInfoApiService) UpdateInterServerAuthenticatio
 		localVarReturnValue *GetInterServerAuthenticationInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterServerAuthenticationInfoApiService.UpdateInterServerAuthenticationInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InterServerAuthenticationInfoAPIService.UpdateInterServerAuthenticationInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

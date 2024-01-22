@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResourceName** | **string** | Name of the new Delegated Admin Correlated REST Resource | 
 **Schemas** | Pointer to [**[]EnumdelegatedAdminCorrelatedRestResourceSchemaUrn**](EnumdelegatedAdminCorrelatedRestResourceSchemaUrn.md) |  | [optional] 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Correlated REST Resource. | 
 **CorrelatedRESTResource** | **string** | The REST Resource Type that will be linked to this REST Resource Type. | 
 **PrimaryRESTResourceCorrelationAttribute** | **string** | The LDAP attribute from the parent REST Resource Type whose value will be used to match objects in the Delegated Admin Correlated REST Resource. This attribute must be writeable when use-secondary-value-for-linking is enabled. | 
 **SecondaryRESTResourceCorrelationAttribute** | **string** | The LDAP attribute from the Delegated Admin Correlated REST Resource whose value will be matched with the primary-rest-resource-correlation-attribute. This attribute must be writeable when use-secondary-value-for-linking is disabled. | 
 **UseSecondaryValueForLinking** | Pointer to **bool** | Indicates whether links should be created using the secondary correlation attribute value. | [optional] 
+**ResourceName** | **string** | Name of the new Delegated Admin Correlated REST Resource | 
 
 ## Methods
 
 ### NewAddDelegatedAdminCorrelatedRestResourceRequest
 
-`func NewAddDelegatedAdminCorrelatedRestResourceRequest(resourceName string, displayName string, correlatedRESTResource string, primaryRESTResourceCorrelationAttribute string, secondaryRESTResourceCorrelationAttribute string, ) *AddDelegatedAdminCorrelatedRestResourceRequest`
+`func NewAddDelegatedAdminCorrelatedRestResourceRequest(displayName string, correlatedRESTResource string, primaryRESTResourceCorrelationAttribute string, secondaryRESTResourceCorrelationAttribute string, resourceName string, ) *AddDelegatedAdminCorrelatedRestResourceRequest`
 
 NewAddDelegatedAdminCorrelatedRestResourceRequest instantiates a new AddDelegatedAdminCorrelatedRestResourceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddDelegatedAdminCorrelatedRestResourceRequestWithDefaults instantiates a new AddDelegatedAdminCorrelatedRestResourceRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetResourceName
-
-`func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetResourceName() string`
-
-GetResourceName returns the ResourceName field if non-nil, zero value otherwise.
-
-### GetResourceNameOk
-
-`func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetResourceNameOk() (*string, bool)`
-
-GetResourceNameOk returns a tuple with the ResourceName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceName
-
-`func (o *AddDelegatedAdminCorrelatedRestResourceRequest) SetResourceName(v string)`
-
-SetResourceName sets ResourceName field to given value.
-
 
 ### GetSchemas
 
@@ -180,6 +160,26 @@ SetUseSecondaryValueForLinking sets UseSecondaryValueForLinking field to given v
 `func (o *AddDelegatedAdminCorrelatedRestResourceRequest) HasUseSecondaryValueForLinking() bool`
 
 HasUseSecondaryValueForLinking returns a boolean if a field has been set.
+
+### GetResourceName
+
+`func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetResourceName() string`
+
+GetResourceName returns the ResourceName field if non-nil, zero value otherwise.
+
+### GetResourceNameOk
+
+`func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetResourceNameOk() (*string, bool)`
+
+GetResourceNameOk returns a tuple with the ResourceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceName
+
+`func (o *AddDelegatedAdminCorrelatedRestResourceRequest) SetResourceName(v string)`
+
+SetResourceName sets ResourceName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

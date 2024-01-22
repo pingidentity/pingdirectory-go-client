@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPassphrasePasswordGeneratorRequest{}
 
 // AddPassphrasePasswordGeneratorRequest struct for AddPassphrasePasswordGeneratorRequest
 type AddPassphrasePasswordGeneratorRequest struct {
-	// Name of the new Password Generator
-	GeneratorName string                                     `json:"generatorName"`
-	Schemas       []EnumpassphrasePasswordGeneratorSchemaUrn `json:"schemas"`
+	Schemas []EnumpassphrasePasswordGeneratorSchemaUrn `json:"schemas"`
 	// The path to the dictionary file that will be used to obtain the words for use in generated passwords.
 	DictionaryFile string `json:"dictionaryFile"`
 	// The minimum number of characters that generated passwords will be required to have.
@@ -34,18 +32,20 @@ type AddPassphrasePasswordGeneratorRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Generator is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Generator
+	GeneratorName string `json:"generatorName"`
 }
 
 // NewAddPassphrasePasswordGeneratorRequest instantiates a new AddPassphrasePasswordGeneratorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPassphrasePasswordGeneratorRequest(generatorName string, schemas []EnumpassphrasePasswordGeneratorSchemaUrn, dictionaryFile string, enabled bool) *AddPassphrasePasswordGeneratorRequest {
+func NewAddPassphrasePasswordGeneratorRequest(schemas []EnumpassphrasePasswordGeneratorSchemaUrn, dictionaryFile string, enabled bool, generatorName string) *AddPassphrasePasswordGeneratorRequest {
 	this := AddPassphrasePasswordGeneratorRequest{}
-	this.GeneratorName = generatorName
 	this.Schemas = schemas
 	this.DictionaryFile = dictionaryFile
 	this.Enabled = enabled
+	this.GeneratorName = generatorName
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewAddPassphrasePasswordGeneratorRequest(generatorName string, schemas []En
 func NewAddPassphrasePasswordGeneratorRequestWithDefaults() *AddPassphrasePasswordGeneratorRequest {
 	this := AddPassphrasePasswordGeneratorRequest{}
 	return &this
-}
-
-// GetGeneratorName returns the GeneratorName field value
-func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.GeneratorName
-}
-
-// GetGeneratorNameOk returns a tuple with the GeneratorName field value
-// and a boolean to check if the value has been set.
-func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GeneratorName, true
-}
-
-// SetGeneratorName sets field value
-func (o *AddPassphrasePasswordGeneratorRequest) SetGeneratorName(v string) {
-	o.GeneratorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -281,6 +257,30 @@ func (o *AddPassphrasePasswordGeneratorRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetGeneratorName returns the GeneratorName field value
+func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.GeneratorName
+}
+
+// GetGeneratorNameOk returns a tuple with the GeneratorName field value
+// and a boolean to check if the value has been set.
+func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GeneratorName, true
+}
+
+// SetGeneratorName sets field value
+func (o *AddPassphrasePasswordGeneratorRequest) SetGeneratorName(v string) {
+	o.GeneratorName = v
+}
+
 func (o AddPassphrasePasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -291,7 +291,6 @@ func (o AddPassphrasePasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPassphrasePasswordGeneratorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["generatorName"] = o.GeneratorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["dictionaryFile"] = o.DictionaryFile
 	if !IsNil(o.MinimumPasswordCharacters) {
@@ -307,6 +306,7 @@ func (o AddPassphrasePasswordGeneratorRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["generatorName"] = o.GeneratorName
 	return toSerialize, nil
 }
 

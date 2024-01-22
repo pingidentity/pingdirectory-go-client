@@ -19,8 +19,6 @@ var _ MappedNullable = &AzureKeyVaultCipherStreamProviderResponse{}
 
 // AzureKeyVaultCipherStreamProviderResponse struct for AzureKeyVaultCipherStreamProviderResponse
 type AzureKeyVaultCipherStreamProviderResponse struct {
-	// Name of the Cipher Stream Provider
-	Id      string                                           `json:"id"`
 	Schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The URI that identifies the Azure Key Vault from which the secret is to be retrieved.
 	KeyVaultURI string `json:"keyVaultURI"`
@@ -40,21 +38,23 @@ type AzureKeyVaultCipherStreamProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Cipher Stream Provider
+	Id string `json:"id"`
 }
 
 // NewAzureKeyVaultCipherStreamProviderResponse instantiates a new AzureKeyVaultCipherStreamProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAzureKeyVaultCipherStreamProviderResponse(id string, schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, encryptionMetadataFile string, enabled bool) *AzureKeyVaultCipherStreamProviderResponse {
+func NewAzureKeyVaultCipherStreamProviderResponse(schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, encryptionMetadataFile string, enabled bool, id string) *AzureKeyVaultCipherStreamProviderResponse {
 	this := AzureKeyVaultCipherStreamProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.KeyVaultURI = keyVaultURI
 	this.AzureAuthenticationMethod = azureAuthenticationMethod
 	this.SecretName = secretName
 	this.EncryptionMetadataFile = encryptionMetadataFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -64,30 +64,6 @@ func NewAzureKeyVaultCipherStreamProviderResponse(id string, schemas []Enumazure
 func NewAzureKeyVaultCipherStreamProviderResponseWithDefaults() *AzureKeyVaultCipherStreamProviderResponse {
 	this := AzureKeyVaultCipherStreamProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AzureKeyVaultCipherStreamProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AzureKeyVaultCipherStreamProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AzureKeyVaultCipherStreamProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -394,6 +370,30 @@ func (o *AzureKeyVaultCipherStreamProviderResponse) SetUrnpingidentityschemascon
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AzureKeyVaultCipherStreamProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AzureKeyVaultCipherStreamProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AzureKeyVaultCipherStreamProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AzureKeyVaultCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -404,7 +404,6 @@ func (o AzureKeyVaultCipherStreamProviderResponse) MarshalJSON() ([]byte, error)
 
 func (o AzureKeyVaultCipherStreamProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["keyVaultURI"] = o.KeyVaultURI
 	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
@@ -426,6 +425,7 @@ func (o AzureKeyVaultCipherStreamProviderResponse) ToMap() (map[string]interface
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

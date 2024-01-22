@@ -1,14 +1,14 @@
-# \PrometheusMonitorAttributeMetricApi
+# \PrometheusMonitorAttributeMetricAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPrometheusMonitorAttributeMetric**](PrometheusMonitorAttributeMetricApi.md#AddPrometheusMonitorAttributeMetric) | **Post** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics | Add a new Prometheus Monitor Attribute Metric to the config
-[**DeletePrometheusMonitorAttributeMetric**](PrometheusMonitorAttributeMetricApi.md#DeletePrometheusMonitorAttributeMetric) | **Delete** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics/{prometheus-monitor-attribute-metric-name} | Delete a Prometheus Monitor Attribute Metric
-[**GetPrometheusMonitorAttributeMetric**](PrometheusMonitorAttributeMetricApi.md#GetPrometheusMonitorAttributeMetric) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics/{prometheus-monitor-attribute-metric-name} | Returns a single Prometheus Monitor Attribute Metric
-[**ListPrometheusMonitorAttributeMetrics**](PrometheusMonitorAttributeMetricApi.md#ListPrometheusMonitorAttributeMetrics) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics | Returns a list of all Prometheus Monitor Attribute Metric objects
-[**UpdatePrometheusMonitorAttributeMetric**](PrometheusMonitorAttributeMetricApi.md#UpdatePrometheusMonitorAttributeMetric) | **Patch** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics/{prometheus-monitor-attribute-metric-name} | Update an existing Prometheus Monitor Attribute Metric by name
+[**AddPrometheusMonitorAttributeMetric**](PrometheusMonitorAttributeMetricAPI.md#AddPrometheusMonitorAttributeMetric) | **Post** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics | Add a new Prometheus Monitor Attribute Metric to the config
+[**DeletePrometheusMonitorAttributeMetric**](PrometheusMonitorAttributeMetricAPI.md#DeletePrometheusMonitorAttributeMetric) | **Delete** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics/{prometheus-monitor-attribute-metric-name} | Delete a Prometheus Monitor Attribute Metric
+[**GetPrometheusMonitorAttributeMetric**](PrometheusMonitorAttributeMetricAPI.md#GetPrometheusMonitorAttributeMetric) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics/{prometheus-monitor-attribute-metric-name} | Returns a single Prometheus Monitor Attribute Metric
+[**ListPrometheusMonitorAttributeMetrics**](PrometheusMonitorAttributeMetricAPI.md#ListPrometheusMonitorAttributeMetrics) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics | Returns a list of all Prometheus Monitor Attribute Metric objects
+[**UpdatePrometheusMonitorAttributeMetric**](PrometheusMonitorAttributeMetricAPI.md#UpdatePrometheusMonitorAttributeMetric) | **Patch** /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics/{prometheus-monitor-attribute-metric-name} | Update an existing Prometheus Monitor Attribute Metric by name
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PrometheusMonitorAttributeMetricApi.AddPrometheusMonitorAttributeMetric(context.Background(), httpServletExtensionName).AddPrometheusMonitorAttributeMetricRequest(addPrometheusMonitorAttributeMetricRequest).Execute()
+    resp, r, err := apiClient.PrometheusMonitorAttributeMetricAPI.AddPrometheusMonitorAttributeMetric(context.Background(), httpServletExtensionName).AddPrometheusMonitorAttributeMetricRequest(addPrometheusMonitorAttributeMetricRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricApi.AddPrometheusMonitorAttributeMetric``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricAPI.AddPrometheusMonitorAttributeMetric``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddPrometheusMonitorAttributeMetric`: PrometheusMonitorAttributeMetricResponse
-    fmt.Fprintf(os.Stdout, "Response from `PrometheusMonitorAttributeMetricApi.AddPrometheusMonitorAttributeMetric`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PrometheusMonitorAttributeMetricAPI.AddPrometheusMonitorAttributeMetric`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PrometheusMonitorAttributeMetricApi.DeletePrometheusMonitorAttributeMetric(context.Background(), prometheusMonitorAttributeMetricName, httpServletExtensionName).Execute()
+    r, err := apiClient.PrometheusMonitorAttributeMetricAPI.DeletePrometheusMonitorAttributeMetric(context.Background(), prometheusMonitorAttributeMetricName, httpServletExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricApi.DeletePrometheusMonitorAttributeMetric``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricAPI.DeletePrometheusMonitorAttributeMetric``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PrometheusMonitorAttributeMetricApi.GetPrometheusMonitorAttributeMetric(context.Background(), prometheusMonitorAttributeMetricName, httpServletExtensionName).Execute()
+    resp, r, err := apiClient.PrometheusMonitorAttributeMetricAPI.GetPrometheusMonitorAttributeMetric(context.Background(), prometheusMonitorAttributeMetricName, httpServletExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricApi.GetPrometheusMonitorAttributeMetric``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricAPI.GetPrometheusMonitorAttributeMetric``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPrometheusMonitorAttributeMetric`: PrometheusMonitorAttributeMetricResponse
-    fmt.Fprintf(os.Stdout, "Response from `PrometheusMonitorAttributeMetricApi.GetPrometheusMonitorAttributeMetric`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PrometheusMonitorAttributeMetricAPI.GetPrometheusMonitorAttributeMetric`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PrometheusMonitorAttributeMetricApi.ListPrometheusMonitorAttributeMetrics(context.Background(), httpServletExtensionName).Filter(filter).Execute()
+    resp, r, err := apiClient.PrometheusMonitorAttributeMetricAPI.ListPrometheusMonitorAttributeMetrics(context.Background(), httpServletExtensionName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricApi.ListPrometheusMonitorAttributeMetrics``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricAPI.ListPrometheusMonitorAttributeMetrics``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPrometheusMonitorAttributeMetrics`: PrometheusMonitorAttributeMetricListResponse
-    fmt.Fprintf(os.Stdout, "Response from `PrometheusMonitorAttributeMetricApi.ListPrometheusMonitorAttributeMetrics`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PrometheusMonitorAttributeMetricAPI.ListPrometheusMonitorAttributeMetrics`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PrometheusMonitorAttributeMetricApi.UpdatePrometheusMonitorAttributeMetric(context.Background(), prometheusMonitorAttributeMetricName, httpServletExtensionName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.PrometheusMonitorAttributeMetricAPI.UpdatePrometheusMonitorAttributeMetric(context.Background(), prometheusMonitorAttributeMetricName, httpServletExtensionName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricApi.UpdatePrometheusMonitorAttributeMetric``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PrometheusMonitorAttributeMetricAPI.UpdatePrometheusMonitorAttributeMetric``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePrometheusMonitorAttributeMetric`: PrometheusMonitorAttributeMetricResponse
-    fmt.Fprintf(os.Stdout, "Response from `PrometheusMonitorAttributeMetricApi.UpdatePrometheusMonitorAttributeMetric`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PrometheusMonitorAttributeMetricAPI.UpdatePrometheusMonitorAttributeMetric`: %v\n", resp)
 }
 ```
 

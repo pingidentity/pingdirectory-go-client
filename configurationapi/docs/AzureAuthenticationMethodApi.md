@@ -1,14 +1,14 @@
-# \AzureAuthenticationMethodApi
+# \AzureAuthenticationMethodAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddAzureAuthenticationMethod**](AzureAuthenticationMethodApi.md#AddAzureAuthenticationMethod) | **Post** /azure-authentication-methods | Add a new Azure Authentication Method to the config
-[**DeleteAzureAuthenticationMethod**](AzureAuthenticationMethodApi.md#DeleteAzureAuthenticationMethod) | **Delete** /azure-authentication-methods/{azure-authentication-method-name} | Delete a Azure Authentication Method
-[**GetAzureAuthenticationMethod**](AzureAuthenticationMethodApi.md#GetAzureAuthenticationMethod) | **Get** /azure-authentication-methods/{azure-authentication-method-name} | Returns a single Azure Authentication Method
-[**ListAzureAuthenticationMethods**](AzureAuthenticationMethodApi.md#ListAzureAuthenticationMethods) | **Get** /azure-authentication-methods | Returns a list of all Azure Authentication Method objects
-[**UpdateAzureAuthenticationMethod**](AzureAuthenticationMethodApi.md#UpdateAzureAuthenticationMethod) | **Patch** /azure-authentication-methods/{azure-authentication-method-name} | Update an existing Azure Authentication Method by name
+[**AddAzureAuthenticationMethod**](AzureAuthenticationMethodAPI.md#AddAzureAuthenticationMethod) | **Post** /azure-authentication-methods | Add a new Azure Authentication Method to the config
+[**DeleteAzureAuthenticationMethod**](AzureAuthenticationMethodAPI.md#DeleteAzureAuthenticationMethod) | **Delete** /azure-authentication-methods/{azure-authentication-method-name} | Delete a Azure Authentication Method
+[**GetAzureAuthenticationMethod**](AzureAuthenticationMethodAPI.md#GetAzureAuthenticationMethod) | **Get** /azure-authentication-methods/{azure-authentication-method-name} | Returns a single Azure Authentication Method
+[**ListAzureAuthenticationMethods**](AzureAuthenticationMethodAPI.md#ListAzureAuthenticationMethods) | **Get** /azure-authentication-methods | Returns a list of all Azure Authentication Method objects
+[**UpdateAzureAuthenticationMethod**](AzureAuthenticationMethodAPI.md#UpdateAzureAuthenticationMethod) | **Patch** /azure-authentication-methods/{azure-authentication-method-name} | Update an existing Azure Authentication Method by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addAzureAuthenticationMethodRequest := openapiclient.add_azure_authentication_method_request{AddClientSecretAzureAuthenticationMethodRequest: openapiclient.NewAddClientSecretAzureAuthenticationMethodRequest("MethodName_example", []openapiclient.EnumclientSecretAzureAuthenticationMethodSchemaUrn{openapiclient.Enumclient-secret-azure-authentication-methodSchemaUrn("urn:pingidentity:schemas:configuration:2.0:azure-authentication-method:client-secret")}, "TenantID_example", "ClientID_example", "ClientSecret_example")} // AddAzureAuthenticationMethodRequest | Create a new Azure Authentication Method in the config
+    addAzureAuthenticationMethodRequest := openapiclient.add_azure_authentication_method_request{AddClientSecretAzureAuthenticationMethodRequest: openapiclient.NewAddClientSecretAzureAuthenticationMethodRequest([]openapiclient.EnumclientSecretAzureAuthenticationMethodSchemaUrn{openapiclient.Enumclient-secret-azure-authentication-methodSchemaUrn("urn:pingidentity:schemas:configuration:2.0:azure-authentication-method:client-secret")}, "TenantID_example", "ClientID_example", "ClientSecret_example", "MethodName_example")} // AddAzureAuthenticationMethodRequest | Create a new Azure Authentication Method in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AzureAuthenticationMethodApi.AddAzureAuthenticationMethod(context.Background()).AddAzureAuthenticationMethodRequest(addAzureAuthenticationMethodRequest).Execute()
+    resp, r, err := apiClient.AzureAuthenticationMethodAPI.AddAzureAuthenticationMethod(context.Background()).AddAzureAuthenticationMethodRequest(addAzureAuthenticationMethodRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodApi.AddAzureAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodAPI.AddAzureAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddAzureAuthenticationMethod`: AddAzureAuthenticationMethod200Response
-    fmt.Fprintf(os.Stdout, "Response from `AzureAuthenticationMethodApi.AddAzureAuthenticationMethod`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AzureAuthenticationMethodAPI.AddAzureAuthenticationMethod`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AzureAuthenticationMethodApi.DeleteAzureAuthenticationMethod(context.Background(), azureAuthenticationMethodName).Execute()
+    r, err := apiClient.AzureAuthenticationMethodAPI.DeleteAzureAuthenticationMethod(context.Background(), azureAuthenticationMethodName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodApi.DeleteAzureAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodAPI.DeleteAzureAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AzureAuthenticationMethodApi.GetAzureAuthenticationMethod(context.Background(), azureAuthenticationMethodName).Execute()
+    resp, r, err := apiClient.AzureAuthenticationMethodAPI.GetAzureAuthenticationMethod(context.Background(), azureAuthenticationMethodName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodApi.GetAzureAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodAPI.GetAzureAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAzureAuthenticationMethod`: AddAzureAuthenticationMethod200Response
-    fmt.Fprintf(os.Stdout, "Response from `AzureAuthenticationMethodApi.GetAzureAuthenticationMethod`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AzureAuthenticationMethodAPI.GetAzureAuthenticationMethod`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AzureAuthenticationMethodApi.ListAzureAuthenticationMethods(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.AzureAuthenticationMethodAPI.ListAzureAuthenticationMethods(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodApi.ListAzureAuthenticationMethods``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodAPI.ListAzureAuthenticationMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListAzureAuthenticationMethods`: AzureAuthenticationMethodListResponse
-    fmt.Fprintf(os.Stdout, "Response from `AzureAuthenticationMethodApi.ListAzureAuthenticationMethods`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AzureAuthenticationMethodAPI.ListAzureAuthenticationMethods`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AzureAuthenticationMethodApi.UpdateAzureAuthenticationMethod(context.Background(), azureAuthenticationMethodName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.AzureAuthenticationMethodAPI.UpdateAzureAuthenticationMethod(context.Background(), azureAuthenticationMethodName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodApi.UpdateAzureAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodAPI.UpdateAzureAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAzureAuthenticationMethod`: AddAzureAuthenticationMethod200Response
-    fmt.Fprintf(os.Stdout, "Response from `AzureAuthenticationMethodApi.UpdateAzureAuthenticationMethod`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AzureAuthenticationMethodAPI.UpdateAzureAuthenticationMethod`: %v\n", resp)
 }
 ```
 

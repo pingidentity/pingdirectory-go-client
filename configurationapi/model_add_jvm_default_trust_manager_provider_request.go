@@ -19,22 +19,22 @@ var _ MappedNullable = &AddJvmDefaultTrustManagerProviderRequest{}
 
 // AddJvmDefaultTrustManagerProviderRequest struct for AddJvmDefaultTrustManagerProviderRequest
 type AddJvmDefaultTrustManagerProviderRequest struct {
-	// Name of the new Trust Manager Provider
-	ProviderName string                                        `json:"providerName"`
-	Schemas      []EnumjvmDefaultTrustManagerProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumjvmDefaultTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Indicate whether the Trust Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Trust Manager Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddJvmDefaultTrustManagerProviderRequest instantiates a new AddJvmDefaultTrustManagerProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddJvmDefaultTrustManagerProviderRequest(providerName string, schemas []EnumjvmDefaultTrustManagerProviderSchemaUrn, enabled bool) *AddJvmDefaultTrustManagerProviderRequest {
+func NewAddJvmDefaultTrustManagerProviderRequest(schemas []EnumjvmDefaultTrustManagerProviderSchemaUrn, enabled bool, providerName string) *AddJvmDefaultTrustManagerProviderRequest {
 	this := AddJvmDefaultTrustManagerProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -44,30 +44,6 @@ func NewAddJvmDefaultTrustManagerProviderRequest(providerName string, schemas []
 func NewAddJvmDefaultTrustManagerProviderRequestWithDefaults() *AddJvmDefaultTrustManagerProviderRequest {
 	this := AddJvmDefaultTrustManagerProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddJvmDefaultTrustManagerProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -118,6 +94,30 @@ func (o *AddJvmDefaultTrustManagerProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddJvmDefaultTrustManagerProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddJvmDefaultTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -128,9 +128,9 @@ func (o AddJvmDefaultTrustManagerProviderRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddJvmDefaultTrustManagerProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddActiveDirectoryExternalServerRequest{}
 
 // AddActiveDirectoryExternalServerRequest struct for AddActiveDirectoryExternalServerRequest
 type AddActiveDirectoryExternalServerRequest struct {
-	// Name of the new External Server
-	ServerName string                                       `json:"serverName"`
-	Schemas    []EnumactiveDirectoryExternalServerSchemaUrn `json:"schemas"`
+	Schemas []EnumactiveDirectoryExternalServerSchemaUrn `json:"schemas"`
 	// The DN to use to bind to the target LDAP server if simple authentication is required. The authentication identity can also be specified in User-Principal-Name (UPN) format.
 	BindDN *string `json:"bindDN,omitempty"`
 	// The host name or IP address of the target LDAP server.
@@ -60,17 +58,19 @@ type AddActiveDirectoryExternalServerRequest struct {
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	// Name of the new External Server
+	ServerName string `json:"serverName"`
 }
 
 // NewAddActiveDirectoryExternalServerRequest instantiates a new AddActiveDirectoryExternalServerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddActiveDirectoryExternalServerRequest(serverName string, schemas []EnumactiveDirectoryExternalServerSchemaUrn, serverHostName string) *AddActiveDirectoryExternalServerRequest {
+func NewAddActiveDirectoryExternalServerRequest(schemas []EnumactiveDirectoryExternalServerSchemaUrn, serverHostName string, serverName string) *AddActiveDirectoryExternalServerRequest {
 	this := AddActiveDirectoryExternalServerRequest{}
-	this.ServerName = serverName
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
+	this.ServerName = serverName
 	return &this
 }
 
@@ -80,30 +80,6 @@ func NewAddActiveDirectoryExternalServerRequest(serverName string, schemas []Enu
 func NewAddActiveDirectoryExternalServerRequestWithDefaults() *AddActiveDirectoryExternalServerRequest {
 	this := AddActiveDirectoryExternalServerRequest{}
 	return &this
-}
-
-// GetServerName returns the ServerName field value
-func (o *AddActiveDirectoryExternalServerRequest) GetServerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerName
-}
-
-// GetServerNameOk returns a tuple with the ServerName field value
-// and a boolean to check if the value has been set.
-func (o *AddActiveDirectoryExternalServerRequest) GetServerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerName, true
-}
-
-// SetServerName sets field value
-func (o *AddActiveDirectoryExternalServerRequest) SetServerName(v string) {
-	o.ServerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -794,6 +770,30 @@ func (o *AddActiveDirectoryExternalServerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetServerName returns the ServerName field value
+func (o *AddActiveDirectoryExternalServerRequest) GetServerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ServerName
+}
+
+// GetServerNameOk returns a tuple with the ServerName field value
+// and a boolean to check if the value has been set.
+func (o *AddActiveDirectoryExternalServerRequest) GetServerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ServerName, true
+}
+
+// SetServerName sets field value
+func (o *AddActiveDirectoryExternalServerRequest) SetServerName(v string) {
+	o.ServerName = v
+}
+
 func (o AddActiveDirectoryExternalServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -804,7 +804,6 @@ func (o AddActiveDirectoryExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddActiveDirectoryExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["serverName"] = o.ServerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.BindDN) {
 		toSerialize["bindDN"] = o.BindDN
@@ -867,6 +866,7 @@ func (o AddActiveDirectoryExternalServerRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["serverName"] = o.ServerName
 	return toSerialize, nil
 }
 

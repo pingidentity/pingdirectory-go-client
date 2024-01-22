@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSimpleConnectionCriteriaRequest{}
 
 // AddSimpleConnectionCriteriaRequest struct for AddSimpleConnectionCriteriaRequest
 type AddSimpleConnectionCriteriaRequest struct {
-	// Name of the new Connection Criteria
-	CriteriaName string                                  `json:"criteriaName"`
-	Schemas      []EnumsimpleConnectionCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumsimpleConnectionCriteriaSchemaUrn `json:"schemas"`
 	// Specifies an address mask that may be used to specify a set of clients that should be included in this Simple Connection Criteria.
 	IncludedClientAddress []string `json:"includedClientAddress,omitempty"`
 	// Specifies an address mask that may be used to specify a set of clients that should be excluded from this Simple Connection Criteria.
@@ -67,16 +65,18 @@ type AddSimpleConnectionCriteriaRequest struct {
 	NoneIncludedUserPrivilege   []EnumconnectionCriteriaNoneIncludedUserPrivilegeProp   `json:"noneIncludedUserPrivilege,omitempty"`
 	// A description for this Connection Criteria
 	Description *string `json:"description,omitempty"`
+	// Name of the new Connection Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddSimpleConnectionCriteriaRequest instantiates a new AddSimpleConnectionCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSimpleConnectionCriteriaRequest(criteriaName string, schemas []EnumsimpleConnectionCriteriaSchemaUrn) *AddSimpleConnectionCriteriaRequest {
+func NewAddSimpleConnectionCriteriaRequest(schemas []EnumsimpleConnectionCriteriaSchemaUrn, criteriaName string) *AddSimpleConnectionCriteriaRequest {
 	this := AddSimpleConnectionCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -86,30 +86,6 @@ func NewAddSimpleConnectionCriteriaRequest(criteriaName string, schemas []Enumsi
 func NewAddSimpleConnectionCriteriaRequestWithDefaults() *AddSimpleConnectionCriteriaRequest {
 	this := AddSimpleConnectionCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddSimpleConnectionCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddSimpleConnectionCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddSimpleConnectionCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -968,6 +944,30 @@ func (o *AddSimpleConnectionCriteriaRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddSimpleConnectionCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddSimpleConnectionCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddSimpleConnectionCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddSimpleConnectionCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -978,7 +978,6 @@ func (o AddSimpleConnectionCriteriaRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSimpleConnectionCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.IncludedClientAddress) {
 		toSerialize["includedClientAddress"] = o.IncludedClientAddress
@@ -1058,6 +1057,7 @@ func (o AddSimpleConnectionCriteriaRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

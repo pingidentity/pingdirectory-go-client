@@ -19,8 +19,6 @@ var _ MappedNullable = &PingIdentityDsExternalServerResponse{}
 
 // PingIdentityDsExternalServerResponse struct for PingIdentityDsExternalServerResponse
 type PingIdentityDsExternalServerResponse struct {
-	// Name of the External Server
-	Id                      string                                        `json:"id"`
 	Schemas                 []EnumpingIdentityDsExternalServerSchemaUrn   `json:"schemas"`
 	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod"`
 	// Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
@@ -64,15 +62,16 @@ type PingIdentityDsExternalServerResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the External Server
+	Id string `json:"id"`
 }
 
 // NewPingIdentityDsExternalServerResponse instantiates a new PingIdentityDsExternalServerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPingIdentityDsExternalServerResponse(id string, schemas []EnumpingIdentityDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerPingIdentityDsConnectionSecurityProp, authenticationMethod EnumexternalServerPingIdentityDsAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *PingIdentityDsExternalServerResponse {
+func NewPingIdentityDsExternalServerResponse(schemas []EnumpingIdentityDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerPingIdentityDsConnectionSecurityProp, authenticationMethod EnumexternalServerPingIdentityDsAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, id string) *PingIdentityDsExternalServerResponse {
 	this := PingIdentityDsExternalServerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.VerifyCredentialsMethod = verifyCredentialsMethod
 	this.ServerHostName = serverHostName
@@ -82,6 +81,7 @@ func NewPingIdentityDsExternalServerResponse(id string, schemas []EnumpingIdenti
 	this.MaxConnectionAge = maxConnectionAge
 	this.ConnectTimeout = connectTimeout
 	this.MaxResponseSize = maxResponseSize
+	this.Id = id
 	return &this
 }
 
@@ -91,30 +91,6 @@ func NewPingIdentityDsExternalServerResponse(id string, schemas []EnumpingIdenti
 func NewPingIdentityDsExternalServerResponseWithDefaults() *PingIdentityDsExternalServerResponse {
 	this := PingIdentityDsExternalServerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *PingIdentityDsExternalServerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PingIdentityDsExternalServerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *PingIdentityDsExternalServerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -845,6 +821,30 @@ func (o *PingIdentityDsExternalServerResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *PingIdentityDsExternalServerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *PingIdentityDsExternalServerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *PingIdentityDsExternalServerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o PingIdentityDsExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -855,7 +855,6 @@ func (o PingIdentityDsExternalServerResponse) MarshalJSON() ([]byte, error) {
 
 func (o PingIdentityDsExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
 	if !IsNil(o.UseAdministrativeOperationControl) {
@@ -913,6 +912,7 @@ func (o PingIdentityDsExternalServerResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

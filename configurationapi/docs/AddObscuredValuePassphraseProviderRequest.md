@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Passphrase Provider | 
 **Schemas** | [**[]EnumobscuredValuePassphraseProviderSchemaUrn**](EnumobscuredValuePassphraseProviderSchemaUrn.md) |  | 
 **ObscuredValue** | **string** | The value to be stored in an obscured form. | 
 **Description** | Pointer to **string** | A description for this Passphrase Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Passphrase Provider is enabled for use in the server. | 
+**ProviderName** | **string** | Name of the new Passphrase Provider | 
 
 ## Methods
 
 ### NewAddObscuredValuePassphraseProviderRequest
 
-`func NewAddObscuredValuePassphraseProviderRequest(providerName string, schemas []EnumobscuredValuePassphraseProviderSchemaUrn, obscuredValue string, enabled bool, ) *AddObscuredValuePassphraseProviderRequest`
+`func NewAddObscuredValuePassphraseProviderRequest(schemas []EnumobscuredValuePassphraseProviderSchemaUrn, obscuredValue string, enabled bool, providerName string, ) *AddObscuredValuePassphraseProviderRequest`
 
 NewAddObscuredValuePassphraseProviderRequest instantiates a new AddObscuredValuePassphraseProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddObscuredValuePassphraseProviderRequestWithDefaults instantiates a new AddObscuredValuePassphraseProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddObscuredValuePassphraseProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddObscuredValuePassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddObscuredValuePassphraseProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -132,6 +112,26 @@ and a boolean to check if the value has been set.
 `func (o *AddObscuredValuePassphraseProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddObscuredValuePassphraseProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddObscuredValuePassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddObscuredValuePassphraseProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

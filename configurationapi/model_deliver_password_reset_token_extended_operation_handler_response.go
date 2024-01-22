@@ -19,8 +19,6 @@ var _ MappedNullable = &DeliverPasswordResetTokenExtendedOperationHandlerRespons
 
 // DeliverPasswordResetTokenExtendedOperationHandlerResponse struct for DeliverPasswordResetTokenExtendedOperationHandlerResponse
 type DeliverPasswordResetTokenExtendedOperationHandlerResponse struct {
-	// Name of the Extended Operation Handler
-	Id      string                                                           `json:"id"`
 	Schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The password generator that will be used to create the password reset token values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
@@ -34,20 +32,22 @@ type DeliverPasswordResetTokenExtendedOperationHandlerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Extended Operation Handler
+	Id string `json:"id"`
 }
 
 // NewDeliverPasswordResetTokenExtendedOperationHandlerResponse instantiates a new DeliverPasswordResetTokenExtendedOperationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeliverPasswordResetTokenExtendedOperationHandlerResponse(id string, schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, passwordResetTokenValidityDuration string, enabled bool) *DeliverPasswordResetTokenExtendedOperationHandlerResponse {
+func NewDeliverPasswordResetTokenExtendedOperationHandlerResponse(schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, passwordResetTokenValidityDuration string, enabled bool, id string) *DeliverPasswordResetTokenExtendedOperationHandlerResponse {
 	this := DeliverPasswordResetTokenExtendedOperationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PasswordGenerator = passwordGenerator
 	this.DefaultTokenDeliveryMechanism = defaultTokenDeliveryMechanism
 	this.PasswordResetTokenValidityDuration = passwordResetTokenValidityDuration
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewDeliverPasswordResetTokenExtendedOperationHandlerResponse(id string, sch
 func NewDeliverPasswordResetTokenExtendedOperationHandlerResponseWithDefaults() *DeliverPasswordResetTokenExtendedOperationHandlerResponse {
 	this := DeliverPasswordResetTokenExtendedOperationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -299,6 +275,30 @@ func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) SetUrnpingid
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DeliverPasswordResetTokenExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -309,7 +309,6 @@ func (o DeliverPasswordResetTokenExtendedOperationHandlerResponse) MarshalJSON()
 
 func (o DeliverPasswordResetTokenExtendedOperationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["passwordGenerator"] = o.PasswordGenerator
 	toSerialize["defaultTokenDeliveryMechanism"] = o.DefaultTokenDeliveryMechanism
@@ -324,6 +323,7 @@ func (o DeliverPasswordResetTokenExtendedOperationHandlerResponse) ToMap() (map[
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

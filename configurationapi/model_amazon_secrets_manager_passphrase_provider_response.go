@@ -19,8 +19,6 @@ var _ MappedNullable = &AmazonSecretsManagerPassphraseProviderResponse{}
 
 // AmazonSecretsManagerPassphraseProviderResponse struct for AmazonSecretsManagerPassphraseProviderResponse
 type AmazonSecretsManagerPassphraseProviderResponse struct {
-	// Name of the Passphrase Provider
-	Id      string                                                `json:"id"`
 	Schemas []EnumamazonSecretsManagerPassphraseProviderSchemaUrn `json:"schemas"`
 	// The external server with information to use when interacting with the AWS Secrets Manager.
 	AwsExternalServer string `json:"awsExternalServer"`
@@ -40,20 +38,22 @@ type AmazonSecretsManagerPassphraseProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Passphrase Provider
+	Id string `json:"id"`
 }
 
 // NewAmazonSecretsManagerPassphraseProviderResponse instantiates a new AmazonSecretsManagerPassphraseProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAmazonSecretsManagerPassphraseProviderResponse(id string, schemas []EnumamazonSecretsManagerPassphraseProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool) *AmazonSecretsManagerPassphraseProviderResponse {
+func NewAmazonSecretsManagerPassphraseProviderResponse(schemas []EnumamazonSecretsManagerPassphraseProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool, id string) *AmazonSecretsManagerPassphraseProviderResponse {
 	this := AmazonSecretsManagerPassphraseProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AwsExternalServer = awsExternalServer
 	this.SecretID = secretID
 	this.SecretFieldName = secretFieldName
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewAmazonSecretsManagerPassphraseProviderResponse(id string, schemas []Enum
 func NewAmazonSecretsManagerPassphraseProviderResponseWithDefaults() *AmazonSecretsManagerPassphraseProviderResponse {
 	this := AmazonSecretsManagerPassphraseProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AmazonSecretsManagerPassphraseProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AmazonSecretsManagerPassphraseProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AmazonSecretsManagerPassphraseProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -401,6 +377,30 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) SetUrnpingidentityschem
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AmazonSecretsManagerPassphraseProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AmazonSecretsManagerPassphraseProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AmazonSecretsManagerPassphraseProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AmazonSecretsManagerPassphraseProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -411,7 +411,6 @@ func (o AmazonSecretsManagerPassphraseProviderResponse) MarshalJSON() ([]byte, e
 
 func (o AmazonSecretsManagerPassphraseProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["awsExternalServer"] = o.AwsExternalServer
 	toSerialize["secretID"] = o.SecretID
@@ -435,6 +434,7 @@ func (o AmazonSecretsManagerPassphraseProviderResponse) ToMap() (map[string]inte
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

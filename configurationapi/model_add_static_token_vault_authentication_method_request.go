@@ -19,24 +19,24 @@ var _ MappedNullable = &AddStaticTokenVaultAuthenticationMethodRequest{}
 
 // AddStaticTokenVaultAuthenticationMethodRequest struct for AddStaticTokenVaultAuthenticationMethodRequest
 type AddStaticTokenVaultAuthenticationMethodRequest struct {
-	// Name of the new Vault Authentication Method
-	MethodName string                                              `json:"methodName"`
-	Schemas    []EnumstaticTokenVaultAuthenticationMethodSchemaUrn `json:"schemas"`
+	Schemas []EnumstaticTokenVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The static token used to authenticate to the Vault server.
 	VaultAccessToken string `json:"vaultAccessToken"`
 	// A description for this Vault Authentication Method
 	Description *string `json:"description,omitempty"`
+	// Name of the new Vault Authentication Method
+	MethodName string `json:"methodName"`
 }
 
 // NewAddStaticTokenVaultAuthenticationMethodRequest instantiates a new AddStaticTokenVaultAuthenticationMethodRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddStaticTokenVaultAuthenticationMethodRequest(methodName string, schemas []EnumstaticTokenVaultAuthenticationMethodSchemaUrn, vaultAccessToken string) *AddStaticTokenVaultAuthenticationMethodRequest {
+func NewAddStaticTokenVaultAuthenticationMethodRequest(schemas []EnumstaticTokenVaultAuthenticationMethodSchemaUrn, vaultAccessToken string, methodName string) *AddStaticTokenVaultAuthenticationMethodRequest {
 	this := AddStaticTokenVaultAuthenticationMethodRequest{}
-	this.MethodName = methodName
 	this.Schemas = schemas
 	this.VaultAccessToken = vaultAccessToken
+	this.MethodName = methodName
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewAddStaticTokenVaultAuthenticationMethodRequest(methodName string, schema
 func NewAddStaticTokenVaultAuthenticationMethodRequestWithDefaults() *AddStaticTokenVaultAuthenticationMethodRequest {
 	this := AddStaticTokenVaultAuthenticationMethodRequest{}
 	return &this
-}
-
-// GetMethodName returns the MethodName field value
-func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetMethodName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MethodName
-}
-
-// GetMethodNameOk returns a tuple with the MethodName field value
-// and a boolean to check if the value has been set.
-func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MethodName, true
-}
-
-// SetMethodName sets field value
-func (o *AddStaticTokenVaultAuthenticationMethodRequest) SetMethodName(v string) {
-	o.MethodName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -152,6 +128,30 @@ func (o *AddStaticTokenVaultAuthenticationMethodRequest) SetDescription(v string
 	o.Description = &v
 }
 
+// GetMethodName returns the MethodName field value
+func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetMethodName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MethodName
+}
+
+// GetMethodNameOk returns a tuple with the MethodName field value
+// and a boolean to check if the value has been set.
+func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MethodName, true
+}
+
+// SetMethodName sets field value
+func (o *AddStaticTokenVaultAuthenticationMethodRequest) SetMethodName(v string) {
+	o.MethodName = v
+}
+
 func (o AddStaticTokenVaultAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -162,12 +162,12 @@ func (o AddStaticTokenVaultAuthenticationMethodRequest) MarshalJSON() ([]byte, e
 
 func (o AddStaticTokenVaultAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["methodName"] = o.MethodName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["vaultAccessToken"] = o.VaultAccessToken
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["methodName"] = o.MethodName
 	return toSerialize, nil
 }
 

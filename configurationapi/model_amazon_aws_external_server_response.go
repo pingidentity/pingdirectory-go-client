@@ -19,8 +19,6 @@ var _ MappedNullable = &AmazonAwsExternalServerResponse{}
 
 // AmazonAwsExternalServerResponse struct for AmazonAwsExternalServerResponse
 type AmazonAwsExternalServerResponse struct {
-	// Name of the External Server
-	Id      string                                 `json:"id"`
 	Schemas []EnumamazonAwsExternalServerSchemaUrn `json:"schemas"`
 	// A reference to an HTTP proxy server that should be used for requests sent to the AWS service.
 	HttpProxyExternalServer *string                                              `json:"httpProxyExternalServer,omitempty"`
@@ -35,17 +33,19 @@ type AmazonAwsExternalServerResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the External Server
+	Id string `json:"id"`
 }
 
 // NewAmazonAwsExternalServerResponse instantiates a new AmazonAwsExternalServerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAmazonAwsExternalServerResponse(id string, schemas []EnumamazonAwsExternalServerSchemaUrn, awsRegionName string) *AmazonAwsExternalServerResponse {
+func NewAmazonAwsExternalServerResponse(schemas []EnumamazonAwsExternalServerSchemaUrn, awsRegionName string, id string) *AmazonAwsExternalServerResponse {
 	this := AmazonAwsExternalServerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AwsRegionName = awsRegionName
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewAmazonAwsExternalServerResponse(id string, schemas []EnumamazonAwsExtern
 func NewAmazonAwsExternalServerResponseWithDefaults() *AmazonAwsExternalServerResponse {
 	this := AmazonAwsExternalServerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AmazonAwsExternalServerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AmazonAwsExternalServerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AmazonAwsExternalServerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -353,6 +329,30 @@ func (o *AmazonAwsExternalServerResponse) SetUrnpingidentityschemasconfiguration
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AmazonAwsExternalServerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AmazonAwsExternalServerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AmazonAwsExternalServerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AmazonAwsExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -363,7 +363,6 @@ func (o AmazonAwsExternalServerResponse) MarshalJSON() ([]byte, error) {
 
 func (o AmazonAwsExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.HttpProxyExternalServer) {
 		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
@@ -387,6 +386,7 @@ func (o AmazonAwsExternalServerResponse) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

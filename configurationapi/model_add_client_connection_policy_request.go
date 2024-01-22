@@ -19,9 +19,7 @@ var _ MappedNullable = &AddClientConnectionPolicyRequest{}
 
 // AddClientConnectionPolicyRequest struct for AddClientConnectionPolicyRequest
 type AddClientConnectionPolicyRequest struct {
-	// Name of the new Client Connection Policy
-	PolicyName string                                `json:"policyName"`
-	Schemas    []EnumclientConnectionPolicySchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumclientConnectionPolicySchemaUrn `json:"schemas,omitempty"`
 	// Specifies a name which uniquely identifies this Client Connection Policy in the server.
 	PolicyID string `json:"policyID"`
 	// A description for this Client Connection Policy
@@ -98,18 +96,20 @@ type AddClientConnectionPolicyRequest struct {
 	MaximumLDAPJoinSizeLimit *int64 `json:"maximumLDAPJoinSizeLimit,omitempty"`
 	// Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced.
 	MaximumSortSizeLimitWithoutVLVIndex *int64 `json:"maximumSortSizeLimitWithoutVLVIndex,omitempty"`
+	// Name of the new Client Connection Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddClientConnectionPolicyRequest instantiates a new AddClientConnectionPolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddClientConnectionPolicyRequest(policyName string, policyID string, enabled bool, evaluationOrderIndex int64) *AddClientConnectionPolicyRequest {
+func NewAddClientConnectionPolicyRequest(policyID string, enabled bool, evaluationOrderIndex int64, policyName string) *AddClientConnectionPolicyRequest {
 	this := AddClientConnectionPolicyRequest{}
-	this.PolicyName = policyName
 	this.PolicyID = policyID
 	this.Enabled = enabled
 	this.EvaluationOrderIndex = evaluationOrderIndex
+	this.PolicyName = policyName
 	return &this
 }
 
@@ -119,30 +119,6 @@ func NewAddClientConnectionPolicyRequest(policyName string, policyID string, ena
 func NewAddClientConnectionPolicyRequestWithDefaults() *AddClientConnectionPolicyRequest {
 	this := AddClientConnectionPolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddClientConnectionPolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddClientConnectionPolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -1465,6 +1441,30 @@ func (o *AddClientConnectionPolicyRequest) SetMaximumSortSizeLimitWithoutVLVInde
 	o.MaximumSortSizeLimitWithoutVLVIndex = &v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddClientConnectionPolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddClientConnectionPolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddClientConnectionPolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddClientConnectionPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1475,7 +1475,6 @@ func (o AddClientConnectionPolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddClientConnectionPolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -1596,6 +1595,7 @@ func (o AddClientConnectionPolicyRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
 		toSerialize["maximumSortSizeLimitWithoutVLVIndex"] = o.MaximumSortSizeLimitWithoutVLVIndex
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

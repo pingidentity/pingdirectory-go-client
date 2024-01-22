@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ConstructedAttributeApiService ConstructedAttributeApi service
-type ConstructedAttributeApiService service
+// ConstructedAttributeAPIService ConstructedAttributeAPI service
+type ConstructedAttributeAPIService service
 
 type ApiAddConstructedAttributeRequest struct {
 	ctx                            context.Context
-	ApiService                     *ConstructedAttributeApiService
+	ApiService                     *ConstructedAttributeAPIService
 	addConstructedAttributeRequest *AddConstructedAttributeRequest
 }
 
@@ -44,7 +44,7 @@ AddConstructedAttribute Add a new Constructed Attribute to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddConstructedAttributeRequest
 */
-func (a *ConstructedAttributeApiService) AddConstructedAttribute(ctx context.Context) ApiAddConstructedAttributeRequest {
+func (a *ConstructedAttributeAPIService) AddConstructedAttribute(ctx context.Context) ApiAddConstructedAttributeRequest {
 	return ApiAddConstructedAttributeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ConstructedAttributeApiService) AddConstructedAttribute(ctx context.Con
 // Execute executes the request
 //
 //	@return ConstructedAttributeResponse
-func (a *ConstructedAttributeApiService) AddConstructedAttributeExecute(r ApiAddConstructedAttributeRequest) (*ConstructedAttributeResponse, *http.Response, error) {
+func (a *ConstructedAttributeAPIService) AddConstructedAttributeExecute(r ApiAddConstructedAttributeRequest) (*ConstructedAttributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ConstructedAttributeApiService) AddConstructedAttributeExecute(r ApiAdd
 		localVarReturnValue *ConstructedAttributeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeApiService.AddConstructedAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeAPIService.AddConstructedAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ConstructedAttributeApiService) AddConstructedAttributeExecute(r ApiAdd
 
 type ApiDeleteConstructedAttributeRequest struct {
 	ctx                      context.Context
-	ApiService               *ConstructedAttributeApiService
+	ApiService               *ConstructedAttributeAPIService
 	constructedAttributeName string
 }
 
@@ -149,7 +149,7 @@ DeleteConstructedAttribute Delete a Constructed Attribute
 	@param constructedAttributeName Name of the Constructed Attribute
 	@return ApiDeleteConstructedAttributeRequest
 */
-func (a *ConstructedAttributeApiService) DeleteConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiDeleteConstructedAttributeRequest {
+func (a *ConstructedAttributeAPIService) DeleteConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiDeleteConstructedAttributeRequest {
 	return ApiDeleteConstructedAttributeRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -158,14 +158,14 @@ func (a *ConstructedAttributeApiService) DeleteConstructedAttribute(ctx context.
 }
 
 // Execute executes the request
-func (a *ConstructedAttributeApiService) DeleteConstructedAttributeExecute(r ApiDeleteConstructedAttributeRequest) (*http.Response, error) {
+func (a *ConstructedAttributeAPIService) DeleteConstructedAttributeExecute(r ApiDeleteConstructedAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeApiService.DeleteConstructedAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeAPIService.DeleteConstructedAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ConstructedAttributeApiService) DeleteConstructedAttributeExecute(r Api
 
 type ApiGetConstructedAttributeRequest struct {
 	ctx                      context.Context
-	ApiService               *ConstructedAttributeApiService
+	ApiService               *ConstructedAttributeAPIService
 	constructedAttributeName string
 }
 
@@ -239,7 +239,7 @@ GetConstructedAttribute Returns a single Constructed Attribute
 	@param constructedAttributeName Name of the Constructed Attribute
 	@return ApiGetConstructedAttributeRequest
 */
-func (a *ConstructedAttributeApiService) GetConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiGetConstructedAttributeRequest {
+func (a *ConstructedAttributeAPIService) GetConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiGetConstructedAttributeRequest {
 	return ApiGetConstructedAttributeRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -250,7 +250,7 @@ func (a *ConstructedAttributeApiService) GetConstructedAttribute(ctx context.Con
 // Execute executes the request
 //
 //	@return ConstructedAttributeResponse
-func (a *ConstructedAttributeApiService) GetConstructedAttributeExecute(r ApiGetConstructedAttributeRequest) (*ConstructedAttributeResponse, *http.Response, error) {
+func (a *ConstructedAttributeAPIService) GetConstructedAttributeExecute(r ApiGetConstructedAttributeRequest) (*ConstructedAttributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ConstructedAttributeApiService) GetConstructedAttributeExecute(r ApiGet
 		localVarReturnValue *ConstructedAttributeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeApiService.GetConstructedAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeAPIService.GetConstructedAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ConstructedAttributeApiService) GetConstructedAttributeExecute(r ApiGet
 
 type ApiListConstructedAttributesRequest struct {
 	ctx        context.Context
-	ApiService *ConstructedAttributeApiService
+	ApiService *ConstructedAttributeAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListConstructedAttributes Returns a list of all Constructed Attribute objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListConstructedAttributesRequest
 */
-func (a *ConstructedAttributeApiService) ListConstructedAttributes(ctx context.Context) ApiListConstructedAttributesRequest {
+func (a *ConstructedAttributeAPIService) ListConstructedAttributes(ctx context.Context) ApiListConstructedAttributesRequest {
 	return ApiListConstructedAttributesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ConstructedAttributeApiService) ListConstructedAttributes(ctx context.C
 // Execute executes the request
 //
 //	@return ConstructedAttributeListResponse
-func (a *ConstructedAttributeApiService) ListConstructedAttributesExecute(r ApiListConstructedAttributesRequest) (*ConstructedAttributeListResponse, *http.Response, error) {
+func (a *ConstructedAttributeAPIService) ListConstructedAttributesExecute(r ApiListConstructedAttributesRequest) (*ConstructedAttributeListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ConstructedAttributeApiService) ListConstructedAttributesExecute(r ApiL
 		localVarReturnValue *ConstructedAttributeListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeApiService.ListConstructedAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeAPIService.ListConstructedAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ConstructedAttributeApiService) ListConstructedAttributesExecute(r ApiL
 
 type ApiUpdateConstructedAttributeRequest struct {
 	ctx                      context.Context
-	ApiService               *ConstructedAttributeApiService
+	ApiService               *ConstructedAttributeAPIService
 	constructedAttributeName string
 	updateRequest            *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateConstructedAttribute Update an existing Constructed Attribute by name
 	@param constructedAttributeName Name of the Constructed Attribute
 	@return ApiUpdateConstructedAttributeRequest
 */
-func (a *ConstructedAttributeApiService) UpdateConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiUpdateConstructedAttributeRequest {
+func (a *ConstructedAttributeAPIService) UpdateConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiUpdateConstructedAttributeRequest {
 	return ApiUpdateConstructedAttributeRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -467,7 +467,7 @@ func (a *ConstructedAttributeApiService) UpdateConstructedAttribute(ctx context.
 // Execute executes the request
 //
 //	@return ConstructedAttributeResponse
-func (a *ConstructedAttributeApiService) UpdateConstructedAttributeExecute(r ApiUpdateConstructedAttributeRequest) (*ConstructedAttributeResponse, *http.Response, error) {
+func (a *ConstructedAttributeAPIService) UpdateConstructedAttributeExecute(r ApiUpdateConstructedAttributeRequest) (*ConstructedAttributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ConstructedAttributeApiService) UpdateConstructedAttributeExecute(r Api
 		localVarReturnValue *ConstructedAttributeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeApiService.UpdateConstructedAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeAPIService.UpdateConstructedAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

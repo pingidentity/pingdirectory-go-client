@@ -19,8 +19,6 @@ var _ MappedNullable = &AddDnMapRequest{}
 
 // AddDnMapRequest struct for AddDnMapRequest
 type AddDnMapRequest struct {
-	// Name of the new DN Map
-	MapName string               `json:"mapName"`
 	Schemas []EnumdnMapSchemaUrn `json:"schemas,omitempty"`
 	// A description for this DN Map
 	Description *string `json:"description,omitempty"`
@@ -28,17 +26,19 @@ type AddDnMapRequest struct {
 	FromDNPattern string `json:"fromDNPattern"`
 	// Specifies a pattern for constructing the DN value using fixed text, DN components matching wild-card values in from-dn-pattern, and attribute values from the source entry.
 	ToDNPattern string `json:"toDNPattern"`
+	// Name of the new DN Map
+	MapName string `json:"mapName"`
 }
 
 // NewAddDnMapRequest instantiates a new AddDnMapRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDnMapRequest(mapName string, fromDNPattern string, toDNPattern string) *AddDnMapRequest {
+func NewAddDnMapRequest(fromDNPattern string, toDNPattern string, mapName string) *AddDnMapRequest {
 	this := AddDnMapRequest{}
-	this.MapName = mapName
 	this.FromDNPattern = fromDNPattern
 	this.ToDNPattern = toDNPattern
+	this.MapName = mapName
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewAddDnMapRequest(mapName string, fromDNPattern string, toDNPattern string
 func NewAddDnMapRequestWithDefaults() *AddDnMapRequest {
 	this := AddDnMapRequest{}
 	return &this
-}
-
-// GetMapName returns the MapName field value
-func (o *AddDnMapRequest) GetMapName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MapName
-}
-
-// GetMapNameOk returns a tuple with the MapName field value
-// and a boolean to check if the value has been set.
-func (o *AddDnMapRequest) GetMapNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MapName, true
-}
-
-// SetMapName sets field value
-func (o *AddDnMapRequest) SetMapName(v string) {
-	o.MapName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -186,6 +162,30 @@ func (o *AddDnMapRequest) SetToDNPattern(v string) {
 	o.ToDNPattern = v
 }
 
+// GetMapName returns the MapName field value
+func (o *AddDnMapRequest) GetMapName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MapName
+}
+
+// GetMapNameOk returns a tuple with the MapName field value
+// and a boolean to check if the value has been set.
+func (o *AddDnMapRequest) GetMapNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MapName, true
+}
+
+// SetMapName sets field value
+func (o *AddDnMapRequest) SetMapName(v string) {
+	o.MapName = v
+}
+
 func (o AddDnMapRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -196,7 +196,6 @@ func (o AddDnMapRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddDnMapRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mapName"] = o.MapName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -205,6 +204,7 @@ func (o AddDnMapRequest) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["fromDNPattern"] = o.FromDNPattern
 	toSerialize["toDNPattern"] = o.ToDNPattern
+	toSerialize["mapName"] = o.MapName
 	return toSerialize, nil
 }
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyRecurringTaskRequest{}
 
 // AddThirdPartyRecurringTaskRequest struct for AddThirdPartyRecurringTaskRequest
 type AddThirdPartyRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                                 `json:"taskName"`
-	Schemas  []EnumthirdPartyRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyRecurringTaskSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Recurring Task.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Recurring Task. Each configuration property should be given in the form 'name=value'.
@@ -42,17 +40,19 @@ type AddThirdPartyRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddThirdPartyRecurringTaskRequest instantiates a new AddThirdPartyRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyRecurringTaskRequest(taskName string, schemas []EnumthirdPartyRecurringTaskSchemaUrn, extensionClass string) *AddThirdPartyRecurringTaskRequest {
+func NewAddThirdPartyRecurringTaskRequest(schemas []EnumthirdPartyRecurringTaskSchemaUrn, extensionClass string, taskName string) *AddThirdPartyRecurringTaskRequest {
 	this := AddThirdPartyRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.TaskName = taskName
 	return &this
 }
 
@@ -62,30 +62,6 @@ func NewAddThirdPartyRecurringTaskRequest(taskName string, schemas []EnumthirdPa
 func NewAddThirdPartyRecurringTaskRequestWithDefaults() *AddThirdPartyRecurringTaskRequest {
 	this := AddThirdPartyRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddThirdPartyRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddThirdPartyRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -424,6 +400,30 @@ func (o *AddThirdPartyRecurringTaskRequest) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddThirdPartyRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddThirdPartyRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddThirdPartyRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -434,7 +434,6 @@ func (o AddThirdPartyRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -464,6 +463,7 @@ func (o AddThirdPartyRecurringTaskRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

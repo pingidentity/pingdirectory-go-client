@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Pass Through Authentication Handler | 
 **Schemas** | [**[]EnumaggregatePassThroughAuthenticationHandlerSchemaUrn**](EnumaggregatePassThroughAuthenticationHandlerSchemaUrn.md) |  | 
 **SubordinatePassThroughAuthenticationHandler** | **[]string** | The set of subordinate pass-through authentication handlers that may be used to perform the authentication processing. Handlers will be invoked in order until one is found for which the bind operation matches the associated criteria and either succeeds or fails in a manner that should not be ignored. | 
 **ContinueOnFailureType** | Pointer to [**[]EnumpassThroughAuthenticationHandlerContinueOnFailureTypeProp**](EnumpassThroughAuthenticationHandlerContinueOnFailureTypeProp.md) |  | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **RequestCriteria** | Pointer to **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Pass Through Authentication Handler | 
 
 ## Methods
 
 ### NewAggregatePassThroughAuthenticationHandlerResponse
 
-`func NewAggregatePassThroughAuthenticationHandlerResponse(id string, schemas []EnumaggregatePassThroughAuthenticationHandlerSchemaUrn, subordinatePassThroughAuthenticationHandler []string, ) *AggregatePassThroughAuthenticationHandlerResponse`
+`func NewAggregatePassThroughAuthenticationHandlerResponse(schemas []EnumaggregatePassThroughAuthenticationHandlerSchemaUrn, subordinatePassThroughAuthenticationHandler []string, id string, ) *AggregatePassThroughAuthenticationHandlerResponse`
 
 NewAggregatePassThroughAuthenticationHandlerResponse instantiates a new AggregatePassThroughAuthenticationHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAggregatePassThroughAuthenticationHandlerResponseWithDefaults instantiates a new AggregatePassThroughAuthenticationHandlerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *AggregatePassThroughAuthenticationHandlerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AggregatePassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AggregatePassThroughAuthenticationHandlerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -268,6 +248,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *AggregatePassThroughAuthenticationHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *AggregatePassThroughAuthenticationHandlerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *AggregatePassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *AggregatePassThroughAuthenticationHandlerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

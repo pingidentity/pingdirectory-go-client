@@ -19,7 +19,9 @@ var _ MappedNullable = &ReplicationServerResponse{}
 
 // ReplicationServerResponse struct for ReplicationServerResponse
 type ReplicationServerResponse struct {
-	Schemas []EnumreplicationServerSchemaUrn `json:"schemas,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumreplicationServerSchemaUrn                   `json:"schemas,omitempty"`
 	// Specifies a unique identifier for the Replication Server.
 	ReplicationServerID int64 `json:"replicationServerID"`
 	// The path where the Replication Server stores all persistent information.
@@ -44,9 +46,10 @@ type ReplicationServerResponse struct {
 	// Specifies the gateway priority of the Replication Server in the current location.
 	GatewayPriority int64 `json:"gatewayPriority"`
 	// Specifies the missing changes alert threshold as a percentage of the total pending changes. For instance, a value of 80 indicates that the replica is 80% of the way to losing changes.
-	MissingChangesAlertThresholdPercent           *int64                                             `json:"missingChangesAlertThresholdPercent,omitempty"`
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	MissingChangesAlertThresholdPercent *int64                                         `json:"missingChangesAlertThresholdPercent,omitempty"`
+	MissingChangesPolicy                *EnumreplicationServerMissingChangesPolicyProp `json:"missingChangesPolicy,omitempty"`
+	// Indicates monitor messages should include information about remote servers.
+	IncludeAllRemoteServersStateInMonitorMessage *bool `json:"includeAllRemoteServersStateInMonitorMessage,omitempty"`
 }
 
 // NewReplicationServerResponse instantiates a new ReplicationServerResponse object
@@ -68,6 +71,70 @@ func NewReplicationServerResponse(replicationServerID int64, replicationDBDirect
 func NewReplicationServerResponseWithDefaults() *ReplicationServerResponse {
 	this := ReplicationServerResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ReplicationServerResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReplicationServerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ReplicationServerResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ReplicationServerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *ReplicationServerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReplicationServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *ReplicationServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *ReplicationServerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -486,68 +553,68 @@ func (o *ReplicationServerResponse) SetMissingChangesAlertThresholdPercent(v int
 	o.MissingChangesAlertThresholdPercent = &v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ReplicationServerResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
+// GetMissingChangesPolicy returns the MissingChangesPolicy field value if set, zero value otherwise.
+func (o *ReplicationServerResponse) GetMissingChangesPolicy() EnumreplicationServerMissingChangesPolicyProp {
+	if o == nil || IsNil(o.MissingChangesPolicy) {
+		var ret EnumreplicationServerMissingChangesPolicyProp
 		return ret
 	}
-	return *o.Meta
+	return *o.MissingChangesPolicy
 }
 
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// GetMissingChangesPolicyOk returns a tuple with the MissingChangesPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReplicationServerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
+func (o *ReplicationServerResponse) GetMissingChangesPolicyOk() (*EnumreplicationServerMissingChangesPolicyProp, bool) {
+	if o == nil || IsNil(o.MissingChangesPolicy) {
 		return nil, false
 	}
-	return o.Meta, true
+	return o.MissingChangesPolicy, true
 }
 
-// HasMeta returns a boolean if a field has been set.
-func (o *ReplicationServerResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
+// HasMissingChangesPolicy returns a boolean if a field has been set.
+func (o *ReplicationServerResponse) HasMissingChangesPolicy() bool {
+	if o != nil && !IsNil(o.MissingChangesPolicy) {
 		return true
 	}
 
 	return false
 }
 
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *ReplicationServerResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
+// SetMissingChangesPolicy gets a reference to the given EnumreplicationServerMissingChangesPolicyProp and assigns it to the MissingChangesPolicy field.
+func (o *ReplicationServerResponse) SetMissingChangesPolicy(v EnumreplicationServerMissingChangesPolicyProp) {
+	o.MissingChangesPolicy = &v
 }
 
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *ReplicationServerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+// GetIncludeAllRemoteServersStateInMonitorMessage returns the IncludeAllRemoteServersStateInMonitorMessage field value if set, zero value otherwise.
+func (o *ReplicationServerResponse) GetIncludeAllRemoteServersStateInMonitorMessage() bool {
+	if o == nil || IsNil(o.IncludeAllRemoteServersStateInMonitorMessage) {
+		var ret bool
 		return ret
 	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
+	return *o.IncludeAllRemoteServersStateInMonitorMessage
 }
 
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// GetIncludeAllRemoteServersStateInMonitorMessageOk returns a tuple with the IncludeAllRemoteServersStateInMonitorMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReplicationServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+func (o *ReplicationServerResponse) GetIncludeAllRemoteServersStateInMonitorMessageOk() (*bool, bool) {
+	if o == nil || IsNil(o.IncludeAllRemoteServersStateInMonitorMessage) {
 		return nil, false
 	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
+	return o.IncludeAllRemoteServersStateInMonitorMessage, true
 }
 
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *ReplicationServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+// HasIncludeAllRemoteServersStateInMonitorMessage returns a boolean if a field has been set.
+func (o *ReplicationServerResponse) HasIncludeAllRemoteServersStateInMonitorMessage() bool {
+	if o != nil && !IsNil(o.IncludeAllRemoteServersStateInMonitorMessage) {
 		return true
 	}
 
 	return false
 }
 
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *ReplicationServerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
+// SetIncludeAllRemoteServersStateInMonitorMessage gets a reference to the given bool and assigns it to the IncludeAllRemoteServersStateInMonitorMessage field.
+func (o *ReplicationServerResponse) SetIncludeAllRemoteServersStateInMonitorMessage(v bool) {
+	o.IncludeAllRemoteServersStateInMonitorMessage = &v
 }
 
 func (o ReplicationServerResponse) MarshalJSON() ([]byte, error) {
@@ -560,6 +627,12 @@ func (o ReplicationServerResponse) MarshalJSON() ([]byte, error) {
 
 func (o ReplicationServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -594,11 +667,11 @@ func (o ReplicationServerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MissingChangesAlertThresholdPercent) {
 		toSerialize["missingChangesAlertThresholdPercent"] = o.MissingChangesAlertThresholdPercent
 	}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
+	if !IsNil(o.MissingChangesPolicy) {
+		toSerialize["missingChangesPolicy"] = o.MissingChangesPolicy
 	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	if !IsNil(o.IncludeAllRemoteServersStateInMonitorMessage) {
+		toSerialize["includeAllRemoteServersStateInMonitorMessage"] = o.IncludeAllRemoteServersStateInMonitorMessage
 	}
 	return toSerialize, nil
 }

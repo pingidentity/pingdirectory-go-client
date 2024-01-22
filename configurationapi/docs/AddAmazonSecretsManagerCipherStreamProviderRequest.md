@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 **Schemas** | [**[]EnumamazonSecretsManagerCipherStreamProviderSchemaUrn**](EnumamazonSecretsManagerCipherStreamProviderSchemaUrn.md) |  | 
 **AwsExternalServer** | **string** | The external server with information to use when interacting with the AWS Secrets Manager. | 
 **SecretID** | **string** | The Amazon Resource Name (ARN) or the user-friendly name of the secret to be retrieved. | 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **IterationCount** | Pointer to **int64** | The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
+**ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 
 ## Methods
 
 ### NewAddAmazonSecretsManagerCipherStreamProviderRequest
 
-`func NewAddAmazonSecretsManagerCipherStreamProviderRequest(providerName string, schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool, ) *AddAmazonSecretsManagerCipherStreamProviderRequest`
+`func NewAddAmazonSecretsManagerCipherStreamProviderRequest(schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool, providerName string, ) *AddAmazonSecretsManagerCipherStreamProviderRequest`
 
 NewAddAmazonSecretsManagerCipherStreamProviderRequest instantiates a new AddAmazonSecretsManagerCipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewAddAmazonSecretsManagerCipherStreamProviderRequestWithDefaults instantiates a new AddAmazonSecretsManagerCipherStreamProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -278,6 +258,26 @@ and a boolean to check if the value has been set.
 `func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

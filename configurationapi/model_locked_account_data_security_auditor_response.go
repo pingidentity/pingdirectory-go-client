@@ -19,8 +19,6 @@ var _ MappedNullable = &LockedAccountDataSecurityAuditorResponse{}
 
 // LockedAccountDataSecurityAuditorResponse struct for LockedAccountDataSecurityAuditorResponse
 type LockedAccountDataSecurityAuditorResponse struct {
-	// Name of the Data Security Auditor
-	Id      string                                          `json:"id"`
 	Schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
@@ -35,18 +33,20 @@ type LockedAccountDataSecurityAuditorResponse struct {
 	AuditSeverity                                 *EnumdataSecurityAuditorAuditSeverityProp          `json:"auditSeverity,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Data Security Auditor
+	Id string `json:"id"`
 }
 
 // NewLockedAccountDataSecurityAuditorResponse instantiates a new LockedAccountDataSecurityAuditorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLockedAccountDataSecurityAuditorResponse(id string, schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn, reportFile string, enabled bool) *LockedAccountDataSecurityAuditorResponse {
+func NewLockedAccountDataSecurityAuditorResponse(schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn, reportFile string, enabled bool, id string) *LockedAccountDataSecurityAuditorResponse {
 	this := LockedAccountDataSecurityAuditorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ReportFile = reportFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewLockedAccountDataSecurityAuditorResponse(id string, schemas []Enumlocked
 func NewLockedAccountDataSecurityAuditorResponseWithDefaults() *LockedAccountDataSecurityAuditorResponse {
 	this := LockedAccountDataSecurityAuditorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LockedAccountDataSecurityAuditorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LockedAccountDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LockedAccountDataSecurityAuditorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -346,6 +322,30 @@ func (o *LockedAccountDataSecurityAuditorResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LockedAccountDataSecurityAuditorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LockedAccountDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LockedAccountDataSecurityAuditorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LockedAccountDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -356,7 +356,6 @@ func (o LockedAccountDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) 
 
 func (o LockedAccountDataSecurityAuditorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["reportFile"] = o.ReportFile
 	if !IsNil(o.IncludeAttribute) {
@@ -378,6 +377,7 @@ func (o LockedAccountDataSecurityAuditorResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

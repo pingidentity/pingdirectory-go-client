@@ -1,14 +1,14 @@
-# \ConjurAuthenticationMethodApi
+# \ConjurAuthenticationMethodAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddConjurAuthenticationMethod**](ConjurAuthenticationMethodApi.md#AddConjurAuthenticationMethod) | **Post** /conjur-authentication-methods | Add a new Conjur Authentication Method to the config
-[**DeleteConjurAuthenticationMethod**](ConjurAuthenticationMethodApi.md#DeleteConjurAuthenticationMethod) | **Delete** /conjur-authentication-methods/{conjur-authentication-method-name} | Delete a Conjur Authentication Method
-[**GetConjurAuthenticationMethod**](ConjurAuthenticationMethodApi.md#GetConjurAuthenticationMethod) | **Get** /conjur-authentication-methods/{conjur-authentication-method-name} | Returns a single Conjur Authentication Method
-[**ListConjurAuthenticationMethods**](ConjurAuthenticationMethodApi.md#ListConjurAuthenticationMethods) | **Get** /conjur-authentication-methods | Returns a list of all Conjur Authentication Method objects
-[**UpdateConjurAuthenticationMethod**](ConjurAuthenticationMethodApi.md#UpdateConjurAuthenticationMethod) | **Patch** /conjur-authentication-methods/{conjur-authentication-method-name} | Update an existing Conjur Authentication Method by name
+[**AddConjurAuthenticationMethod**](ConjurAuthenticationMethodAPI.md#AddConjurAuthenticationMethod) | **Post** /conjur-authentication-methods | Add a new Conjur Authentication Method to the config
+[**DeleteConjurAuthenticationMethod**](ConjurAuthenticationMethodAPI.md#DeleteConjurAuthenticationMethod) | **Delete** /conjur-authentication-methods/{conjur-authentication-method-name} | Delete a Conjur Authentication Method
+[**GetConjurAuthenticationMethod**](ConjurAuthenticationMethodAPI.md#GetConjurAuthenticationMethod) | **Get** /conjur-authentication-methods/{conjur-authentication-method-name} | Returns a single Conjur Authentication Method
+[**ListConjurAuthenticationMethods**](ConjurAuthenticationMethodAPI.md#ListConjurAuthenticationMethods) | **Get** /conjur-authentication-methods | Returns a list of all Conjur Authentication Method objects
+[**UpdateConjurAuthenticationMethod**](ConjurAuthenticationMethodAPI.md#UpdateConjurAuthenticationMethod) | **Patch** /conjur-authentication-methods/{conjur-authentication-method-name} | Update an existing Conjur Authentication Method by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addApiKeyConjurAuthenticationMethodRequest := *openapiclient.NewAddApiKeyConjurAuthenticationMethodRequest("MethodName_example", []openapiclient.EnumapiKeyConjurAuthenticationMethodSchemaUrn{openapiclient.Enumapi-key-conjur-authentication-methodSchemaUrn("urn:pingidentity:schemas:configuration:2.0:conjur-authentication-method:api-key")}, "Username_example") // AddApiKeyConjurAuthenticationMethodRequest | Create a new Conjur Authentication Method in the config
+    addApiKeyConjurAuthenticationMethodRequest := *openapiclient.NewAddApiKeyConjurAuthenticationMethodRequest([]openapiclient.EnumapiKeyConjurAuthenticationMethodSchemaUrn{openapiclient.Enumapi-key-conjur-authentication-methodSchemaUrn("urn:pingidentity:schemas:configuration:2.0:conjur-authentication-method:api-key")}, "Username_example", "MethodName_example") // AddApiKeyConjurAuthenticationMethodRequest | Create a new Conjur Authentication Method in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConjurAuthenticationMethodApi.AddConjurAuthenticationMethod(context.Background()).AddApiKeyConjurAuthenticationMethodRequest(addApiKeyConjurAuthenticationMethodRequest).Execute()
+    resp, r, err := apiClient.ConjurAuthenticationMethodAPI.AddConjurAuthenticationMethod(context.Background()).AddApiKeyConjurAuthenticationMethodRequest(addApiKeyConjurAuthenticationMethodRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodApi.AddConjurAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodAPI.AddConjurAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddConjurAuthenticationMethod`: ApiKeyConjurAuthenticationMethodResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConjurAuthenticationMethodApi.AddConjurAuthenticationMethod`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConjurAuthenticationMethodAPI.AddConjurAuthenticationMethod`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConjurAuthenticationMethodApi.DeleteConjurAuthenticationMethod(context.Background(), conjurAuthenticationMethodName).Execute()
+    r, err := apiClient.ConjurAuthenticationMethodAPI.DeleteConjurAuthenticationMethod(context.Background(), conjurAuthenticationMethodName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodApi.DeleteConjurAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodAPI.DeleteConjurAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConjurAuthenticationMethodApi.GetConjurAuthenticationMethod(context.Background(), conjurAuthenticationMethodName).Execute()
+    resp, r, err := apiClient.ConjurAuthenticationMethodAPI.GetConjurAuthenticationMethod(context.Background(), conjurAuthenticationMethodName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodApi.GetConjurAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodAPI.GetConjurAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetConjurAuthenticationMethod`: ApiKeyConjurAuthenticationMethodResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConjurAuthenticationMethodApi.GetConjurAuthenticationMethod`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConjurAuthenticationMethodAPI.GetConjurAuthenticationMethod`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConjurAuthenticationMethodApi.ListConjurAuthenticationMethods(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ConjurAuthenticationMethodAPI.ListConjurAuthenticationMethods(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodApi.ListConjurAuthenticationMethods``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodAPI.ListConjurAuthenticationMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListConjurAuthenticationMethods`: ConjurAuthenticationMethodListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConjurAuthenticationMethodApi.ListConjurAuthenticationMethods`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConjurAuthenticationMethodAPI.ListConjurAuthenticationMethods`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConjurAuthenticationMethodApi.UpdateConjurAuthenticationMethod(context.Background(), conjurAuthenticationMethodName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ConjurAuthenticationMethodAPI.UpdateConjurAuthenticationMethod(context.Background(), conjurAuthenticationMethodName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodApi.UpdateConjurAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodAPI.UpdateConjurAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateConjurAuthenticationMethod`: ApiKeyConjurAuthenticationMethodResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConjurAuthenticationMethodApi.UpdateConjurAuthenticationMethod`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConjurAuthenticationMethodAPI.UpdateConjurAuthenticationMethod`: %v\n", resp)
 }
 ```
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Name of the new Virtual Attribute | 
 **Schemas** | [**[]EnummemberVirtualAttributeSchemaUrn**](EnummemberVirtualAttributeSchemaUrn.md) |  | 
 **ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
 **AllowRetrievingMembership** | Pointer to **bool** | Indicates whether to handle requests that request all values for the virtual attribute. | [optional] 
@@ -19,12 +18,13 @@ Name | Type | Description | Notes
 **RequireExplicitRequestByName** | Pointer to **bool** | Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type. | [optional] 
 **MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int64** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
 **MultipleVirtualAttributeMergeBehavior** | Pointer to [**EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp**](EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp.md) |  | [optional] 
+**Name** | **string** | Name of the new Virtual Attribute | 
 
 ## Methods
 
 ### NewAddMemberVirtualAttributeRequest
 
-`func NewAddMemberVirtualAttributeRequest(name string, schemas []EnummemberVirtualAttributeSchemaUrn, enabled bool, attributeType string, ) *AddMemberVirtualAttributeRequest`
+`func NewAddMemberVirtualAttributeRequest(schemas []EnummemberVirtualAttributeSchemaUrn, enabled bool, attributeType string, name string, ) *AddMemberVirtualAttributeRequest`
 
 NewAddMemberVirtualAttributeRequest instantiates a new AddMemberVirtualAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,26 +38,6 @@ will change when the set of required properties is changed
 NewAddMemberVirtualAttributeRequestWithDefaults instantiates a new AddMemberVirtualAttributeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *AddMemberVirtualAttributeRequest) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddMemberVirtualAttributeRequest) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddMemberVirtualAttributeRequest) SetName(v string)`
-
-SetName sets Name field to given value.
-
 
 ### GetSchemas
 
@@ -393,6 +373,26 @@ SetMultipleVirtualAttributeMergeBehavior sets MultipleVirtualAttributeMergeBehav
 `func (o *AddMemberVirtualAttributeRequest) HasMultipleVirtualAttributeMergeBehavior() bool`
 
 HasMultipleVirtualAttributeMergeBehavior returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *AddMemberVirtualAttributeRequest) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *AddMemberVirtualAttributeRequest) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *AddMemberVirtualAttributeRequest) SetName(v string)`
+
+SetName sets Name field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

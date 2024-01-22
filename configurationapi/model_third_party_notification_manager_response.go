@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyNotificationManagerResponse{}
 
 // ThirdPartyNotificationManagerResponse struct for ThirdPartyNotificationManagerResponse
 type ThirdPartyNotificationManagerResponse struct {
-	// Name of the Notification Manager
-	Id      string                                       `json:"id"`
 	Schemas []EnumthirdPartyNotificationManagerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Notification Manager.
 	ExtensionClass string `json:"extensionClass"`
@@ -37,20 +35,22 @@ type ThirdPartyNotificationManagerResponse struct {
 	MonitorEntriesEnabled                         *bool                                              `json:"monitorEntriesEnabled,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Notification Manager
+	Id string `json:"id"`
 }
 
 // NewThirdPartyNotificationManagerResponse instantiates a new ThirdPartyNotificationManagerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyNotificationManagerResponse(id string, schemas []EnumthirdPartyNotificationManagerSchemaUrn, extensionClass string, enabled bool, subscriptionBaseDN string, transactionNotification EnumnotificationManagerTransactionNotificationProp) *ThirdPartyNotificationManagerResponse {
+func NewThirdPartyNotificationManagerResponse(schemas []EnumthirdPartyNotificationManagerSchemaUrn, extensionClass string, enabled bool, subscriptionBaseDN string, transactionNotification EnumnotificationManagerTransactionNotificationProp, id string) *ThirdPartyNotificationManagerResponse {
 	this := ThirdPartyNotificationManagerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
 	this.SubscriptionBaseDN = subscriptionBaseDN
 	this.TransactionNotification = transactionNotification
+	this.Id = id
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewThirdPartyNotificationManagerResponse(id string, schemas []EnumthirdPart
 func NewThirdPartyNotificationManagerResponseWithDefaults() *ThirdPartyNotificationManagerResponse {
 	this := ThirdPartyNotificationManagerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyNotificationManagerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyNotificationManagerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyNotificationManagerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -366,6 +342,30 @@ func (o *ThirdPartyNotificationManagerResponse) SetUrnpingidentityschemasconfigu
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyNotificationManagerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyNotificationManagerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyNotificationManagerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyNotificationManagerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -376,7 +376,6 @@ func (o ThirdPartyNotificationManagerResponse) MarshalJSON() ([]byte, error) {
 
 func (o ThirdPartyNotificationManagerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -397,6 +396,7 @@ func (o ThirdPartyNotificationManagerResponse) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

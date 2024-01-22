@@ -19,8 +19,6 @@ var _ MappedNullable = &RecurringTaskChainResponse{}
 
 // RecurringTaskChainResponse struct for RecurringTaskChainResponse
 type RecurringTaskChainResponse struct {
-	// Name of the Recurring Task Chain
-	Id      string                            `json:"id"`
 	Schemas []EnumrecurringTaskChainSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Recurring Task Chain
 	Description *string `json:"description,omitempty"`
@@ -40,20 +38,22 @@ type RecurringTaskChainResponse struct {
 	ServerOfflineAtStartTimeBehavior              *EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp `json:"serverOfflineAtStartTimeBehavior,omitempty"`
 	Meta                                          *MetaMeta                                                   `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20          `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Recurring Task Chain
+	Id string `json:"id"`
 }
 
 // NewRecurringTaskChainResponse instantiates a new RecurringTaskChainResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecurringTaskChainResponse(id string, enabled bool, recurringTask []string, scheduledMonth []EnumrecurringTaskChainScheduledMonthProp, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string) *RecurringTaskChainResponse {
+func NewRecurringTaskChainResponse(enabled bool, recurringTask []string, scheduledMonth []EnumrecurringTaskChainScheduledMonthProp, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string, id string) *RecurringTaskChainResponse {
 	this := RecurringTaskChainResponse{}
-	this.Id = id
 	this.Enabled = enabled
 	this.RecurringTask = recurringTask
 	this.ScheduledMonth = scheduledMonth
 	this.ScheduledDateSelectionType = scheduledDateSelectionType
 	this.ScheduledTimeOfDay = scheduledTimeOfDay
+	this.Id = id
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewRecurringTaskChainResponse(id string, enabled bool, recurringTask []stri
 func NewRecurringTaskChainResponseWithDefaults() *RecurringTaskChainResponse {
 	this := RecurringTaskChainResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *RecurringTaskChainResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *RecurringTaskChainResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *RecurringTaskChainResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -497,6 +473,30 @@ func (o *RecurringTaskChainResponse) SetUrnpingidentityschemasconfigurationmessa
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *RecurringTaskChainResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *RecurringTaskChainResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *RecurringTaskChainResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o RecurringTaskChainResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -507,7 +507,6 @@ func (o RecurringTaskChainResponse) MarshalJSON() ([]byte, error) {
 
 func (o RecurringTaskChainResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -540,6 +539,7 @@ func (o RecurringTaskChainResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaskName** | **string** | Name of the new Recurring Task | 
 **Schemas** | [**[]EnumleaveLockdownModeRecurringTaskSchemaUrn**](EnumleaveLockdownModeRecurringTaskSchemaUrn.md) |  | 
 **Reason** | Pointer to **string** | The reason that the server is being taken out of in lockdown mode. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **AlertOnStart** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running. | [optional] 
 **AlertOnSuccess** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully. | [optional] 
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
+**TaskName** | **string** | Name of the new Recurring Task | 
 
 ## Methods
 
 ### NewAddLeaveLockdownModeRecurringTaskRequest
 
-`func NewAddLeaveLockdownModeRecurringTaskRequest(taskName string, schemas []EnumleaveLockdownModeRecurringTaskSchemaUrn, ) *AddLeaveLockdownModeRecurringTaskRequest`
+`func NewAddLeaveLockdownModeRecurringTaskRequest(schemas []EnumleaveLockdownModeRecurringTaskSchemaUrn, taskName string, ) *AddLeaveLockdownModeRecurringTaskRequest`
 
 NewAddLeaveLockdownModeRecurringTaskRequest instantiates a new AddLeaveLockdownModeRecurringTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewAddLeaveLockdownModeRecurringTaskRequestWithDefaults instantiates a new AddLeaveLockdownModeRecurringTaskRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTaskName
-
-`func (o *AddLeaveLockdownModeRecurringTaskRequest) GetTaskName() string`
-
-GetTaskName returns the TaskName field if non-nil, zero value otherwise.
-
-### GetTaskNameOk
-
-`func (o *AddLeaveLockdownModeRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
-
-GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaskName
-
-`func (o *AddLeaveLockdownModeRecurringTaskRequest) SetTaskName(v string)`
-
-SetTaskName sets TaskName field to given value.
-
 
 ### GetSchemas
 
@@ -299,6 +279,26 @@ SetAlertOnFailure sets AlertOnFailure field to given value.
 `func (o *AddLeaveLockdownModeRecurringTaskRequest) HasAlertOnFailure() bool`
 
 HasAlertOnFailure returns a boolean if a field has been set.
+
+### GetTaskName
+
+`func (o *AddLeaveLockdownModeRecurringTaskRequest) GetTaskName() string`
+
+GetTaskName returns the TaskName field if non-nil, zero value otherwise.
+
+### GetTaskNameOk
+
+`func (o *AddLeaveLockdownModeRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
+
+GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskName
+
+`func (o *AddLeaveLockdownModeRecurringTaskRequest) SetTaskName(v string)`
+
+SetTaskName sets TaskName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,14 +1,14 @@
-# \MonitorProviderApi
+# \MonitorProviderAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddMonitorProvider**](MonitorProviderApi.md#AddMonitorProvider) | **Post** /monitor-providers | Add a new Monitor Provider to the config
-[**DeleteMonitorProvider**](MonitorProviderApi.md#DeleteMonitorProvider) | **Delete** /monitor-providers/{monitor-provider-name} | Delete a Monitor Provider
-[**GetMonitorProvider**](MonitorProviderApi.md#GetMonitorProvider) | **Get** /monitor-providers/{monitor-provider-name} | Returns a single Monitor Provider
-[**ListMonitorProviders**](MonitorProviderApi.md#ListMonitorProviders) | **Get** /monitor-providers | Returns a list of all Monitor Provider objects
-[**UpdateMonitorProvider**](MonitorProviderApi.md#UpdateMonitorProvider) | **Patch** /monitor-providers/{monitor-provider-name} | Update an existing Monitor Provider by name
+[**AddMonitorProvider**](MonitorProviderAPI.md#AddMonitorProvider) | **Post** /monitor-providers | Add a new Monitor Provider to the config
+[**DeleteMonitorProvider**](MonitorProviderAPI.md#DeleteMonitorProvider) | **Delete** /monitor-providers/{monitor-provider-name} | Delete a Monitor Provider
+[**GetMonitorProvider**](MonitorProviderAPI.md#GetMonitorProvider) | **Get** /monitor-providers/{monitor-provider-name} | Returns a single Monitor Provider
+[**ListMonitorProviders**](MonitorProviderAPI.md#ListMonitorProviders) | **Get** /monitor-providers | Returns a list of all Monitor Provider objects
+[**UpdateMonitorProvider**](MonitorProviderAPI.md#UpdateMonitorProvider) | **Patch** /monitor-providers/{monitor-provider-name} | Update an existing Monitor Provider by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addMonitorProviderRequest := openapiclient.add_monitor_provider_request{AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest: openapiclient.NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest("ProviderName_example", []openapiclient.EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn{openapiclient.Enumencryption-settings-database-accessibility-monitor-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:monitor-provider:encryption-settings-database-accessibility")}, false)} // AddMonitorProviderRequest | Create a new Monitor Provider in the config
+    addMonitorProviderRequest := openapiclient.add_monitor_provider_request{AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest: openapiclient.NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest([]openapiclient.EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn{openapiclient.Enumencryption-settings-database-accessibility-monitor-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:monitor-provider:encryption-settings-database-accessibility")}, false, "ProviderName_example")} // AddMonitorProviderRequest | Create a new Monitor Provider in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitorProviderApi.AddMonitorProvider(context.Background()).AddMonitorProviderRequest(addMonitorProviderRequest).Execute()
+    resp, r, err := apiClient.MonitorProviderAPI.AddMonitorProvider(context.Background()).AddMonitorProviderRequest(addMonitorProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderApi.AddMonitorProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderAPI.AddMonitorProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddMonitorProvider`: AddMonitorProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `MonitorProviderApi.AddMonitorProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MonitorProviderAPI.AddMonitorProvider`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MonitorProviderApi.DeleteMonitorProvider(context.Background(), monitorProviderName).Execute()
+    r, err := apiClient.MonitorProviderAPI.DeleteMonitorProvider(context.Background(), monitorProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderApi.DeleteMonitorProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderAPI.DeleteMonitorProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitorProviderApi.GetMonitorProvider(context.Background(), monitorProviderName).Execute()
+    resp, r, err := apiClient.MonitorProviderAPI.GetMonitorProvider(context.Background(), monitorProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderApi.GetMonitorProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderAPI.GetMonitorProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMonitorProvider`: GetMonitorProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `MonitorProviderApi.GetMonitorProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MonitorProviderAPI.GetMonitorProvider`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitorProviderApi.ListMonitorProviders(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.MonitorProviderAPI.ListMonitorProviders(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderApi.ListMonitorProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderAPI.ListMonitorProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListMonitorProviders`: MonitorProviderListResponse
-    fmt.Fprintf(os.Stdout, "Response from `MonitorProviderApi.ListMonitorProviders`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MonitorProviderAPI.ListMonitorProviders`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitorProviderApi.UpdateMonitorProvider(context.Background(), monitorProviderName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.MonitorProviderAPI.UpdateMonitorProvider(context.Background(), monitorProviderName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderApi.UpdateMonitorProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderAPI.UpdateMonitorProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateMonitorProvider`: GetMonitorProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `MonitorProviderApi.UpdateMonitorProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MonitorProviderAPI.UpdateMonitorProvider`: %v\n", resp)
 }
 ```
 

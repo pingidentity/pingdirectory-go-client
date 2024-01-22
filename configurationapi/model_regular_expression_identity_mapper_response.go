@@ -19,8 +19,6 @@ var _ MappedNullable = &RegularExpressionIdentityMapperResponse{}
 
 // RegularExpressionIdentityMapperResponse struct for RegularExpressionIdentityMapperResponse
 type RegularExpressionIdentityMapperResponse struct {
-	// Name of the Identity Mapper
-	Id      string                                         `json:"id"`
 	Schemas []EnumregularExpressionIdentityMapperSchemaUrn `json:"schemas"`
 	// Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression.
 	MatchAttribute []string `json:"matchAttribute"`
@@ -38,19 +36,21 @@ type RegularExpressionIdentityMapperResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Identity Mapper
+	Id string `json:"id"`
 }
 
 // NewRegularExpressionIdentityMapperResponse instantiates a new RegularExpressionIdentityMapperResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRegularExpressionIdentityMapperResponse(id string, schemas []EnumregularExpressionIdentityMapperSchemaUrn, matchAttribute []string, matchPattern string, enabled bool) *RegularExpressionIdentityMapperResponse {
+func NewRegularExpressionIdentityMapperResponse(schemas []EnumregularExpressionIdentityMapperSchemaUrn, matchAttribute []string, matchPattern string, enabled bool, id string) *RegularExpressionIdentityMapperResponse {
 	this := RegularExpressionIdentityMapperResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.MatchAttribute = matchAttribute
 	this.MatchPattern = matchPattern
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewRegularExpressionIdentityMapperResponse(id string, schemas []Enumregular
 func NewRegularExpressionIdentityMapperResponseWithDefaults() *RegularExpressionIdentityMapperResponse {
 	this := RegularExpressionIdentityMapperResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *RegularExpressionIdentityMapperResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *RegularExpressionIdentityMapperResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *RegularExpressionIdentityMapperResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -374,6 +350,30 @@ func (o *RegularExpressionIdentityMapperResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *RegularExpressionIdentityMapperResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *RegularExpressionIdentityMapperResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *RegularExpressionIdentityMapperResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o RegularExpressionIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -384,7 +384,6 @@ func (o RegularExpressionIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 
 func (o RegularExpressionIdentityMapperResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["matchAttribute"] = o.MatchAttribute
 	if !IsNil(o.MatchBaseDN) {
@@ -407,6 +406,7 @@ func (o RegularExpressionIdentityMapperResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

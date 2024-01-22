@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumsnmpSubagentPluginSchemaUrn**](EnumsnmpSubagentPluginSchemaUrn.md) |  | 
 **ContextName** | Pointer to **string** | The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name. | [optional] 
 **AgentxAddress** | Pointer to **string** | The hostname or IP address of the SNMP master agent. | [optional] 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddSnmpSubagentPluginRequest
 
-`func NewAddSnmpSubagentPluginRequest(pluginName string, schemas []EnumsnmpSubagentPluginSchemaUrn, enabled bool, ) *AddSnmpSubagentPluginRequest`
+`func NewAddSnmpSubagentPluginRequest(schemas []EnumsnmpSubagentPluginSchemaUrn, enabled bool, pluginName string, ) *AddSnmpSubagentPluginRequest`
 
 NewAddSnmpSubagentPluginRequest instantiates a new AddSnmpSubagentPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewAddSnmpSubagentPluginRequestWithDefaults instantiates a new AddSnmpSubagentPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddSnmpSubagentPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddSnmpSubagentPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddSnmpSubagentPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -320,6 +300,26 @@ SetInvokeForInternalOperations sets InvokeForInternalOperations field to given v
 `func (o *AddSnmpSubagentPluginRequest) HasInvokeForInternalOperations() bool`
 
 HasInvokeForInternalOperations returns a boolean if a field has been set.
+
+### GetPluginName
+
+`func (o *AddSnmpSubagentPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddSnmpSubagentPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddSnmpSubagentPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumsyslogJsonAccessLogPublisherSchemaUrn**](EnumsyslogJsonAccessLogPublisherSchemaUrn.md) |  | 
 **SyslogExternalServer** | **[]string** | The syslog server to which messages should be sent. | 
 **SyslogFacility** | Pointer to [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | [optional] 
@@ -54,12 +53,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
+**PublisherName** | **string** | Name of the new Log Publisher | 
 
 ## Methods
 
 ### NewAddSyslogJsonAccessLogPublisherRequest
 
-`func NewAddSyslogJsonAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogJsonAccessLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, ) *AddSyslogJsonAccessLogPublisherRequest`
+`func NewAddSyslogJsonAccessLogPublisherRequest(schemas []EnumsyslogJsonAccessLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, publisherName string, ) *AddSyslogJsonAccessLogPublisherRequest`
 
 NewAddSyslogJsonAccessLogPublisherRequest instantiates a new AddSyslogJsonAccessLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -73,26 +73,6 @@ will change when the set of required properties is changed
 NewAddSyslogJsonAccessLogPublisherRequestWithDefaults instantiates a new AddSyslogJsonAccessLogPublisherRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPublisherName
-
-`func (o *AddSyslogJsonAccessLogPublisherRequest) GetPublisherName() string`
-
-GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
-
-### GetPublisherNameOk
-
-`func (o *AddSyslogJsonAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
-
-GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublisherName
-
-`func (o *AddSyslogJsonAccessLogPublisherRequest) SetPublisherName(v string)`
-
-SetPublisherName sets PublisherName field to given value.
-
 
 ### GetSchemas
 
@@ -1303,6 +1283,26 @@ SetLoggingErrorBehavior sets LoggingErrorBehavior field to given value.
 `func (o *AddSyslogJsonAccessLogPublisherRequest) HasLoggingErrorBehavior() bool`
 
 HasLoggingErrorBehavior returns a boolean if a field has been set.
+
+### GetPublisherName
+
+`func (o *AddSyslogJsonAccessLogPublisherRequest) GetPublisherName() string`
+
+GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
+
+### GetPublisherNameOk
+
+`func (o *AddSyslogJsonAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
+
+GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublisherName
+
+`func (o *AddSyslogJsonAccessLogPublisherRequest) SetPublisherName(v string)`
+
+SetPublisherName sets PublisherName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

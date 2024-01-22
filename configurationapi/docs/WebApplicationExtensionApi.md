@@ -1,14 +1,14 @@
-# \WebApplicationExtensionApi
+# \WebApplicationExtensionAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddWebApplicationExtension**](WebApplicationExtensionApi.md#AddWebApplicationExtension) | **Post** /web-application-extensions | Add a new Web Application Extension to the config
-[**DeleteWebApplicationExtension**](WebApplicationExtensionApi.md#DeleteWebApplicationExtension) | **Delete** /web-application-extensions/{web-application-extension-name} | Delete a Web Application Extension
-[**GetWebApplicationExtension**](WebApplicationExtensionApi.md#GetWebApplicationExtension) | **Get** /web-application-extensions/{web-application-extension-name} | Returns a single Web Application Extension
-[**ListWebApplicationExtensions**](WebApplicationExtensionApi.md#ListWebApplicationExtensions) | **Get** /web-application-extensions | Returns a list of all Web Application Extension objects
-[**UpdateWebApplicationExtension**](WebApplicationExtensionApi.md#UpdateWebApplicationExtension) | **Patch** /web-application-extensions/{web-application-extension-name} | Update an existing Web Application Extension by name
+[**AddWebApplicationExtension**](WebApplicationExtensionAPI.md#AddWebApplicationExtension) | **Post** /web-application-extensions | Add a new Web Application Extension to the config
+[**DeleteWebApplicationExtension**](WebApplicationExtensionAPI.md#DeleteWebApplicationExtension) | **Delete** /web-application-extensions/{web-application-extension-name} | Delete a Web Application Extension
+[**GetWebApplicationExtension**](WebApplicationExtensionAPI.md#GetWebApplicationExtension) | **Get** /web-application-extensions/{web-application-extension-name} | Returns a single Web Application Extension
+[**ListWebApplicationExtensions**](WebApplicationExtensionAPI.md#ListWebApplicationExtensions) | **Get** /web-application-extensions | Returns a list of all Web Application Extension objects
+[**UpdateWebApplicationExtension**](WebApplicationExtensionAPI.md#UpdateWebApplicationExtension) | **Patch** /web-application-extensions/{web-application-extension-name} | Update an existing Web Application Extension by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addGenericWebApplicationExtensionRequest := *openapiclient.NewAddGenericWebApplicationExtensionRequest("ExtensionName_example", []openapiclient.EnumgenericWebApplicationExtensionSchemaUrn{openapiclient.Enumgeneric-web-application-extensionSchemaUrn("urn:pingidentity:schemas:configuration:2.0:web-application-extension:generic")}, "BaseContextPath_example") // AddGenericWebApplicationExtensionRequest | Create a new Web Application Extension in the config
+    addGenericWebApplicationExtensionRequest := *openapiclient.NewAddGenericWebApplicationExtensionRequest([]openapiclient.EnumgenericWebApplicationExtensionSchemaUrn{openapiclient.Enumgeneric-web-application-extensionSchemaUrn("urn:pingidentity:schemas:configuration:2.0:web-application-extension:generic")}, "BaseContextPath_example", "ExtensionName_example") // AddGenericWebApplicationExtensionRequest | Create a new Web Application Extension in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebApplicationExtensionApi.AddWebApplicationExtension(context.Background()).AddGenericWebApplicationExtensionRequest(addGenericWebApplicationExtensionRequest).Execute()
+    resp, r, err := apiClient.WebApplicationExtensionAPI.AddWebApplicationExtension(context.Background()).AddGenericWebApplicationExtensionRequest(addGenericWebApplicationExtensionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionApi.AddWebApplicationExtension``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionAPI.AddWebApplicationExtension``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddWebApplicationExtension`: AddWebApplicationExtension200Response
-    fmt.Fprintf(os.Stdout, "Response from `WebApplicationExtensionApi.AddWebApplicationExtension`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebApplicationExtensionAPI.AddWebApplicationExtension`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.WebApplicationExtensionApi.DeleteWebApplicationExtension(context.Background(), webApplicationExtensionName).Execute()
+    r, err := apiClient.WebApplicationExtensionAPI.DeleteWebApplicationExtension(context.Background(), webApplicationExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionApi.DeleteWebApplicationExtension``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionAPI.DeleteWebApplicationExtension``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebApplicationExtensionApi.GetWebApplicationExtension(context.Background(), webApplicationExtensionName).Execute()
+    resp, r, err := apiClient.WebApplicationExtensionAPI.GetWebApplicationExtension(context.Background(), webApplicationExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionApi.GetWebApplicationExtension``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionAPI.GetWebApplicationExtension``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetWebApplicationExtension`: GetWebApplicationExtension200Response
-    fmt.Fprintf(os.Stdout, "Response from `WebApplicationExtensionApi.GetWebApplicationExtension`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebApplicationExtensionAPI.GetWebApplicationExtension`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebApplicationExtensionApi.ListWebApplicationExtensions(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.WebApplicationExtensionAPI.ListWebApplicationExtensions(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionApi.ListWebApplicationExtensions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionAPI.ListWebApplicationExtensions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListWebApplicationExtensions`: WebApplicationExtensionListResponse
-    fmt.Fprintf(os.Stdout, "Response from `WebApplicationExtensionApi.ListWebApplicationExtensions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebApplicationExtensionAPI.ListWebApplicationExtensions`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebApplicationExtensionApi.UpdateWebApplicationExtension(context.Background(), webApplicationExtensionName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.WebApplicationExtensionAPI.UpdateWebApplicationExtension(context.Background(), webApplicationExtensionName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionApi.UpdateWebApplicationExtension``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionAPI.UpdateWebApplicationExtension``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateWebApplicationExtension`: GetWebApplicationExtension200Response
-    fmt.Fprintf(os.Stdout, "Response from `WebApplicationExtensionApi.UpdateWebApplicationExtension`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WebApplicationExtensionAPI.UpdateWebApplicationExtension`: %v\n", resp)
 }
 ```
 

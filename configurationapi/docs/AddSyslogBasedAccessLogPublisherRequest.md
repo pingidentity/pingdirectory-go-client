@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumsyslogBasedAccessLogPublisherSchemaUrn**](EnumsyslogBasedAccessLogPublisherSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicates whether the Syslog Based Access Log Publisher is enabled for use. | 
 **ServerHostName** | Pointer to **string** | Specifies the hostname or IP address of the syslogd host to log to. It is highly recommend to use localhost. | [optional] 
@@ -54,12 +53,13 @@ Name | Type | Description | Notes
 **SearchReferenceCriteria** | Pointer to **string** | Specifies a set of search reference criteria that must match the associated search result reference in order for that it to be logged by this Access Log Publisher. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
+**PublisherName** | **string** | Name of the new Log Publisher | 
 
 ## Methods
 
 ### NewAddSyslogBasedAccessLogPublisherRequest
 
-`func NewAddSyslogBasedAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool, ) *AddSyslogBasedAccessLogPublisherRequest`
+`func NewAddSyslogBasedAccessLogPublisherRequest(schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool, publisherName string, ) *AddSyslogBasedAccessLogPublisherRequest`
 
 NewAddSyslogBasedAccessLogPublisherRequest instantiates a new AddSyslogBasedAccessLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -73,26 +73,6 @@ will change when the set of required properties is changed
 NewAddSyslogBasedAccessLogPublisherRequestWithDefaults instantiates a new AddSyslogBasedAccessLogPublisherRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPublisherName
-
-`func (o *AddSyslogBasedAccessLogPublisherRequest) GetPublisherName() string`
-
-GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
-
-### GetPublisherNameOk
-
-`func (o *AddSyslogBasedAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
-
-GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublisherName
-
-`func (o *AddSyslogBasedAccessLogPublisherRequest) SetPublisherName(v string)`
-
-SetPublisherName sets PublisherName field to given value.
-
 
 ### GetSchemas
 
@@ -1308,6 +1288,26 @@ SetLoggingErrorBehavior sets LoggingErrorBehavior field to given value.
 `func (o *AddSyslogBasedAccessLogPublisherRequest) HasLoggingErrorBehavior() bool`
 
 HasLoggingErrorBehavior returns a boolean if a field has been set.
+
+### GetPublisherName
+
+`func (o *AddSyslogBasedAccessLogPublisherRequest) GetPublisherName() string`
+
+GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
+
+### GetPublisherNameOk
+
+`func (o *AddSyslogBasedAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
+
+GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublisherName
+
+`func (o *AddSyslogBasedAccessLogPublisherRequest) SetPublisherName(v string)`
+
+SetPublisherName sets PublisherName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddDeprecatedPasswordStorageSchemeDataSecurityAuditorReq
 
 // AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest struct for AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest
 type AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest struct {
-	// Name of the new Data Security Auditor
-	AuditorName string                                                            `json:"auditorName"`
-	Schemas     []EnumdeprecatedPasswordStorageSchemeDataSecurityAuditorSchemaUrn `json:"schemas"`
+	Schemas []EnumdeprecatedPasswordStorageSchemeDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile *string `json:"reportFile,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
@@ -31,16 +29,18 @@ type AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest struct {
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
+	// Name of the new Data Security Auditor
+	AuditorName string `json:"auditorName"`
 }
 
 // NewAddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest instantiates a new AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest(auditorName string, schemas []EnumdeprecatedPasswordStorageSchemeDataSecurityAuditorSchemaUrn) *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest {
+func NewAddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest(schemas []EnumdeprecatedPasswordStorageSchemeDataSecurityAuditorSchemaUrn, auditorName string) *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest {
 	this := AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest{}
-	this.AuditorName = auditorName
 	this.Schemas = schemas
+	this.AuditorName = auditorName
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewAddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest(auditorName
 func NewAddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequestWithDefaults() *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest {
 	this := AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest{}
 	return &this
-}
-
-// GetAuditorName returns the AuditorName field value
-func (o *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) GetAuditorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AuditorName
-}
-
-// GetAuditorNameOk returns a tuple with the AuditorName field value
-// and a boolean to check if the value has been set.
-func (o *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AuditorName, true
-}
-
-// SetAuditorName sets field value
-func (o *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) SetAuditorName(v string) {
-	o.AuditorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -260,6 +236,30 @@ func (o *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) SetAuditS
 	o.AuditSeverity = &v
 }
 
+// GetAuditorName returns the AuditorName field value
+func (o *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) GetAuditorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AuditorName
+}
+
+// GetAuditorNameOk returns a tuple with the AuditorName field value
+// and a boolean to check if the value has been set.
+func (o *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AuditorName, true
+}
+
+// SetAuditorName sets field value
+func (o *AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) SetAuditorName(v string) {
+	o.AuditorName = v
+}
+
 func (o AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -270,7 +270,6 @@ func (o AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) MarshalJSO
 
 func (o AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["auditorName"] = o.AuditorName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ReportFile) {
 		toSerialize["reportFile"] = o.ReportFile
@@ -287,6 +286,7 @@ func (o AddDeprecatedPasswordStorageSchemeDataSecurityAuditorRequest) ToMap() (m
 	if !IsNil(o.AuditSeverity) {
 		toSerialize["auditSeverity"] = o.AuditSeverity
 	}
+	toSerialize["auditorName"] = o.AuditorName
 	return toSerialize, nil
 }
 

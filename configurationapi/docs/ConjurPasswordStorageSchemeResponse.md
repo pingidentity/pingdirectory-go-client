@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Password Storage Scheme | 
 **Schemas** | [**[]EnumconjurPasswordStorageSchemeSchemaUrn**](EnumconjurPasswordStorageSchemeSchemaUrn.md) |  | 
 **ConjurExternalServer** | **string** | An external server definition with information needed to connect and authenticate to the Conjur instance containing user passwords. | 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Password Storage Scheme | 
 
 ## Methods
 
 ### NewConjurPasswordStorageSchemeResponse
 
-`func NewConjurPasswordStorageSchemeResponse(id string, schemas []EnumconjurPasswordStorageSchemeSchemaUrn, conjurExternalServer string, enabled bool, ) *ConjurPasswordStorageSchemeResponse`
+`func NewConjurPasswordStorageSchemeResponse(schemas []EnumconjurPasswordStorageSchemeSchemaUrn, conjurExternalServer string, enabled bool, id string, ) *ConjurPasswordStorageSchemeResponse`
 
 NewConjurPasswordStorageSchemeResponse instantiates a new ConjurPasswordStorageSchemeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewConjurPasswordStorageSchemeResponseWithDefaults instantiates a new ConjurPasswordStorageSchemeResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ConjurPasswordStorageSchemeResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ConjurPasswordStorageSchemeResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ConjurPasswordStorageSchemeResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -185,6 +165,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ConjurPasswordStorageSchemeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ConjurPasswordStorageSchemeResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ConjurPasswordStorageSchemeResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ConjurPasswordStorageSchemeResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

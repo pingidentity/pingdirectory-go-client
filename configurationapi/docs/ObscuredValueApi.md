@@ -1,14 +1,14 @@
-# \ObscuredValueApi
+# \ObscuredValueAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddObscuredValue**](ObscuredValueApi.md#AddObscuredValue) | **Post** /obscured-values | Add a new Obscured Value to the config
-[**DeleteObscuredValue**](ObscuredValueApi.md#DeleteObscuredValue) | **Delete** /obscured-values/{obscured-value-name} | Delete a Obscured Value
-[**GetObscuredValue**](ObscuredValueApi.md#GetObscuredValue) | **Get** /obscured-values/{obscured-value-name} | Returns a single Obscured Value
-[**ListObscuredValues**](ObscuredValueApi.md#ListObscuredValues) | **Get** /obscured-values | Returns a list of all Obscured Value objects
-[**UpdateObscuredValue**](ObscuredValueApi.md#UpdateObscuredValue) | **Patch** /obscured-values/{obscured-value-name} | Update an existing Obscured Value by name
+[**AddObscuredValue**](ObscuredValueAPI.md#AddObscuredValue) | **Post** /obscured-values | Add a new Obscured Value to the config
+[**DeleteObscuredValue**](ObscuredValueAPI.md#DeleteObscuredValue) | **Delete** /obscured-values/{obscured-value-name} | Delete a Obscured Value
+[**GetObscuredValue**](ObscuredValueAPI.md#GetObscuredValue) | **Get** /obscured-values/{obscured-value-name} | Returns a single Obscured Value
+[**ListObscuredValues**](ObscuredValueAPI.md#ListObscuredValues) | **Get** /obscured-values | Returns a list of all Obscured Value objects
+[**UpdateObscuredValue**](ObscuredValueAPI.md#UpdateObscuredValue) | **Patch** /obscured-values/{obscured-value-name} | Update an existing Obscured Value by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addObscuredValueRequest := *openapiclient.NewAddObscuredValueRequest("ValueName_example", "ObscuredValue_example") // AddObscuredValueRequest | Create a new Obscured Value in the config
+    addObscuredValueRequest := *openapiclient.NewAddObscuredValueRequest("ObscuredValue_example", "ValueName_example") // AddObscuredValueRequest | Create a new Obscured Value in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ObscuredValueApi.AddObscuredValue(context.Background()).AddObscuredValueRequest(addObscuredValueRequest).Execute()
+    resp, r, err := apiClient.ObscuredValueAPI.AddObscuredValue(context.Background()).AddObscuredValueRequest(addObscuredValueRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueApi.AddObscuredValue``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueAPI.AddObscuredValue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddObscuredValue`: ObscuredValueResponse
-    fmt.Fprintf(os.Stdout, "Response from `ObscuredValueApi.AddObscuredValue`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ObscuredValueAPI.AddObscuredValue`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ObscuredValueApi.DeleteObscuredValue(context.Background(), obscuredValueName).Execute()
+    r, err := apiClient.ObscuredValueAPI.DeleteObscuredValue(context.Background(), obscuredValueName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueApi.DeleteObscuredValue``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueAPI.DeleteObscuredValue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ObscuredValueApi.GetObscuredValue(context.Background(), obscuredValueName).Execute()
+    resp, r, err := apiClient.ObscuredValueAPI.GetObscuredValue(context.Background(), obscuredValueName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueApi.GetObscuredValue``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueAPI.GetObscuredValue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetObscuredValue`: ObscuredValueResponse
-    fmt.Fprintf(os.Stdout, "Response from `ObscuredValueApi.GetObscuredValue`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ObscuredValueAPI.GetObscuredValue`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ObscuredValueApi.ListObscuredValues(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ObscuredValueAPI.ListObscuredValues(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueApi.ListObscuredValues``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueAPI.ListObscuredValues``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListObscuredValues`: ObscuredValueListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ObscuredValueApi.ListObscuredValues`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ObscuredValueAPI.ListObscuredValues`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ObscuredValueApi.UpdateObscuredValue(context.Background(), obscuredValueName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ObscuredValueAPI.UpdateObscuredValue(context.Background(), obscuredValueName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueApi.UpdateObscuredValue``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueAPI.UpdateObscuredValue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateObscuredValue`: ObscuredValueResponse
-    fmt.Fprintf(os.Stdout, "Response from `ObscuredValueApi.UpdateObscuredValue`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ObscuredValueAPI.UpdateObscuredValue`: %v\n", resp)
 }
 ```
 

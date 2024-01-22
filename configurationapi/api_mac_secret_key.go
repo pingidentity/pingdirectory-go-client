@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// MacSecretKeyApiService MacSecretKeyApi service
-type MacSecretKeyApiService service
+// MacSecretKeyAPIService MacSecretKeyAPI service
+type MacSecretKeyAPIService service
 
 type ApiGetMacSecretKeyRequest struct {
 	ctx                context.Context
-	ApiService         *MacSecretKeyApiService
+	ApiService         *MacSecretKeyAPIService
 	macSecretKeyName   string
 	serverInstanceName string
 }
@@ -41,7 +41,7 @@ GetMacSecretKey Returns a single Mac Secret Key
 	@param serverInstanceName Name of the Server Instance
 	@return ApiGetMacSecretKeyRequest
 */
-func (a *MacSecretKeyApiService) GetMacSecretKey(ctx context.Context, macSecretKeyName string, serverInstanceName string) ApiGetMacSecretKeyRequest {
+func (a *MacSecretKeyAPIService) GetMacSecretKey(ctx context.Context, macSecretKeyName string, serverInstanceName string) ApiGetMacSecretKeyRequest {
 	return ApiGetMacSecretKeyRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -53,7 +53,7 @@ func (a *MacSecretKeyApiService) GetMacSecretKey(ctx context.Context, macSecretK
 // Execute executes the request
 //
 //	@return MacSecretKeyResponse
-func (a *MacSecretKeyApiService) GetMacSecretKeyExecute(r ApiGetMacSecretKeyRequest) (*MacSecretKeyResponse, *http.Response, error) {
+func (a *MacSecretKeyAPIService) GetMacSecretKeyExecute(r ApiGetMacSecretKeyRequest) (*MacSecretKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -61,7 +61,7 @@ func (a *MacSecretKeyApiService) GetMacSecretKeyExecute(r ApiGetMacSecretKeyRequ
 		localVarReturnValue *MacSecretKeyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MacSecretKeyApiService.GetMacSecretKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MacSecretKeyAPIService.GetMacSecretKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -130,7 +130,7 @@ func (a *MacSecretKeyApiService) GetMacSecretKeyExecute(r ApiGetMacSecretKeyRequ
 
 type ApiListMacSecretKeysRequest struct {
 	ctx                context.Context
-	ApiService         *MacSecretKeyApiService
+	ApiService         *MacSecretKeyAPIService
 	serverInstanceName string
 	filter             *string
 }
@@ -152,7 +152,7 @@ ListMacSecretKeys Returns a list of all Mac Secret Key objects
 	@param serverInstanceName Name of the Server Instance
 	@return ApiListMacSecretKeysRequest
 */
-func (a *MacSecretKeyApiService) ListMacSecretKeys(ctx context.Context, serverInstanceName string) ApiListMacSecretKeysRequest {
+func (a *MacSecretKeyAPIService) ListMacSecretKeys(ctx context.Context, serverInstanceName string) ApiListMacSecretKeysRequest {
 	return ApiListMacSecretKeysRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -163,7 +163,7 @@ func (a *MacSecretKeyApiService) ListMacSecretKeys(ctx context.Context, serverIn
 // Execute executes the request
 //
 //	@return MacSecretKeyListResponse
-func (a *MacSecretKeyApiService) ListMacSecretKeysExecute(r ApiListMacSecretKeysRequest) (*MacSecretKeyListResponse, *http.Response, error) {
+func (a *MacSecretKeyAPIService) ListMacSecretKeysExecute(r ApiListMacSecretKeysRequest) (*MacSecretKeyListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -171,7 +171,7 @@ func (a *MacSecretKeyApiService) ListMacSecretKeysExecute(r ApiListMacSecretKeys
 		localVarReturnValue *MacSecretKeyListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MacSecretKeyApiService.ListMacSecretKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MacSecretKeyAPIService.ListMacSecretKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -242,7 +242,7 @@ func (a *MacSecretKeyApiService) ListMacSecretKeysExecute(r ApiListMacSecretKeys
 
 type ApiUpdateMacSecretKeyRequest struct {
 	ctx                context.Context
-	ApiService         *MacSecretKeyApiService
+	ApiService         *MacSecretKeyAPIService
 	macSecretKeyName   string
 	serverInstanceName string
 	updateRequest      *UpdateRequest
@@ -266,7 +266,7 @@ UpdateMacSecretKey Update an existing Mac Secret Key by name
 	@param serverInstanceName Name of the Server Instance
 	@return ApiUpdateMacSecretKeyRequest
 */
-func (a *MacSecretKeyApiService) UpdateMacSecretKey(ctx context.Context, macSecretKeyName string, serverInstanceName string) ApiUpdateMacSecretKeyRequest {
+func (a *MacSecretKeyAPIService) UpdateMacSecretKey(ctx context.Context, macSecretKeyName string, serverInstanceName string) ApiUpdateMacSecretKeyRequest {
 	return ApiUpdateMacSecretKeyRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -278,7 +278,7 @@ func (a *MacSecretKeyApiService) UpdateMacSecretKey(ctx context.Context, macSecr
 // Execute executes the request
 //
 //	@return MacSecretKeyResponse
-func (a *MacSecretKeyApiService) UpdateMacSecretKeyExecute(r ApiUpdateMacSecretKeyRequest) (*MacSecretKeyResponse, *http.Response, error) {
+func (a *MacSecretKeyAPIService) UpdateMacSecretKeyExecute(r ApiUpdateMacSecretKeyRequest) (*MacSecretKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -286,7 +286,7 @@ func (a *MacSecretKeyApiService) UpdateMacSecretKeyExecute(r ApiUpdateMacSecretK
 		localVarReturnValue *MacSecretKeyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MacSecretKeyApiService.UpdateMacSecretKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MacSecretKeyAPIService.UpdateMacSecretKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,8 +19,6 @@ var _ MappedNullable = &DnJoinVirtualAttributeResponse{}
 
 // DnJoinVirtualAttributeResponse struct for DnJoinVirtualAttributeResponse
 type DnJoinVirtualAttributeResponse struct {
-	// Name of the Virtual Attribute
-	Id      string                                `json:"id"`
 	Schemas []EnumdnJoinVirtualAttributeSchemaUrn `json:"schemas"`
 	// The attribute whose values are the DNs of the entries to be joined with the search result entry.
 	JoinDNAttribute string                                 `json:"joinDNAttribute"`
@@ -58,20 +56,22 @@ type DnJoinVirtualAttributeResponse struct {
 	AllowIndexConflicts                           *bool                                              `json:"allowIndexConflicts,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Virtual Attribute
+	Id string `json:"id"`
 }
 
 // NewDnJoinVirtualAttributeResponse instantiates a new DnJoinVirtualAttributeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDnJoinVirtualAttributeResponse(id string, schemas []EnumdnJoinVirtualAttributeSchemaUrn, joinDNAttribute string, joinBaseDNType EnumvirtualAttributeJoinBaseDNTypeProp, enabled bool, attributeType string) *DnJoinVirtualAttributeResponse {
+func NewDnJoinVirtualAttributeResponse(schemas []EnumdnJoinVirtualAttributeSchemaUrn, joinDNAttribute string, joinBaseDNType EnumvirtualAttributeJoinBaseDNTypeProp, enabled bool, attributeType string, id string) *DnJoinVirtualAttributeResponse {
 	this := DnJoinVirtualAttributeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.JoinDNAttribute = joinDNAttribute
 	this.JoinBaseDNType = joinBaseDNType
 	this.Enabled = enabled
 	this.AttributeType = attributeType
+	this.Id = id
 	return &this
 }
 
@@ -81,30 +81,6 @@ func NewDnJoinVirtualAttributeResponse(id string, schemas []EnumdnJoinVirtualAtt
 func NewDnJoinVirtualAttributeResponseWithDefaults() *DnJoinVirtualAttributeResponse {
 	this := DnJoinVirtualAttributeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DnJoinVirtualAttributeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DnJoinVirtualAttributeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DnJoinVirtualAttributeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -771,6 +747,30 @@ func (o *DnJoinVirtualAttributeResponse) SetUrnpingidentityschemasconfigurationm
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DnJoinVirtualAttributeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DnJoinVirtualAttributeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DnJoinVirtualAttributeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DnJoinVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -781,7 +781,6 @@ func (o DnJoinVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 
 func (o DnJoinVirtualAttributeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["joinDNAttribute"] = o.JoinDNAttribute
 	toSerialize["joinBaseDNType"] = o.JoinBaseDNType
@@ -838,6 +837,7 @@ func (o DnJoinVirtualAttributeResponse) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

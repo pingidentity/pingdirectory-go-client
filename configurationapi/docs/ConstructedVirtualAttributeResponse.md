@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Virtual Attribute | 
 **Schemas** | [**[]EnumconstructedVirtualAttributeSchemaUrn**](EnumconstructedVirtualAttributeSchemaUrn.md) |  | 
 **ValuePattern** | **[]string** | Specifies a pattern for constructing the virtual attribute value using fixed text and attribute values from the entry. | 
 **Description** | Pointer to **string** | A description for this Virtual Attribute | [optional] 
@@ -21,12 +20,13 @@ Name | Type | Description | Notes
 **AllowIndexConflicts** | Pointer to **bool** | Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Virtual Attribute | 
 
 ## Methods
 
 ### NewConstructedVirtualAttributeResponse
 
-`func NewConstructedVirtualAttributeResponse(id string, schemas []EnumconstructedVirtualAttributeSchemaUrn, valuePattern []string, enabled bool, attributeType string, ) *ConstructedVirtualAttributeResponse`
+`func NewConstructedVirtualAttributeResponse(schemas []EnumconstructedVirtualAttributeSchemaUrn, valuePattern []string, enabled bool, attributeType string, id string, ) *ConstructedVirtualAttributeResponse`
 
 NewConstructedVirtualAttributeResponse instantiates a new ConstructedVirtualAttributeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -40,26 +40,6 @@ will change when the set of required properties is changed
 NewConstructedVirtualAttributeResponseWithDefaults instantiates a new ConstructedVirtualAttributeResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ConstructedVirtualAttributeResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ConstructedVirtualAttributeResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ConstructedVirtualAttributeResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -440,6 +420,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ConstructedVirtualAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ConstructedVirtualAttributeResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ConstructedVirtualAttributeResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ConstructedVirtualAttributeResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

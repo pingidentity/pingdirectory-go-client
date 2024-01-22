@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyNotificationManagerRequest{}
 
 // AddThirdPartyNotificationManagerRequest struct for AddThirdPartyNotificationManagerRequest
 type AddThirdPartyNotificationManagerRequest struct {
-	// Name of the new Notification Manager
-	ManagerName string                                       `json:"managerName"`
-	Schemas     []EnumthirdPartyNotificationManagerSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyNotificationManagerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Notification Manager.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Notification Manager. Each configuration property should be given in the form 'name=value'.
@@ -35,19 +33,21 @@ type AddThirdPartyNotificationManagerRequest struct {
 	TransactionNotification *EnumnotificationManagerTransactionNotificationProp `json:"transactionNotification,omitempty"`
 	// Enables monitor entries for this Notification Manager.
 	MonitorEntriesEnabled *bool `json:"monitorEntriesEnabled,omitempty"`
+	// Name of the new Notification Manager
+	ManagerName string `json:"managerName"`
 }
 
 // NewAddThirdPartyNotificationManagerRequest instantiates a new AddThirdPartyNotificationManagerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyNotificationManagerRequest(managerName string, schemas []EnumthirdPartyNotificationManagerSchemaUrn, extensionClass string, enabled bool, subscriptionBaseDN string) *AddThirdPartyNotificationManagerRequest {
+func NewAddThirdPartyNotificationManagerRequest(schemas []EnumthirdPartyNotificationManagerSchemaUrn, extensionClass string, enabled bool, subscriptionBaseDN string, managerName string) *AddThirdPartyNotificationManagerRequest {
 	this := AddThirdPartyNotificationManagerRequest{}
-	this.ManagerName = managerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
 	this.SubscriptionBaseDN = subscriptionBaseDN
+	this.ManagerName = managerName
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewAddThirdPartyNotificationManagerRequest(managerName string, schemas []En
 func NewAddThirdPartyNotificationManagerRequestWithDefaults() *AddThirdPartyNotificationManagerRequest {
 	this := AddThirdPartyNotificationManagerRequest{}
 	return &this
-}
-
-// GetManagerName returns the ManagerName field value
-func (o *AddThirdPartyNotificationManagerRequest) GetManagerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ManagerName
-}
-
-// GetManagerNameOk returns a tuple with the ManagerName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyNotificationManagerRequest) GetManagerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ManagerName, true
-}
-
-// SetManagerName sets field value
-func (o *AddThirdPartyNotificationManagerRequest) SetManagerName(v string) {
-	o.ManagerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -307,6 +283,30 @@ func (o *AddThirdPartyNotificationManagerRequest) SetMonitorEntriesEnabled(v boo
 	o.MonitorEntriesEnabled = &v
 }
 
+// GetManagerName returns the ManagerName field value
+func (o *AddThirdPartyNotificationManagerRequest) GetManagerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ManagerName
+}
+
+// GetManagerNameOk returns a tuple with the ManagerName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyNotificationManagerRequest) GetManagerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ManagerName, true
+}
+
+// SetManagerName sets field value
+func (o *AddThirdPartyNotificationManagerRequest) SetManagerName(v string) {
+	o.ManagerName = v
+}
+
 func (o AddThirdPartyNotificationManagerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -317,7 +317,6 @@ func (o AddThirdPartyNotificationManagerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyNotificationManagerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["managerName"] = o.ManagerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -334,6 +333,7 @@ func (o AddThirdPartyNotificationManagerRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.MonitorEntriesEnabled) {
 		toSerialize["monitorEntriesEnabled"] = o.MonitorEntriesEnabled
 	}
+	toSerialize["managerName"] = o.ManagerName
 	return toSerialize, nil
 }
 

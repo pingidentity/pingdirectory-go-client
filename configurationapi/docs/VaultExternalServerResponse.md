@@ -4,22 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the External Server | 
 **Schemas** | [**[]EnumvaultExternalServerSchemaUrn**](EnumvaultExternalServerSchemaUrn.md) |  | 
 **VaultServerBaseURI** | **[]string** | The base URL needed to access the Vault server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://vault.example.com:8200/\&quot;. | 
 **VaultAuthenticationMethod** | **string** | The mechanism used to authenticate to the Vault server. | 
+**HttpConnectTimeout** | Pointer to **string** | The maximum length of time to wait to obtain an HTTP connection. | [optional] 
+**HttpResponseTimeout** | Pointer to **string** | The maximum length of time to wait for a response to an HTTP request. | [optional] 
 **TrustStoreFile** | Pointer to **string** | The path to a file containing the information needed to trust the certificate presented by the Vault servers. | [optional] 
 **TrustStorePin** | Pointer to **string** | The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents. | [optional] 
 **TrustStoreType** | Pointer to **string** | The store type for the specified trust store file. The value should likely be one of \&quot;JKS\&quot;, \&quot;PKCS12\&quot;, or \&quot;BCFKS\&quot;. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the External Server | 
 
 ## Methods
 
 ### NewVaultExternalServerResponse
 
-`func NewVaultExternalServerResponse(id string, schemas []EnumvaultExternalServerSchemaUrn, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *VaultExternalServerResponse`
+`func NewVaultExternalServerResponse(schemas []EnumvaultExternalServerSchemaUrn, vaultServerBaseURI []string, vaultAuthenticationMethod string, id string, ) *VaultExternalServerResponse`
 
 NewVaultExternalServerResponse instantiates a new VaultExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +35,6 @@ will change when the set of required properties is changed
 NewVaultExternalServerResponseWithDefaults instantiates a new VaultExternalServerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *VaultExternalServerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *VaultExternalServerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *VaultExternalServerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -113,6 +95,56 @@ and a boolean to check if the value has been set.
 
 SetVaultAuthenticationMethod sets VaultAuthenticationMethod field to given value.
 
+
+### GetHttpConnectTimeout
+
+`func (o *VaultExternalServerResponse) GetHttpConnectTimeout() string`
+
+GetHttpConnectTimeout returns the HttpConnectTimeout field if non-nil, zero value otherwise.
+
+### GetHttpConnectTimeoutOk
+
+`func (o *VaultExternalServerResponse) GetHttpConnectTimeoutOk() (*string, bool)`
+
+GetHttpConnectTimeoutOk returns a tuple with the HttpConnectTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpConnectTimeout
+
+`func (o *VaultExternalServerResponse) SetHttpConnectTimeout(v string)`
+
+SetHttpConnectTimeout sets HttpConnectTimeout field to given value.
+
+### HasHttpConnectTimeout
+
+`func (o *VaultExternalServerResponse) HasHttpConnectTimeout() bool`
+
+HasHttpConnectTimeout returns a boolean if a field has been set.
+
+### GetHttpResponseTimeout
+
+`func (o *VaultExternalServerResponse) GetHttpResponseTimeout() string`
+
+GetHttpResponseTimeout returns the HttpResponseTimeout field if non-nil, zero value otherwise.
+
+### GetHttpResponseTimeoutOk
+
+`func (o *VaultExternalServerResponse) GetHttpResponseTimeoutOk() (*string, bool)`
+
+GetHttpResponseTimeoutOk returns a tuple with the HttpResponseTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpResponseTimeout
+
+`func (o *VaultExternalServerResponse) SetHttpResponseTimeout(v string)`
+
+SetHttpResponseTimeout sets HttpResponseTimeout field to given value.
+
+### HasHttpResponseTimeout
+
+`func (o *VaultExternalServerResponse) HasHttpResponseTimeout() bool`
+
+HasHttpResponseTimeout returns a boolean if a field has been set.
 
 ### GetTrustStoreFile
 
@@ -263,6 +295,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *VaultExternalServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *VaultExternalServerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *VaultExternalServerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *VaultExternalServerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

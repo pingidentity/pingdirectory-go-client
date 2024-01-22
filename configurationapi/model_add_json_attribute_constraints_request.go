@@ -19,13 +19,13 @@ var _ MappedNullable = &AddJsonAttributeConstraintsRequest{}
 
 // AddJsonAttributeConstraintsRequest struct for AddJsonAttributeConstraintsRequest
 type AddJsonAttributeConstraintsRequest struct {
-	// The name or OID of the LDAP attribute type whose values will be subject to the associated field constraints. This attribute type must be defined in the server schema, and it must have a \"JSON object\" syntax.
-	AttributeType string                                  `json:"attributeType"`
-	Schemas       []EnumjsonAttributeConstraintsSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumjsonAttributeConstraintsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this JSON Attribute Constraints
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this JSON Attribute Constraints is enabled.
 	Enabled *bool `json:"enabled,omitempty"`
+	// Name of the new JSON Attribute Constraints
+	AttributeType string `json:"attributeType"`
 	// Indicates whether JSON objects stored as values of attributes with the associated attribute-type will be permitted to include fields for which there is no subordinate json-field-constraints definition. If unnamed fields are allowed, then no constraints will be imposed on the values of those fields. However, if unnamed fields are not allowed, then the server will reject any attempt to store a JSON object with a field for which there is no corresponding json-fields-constraints definition.
 	AllowUnnamedFields *bool `json:"allowUnnamedFields,omitempty"`
 }
@@ -46,30 +46,6 @@ func NewAddJsonAttributeConstraintsRequest(attributeType string) *AddJsonAttribu
 func NewAddJsonAttributeConstraintsRequestWithDefaults() *AddJsonAttributeConstraintsRequest {
 	this := AddJsonAttributeConstraintsRequest{}
 	return &this
-}
-
-// GetAttributeType returns the AttributeType field value
-func (o *AddJsonAttributeConstraintsRequest) GetAttributeType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AttributeType
-}
-
-// GetAttributeTypeOk returns a tuple with the AttributeType field value
-// and a boolean to check if the value has been set.
-func (o *AddJsonAttributeConstraintsRequest) GetAttributeTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeType, true
-}
-
-// SetAttributeType sets field value
-func (o *AddJsonAttributeConstraintsRequest) SetAttributeType(v string) {
-	o.AttributeType = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -168,6 +144,30 @@ func (o *AddJsonAttributeConstraintsRequest) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
+// GetAttributeType returns the AttributeType field value
+func (o *AddJsonAttributeConstraintsRequest) GetAttributeType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AttributeType
+}
+
+// GetAttributeTypeOk returns a tuple with the AttributeType field value
+// and a boolean to check if the value has been set.
+func (o *AddJsonAttributeConstraintsRequest) GetAttributeTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeType, true
+}
+
+// SetAttributeType sets field value
+func (o *AddJsonAttributeConstraintsRequest) SetAttributeType(v string) {
+	o.AttributeType = v
+}
+
 // GetAllowUnnamedFields returns the AllowUnnamedFields field value if set, zero value otherwise.
 func (o *AddJsonAttributeConstraintsRequest) GetAllowUnnamedFields() bool {
 	if o == nil || IsNil(o.AllowUnnamedFields) {
@@ -210,7 +210,6 @@ func (o AddJsonAttributeConstraintsRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddJsonAttributeConstraintsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["attributeType"] = o.AttributeType
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -220,6 +219,7 @@ func (o AddJsonAttributeConstraintsRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
+	toSerialize["attributeType"] = o.AttributeType
 	if !IsNil(o.AllowUnnamedFields) {
 		toSerialize["allowUnnamedFields"] = o.AllowUnnamedFields
 	}

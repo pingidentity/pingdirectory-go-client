@@ -1,14 +1,14 @@
-# \TrustManagerProviderApi
+# \TrustManagerProviderAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddTrustManagerProvider**](TrustManagerProviderApi.md#AddTrustManagerProvider) | **Post** /trust-manager-providers | Add a new Trust Manager Provider to the config
-[**DeleteTrustManagerProvider**](TrustManagerProviderApi.md#DeleteTrustManagerProvider) | **Delete** /trust-manager-providers/{trust-manager-provider-name} | Delete a Trust Manager Provider
-[**GetTrustManagerProvider**](TrustManagerProviderApi.md#GetTrustManagerProvider) | **Get** /trust-manager-providers/{trust-manager-provider-name} | Returns a single Trust Manager Provider
-[**ListTrustManagerProviders**](TrustManagerProviderApi.md#ListTrustManagerProviders) | **Get** /trust-manager-providers | Returns a list of all Trust Manager Provider objects
-[**UpdateTrustManagerProvider**](TrustManagerProviderApi.md#UpdateTrustManagerProvider) | **Patch** /trust-manager-providers/{trust-manager-provider-name} | Update an existing Trust Manager Provider by name
+[**AddTrustManagerProvider**](TrustManagerProviderAPI.md#AddTrustManagerProvider) | **Post** /trust-manager-providers | Add a new Trust Manager Provider to the config
+[**DeleteTrustManagerProvider**](TrustManagerProviderAPI.md#DeleteTrustManagerProvider) | **Delete** /trust-manager-providers/{trust-manager-provider-name} | Delete a Trust Manager Provider
+[**GetTrustManagerProvider**](TrustManagerProviderAPI.md#GetTrustManagerProvider) | **Get** /trust-manager-providers/{trust-manager-provider-name} | Returns a single Trust Manager Provider
+[**ListTrustManagerProviders**](TrustManagerProviderAPI.md#ListTrustManagerProviders) | **Get** /trust-manager-providers | Returns a list of all Trust Manager Provider objects
+[**UpdateTrustManagerProvider**](TrustManagerProviderAPI.md#UpdateTrustManagerProvider) | **Patch** /trust-manager-providers/{trust-manager-provider-name} | Update an existing Trust Manager Provider by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addTrustManagerProviderRequest := openapiclient.add_trust_manager_provider_request{AddBlindTrustManagerProviderRequest: openapiclient.NewAddBlindTrustManagerProviderRequest("ProviderName_example", []openapiclient.EnumblindTrustManagerProviderSchemaUrn{openapiclient.Enumblind-trust-manager-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:blind")}, false)} // AddTrustManagerProviderRequest | Create a new Trust Manager Provider in the config
+    addTrustManagerProviderRequest := openapiclient.add_trust_manager_provider_request{AddBlindTrustManagerProviderRequest: openapiclient.NewAddBlindTrustManagerProviderRequest([]openapiclient.EnumblindTrustManagerProviderSchemaUrn{openapiclient.Enumblind-trust-manager-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:blind")}, false, "ProviderName_example")} // AddTrustManagerProviderRequest | Create a new Trust Manager Provider in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrustManagerProviderApi.AddTrustManagerProvider(context.Background()).AddTrustManagerProviderRequest(addTrustManagerProviderRequest).Execute()
+    resp, r, err := apiClient.TrustManagerProviderAPI.AddTrustManagerProvider(context.Background()).AddTrustManagerProviderRequest(addTrustManagerProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderApi.AddTrustManagerProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderAPI.AddTrustManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddTrustManagerProvider`: AddTrustManagerProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `TrustManagerProviderApi.AddTrustManagerProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TrustManagerProviderAPI.AddTrustManagerProvider`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TrustManagerProviderApi.DeleteTrustManagerProvider(context.Background(), trustManagerProviderName).Execute()
+    r, err := apiClient.TrustManagerProviderAPI.DeleteTrustManagerProvider(context.Background(), trustManagerProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderApi.DeleteTrustManagerProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderAPI.DeleteTrustManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrustManagerProviderApi.GetTrustManagerProvider(context.Background(), trustManagerProviderName).Execute()
+    resp, r, err := apiClient.TrustManagerProviderAPI.GetTrustManagerProvider(context.Background(), trustManagerProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderApi.GetTrustManagerProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderAPI.GetTrustManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTrustManagerProvider`: AddTrustManagerProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `TrustManagerProviderApi.GetTrustManagerProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TrustManagerProviderAPI.GetTrustManagerProvider`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrustManagerProviderApi.ListTrustManagerProviders(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.TrustManagerProviderAPI.ListTrustManagerProviders(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderApi.ListTrustManagerProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderAPI.ListTrustManagerProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListTrustManagerProviders`: TrustManagerProviderListResponse
-    fmt.Fprintf(os.Stdout, "Response from `TrustManagerProviderApi.ListTrustManagerProviders`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TrustManagerProviderAPI.ListTrustManagerProviders`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrustManagerProviderApi.UpdateTrustManagerProvider(context.Background(), trustManagerProviderName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.TrustManagerProviderAPI.UpdateTrustManagerProvider(context.Background(), trustManagerProviderName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderApi.UpdateTrustManagerProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderAPI.UpdateTrustManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateTrustManagerProvider`: AddTrustManagerProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `TrustManagerProviderApi.UpdateTrustManagerProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TrustManagerProviderAPI.UpdateTrustManagerProvider`: %v\n", resp)
 }
 ```
 

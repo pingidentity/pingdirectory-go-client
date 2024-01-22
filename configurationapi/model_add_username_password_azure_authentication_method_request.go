@@ -19,9 +19,7 @@ var _ MappedNullable = &AddUsernamePasswordAzureAuthenticationMethodRequest{}
 
 // AddUsernamePasswordAzureAuthenticationMethodRequest struct for AddUsernamePasswordAzureAuthenticationMethodRequest
 type AddUsernamePasswordAzureAuthenticationMethodRequest struct {
-	// Name of the new Azure Authentication Method
-	MethodName string                                                   `json:"methodName"`
-	Schemas    []EnumusernamePasswordAzureAuthenticationMethodSchemaUrn `json:"schemas"`
+	Schemas []EnumusernamePasswordAzureAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The tenant ID to use to authenticate.
 	TenantID string `json:"tenantID"`
 	// The client ID to use to authenticate.
@@ -32,20 +30,22 @@ type AddUsernamePasswordAzureAuthenticationMethodRequest struct {
 	Password string `json:"password"`
 	// A description for this Azure Authentication Method
 	Description *string `json:"description,omitempty"`
+	// Name of the new Azure Authentication Method
+	MethodName string `json:"methodName"`
 }
 
 // NewAddUsernamePasswordAzureAuthenticationMethodRequest instantiates a new AddUsernamePasswordAzureAuthenticationMethodRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddUsernamePasswordAzureAuthenticationMethodRequest(methodName string, schemas []EnumusernamePasswordAzureAuthenticationMethodSchemaUrn, tenantID string, clientID string, username string, password string) *AddUsernamePasswordAzureAuthenticationMethodRequest {
+func NewAddUsernamePasswordAzureAuthenticationMethodRequest(schemas []EnumusernamePasswordAzureAuthenticationMethodSchemaUrn, tenantID string, clientID string, username string, password string, methodName string) *AddUsernamePasswordAzureAuthenticationMethodRequest {
 	this := AddUsernamePasswordAzureAuthenticationMethodRequest{}
-	this.MethodName = methodName
 	this.Schemas = schemas
 	this.TenantID = tenantID
 	this.ClientID = clientID
 	this.Username = username
 	this.Password = password
+	this.MethodName = methodName
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewAddUsernamePasswordAzureAuthenticationMethodRequest(methodName string, s
 func NewAddUsernamePasswordAzureAuthenticationMethodRequestWithDefaults() *AddUsernamePasswordAzureAuthenticationMethodRequest {
 	this := AddUsernamePasswordAzureAuthenticationMethodRequest{}
 	return &this
-}
-
-// GetMethodName returns the MethodName field value
-func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) GetMethodName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MethodName
-}
-
-// GetMethodNameOk returns a tuple with the MethodName field value
-// and a boolean to check if the value has been set.
-func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MethodName, true
-}
-
-// SetMethodName sets field value
-func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) SetMethodName(v string) {
-	o.MethodName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -233,6 +209,30 @@ func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) SetDescription(v s
 	o.Description = &v
 }
 
+// GetMethodName returns the MethodName field value
+func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) GetMethodName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MethodName
+}
+
+// GetMethodNameOk returns a tuple with the MethodName field value
+// and a boolean to check if the value has been set.
+func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MethodName, true
+}
+
+// SetMethodName sets field value
+func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) SetMethodName(v string) {
+	o.MethodName = v
+}
+
 func (o AddUsernamePasswordAzureAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -243,7 +243,6 @@ func (o AddUsernamePasswordAzureAuthenticationMethodRequest) MarshalJSON() ([]by
 
 func (o AddUsernamePasswordAzureAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["methodName"] = o.MethodName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["tenantID"] = o.TenantID
 	toSerialize["clientID"] = o.ClientID
@@ -252,6 +251,7 @@ func (o AddUsernamePasswordAzureAuthenticationMethodRequest) ToMap() (map[string
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["methodName"] = o.MethodName
 	return toSerialize, nil
 }
 

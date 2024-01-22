@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Search Entry Criteria | 
 **Schemas** | [**[]EnumsimpleSearchEntryCriteriaSchemaUrn**](EnumsimpleSearchEntryCriteriaSchemaUrn.md) |  | 
 **RequestCriteria** | Pointer to **string** | Specifies a request criteria object that must match the associated request for entries included in this Simple Search Entry Criteria. of them. | [optional] 
 **AllIncludedEntryControl** | Pointer to **[]string** | Specifies the OID of a control that must be present in search result entries included in this Simple Search Entry Criteria. If any control OIDs are provided, then the entry must contain all of those controls. | [optional] 
@@ -22,12 +21,13 @@ Name | Type | Description | Notes
 **NotAllIncludedEntryGroupDN** | Pointer to **[]string** | Specifies the DN of a group in which the user associated with the entry should not be a member to be included in this Simple Search Entry Criteria. If any group DNs are provided, then the entry must not be a member of at least one of them (that is, the entry may be a member of zero or more of the specified groups, but not of all of them). | [optional] 
 **NoneIncludedEntryGroupDN** | Pointer to **[]string** | Specifies the DN of a group in which the user associated with the entry must not be a member to be included in this Simple Search Entry Criteria. If any group DNs are provided, then the entry must not be a member of any of them. | [optional] 
 **Description** | Pointer to **string** | A description for this Search Entry Criteria | [optional] 
+**CriteriaName** | **string** | Name of the new Search Entry Criteria | 
 
 ## Methods
 
 ### NewAddSimpleSearchEntryCriteriaRequest
 
-`func NewAddSimpleSearchEntryCriteriaRequest(criteriaName string, schemas []EnumsimpleSearchEntryCriteriaSchemaUrn, ) *AddSimpleSearchEntryCriteriaRequest`
+`func NewAddSimpleSearchEntryCriteriaRequest(schemas []EnumsimpleSearchEntryCriteriaSchemaUrn, criteriaName string, ) *AddSimpleSearchEntryCriteriaRequest`
 
 NewAddSimpleSearchEntryCriteriaRequest instantiates a new AddSimpleSearchEntryCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -41,26 +41,6 @@ will change when the set of required properties is changed
 NewAddSimpleSearchEntryCriteriaRequestWithDefaults instantiates a new AddSimpleSearchEntryCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddSimpleSearchEntryCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddSimpleSearchEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddSimpleSearchEntryCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -481,6 +461,26 @@ SetDescription sets Description field to given value.
 `func (o *AddSimpleSearchEntryCriteriaRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetCriteriaName
+
+`func (o *AddSimpleSearchEntryCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddSimpleSearchEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddSimpleSearchEntryCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

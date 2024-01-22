@@ -1,14 +1,14 @@
-# \KeyManagerProviderApi
+# \KeyManagerProviderAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddKeyManagerProvider**](KeyManagerProviderApi.md#AddKeyManagerProvider) | **Post** /key-manager-providers | Add a new Key Manager Provider to the config
-[**DeleteKeyManagerProvider**](KeyManagerProviderApi.md#DeleteKeyManagerProvider) | **Delete** /key-manager-providers/{key-manager-provider-name} | Delete a Key Manager Provider
-[**GetKeyManagerProvider**](KeyManagerProviderApi.md#GetKeyManagerProvider) | **Get** /key-manager-providers/{key-manager-provider-name} | Returns a single Key Manager Provider
-[**ListKeyManagerProviders**](KeyManagerProviderApi.md#ListKeyManagerProviders) | **Get** /key-manager-providers | Returns a list of all Key Manager Provider objects
-[**UpdateKeyManagerProvider**](KeyManagerProviderApi.md#UpdateKeyManagerProvider) | **Patch** /key-manager-providers/{key-manager-provider-name} | Update an existing Key Manager Provider by name
+[**AddKeyManagerProvider**](KeyManagerProviderAPI.md#AddKeyManagerProvider) | **Post** /key-manager-providers | Add a new Key Manager Provider to the config
+[**DeleteKeyManagerProvider**](KeyManagerProviderAPI.md#DeleteKeyManagerProvider) | **Delete** /key-manager-providers/{key-manager-provider-name} | Delete a Key Manager Provider
+[**GetKeyManagerProvider**](KeyManagerProviderAPI.md#GetKeyManagerProvider) | **Get** /key-manager-providers/{key-manager-provider-name} | Returns a single Key Manager Provider
+[**ListKeyManagerProviders**](KeyManagerProviderAPI.md#ListKeyManagerProviders) | **Get** /key-manager-providers | Returns a list of all Key Manager Provider objects
+[**UpdateKeyManagerProvider**](KeyManagerProviderAPI.md#UpdateKeyManagerProvider) | **Patch** /key-manager-providers/{key-manager-provider-name} | Update an existing Key Manager Provider by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addKeyManagerProviderRequest := openapiclient.add_key_manager_provider_request{AddFileBasedKeyManagerProviderRequest: openapiclient.NewAddFileBasedKeyManagerProviderRequest("ProviderName_example", []openapiclient.EnumfileBasedKeyManagerProviderSchemaUrn{openapiclient.Enumfile-based-key-manager-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:key-manager-provider:file-based")}, "KeyStoreFile_example", false)} // AddKeyManagerProviderRequest | Create a new Key Manager Provider in the config
+    addKeyManagerProviderRequest := openapiclient.add_key_manager_provider_request{AddFileBasedKeyManagerProviderRequest: openapiclient.NewAddFileBasedKeyManagerProviderRequest([]openapiclient.EnumfileBasedKeyManagerProviderSchemaUrn{openapiclient.Enumfile-based-key-manager-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:key-manager-provider:file-based")}, "KeyStoreFile_example", false, "ProviderName_example")} // AddKeyManagerProviderRequest | Create a new Key Manager Provider in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyManagerProviderApi.AddKeyManagerProvider(context.Background()).AddKeyManagerProviderRequest(addKeyManagerProviderRequest).Execute()
+    resp, r, err := apiClient.KeyManagerProviderAPI.AddKeyManagerProvider(context.Background()).AddKeyManagerProviderRequest(addKeyManagerProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderApi.AddKeyManagerProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderAPI.AddKeyManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddKeyManagerProvider`: AddKeyManagerProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderApi.AddKeyManagerProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderAPI.AddKeyManagerProvider`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KeyManagerProviderApi.DeleteKeyManagerProvider(context.Background(), keyManagerProviderName).Execute()
+    r, err := apiClient.KeyManagerProviderAPI.DeleteKeyManagerProvider(context.Background(), keyManagerProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderApi.DeleteKeyManagerProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderAPI.DeleteKeyManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyManagerProviderApi.GetKeyManagerProvider(context.Background(), keyManagerProviderName).Execute()
+    resp, r, err := apiClient.KeyManagerProviderAPI.GetKeyManagerProvider(context.Background(), keyManagerProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderApi.GetKeyManagerProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderAPI.GetKeyManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetKeyManagerProvider`: GetKeyManagerProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderApi.GetKeyManagerProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderAPI.GetKeyManagerProvider`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyManagerProviderApi.ListKeyManagerProviders(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.KeyManagerProviderAPI.ListKeyManagerProviders(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderApi.ListKeyManagerProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderAPI.ListKeyManagerProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListKeyManagerProviders`: KeyManagerProviderListResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderApi.ListKeyManagerProviders`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderAPI.ListKeyManagerProviders`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyManagerProviderApi.UpdateKeyManagerProvider(context.Background(), keyManagerProviderName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.KeyManagerProviderAPI.UpdateKeyManagerProvider(context.Background(), keyManagerProviderName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderApi.UpdateKeyManagerProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderAPI.UpdateKeyManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateKeyManagerProvider`: GetKeyManagerProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderApi.UpdateKeyManagerProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderAPI.UpdateKeyManagerProvider`: %v\n", resp)
 }
 ```
 

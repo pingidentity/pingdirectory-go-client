@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Schemas** | [**[]EnumsnmpMasterAgentPluginSchemaUrn**](EnumsnmpMasterAgentPluginSchemaUrn.md) |  | 
+**Schemas** | [**[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn**](EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Plugin | 
 **MaxUpdateFrequency** | Pointer to **string** | Specifies the maximum frequency with which last access time values should be written for an entry. This may help limit the rate of internal write operations processed in the server. | [optional] 
 **OperationType** | Pointer to [**[]EnumpluginOperationTypeProp**](EnumpluginOperationTypeProp.md) |  | [optional] 
@@ -29,6 +29,9 @@ Name | Type | Description | Notes
 **EntryCacheInfo** | Pointer to [**EnumpluginEntryCacheInfoProp**](EnumpluginEntryCacheInfoProp.md) |  | [optional] 
 **HostInfo** | Pointer to [**[]EnumpluginHostInfoProp**](EnumpluginHostInfoProp.md) |  | [optional] 
 **IncludedLDAPApplication** | Pointer to **[]string** | If statistics should not be included for all applications, this property names the subset of applications that should be included. | [optional] 
+**TraditionalStaticGroupObjectClass** | Pointer to [**EnumpluginTraditionalStaticGroupObjectClassProp**](EnumpluginTraditionalStaticGroupObjectClassProp.md) |  | [optional] 
+**MaximumMembershipUpdatesPerModify** | Pointer to **int64** | An integer property that specifies the maximum number of membership changes that will be supported in a single modify operation. A value of zero indicates that modify operations targeting the group entry should not be permitted to alter the set of members for the group. | [optional] 
+**ReadOperationSupport** | Pointer to [**EnumpluginReadOperationSupportProp**](EnumpluginReadOperationSupportProp.md) |  | [optional] 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **NumThreads** | **int64** | Specifies the number of concurrent threads that should be used to process the search operations. | 
 **BaseDN** | **[]string** | Specifies a base DN within which the attribute must be unique. | 
@@ -175,12 +178,15 @@ Name | Type | Description | Notes
 **AgentAuthenticationPassphrase** | Pointer to **string** | The authentication passphrase to use for SNMPv3 if authentication is to be performed. | [optional] 
 **AgentPrivacyProtocol** | Pointer to [**EnumpluginAgentPrivacyProtocolProp**](EnumpluginAgentPrivacyProtocolProp.md) |  | [optional] 
 **AgentPrivacyPassphrase** | Pointer to **string** | The privacy passphrase to use for SNMPv3 if privacy is to be used. | [optional] 
+**PreventAddingMembersToNonexistentGroups** | Pointer to **bool** | Indicates whether the server should prevent updates to user entries that attempt to add them as a member of an inverted static group that does not exist. | [optional] 
+**PreventAddingGroupsAsInvertedStaticGroupMembers** | Pointer to **bool** | Indicates whether the server should prevent attempts to add a group as a regular member of an inverted static group. If the members of another group should be considered members of an inverted static group, then the other group should be added as a nested group rather than a regular member. | [optional] 
+**PreventNestingNonexistentGroups** | Pointer to **bool** | Indicates whether the server should prevent updates to inverted static groups that add references to nested groups that don&#39;t exist. | [optional] 
 
 ## Methods
 
 ### NewPluginListResponseResourcesInner
 
-`func NewPluginListResponseResourcesInner(schemas []EnumsnmpMasterAgentPluginSchemaUrn, id string, requestCriteria string, enabled bool, sampleInterval string, collectionInterval string, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, type_ []string, subtreeView []string, histogramCategoryBoundary []string, scope EnumpluginScopeProp, outputFile string, logInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, numWorkerThreads int64, profileSampleInterval string, profileDirectory string, enableProfilingOnStartup bool, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, listenAddress string, listenPort int64, agentxTransport EnumpluginAgentxTransportProp, agentxListenAddress string, agentxListenPort int64, agentSNMPVersion []EnumpluginAgentSNMPVersionProp, communityName string, ) *PluginListResponseResourcesInner`
+`func NewPluginListResponseResourcesInner(schemas []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, id string, requestCriteria string, enabled bool, sampleInterval string, collectionInterval string, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, type_ []string, subtreeView []string, histogramCategoryBoundary []string, scope EnumpluginScopeProp, outputFile string, logInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, numWorkerThreads int64, profileSampleInterval string, profileDirectory string, enableProfilingOnStartup bool, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, listenAddress string, listenPort int64, agentxTransport EnumpluginAgentxTransportProp, agentxListenAddress string, agentxListenPort int64, agentSNMPVersion []EnumpluginAgentSNMPVersionProp, communityName string, ) *PluginListResponseResourcesInner`
 
 NewPluginListResponseResourcesInner instantiates a new PluginListResponseResourcesInner object
 This constructor will assign default values to properties that have it defined,
@@ -197,20 +203,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSchemas
 
-`func (o *PluginListResponseResourcesInner) GetSchemas() []EnumsnmpMasterAgentPluginSchemaUrn`
+`func (o *PluginListResponseResourcesInner) GetSchemas() []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *PluginListResponseResourcesInner) GetSchemasOk() (*[]EnumsnmpMasterAgentPluginSchemaUrn, bool)`
+`func (o *PluginListResponseResourcesInner) GetSchemasOk() (*[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *PluginListResponseResourcesInner) SetSchemas(v []EnumsnmpMasterAgentPluginSchemaUrn)`
+`func (o *PluginListResponseResourcesInner) SetSchemas(v []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
 
@@ -789,6 +795,81 @@ SetIncludedLDAPApplication sets IncludedLDAPApplication field to given value.
 `func (o *PluginListResponseResourcesInner) HasIncludedLDAPApplication() bool`
 
 HasIncludedLDAPApplication returns a boolean if a field has been set.
+
+### GetTraditionalStaticGroupObjectClass
+
+`func (o *PluginListResponseResourcesInner) GetTraditionalStaticGroupObjectClass() EnumpluginTraditionalStaticGroupObjectClassProp`
+
+GetTraditionalStaticGroupObjectClass returns the TraditionalStaticGroupObjectClass field if non-nil, zero value otherwise.
+
+### GetTraditionalStaticGroupObjectClassOk
+
+`func (o *PluginListResponseResourcesInner) GetTraditionalStaticGroupObjectClassOk() (*EnumpluginTraditionalStaticGroupObjectClassProp, bool)`
+
+GetTraditionalStaticGroupObjectClassOk returns a tuple with the TraditionalStaticGroupObjectClass field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTraditionalStaticGroupObjectClass
+
+`func (o *PluginListResponseResourcesInner) SetTraditionalStaticGroupObjectClass(v EnumpluginTraditionalStaticGroupObjectClassProp)`
+
+SetTraditionalStaticGroupObjectClass sets TraditionalStaticGroupObjectClass field to given value.
+
+### HasTraditionalStaticGroupObjectClass
+
+`func (o *PluginListResponseResourcesInner) HasTraditionalStaticGroupObjectClass() bool`
+
+HasTraditionalStaticGroupObjectClass returns a boolean if a field has been set.
+
+### GetMaximumMembershipUpdatesPerModify
+
+`func (o *PluginListResponseResourcesInner) GetMaximumMembershipUpdatesPerModify() int64`
+
+GetMaximumMembershipUpdatesPerModify returns the MaximumMembershipUpdatesPerModify field if non-nil, zero value otherwise.
+
+### GetMaximumMembershipUpdatesPerModifyOk
+
+`func (o *PluginListResponseResourcesInner) GetMaximumMembershipUpdatesPerModifyOk() (*int64, bool)`
+
+GetMaximumMembershipUpdatesPerModifyOk returns a tuple with the MaximumMembershipUpdatesPerModify field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumMembershipUpdatesPerModify
+
+`func (o *PluginListResponseResourcesInner) SetMaximumMembershipUpdatesPerModify(v int64)`
+
+SetMaximumMembershipUpdatesPerModify sets MaximumMembershipUpdatesPerModify field to given value.
+
+### HasMaximumMembershipUpdatesPerModify
+
+`func (o *PluginListResponseResourcesInner) HasMaximumMembershipUpdatesPerModify() bool`
+
+HasMaximumMembershipUpdatesPerModify returns a boolean if a field has been set.
+
+### GetReadOperationSupport
+
+`func (o *PluginListResponseResourcesInner) GetReadOperationSupport() EnumpluginReadOperationSupportProp`
+
+GetReadOperationSupport returns the ReadOperationSupport field if non-nil, zero value otherwise.
+
+### GetReadOperationSupportOk
+
+`func (o *PluginListResponseResourcesInner) GetReadOperationSupportOk() (*EnumpluginReadOperationSupportProp, bool)`
+
+GetReadOperationSupportOk returns a tuple with the ReadOperationSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReadOperationSupport
+
+`func (o *PluginListResponseResourcesInner) SetReadOperationSupport(v EnumpluginReadOperationSupportProp)`
+
+SetReadOperationSupport sets ReadOperationSupport field to given value.
+
+### HasReadOperationSupport
+
+`func (o *PluginListResponseResourcesInner) HasReadOperationSupport() bool`
+
+HasReadOperationSupport returns a boolean if a field has been set.
 
 ### GetPluginType
 
@@ -4109,6 +4190,81 @@ SetAgentPrivacyPassphrase sets AgentPrivacyPassphrase field to given value.
 `func (o *PluginListResponseResourcesInner) HasAgentPrivacyPassphrase() bool`
 
 HasAgentPrivacyPassphrase returns a boolean if a field has been set.
+
+### GetPreventAddingMembersToNonexistentGroups
+
+`func (o *PluginListResponseResourcesInner) GetPreventAddingMembersToNonexistentGroups() bool`
+
+GetPreventAddingMembersToNonexistentGroups returns the PreventAddingMembersToNonexistentGroups field if non-nil, zero value otherwise.
+
+### GetPreventAddingMembersToNonexistentGroupsOk
+
+`func (o *PluginListResponseResourcesInner) GetPreventAddingMembersToNonexistentGroupsOk() (*bool, bool)`
+
+GetPreventAddingMembersToNonexistentGroupsOk returns a tuple with the PreventAddingMembersToNonexistentGroups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventAddingMembersToNonexistentGroups
+
+`func (o *PluginListResponseResourcesInner) SetPreventAddingMembersToNonexistentGroups(v bool)`
+
+SetPreventAddingMembersToNonexistentGroups sets PreventAddingMembersToNonexistentGroups field to given value.
+
+### HasPreventAddingMembersToNonexistentGroups
+
+`func (o *PluginListResponseResourcesInner) HasPreventAddingMembersToNonexistentGroups() bool`
+
+HasPreventAddingMembersToNonexistentGroups returns a boolean if a field has been set.
+
+### GetPreventAddingGroupsAsInvertedStaticGroupMembers
+
+`func (o *PluginListResponseResourcesInner) GetPreventAddingGroupsAsInvertedStaticGroupMembers() bool`
+
+GetPreventAddingGroupsAsInvertedStaticGroupMembers returns the PreventAddingGroupsAsInvertedStaticGroupMembers field if non-nil, zero value otherwise.
+
+### GetPreventAddingGroupsAsInvertedStaticGroupMembersOk
+
+`func (o *PluginListResponseResourcesInner) GetPreventAddingGroupsAsInvertedStaticGroupMembersOk() (*bool, bool)`
+
+GetPreventAddingGroupsAsInvertedStaticGroupMembersOk returns a tuple with the PreventAddingGroupsAsInvertedStaticGroupMembers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventAddingGroupsAsInvertedStaticGroupMembers
+
+`func (o *PluginListResponseResourcesInner) SetPreventAddingGroupsAsInvertedStaticGroupMembers(v bool)`
+
+SetPreventAddingGroupsAsInvertedStaticGroupMembers sets PreventAddingGroupsAsInvertedStaticGroupMembers field to given value.
+
+### HasPreventAddingGroupsAsInvertedStaticGroupMembers
+
+`func (o *PluginListResponseResourcesInner) HasPreventAddingGroupsAsInvertedStaticGroupMembers() bool`
+
+HasPreventAddingGroupsAsInvertedStaticGroupMembers returns a boolean if a field has been set.
+
+### GetPreventNestingNonexistentGroups
+
+`func (o *PluginListResponseResourcesInner) GetPreventNestingNonexistentGroups() bool`
+
+GetPreventNestingNonexistentGroups returns the PreventNestingNonexistentGroups field if non-nil, zero value otherwise.
+
+### GetPreventNestingNonexistentGroupsOk
+
+`func (o *PluginListResponseResourcesInner) GetPreventNestingNonexistentGroupsOk() (*bool, bool)`
+
+GetPreventNestingNonexistentGroupsOk returns a tuple with the PreventNestingNonexistentGroups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventNestingNonexistentGroups
+
+`func (o *PluginListResponseResourcesInner) SetPreventNestingNonexistentGroups(v bool)`
+
+SetPreventNestingNonexistentGroups sets PreventNestingNonexistentGroups field to given value.
+
+### HasPreventNestingNonexistentGroups
+
+`func (o *PluginListResponseResourcesInner) HasPreventNestingNonexistentGroups() bool`
+
+HasPreventNestingNonexistentGroups returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

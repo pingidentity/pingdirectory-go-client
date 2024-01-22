@@ -19,9 +19,7 @@ var _ MappedNullable = &AddCorrelatedLdapDataViewRequest{}
 
 // AddCorrelatedLdapDataViewRequest struct for AddCorrelatedLdapDataViewRequest
 type AddCorrelatedLdapDataViewRequest struct {
-	// Name of the new Correlated LDAP Data View
-	ViewName string                                `json:"viewName"`
-	Schemas  []EnumcorrelatedLdapDataViewSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumcorrelatedLdapDataViewSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the LDAP structural object class that should be exposed by this Correlated LDAP Data View.
 	StructuralLDAPObjectclass string `json:"structuralLDAPObjectclass"`
 	// Specifies an auxiliary LDAP object class that should be exposed by this Correlated LDAP Data View.
@@ -38,19 +36,21 @@ type AddCorrelatedLdapDataViewRequest struct {
 	PrimaryCorrelationAttribute string `json:"primaryCorrelationAttribute"`
 	// The LDAP attribute from the Correlated LDAP Data View whose value will be matched with the primary-correlation-attribute. If multiple correlation attributes are required they may be specified by creating additional correlation-attribute-pairs.
 	SecondaryCorrelationAttribute string `json:"secondaryCorrelationAttribute"`
+	// Name of the new Correlated LDAP Data View
+	ViewName string `json:"viewName"`
 }
 
 // NewAddCorrelatedLdapDataViewRequest instantiates a new AddCorrelatedLdapDataViewRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCorrelatedLdapDataViewRequest(viewName string, structuralLDAPObjectclass string, includeBaseDN string, primaryCorrelationAttribute string, secondaryCorrelationAttribute string) *AddCorrelatedLdapDataViewRequest {
+func NewAddCorrelatedLdapDataViewRequest(structuralLDAPObjectclass string, includeBaseDN string, primaryCorrelationAttribute string, secondaryCorrelationAttribute string, viewName string) *AddCorrelatedLdapDataViewRequest {
 	this := AddCorrelatedLdapDataViewRequest{}
-	this.ViewName = viewName
 	this.StructuralLDAPObjectclass = structuralLDAPObjectclass
 	this.IncludeBaseDN = includeBaseDN
 	this.PrimaryCorrelationAttribute = primaryCorrelationAttribute
 	this.SecondaryCorrelationAttribute = secondaryCorrelationAttribute
+	this.ViewName = viewName
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewAddCorrelatedLdapDataViewRequest(viewName string, structuralLDAPObjectcl
 func NewAddCorrelatedLdapDataViewRequestWithDefaults() *AddCorrelatedLdapDataViewRequest {
 	this := AddCorrelatedLdapDataViewRequest{}
 	return &this
-}
-
-// GetViewName returns the ViewName field value
-func (o *AddCorrelatedLdapDataViewRequest) GetViewName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ViewName
-}
-
-// GetViewNameOk returns a tuple with the ViewName field value
-// and a boolean to check if the value has been set.
-func (o *AddCorrelatedLdapDataViewRequest) GetViewNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ViewName, true
-}
-
-// SetViewName sets field value
-func (o *AddCorrelatedLdapDataViewRequest) SetViewName(v string) {
-	o.ViewName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -342,6 +318,30 @@ func (o *AddCorrelatedLdapDataViewRequest) SetSecondaryCorrelationAttribute(v st
 	o.SecondaryCorrelationAttribute = v
 }
 
+// GetViewName returns the ViewName field value
+func (o *AddCorrelatedLdapDataViewRequest) GetViewName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ViewName
+}
+
+// GetViewNameOk returns a tuple with the ViewName field value
+// and a boolean to check if the value has been set.
+func (o *AddCorrelatedLdapDataViewRequest) GetViewNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ViewName, true
+}
+
+// SetViewName sets field value
+func (o *AddCorrelatedLdapDataViewRequest) SetViewName(v string) {
+	o.ViewName = v
+}
+
 func (o AddCorrelatedLdapDataViewRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -352,7 +352,6 @@ func (o AddCorrelatedLdapDataViewRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddCorrelatedLdapDataViewRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["viewName"] = o.ViewName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -372,6 +371,7 @@ func (o AddCorrelatedLdapDataViewRequest) ToMap() (map[string]interface{}, error
 	}
 	toSerialize["primaryCorrelationAttribute"] = o.PrimaryCorrelationAttribute
 	toSerialize["secondaryCorrelationAttribute"] = o.SecondaryCorrelationAttribute
+	toSerialize["viewName"] = o.ViewName
 	return toSerialize, nil
 }
 

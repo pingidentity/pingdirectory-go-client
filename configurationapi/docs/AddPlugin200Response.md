@@ -5,7 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Plugin | 
-**Schemas** | [**[]EnumuniqueAttributePluginSchemaUrn**](EnumuniqueAttributePluginSchemaUrn.md) |  | 
+**Schemas** | [**[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn**](EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn.md) |  | 
+**TraditionalStaticGroupObjectClass** | Pointer to [**EnumpluginTraditionalStaticGroupObjectClassProp**](EnumpluginTraditionalStaticGroupObjectClassProp.md) |  | [optional] 
+**MaximumMembershipUpdatesPerModify** | Pointer to **int64** | An integer property that specifies the maximum number of membership changes that will be supported in a single modify operation. A value of zero indicates that modify operations targeting the group entry should not be permitted to alter the set of members for the group. | [optional] 
+**ReadOperationSupport** | Pointer to [**EnumpluginReadOperationSupportProp**](EnumpluginReadOperationSupportProp.md) |  | [optional] 
+**Description** | Pointer to **string** | A description for this Plugin | [optional] 
+**Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **NumThreads** | **int64** | Specifies the number of concurrent threads that should be used to process the search operations. | 
 **BaseDN** | **[]string** | Specifies a base DN within which the attribute must be unique. | 
@@ -13,11 +21,6 @@ Name | Type | Description | Notes
 **UpperBound** | Pointer to **int64** | Specifies the upper bound for the numeric value which will be inserted into the search filter. | [optional] 
 **FilterPrefix** | **string** | Specifies a prefix which will be used in front of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should contain the entire filter string. | 
 **FilterSuffix** | Pointer to **string** | Specifies a suffix which will be used after of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should be omitted. | [optional] 
-**Description** | Pointer to **string** | A description for this Plugin | [optional] 
-**Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
-**InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Filter** | **string** | Specifies the search filter to apply to determine if attribute uniqueness is enforced for the matching entries. | 
 **AttributeType** | **[]string** | Specifies the attribute types for which referential integrity is to be maintained. | 
 **PollingInterval** | **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | 
@@ -134,12 +137,15 @@ Name | Type | Description | Notes
 **Type** | **[]string** | Specifies the type of attributes to check for value uniqueness. | 
 **MultipleAttributeBehavior** | Pointer to [**EnumpluginUniqueAttributeMultipleAttributeBehaviorProp**](EnumpluginUniqueAttributeMultipleAttributeBehaviorProp.md) |  | [optional] 
 **PreventConflictsWithSoftDeletedEntries** | Pointer to **bool** | Indicates whether this Unique Attribute Plugin should reject a change that would result in one or more conflicts, even if those conflicts only exist in soft-deleted entries. | [optional] 
+**PreventAddingMembersToNonexistentGroups** | Pointer to **bool** | Indicates whether the server should prevent updates to user entries that attempt to add them as a member of an inverted static group that does not exist. | [optional] 
+**PreventAddingGroupsAsInvertedStaticGroupMembers** | Pointer to **bool** | Indicates whether the server should prevent attempts to add a group as a regular member of an inverted static group. If the members of another group should be considered members of an inverted static group, then the other group should be added as a nested group rather than a regular member. | [optional] 
+**PreventNestingNonexistentGroups** | Pointer to **bool** | Indicates whether the server should prevent updates to inverted static groups that add references to nested groups that don&#39;t exist. | [optional] 
 
 ## Methods
 
 ### NewAddPlugin200Response
 
-`func NewAddPlugin200Response(id string, schemas []EnumuniqueAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, enabled bool, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, requestCriteria string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPlugin200Response`
+`func NewAddPlugin200Response(id string, schemas []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, enabled bool, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, requestCriteria string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPlugin200Response`
 
 NewAddPlugin200Response instantiates a new AddPlugin200Response object
 This constructor will assign default values to properties that have it defined,
@@ -176,23 +182,218 @@ SetId sets Id field to given value.
 
 ### GetSchemas
 
-`func (o *AddPlugin200Response) GetSchemas() []EnumuniqueAttributePluginSchemaUrn`
+`func (o *AddPlugin200Response) GetSchemas() []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *AddPlugin200Response) GetSchemasOk() (*[]EnumuniqueAttributePluginSchemaUrn, bool)`
+`func (o *AddPlugin200Response) GetSchemasOk() (*[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *AddPlugin200Response) SetSchemas(v []EnumuniqueAttributePluginSchemaUrn)`
+`func (o *AddPlugin200Response) SetSchemas(v []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
 
+
+### GetTraditionalStaticGroupObjectClass
+
+`func (o *AddPlugin200Response) GetTraditionalStaticGroupObjectClass() EnumpluginTraditionalStaticGroupObjectClassProp`
+
+GetTraditionalStaticGroupObjectClass returns the TraditionalStaticGroupObjectClass field if non-nil, zero value otherwise.
+
+### GetTraditionalStaticGroupObjectClassOk
+
+`func (o *AddPlugin200Response) GetTraditionalStaticGroupObjectClassOk() (*EnumpluginTraditionalStaticGroupObjectClassProp, bool)`
+
+GetTraditionalStaticGroupObjectClassOk returns a tuple with the TraditionalStaticGroupObjectClass field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTraditionalStaticGroupObjectClass
+
+`func (o *AddPlugin200Response) SetTraditionalStaticGroupObjectClass(v EnumpluginTraditionalStaticGroupObjectClassProp)`
+
+SetTraditionalStaticGroupObjectClass sets TraditionalStaticGroupObjectClass field to given value.
+
+### HasTraditionalStaticGroupObjectClass
+
+`func (o *AddPlugin200Response) HasTraditionalStaticGroupObjectClass() bool`
+
+HasTraditionalStaticGroupObjectClass returns a boolean if a field has been set.
+
+### GetMaximumMembershipUpdatesPerModify
+
+`func (o *AddPlugin200Response) GetMaximumMembershipUpdatesPerModify() int64`
+
+GetMaximumMembershipUpdatesPerModify returns the MaximumMembershipUpdatesPerModify field if non-nil, zero value otherwise.
+
+### GetMaximumMembershipUpdatesPerModifyOk
+
+`func (o *AddPlugin200Response) GetMaximumMembershipUpdatesPerModifyOk() (*int64, bool)`
+
+GetMaximumMembershipUpdatesPerModifyOk returns a tuple with the MaximumMembershipUpdatesPerModify field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumMembershipUpdatesPerModify
+
+`func (o *AddPlugin200Response) SetMaximumMembershipUpdatesPerModify(v int64)`
+
+SetMaximumMembershipUpdatesPerModify sets MaximumMembershipUpdatesPerModify field to given value.
+
+### HasMaximumMembershipUpdatesPerModify
+
+`func (o *AddPlugin200Response) HasMaximumMembershipUpdatesPerModify() bool`
+
+HasMaximumMembershipUpdatesPerModify returns a boolean if a field has been set.
+
+### GetReadOperationSupport
+
+`func (o *AddPlugin200Response) GetReadOperationSupport() EnumpluginReadOperationSupportProp`
+
+GetReadOperationSupport returns the ReadOperationSupport field if non-nil, zero value otherwise.
+
+### GetReadOperationSupportOk
+
+`func (o *AddPlugin200Response) GetReadOperationSupportOk() (*EnumpluginReadOperationSupportProp, bool)`
+
+GetReadOperationSupportOk returns a tuple with the ReadOperationSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReadOperationSupport
+
+`func (o *AddPlugin200Response) SetReadOperationSupport(v EnumpluginReadOperationSupportProp)`
+
+SetReadOperationSupport sets ReadOperationSupport field to given value.
+
+### HasReadOperationSupport
+
+`func (o *AddPlugin200Response) HasReadOperationSupport() bool`
+
+HasReadOperationSupport returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *AddPlugin200Response) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *AddPlugin200Response) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *AddPlugin200Response) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *AddPlugin200Response) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetEnabled
+
+`func (o *AddPlugin200Response) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *AddPlugin200Response) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *AddPlugin200Response) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+
+### GetInvokeForInternalOperations
+
+`func (o *AddPlugin200Response) GetInvokeForInternalOperations() bool`
+
+GetInvokeForInternalOperations returns the InvokeForInternalOperations field if non-nil, zero value otherwise.
+
+### GetInvokeForInternalOperationsOk
+
+`func (o *AddPlugin200Response) GetInvokeForInternalOperationsOk() (*bool, bool)`
+
+GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvokeForInternalOperations
+
+`func (o *AddPlugin200Response) SetInvokeForInternalOperations(v bool)`
+
+SetInvokeForInternalOperations sets InvokeForInternalOperations field to given value.
+
+### HasInvokeForInternalOperations
+
+`func (o *AddPlugin200Response) HasInvokeForInternalOperations() bool`
+
+HasInvokeForInternalOperations returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *AddPlugin200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddPlugin200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddPlugin200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddPlugin200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *AddPlugin200Response) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *AddPlugin200Response) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *AddPlugin200Response) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *AddPlugin200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetPluginType
 
@@ -348,126 +549,6 @@ SetFilterSuffix sets FilterSuffix field to given value.
 `func (o *AddPlugin200Response) HasFilterSuffix() bool`
 
 HasFilterSuffix returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *AddPlugin200Response) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *AddPlugin200Response) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *AddPlugin200Response) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *AddPlugin200Response) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetEnabled
-
-`func (o *AddPlugin200Response) GetEnabled() bool`
-
-GetEnabled returns the Enabled field if non-nil, zero value otherwise.
-
-### GetEnabledOk
-
-`func (o *AddPlugin200Response) GetEnabledOk() (*bool, bool)`
-
-GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnabled
-
-`func (o *AddPlugin200Response) SetEnabled(v bool)`
-
-SetEnabled sets Enabled field to given value.
-
-
-### GetInvokeForInternalOperations
-
-`func (o *AddPlugin200Response) GetInvokeForInternalOperations() bool`
-
-GetInvokeForInternalOperations returns the InvokeForInternalOperations field if non-nil, zero value otherwise.
-
-### GetInvokeForInternalOperationsOk
-
-`func (o *AddPlugin200Response) GetInvokeForInternalOperationsOk() (*bool, bool)`
-
-GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvokeForInternalOperations
-
-`func (o *AddPlugin200Response) SetInvokeForInternalOperations(v bool)`
-
-SetInvokeForInternalOperations sets InvokeForInternalOperations field to given value.
-
-### HasInvokeForInternalOperations
-
-`func (o *AddPlugin200Response) HasInvokeForInternalOperations() bool`
-
-HasInvokeForInternalOperations returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *AddPlugin200Response) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *AddPlugin200Response) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *AddPlugin200Response) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *AddPlugin200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *AddPlugin200Response) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *AddPlugin200Response) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *AddPlugin200Response) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *AddPlugin200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetFilter
 
@@ -3113,6 +3194,81 @@ SetPreventConflictsWithSoftDeletedEntries sets PreventConflictsWithSoftDeletedEn
 `func (o *AddPlugin200Response) HasPreventConflictsWithSoftDeletedEntries() bool`
 
 HasPreventConflictsWithSoftDeletedEntries returns a boolean if a field has been set.
+
+### GetPreventAddingMembersToNonexistentGroups
+
+`func (o *AddPlugin200Response) GetPreventAddingMembersToNonexistentGroups() bool`
+
+GetPreventAddingMembersToNonexistentGroups returns the PreventAddingMembersToNonexistentGroups field if non-nil, zero value otherwise.
+
+### GetPreventAddingMembersToNonexistentGroupsOk
+
+`func (o *AddPlugin200Response) GetPreventAddingMembersToNonexistentGroupsOk() (*bool, bool)`
+
+GetPreventAddingMembersToNonexistentGroupsOk returns a tuple with the PreventAddingMembersToNonexistentGroups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventAddingMembersToNonexistentGroups
+
+`func (o *AddPlugin200Response) SetPreventAddingMembersToNonexistentGroups(v bool)`
+
+SetPreventAddingMembersToNonexistentGroups sets PreventAddingMembersToNonexistentGroups field to given value.
+
+### HasPreventAddingMembersToNonexistentGroups
+
+`func (o *AddPlugin200Response) HasPreventAddingMembersToNonexistentGroups() bool`
+
+HasPreventAddingMembersToNonexistentGroups returns a boolean if a field has been set.
+
+### GetPreventAddingGroupsAsInvertedStaticGroupMembers
+
+`func (o *AddPlugin200Response) GetPreventAddingGroupsAsInvertedStaticGroupMembers() bool`
+
+GetPreventAddingGroupsAsInvertedStaticGroupMembers returns the PreventAddingGroupsAsInvertedStaticGroupMembers field if non-nil, zero value otherwise.
+
+### GetPreventAddingGroupsAsInvertedStaticGroupMembersOk
+
+`func (o *AddPlugin200Response) GetPreventAddingGroupsAsInvertedStaticGroupMembersOk() (*bool, bool)`
+
+GetPreventAddingGroupsAsInvertedStaticGroupMembersOk returns a tuple with the PreventAddingGroupsAsInvertedStaticGroupMembers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventAddingGroupsAsInvertedStaticGroupMembers
+
+`func (o *AddPlugin200Response) SetPreventAddingGroupsAsInvertedStaticGroupMembers(v bool)`
+
+SetPreventAddingGroupsAsInvertedStaticGroupMembers sets PreventAddingGroupsAsInvertedStaticGroupMembers field to given value.
+
+### HasPreventAddingGroupsAsInvertedStaticGroupMembers
+
+`func (o *AddPlugin200Response) HasPreventAddingGroupsAsInvertedStaticGroupMembers() bool`
+
+HasPreventAddingGroupsAsInvertedStaticGroupMembers returns a boolean if a field has been set.
+
+### GetPreventNestingNonexistentGroups
+
+`func (o *AddPlugin200Response) GetPreventNestingNonexistentGroups() bool`
+
+GetPreventNestingNonexistentGroups returns the PreventNestingNonexistentGroups field if non-nil, zero value otherwise.
+
+### GetPreventNestingNonexistentGroupsOk
+
+`func (o *AddPlugin200Response) GetPreventNestingNonexistentGroupsOk() (*bool, bool)`
+
+GetPreventNestingNonexistentGroupsOk returns a tuple with the PreventNestingNonexistentGroups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventNestingNonexistentGroups
+
+`func (o *AddPlugin200Response) SetPreventNestingNonexistentGroups(v bool)`
+
+SetPreventNestingNonexistentGroups sets PreventNestingNonexistentGroups field to given value.
+
+### HasPreventNestingNonexistentGroups
+
+`func (o *AddPlugin200Response) HasPreventNestingNonexistentGroups() bool`
+
+HasPreventNestingNonexistentGroups returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuditorName** | **string** | Name of the new Data Security Auditor | 
 **Schemas** | [**[]EnumthirdPartyDataSecurityAuditorSchemaUrn**](EnumthirdPartyDataSecurityAuditorSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Data Security Auditor. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Data Security Auditor. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
 **AuditBackend** | Pointer to **[]string** | Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler). | [optional] 
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
+**AuditorName** | **string** | Name of the new Data Security Auditor | 
 
 ## Methods
 
 ### NewAddThirdPartyDataSecurityAuditorRequest
 
-`func NewAddThirdPartyDataSecurityAuditorRequest(auditorName string, schemas []EnumthirdPartyDataSecurityAuditorSchemaUrn, extensionClass string, reportFile string, ) *AddThirdPartyDataSecurityAuditorRequest`
+`func NewAddThirdPartyDataSecurityAuditorRequest(schemas []EnumthirdPartyDataSecurityAuditorSchemaUrn, extensionClass string, reportFile string, auditorName string, ) *AddThirdPartyDataSecurityAuditorRequest`
 
 NewAddThirdPartyDataSecurityAuditorRequest instantiates a new AddThirdPartyDataSecurityAuditorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyDataSecurityAuditorRequestWithDefaults instantiates a new AddThirdPartyDataSecurityAuditorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAuditorName
-
-`func (o *AddThirdPartyDataSecurityAuditorRequest) GetAuditorName() string`
-
-GetAuditorName returns the AuditorName field if non-nil, zero value otherwise.
-
-### GetAuditorNameOk
-
-`func (o *AddThirdPartyDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool)`
-
-GetAuditorNameOk returns a tuple with the AuditorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuditorName
-
-`func (o *AddThirdPartyDataSecurityAuditorRequest) SetAuditorName(v string)`
-
-SetAuditorName sets AuditorName field to given value.
-
 
 ### GetSchemas
 
@@ -237,6 +217,26 @@ SetAuditSeverity sets AuditSeverity field to given value.
 `func (o *AddThirdPartyDataSecurityAuditorRequest) HasAuditSeverity() bool`
 
 HasAuditSeverity returns a boolean if a field has been set.
+
+### GetAuditorName
+
+`func (o *AddThirdPartyDataSecurityAuditorRequest) GetAuditorName() string`
+
+GetAuditorName returns the AuditorName field if non-nil, zero value otherwise.
+
+### GetAuditorNameOk
+
+`func (o *AddThirdPartyDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool)`
+
+GetAuditorNameOk returns a tuple with the AuditorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuditorName
+
+`func (o *AddThirdPartyDataSecurityAuditorRequest) SetAuditorName(v string)`
+
+SetAuditorName sets AuditorName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

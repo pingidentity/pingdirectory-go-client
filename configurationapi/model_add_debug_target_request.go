@@ -19,9 +19,7 @@ var _ MappedNullable = &AddDebugTargetRequest{}
 
 // AddDebugTargetRequest struct for AddDebugTargetRequest
 type AddDebugTargetRequest struct {
-	// Name of the new Debug Target
-	TargetName string                     `json:"targetName"`
-	Schemas    []EnumdebugTargetSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumdebugTargetSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the fully-qualified Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, com.unboundid.directory.server.core.DirectoryServer#startUp).
 	DebugScope    string                             `json:"debugScope"`
 	DebugLevel    EnumdebugTargetDebugLevelProp      `json:"debugLevel"`
@@ -36,17 +34,19 @@ type AddDebugTargetRequest struct {
 	ThrowableStackFrames *int64 `json:"throwableStackFrames,omitempty"`
 	// A description for this Debug Target
 	Description *string `json:"description,omitempty"`
+	// Name of the new Debug Target
+	TargetName string `json:"targetName"`
 }
 
 // NewAddDebugTargetRequest instantiates a new AddDebugTargetRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDebugTargetRequest(targetName string, debugScope string, debugLevel EnumdebugTargetDebugLevelProp) *AddDebugTargetRequest {
+func NewAddDebugTargetRequest(debugScope string, debugLevel EnumdebugTargetDebugLevelProp, targetName string) *AddDebugTargetRequest {
 	this := AddDebugTargetRequest{}
-	this.TargetName = targetName
 	this.DebugScope = debugScope
 	this.DebugLevel = debugLevel
+	this.TargetName = targetName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddDebugTargetRequest(targetName string, debugScope string, debugLevel E
 func NewAddDebugTargetRequestWithDefaults() *AddDebugTargetRequest {
 	this := AddDebugTargetRequest{}
 	return &this
-}
-
-// GetTargetName returns the TargetName field value
-func (o *AddDebugTargetRequest) GetTargetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TargetName
-}
-
-// GetTargetNameOk returns a tuple with the TargetName field value
-// and a boolean to check if the value has been set.
-func (o *AddDebugTargetRequest) GetTargetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TargetName, true
-}
-
-// SetTargetName sets field value
-func (o *AddDebugTargetRequest) SetTargetName(v string) {
-	o.TargetName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -354,6 +330,30 @@ func (o *AddDebugTargetRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetTargetName returns the TargetName field value
+func (o *AddDebugTargetRequest) GetTargetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TargetName
+}
+
+// GetTargetNameOk returns a tuple with the TargetName field value
+// and a boolean to check if the value has been set.
+func (o *AddDebugTargetRequest) GetTargetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TargetName, true
+}
+
+// SetTargetName sets field value
+func (o *AddDebugTargetRequest) SetTargetName(v string) {
+	o.TargetName = v
+}
+
 func (o AddDebugTargetRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -364,7 +364,6 @@ func (o AddDebugTargetRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddDebugTargetRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["targetName"] = o.TargetName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -388,6 +387,7 @@ func (o AddDebugTargetRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["targetName"] = o.TargetName
 	return toSerialize, nil
 }
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExtensionName** | **string** | Name of the new Web Application Extension | 
 **Schemas** | [**[]EnumgenericWebApplicationExtensionSchemaUrn**](EnumgenericWebApplicationExtensionSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Web Application Extension | [optional] 
 **BaseContextPath** | **string** | Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and at least one additional character and must represent a valid HTTP context path. | 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **DeploymentDescriptorFile** | Pointer to **string** | Specifies the path to the deployment descriptor file when used with document-root-directory. | [optional] 
 **TemporaryDirectory** | Pointer to **string** | Specifies the path to the directory that may be used to store temporary files such as extracted WAR files and compiled JSP files. | [optional] 
 **InitParameter** | Pointer to **[]string** | Specifies an initialization parameter to pass into the web application during startup. | [optional] 
+**ExtensionName** | **string** | Name of the new Web Application Extension | 
 
 ## Methods
 
 ### NewAddGenericWebApplicationExtensionRequest
 
-`func NewAddGenericWebApplicationExtensionRequest(extensionName string, schemas []EnumgenericWebApplicationExtensionSchemaUrn, baseContextPath string, ) *AddGenericWebApplicationExtensionRequest`
+`func NewAddGenericWebApplicationExtensionRequest(schemas []EnumgenericWebApplicationExtensionSchemaUrn, baseContextPath string, extensionName string, ) *AddGenericWebApplicationExtensionRequest`
 
 NewAddGenericWebApplicationExtensionRequest instantiates a new AddGenericWebApplicationExtensionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddGenericWebApplicationExtensionRequestWithDefaults instantiates a new AddGenericWebApplicationExtensionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetExtensionName
-
-`func (o *AddGenericWebApplicationExtensionRequest) GetExtensionName() string`
-
-GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
-
-### GetExtensionNameOk
-
-`func (o *AddGenericWebApplicationExtensionRequest) GetExtensionNameOk() (*string, bool)`
-
-GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtensionName
-
-`func (o *AddGenericWebApplicationExtensionRequest) SetExtensionName(v string)`
-
-SetExtensionName sets ExtensionName field to given value.
-
 
 ### GetSchemas
 
@@ -242,6 +222,26 @@ SetInitParameter sets InitParameter field to given value.
 `func (o *AddGenericWebApplicationExtensionRequest) HasInitParameter() bool`
 
 HasInitParameter returns a boolean if a field has been set.
+
+### GetExtensionName
+
+`func (o *AddGenericWebApplicationExtensionRequest) GetExtensionName() string`
+
+GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
+
+### GetExtensionNameOk
+
+`func (o *AddGenericWebApplicationExtensionRequest) GetExtensionNameOk() (*string, bool)`
+
+GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtensionName
+
+`func (o *AddGenericWebApplicationExtensionRequest) SetExtensionName(v string)`
+
+SetExtensionName sets ExtensionName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

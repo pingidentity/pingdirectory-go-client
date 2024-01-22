@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
 tags:
 - description: Access group-implementations
   name: group-implementation
@@ -59,6 +59,7 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/static-group-implementation-response'
+                - $ref: '#/components/schemas/inverted-static-group-implementation-response'
                 - $ref: '#/components/schemas/virtual-static-group-implementation-response'
                 - $ref: '#/components/schemas/dynamic-group-implementation-response'
         "401":
@@ -98,6 +99,7 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/static-group-implementation-response'
+                - $ref: '#/components/schemas/inverted-static-group-implementation-response'
                 - $ref: '#/components/schemas/virtual-static-group-implementation-response'
                 - $ref: '#/components/schemas/dynamic-group-implementation-response'
         "401":
@@ -207,6 +209,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:group-implementation:static"
+    inverted-static-group-implementation-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enuminverted-static-group-implementationSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Group Implementation
+          description:
+            type: string
+            description: >-
+                A description for this Group Implementation
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Group Implementation is enabled.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enuminverted-static-group-implementationSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:group-implementation:inverted-static"
     group-implementationListResponse:
       type: object
       properties:
@@ -225,6 +258,7 @@ components:
             - $ref: '#/components/schemas/virtual-static-group-implementation-response'
             - $ref: '#/components/schemas/dynamic-group-implementation-response'
             - $ref: '#/components/schemas/static-group-implementation-response'
+            - $ref: '#/components/schemas/inverted-static-group-implementation-response'
     updateRequest:
       type: object
       properties:

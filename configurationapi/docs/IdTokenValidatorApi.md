@@ -1,14 +1,14 @@
-# \IdTokenValidatorApi
+# \IdTokenValidatorAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddIdTokenValidator**](IdTokenValidatorApi.md#AddIdTokenValidator) | **Post** /id-token-validators | Add a new ID Token Validator to the config
-[**DeleteIdTokenValidator**](IdTokenValidatorApi.md#DeleteIdTokenValidator) | **Delete** /id-token-validators/{id-token-validator-name} | Delete a ID Token Validator
-[**GetIdTokenValidator**](IdTokenValidatorApi.md#GetIdTokenValidator) | **Get** /id-token-validators/{id-token-validator-name} | Returns a single ID Token Validator
-[**ListIdTokenValidators**](IdTokenValidatorApi.md#ListIdTokenValidators) | **Get** /id-token-validators | Returns a list of all ID Token Validator objects
-[**UpdateIdTokenValidator**](IdTokenValidatorApi.md#UpdateIdTokenValidator) | **Patch** /id-token-validators/{id-token-validator-name} | Update an existing ID Token Validator by name
+[**AddIdTokenValidator**](IdTokenValidatorAPI.md#AddIdTokenValidator) | **Post** /id-token-validators | Add a new ID Token Validator to the config
+[**DeleteIdTokenValidator**](IdTokenValidatorAPI.md#DeleteIdTokenValidator) | **Delete** /id-token-validators/{id-token-validator-name} | Delete a ID Token Validator
+[**GetIdTokenValidator**](IdTokenValidatorAPI.md#GetIdTokenValidator) | **Get** /id-token-validators/{id-token-validator-name} | Returns a single ID Token Validator
+[**ListIdTokenValidators**](IdTokenValidatorAPI.md#ListIdTokenValidators) | **Get** /id-token-validators | Returns a list of all ID Token Validator objects
+[**UpdateIdTokenValidator**](IdTokenValidatorAPI.md#UpdateIdTokenValidator) | **Patch** /id-token-validators/{id-token-validator-name} | Update an existing ID Token Validator by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addIdTokenValidatorRequest := openapiclient.add_id_token_validator_request{AddOpenidConnectIdTokenValidatorRequest: openapiclient.NewAddOpenidConnectIdTokenValidatorRequest("ValidatorName_example", []openapiclient.EnumopenidConnectIdTokenValidatorSchemaUrn{openapiclient.Enumopenid-connect-id-token-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:id-token-validator:openid-connect")}, []openapiclient.EnumidTokenValidatorAllowedSigningAlgorithmProp{openapiclient.Enumid-token-validator-allowedSigningAlgorithmProp("RS256")}, false, "IdentityMapper_example", "IssuerURL_example", int64(123))} // AddIdTokenValidatorRequest | Create a new ID Token Validator in the config
+    addIdTokenValidatorRequest := openapiclient.add_id_token_validator_request{AddOpenidConnectIdTokenValidatorRequest: openapiclient.NewAddOpenidConnectIdTokenValidatorRequest([]openapiclient.EnumopenidConnectIdTokenValidatorSchemaUrn{openapiclient.Enumopenid-connect-id-token-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:id-token-validator:openid-connect")}, []openapiclient.EnumidTokenValidatorAllowedSigningAlgorithmProp{openapiclient.Enumid-token-validator-allowedSigningAlgorithmProp("RS256")}, false, "IdentityMapper_example", "IssuerURL_example", int64(123), "ValidatorName_example")} // AddIdTokenValidatorRequest | Create a new ID Token Validator in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdTokenValidatorApi.AddIdTokenValidator(context.Background()).AddIdTokenValidatorRequest(addIdTokenValidatorRequest).Execute()
+    resp, r, err := apiClient.IdTokenValidatorAPI.AddIdTokenValidator(context.Background()).AddIdTokenValidatorRequest(addIdTokenValidatorRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorApi.AddIdTokenValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorAPI.AddIdTokenValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddIdTokenValidator`: AddIdTokenValidator200Response
-    fmt.Fprintf(os.Stdout, "Response from `IdTokenValidatorApi.AddIdTokenValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdTokenValidatorAPI.AddIdTokenValidator`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdTokenValidatorApi.DeleteIdTokenValidator(context.Background(), idTokenValidatorName).Execute()
+    r, err := apiClient.IdTokenValidatorAPI.DeleteIdTokenValidator(context.Background(), idTokenValidatorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorApi.DeleteIdTokenValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorAPI.DeleteIdTokenValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdTokenValidatorApi.GetIdTokenValidator(context.Background(), idTokenValidatorName).Execute()
+    resp, r, err := apiClient.IdTokenValidatorAPI.GetIdTokenValidator(context.Background(), idTokenValidatorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorApi.GetIdTokenValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorAPI.GetIdTokenValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdTokenValidator`: AddIdTokenValidator200Response
-    fmt.Fprintf(os.Stdout, "Response from `IdTokenValidatorApi.GetIdTokenValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdTokenValidatorAPI.GetIdTokenValidator`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdTokenValidatorApi.ListIdTokenValidators(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.IdTokenValidatorAPI.ListIdTokenValidators(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorApi.ListIdTokenValidators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorAPI.ListIdTokenValidators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListIdTokenValidators`: IdTokenValidatorListResponse
-    fmt.Fprintf(os.Stdout, "Response from `IdTokenValidatorApi.ListIdTokenValidators`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdTokenValidatorAPI.ListIdTokenValidators`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdTokenValidatorApi.UpdateIdTokenValidator(context.Background(), idTokenValidatorName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.IdTokenValidatorAPI.UpdateIdTokenValidator(context.Background(), idTokenValidatorName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorApi.UpdateIdTokenValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorAPI.UpdateIdTokenValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateIdTokenValidator`: AddIdTokenValidator200Response
-    fmt.Fprintf(os.Stdout, "Response from `IdTokenValidatorApi.UpdateIdTokenValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdTokenValidatorAPI.UpdateIdTokenValidator`: %v\n", resp)
 }
 ```
 

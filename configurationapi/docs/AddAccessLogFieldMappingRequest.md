@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MappingName** | **string** | Name of the new Log Field Mapping | 
 **Schemas** | [**[]EnumaccessLogFieldMappingSchemaUrn**](EnumaccessLogFieldMappingSchemaUrn.md) |  | 
 **LogFieldTimestamp** | Pointer to **string** | The time that the operation was processed. | [optional] 
 **LogFieldConnectionID** | Pointer to **string** | The connection ID assigned to the client connection. | [optional] 
@@ -59,12 +58,13 @@ Name | Type | Description | Notes
 **LogFieldIntermediateClientRequest** | Pointer to **string** | The contents of the intermediate client request control provided by the client. | [optional] 
 **LogFieldReplicationChangeID** | Pointer to **string** | The replication change ID. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Field Mapping | [optional] 
+**MappingName** | **string** | Name of the new Log Field Mapping | 
 
 ## Methods
 
 ### NewAddAccessLogFieldMappingRequest
 
-`func NewAddAccessLogFieldMappingRequest(mappingName string, schemas []EnumaccessLogFieldMappingSchemaUrn, ) *AddAccessLogFieldMappingRequest`
+`func NewAddAccessLogFieldMappingRequest(schemas []EnumaccessLogFieldMappingSchemaUrn, mappingName string, ) *AddAccessLogFieldMappingRequest`
 
 NewAddAccessLogFieldMappingRequest instantiates a new AddAccessLogFieldMappingRequest object
 This constructor will assign default values to properties that have it defined,
@@ -78,26 +78,6 @@ will change when the set of required properties is changed
 NewAddAccessLogFieldMappingRequestWithDefaults instantiates a new AddAccessLogFieldMappingRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMappingName
-
-`func (o *AddAccessLogFieldMappingRequest) GetMappingName() string`
-
-GetMappingName returns the MappingName field if non-nil, zero value otherwise.
-
-### GetMappingNameOk
-
-`func (o *AddAccessLogFieldMappingRequest) GetMappingNameOk() (*string, bool)`
-
-GetMappingNameOk returns a tuple with the MappingName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMappingName
-
-`func (o *AddAccessLogFieldMappingRequest) SetMappingName(v string)`
-
-SetMappingName sets MappingName field to given value.
-
 
 ### GetSchemas
 
@@ -1443,6 +1423,26 @@ SetDescription sets Description field to given value.
 `func (o *AddAccessLogFieldMappingRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetMappingName
+
+`func (o *AddAccessLogFieldMappingRequest) GetMappingName() string`
+
+GetMappingName returns the MappingName field if non-nil, zero value otherwise.
+
+### GetMappingNameOk
+
+`func (o *AddAccessLogFieldMappingRequest) GetMappingNameOk() (*string, bool)`
+
+GetMappingNameOk returns a tuple with the MappingName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMappingName
+
+`func (o *AddAccessLogFieldMappingRequest) SetMappingName(v string)`
+
+SetMappingName sets MappingName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

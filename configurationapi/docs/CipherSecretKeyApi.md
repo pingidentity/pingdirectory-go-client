@@ -1,12 +1,12 @@
-# \CipherSecretKeyApi
+# \CipherSecretKeyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCipherSecretKey**](CipherSecretKeyApi.md#GetCipherSecretKey) | **Get** /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name} | Returns a single Cipher Secret Key
-[**ListCipherSecretKeys**](CipherSecretKeyApi.md#ListCipherSecretKeys) | **Get** /server-instances/{server-instance-name}/cipher-secret-keys | Returns a list of all Cipher Secret Key objects
-[**UpdateCipherSecretKey**](CipherSecretKeyApi.md#UpdateCipherSecretKey) | **Patch** /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name} | Update an existing Cipher Secret Key by name
+[**GetCipherSecretKey**](CipherSecretKeyAPI.md#GetCipherSecretKey) | **Get** /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name} | Returns a single Cipher Secret Key
+[**ListCipherSecretKeys**](CipherSecretKeyAPI.md#ListCipherSecretKeys) | **Get** /server-instances/{server-instance-name}/cipher-secret-keys | Returns a list of all Cipher Secret Key objects
+[**UpdateCipherSecretKey**](CipherSecretKeyAPI.md#UpdateCipherSecretKey) | **Patch** /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name} | Update an existing Cipher Secret Key by name
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CipherSecretKeyApi.GetCipherSecretKey(context.Background(), cipherSecretKeyName, serverInstanceName).Execute()
+    resp, r, err := apiClient.CipherSecretKeyAPI.GetCipherSecretKey(context.Background(), cipherSecretKeyName, serverInstanceName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CipherSecretKeyApi.GetCipherSecretKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherSecretKeyAPI.GetCipherSecretKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCipherSecretKey`: CipherSecretKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `CipherSecretKeyApi.GetCipherSecretKey`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CipherSecretKeyAPI.GetCipherSecretKey`: %v\n", resp)
 }
 ```
 
@@ -105,13 +105,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CipherSecretKeyApi.ListCipherSecretKeys(context.Background(), serverInstanceName).Filter(filter).Execute()
+    resp, r, err := apiClient.CipherSecretKeyAPI.ListCipherSecretKeys(context.Background(), serverInstanceName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CipherSecretKeyApi.ListCipherSecretKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherSecretKeyAPI.ListCipherSecretKeys``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListCipherSecretKeys`: CipherSecretKeyListResponse
-    fmt.Fprintf(os.Stdout, "Response from `CipherSecretKeyApi.ListCipherSecretKeys`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CipherSecretKeyAPI.ListCipherSecretKeys`: %v\n", resp)
 }
 ```
 
@@ -176,13 +176,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CipherSecretKeyApi.UpdateCipherSecretKey(context.Background(), cipherSecretKeyName, serverInstanceName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.CipherSecretKeyAPI.UpdateCipherSecretKey(context.Background(), cipherSecretKeyName, serverInstanceName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CipherSecretKeyApi.UpdateCipherSecretKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherSecretKeyAPI.UpdateCipherSecretKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCipherSecretKey`: CipherSecretKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `CipherSecretKeyApi.UpdateCipherSecretKey`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CipherSecretKeyAPI.UpdateCipherSecretKey`: %v\n", resp)
 }
 ```
 

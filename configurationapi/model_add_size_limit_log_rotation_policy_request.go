@@ -19,24 +19,24 @@ var _ MappedNullable = &AddSizeLimitLogRotationPolicyRequest{}
 
 // AddSizeLimitLogRotationPolicyRequest struct for AddSizeLimitLogRotationPolicyRequest
 type AddSizeLimitLogRotationPolicyRequest struct {
-	// Name of the new Log Rotation Policy
-	PolicyName string                                    `json:"policyName"`
-	Schemas    []EnumsizeLimitLogRotationPolicySchemaUrn `json:"schemas"`
+	Schemas []EnumsizeLimitLogRotationPolicySchemaUrn `json:"schemas"`
 	// Specifies the maximum size that a log file can reach before it is rotated.
 	FileSizeLimit string `json:"fileSizeLimit"`
 	// A description for this Log Rotation Policy
 	Description *string `json:"description,omitempty"`
+	// Name of the new Log Rotation Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddSizeLimitLogRotationPolicyRequest instantiates a new AddSizeLimitLogRotationPolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSizeLimitLogRotationPolicyRequest(policyName string, schemas []EnumsizeLimitLogRotationPolicySchemaUrn, fileSizeLimit string) *AddSizeLimitLogRotationPolicyRequest {
+func NewAddSizeLimitLogRotationPolicyRequest(schemas []EnumsizeLimitLogRotationPolicySchemaUrn, fileSizeLimit string, policyName string) *AddSizeLimitLogRotationPolicyRequest {
 	this := AddSizeLimitLogRotationPolicyRequest{}
-	this.PolicyName = policyName
 	this.Schemas = schemas
 	this.FileSizeLimit = fileSizeLimit
+	this.PolicyName = policyName
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewAddSizeLimitLogRotationPolicyRequest(policyName string, schemas []Enumsi
 func NewAddSizeLimitLogRotationPolicyRequestWithDefaults() *AddSizeLimitLogRotationPolicyRequest {
 	this := AddSizeLimitLogRotationPolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddSizeLimitLogRotationPolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddSizeLimitLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddSizeLimitLogRotationPolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -152,6 +128,30 @@ func (o *AddSizeLimitLogRotationPolicyRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddSizeLimitLogRotationPolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddSizeLimitLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddSizeLimitLogRotationPolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddSizeLimitLogRotationPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -162,12 +162,12 @@ func (o AddSizeLimitLogRotationPolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSizeLimitLogRotationPolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["fileSizeLimit"] = o.FileSizeLimit
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

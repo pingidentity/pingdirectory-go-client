@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PolicyName** | **string** | Name of the new Password Policy | 
 **Schemas** | Pointer to [**[]EnumpasswordPolicySchemaUrn**](EnumpasswordPolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Password Policy | [optional] 
 **RequireSecureAuthentication** | Pointer to **bool** | Indicates whether users with the associated password policy are required to authenticate in a secure manner. | [optional] 
@@ -15,6 +14,7 @@ Name | Type | Description | Notes
 **PasswordAttribute** | **string** | Specifies the attribute type used to hold user passwords. | 
 **DefaultPasswordStorageScheme** | **[]string** | Specifies the names of the password storage schemes that are used to encode clear-text passwords for this password policy. | 
 **DeprecatedPasswordStorageScheme** | Pointer to **[]string** | Specifies the names of the password storage schemes that are considered deprecated for this password policy. | [optional] 
+**ReEncodePasswordsOnSchemeConfigChange** | Pointer to **bool** | Indicates whether to re-encode passwords on authentication if the configuration for the underlying password storage scheme has changed. | [optional] 
 **AllowMultiplePasswordValues** | Pointer to **bool** | Indicates whether user entries can have multiple distinct values for the password attribute. | [optional] 
 **AllowPreEncodedPasswords** | Pointer to [**EnumpasswordPolicyAllowPreEncodedPasswordsProp**](EnumpasswordPolicyAllowPreEncodedPasswordsProp.md) |  | [optional] 
 **PasswordValidator** | Pointer to **[]string** | Specifies the names of the password validators that are used with the associated password storage scheme. | [optional] 
@@ -56,12 +56,13 @@ Name | Type | Description | Notes
 **LastLoginTimeAttribute** | Pointer to **string** | Specifies the name or OID of the attribute type that is used to hold the last login time for users with the associated password policy. | [optional] 
 **LastLoginTimeFormat** | Pointer to **string** | Specifies the format string that is used to generate the last login time value for users with the associated password policy. Last login time values will be written using the UTC (also known as GMT, or Greenwich Mean Time) time zone. | [optional] 
 **PreviousLastLoginTimeFormat** | Pointer to **[]string** | Specifies the format string(s) that might have been used with the last login time at any point in the past for users associated with the password policy. | [optional] 
+**PolicyName** | **string** | Name of the new Password Policy | 
 
 ## Methods
 
 ### NewAddPasswordPolicyRequest
 
-`func NewAddPasswordPolicyRequest(policyName string, passwordAttribute string, defaultPasswordStorageScheme []string, ) *AddPasswordPolicyRequest`
+`func NewAddPasswordPolicyRequest(passwordAttribute string, defaultPasswordStorageScheme []string, policyName string, ) *AddPasswordPolicyRequest`
 
 NewAddPasswordPolicyRequest instantiates a new AddPasswordPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -75,26 +76,6 @@ will change when the set of required properties is changed
 NewAddPasswordPolicyRequestWithDefaults instantiates a new AddPasswordPolicyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPolicyName
-
-`func (o *AddPasswordPolicyRequest) GetPolicyName() string`
-
-GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
-
-### GetPolicyNameOk
-
-`func (o *AddPasswordPolicyRequest) GetPolicyNameOk() (*string, bool)`
-
-GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPolicyName
-
-`func (o *AddPasswordPolicyRequest) SetPolicyName(v string)`
-
-SetPolicyName sets PolicyName field to given value.
-
 
 ### GetSchemas
 
@@ -335,6 +316,31 @@ SetDeprecatedPasswordStorageScheme sets DeprecatedPasswordStorageScheme field to
 `func (o *AddPasswordPolicyRequest) HasDeprecatedPasswordStorageScheme() bool`
 
 HasDeprecatedPasswordStorageScheme returns a boolean if a field has been set.
+
+### GetReEncodePasswordsOnSchemeConfigChange
+
+`func (o *AddPasswordPolicyRequest) GetReEncodePasswordsOnSchemeConfigChange() bool`
+
+GetReEncodePasswordsOnSchemeConfigChange returns the ReEncodePasswordsOnSchemeConfigChange field if non-nil, zero value otherwise.
+
+### GetReEncodePasswordsOnSchemeConfigChangeOk
+
+`func (o *AddPasswordPolicyRequest) GetReEncodePasswordsOnSchemeConfigChangeOk() (*bool, bool)`
+
+GetReEncodePasswordsOnSchemeConfigChangeOk returns a tuple with the ReEncodePasswordsOnSchemeConfigChange field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReEncodePasswordsOnSchemeConfigChange
+
+`func (o *AddPasswordPolicyRequest) SetReEncodePasswordsOnSchemeConfigChange(v bool)`
+
+SetReEncodePasswordsOnSchemeConfigChange sets ReEncodePasswordsOnSchemeConfigChange field to given value.
+
+### HasReEncodePasswordsOnSchemeConfigChange
+
+`func (o *AddPasswordPolicyRequest) HasReEncodePasswordsOnSchemeConfigChange() bool`
+
+HasReEncodePasswordsOnSchemeConfigChange returns a boolean if a field has been set.
 
 ### GetAllowMultiplePasswordValues
 
@@ -1360,6 +1366,26 @@ SetPreviousLastLoginTimeFormat sets PreviousLastLoginTimeFormat field to given v
 `func (o *AddPasswordPolicyRequest) HasPreviousLastLoginTimeFormat() bool`
 
 HasPreviousLastLoginTimeFormat returns a boolean if a field has been set.
+
+### GetPolicyName
+
+`func (o *AddPasswordPolicyRequest) GetPolicyName() string`
+
+GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
+
+### GetPolicyNameOk
+
+`func (o *AddPasswordPolicyRequest) GetPolicyNameOk() (*string, bool)`
+
+GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyName
+
+`func (o *AddPasswordPolicyRequest) SetPolicyName(v string)`
+
+SetPolicyName sets PolicyName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

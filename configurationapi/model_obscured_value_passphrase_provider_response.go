@@ -19,8 +19,6 @@ var _ MappedNullable = &ObscuredValuePassphraseProviderResponse{}
 
 // ObscuredValuePassphraseProviderResponse struct for ObscuredValuePassphraseProviderResponse
 type ObscuredValuePassphraseProviderResponse struct {
-	// Name of the Passphrase Provider
-	Id      string                                         `json:"id"`
 	Schemas []EnumobscuredValuePassphraseProviderSchemaUrn `json:"schemas"`
 	// The value to be stored in an obscured form.
 	ObscuredValue string `json:"obscuredValue"`
@@ -30,18 +28,20 @@ type ObscuredValuePassphraseProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Passphrase Provider
+	Id string `json:"id"`
 }
 
 // NewObscuredValuePassphraseProviderResponse instantiates a new ObscuredValuePassphraseProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewObscuredValuePassphraseProviderResponse(id string, schemas []EnumobscuredValuePassphraseProviderSchemaUrn, obscuredValue string, enabled bool) *ObscuredValuePassphraseProviderResponse {
+func NewObscuredValuePassphraseProviderResponse(schemas []EnumobscuredValuePassphraseProviderSchemaUrn, obscuredValue string, enabled bool, id string) *ObscuredValuePassphraseProviderResponse {
 	this := ObscuredValuePassphraseProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ObscuredValue = obscuredValue
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewObscuredValuePassphraseProviderResponse(id string, schemas []Enumobscure
 func NewObscuredValuePassphraseProviderResponseWithDefaults() *ObscuredValuePassphraseProviderResponse {
 	this := ObscuredValuePassphraseProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ObscuredValuePassphraseProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ObscuredValuePassphraseProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ObscuredValuePassphraseProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -245,6 +221,30 @@ func (o *ObscuredValuePassphraseProviderResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ObscuredValuePassphraseProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ObscuredValuePassphraseProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ObscuredValuePassphraseProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ObscuredValuePassphraseProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -255,7 +255,6 @@ func (o ObscuredValuePassphraseProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o ObscuredValuePassphraseProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["obscuredValue"] = o.ObscuredValue
 	if !IsNil(o.Description) {
@@ -268,6 +267,7 @@ func (o ObscuredValuePassphraseProviderResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumamazonAwsExternalServerSchemaUrn**](EnumamazonAwsExternalServerSchemaUrn.md) |  | 
 **HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the AWS service. | [optional] 
 **AuthenticationMethod** | Pointer to [**EnumexternalServerAmazonAwsAuthenticationMethodProp**](EnumexternalServerAmazonAwsAuthenticationMethodProp.md) |  | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **AwsSecretAccessKey** | Pointer to **string** | The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided. | [optional] 
 **AwsRegionName** | **string** | The name of the AWS region containing the resources that will be accessed. | 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
+**ServerName** | **string** | Name of the new External Server | 
 
 ## Methods
 
 ### NewAddAmazonAwsExternalServerRequest
 
-`func NewAddAmazonAwsExternalServerRequest(serverName string, schemas []EnumamazonAwsExternalServerSchemaUrn, awsRegionName string, ) *AddAmazonAwsExternalServerRequest`
+`func NewAddAmazonAwsExternalServerRequest(schemas []EnumamazonAwsExternalServerSchemaUrn, awsRegionName string, serverName string, ) *AddAmazonAwsExternalServerRequest`
 
 NewAddAmazonAwsExternalServerRequest instantiates a new AddAmazonAwsExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddAmazonAwsExternalServerRequestWithDefaults instantiates a new AddAmazonAwsExternalServerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetServerName
-
-`func (o *AddAmazonAwsExternalServerRequest) GetServerName() string`
-
-GetServerName returns the ServerName field if non-nil, zero value otherwise.
-
-### GetServerNameOk
-
-`func (o *AddAmazonAwsExternalServerRequest) GetServerNameOk() (*string, bool)`
-
-GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerName
-
-`func (o *AddAmazonAwsExternalServerRequest) SetServerName(v string)`
-
-SetServerName sets ServerName field to given value.
-
 
 ### GetSchemas
 
@@ -216,6 +196,26 @@ SetDescription sets Description field to given value.
 `func (o *AddAmazonAwsExternalServerRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetServerName
+
+`func (o *AddAmazonAwsExternalServerRequest) GetServerName() string`
+
+GetServerName returns the ServerName field if non-nil, zero value otherwise.
+
+### GetServerNameOk
+
+`func (o *AddAmazonAwsExternalServerRequest) GetServerNameOk() (*string, bool)`
+
+GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerName
+
+`func (o *AddAmazonAwsExternalServerRequest) SetServerName(v string)`
+
+SetServerName sets ServerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

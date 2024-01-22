@@ -19,8 +19,6 @@ var _ MappedNullable = &TwilioOtpDeliveryMechanismResponse{}
 
 // TwilioOtpDeliveryMechanismResponse struct for TwilioOtpDeliveryMechanismResponse
 type TwilioOtpDeliveryMechanismResponse struct {
-	// Name of the OTP Delivery Mechanism
-	Id      string                                    `json:"id"`
 	Schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn `json:"schemas"`
 	// A reference to an HTTP proxy server that should be used for requests sent to the Twilio service.
 	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
@@ -48,20 +46,22 @@ type TwilioOtpDeliveryMechanismResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the OTP Delivery Mechanism
+	Id string `json:"id"`
 }
 
 // NewTwilioOtpDeliveryMechanismResponse instantiates a new TwilioOtpDeliveryMechanismResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTwilioOtpDeliveryMechanismResponse(id string, schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn, twilioAccountSID string, phoneNumberAttributeType string, senderPhoneNumber []string, enabled bool) *TwilioOtpDeliveryMechanismResponse {
+func NewTwilioOtpDeliveryMechanismResponse(schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn, twilioAccountSID string, phoneNumberAttributeType string, senderPhoneNumber []string, enabled bool, id string) *TwilioOtpDeliveryMechanismResponse {
 	this := TwilioOtpDeliveryMechanismResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.TwilioAccountSID = twilioAccountSID
 	this.PhoneNumberAttributeType = phoneNumberAttributeType
 	this.SenderPhoneNumber = senderPhoneNumber
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -71,30 +71,6 @@ func NewTwilioOtpDeliveryMechanismResponse(id string, schemas []EnumtwilioOtpDel
 func NewTwilioOtpDeliveryMechanismResponseWithDefaults() *TwilioOtpDeliveryMechanismResponse {
 	this := TwilioOtpDeliveryMechanismResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *TwilioOtpDeliveryMechanismResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *TwilioOtpDeliveryMechanismResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *TwilioOtpDeliveryMechanismResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -537,6 +513,30 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *TwilioOtpDeliveryMechanismResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *TwilioOtpDeliveryMechanismResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *TwilioOtpDeliveryMechanismResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o TwilioOtpDeliveryMechanismResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -547,7 +547,6 @@ func (o TwilioOtpDeliveryMechanismResponse) MarshalJSON() ([]byte, error) {
 
 func (o TwilioOtpDeliveryMechanismResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.HttpProxyExternalServer) {
 		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
@@ -583,6 +582,7 @@ func (o TwilioOtpDeliveryMechanismResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

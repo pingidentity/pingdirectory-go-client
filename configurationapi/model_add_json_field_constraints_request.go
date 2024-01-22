@@ -19,12 +19,12 @@ var _ MappedNullable = &AddJsonFieldConstraintsRequest{}
 
 // AddJsonFieldConstraintsRequest struct for AddJsonFieldConstraintsRequest
 type AddJsonFieldConstraintsRequest struct {
-	// The full name of the JSON field to which these constraints apply.
-	JsonField string                              `json:"jsonField"`
-	Schemas   []EnumjsonFieldConstraintsSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumjsonFieldConstraintsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this JSON Field Constraints
-	Description *string                               `json:"description,omitempty"`
-	ValueType   EnumjsonFieldConstraintsValueTypeProp `json:"valueType"`
+	Description *string `json:"description,omitempty"`
+	// Name of the new JSON Field Constraints
+	JsonField string                                `json:"jsonField"`
+	ValueType EnumjsonFieldConstraintsValueTypeProp `json:"valueType"`
 	// Indicates whether the target field must be present in JSON objects stored as values of the associated attribute type.
 	IsRequired *bool                                `json:"isRequired,omitempty"`
 	IsArray    *EnumjsonFieldConstraintsIsArrayProp `json:"isArray,omitempty"`
@@ -76,30 +76,6 @@ func NewAddJsonFieldConstraintsRequest(jsonField string, valueType EnumjsonField
 func NewAddJsonFieldConstraintsRequestWithDefaults() *AddJsonFieldConstraintsRequest {
 	this := AddJsonFieldConstraintsRequest{}
 	return &this
-}
-
-// GetJsonField returns the JsonField field value
-func (o *AddJsonFieldConstraintsRequest) GetJsonField() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.JsonField
-}
-
-// GetJsonFieldOk returns a tuple with the JsonField field value
-// and a boolean to check if the value has been set.
-func (o *AddJsonFieldConstraintsRequest) GetJsonFieldOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.JsonField, true
-}
-
-// SetJsonField sets field value
-func (o *AddJsonFieldConstraintsRequest) SetJsonField(v string) {
-	o.JsonField = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -164,6 +140,30 @@ func (o *AddJsonFieldConstraintsRequest) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddJsonFieldConstraintsRequest) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetJsonField returns the JsonField field value
+func (o *AddJsonFieldConstraintsRequest) GetJsonField() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.JsonField
+}
+
+// GetJsonFieldOk returns a tuple with the JsonField field value
+// and a boolean to check if the value has been set.
+func (o *AddJsonFieldConstraintsRequest) GetJsonFieldOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.JsonField, true
+}
+
+// SetJsonField sets field value
+func (o *AddJsonFieldConstraintsRequest) SetJsonField(v string) {
+	o.JsonField = v
 }
 
 // GetValueType returns the ValueType field value
@@ -744,13 +744,13 @@ func (o AddJsonFieldConstraintsRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddJsonFieldConstraintsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["jsonField"] = o.JsonField
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["jsonField"] = o.JsonField
 	toSerialize["valueType"] = o.ValueType
 	if !IsNil(o.IsRequired) {
 		toSerialize["isRequired"] = o.IsRequired

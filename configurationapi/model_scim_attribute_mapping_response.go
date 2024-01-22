@@ -19,8 +19,6 @@ var _ MappedNullable = &ScimAttributeMappingResponse{}
 
 // ScimAttributeMappingResponse struct for ScimAttributeMappingResponse
 type ScimAttributeMappingResponse struct {
-	// Name of the SCIM Attribute Mapping
-	Id      string                              `json:"id"`
 	Schemas []EnumscimAttributeMappingSchemaUrn `json:"schemas,omitempty"`
 	// The Correlated LDAP Data View that persists the mapped SCIM Resource Type attribute(s).
 	CorrelatedLDAPDataView *string `json:"correlatedLDAPDataView,omitempty"`
@@ -38,17 +36,19 @@ type ScimAttributeMappingResponse struct {
 	Authoritative                                 *bool                                              `json:"authoritative,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the SCIM Attribute Mapping
+	Id string `json:"id"`
 }
 
 // NewScimAttributeMappingResponse instantiates a new ScimAttributeMappingResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewScimAttributeMappingResponse(id string, scimResourceTypeAttribute string, ldapAttribute string) *ScimAttributeMappingResponse {
+func NewScimAttributeMappingResponse(scimResourceTypeAttribute string, ldapAttribute string, id string) *ScimAttributeMappingResponse {
 	this := ScimAttributeMappingResponse{}
-	this.Id = id
 	this.ScimResourceTypeAttribute = scimResourceTypeAttribute
 	this.LdapAttribute = ldapAttribute
+	this.Id = id
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewScimAttributeMappingResponse(id string, scimResourceTypeAttribute string
 func NewScimAttributeMappingResponseWithDefaults() *ScimAttributeMappingResponse {
 	this := ScimAttributeMappingResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ScimAttributeMappingResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ScimAttributeMappingResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ScimAttributeMappingResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -388,6 +364,30 @@ func (o *ScimAttributeMappingResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ScimAttributeMappingResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ScimAttributeMappingResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ScimAttributeMappingResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ScimAttributeMappingResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -398,7 +398,6 @@ func (o ScimAttributeMappingResponse) MarshalJSON() ([]byte, error) {
 
 func (o ScimAttributeMappingResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -425,6 +424,7 @@ func (o ScimAttributeMappingResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

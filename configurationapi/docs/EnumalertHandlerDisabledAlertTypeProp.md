@@ -23,6 +23,16 @@
 
 * `ALARM_WARNING` (value: `"alarm-warning"`)
 
+* `AMAZON_S3_CREATE_BUCKET_FAILED` (value: `"amazon-s3-create-bucket-failed"`)
+
+* `AMAZON_S3_DOWNLOAD_FILE_FAILED` (value: `"amazon-s3-download-file-failed"`)
+
+* `AMAZON_S3_REMOVE_BUCKET_FAILED` (value: `"amazon-s3-remove-bucket-failed"`)
+
+* `AMAZON_S3_REMOVE_FILE_FAILED` (value: `"amazon-s3-remove-file-failed"`)
+
+* `AMAZON_S3_UPLOAD_FILE_FAILED` (value: `"amazon-s3-upload-file-failed"`)
+
 * `BACKEND_DISABLED` (value: `"backend-disabled"`)
 
 * `BACKEND_INITIALIZATION_FAILED` (value: `"backend-initialization-failed"`)
@@ -382,6 +392,8 @@
 * `REPLICATION_MISSING_CHANGES_RISK` (value: `"replication-missing-changes-risk"`)
 
 * `REPLICATION_NOT_PURGING_OBSOLETE_REPLICAS` (value: `"replication-not-purging-obsolete-replicas"`)
+
+* `REPLICATION_MISSING_CHANGES_ACTION` (value: `"replication-missing-changes-action"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

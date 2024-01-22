@@ -19,8 +19,6 @@ var _ MappedNullable = &ReplaceCertificateExtendedOperationHandlerResponse{}
 
 // ReplaceCertificateExtendedOperationHandlerResponse struct for ReplaceCertificateExtendedOperationHandlerResponse
 type ReplaceCertificateExtendedOperationHandlerResponse struct {
-	// Name of the Extended Operation Handler
-	Id      string                                                    `json:"id"`
 	Schemas []EnumreplaceCertificateExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether clients should be allowed to directly provide a new listener or inter-server certificate chain in the extended request.
 	AllowRemotelyProvidedCertificates *bool                                              `json:"allowRemotelyProvidedCertificates,omitempty"`
@@ -35,17 +33,19 @@ type ReplaceCertificateExtendedOperationHandlerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Extended Operation Handler
+	Id string `json:"id"`
 }
 
 // NewReplaceCertificateExtendedOperationHandlerResponse instantiates a new ReplaceCertificateExtendedOperationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReplaceCertificateExtendedOperationHandlerResponse(id string, schemas []EnumreplaceCertificateExtendedOperationHandlerSchemaUrn, enabled bool) *ReplaceCertificateExtendedOperationHandlerResponse {
+func NewReplaceCertificateExtendedOperationHandlerResponse(schemas []EnumreplaceCertificateExtendedOperationHandlerSchemaUrn, enabled bool, id string) *ReplaceCertificateExtendedOperationHandlerResponse {
 	this := ReplaceCertificateExtendedOperationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewReplaceCertificateExtendedOperationHandlerResponse(id string, schemas []
 func NewReplaceCertificateExtendedOperationHandlerResponseWithDefaults() *ReplaceCertificateExtendedOperationHandlerResponse {
 	this := ReplaceCertificateExtendedOperationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ReplaceCertificateExtendedOperationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -353,6 +329,30 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) SetUrnpingidentitys
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ReplaceCertificateExtendedOperationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ReplaceCertificateExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -363,7 +363,6 @@ func (o ReplaceCertificateExtendedOperationHandlerResponse) MarshalJSON() ([]byt
 
 func (o ReplaceCertificateExtendedOperationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllowRemotelyProvidedCertificates) {
 		toSerialize["allowRemotelyProvidedCertificates"] = o.AllowRemotelyProvidedCertificates
@@ -387,6 +386,7 @@ func (o ReplaceCertificateExtendedOperationHandlerResponse) ToMap() (map[string]
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

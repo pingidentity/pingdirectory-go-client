@@ -1,14 +1,14 @@
-# \LdapCorrelationAttributePairApi
+# \LdapCorrelationAttributePairAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLdapCorrelationAttributePair**](LdapCorrelationAttributePairApi.md#AddLdapCorrelationAttributePair) | **Post** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs | Add a new LDAP Correlation Attribute Pair to the config
-[**DeleteLdapCorrelationAttributePair**](LdapCorrelationAttributePairApi.md#DeleteLdapCorrelationAttributePair) | **Delete** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name} | Delete a LDAP Correlation Attribute Pair
-[**GetLdapCorrelationAttributePair**](LdapCorrelationAttributePairApi.md#GetLdapCorrelationAttributePair) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name} | Returns a single LDAP Correlation Attribute Pair
-[**ListLdapCorrelationAttributePairs**](LdapCorrelationAttributePairApi.md#ListLdapCorrelationAttributePairs) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs | Returns a list of all LDAP Correlation Attribute Pair objects
-[**UpdateLdapCorrelationAttributePair**](LdapCorrelationAttributePairApi.md#UpdateLdapCorrelationAttributePair) | **Patch** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name} | Update an existing LDAP Correlation Attribute Pair by name
+[**AddLdapCorrelationAttributePair**](LdapCorrelationAttributePairAPI.md#AddLdapCorrelationAttributePair) | **Post** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs | Add a new LDAP Correlation Attribute Pair to the config
+[**DeleteLdapCorrelationAttributePair**](LdapCorrelationAttributePairAPI.md#DeleteLdapCorrelationAttributePair) | **Delete** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name} | Delete a LDAP Correlation Attribute Pair
+[**GetLdapCorrelationAttributePair**](LdapCorrelationAttributePairAPI.md#GetLdapCorrelationAttributePair) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name} | Returns a single LDAP Correlation Attribute Pair
+[**ListLdapCorrelationAttributePairs**](LdapCorrelationAttributePairAPI.md#ListLdapCorrelationAttributePairs) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs | Returns a list of all LDAP Correlation Attribute Pair objects
+[**UpdateLdapCorrelationAttributePair**](LdapCorrelationAttributePairAPI.md#UpdateLdapCorrelationAttributePair) | **Patch** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name} | Update an existing LDAP Correlation Attribute Pair by name
 
 
 
@@ -33,17 +33,17 @@ import (
 func main() {
     correlatedLdapDataViewName := "correlatedLdapDataViewName_example" // string | Name of the Correlated LDAP Data View
     scimResourceTypeName := "scimResourceTypeName_example" // string | Name of the SCIM Resource Type
-    addLdapCorrelationAttributePairRequest := *openapiclient.NewAddLdapCorrelationAttributePairRequest("PairName_example", "PrimaryCorrelationAttribute_example", "SecondaryCorrelationAttribute_example") // AddLdapCorrelationAttributePairRequest | Create a new LDAP Correlation Attribute Pair in the config
+    addLdapCorrelationAttributePairRequest := *openapiclient.NewAddLdapCorrelationAttributePairRequest("PrimaryCorrelationAttribute_example", "SecondaryCorrelationAttribute_example", "PairName_example") // AddLdapCorrelationAttributePairRequest | Create a new LDAP Correlation Attribute Pair in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LdapCorrelationAttributePairApi.AddLdapCorrelationAttributePair(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).AddLdapCorrelationAttributePairRequest(addLdapCorrelationAttributePairRequest).Execute()
+    resp, r, err := apiClient.LdapCorrelationAttributePairAPI.AddLdapCorrelationAttributePair(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).AddLdapCorrelationAttributePairRequest(addLdapCorrelationAttributePairRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairApi.AddLdapCorrelationAttributePair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairAPI.AddLdapCorrelationAttributePair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLdapCorrelationAttributePair`: LdapCorrelationAttributePairResponse
-    fmt.Fprintf(os.Stdout, "Response from `LdapCorrelationAttributePairApi.AddLdapCorrelationAttributePair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LdapCorrelationAttributePairAPI.AddLdapCorrelationAttributePair`: %v\n", resp)
 }
 ```
 
@@ -110,9 +110,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LdapCorrelationAttributePairApi.DeleteLdapCorrelationAttributePair(context.Background(), ldapCorrelationAttributePairName, correlatedLdapDataViewName, scimResourceTypeName).Execute()
+    r, err := apiClient.LdapCorrelationAttributePairAPI.DeleteLdapCorrelationAttributePair(context.Background(), ldapCorrelationAttributePairName, correlatedLdapDataViewName, scimResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairApi.DeleteLdapCorrelationAttributePair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairAPI.DeleteLdapCorrelationAttributePair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -182,13 +182,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LdapCorrelationAttributePairApi.GetLdapCorrelationAttributePair(context.Background(), ldapCorrelationAttributePairName, correlatedLdapDataViewName, scimResourceTypeName).Execute()
+    resp, r, err := apiClient.LdapCorrelationAttributePairAPI.GetLdapCorrelationAttributePair(context.Background(), ldapCorrelationAttributePairName, correlatedLdapDataViewName, scimResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairApi.GetLdapCorrelationAttributePair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairAPI.GetLdapCorrelationAttributePair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLdapCorrelationAttributePair`: LdapCorrelationAttributePairResponse
-    fmt.Fprintf(os.Stdout, "Response from `LdapCorrelationAttributePairApi.GetLdapCorrelationAttributePair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LdapCorrelationAttributePairAPI.GetLdapCorrelationAttributePair`: %v\n", resp)
 }
 ```
 
@@ -256,13 +256,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LdapCorrelationAttributePairApi.ListLdapCorrelationAttributePairs(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).Filter(filter).Execute()
+    resp, r, err := apiClient.LdapCorrelationAttributePairAPI.ListLdapCorrelationAttributePairs(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairApi.ListLdapCorrelationAttributePairs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairAPI.ListLdapCorrelationAttributePairs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLdapCorrelationAttributePairs`: LdapCorrelationAttributePairListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LdapCorrelationAttributePairApi.ListLdapCorrelationAttributePairs`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LdapCorrelationAttributePairAPI.ListLdapCorrelationAttributePairs`: %v\n", resp)
 }
 ```
 
@@ -330,13 +330,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LdapCorrelationAttributePairApi.UpdateLdapCorrelationAttributePair(context.Background(), ldapCorrelationAttributePairName, correlatedLdapDataViewName, scimResourceTypeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LdapCorrelationAttributePairAPI.UpdateLdapCorrelationAttributePair(context.Background(), ldapCorrelationAttributePairName, correlatedLdapDataViewName, scimResourceTypeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairApi.UpdateLdapCorrelationAttributePair``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LdapCorrelationAttributePairAPI.UpdateLdapCorrelationAttributePair``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLdapCorrelationAttributePair`: LdapCorrelationAttributePairResponse
-    fmt.Fprintf(os.Stdout, "Response from `LdapCorrelationAttributePairApi.UpdateLdapCorrelationAttributePair`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LdapCorrelationAttributePairAPI.UpdateLdapCorrelationAttributePair`: %v\n", resp)
 }
 ```
 

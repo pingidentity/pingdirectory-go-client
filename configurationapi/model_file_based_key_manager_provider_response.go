@@ -19,8 +19,6 @@ var _ MappedNullable = &FileBasedKeyManagerProviderResponse{}
 
 // FileBasedKeyManagerProviderResponse struct for FileBasedKeyManagerProviderResponse
 type FileBasedKeyManagerProviderResponse struct {
-	// Name of the Key Manager Provider
-	Id      string                                     `json:"id"`
 	Schemas []EnumfileBasedKeyManagerProviderSchemaUrn `json:"schemas"`
 	// Specifies the path to the file that contains the private key information. This may be an absolute path, or a path that is relative to the Directory Server instance root.
 	KeyStoreFile string `json:"keyStoreFile"`
@@ -44,18 +42,20 @@ type FileBasedKeyManagerProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Key Manager Provider
+	Id string `json:"id"`
 }
 
 // NewFileBasedKeyManagerProviderResponse instantiates a new FileBasedKeyManagerProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFileBasedKeyManagerProviderResponse(id string, schemas []EnumfileBasedKeyManagerProviderSchemaUrn, keyStoreFile string, enabled bool) *FileBasedKeyManagerProviderResponse {
+func NewFileBasedKeyManagerProviderResponse(schemas []EnumfileBasedKeyManagerProviderSchemaUrn, keyStoreFile string, enabled bool, id string) *FileBasedKeyManagerProviderResponse {
 	this := FileBasedKeyManagerProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.KeyStoreFile = keyStoreFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -65,30 +65,6 @@ func NewFileBasedKeyManagerProviderResponse(id string, schemas []EnumfileBasedKe
 func NewFileBasedKeyManagerProviderResponseWithDefaults() *FileBasedKeyManagerProviderResponse {
 	this := FileBasedKeyManagerProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *FileBasedKeyManagerProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *FileBasedKeyManagerProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *FileBasedKeyManagerProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -483,6 +459,30 @@ func (o *FileBasedKeyManagerProviderResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *FileBasedKeyManagerProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *FileBasedKeyManagerProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *FileBasedKeyManagerProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o FileBasedKeyManagerProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -493,7 +493,6 @@ func (o FileBasedKeyManagerProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o FileBasedKeyManagerProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["keyStoreFile"] = o.KeyStoreFile
 	if !IsNil(o.KeyStoreType) {
@@ -527,6 +526,7 @@ func (o FileBasedKeyManagerProviderResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

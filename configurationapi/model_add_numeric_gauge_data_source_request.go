@@ -19,8 +19,6 @@ var _ MappedNullable = &AddNumericGaugeDataSourceRequest{}
 
 // AddNumericGaugeDataSourceRequest struct for AddNumericGaugeDataSourceRequest
 type AddNumericGaugeDataSourceRequest struct {
-	// Name of the new Gauge Data Source
-	SourceName      string                                  `json:"sourceName"`
 	Schemas         []EnumnumericGaugeDataSourceSchemaUrn   `json:"schemas"`
 	DataOrientation *EnumgaugeDataSourceDataOrientationProp `json:"dataOrientation,omitempty"`
 	StatisticType   *EnumgaugeDataSourceStatisticTypeProp   `json:"statisticType,omitempty"`
@@ -46,18 +44,20 @@ type AddNumericGaugeDataSourceRequest struct {
 	ResourceType *string `json:"resourceType,omitempty"`
 	// The minimum frequency with which gauges using this Gauge Data Source can be configured for update. In order to prevent undesirable side effects, some Gauge Data Sources may use this property to impose a higher bound on the update frequency of gauges.
 	MinimumUpdateInterval *string `json:"minimumUpdateInterval,omitempty"`
+	// Name of the new Gauge Data Source
+	SourceName string `json:"sourceName"`
 }
 
 // NewAddNumericGaugeDataSourceRequest instantiates a new AddNumericGaugeDataSourceRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddNumericGaugeDataSourceRequest(sourceName string, schemas []EnumnumericGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string) *AddNumericGaugeDataSourceRequest {
+func NewAddNumericGaugeDataSourceRequest(schemas []EnumnumericGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string, sourceName string) *AddNumericGaugeDataSourceRequest {
 	this := AddNumericGaugeDataSourceRequest{}
-	this.SourceName = sourceName
 	this.Schemas = schemas
 	this.MonitorObjectclass = monitorObjectclass
 	this.MonitorAttribute = monitorAttribute
+	this.SourceName = sourceName
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewAddNumericGaugeDataSourceRequest(sourceName string, schemas []Enumnumeri
 func NewAddNumericGaugeDataSourceRequestWithDefaults() *AddNumericGaugeDataSourceRequest {
 	this := AddNumericGaugeDataSourceRequest{}
 	return &this
-}
-
-// GetSourceName returns the SourceName field value
-func (o *AddNumericGaugeDataSourceRequest) GetSourceName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SourceName
-}
-
-// GetSourceNameOk returns a tuple with the SourceName field value
-// and a boolean to check if the value has been set.
-func (o *AddNumericGaugeDataSourceRequest) GetSourceNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SourceName, true
-}
-
-// SetSourceName sets field value
-func (o *AddNumericGaugeDataSourceRequest) SetSourceName(v string) {
-	o.SourceName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -517,6 +493,30 @@ func (o *AddNumericGaugeDataSourceRequest) SetMinimumUpdateInterval(v string) {
 	o.MinimumUpdateInterval = &v
 }
 
+// GetSourceName returns the SourceName field value
+func (o *AddNumericGaugeDataSourceRequest) GetSourceName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SourceName
+}
+
+// GetSourceNameOk returns a tuple with the SourceName field value
+// and a boolean to check if the value has been set.
+func (o *AddNumericGaugeDataSourceRequest) GetSourceNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SourceName, true
+}
+
+// SetSourceName sets field value
+func (o *AddNumericGaugeDataSourceRequest) SetSourceName(v string) {
+	o.SourceName = v
+}
+
 func (o AddNumericGaugeDataSourceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -527,7 +527,6 @@ func (o AddNumericGaugeDataSourceRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddNumericGaugeDataSourceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["sourceName"] = o.SourceName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.DataOrientation) {
 		toSerialize["dataOrientation"] = o.DataOrientation
@@ -564,6 +563,7 @@ func (o AddNumericGaugeDataSourceRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.MinimumUpdateInterval) {
 		toSerialize["minimumUpdateInterval"] = o.MinimumUpdateInterval
 	}
+	toSerialize["sourceName"] = o.SourceName
 	return toSerialize, nil
 }
 

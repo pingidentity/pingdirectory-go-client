@@ -19,8 +19,6 @@ var _ MappedNullable = &SyslogExternalServerResponse{}
 
 // SyslogExternalServerResponse struct for SyslogExternalServerResponse
 type SyslogExternalServerResponse struct {
-	// Name of the External Server
-	Id      string                              `json:"id"`
 	Schemas []EnumsyslogExternalServerSchemaUrn `json:"schemas"`
 	// The address of the syslog server.
 	ServerHostName string `json:"serverHostName"`
@@ -37,21 +35,23 @@ type SyslogExternalServerResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the External Server
+	Id string `json:"id"`
 }
 
 // NewSyslogExternalServerResponse instantiates a new SyslogExternalServerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSyslogExternalServerResponse(id string, schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp, connectTimeout string, maxConnectionAge string, trustManagerProvider string) *SyslogExternalServerResponse {
+func NewSyslogExternalServerResponse(schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp, connectTimeout string, maxConnectionAge string, trustManagerProvider string, id string) *SyslogExternalServerResponse {
 	this := SyslogExternalServerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
 	this.TransportMechanism = transportMechanism
 	this.ConnectTimeout = connectTimeout
 	this.MaxConnectionAge = maxConnectionAge
 	this.TrustManagerProvider = trustManagerProvider
+	this.Id = id
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewSyslogExternalServerResponse(id string, schemas []EnumsyslogExternalServ
 func NewSyslogExternalServerResponseWithDefaults() *SyslogExternalServerResponse {
 	this := SyslogExternalServerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SyslogExternalServerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SyslogExternalServerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SyslogExternalServerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -359,6 +335,30 @@ func (o *SyslogExternalServerResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SyslogExternalServerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SyslogExternalServerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SyslogExternalServerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SyslogExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -369,7 +369,6 @@ func (o SyslogExternalServerResponse) MarshalJSON() ([]byte, error) {
 
 func (o SyslogExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["serverHostName"] = o.ServerHostName
 	if !IsNil(o.ServerPort) {
@@ -388,6 +387,7 @@ func (o SyslogExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

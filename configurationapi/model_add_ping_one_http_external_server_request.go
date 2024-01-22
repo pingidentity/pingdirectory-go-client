@@ -19,8 +19,6 @@ var _ MappedNullable = &AddPingOneHttpExternalServerRequest{}
 
 // AddPingOneHttpExternalServerRequest struct for AddPingOneHttpExternalServerRequest
 type AddPingOneHttpExternalServerRequest struct {
-	// Name of the new External Server
-	ServerName                 string                                                       `json:"serverName"`
 	Schemas                    []EnumpingOneHttpExternalServerSchemaUrn                     `json:"schemas"`
 	HostnameVerificationMethod *EnumexternalServerPingOneHttpHostnameVerificationMethodProp `json:"hostnameVerificationMethod,omitempty"`
 	// The trust manager provider to use for HTTPS connection-level security.
@@ -31,16 +29,18 @@ type AddPingOneHttpExternalServerRequest struct {
 	ResponseTimeout *string `json:"responseTimeout,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	// Name of the new External Server
+	ServerName string `json:"serverName"`
 }
 
 // NewAddPingOneHttpExternalServerRequest instantiates a new AddPingOneHttpExternalServerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingOneHttpExternalServerRequest(serverName string, schemas []EnumpingOneHttpExternalServerSchemaUrn) *AddPingOneHttpExternalServerRequest {
+func NewAddPingOneHttpExternalServerRequest(schemas []EnumpingOneHttpExternalServerSchemaUrn, serverName string) *AddPingOneHttpExternalServerRequest {
 	this := AddPingOneHttpExternalServerRequest{}
-	this.ServerName = serverName
 	this.Schemas = schemas
+	this.ServerName = serverName
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewAddPingOneHttpExternalServerRequest(serverName string, schemas []Enumpin
 func NewAddPingOneHttpExternalServerRequestWithDefaults() *AddPingOneHttpExternalServerRequest {
 	this := AddPingOneHttpExternalServerRequest{}
 	return &this
-}
-
-// GetServerName returns the ServerName field value
-func (o *AddPingOneHttpExternalServerRequest) GetServerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerName
-}
-
-// GetServerNameOk returns a tuple with the ServerName field value
-// and a boolean to check if the value has been set.
-func (o *AddPingOneHttpExternalServerRequest) GetServerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerName, true
-}
-
-// SetServerName sets field value
-func (o *AddPingOneHttpExternalServerRequest) SetServerName(v string) {
-	o.ServerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -260,6 +236,30 @@ func (o *AddPingOneHttpExternalServerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetServerName returns the ServerName field value
+func (o *AddPingOneHttpExternalServerRequest) GetServerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ServerName
+}
+
+// GetServerNameOk returns a tuple with the ServerName field value
+// and a boolean to check if the value has been set.
+func (o *AddPingOneHttpExternalServerRequest) GetServerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ServerName, true
+}
+
+// SetServerName sets field value
+func (o *AddPingOneHttpExternalServerRequest) SetServerName(v string) {
+	o.ServerName = v
+}
+
 func (o AddPingOneHttpExternalServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -270,7 +270,6 @@ func (o AddPingOneHttpExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPingOneHttpExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["serverName"] = o.ServerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.HostnameVerificationMethod) {
 		toSerialize["hostnameVerificationMethod"] = o.HostnameVerificationMethod
@@ -287,6 +286,7 @@ func (o AddPingOneHttpExternalServerRequest) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["serverName"] = o.ServerName
 	return toSerialize, nil
 }
 

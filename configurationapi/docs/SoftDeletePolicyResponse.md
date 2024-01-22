@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Soft Delete Policy | 
 **Schemas** | Pointer to [**[]EnumsoftDeletePolicySchemaUrn**](EnumsoftDeletePolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Soft Delete Policy | [optional] 
 **AutoSoftDeleteConnectionCriteria** | Pointer to **string** | Connection criteria used to automatically identify a delete operation for processing as a soft delete request. | [optional] 
@@ -13,6 +12,7 @@ Name | Type | Description | Notes
 **SoftDeleteRetainNumberOfEntries** | Pointer to **int64** | Specifies the number of soft deleted entries to retain before the oldest entries are purged. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Soft Delete Policy | 
 
 ## Methods
 
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewSoftDeletePolicyResponseWithDefaults instantiates a new SoftDeletePolicyResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *SoftDeletePolicyResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *SoftDeletePolicyResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *SoftDeletePolicyResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -252,6 +232,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *SoftDeletePolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *SoftDeletePolicyResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *SoftDeletePolicyResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *SoftDeletePolicyResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

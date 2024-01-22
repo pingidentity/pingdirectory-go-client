@@ -19,8 +19,6 @@ var _ MappedNullable = &AddResultCodeMapRequest{}
 
 // AddResultCodeMapRequest struct for AddResultCodeMapRequest
 type AddResultCodeMapRequest struct {
-	// Name of the new Result Code Map
-	MapName string                       `json:"mapName"`
 	Schemas []EnumresultCodeMapSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Result Code Map
 	Description *string `json:"description,omitempty"`
@@ -32,6 +30,8 @@ type AddResultCodeMapRequest struct {
 	BindMissingPasswordResultCode *int64 `json:"bindMissingPasswordResultCode,omitempty"`
 	// Specifies the result code that should be returned if a generic error occurs within the server.
 	ServerErrorResultCode *int64 `json:"serverErrorResultCode,omitempty"`
+	// Name of the new Result Code Map
+	MapName string `json:"mapName"`
 }
 
 // NewAddResultCodeMapRequest instantiates a new AddResultCodeMapRequest object
@@ -50,30 +50,6 @@ func NewAddResultCodeMapRequest(mapName string) *AddResultCodeMapRequest {
 func NewAddResultCodeMapRequestWithDefaults() *AddResultCodeMapRequest {
 	this := AddResultCodeMapRequest{}
 	return &this
-}
-
-// GetMapName returns the MapName field value
-func (o *AddResultCodeMapRequest) GetMapName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MapName
-}
-
-// GetMapNameOk returns a tuple with the MapName field value
-// and a boolean to check if the value has been set.
-func (o *AddResultCodeMapRequest) GetMapNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MapName, true
-}
-
-// SetMapName sets field value
-func (o *AddResultCodeMapRequest) SetMapName(v string) {
-	o.MapName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -268,6 +244,30 @@ func (o *AddResultCodeMapRequest) SetServerErrorResultCode(v int64) {
 	o.ServerErrorResultCode = &v
 }
 
+// GetMapName returns the MapName field value
+func (o *AddResultCodeMapRequest) GetMapName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MapName
+}
+
+// GetMapNameOk returns a tuple with the MapName field value
+// and a boolean to check if the value has been set.
+func (o *AddResultCodeMapRequest) GetMapNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MapName, true
+}
+
+// SetMapName sets field value
+func (o *AddResultCodeMapRequest) SetMapName(v string) {
+	o.MapName = v
+}
+
 func (o AddResultCodeMapRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -278,7 +278,6 @@ func (o AddResultCodeMapRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddResultCodeMapRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mapName"] = o.MapName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -297,6 +296,7 @@ func (o AddResultCodeMapRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServerErrorResultCode) {
 		toSerialize["serverErrorResultCode"] = o.ServerErrorResultCode
 	}
+	toSerialize["mapName"] = o.MapName
 	return toSerialize, nil
 }
 

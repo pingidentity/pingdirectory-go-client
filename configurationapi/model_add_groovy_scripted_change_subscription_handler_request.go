@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedChangeSubscriptionHandlerRequest{}
 
 // AddGroovyScriptedChangeSubscriptionHandlerRequest struct for AddGroovyScriptedChangeSubscriptionHandlerRequest
 type AddGroovyScriptedChangeSubscriptionHandlerRequest struct {
-	// Name of the new Change Subscription Handler
-	HandlerName string                                                 `json:"handlerName"`
-	Schemas     []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Change Subscription Handler.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
@@ -32,18 +30,20 @@ type AddGroovyScriptedChangeSubscriptionHandlerRequest struct {
 	Enabled bool `json:"enabled"`
 	// The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
 	ChangeSubscription []string `json:"changeSubscription,omitempty"`
+	// Name of the new Change Subscription Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddGroovyScriptedChangeSubscriptionHandlerRequest instantiates a new AddGroovyScriptedChangeSubscriptionHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn, scriptClass string, enabled bool) *AddGroovyScriptedChangeSubscriptionHandlerRequest {
+func NewAddGroovyScriptedChangeSubscriptionHandlerRequest(schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn, scriptClass string, enabled bool, handlerName string) *AddGroovyScriptedChangeSubscriptionHandlerRequest {
 	this := AddGroovyScriptedChangeSubscriptionHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddGroovyScriptedChangeSubscriptionHandlerRequest(handlerName string, sc
 func NewAddGroovyScriptedChangeSubscriptionHandlerRequestWithDefaults() *AddGroovyScriptedChangeSubscriptionHandlerRequest {
 	this := AddGroovyScriptedChangeSubscriptionHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -247,6 +223,30 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) SetChangeSubscriptio
 	o.ChangeSubscription = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddGroovyScriptedChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -257,7 +257,6 @@ func (o AddGroovyScriptedChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte
 
 func (o AddGroovyScriptedChangeSubscriptionHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -270,6 +269,7 @@ func (o AddGroovyScriptedChangeSubscriptionHandlerRequest) ToMap() (map[string]i
 	if !IsNil(o.ChangeSubscription) {
 		toSerialize["changeSubscription"] = o.ChangeSubscription
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

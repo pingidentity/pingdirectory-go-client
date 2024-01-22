@@ -19,9 +19,7 @@ var _ MappedNullable = &AddJmxConnectionHandlerRequest{}
 
 // AddJmxConnectionHandlerRequest struct for AddJmxConnectionHandlerRequest
 type AddJmxConnectionHandlerRequest struct {
-	// Name of the new Connection Handler
-	HandlerName string                              `json:"handlerName"`
-	Schemas     []EnumjmxConnectionHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumjmxConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the port number on which the JMX Connection Handler will listen for connections from clients.
 	ListenPort int64 `json:"listenPort"`
 	// Indicates whether the JMX Connection Handler should use SSL.
@@ -38,18 +36,20 @@ type AddJmxConnectionHandlerRequest struct {
 	AllowedClient []string `json:"allowedClient,omitempty"`
 	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
 	DeniedClient []string `json:"deniedClient,omitempty"`
+	// Name of the new Connection Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddJmxConnectionHandlerRequest instantiates a new AddJmxConnectionHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddJmxConnectionHandlerRequest(handlerName string, schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool) *AddJmxConnectionHandlerRequest {
+func NewAddJmxConnectionHandlerRequest(schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool, handlerName string) *AddJmxConnectionHandlerRequest {
 	this := AddJmxConnectionHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ListenPort = listenPort
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewAddJmxConnectionHandlerRequest(handlerName string, schemas []EnumjmxConn
 func NewAddJmxConnectionHandlerRequestWithDefaults() *AddJmxConnectionHandlerRequest {
 	this := AddJmxConnectionHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddJmxConnectionHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddJmxConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddJmxConnectionHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -349,6 +325,30 @@ func (o *AddJmxConnectionHandlerRequest) SetDeniedClient(v []string) {
 	o.DeniedClient = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddJmxConnectionHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddJmxConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddJmxConnectionHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddJmxConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -359,7 +359,6 @@ func (o AddJmxConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddJmxConnectionHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["listenPort"] = o.ListenPort
 	if !IsNil(o.UseSSL) {
@@ -381,6 +380,7 @@ func (o AddJmxConnectionHandlerRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.DeniedClient) {
 		toSerialize["deniedClient"] = o.DeniedClient
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

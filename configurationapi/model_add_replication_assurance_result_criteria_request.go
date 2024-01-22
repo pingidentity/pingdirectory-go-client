@@ -19,8 +19,6 @@ var _ MappedNullable = &AddReplicationAssuranceResultCriteriaRequest{}
 
 // AddReplicationAssuranceResultCriteriaRequest struct for AddReplicationAssuranceResultCriteriaRequest
 type AddReplicationAssuranceResultCriteriaRequest struct {
-	// Name of the new Result Criteria
-	CriteriaName             string                                            `json:"criteriaName"`
 	Schemas                  []EnumreplicationAssuranceResultCriteriaSchemaUrn `json:"schemas"`
 	LocalAssuranceLevel      []EnumresultCriteriaLocalAssuranceLevelProp       `json:"localAssuranceLevel,omitempty"`
 	RemoteAssuranceLevel     []EnumresultCriteriaRemoteAssuranceLevelProp      `json:"remoteAssuranceLevel,omitempty"`
@@ -32,16 +30,18 @@ type AddReplicationAssuranceResultCriteriaRequest struct {
 	AssuranceSatisfied                *EnumresultCriteriaAssuranceSatisfiedProp                `json:"assuranceSatisfied,omitempty"`
 	// A description for this Result Criteria
 	Description *string `json:"description,omitempty"`
+	// Name of the new Result Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddReplicationAssuranceResultCriteriaRequest instantiates a new AddReplicationAssuranceResultCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddReplicationAssuranceResultCriteriaRequest(criteriaName string, schemas []EnumreplicationAssuranceResultCriteriaSchemaUrn) *AddReplicationAssuranceResultCriteriaRequest {
+func NewAddReplicationAssuranceResultCriteriaRequest(schemas []EnumreplicationAssuranceResultCriteriaSchemaUrn, criteriaName string) *AddReplicationAssuranceResultCriteriaRequest {
 	this := AddReplicationAssuranceResultCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddReplicationAssuranceResultCriteriaRequest(criteriaName string, schema
 func NewAddReplicationAssuranceResultCriteriaRequestWithDefaults() *AddReplicationAssuranceResultCriteriaRequest {
 	this := AddReplicationAssuranceResultCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddReplicationAssuranceResultCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -357,6 +333,30 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetDescription(v string) 
 	o.Description = &v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddReplicationAssuranceResultCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddReplicationAssuranceResultCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -367,7 +367,6 @@ func (o AddReplicationAssuranceResultCriteriaRequest) MarshalJSON() ([]byte, err
 
 func (o AddReplicationAssuranceResultCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.LocalAssuranceLevel) {
 		toSerialize["localAssuranceLevel"] = o.LocalAssuranceLevel
@@ -393,6 +392,7 @@ func (o AddReplicationAssuranceResultCriteriaRequest) ToMap() (map[string]interf
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

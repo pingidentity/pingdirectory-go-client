@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ObscuredValueApiService ObscuredValueApi service
-type ObscuredValueApiService service
+// ObscuredValueAPIService ObscuredValueAPI service
+type ObscuredValueAPIService service
 
 type ApiAddObscuredValueRequest struct {
 	ctx                     context.Context
-	ApiService              *ObscuredValueApiService
+	ApiService              *ObscuredValueAPIService
 	addObscuredValueRequest *AddObscuredValueRequest
 }
 
@@ -44,7 +44,7 @@ AddObscuredValue Add a new Obscured Value to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddObscuredValueRequest
 */
-func (a *ObscuredValueApiService) AddObscuredValue(ctx context.Context) ApiAddObscuredValueRequest {
+func (a *ObscuredValueAPIService) AddObscuredValue(ctx context.Context) ApiAddObscuredValueRequest {
 	return ApiAddObscuredValueRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ObscuredValueApiService) AddObscuredValue(ctx context.Context) ApiAddOb
 // Execute executes the request
 //
 //	@return ObscuredValueResponse
-func (a *ObscuredValueApiService) AddObscuredValueExecute(r ApiAddObscuredValueRequest) (*ObscuredValueResponse, *http.Response, error) {
+func (a *ObscuredValueAPIService) AddObscuredValueExecute(r ApiAddObscuredValueRequest) (*ObscuredValueResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ObscuredValueApiService) AddObscuredValueExecute(r ApiAddObscuredValueR
 		localVarReturnValue *ObscuredValueResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueApiService.AddObscuredValue")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueAPIService.AddObscuredValue")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ObscuredValueApiService) AddObscuredValueExecute(r ApiAddObscuredValueR
 
 type ApiDeleteObscuredValueRequest struct {
 	ctx               context.Context
-	ApiService        *ObscuredValueApiService
+	ApiService        *ObscuredValueAPIService
 	obscuredValueName string
 }
 
@@ -149,7 +149,7 @@ DeleteObscuredValue Delete a Obscured Value
 	@param obscuredValueName Name of the Obscured Value
 	@return ApiDeleteObscuredValueRequest
 */
-func (a *ObscuredValueApiService) DeleteObscuredValue(ctx context.Context, obscuredValueName string) ApiDeleteObscuredValueRequest {
+func (a *ObscuredValueAPIService) DeleteObscuredValue(ctx context.Context, obscuredValueName string) ApiDeleteObscuredValueRequest {
 	return ApiDeleteObscuredValueRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -158,14 +158,14 @@ func (a *ObscuredValueApiService) DeleteObscuredValue(ctx context.Context, obscu
 }
 
 // Execute executes the request
-func (a *ObscuredValueApiService) DeleteObscuredValueExecute(r ApiDeleteObscuredValueRequest) (*http.Response, error) {
+func (a *ObscuredValueAPIService) DeleteObscuredValueExecute(r ApiDeleteObscuredValueRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueApiService.DeleteObscuredValue")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueAPIService.DeleteObscuredValue")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ObscuredValueApiService) DeleteObscuredValueExecute(r ApiDeleteObscured
 
 type ApiGetObscuredValueRequest struct {
 	ctx               context.Context
-	ApiService        *ObscuredValueApiService
+	ApiService        *ObscuredValueAPIService
 	obscuredValueName string
 }
 
@@ -239,7 +239,7 @@ GetObscuredValue Returns a single Obscured Value
 	@param obscuredValueName Name of the Obscured Value
 	@return ApiGetObscuredValueRequest
 */
-func (a *ObscuredValueApiService) GetObscuredValue(ctx context.Context, obscuredValueName string) ApiGetObscuredValueRequest {
+func (a *ObscuredValueAPIService) GetObscuredValue(ctx context.Context, obscuredValueName string) ApiGetObscuredValueRequest {
 	return ApiGetObscuredValueRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -250,7 +250,7 @@ func (a *ObscuredValueApiService) GetObscuredValue(ctx context.Context, obscured
 // Execute executes the request
 //
 //	@return ObscuredValueResponse
-func (a *ObscuredValueApiService) GetObscuredValueExecute(r ApiGetObscuredValueRequest) (*ObscuredValueResponse, *http.Response, error) {
+func (a *ObscuredValueAPIService) GetObscuredValueExecute(r ApiGetObscuredValueRequest) (*ObscuredValueResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ObscuredValueApiService) GetObscuredValueExecute(r ApiGetObscuredValueR
 		localVarReturnValue *ObscuredValueResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueApiService.GetObscuredValue")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueAPIService.GetObscuredValue")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ObscuredValueApiService) GetObscuredValueExecute(r ApiGetObscuredValueR
 
 type ApiListObscuredValuesRequest struct {
 	ctx        context.Context
-	ApiService *ObscuredValueApiService
+	ApiService *ObscuredValueAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListObscuredValues Returns a list of all Obscured Value objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListObscuredValuesRequest
 */
-func (a *ObscuredValueApiService) ListObscuredValues(ctx context.Context) ApiListObscuredValuesRequest {
+func (a *ObscuredValueAPIService) ListObscuredValues(ctx context.Context) ApiListObscuredValuesRequest {
 	return ApiListObscuredValuesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ObscuredValueApiService) ListObscuredValues(ctx context.Context) ApiLis
 // Execute executes the request
 //
 //	@return ObscuredValueListResponse
-func (a *ObscuredValueApiService) ListObscuredValuesExecute(r ApiListObscuredValuesRequest) (*ObscuredValueListResponse, *http.Response, error) {
+func (a *ObscuredValueAPIService) ListObscuredValuesExecute(r ApiListObscuredValuesRequest) (*ObscuredValueListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ObscuredValueApiService) ListObscuredValuesExecute(r ApiListObscuredVal
 		localVarReturnValue *ObscuredValueListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueApiService.ListObscuredValues")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueAPIService.ListObscuredValues")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ObscuredValueApiService) ListObscuredValuesExecute(r ApiListObscuredVal
 
 type ApiUpdateObscuredValueRequest struct {
 	ctx               context.Context
-	ApiService        *ObscuredValueApiService
+	ApiService        *ObscuredValueAPIService
 	obscuredValueName string
 	updateRequest     *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateObscuredValue Update an existing Obscured Value by name
 	@param obscuredValueName Name of the Obscured Value
 	@return ApiUpdateObscuredValueRequest
 */
-func (a *ObscuredValueApiService) UpdateObscuredValue(ctx context.Context, obscuredValueName string) ApiUpdateObscuredValueRequest {
+func (a *ObscuredValueAPIService) UpdateObscuredValue(ctx context.Context, obscuredValueName string) ApiUpdateObscuredValueRequest {
 	return ApiUpdateObscuredValueRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -467,7 +467,7 @@ func (a *ObscuredValueApiService) UpdateObscuredValue(ctx context.Context, obscu
 // Execute executes the request
 //
 //	@return ObscuredValueResponse
-func (a *ObscuredValueApiService) UpdateObscuredValueExecute(r ApiUpdateObscuredValueRequest) (*ObscuredValueResponse, *http.Response, error) {
+func (a *ObscuredValueAPIService) UpdateObscuredValueExecute(r ApiUpdateObscuredValueRequest) (*ObscuredValueResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ObscuredValueApiService) UpdateObscuredValueExecute(r ApiUpdateObscured
 		localVarReturnValue *ObscuredValueResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueApiService.UpdateObscuredValue")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObscuredValueAPIService.UpdateObscuredValue")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

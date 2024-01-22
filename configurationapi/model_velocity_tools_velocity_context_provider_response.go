@@ -19,8 +19,6 @@ var _ MappedNullable = &VelocityToolsVelocityContextProviderResponse{}
 
 // VelocityToolsVelocityContextProviderResponse struct for VelocityToolsVelocityContextProviderResponse
 type VelocityToolsVelocityContextProviderResponse struct {
-	// Name of the Velocity Context Provider
-	Id      string                                              `json:"id"`
 	Schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of a Velocity Tool class that will be initialized for each request. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.
 	RequestTool []string `json:"requestTool,omitempty"`
@@ -39,16 +37,18 @@ type VelocityToolsVelocityContextProviderResponse struct {
 	ResponseHeader                                []string                                           `json:"responseHeader,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Velocity Context Provider
+	Id string `json:"id"`
 }
 
 // NewVelocityToolsVelocityContextProviderResponse instantiates a new VelocityToolsVelocityContextProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVelocityToolsVelocityContextProviderResponse(id string, schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn) *VelocityToolsVelocityContextProviderResponse {
+func NewVelocityToolsVelocityContextProviderResponse(schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn, id string) *VelocityToolsVelocityContextProviderResponse {
 	this := VelocityToolsVelocityContextProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewVelocityToolsVelocityContextProviderResponse(id string, schemas []Enumve
 func NewVelocityToolsVelocityContextProviderResponseWithDefaults() *VelocityToolsVelocityContextProviderResponse {
 	this := VelocityToolsVelocityContextProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *VelocityToolsVelocityContextProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *VelocityToolsVelocityContextProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *VelocityToolsVelocityContextProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -428,6 +404,30 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetUrnpingidentityschemas
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *VelocityToolsVelocityContextProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *VelocityToolsVelocityContextProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *VelocityToolsVelocityContextProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o VelocityToolsVelocityContextProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -438,7 +438,6 @@ func (o VelocityToolsVelocityContextProviderResponse) MarshalJSON() ([]byte, err
 
 func (o VelocityToolsVelocityContextProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.RequestTool) {
 		toSerialize["requestTool"] = o.RequestTool
@@ -470,6 +469,7 @@ func (o VelocityToolsVelocityContextProviderResponse) ToMap() (map[string]interf
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

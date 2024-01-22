@@ -49,6 +49,8 @@ Name | Type | Description | Notes
 **ConjurServerBaseURI** | **[]string** | The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://conjur.example.com:8443/\&quot;. | 
 **ConjurAuthenticationMethod** | **string** | The mechanism used to authenticate to the Conjur server. | 
 **ConjurAccountName** | **string** | The name of the account with which the desired secrets are associated. | 
+**HttpConnectTimeout** | Pointer to **string** | The maximum length of time to wait to obtain an HTTP connection. | [optional] 
+**HttpResponseTimeout** | Pointer to **string** | The maximum length of time to wait for a response to an HTTP request. | [optional] 
 **TrustStoreFile** | Pointer to **string** | The path to a file containing the information needed to trust the certificate presented by the Vault servers. | [optional] 
 **TrustStorePin** | Pointer to **string** | The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents. | [optional] 
 **TrustStoreType** | Pointer to **string** | The store type for the specified trust store file. The value should likely be one of \&quot;JKS\&quot;, \&quot;PKCS12\&quot;, or \&quot;BCFKS\&quot;. | [optional] 
@@ -1152,6 +1154,56 @@ and a boolean to check if the value has been set.
 
 SetConjurAccountName sets ConjurAccountName field to given value.
 
+
+### GetHttpConnectTimeout
+
+`func (o *AddExternalServerRequest) GetHttpConnectTimeout() string`
+
+GetHttpConnectTimeout returns the HttpConnectTimeout field if non-nil, zero value otherwise.
+
+### GetHttpConnectTimeoutOk
+
+`func (o *AddExternalServerRequest) GetHttpConnectTimeoutOk() (*string, bool)`
+
+GetHttpConnectTimeoutOk returns a tuple with the HttpConnectTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpConnectTimeout
+
+`func (o *AddExternalServerRequest) SetHttpConnectTimeout(v string)`
+
+SetHttpConnectTimeout sets HttpConnectTimeout field to given value.
+
+### HasHttpConnectTimeout
+
+`func (o *AddExternalServerRequest) HasHttpConnectTimeout() bool`
+
+HasHttpConnectTimeout returns a boolean if a field has been set.
+
+### GetHttpResponseTimeout
+
+`func (o *AddExternalServerRequest) GetHttpResponseTimeout() string`
+
+GetHttpResponseTimeout returns the HttpResponseTimeout field if non-nil, zero value otherwise.
+
+### GetHttpResponseTimeoutOk
+
+`func (o *AddExternalServerRequest) GetHttpResponseTimeoutOk() (*string, bool)`
+
+GetHttpResponseTimeoutOk returns a tuple with the HttpResponseTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpResponseTimeout
+
+`func (o *AddExternalServerRequest) SetHttpResponseTimeout(v string)`
+
+SetHttpResponseTimeout sets HttpResponseTimeout field to given value.
+
+### HasHttpResponseTimeout
+
+`func (o *AddExternalServerRequest) HasHttpResponseTimeout() bool`
+
+HasHttpResponseTimeout returns a boolean if a field has been set.
 
 ### GetTrustStoreFile
 

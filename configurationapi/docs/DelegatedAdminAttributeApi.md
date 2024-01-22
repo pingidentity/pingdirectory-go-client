@@ -1,14 +1,14 @@
-# \DelegatedAdminAttributeApi
+# \DelegatedAdminAttributeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddDelegatedAdminAttribute**](DelegatedAdminAttributeApi.md#AddDelegatedAdminAttribute) | **Post** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes | Add a new Delegated Admin Attribute to the config
-[**DeleteDelegatedAdminAttribute**](DelegatedAdminAttributeApi.md#DeleteDelegatedAdminAttribute) | **Delete** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Delete a Delegated Admin Attribute
-[**GetDelegatedAdminAttribute**](DelegatedAdminAttributeApi.md#GetDelegatedAdminAttribute) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Returns a single Delegated Admin Attribute
-[**ListDelegatedAdminAttributes**](DelegatedAdminAttributeApi.md#ListDelegatedAdminAttributes) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes | Returns a list of all Delegated Admin Attribute objects
-[**UpdateDelegatedAdminAttribute**](DelegatedAdminAttributeApi.md#UpdateDelegatedAdminAttribute) | **Patch** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Update an existing Delegated Admin Attribute by name
+[**AddDelegatedAdminAttribute**](DelegatedAdminAttributeAPI.md#AddDelegatedAdminAttribute) | **Post** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes | Add a new Delegated Admin Attribute to the config
+[**DeleteDelegatedAdminAttribute**](DelegatedAdminAttributeAPI.md#DeleteDelegatedAdminAttribute) | **Delete** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Delete a Delegated Admin Attribute
+[**GetDelegatedAdminAttribute**](DelegatedAdminAttributeAPI.md#GetDelegatedAdminAttribute) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Returns a single Delegated Admin Attribute
+[**ListDelegatedAdminAttributes**](DelegatedAdminAttributeAPI.md#ListDelegatedAdminAttributes) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes | Returns a list of all Delegated Admin Attribute objects
+[**UpdateDelegatedAdminAttribute**](DelegatedAdminAttributeAPI.md#UpdateDelegatedAdminAttribute) | **Patch** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Update an existing Delegated Admin Attribute by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     restResourceTypeName := "restResourceTypeName_example" // string | Name of the REST Resource Type
-    addDelegatedAdminAttributeRequest := openapiclient.add_delegated_admin_attribute_request{AddCertificateDelegatedAdminAttributeRequest: openapiclient.NewAddCertificateDelegatedAdminAttributeRequest("AttributeType_example", []openapiclient.EnumcertificateDelegatedAdminAttributeSchemaUrn{openapiclient.Enumcertificate-delegated-admin-attributeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:certificate")}, "DisplayName_example")} // AddDelegatedAdminAttributeRequest | Create a new Delegated Admin Attribute in the config
+    addDelegatedAdminAttributeRequest := openapiclient.add_delegated_admin_attribute_request{AddCertificateDelegatedAdminAttributeRequest: openapiclient.NewAddCertificateDelegatedAdminAttributeRequest([]openapiclient.EnumcertificateDelegatedAdminAttributeSchemaUrn{openapiclient.Enumcertificate-delegated-admin-attributeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:certificate")}, "AttributeType_example", "DisplayName_example")} // AddDelegatedAdminAttributeRequest | Create a new Delegated Admin Attribute in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminAttributeApi.AddDelegatedAdminAttribute(context.Background(), restResourceTypeName).AddDelegatedAdminAttributeRequest(addDelegatedAdminAttributeRequest).Execute()
+    resp, r, err := apiClient.DelegatedAdminAttributeAPI.AddDelegatedAdminAttribute(context.Background(), restResourceTypeName).AddDelegatedAdminAttributeRequest(addDelegatedAdminAttributeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeApi.AddDelegatedAdminAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeAPI.AddDelegatedAdminAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddDelegatedAdminAttribute`: AddDelegatedAdminAttribute200Response
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeApi.AddDelegatedAdminAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeAPI.AddDelegatedAdminAttribute`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DelegatedAdminAttributeApi.DeleteDelegatedAdminAttribute(context.Background(), delegatedAdminAttributeName, restResourceTypeName).Execute()
+    r, err := apiClient.DelegatedAdminAttributeAPI.DeleteDelegatedAdminAttribute(context.Background(), delegatedAdminAttributeName, restResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeApi.DeleteDelegatedAdminAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeAPI.DeleteDelegatedAdminAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminAttributeApi.GetDelegatedAdminAttribute(context.Background(), delegatedAdminAttributeName, restResourceTypeName).Execute()
+    resp, r, err := apiClient.DelegatedAdminAttributeAPI.GetDelegatedAdminAttribute(context.Background(), delegatedAdminAttributeName, restResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeApi.GetDelegatedAdminAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeAPI.GetDelegatedAdminAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDelegatedAdminAttribute`: AddDelegatedAdminAttribute200Response
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeApi.GetDelegatedAdminAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeAPI.GetDelegatedAdminAttribute`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminAttributeApi.ListDelegatedAdminAttributes(context.Background(), restResourceTypeName).Filter(filter).Execute()
+    resp, r, err := apiClient.DelegatedAdminAttributeAPI.ListDelegatedAdminAttributes(context.Background(), restResourceTypeName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeApi.ListDelegatedAdminAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeAPI.ListDelegatedAdminAttributes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListDelegatedAdminAttributes`: DelegatedAdminAttributeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeApi.ListDelegatedAdminAttributes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeAPI.ListDelegatedAdminAttributes`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminAttributeApi.UpdateDelegatedAdminAttribute(context.Background(), delegatedAdminAttributeName, restResourceTypeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.DelegatedAdminAttributeAPI.UpdateDelegatedAdminAttribute(context.Background(), delegatedAdminAttributeName, restResourceTypeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeApi.UpdateDelegatedAdminAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeAPI.UpdateDelegatedAdminAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDelegatedAdminAttribute`: AddDelegatedAdminAttribute200Response
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeApi.UpdateDelegatedAdminAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeAPI.UpdateDelegatedAdminAttribute`: %v\n", resp)
 }
 ```
 

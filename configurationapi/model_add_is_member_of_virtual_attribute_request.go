@@ -19,8 +19,6 @@ var _ MappedNullable = &AddIsMemberOfVirtualAttributeRequest{}
 
 // AddIsMemberOfVirtualAttributeRequest struct for AddIsMemberOfVirtualAttributeRequest
 type AddIsMemberOfVirtualAttributeRequest struct {
-	// Name of the new Virtual Attribute
-	Name             string                                    `json:"name"`
 	Schemas          []EnumisMemberOfVirtualAttributeSchemaUrn `json:"schemas"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
@@ -49,17 +47,19 @@ type AddIsMemberOfVirtualAttributeRequest struct {
 	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
+	// Name of the new Virtual Attribute
+	Name string `json:"name"`
 }
 
 // NewAddIsMemberOfVirtualAttributeRequest instantiates a new AddIsMemberOfVirtualAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddIsMemberOfVirtualAttributeRequest(name string, schemas []EnumisMemberOfVirtualAttributeSchemaUrn, enabled bool) *AddIsMemberOfVirtualAttributeRequest {
+func NewAddIsMemberOfVirtualAttributeRequest(schemas []EnumisMemberOfVirtualAttributeSchemaUrn, enabled bool, name string) *AddIsMemberOfVirtualAttributeRequest {
 	this := AddIsMemberOfVirtualAttributeRequest{}
-	this.Name = name
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Name = name
 	return &this
 }
 
@@ -69,30 +69,6 @@ func NewAddIsMemberOfVirtualAttributeRequest(name string, schemas []EnumisMember
 func NewAddIsMemberOfVirtualAttributeRequestWithDefaults() *AddIsMemberOfVirtualAttributeRequest {
 	this := AddIsMemberOfVirtualAttributeRequest{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddIsMemberOfVirtualAttributeRequest) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddIsMemberOfVirtualAttributeRequest) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddIsMemberOfVirtualAttributeRequest) SetName(v string) {
-	o.Name = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -591,6 +567,30 @@ func (o *AddIsMemberOfVirtualAttributeRequest) SetAllowIndexConflicts(v bool) {
 	o.AllowIndexConflicts = &v
 }
 
+// GetName returns the Name field value
+func (o *AddIsMemberOfVirtualAttributeRequest) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *AddIsMemberOfVirtualAttributeRequest) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *AddIsMemberOfVirtualAttributeRequest) SetName(v string) {
+	o.Name = v
+}
+
 func (o AddIsMemberOfVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -601,7 +601,6 @@ func (o AddIsMemberOfVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddIsMemberOfVirtualAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ConflictBehavior) {
 		toSerialize["conflictBehavior"] = o.ConflictBehavior
@@ -646,6 +645,7 @@ func (o AddIsMemberOfVirtualAttributeRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.AllowIndexConflicts) {
 		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
 	}
+	toSerialize["name"] = o.Name
 	return toSerialize, nil
 }
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MappingName** | **string** | Name of the new SCIM Attribute Mapping | 
 **Schemas** | Pointer to [**[]EnumscimAttributeMappingSchemaUrn**](EnumscimAttributeMappingSchemaUrn.md) |  | [optional] 
 **CorrelatedLDAPDataView** | Pointer to **string** | The Correlated LDAP Data View that persists the mapped SCIM Resource Type attribute(s). | [optional] 
 **ScimResourceTypeAttribute** | **string** | The attribute path of SCIM Resource Type attributes to be mapped. | 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **Writable** | Pointer to **bool** | Specifies that the mapping is used to map from SCIM Resource Type attribute to LDAP attribute in a write operation. | [optional] 
 **Searchable** | Pointer to **bool** | Specifies that the mapping is used to map from SCIM Resource Type attribute to LDAP attribute in a search filter. | [optional] 
 **Authoritative** | Pointer to **bool** | Specifies that the mapping is authoritative over other mappings for the same SCIM Resource Type attribute (for read operations). | [optional] 
+**MappingName** | **string** | Name of the new SCIM Attribute Mapping | 
 
 ## Methods
 
 ### NewAddScimAttributeMappingRequest
 
-`func NewAddScimAttributeMappingRequest(mappingName string, scimResourceTypeAttribute string, ldapAttribute string, ) *AddScimAttributeMappingRequest`
+`func NewAddScimAttributeMappingRequest(scimResourceTypeAttribute string, ldapAttribute string, mappingName string, ) *AddScimAttributeMappingRequest`
 
 NewAddScimAttributeMappingRequest instantiates a new AddScimAttributeMappingRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddScimAttributeMappingRequestWithDefaults instantiates a new AddScimAttributeMappingRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMappingName
-
-`func (o *AddScimAttributeMappingRequest) GetMappingName() string`
-
-GetMappingName returns the MappingName field if non-nil, zero value otherwise.
-
-### GetMappingNameOk
-
-`func (o *AddScimAttributeMappingRequest) GetMappingNameOk() (*string, bool)`
-
-GetMappingNameOk returns a tuple with the MappingName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMappingName
-
-`func (o *AddScimAttributeMappingRequest) SetMappingName(v string)`
-
-SetMappingName sets MappingName field to given value.
-
 
 ### GetSchemas
 
@@ -242,6 +222,26 @@ SetAuthoritative sets Authoritative field to given value.
 `func (o *AddScimAttributeMappingRequest) HasAuthoritative() bool`
 
 HasAuthoritative returns a boolean if a field has been set.
+
+### GetMappingName
+
+`func (o *AddScimAttributeMappingRequest) GetMappingName() string`
+
+GetMappingName returns the MappingName field if non-nil, zero value otherwise.
+
+### GetMappingNameOk
+
+`func (o *AddScimAttributeMappingRequest) GetMappingNameOk() (*string, bool)`
+
+GetMappingNameOk returns a tuple with the MappingName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMappingName
+
+`func (o *AddScimAttributeMappingRequest) SetMappingName(v string)`
+
+SetMappingName sets MappingName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddScimAttributeRequest{}
 
 // AddScimAttributeRequest struct for AddScimAttributeRequest
 type AddScimAttributeRequest struct {
-	// Name of the new SCIM Attribute
-	AttributeName string                       `json:"attributeName"`
-	Schemas       []EnumscimAttributeSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumscimAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this SCIM Attribute
 	Description *string `json:"description,omitempty"`
 	// The name of the attribute.
@@ -39,16 +37,18 @@ type AddScimAttributeRequest struct {
 	Returned       *EnumscimAttributeReturnedProp   `json:"returned,omitempty"`
 	// Specifies the SCIM resource types that may be referenced. This property is only applicable for attributes that are of type 'reference'. Valid values are: A SCIM resource type (e.g., 'User' or 'Group'), 'external' - indicating the resource is an external resource (e.g., such as a photo), or 'uri' - indicating that the reference is to a service endpoint or an identifier (such as a schema urn).
 	ReferenceType []string `json:"referenceType,omitempty"`
+	// Name of the new SCIM Attribute
+	AttributeName string `json:"attributeName"`
 }
 
 // NewAddScimAttributeRequest instantiates a new AddScimAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddScimAttributeRequest(attributeName string, name string) *AddScimAttributeRequest {
+func NewAddScimAttributeRequest(name string, attributeName string) *AddScimAttributeRequest {
 	this := AddScimAttributeRequest{}
-	this.AttributeName = attributeName
 	this.Name = name
+	this.AttributeName = attributeName
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewAddScimAttributeRequest(attributeName string, name string) *AddScimAttri
 func NewAddScimAttributeRequestWithDefaults() *AddScimAttributeRequest {
 	this := AddScimAttributeRequest{}
 	return &this
-}
-
-// GetAttributeName returns the AttributeName field value
-func (o *AddScimAttributeRequest) GetAttributeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AttributeName
-}
-
-// GetAttributeNameOk returns a tuple with the AttributeName field value
-// and a boolean to check if the value has been set.
-func (o *AddScimAttributeRequest) GetAttributeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeName, true
-}
-
-// SetAttributeName sets field value
-func (o *AddScimAttributeRequest) SetAttributeName(v string) {
-	o.AttributeName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -428,6 +404,30 @@ func (o *AddScimAttributeRequest) SetReferenceType(v []string) {
 	o.ReferenceType = v
 }
 
+// GetAttributeName returns the AttributeName field value
+func (o *AddScimAttributeRequest) GetAttributeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AttributeName
+}
+
+// GetAttributeNameOk returns a tuple with the AttributeName field value
+// and a boolean to check if the value has been set.
+func (o *AddScimAttributeRequest) GetAttributeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeName, true
+}
+
+// SetAttributeName sets field value
+func (o *AddScimAttributeRequest) SetAttributeName(v string) {
+	o.AttributeName = v
+}
+
 func (o AddScimAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -438,7 +438,6 @@ func (o AddScimAttributeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddScimAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["attributeName"] = o.AttributeName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -470,6 +469,7 @@ func (o AddScimAttributeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ReferenceType) {
 		toSerialize["referenceType"] = o.ReferenceType
 	}
+	toSerialize["attributeName"] = o.AttributeName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &AttributeValuePasswordValidatorResponse{}
 
 // AttributeValuePasswordValidatorResponse struct for AttributeValuePasswordValidatorResponse
 type AttributeValuePasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                         `json:"id"`
 	Schemas []EnumattributeValuePasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the name(s) of the attribute(s) whose values should be checked to determine whether they match the provided password. If no values are provided, then the server checks if the proposed password matches the value of any user attribute in the target user's entry.
 	MatchAttribute []string `json:"matchAttribute,omitempty"`
@@ -42,18 +40,20 @@ type AttributeValuePasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewAttributeValuePasswordValidatorResponse instantiates a new AttributeValuePasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttributeValuePasswordValidatorResponse(id string, schemas []EnumattributeValuePasswordValidatorSchemaUrn, testReversedPassword bool, enabled bool) *AttributeValuePasswordValidatorResponse {
+func NewAttributeValuePasswordValidatorResponse(schemas []EnumattributeValuePasswordValidatorSchemaUrn, testReversedPassword bool, enabled bool, id string) *AttributeValuePasswordValidatorResponse {
 	this := AttributeValuePasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.TestReversedPassword = testReversedPassword
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewAttributeValuePasswordValidatorResponse(id string, schemas []Enumattribu
 func NewAttributeValuePasswordValidatorResponseWithDefaults() *AttributeValuePasswordValidatorResponse {
 	this := AttributeValuePasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AttributeValuePasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AttributeValuePasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AttributeValuePasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -449,6 +425,30 @@ func (o *AttributeValuePasswordValidatorResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AttributeValuePasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AttributeValuePasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AttributeValuePasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AttributeValuePasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -459,7 +459,6 @@ func (o AttributeValuePasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o AttributeValuePasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.MatchAttribute) {
 		toSerialize["matchAttribute"] = o.MatchAttribute
@@ -490,6 +489,7 @@ func (o AttributeValuePasswordValidatorResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// RestResourceTypeApiService RestResourceTypeApi service
-type RestResourceTypeApiService service
+// RestResourceTypeAPIService RestResourceTypeAPI service
+type RestResourceTypeAPIService service
 
 type ApiAddRestResourceTypeRequest struct {
 	ctx                        context.Context
-	ApiService                 *RestResourceTypeApiService
+	ApiService                 *RestResourceTypeAPIService
 	addRestResourceTypeRequest *AddRestResourceTypeRequest
 }
 
@@ -44,7 +44,7 @@ AddRestResourceType Add a new REST Resource Type to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddRestResourceTypeRequest
 */
-func (a *RestResourceTypeApiService) AddRestResourceType(ctx context.Context) ApiAddRestResourceTypeRequest {
+func (a *RestResourceTypeAPIService) AddRestResourceType(ctx context.Context) ApiAddRestResourceTypeRequest {
 	return ApiAddRestResourceTypeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *RestResourceTypeApiService) AddRestResourceType(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return AddRestResourceType200Response
-func (a *RestResourceTypeApiService) AddRestResourceTypeExecute(r ApiAddRestResourceTypeRequest) (*AddRestResourceType200Response, *http.Response, error) {
+func (a *RestResourceTypeAPIService) AddRestResourceTypeExecute(r ApiAddRestResourceTypeRequest) (*AddRestResourceType200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *RestResourceTypeApiService) AddRestResourceTypeExecute(r ApiAddRestReso
 		localVarReturnValue *AddRestResourceType200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeApiService.AddRestResourceType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeAPIService.AddRestResourceType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *RestResourceTypeApiService) AddRestResourceTypeExecute(r ApiAddRestReso
 
 type ApiDeleteRestResourceTypeRequest struct {
 	ctx                  context.Context
-	ApiService           *RestResourceTypeApiService
+	ApiService           *RestResourceTypeAPIService
 	restResourceTypeName string
 }
 
@@ -149,7 +149,7 @@ DeleteRestResourceType Delete a REST Resource Type
 	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiDeleteRestResourceTypeRequest
 */
-func (a *RestResourceTypeApiService) DeleteRestResourceType(ctx context.Context, restResourceTypeName string) ApiDeleteRestResourceTypeRequest {
+func (a *RestResourceTypeAPIService) DeleteRestResourceType(ctx context.Context, restResourceTypeName string) ApiDeleteRestResourceTypeRequest {
 	return ApiDeleteRestResourceTypeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -158,14 +158,14 @@ func (a *RestResourceTypeApiService) DeleteRestResourceType(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *RestResourceTypeApiService) DeleteRestResourceTypeExecute(r ApiDeleteRestResourceTypeRequest) (*http.Response, error) {
+func (a *RestResourceTypeAPIService) DeleteRestResourceTypeExecute(r ApiDeleteRestResourceTypeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeApiService.DeleteRestResourceType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeAPIService.DeleteRestResourceType")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *RestResourceTypeApiService) DeleteRestResourceTypeExecute(r ApiDeleteRe
 
 type ApiGetRestResourceTypeRequest struct {
 	ctx                  context.Context
-	ApiService           *RestResourceTypeApiService
+	ApiService           *RestResourceTypeAPIService
 	restResourceTypeName string
 }
 
@@ -239,7 +239,7 @@ GetRestResourceType Returns a single REST Resource Type
 	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiGetRestResourceTypeRequest
 */
-func (a *RestResourceTypeApiService) GetRestResourceType(ctx context.Context, restResourceTypeName string) ApiGetRestResourceTypeRequest {
+func (a *RestResourceTypeAPIService) GetRestResourceType(ctx context.Context, restResourceTypeName string) ApiGetRestResourceTypeRequest {
 	return ApiGetRestResourceTypeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -250,7 +250,7 @@ func (a *RestResourceTypeApiService) GetRestResourceType(ctx context.Context, re
 // Execute executes the request
 //
 //	@return AddRestResourceType200Response
-func (a *RestResourceTypeApiService) GetRestResourceTypeExecute(r ApiGetRestResourceTypeRequest) (*AddRestResourceType200Response, *http.Response, error) {
+func (a *RestResourceTypeAPIService) GetRestResourceTypeExecute(r ApiGetRestResourceTypeRequest) (*AddRestResourceType200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *RestResourceTypeApiService) GetRestResourceTypeExecute(r ApiGetRestReso
 		localVarReturnValue *AddRestResourceType200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeApiService.GetRestResourceType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeAPIService.GetRestResourceType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *RestResourceTypeApiService) GetRestResourceTypeExecute(r ApiGetRestReso
 
 type ApiListRestResourceTypesRequest struct {
 	ctx        context.Context
-	ApiService *RestResourceTypeApiService
+	ApiService *RestResourceTypeAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListRestResourceTypes Returns a list of all REST Resource Type objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListRestResourceTypesRequest
 */
-func (a *RestResourceTypeApiService) ListRestResourceTypes(ctx context.Context) ApiListRestResourceTypesRequest {
+func (a *RestResourceTypeAPIService) ListRestResourceTypes(ctx context.Context) ApiListRestResourceTypesRequest {
 	return ApiListRestResourceTypesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *RestResourceTypeApiService) ListRestResourceTypes(ctx context.Context) 
 // Execute executes the request
 //
 //	@return RestResourceTypeListResponse
-func (a *RestResourceTypeApiService) ListRestResourceTypesExecute(r ApiListRestResourceTypesRequest) (*RestResourceTypeListResponse, *http.Response, error) {
+func (a *RestResourceTypeAPIService) ListRestResourceTypesExecute(r ApiListRestResourceTypesRequest) (*RestResourceTypeListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *RestResourceTypeApiService) ListRestResourceTypesExecute(r ApiListRestR
 		localVarReturnValue *RestResourceTypeListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeApiService.ListRestResourceTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeAPIService.ListRestResourceTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *RestResourceTypeApiService) ListRestResourceTypesExecute(r ApiListRestR
 
 type ApiUpdateRestResourceTypeRequest struct {
 	ctx                  context.Context
-	ApiService           *RestResourceTypeApiService
+	ApiService           *RestResourceTypeAPIService
 	restResourceTypeName string
 	updateRequest        *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateRestResourceType Update an existing REST Resource Type by name
 	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiUpdateRestResourceTypeRequest
 */
-func (a *RestResourceTypeApiService) UpdateRestResourceType(ctx context.Context, restResourceTypeName string) ApiUpdateRestResourceTypeRequest {
+func (a *RestResourceTypeAPIService) UpdateRestResourceType(ctx context.Context, restResourceTypeName string) ApiUpdateRestResourceTypeRequest {
 	return ApiUpdateRestResourceTypeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -467,7 +467,7 @@ func (a *RestResourceTypeApiService) UpdateRestResourceType(ctx context.Context,
 // Execute executes the request
 //
 //	@return AddRestResourceType200Response
-func (a *RestResourceTypeApiService) UpdateRestResourceTypeExecute(r ApiUpdateRestResourceTypeRequest) (*AddRestResourceType200Response, *http.Response, error) {
+func (a *RestResourceTypeAPIService) UpdateRestResourceTypeExecute(r ApiUpdateRestResourceTypeRequest) (*AddRestResourceType200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *RestResourceTypeApiService) UpdateRestResourceTypeExecute(r ApiUpdateRe
 		localVarReturnValue *AddRestResourceType200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeApiService.UpdateRestResourceType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeAPIService.UpdateRestResourceType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,8 +19,6 @@ var _ MappedNullable = &SmtpAlertHandlerResponse{}
 
 // SmtpAlertHandlerResponse struct for SmtpAlertHandlerResponse
 type SmtpAlertHandlerResponse struct {
-	// Name of the Alert Handler
-	Id      string                          `json:"id"`
 	Schemas []EnumsmtpAlertHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether the server should attempt to invoke this SMTP Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
@@ -43,21 +41,23 @@ type SmtpAlertHandlerResponse struct {
 	DisabledAlertType                             []EnumalertHandlerDisabledAlertTypeProp            `json:"disabledAlertType,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Alert Handler
+	Id string `json:"id"`
 }
 
 // NewSmtpAlertHandlerResponse instantiates a new SmtpAlertHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSmtpAlertHandlerResponse(id string, schemas []EnumsmtpAlertHandlerSchemaUrn, senderAddress string, recipientAddress []string, messageSubject string, messageBody string, enabled bool) *SmtpAlertHandlerResponse {
+func NewSmtpAlertHandlerResponse(schemas []EnumsmtpAlertHandlerSchemaUrn, senderAddress string, recipientAddress []string, messageSubject string, messageBody string, enabled bool, id string) *SmtpAlertHandlerResponse {
 	this := SmtpAlertHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.SenderAddress = senderAddress
 	this.RecipientAddress = recipientAddress
 	this.MessageSubject = messageSubject
 	this.MessageBody = messageBody
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewSmtpAlertHandlerResponse(id string, schemas []EnumsmtpAlertHandlerSchema
 func NewSmtpAlertHandlerResponseWithDefaults() *SmtpAlertHandlerResponse {
 	this := SmtpAlertHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SmtpAlertHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SmtpAlertHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SmtpAlertHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -493,6 +469,30 @@ func (o *SmtpAlertHandlerResponse) SetUrnpingidentityschemasconfigurationmessage
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SmtpAlertHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SmtpAlertHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SmtpAlertHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SmtpAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -503,7 +503,6 @@ func (o SmtpAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o SmtpAlertHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
@@ -534,6 +533,7 @@ func (o SmtpAlertHandlerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

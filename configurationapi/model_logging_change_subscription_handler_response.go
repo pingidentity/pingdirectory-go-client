@@ -19,8 +19,6 @@ var _ MappedNullable = &LoggingChangeSubscriptionHandlerResponse{}
 
 // LoggingChangeSubscriptionHandlerResponse struct for LoggingChangeSubscriptionHandlerResponse
 type LoggingChangeSubscriptionHandlerResponse struct {
-	// Name of the Change Subscription Handler
-	Id      string                                          `json:"id"`
 	Schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the log file in which the change notification messages will be written.
 	LogFile string `json:"logFile"`
@@ -32,18 +30,20 @@ type LoggingChangeSubscriptionHandlerResponse struct {
 	ChangeSubscription                            []string                                           `json:"changeSubscription,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Change Subscription Handler
+	Id string `json:"id"`
 }
 
 // NewLoggingChangeSubscriptionHandlerResponse instantiates a new LoggingChangeSubscriptionHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLoggingChangeSubscriptionHandlerResponse(id string, schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn, logFile string, enabled bool) *LoggingChangeSubscriptionHandlerResponse {
+func NewLoggingChangeSubscriptionHandlerResponse(schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn, logFile string, enabled bool, id string) *LoggingChangeSubscriptionHandlerResponse {
 	this := LoggingChangeSubscriptionHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.LogFile = logFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewLoggingChangeSubscriptionHandlerResponse(id string, schemas []Enumloggin
 func NewLoggingChangeSubscriptionHandlerResponseWithDefaults() *LoggingChangeSubscriptionHandlerResponse {
 	this := LoggingChangeSubscriptionHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LoggingChangeSubscriptionHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LoggingChangeSubscriptionHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LoggingChangeSubscriptionHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -279,6 +255,30 @@ func (o *LoggingChangeSubscriptionHandlerResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LoggingChangeSubscriptionHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LoggingChangeSubscriptionHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LoggingChangeSubscriptionHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LoggingChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -289,7 +289,6 @@ func (o LoggingChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, error) 
 
 func (o LoggingChangeSubscriptionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["logFile"] = o.LogFile
 	if !IsNil(o.Description) {
@@ -305,6 +304,7 @@ func (o LoggingChangeSubscriptionHandlerResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

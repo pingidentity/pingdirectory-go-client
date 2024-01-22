@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// PrometheusMonitorAttributeMetricApiService PrometheusMonitorAttributeMetricApi service
-type PrometheusMonitorAttributeMetricApiService service
+// PrometheusMonitorAttributeMetricAPIService PrometheusMonitorAttributeMetricAPI service
+type PrometheusMonitorAttributeMetricAPIService service
 
 type ApiAddPrometheusMonitorAttributeMetricRequest struct {
 	ctx                                        context.Context
-	ApiService                                 *PrometheusMonitorAttributeMetricApiService
+	ApiService                                 *PrometheusMonitorAttributeMetricAPIService
 	httpServletExtensionName                   string
 	addPrometheusMonitorAttributeMetricRequest *AddPrometheusMonitorAttributeMetricRequest
 }
@@ -46,7 +46,7 @@ AddPrometheusMonitorAttributeMetric Add a new Prometheus Monitor Attribute Metri
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiAddPrometheusMonitorAttributeMetricRequest
 */
-func (a *PrometheusMonitorAttributeMetricApiService) AddPrometheusMonitorAttributeMetric(ctx context.Context, httpServletExtensionName string) ApiAddPrometheusMonitorAttributeMetricRequest {
+func (a *PrometheusMonitorAttributeMetricAPIService) AddPrometheusMonitorAttributeMetric(ctx context.Context, httpServletExtensionName string) ApiAddPrometheusMonitorAttributeMetricRequest {
 	return ApiAddPrometheusMonitorAttributeMetricRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -57,7 +57,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) AddPrometheusMonitorAttribu
 // Execute executes the request
 //
 //	@return PrometheusMonitorAttributeMetricResponse
-func (a *PrometheusMonitorAttributeMetricApiService) AddPrometheusMonitorAttributeMetricExecute(r ApiAddPrometheusMonitorAttributeMetricRequest) (*PrometheusMonitorAttributeMetricResponse, *http.Response, error) {
+func (a *PrometheusMonitorAttributeMetricAPIService) AddPrometheusMonitorAttributeMetricExecute(r ApiAddPrometheusMonitorAttributeMetricRequest) (*PrometheusMonitorAttributeMetricResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) AddPrometheusMonitorAttribu
 		localVarReturnValue *PrometheusMonitorAttributeMetricResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricApiService.AddPrometheusMonitorAttributeMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricAPIService.AddPrometheusMonitorAttributeMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) AddPrometheusMonitorAttribu
 
 type ApiDeletePrometheusMonitorAttributeMetricRequest struct {
 	ctx                                  context.Context
-	ApiService                           *PrometheusMonitorAttributeMetricApiService
+	ApiService                           *PrometheusMonitorAttributeMetricAPIService
 	prometheusMonitorAttributeMetricName string
 	httpServletExtensionName             string
 }
@@ -155,7 +155,7 @@ DeletePrometheusMonitorAttributeMetric Delete a Prometheus Monitor Attribute Met
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiDeletePrometheusMonitorAttributeMetricRequest
 */
-func (a *PrometheusMonitorAttributeMetricApiService) DeletePrometheusMonitorAttributeMetric(ctx context.Context, prometheusMonitorAttributeMetricName string, httpServletExtensionName string) ApiDeletePrometheusMonitorAttributeMetricRequest {
+func (a *PrometheusMonitorAttributeMetricAPIService) DeletePrometheusMonitorAttributeMetric(ctx context.Context, prometheusMonitorAttributeMetricName string, httpServletExtensionName string) ApiDeletePrometheusMonitorAttributeMetricRequest {
 	return ApiDeletePrometheusMonitorAttributeMetricRequest{
 		ApiService:                           a,
 		ctx:                                  ctx,
@@ -165,14 +165,14 @@ func (a *PrometheusMonitorAttributeMetricApiService) DeletePrometheusMonitorAttr
 }
 
 // Execute executes the request
-func (a *PrometheusMonitorAttributeMetricApiService) DeletePrometheusMonitorAttributeMetricExecute(r ApiDeletePrometheusMonitorAttributeMetricRequest) (*http.Response, error) {
+func (a *PrometheusMonitorAttributeMetricAPIService) DeletePrometheusMonitorAttributeMetricExecute(r ApiDeletePrometheusMonitorAttributeMetricRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricApiService.DeletePrometheusMonitorAttributeMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricAPIService.DeletePrometheusMonitorAttributeMetric")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) DeletePrometheusMonitorAttr
 
 type ApiGetPrometheusMonitorAttributeMetricRequest struct {
 	ctx                                  context.Context
-	ApiService                           *PrometheusMonitorAttributeMetricApiService
+	ApiService                           *PrometheusMonitorAttributeMetricAPIService
 	prometheusMonitorAttributeMetricName string
 	httpServletExtensionName             string
 }
@@ -249,7 +249,7 @@ GetPrometheusMonitorAttributeMetric Returns a single Prometheus Monitor Attribut
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiGetPrometheusMonitorAttributeMetricRequest
 */
-func (a *PrometheusMonitorAttributeMetricApiService) GetPrometheusMonitorAttributeMetric(ctx context.Context, prometheusMonitorAttributeMetricName string, httpServletExtensionName string) ApiGetPrometheusMonitorAttributeMetricRequest {
+func (a *PrometheusMonitorAttributeMetricAPIService) GetPrometheusMonitorAttributeMetric(ctx context.Context, prometheusMonitorAttributeMetricName string, httpServletExtensionName string) ApiGetPrometheusMonitorAttributeMetricRequest {
 	return ApiGetPrometheusMonitorAttributeMetricRequest{
 		ApiService:                           a,
 		ctx:                                  ctx,
@@ -261,7 +261,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) GetPrometheusMonitorAttribu
 // Execute executes the request
 //
 //	@return PrometheusMonitorAttributeMetricResponse
-func (a *PrometheusMonitorAttributeMetricApiService) GetPrometheusMonitorAttributeMetricExecute(r ApiGetPrometheusMonitorAttributeMetricRequest) (*PrometheusMonitorAttributeMetricResponse, *http.Response, error) {
+func (a *PrometheusMonitorAttributeMetricAPIService) GetPrometheusMonitorAttributeMetricExecute(r ApiGetPrometheusMonitorAttributeMetricRequest) (*PrometheusMonitorAttributeMetricResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) GetPrometheusMonitorAttribu
 		localVarReturnValue *PrometheusMonitorAttributeMetricResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricApiService.GetPrometheusMonitorAttributeMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricAPIService.GetPrometheusMonitorAttributeMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) GetPrometheusMonitorAttribu
 
 type ApiListPrometheusMonitorAttributeMetricsRequest struct {
 	ctx                      context.Context
-	ApiService               *PrometheusMonitorAttributeMetricApiService
+	ApiService               *PrometheusMonitorAttributeMetricAPIService
 	httpServletExtensionName string
 	filter                   *string
 }
@@ -360,7 +360,7 @@ ListPrometheusMonitorAttributeMetrics Returns a list of all Prometheus Monitor A
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiListPrometheusMonitorAttributeMetricsRequest
 */
-func (a *PrometheusMonitorAttributeMetricApiService) ListPrometheusMonitorAttributeMetrics(ctx context.Context, httpServletExtensionName string) ApiListPrometheusMonitorAttributeMetricsRequest {
+func (a *PrometheusMonitorAttributeMetricAPIService) ListPrometheusMonitorAttributeMetrics(ctx context.Context, httpServletExtensionName string) ApiListPrometheusMonitorAttributeMetricsRequest {
 	return ApiListPrometheusMonitorAttributeMetricsRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -371,7 +371,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) ListPrometheusMonitorAttrib
 // Execute executes the request
 //
 //	@return PrometheusMonitorAttributeMetricListResponse
-func (a *PrometheusMonitorAttributeMetricApiService) ListPrometheusMonitorAttributeMetricsExecute(r ApiListPrometheusMonitorAttributeMetricsRequest) (*PrometheusMonitorAttributeMetricListResponse, *http.Response, error) {
+func (a *PrometheusMonitorAttributeMetricAPIService) ListPrometheusMonitorAttributeMetricsExecute(r ApiListPrometheusMonitorAttributeMetricsRequest) (*PrometheusMonitorAttributeMetricListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) ListPrometheusMonitorAttrib
 		localVarReturnValue *PrometheusMonitorAttributeMetricListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricApiService.ListPrometheusMonitorAttributeMetrics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricAPIService.ListPrometheusMonitorAttributeMetrics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) ListPrometheusMonitorAttrib
 
 type ApiUpdatePrometheusMonitorAttributeMetricRequest struct {
 	ctx                                  context.Context
-	ApiService                           *PrometheusMonitorAttributeMetricApiService
+	ApiService                           *PrometheusMonitorAttributeMetricAPIService
 	prometheusMonitorAttributeMetricName string
 	httpServletExtensionName             string
 	updateRequest                        *UpdateRequest
@@ -474,7 +474,7 @@ UpdatePrometheusMonitorAttributeMetric Update an existing Prometheus Monitor Att
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiUpdatePrometheusMonitorAttributeMetricRequest
 */
-func (a *PrometheusMonitorAttributeMetricApiService) UpdatePrometheusMonitorAttributeMetric(ctx context.Context, prometheusMonitorAttributeMetricName string, httpServletExtensionName string) ApiUpdatePrometheusMonitorAttributeMetricRequest {
+func (a *PrometheusMonitorAttributeMetricAPIService) UpdatePrometheusMonitorAttributeMetric(ctx context.Context, prometheusMonitorAttributeMetricName string, httpServletExtensionName string) ApiUpdatePrometheusMonitorAttributeMetricRequest {
 	return ApiUpdatePrometheusMonitorAttributeMetricRequest{
 		ApiService:                           a,
 		ctx:                                  ctx,
@@ -486,7 +486,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) UpdatePrometheusMonitorAttr
 // Execute executes the request
 //
 //	@return PrometheusMonitorAttributeMetricResponse
-func (a *PrometheusMonitorAttributeMetricApiService) UpdatePrometheusMonitorAttributeMetricExecute(r ApiUpdatePrometheusMonitorAttributeMetricRequest) (*PrometheusMonitorAttributeMetricResponse, *http.Response, error) {
+func (a *PrometheusMonitorAttributeMetricAPIService) UpdatePrometheusMonitorAttributeMetricExecute(r ApiUpdatePrometheusMonitorAttributeMetricRequest) (*PrometheusMonitorAttributeMetricResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *PrometheusMonitorAttributeMetricApiService) UpdatePrometheusMonitorAttr
 		localVarReturnValue *PrometheusMonitorAttributeMetricResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricApiService.UpdatePrometheusMonitorAttributeMetric")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrometheusMonitorAttributeMetricAPIService.UpdatePrometheusMonitorAttributeMetric")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

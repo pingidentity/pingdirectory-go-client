@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | Pointer to [**[]EnumglobalConfigurationSchemaUrn**](EnumglobalConfigurationSchemaUrn.md) |  | [optional] 
 **InstanceName** | **string** | Specifies a name that may be used to uniquely identify this Directory Server instance among other instances in the environment. | 
 **Location** | Pointer to **string** | Specifies the location for this Directory Server. Operations performed which involve communication with other servers may prefer servers in the same location to help ensure low-latency responses. | [optional] 
@@ -65,6 +67,8 @@ Name | Type | Description | Notes
 **DuplicateAlertLimit** | **int64** | Specifies the maximum number of duplicate alert messages that should be sent via the administrative alert framework in the time window specified by the duplicate-alert-time-limit property. | 
 **DuplicateAlertTimeLimit** | **string** | Specifies the length of time that must expire before duplicate messages are sent via the administrative alert framework. | 
 **WritabilityMode** | Pointer to [**EnumglobalConfigurationWritabilityModeProp**](EnumglobalConfigurationWritabilityModeProp.md) |  | [optional] 
+**UseSharedDatabaseCacheAcrossAllLocalDBBackends** | Pointer to **bool** | Indicates whether the server should use a common database cache that is shared across all local DB backends instead of maintaining a separate cache for each backend. | [optional] 
+**SharedLocalDBBackendDatabaseCachePercent** | Pointer to **int64** | Specifies the percentage of the JVM memory to allocate to the database cache that is shared across all local DB backends. | [optional] 
 **UnrecoverableDatabaseErrorMode** | Pointer to [**EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp**](EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp.md) |  | [optional] 
 **DatabaseOnVirtualizedOrNetworkStorage** | Pointer to **bool** | This setting provides data integrity options when the Directory Server is installed with a database on a network storage device. A storage device may be accessed directly by a physical server, or indirectly through a virtual machine running on a hypervisor. Enabling this setting will apply changes to all Local DB Backends, the LDAP Changelog Backend, and the replication changelog database. | [optional] 
 **AutoNameWithEntryUUIDConnectionCriteria** | Pointer to **string** | Connection criteria that may be used to identify clients whose add requests should use entryUUID as the naming attribute. | [optional] 
@@ -94,8 +98,6 @@ Name | Type | Description | Notes
 **TrackedApplication** | Pointer to **[]string** | Specifies criteria for identifying specific applications that access the server to enable tracking throughput and latency of LDAP operations issued by an application. | [optional] 
 **JmxValueBehavior** | Pointer to [**EnumglobalConfigurationJmxValueBehaviorProp**](EnumglobalConfigurationJmxValueBehaviorProp.md) |  | [optional] 
 **JmxUseLegacyMbeanNames** | Pointer to **bool** | When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of \&quot;Rdn1\&quot; and \&quot;Rdn2\&quot; instead of the recommended \&quot;type\&quot; and \&quot;name\&quot; keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys. | [optional] 
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
 ## Methods
 
@@ -115,6 +117,56 @@ will change when the set of required properties is changed
 NewGlobalConfigurationResponseWithDefaults instantiates a new GlobalConfigurationResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMeta
+
+`func (o *GlobalConfigurationResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *GlobalConfigurationResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *GlobalConfigurationResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GlobalConfigurationResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GlobalConfigurationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetSchemas
 
@@ -1606,6 +1658,56 @@ SetWritabilityMode sets WritabilityMode field to given value.
 
 HasWritabilityMode returns a boolean if a field has been set.
 
+### GetUseSharedDatabaseCacheAcrossAllLocalDBBackends
+
+`func (o *GlobalConfigurationResponse) GetUseSharedDatabaseCacheAcrossAllLocalDBBackends() bool`
+
+GetUseSharedDatabaseCacheAcrossAllLocalDBBackends returns the UseSharedDatabaseCacheAcrossAllLocalDBBackends field if non-nil, zero value otherwise.
+
+### GetUseSharedDatabaseCacheAcrossAllLocalDBBackendsOk
+
+`func (o *GlobalConfigurationResponse) GetUseSharedDatabaseCacheAcrossAllLocalDBBackendsOk() (*bool, bool)`
+
+GetUseSharedDatabaseCacheAcrossAllLocalDBBackendsOk returns a tuple with the UseSharedDatabaseCacheAcrossAllLocalDBBackends field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSharedDatabaseCacheAcrossAllLocalDBBackends
+
+`func (o *GlobalConfigurationResponse) SetUseSharedDatabaseCacheAcrossAllLocalDBBackends(v bool)`
+
+SetUseSharedDatabaseCacheAcrossAllLocalDBBackends sets UseSharedDatabaseCacheAcrossAllLocalDBBackends field to given value.
+
+### HasUseSharedDatabaseCacheAcrossAllLocalDBBackends
+
+`func (o *GlobalConfigurationResponse) HasUseSharedDatabaseCacheAcrossAllLocalDBBackends() bool`
+
+HasUseSharedDatabaseCacheAcrossAllLocalDBBackends returns a boolean if a field has been set.
+
+### GetSharedLocalDBBackendDatabaseCachePercent
+
+`func (o *GlobalConfigurationResponse) GetSharedLocalDBBackendDatabaseCachePercent() int64`
+
+GetSharedLocalDBBackendDatabaseCachePercent returns the SharedLocalDBBackendDatabaseCachePercent field if non-nil, zero value otherwise.
+
+### GetSharedLocalDBBackendDatabaseCachePercentOk
+
+`func (o *GlobalConfigurationResponse) GetSharedLocalDBBackendDatabaseCachePercentOk() (*int64, bool)`
+
+GetSharedLocalDBBackendDatabaseCachePercentOk returns a tuple with the SharedLocalDBBackendDatabaseCachePercent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSharedLocalDBBackendDatabaseCachePercent
+
+`func (o *GlobalConfigurationResponse) SetSharedLocalDBBackendDatabaseCachePercent(v int64)`
+
+SetSharedLocalDBBackendDatabaseCachePercent sets SharedLocalDBBackendDatabaseCachePercent field to given value.
+
+### HasSharedLocalDBBackendDatabaseCachePercent
+
+`func (o *GlobalConfigurationResponse) HasSharedLocalDBBackendDatabaseCachePercent() bool`
+
+HasSharedLocalDBBackendDatabaseCachePercent returns a boolean if a field has been set.
+
 ### GetUnrecoverableDatabaseErrorMode
 
 `func (o *GlobalConfigurationResponse) GetUnrecoverableDatabaseErrorMode() EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp`
@@ -2300,56 +2402,6 @@ SetJmxUseLegacyMbeanNames sets JmxUseLegacyMbeanNames field to given value.
 `func (o *GlobalConfigurationResponse) HasJmxUseLegacyMbeanNames() bool`
 
 HasJmxUseLegacyMbeanNames returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *GlobalConfigurationResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *GlobalConfigurationResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *GlobalConfigurationResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *GlobalConfigurationResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *GlobalConfigurationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

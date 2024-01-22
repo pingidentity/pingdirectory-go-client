@@ -19,9 +19,7 @@ var _ MappedNullable = &AddMockAccessTokenValidatorRequest{}
 
 // AddMockAccessTokenValidatorRequest struct for AddMockAccessTokenValidatorRequest
 type AddMockAccessTokenValidatorRequest struct {
-	// Name of the new Access Token Validator
-	ValidatorName string                                  `json:"validatorName"`
-	Schemas       []EnummockAccessTokenValidatorSchemaUrn `json:"schemas"`
+	Schemas []EnummockAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The name of the token claim that contains the OAuth2 client ID.
 	ClientIDClaimName *string `json:"clientIDClaimName,omitempty"`
 	// The name of the token claim that contains the scopes granted by the token.
@@ -36,17 +34,19 @@ type AddMockAccessTokenValidatorRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Access Token Validator is enabled for use in Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Access Token Validator
+	ValidatorName string `json:"validatorName"`
 }
 
 // NewAddMockAccessTokenValidatorRequest instantiates a new AddMockAccessTokenValidatorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddMockAccessTokenValidatorRequest(validatorName string, schemas []EnummockAccessTokenValidatorSchemaUrn, enabled bool) *AddMockAccessTokenValidatorRequest {
+func NewAddMockAccessTokenValidatorRequest(schemas []EnummockAccessTokenValidatorSchemaUrn, enabled bool, validatorName string) *AddMockAccessTokenValidatorRequest {
 	this := AddMockAccessTokenValidatorRequest{}
-	this.ValidatorName = validatorName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.ValidatorName = validatorName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddMockAccessTokenValidatorRequest(validatorName string, schemas []Enumm
 func NewAddMockAccessTokenValidatorRequestWithDefaults() *AddMockAccessTokenValidatorRequest {
 	this := AddMockAccessTokenValidatorRequest{}
 	return &this
-}
-
-// GetValidatorName returns the ValidatorName field value
-func (o *AddMockAccessTokenValidatorRequest) GetValidatorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ValidatorName
-}
-
-// GetValidatorNameOk returns a tuple with the ValidatorName field value
-// and a boolean to check if the value has been set.
-func (o *AddMockAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ValidatorName, true
-}
-
-// SetValidatorName sets field value
-func (o *AddMockAccessTokenValidatorRequest) SetValidatorName(v string) {
-	o.ValidatorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -322,6 +298,30 @@ func (o *AddMockAccessTokenValidatorRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetValidatorName returns the ValidatorName field value
+func (o *AddMockAccessTokenValidatorRequest) GetValidatorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ValidatorName
+}
+
+// GetValidatorNameOk returns a tuple with the ValidatorName field value
+// and a boolean to check if the value has been set.
+func (o *AddMockAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ValidatorName, true
+}
+
+// SetValidatorName sets field value
+func (o *AddMockAccessTokenValidatorRequest) SetValidatorName(v string) {
+	o.ValidatorName = v
+}
+
 func (o AddMockAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -332,7 +332,6 @@ func (o AddMockAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddMockAccessTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["validatorName"] = o.ValidatorName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ClientIDClaimName) {
 		toSerialize["clientIDClaimName"] = o.ClientIDClaimName
@@ -353,6 +352,7 @@ func (o AddMockAccessTokenValidatorRequest) ToMap() (map[string]interface{}, err
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["validatorName"] = o.ValidatorName
 	return toSerialize, nil
 }
 

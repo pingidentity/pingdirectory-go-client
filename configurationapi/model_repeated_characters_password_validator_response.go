@@ -19,8 +19,6 @@ var _ MappedNullable = &RepeatedCharactersPasswordValidatorResponse{}
 
 // RepeatedCharactersPasswordValidatorResponse struct for RepeatedCharactersPasswordValidatorResponse
 type RepeatedCharactersPasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                             `json:"id"`
 	Schemas []EnumrepeatedCharactersPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the maximum number of times that any character can appear consecutively in a password value.
 	MaxConsecutiveLength int64 `json:"maxConsecutiveLength"`
@@ -38,19 +36,21 @@ type RepeatedCharactersPasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewRepeatedCharactersPasswordValidatorResponse instantiates a new RepeatedCharactersPasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRepeatedCharactersPasswordValidatorResponse(id string, schemas []EnumrepeatedCharactersPasswordValidatorSchemaUrn, maxConsecutiveLength int64, caseSensitiveValidation bool, enabled bool) *RepeatedCharactersPasswordValidatorResponse {
+func NewRepeatedCharactersPasswordValidatorResponse(schemas []EnumrepeatedCharactersPasswordValidatorSchemaUrn, maxConsecutiveLength int64, caseSensitiveValidation bool, enabled bool, id string) *RepeatedCharactersPasswordValidatorResponse {
 	this := RepeatedCharactersPasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.MaxConsecutiveLength = maxConsecutiveLength
 	this.CaseSensitiveValidation = caseSensitiveValidation
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewRepeatedCharactersPasswordValidatorResponse(id string, schemas []Enumrep
 func NewRepeatedCharactersPasswordValidatorResponseWithDefaults() *RepeatedCharactersPasswordValidatorResponse {
 	this := RepeatedCharactersPasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *RepeatedCharactersPasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *RepeatedCharactersPasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *RepeatedCharactersPasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -374,6 +350,30 @@ func (o *RepeatedCharactersPasswordValidatorResponse) SetUrnpingidentityschemasc
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *RepeatedCharactersPasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *RepeatedCharactersPasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *RepeatedCharactersPasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o RepeatedCharactersPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -384,7 +384,6 @@ func (o RepeatedCharactersPasswordValidatorResponse) MarshalJSON() ([]byte, erro
 
 func (o RepeatedCharactersPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["maxConsecutiveLength"] = o.MaxConsecutiveLength
 	toSerialize["caseSensitiveValidation"] = o.CaseSensitiveValidation
@@ -407,6 +406,7 @@ func (o RepeatedCharactersPasswordValidatorResponse) ToMap() (map[string]interfa
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

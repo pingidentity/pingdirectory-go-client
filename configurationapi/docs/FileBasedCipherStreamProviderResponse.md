@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Cipher Stream Provider | 
 **Schemas** | [**[]EnumfileBasedCipherStreamProviderSchemaUrn**](EnumfileBasedCipherStreamProviderSchemaUrn.md) |  | 
 **PasswordFile** | **string** | The path to the file containing the password to use when generating ciphers. | 
 **WaitForPasswordFile** | Pointer to **bool** | Indicates whether the server should wait for the password file to become available if it does not exist. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Cipher Stream Provider | 
 
 ## Methods
 
 ### NewFileBasedCipherStreamProviderResponse
 
-`func NewFileBasedCipherStreamProviderResponse(id string, schemas []EnumfileBasedCipherStreamProviderSchemaUrn, passwordFile string, enabled bool, ) *FileBasedCipherStreamProviderResponse`
+`func NewFileBasedCipherStreamProviderResponse(schemas []EnumfileBasedCipherStreamProviderSchemaUrn, passwordFile string, enabled bool, id string, ) *FileBasedCipherStreamProviderResponse`
 
 NewFileBasedCipherStreamProviderResponse instantiates a new FileBasedCipherStreamProviderResponse object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewFileBasedCipherStreamProviderResponseWithDefaults instantiates a new FileBasedCipherStreamProviderResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *FileBasedCipherStreamProviderResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *FileBasedCipherStreamProviderResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *FileBasedCipherStreamProviderResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -263,6 +243,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *FileBasedCipherStreamProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *FileBasedCipherStreamProviderResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *FileBasedCipherStreamProviderResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *FileBasedCipherStreamProviderResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

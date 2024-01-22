@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Account Status Notification Handler | 
 **Schemas** | [**[]EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn**](EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn.md) |  | 
 **AccountTemporarilyFailureLockedMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that an account becomes temporarily locked as a result of too many authentication failures. | [optional] 
 **AccountPermanentlyFailureLockedMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that an account becomes permanently locked as a result of too many authentication failures. | [optional] 
@@ -32,12 +31,13 @@ Name | Type | Description | Notes
 **AccountCreationNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which add requests should result in account creation notifications for this handler. | [optional] 
 **AccountDeletionNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which delete requests should result in account deletion notifications for this handler. | [optional] 
 **AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
+**HandlerName** | **string** | Name of the new Account Status Notification Handler | 
 
 ## Methods
 
 ### NewAddMultiPartEmailAccountStatusNotificationHandlerRequest
 
-`func NewAddMultiPartEmailAccountStatusNotificationHandlerRequest(handlerName string, schemas []EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn, enabled bool, ) *AddMultiPartEmailAccountStatusNotificationHandlerRequest`
+`func NewAddMultiPartEmailAccountStatusNotificationHandlerRequest(schemas []EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn, enabled bool, handlerName string, ) *AddMultiPartEmailAccountStatusNotificationHandlerRequest`
 
 NewAddMultiPartEmailAccountStatusNotificationHandlerRequest instantiates a new AddMultiPartEmailAccountStatusNotificationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -51,26 +51,6 @@ will change when the set of required properties is changed
 NewAddMultiPartEmailAccountStatusNotificationHandlerRequestWithDefaults instantiates a new AddMultiPartEmailAccountStatusNotificationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -736,6 +716,26 @@ SetAccountUpdateNotificationRequestCriteria sets AccountUpdateNotificationReques
 `func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) HasAccountUpdateNotificationRequestCriteria() bool`
 
 HasAccountUpdateNotificationRequestCriteria returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

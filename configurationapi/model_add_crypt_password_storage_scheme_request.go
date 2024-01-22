@@ -19,8 +19,6 @@ var _ MappedNullable = &AddCryptPasswordStorageSchemeRequest{}
 
 // AddCryptPasswordStorageSchemeRequest struct for AddCryptPasswordStorageSchemeRequest
 type AddCryptPasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName                string                                                  `json:"schemeName"`
 	Schemas                   []EnumcryptPasswordStorageSchemeSchemaUrn               `json:"schemas"`
 	PasswordEncodingMechanism *EnumpasswordStorageSchemePasswordEncodingMechanismProp `json:"passwordEncodingMechanism,omitempty"`
 	// Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings.
@@ -31,17 +29,19 @@ type AddCryptPasswordStorageSchemeRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddCryptPasswordStorageSchemeRequest instantiates a new AddCryptPasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCryptPasswordStorageSchemeRequest(schemeName string, schemas []EnumcryptPasswordStorageSchemeSchemaUrn, enabled bool) *AddCryptPasswordStorageSchemeRequest {
+func NewAddCryptPasswordStorageSchemeRequest(schemas []EnumcryptPasswordStorageSchemeSchemaUrn, enabled bool, schemeName string) *AddCryptPasswordStorageSchemeRequest {
 	this := AddCryptPasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddCryptPasswordStorageSchemeRequest(schemeName string, schemas []Enumcr
 func NewAddCryptPasswordStorageSchemeRequestWithDefaults() *AddCryptPasswordStorageSchemeRequest {
 	this := AddCryptPasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddCryptPasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -253,6 +229,30 @@ func (o *AddCryptPasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddCryptPasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddCryptPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -263,7 +263,6 @@ func (o AddCryptPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddCryptPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PasswordEncodingMechanism) {
 		toSerialize["passwordEncodingMechanism"] = o.PasswordEncodingMechanism
@@ -278,6 +277,7 @@ func (o AddCryptPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, e
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

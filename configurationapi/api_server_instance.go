@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ServerInstanceApiService ServerInstanceApi service
-type ServerInstanceApiService service
+// ServerInstanceAPIService ServerInstanceAPI service
+type ServerInstanceAPIService service
 
 type ApiGetServerInstanceRequest struct {
 	ctx                context.Context
-	ApiService         *ServerInstanceApiService
+	ApiService         *ServerInstanceAPIService
 	serverInstanceName string
 }
 
@@ -39,7 +39,7 @@ GetServerInstance Returns a single Server Instance
 	@param serverInstanceName Name of the Server Instance
 	@return ApiGetServerInstanceRequest
 */
-func (a *ServerInstanceApiService) GetServerInstance(ctx context.Context, serverInstanceName string) ApiGetServerInstanceRequest {
+func (a *ServerInstanceAPIService) GetServerInstance(ctx context.Context, serverInstanceName string) ApiGetServerInstanceRequest {
 	return ApiGetServerInstanceRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -50,7 +50,7 @@ func (a *ServerInstanceApiService) GetServerInstance(ctx context.Context, server
 // Execute executes the request
 //
 //	@return GetServerInstance200Response
-func (a *ServerInstanceApiService) GetServerInstanceExecute(r ApiGetServerInstanceRequest) (*GetServerInstance200Response, *http.Response, error) {
+func (a *ServerInstanceAPIService) GetServerInstanceExecute(r ApiGetServerInstanceRequest) (*GetServerInstance200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -58,7 +58,7 @@ func (a *ServerInstanceApiService) GetServerInstanceExecute(r ApiGetServerInstan
 		localVarReturnValue *GetServerInstance200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceApiService.GetServerInstance")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceAPIService.GetServerInstance")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *ServerInstanceApiService) GetServerInstanceExecute(r ApiGetServerInstan
 
 type ApiListServerInstancesRequest struct {
 	ctx        context.Context
-	ApiService *ServerInstanceApiService
+	ApiService *ServerInstanceAPIService
 	filter     *string
 }
 
@@ -146,7 +146,7 @@ ListServerInstances Returns a list of all Server Instance objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListServerInstancesRequest
 */
-func (a *ServerInstanceApiService) ListServerInstances(ctx context.Context) ApiListServerInstancesRequest {
+func (a *ServerInstanceAPIService) ListServerInstances(ctx context.Context) ApiListServerInstancesRequest {
 	return ApiListServerInstancesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *ServerInstanceApiService) ListServerInstances(ctx context.Context) ApiL
 // Execute executes the request
 //
 //	@return ServerInstanceListResponse
-func (a *ServerInstanceApiService) ListServerInstancesExecute(r ApiListServerInstancesRequest) (*ServerInstanceListResponse, *http.Response, error) {
+func (a *ServerInstanceAPIService) ListServerInstancesExecute(r ApiListServerInstancesRequest) (*ServerInstanceListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -164,7 +164,7 @@ func (a *ServerInstanceApiService) ListServerInstancesExecute(r ApiListServerIns
 		localVarReturnValue *ServerInstanceListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceApiService.ListServerInstances")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceAPIService.ListServerInstances")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -234,7 +234,7 @@ func (a *ServerInstanceApiService) ListServerInstancesExecute(r ApiListServerIns
 
 type ApiUpdateServerInstanceRequest struct {
 	ctx                context.Context
-	ApiService         *ServerInstanceApiService
+	ApiService         *ServerInstanceAPIService
 	serverInstanceName string
 	updateRequest      *UpdateRequest
 }
@@ -256,7 +256,7 @@ UpdateServerInstance Update an existing Server Instance by name
 	@param serverInstanceName Name of the Server Instance
 	@return ApiUpdateServerInstanceRequest
 */
-func (a *ServerInstanceApiService) UpdateServerInstance(ctx context.Context, serverInstanceName string) ApiUpdateServerInstanceRequest {
+func (a *ServerInstanceAPIService) UpdateServerInstance(ctx context.Context, serverInstanceName string) ApiUpdateServerInstanceRequest {
 	return ApiUpdateServerInstanceRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -267,7 +267,7 @@ func (a *ServerInstanceApiService) UpdateServerInstance(ctx context.Context, ser
 // Execute executes the request
 //
 //	@return GetServerInstance200Response
-func (a *ServerInstanceApiService) UpdateServerInstanceExecute(r ApiUpdateServerInstanceRequest) (*GetServerInstance200Response, *http.Response, error) {
+func (a *ServerInstanceAPIService) UpdateServerInstanceExecute(r ApiUpdateServerInstanceRequest) (*GetServerInstance200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -275,7 +275,7 @@ func (a *ServerInstanceApiService) UpdateServerInstanceExecute(r ApiUpdateServer
 		localVarReturnValue *GetServerInstance200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceApiService.UpdateServerInstance")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceAPIService.UpdateServerInstance")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

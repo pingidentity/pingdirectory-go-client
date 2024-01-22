@@ -19,21 +19,21 @@ var _ MappedNullable = &AddTrustedCertificateRequest{}
 
 // AddTrustedCertificateRequest struct for AddTrustedCertificateRequest
 type AddTrustedCertificateRequest struct {
-	// Name of the new Trusted Certificate
-	CertificateName string                            `json:"certificateName"`
-	Schemas         []EnumtrustedCertificateSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumtrustedCertificateSchemaUrn `json:"schemas,omitempty"`
 	// The PEM-encoded X.509v3 certificate.
 	Certificate string `json:"certificate"`
+	// Name of the new Trusted Certificate
+	CertificateName string `json:"certificateName"`
 }
 
 // NewAddTrustedCertificateRequest instantiates a new AddTrustedCertificateRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddTrustedCertificateRequest(certificateName string, certificate string) *AddTrustedCertificateRequest {
+func NewAddTrustedCertificateRequest(certificate string, certificateName string) *AddTrustedCertificateRequest {
 	this := AddTrustedCertificateRequest{}
-	this.CertificateName = certificateName
 	this.Certificate = certificate
+	this.CertificateName = certificateName
 	return &this
 }
 
@@ -43,30 +43,6 @@ func NewAddTrustedCertificateRequest(certificateName string, certificate string)
 func NewAddTrustedCertificateRequestWithDefaults() *AddTrustedCertificateRequest {
 	this := AddTrustedCertificateRequest{}
 	return &this
-}
-
-// GetCertificateName returns the CertificateName field value
-func (o *AddTrustedCertificateRequest) GetCertificateName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CertificateName
-}
-
-// GetCertificateNameOk returns a tuple with the CertificateName field value
-// and a boolean to check if the value has been set.
-func (o *AddTrustedCertificateRequest) GetCertificateNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CertificateName, true
-}
-
-// SetCertificateName sets field value
-func (o *AddTrustedCertificateRequest) SetCertificateName(v string) {
-	o.CertificateName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -125,6 +101,30 @@ func (o *AddTrustedCertificateRequest) SetCertificate(v string) {
 	o.Certificate = v
 }
 
+// GetCertificateName returns the CertificateName field value
+func (o *AddTrustedCertificateRequest) GetCertificateName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CertificateName
+}
+
+// GetCertificateNameOk returns a tuple with the CertificateName field value
+// and a boolean to check if the value has been set.
+func (o *AddTrustedCertificateRequest) GetCertificateNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CertificateName, true
+}
+
+// SetCertificateName sets field value
+func (o *AddTrustedCertificateRequest) SetCertificateName(v string) {
+	o.CertificateName = v
+}
+
 func (o AddTrustedCertificateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -135,11 +135,11 @@ func (o AddTrustedCertificateRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddTrustedCertificateRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["certificateName"] = o.CertificateName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
 	toSerialize["certificate"] = o.Certificate
+	toSerialize["certificateName"] = o.CertificateName
 	return toSerialize, nil
 }
 

@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 **Schemas** | [**[]EnumthirdPartyExtendedOperationHandlerSchemaUrn**](EnumthirdPartyExtendedOperationHandlerSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Extended Operation Handler. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Extended Operation Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
+**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 
 ## Methods
 
 ### NewAddThirdPartyExtendedOperationHandlerRequest
 
-`func NewAddThirdPartyExtendedOperationHandlerRequest(handlerName string, schemas []EnumthirdPartyExtendedOperationHandlerSchemaUrn, extensionClass string, enabled bool, ) *AddThirdPartyExtendedOperationHandlerRequest`
+`func NewAddThirdPartyExtendedOperationHandlerRequest(schemas []EnumthirdPartyExtendedOperationHandlerSchemaUrn, extensionClass string, enabled bool, handlerName string, ) *AddThirdPartyExtendedOperationHandlerRequest`
 
 NewAddThirdPartyExtendedOperationHandlerRequest instantiates a new AddThirdPartyExtendedOperationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyExtendedOperationHandlerRequestWithDefaults instantiates a new AddThirdPartyExtendedOperationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddThirdPartyExtendedOperationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddThirdPartyExtendedOperationHandlerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetHandlerName
+
+`func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddThirdPartyExtendedOperationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
 
 
 

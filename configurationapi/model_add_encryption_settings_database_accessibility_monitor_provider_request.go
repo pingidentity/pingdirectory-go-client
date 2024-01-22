@@ -19,9 +19,7 @@ var _ MappedNullable = &AddEncryptionSettingsDatabaseAccessibilityMonitorProvide
 
 // AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest struct for AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest
 type AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest struct {
-	// Name of the new Monitor Provider
-	ProviderName string                                                                `json:"providerName"`
-	Schemas      []EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn `json:"schemas"`
 	// The frequency with which this monitor provider should confirm the ability to access the server's encryption settings database.
 	CheckFrequency *string `json:"checkFrequency,omitempty"`
 	// The minimum length of time that an outage should persist before it is considered a prolonged outage. If an outage lasts at least as long as this duration, then the server will take the action indicated by the prolonged-outage-behavior property.
@@ -31,17 +29,19 @@ type AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Monitor Provider is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Monitor Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest instantiates a new AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest(providerName string, schemas []EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn, enabled bool) *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest {
+func NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest(schemas []EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn, enabled bool, providerName string) *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest {
 	this := AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest(provide
 func NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequestWithDefaults() *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest {
 	this := AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -253,6 +229,30 @@ func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) SetEn
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -263,7 +263,6 @@ func (o AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) Marsha
 
 func (o AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.CheckFrequency) {
 		toSerialize["checkFrequency"] = o.CheckFrequency
@@ -278,6 +277,7 @@ func (o AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) ToMap(
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

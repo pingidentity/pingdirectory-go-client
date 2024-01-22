@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Pass Through Authentication Handler | 
 **Schemas** | [**[]EnumpingOnePassThroughAuthenticationHandlerSchemaUrn**](EnumpingOnePassThroughAuthenticationHandlerSchemaUrn.md) |  | 
 **ApiURL** | **string** | Specifies the API endpoint for the PingOne web service. | 
 **AuthURL** | **string** | Specifies the API endpoint for the PingOne authentication service. | 
@@ -20,12 +19,13 @@ Name | Type | Description | Notes
 **IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to the external authentication service. | [optional] 
 **ConnectionCriteria** | Pointer to **string** | A reference to connection criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
 **RequestCriteria** | Pointer to **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
+**HandlerName** | **string** | Name of the new Pass Through Authentication Handler | 
 
 ## Methods
 
 ### NewAddPingOnePassThroughAuthenticationHandlerRequest
 
-`func NewAddPingOnePassThroughAuthenticationHandlerRequest(handlerName string, schemas []EnumpingOnePassThroughAuthenticationHandlerSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, ) *AddPingOnePassThroughAuthenticationHandlerRequest`
+`func NewAddPingOnePassThroughAuthenticationHandlerRequest(schemas []EnumpingOnePassThroughAuthenticationHandlerSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, handlerName string, ) *AddPingOnePassThroughAuthenticationHandlerRequest`
 
 NewAddPingOnePassThroughAuthenticationHandlerRequest instantiates a new AddPingOnePassThroughAuthenticationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -39,26 +39,6 @@ will change when the set of required properties is changed
 NewAddPingOnePassThroughAuthenticationHandlerRequestWithDefaults instantiates a new AddPingOnePassThroughAuthenticationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddPingOnePassThroughAuthenticationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddPingOnePassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddPingOnePassThroughAuthenticationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -399,6 +379,26 @@ SetRequestCriteria sets RequestCriteria field to given value.
 `func (o *AddPingOnePassThroughAuthenticationHandlerRequest) HasRequestCriteria() bool`
 
 HasRequestCriteria returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddPingOnePassThroughAuthenticationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddPingOnePassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddPingOnePassThroughAuthenticationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

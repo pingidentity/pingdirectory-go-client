@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumdelayPluginSchemaUrn**](EnumdelayPluginSchemaUrn.md) |  | 
 **PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **Delay** | **string** | The delay to inject for operations matching the associated criteria. | 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddDelayPluginRequest
 
-`func NewAddDelayPluginRequest(pluginName string, schemas []EnumdelayPluginSchemaUrn, delay string, enabled bool, ) *AddDelayPluginRequest`
+`func NewAddDelayPluginRequest(schemas []EnumdelayPluginSchemaUrn, delay string, enabled bool, pluginName string, ) *AddDelayPluginRequest`
 
 NewAddDelayPluginRequest instantiates a new AddDelayPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddDelayPluginRequestWithDefaults instantiates a new AddDelayPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddDelayPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddDelayPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddDelayPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -237,6 +217,26 @@ SetInvokeForInternalOperations sets InvokeForInternalOperations field to given v
 `func (o *AddDelayPluginRequest) HasInvokeForInternalOperations() bool`
 
 HasInvokeForInternalOperations returns a boolean if a field has been set.
+
+### GetPluginName
+
+`func (o *AddDelayPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddDelayPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddDelayPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddHttpServletCrossOriginPolicyRequest{}
 
 // AddHttpServletCrossOriginPolicyRequest struct for AddHttpServletCrossOriginPolicyRequest
 type AddHttpServletCrossOriginPolicyRequest struct {
-	// Name of the new HTTP Servlet Cross Origin Policy
-	PolicyName string                                      `json:"policyName"`
-	Schemas    []EnumhttpServletCrossOriginPolicySchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumhttpServletCrossOriginPolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this HTTP Servlet Cross Origin Policy
 	Description *string `json:"description,omitempty"`
 	// A list of HTTP methods allowed for cross-origin access to resources. i.e. one or more of GET, POST, PUT, DELETE, etc.
@@ -36,6 +34,8 @@ type AddHttpServletCrossOriginPolicyRequest struct {
 	CorsPreflightMaxAge *string `json:"corsPreflightMaxAge,omitempty"`
 	// Indicates whether the servlet extension allows CORS requests with username/password credentials.
 	CorsAllowCredentials *bool `json:"corsAllowCredentials,omitempty"`
+	// Name of the new HTTP Servlet Cross Origin Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddHttpServletCrossOriginPolicyRequest instantiates a new AddHttpServletCrossOriginPolicyRequest object
@@ -54,30 +54,6 @@ func NewAddHttpServletCrossOriginPolicyRequest(policyName string) *AddHttpServle
 func NewAddHttpServletCrossOriginPolicyRequestWithDefaults() *AddHttpServletCrossOriginPolicyRequest {
 	this := AddHttpServletCrossOriginPolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddHttpServletCrossOriginPolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddHttpServletCrossOriginPolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddHttpServletCrossOriginPolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -336,6 +312,30 @@ func (o *AddHttpServletCrossOriginPolicyRequest) SetCorsAllowCredentials(v bool)
 	o.CorsAllowCredentials = &v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddHttpServletCrossOriginPolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddHttpServletCrossOriginPolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddHttpServletCrossOriginPolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddHttpServletCrossOriginPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -346,7 +346,6 @@ func (o AddHttpServletCrossOriginPolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddHttpServletCrossOriginPolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -371,6 +370,7 @@ func (o AddHttpServletCrossOriginPolicyRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.CorsAllowCredentials) {
 		toSerialize["corsAllowCredentials"] = o.CorsAllowCredentials
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

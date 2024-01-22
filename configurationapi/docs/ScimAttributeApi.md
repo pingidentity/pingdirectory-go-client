@@ -1,14 +1,14 @@
-# \ScimAttributeApi
+# \ScimAttributeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddScimAttribute**](ScimAttributeApi.md#AddScimAttribute) | **Post** /scim-schemas/{scim-schema-name}/scim-attributes | Add a new SCIM Attribute to the config
-[**DeleteScimAttribute**](ScimAttributeApi.md#DeleteScimAttribute) | **Delete** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Delete a SCIM Attribute
-[**GetScimAttribute**](ScimAttributeApi.md#GetScimAttribute) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Returns a single SCIM Attribute
-[**ListScimAttributes**](ScimAttributeApi.md#ListScimAttributes) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes | Returns a list of all SCIM Attribute objects
-[**UpdateScimAttribute**](ScimAttributeApi.md#UpdateScimAttribute) | **Patch** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Update an existing SCIM Attribute by name
+[**AddScimAttribute**](ScimAttributeAPI.md#AddScimAttribute) | **Post** /scim-schemas/{scim-schema-name}/scim-attributes | Add a new SCIM Attribute to the config
+[**DeleteScimAttribute**](ScimAttributeAPI.md#DeleteScimAttribute) | **Delete** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Delete a SCIM Attribute
+[**GetScimAttribute**](ScimAttributeAPI.md#GetScimAttribute) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Returns a single SCIM Attribute
+[**ListScimAttributes**](ScimAttributeAPI.md#ListScimAttributes) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes | Returns a list of all SCIM Attribute objects
+[**UpdateScimAttribute**](ScimAttributeAPI.md#UpdateScimAttribute) | **Patch** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Update an existing SCIM Attribute by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     scimSchemaName := "scimSchemaName_example" // string | Name of the SCIM Schema
-    addScimAttributeRequest := *openapiclient.NewAddScimAttributeRequest("AttributeName_example", "Name_example") // AddScimAttributeRequest | Create a new SCIM Attribute in the config
+    addScimAttributeRequest := *openapiclient.NewAddScimAttributeRequest("Name_example", "AttributeName_example") // AddScimAttributeRequest | Create a new SCIM Attribute in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimAttributeApi.AddScimAttribute(context.Background(), scimSchemaName).AddScimAttributeRequest(addScimAttributeRequest).Execute()
+    resp, r, err := apiClient.ScimAttributeAPI.AddScimAttribute(context.Background(), scimSchemaName).AddScimAttributeRequest(addScimAttributeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeApi.AddScimAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeAPI.AddScimAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddScimAttribute`: ScimAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeApi.AddScimAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeAPI.AddScimAttribute`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ScimAttributeApi.DeleteScimAttribute(context.Background(), scimAttributeName, scimSchemaName).Execute()
+    r, err := apiClient.ScimAttributeAPI.DeleteScimAttribute(context.Background(), scimAttributeName, scimSchemaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeApi.DeleteScimAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeAPI.DeleteScimAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimAttributeApi.GetScimAttribute(context.Background(), scimAttributeName, scimSchemaName).Execute()
+    resp, r, err := apiClient.ScimAttributeAPI.GetScimAttribute(context.Background(), scimAttributeName, scimSchemaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeApi.GetScimAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeAPI.GetScimAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetScimAttribute`: ScimAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeApi.GetScimAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeAPI.GetScimAttribute`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimAttributeApi.ListScimAttributes(context.Background(), scimSchemaName).Filter(filter).Execute()
+    resp, r, err := apiClient.ScimAttributeAPI.ListScimAttributes(context.Background(), scimSchemaName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeApi.ListScimAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeAPI.ListScimAttributes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListScimAttributes`: ScimAttributeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeApi.ListScimAttributes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeAPI.ListScimAttributes`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimAttributeApi.UpdateScimAttribute(context.Background(), scimAttributeName, scimSchemaName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ScimAttributeAPI.UpdateScimAttribute(context.Background(), scimAttributeName, scimSchemaName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeApi.UpdateScimAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeAPI.UpdateScimAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateScimAttribute`: ScimAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeApi.UpdateScimAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeAPI.UpdateScimAttribute`: %v\n", resp)
 }
 ```
 

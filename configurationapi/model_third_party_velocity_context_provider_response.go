@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyVelocityContextProviderResponse{}
 
 // ThirdPartyVelocityContextProviderResponse struct for ThirdPartyVelocityContextProviderResponse
 type ThirdPartyVelocityContextProviderResponse struct {
-	// Name of the Velocity Context Provider
-	Id      string                                           `json:"id"`
 	Schemas []EnumthirdPartyVelocityContextProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Velocity Context Provider.
 	ExtensionClass string `json:"extensionClass"`
@@ -39,17 +37,19 @@ type ThirdPartyVelocityContextProviderResponse struct {
 	ResponseHeader                                []string                                           `json:"responseHeader,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Velocity Context Provider
+	Id string `json:"id"`
 }
 
 // NewThirdPartyVelocityContextProviderResponse instantiates a new ThirdPartyVelocityContextProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyVelocityContextProviderResponse(id string, schemas []EnumthirdPartyVelocityContextProviderSchemaUrn, extensionClass string) *ThirdPartyVelocityContextProviderResponse {
+func NewThirdPartyVelocityContextProviderResponse(schemas []EnumthirdPartyVelocityContextProviderSchemaUrn, extensionClass string, id string) *ThirdPartyVelocityContextProviderResponse {
 	this := ThirdPartyVelocityContextProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewThirdPartyVelocityContextProviderResponse(id string, schemas []Enumthird
 func NewThirdPartyVelocityContextProviderResponseWithDefaults() *ThirdPartyVelocityContextProviderResponse {
 	this := ThirdPartyVelocityContextProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyVelocityContextProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyVelocityContextProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyVelocityContextProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -421,6 +397,30 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetUrnpingidentityschemascon
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyVelocityContextProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyVelocityContextProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyVelocityContextProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyVelocityContextProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -431,7 +431,6 @@ func (o ThirdPartyVelocityContextProviderResponse) MarshalJSON() ([]byte, error)
 
 func (o ThirdPartyVelocityContextProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -461,6 +460,7 @@ func (o ThirdPartyVelocityContextProviderResponse) ToMap() (map[string]interface
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

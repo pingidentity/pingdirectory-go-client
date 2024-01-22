@@ -19,26 +19,26 @@ var _ MappedNullable = &AddGroovyScriptedOauthTokenHandlerRequest{}
 
 // AddGroovyScriptedOauthTokenHandlerRequest struct for AddGroovyScriptedOauthTokenHandlerRequest
 type AddGroovyScriptedOauthTokenHandlerRequest struct {
-	// Name of the new OAuth Token Handler
-	HandlerName string                                         `json:"handlerName"`
-	Schemas     []EnumgroovyScriptedOauthTokenHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedOauthTokenHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted OAuth Token Handler.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted OAuth Token Handler. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this OAuth Token Handler
 	Description *string `json:"description,omitempty"`
+	// Name of the new OAuth Token Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddGroovyScriptedOauthTokenHandlerRequest instantiates a new AddGroovyScriptedOauthTokenHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedOauthTokenHandlerRequest(handlerName string, schemas []EnumgroovyScriptedOauthTokenHandlerSchemaUrn, scriptClass string) *AddGroovyScriptedOauthTokenHandlerRequest {
+func NewAddGroovyScriptedOauthTokenHandlerRequest(schemas []EnumgroovyScriptedOauthTokenHandlerSchemaUrn, scriptClass string, handlerName string) *AddGroovyScriptedOauthTokenHandlerRequest {
 	this := AddGroovyScriptedOauthTokenHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewAddGroovyScriptedOauthTokenHandlerRequest(handlerName string, schemas []
 func NewAddGroovyScriptedOauthTokenHandlerRequestWithDefaults() *AddGroovyScriptedOauthTokenHandlerRequest {
 	this := AddGroovyScriptedOauthTokenHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddGroovyScriptedOauthTokenHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -186,6 +162,30 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddGroovyScriptedOauthTokenHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddGroovyScriptedOauthTokenHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -196,7 +196,6 @@ func (o AddGroovyScriptedOauthTokenHandlerRequest) MarshalJSON() ([]byte, error)
 
 func (o AddGroovyScriptedOauthTokenHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -205,6 +204,7 @@ func (o AddGroovyScriptedOauthTokenHandlerRequest) ToMap() (map[string]interface
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &Utf8PasswordValidatorResponse{}
 
 // Utf8PasswordValidatorResponse struct for Utf8PasswordValidatorResponse
 type Utf8PasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                               `json:"id"`
 	Schemas []Enumutf8PasswordValidatorSchemaUrn `json:"schemas"`
 	// Indicates whether passwords will be allowed to include characters from outside the ASCII character set.
 	AllowNonAsciiCharacters *bool `json:"allowNonAsciiCharacters,omitempty"`
@@ -37,17 +35,19 @@ type Utf8PasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewUtf8PasswordValidatorResponse instantiates a new Utf8PasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUtf8PasswordValidatorResponse(id string, schemas []Enumutf8PasswordValidatorSchemaUrn, enabled bool) *Utf8PasswordValidatorResponse {
+func NewUtf8PasswordValidatorResponse(schemas []Enumutf8PasswordValidatorSchemaUrn, enabled bool, id string) *Utf8PasswordValidatorResponse {
 	this := Utf8PasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewUtf8PasswordValidatorResponse(id string, schemas []Enumutf8PasswordValid
 func NewUtf8PasswordValidatorResponseWithDefaults() *Utf8PasswordValidatorResponse {
 	this := Utf8PasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *Utf8PasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *Utf8PasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *Utf8PasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -387,6 +363,30 @@ func (o *Utf8PasswordValidatorResponse) SetUrnpingidentityschemasconfigurationme
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *Utf8PasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *Utf8PasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *Utf8PasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o Utf8PasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -397,7 +397,6 @@ func (o Utf8PasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o Utf8PasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllowNonAsciiCharacters) {
 		toSerialize["allowNonAsciiCharacters"] = o.AllowNonAsciiCharacters
@@ -424,6 +423,7 @@ func (o Utf8PasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

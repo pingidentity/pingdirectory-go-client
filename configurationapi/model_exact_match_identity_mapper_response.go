@@ -19,8 +19,6 @@ var _ MappedNullable = &ExactMatchIdentityMapperResponse{}
 
 // ExactMatchIdentityMapperResponse struct for ExactMatchIdentityMapperResponse
 type ExactMatchIdentityMapperResponse struct {
-	// Name of the Identity Mapper
-	Id      string                                  `json:"id"`
 	Schemas []EnumexactMatchIdentityMapperSchemaUrn `json:"schemas"`
 	// Specifies the attribute whose value should exactly match the ID string provided to this identity mapper.
 	MatchAttribute []string `json:"matchAttribute"`
@@ -34,18 +32,20 @@ type ExactMatchIdentityMapperResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Identity Mapper
+	Id string `json:"id"`
 }
 
 // NewExactMatchIdentityMapperResponse instantiates a new ExactMatchIdentityMapperResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExactMatchIdentityMapperResponse(id string, schemas []EnumexactMatchIdentityMapperSchemaUrn, matchAttribute []string, enabled bool) *ExactMatchIdentityMapperResponse {
+func NewExactMatchIdentityMapperResponse(schemas []EnumexactMatchIdentityMapperSchemaUrn, matchAttribute []string, enabled bool, id string) *ExactMatchIdentityMapperResponse {
 	this := ExactMatchIdentityMapperResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.MatchAttribute = matchAttribute
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewExactMatchIdentityMapperResponse(id string, schemas []EnumexactMatchIden
 func NewExactMatchIdentityMapperResponseWithDefaults() *ExactMatchIdentityMapperResponse {
 	this := ExactMatchIdentityMapperResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ExactMatchIdentityMapperResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ExactMatchIdentityMapperResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ExactMatchIdentityMapperResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -313,6 +289,30 @@ func (o *ExactMatchIdentityMapperResponse) SetUrnpingidentityschemasconfiguratio
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ExactMatchIdentityMapperResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ExactMatchIdentityMapperResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ExactMatchIdentityMapperResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ExactMatchIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -323,7 +323,6 @@ func (o ExactMatchIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 
 func (o ExactMatchIdentityMapperResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["matchAttribute"] = o.MatchAttribute
 	if !IsNil(o.MatchBaseDN) {
@@ -342,6 +341,7 @@ func (o ExactMatchIdentityMapperResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

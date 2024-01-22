@@ -19,9 +19,7 @@ var _ MappedNullable = &AddFileBasedTrustManagerProviderRequest{}
 
 // AddFileBasedTrustManagerProviderRequest struct for AddFileBasedTrustManagerProviderRequest
 type AddFileBasedTrustManagerProviderRequest struct {
-	// Name of the new Trust Manager Provider
-	ProviderName string                                       `json:"providerName"`
-	Schemas      []EnumfileBasedTrustManagerProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumfileBasedTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root.
 	TrustStoreFile string `json:"trustStoreFile"`
 	// Specifies the format for the data in the trust store file.
@@ -36,18 +34,20 @@ type AddFileBasedTrustManagerProviderRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
 	IncludeJVMDefaultIssuers *bool `json:"includeJVMDefaultIssuers,omitempty"`
+	// Name of the new Trust Manager Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddFileBasedTrustManagerProviderRequest instantiates a new AddFileBasedTrustManagerProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFileBasedTrustManagerProviderRequest(providerName string, schemas []EnumfileBasedTrustManagerProviderSchemaUrn, trustStoreFile string, enabled bool) *AddFileBasedTrustManagerProviderRequest {
+func NewAddFileBasedTrustManagerProviderRequest(schemas []EnumfileBasedTrustManagerProviderSchemaUrn, trustStoreFile string, enabled bool, providerName string) *AddFileBasedTrustManagerProviderRequest {
 	this := AddFileBasedTrustManagerProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.TrustStoreFile = trustStoreFile
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewAddFileBasedTrustManagerProviderRequest(providerName string, schemas []E
 func NewAddFileBasedTrustManagerProviderRequestWithDefaults() *AddFileBasedTrustManagerProviderRequest {
 	this := AddFileBasedTrustManagerProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddFileBasedTrustManagerProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddFileBasedTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddFileBasedTrustManagerProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -315,6 +291,30 @@ func (o *AddFileBasedTrustManagerProviderRequest) SetIncludeJVMDefaultIssuers(v 
 	o.IncludeJVMDefaultIssuers = &v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddFileBasedTrustManagerProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddFileBasedTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddFileBasedTrustManagerProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddFileBasedTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -325,7 +325,6 @@ func (o AddFileBasedTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddFileBasedTrustManagerProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["trustStoreFile"] = o.TrustStoreFile
 	if !IsNil(o.TrustStoreType) {
@@ -344,6 +343,7 @@ func (o AddFileBasedTrustManagerProviderRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.IncludeJVMDefaultIssuers) {
 		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
 	}
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

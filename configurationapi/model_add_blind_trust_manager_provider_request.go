@@ -19,24 +19,24 @@ var _ MappedNullable = &AddBlindTrustManagerProviderRequest{}
 
 // AddBlindTrustManagerProviderRequest struct for AddBlindTrustManagerProviderRequest
 type AddBlindTrustManagerProviderRequest struct {
-	// Name of the new Trust Manager Provider
-	ProviderName string                                   `json:"providerName"`
-	Schemas      []EnumblindTrustManagerProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumblindTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Indicate whether the Trust Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
 	IncludeJVMDefaultIssuers *bool `json:"includeJVMDefaultIssuers,omitempty"`
+	// Name of the new Trust Manager Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddBlindTrustManagerProviderRequest instantiates a new AddBlindTrustManagerProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddBlindTrustManagerProviderRequest(providerName string, schemas []EnumblindTrustManagerProviderSchemaUrn, enabled bool) *AddBlindTrustManagerProviderRequest {
+func NewAddBlindTrustManagerProviderRequest(schemas []EnumblindTrustManagerProviderSchemaUrn, enabled bool, providerName string) *AddBlindTrustManagerProviderRequest {
 	this := AddBlindTrustManagerProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewAddBlindTrustManagerProviderRequest(providerName string, schemas []Enumb
 func NewAddBlindTrustManagerProviderRequestWithDefaults() *AddBlindTrustManagerProviderRequest {
 	this := AddBlindTrustManagerProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddBlindTrustManagerProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddBlindTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddBlindTrustManagerProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -152,6 +128,30 @@ func (o *AddBlindTrustManagerProviderRequest) SetIncludeJVMDefaultIssuers(v bool
 	o.IncludeJVMDefaultIssuers = &v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddBlindTrustManagerProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddBlindTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddBlindTrustManagerProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddBlindTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -162,12 +162,12 @@ func (o AddBlindTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddBlindTrustManagerProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["enabled"] = o.Enabled
 	if !IsNil(o.IncludeJVMDefaultIssuers) {
 		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
 	}
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

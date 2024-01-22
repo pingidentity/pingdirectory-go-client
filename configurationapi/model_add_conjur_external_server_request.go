@@ -19,15 +19,17 @@ var _ MappedNullable = &AddConjurExternalServerRequest{}
 
 // AddConjurExternalServerRequest struct for AddConjurExternalServerRequest
 type AddConjurExternalServerRequest struct {
-	// Name of the new External Server
-	ServerName string                              `json:"serverName"`
-	Schemas    []EnumconjurExternalServerSchemaUrn `json:"schemas"`
+	Schemas []EnumconjurExternalServerSchemaUrn `json:"schemas"`
 	// The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://conjur.example.com:8443/\".
 	ConjurServerBaseURI []string `json:"conjurServerBaseURI"`
 	// The mechanism used to authenticate to the Conjur server.
 	ConjurAuthenticationMethod string `json:"conjurAuthenticationMethod"`
 	// The name of the account with which the desired secrets are associated.
 	ConjurAccountName string `json:"conjurAccountName"`
+	// The maximum length of time to wait to obtain an HTTP connection.
+	HttpConnectTimeout *string `json:"httpConnectTimeout,omitempty"`
+	// The maximum length of time to wait for a response to an HTTP request.
+	HttpResponseTimeout *string `json:"httpResponseTimeout,omitempty"`
 	// The path to a file containing the information needed to trust the certificate presented by the Conjur servers.
 	TrustStoreFile *string `json:"trustStoreFile,omitempty"`
 	// The PIN needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
@@ -36,19 +38,21 @@ type AddConjurExternalServerRequest struct {
 	TrustStoreType *string `json:"trustStoreType,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	// Name of the new External Server
+	ServerName string `json:"serverName"`
 }
 
 // NewAddConjurExternalServerRequest instantiates a new AddConjurExternalServerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConjurExternalServerRequest(serverName string, schemas []EnumconjurExternalServerSchemaUrn, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string) *AddConjurExternalServerRequest {
+func NewAddConjurExternalServerRequest(schemas []EnumconjurExternalServerSchemaUrn, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, serverName string) *AddConjurExternalServerRequest {
 	this := AddConjurExternalServerRequest{}
-	this.ServerName = serverName
 	this.Schemas = schemas
 	this.ConjurServerBaseURI = conjurServerBaseURI
 	this.ConjurAuthenticationMethod = conjurAuthenticationMethod
 	this.ConjurAccountName = conjurAccountName
+	this.ServerName = serverName
 	return &this
 }
 
@@ -58,30 +62,6 @@ func NewAddConjurExternalServerRequest(serverName string, schemas []EnumconjurEx
 func NewAddConjurExternalServerRequestWithDefaults() *AddConjurExternalServerRequest {
 	this := AddConjurExternalServerRequest{}
 	return &this
-}
-
-// GetServerName returns the ServerName field value
-func (o *AddConjurExternalServerRequest) GetServerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerName
-}
-
-// GetServerNameOk returns a tuple with the ServerName field value
-// and a boolean to check if the value has been set.
-func (o *AddConjurExternalServerRequest) GetServerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerName, true
-}
-
-// SetServerName sets field value
-func (o *AddConjurExternalServerRequest) SetServerName(v string) {
-	o.ServerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -178,6 +158,70 @@ func (o *AddConjurExternalServerRequest) GetConjurAccountNameOk() (*string, bool
 // SetConjurAccountName sets field value
 func (o *AddConjurExternalServerRequest) SetConjurAccountName(v string) {
 	o.ConjurAccountName = v
+}
+
+// GetHttpConnectTimeout returns the HttpConnectTimeout field value if set, zero value otherwise.
+func (o *AddConjurExternalServerRequest) GetHttpConnectTimeout() string {
+	if o == nil || IsNil(o.HttpConnectTimeout) {
+		var ret string
+		return ret
+	}
+	return *o.HttpConnectTimeout
+}
+
+// GetHttpConnectTimeoutOk returns a tuple with the HttpConnectTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddConjurExternalServerRequest) GetHttpConnectTimeoutOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpConnectTimeout) {
+		return nil, false
+	}
+	return o.HttpConnectTimeout, true
+}
+
+// HasHttpConnectTimeout returns a boolean if a field has been set.
+func (o *AddConjurExternalServerRequest) HasHttpConnectTimeout() bool {
+	if o != nil && !IsNil(o.HttpConnectTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpConnectTimeout gets a reference to the given string and assigns it to the HttpConnectTimeout field.
+func (o *AddConjurExternalServerRequest) SetHttpConnectTimeout(v string) {
+	o.HttpConnectTimeout = &v
+}
+
+// GetHttpResponseTimeout returns the HttpResponseTimeout field value if set, zero value otherwise.
+func (o *AddConjurExternalServerRequest) GetHttpResponseTimeout() string {
+	if o == nil || IsNil(o.HttpResponseTimeout) {
+		var ret string
+		return ret
+	}
+	return *o.HttpResponseTimeout
+}
+
+// GetHttpResponseTimeoutOk returns a tuple with the HttpResponseTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddConjurExternalServerRequest) GetHttpResponseTimeoutOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpResponseTimeout) {
+		return nil, false
+	}
+	return o.HttpResponseTimeout, true
+}
+
+// HasHttpResponseTimeout returns a boolean if a field has been set.
+func (o *AddConjurExternalServerRequest) HasHttpResponseTimeout() bool {
+	if o != nil && !IsNil(o.HttpResponseTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpResponseTimeout gets a reference to the given string and assigns it to the HttpResponseTimeout field.
+func (o *AddConjurExternalServerRequest) SetHttpResponseTimeout(v string) {
+	o.HttpResponseTimeout = &v
 }
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
@@ -308,6 +352,30 @@ func (o *AddConjurExternalServerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetServerName returns the ServerName field value
+func (o *AddConjurExternalServerRequest) GetServerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ServerName
+}
+
+// GetServerNameOk returns a tuple with the ServerName field value
+// and a boolean to check if the value has been set.
+func (o *AddConjurExternalServerRequest) GetServerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ServerName, true
+}
+
+// SetServerName sets field value
+func (o *AddConjurExternalServerRequest) SetServerName(v string) {
+	o.ServerName = v
+}
+
 func (o AddConjurExternalServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -318,11 +386,16 @@ func (o AddConjurExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddConjurExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["serverName"] = o.ServerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["conjurServerBaseURI"] = o.ConjurServerBaseURI
 	toSerialize["conjurAuthenticationMethod"] = o.ConjurAuthenticationMethod
 	toSerialize["conjurAccountName"] = o.ConjurAccountName
+	if !IsNil(o.HttpConnectTimeout) {
+		toSerialize["httpConnectTimeout"] = o.HttpConnectTimeout
+	}
+	if !IsNil(o.HttpResponseTimeout) {
+		toSerialize["httpResponseTimeout"] = o.HttpResponseTimeout
+	}
 	if !IsNil(o.TrustStoreFile) {
 		toSerialize["trustStoreFile"] = o.TrustStoreFile
 	}
@@ -335,6 +408,7 @@ func (o AddConjurExternalServerRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["serverName"] = o.ServerName
 	return toSerialize, nil
 }
 

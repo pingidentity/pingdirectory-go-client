@@ -19,27 +19,27 @@ var _ MappedNullable = &AddObscuredValuePassphraseProviderRequest{}
 
 // AddObscuredValuePassphraseProviderRequest struct for AddObscuredValuePassphraseProviderRequest
 type AddObscuredValuePassphraseProviderRequest struct {
-	// Name of the new Passphrase Provider
-	ProviderName string                                         `json:"providerName"`
-	Schemas      []EnumobscuredValuePassphraseProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumobscuredValuePassphraseProviderSchemaUrn `json:"schemas"`
 	// The value to be stored in an obscured form.
 	ObscuredValue string `json:"obscuredValue"`
 	// A description for this Passphrase Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Passphrase Provider is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Passphrase Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddObscuredValuePassphraseProviderRequest instantiates a new AddObscuredValuePassphraseProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddObscuredValuePassphraseProviderRequest(providerName string, schemas []EnumobscuredValuePassphraseProviderSchemaUrn, obscuredValue string, enabled bool) *AddObscuredValuePassphraseProviderRequest {
+func NewAddObscuredValuePassphraseProviderRequest(schemas []EnumobscuredValuePassphraseProviderSchemaUrn, obscuredValue string, enabled bool, providerName string) *AddObscuredValuePassphraseProviderRequest {
 	this := AddObscuredValuePassphraseProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.ObscuredValue = obscuredValue
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -49,30 +49,6 @@ func NewAddObscuredValuePassphraseProviderRequest(providerName string, schemas [
 func NewAddObscuredValuePassphraseProviderRequestWithDefaults() *AddObscuredValuePassphraseProviderRequest {
 	this := AddObscuredValuePassphraseProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddObscuredValuePassphraseProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddObscuredValuePassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddObscuredValuePassphraseProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -179,6 +155,30 @@ func (o *AddObscuredValuePassphraseProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddObscuredValuePassphraseProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddObscuredValuePassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddObscuredValuePassphraseProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddObscuredValuePassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -189,13 +189,13 @@ func (o AddObscuredValuePassphraseProviderRequest) MarshalJSON() ([]byte, error)
 
 func (o AddObscuredValuePassphraseProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["obscuredValue"] = o.ObscuredValue
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

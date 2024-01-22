@@ -1,11 +1,11 @@
-# \RootDnApi
+# \RootDnAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetRootDn**](RootDnApi.md#GetRootDn) | **Get** /root-dn | Returns a single Root DN
-[**UpdateRootDn**](RootDnApi.md#UpdateRootDn) | **Patch** /root-dn | Update an existing Root DN by name
+[**GetRootDn**](RootDnAPI.md#GetRootDn) | **Get** /root-dn | Returns a single Root DN
+[**UpdateRootDn**](RootDnAPI.md#UpdateRootDn) | **Patch** /root-dn | Update an existing Root DN by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootDnApi.GetRootDn(context.Background()).Execute()
+    resp, r, err := apiClient.RootDnAPI.GetRootDn(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootDnApi.GetRootDn``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootDnAPI.GetRootDn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRootDn`: RootDnResponse
-    fmt.Fprintf(os.Stdout, "Response from `RootDnApi.GetRootDn`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RootDnAPI.GetRootDn`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootDnApi.UpdateRootDn(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.RootDnAPI.UpdateRootDn(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootDnApi.UpdateRootDn``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootDnAPI.UpdateRootDn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRootDn`: RootDnResponse
-    fmt.Fprintf(os.Stdout, "Response from `RootDnApi.UpdateRootDn`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RootDnAPI.UpdateRootDn`: %v\n", resp)
 }
 ```
 

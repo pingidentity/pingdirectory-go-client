@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// MonitoringEndpointApiService MonitoringEndpointApi service
-type MonitoringEndpointApiService service
+// MonitoringEndpointAPIService MonitoringEndpointAPI service
+type MonitoringEndpointAPIService service
 
 type ApiAddMonitoringEndpointRequest struct {
 	ctx                                context.Context
-	ApiService                         *MonitoringEndpointApiService
+	ApiService                         *MonitoringEndpointAPIService
 	addStatsdMonitoringEndpointRequest *AddStatsdMonitoringEndpointRequest
 }
 
@@ -44,7 +44,7 @@ AddMonitoringEndpoint Add a new Monitoring Endpoint to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddMonitoringEndpointRequest
 */
-func (a *MonitoringEndpointApiService) AddMonitoringEndpoint(ctx context.Context) ApiAddMonitoringEndpointRequest {
+func (a *MonitoringEndpointAPIService) AddMonitoringEndpoint(ctx context.Context) ApiAddMonitoringEndpointRequest {
 	return ApiAddMonitoringEndpointRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *MonitoringEndpointApiService) AddMonitoringEndpoint(ctx context.Context
 // Execute executes the request
 //
 //	@return StatsdMonitoringEndpointResponse
-func (a *MonitoringEndpointApiService) AddMonitoringEndpointExecute(r ApiAddMonitoringEndpointRequest) (*StatsdMonitoringEndpointResponse, *http.Response, error) {
+func (a *MonitoringEndpointAPIService) AddMonitoringEndpointExecute(r ApiAddMonitoringEndpointRequest) (*StatsdMonitoringEndpointResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *MonitoringEndpointApiService) AddMonitoringEndpointExecute(r ApiAddMoni
 		localVarReturnValue *StatsdMonitoringEndpointResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointApiService.AddMonitoringEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointAPIService.AddMonitoringEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *MonitoringEndpointApiService) AddMonitoringEndpointExecute(r ApiAddMoni
 
 type ApiDeleteMonitoringEndpointRequest struct {
 	ctx                    context.Context
-	ApiService             *MonitoringEndpointApiService
+	ApiService             *MonitoringEndpointAPIService
 	monitoringEndpointName string
 }
 
@@ -149,7 +149,7 @@ DeleteMonitoringEndpoint Delete a Monitoring Endpoint
 	@param monitoringEndpointName Name of the Monitoring Endpoint
 	@return ApiDeleteMonitoringEndpointRequest
 */
-func (a *MonitoringEndpointApiService) DeleteMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiDeleteMonitoringEndpointRequest {
+func (a *MonitoringEndpointAPIService) DeleteMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiDeleteMonitoringEndpointRequest {
 	return ApiDeleteMonitoringEndpointRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -158,14 +158,14 @@ func (a *MonitoringEndpointApiService) DeleteMonitoringEndpoint(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *MonitoringEndpointApiService) DeleteMonitoringEndpointExecute(r ApiDeleteMonitoringEndpointRequest) (*http.Response, error) {
+func (a *MonitoringEndpointAPIService) DeleteMonitoringEndpointExecute(r ApiDeleteMonitoringEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointApiService.DeleteMonitoringEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointAPIService.DeleteMonitoringEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *MonitoringEndpointApiService) DeleteMonitoringEndpointExecute(r ApiDele
 
 type ApiGetMonitoringEndpointRequest struct {
 	ctx                    context.Context
-	ApiService             *MonitoringEndpointApiService
+	ApiService             *MonitoringEndpointAPIService
 	monitoringEndpointName string
 }
 
@@ -239,7 +239,7 @@ GetMonitoringEndpoint Returns a single Monitoring Endpoint
 	@param monitoringEndpointName Name of the Monitoring Endpoint
 	@return ApiGetMonitoringEndpointRequest
 */
-func (a *MonitoringEndpointApiService) GetMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiGetMonitoringEndpointRequest {
+func (a *MonitoringEndpointAPIService) GetMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiGetMonitoringEndpointRequest {
 	return ApiGetMonitoringEndpointRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -250,7 +250,7 @@ func (a *MonitoringEndpointApiService) GetMonitoringEndpoint(ctx context.Context
 // Execute executes the request
 //
 //	@return StatsdMonitoringEndpointResponse
-func (a *MonitoringEndpointApiService) GetMonitoringEndpointExecute(r ApiGetMonitoringEndpointRequest) (*StatsdMonitoringEndpointResponse, *http.Response, error) {
+func (a *MonitoringEndpointAPIService) GetMonitoringEndpointExecute(r ApiGetMonitoringEndpointRequest) (*StatsdMonitoringEndpointResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *MonitoringEndpointApiService) GetMonitoringEndpointExecute(r ApiGetMoni
 		localVarReturnValue *StatsdMonitoringEndpointResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointApiService.GetMonitoringEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointAPIService.GetMonitoringEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *MonitoringEndpointApiService) GetMonitoringEndpointExecute(r ApiGetMoni
 
 type ApiListMonitoringEndpointsRequest struct {
 	ctx        context.Context
-	ApiService *MonitoringEndpointApiService
+	ApiService *MonitoringEndpointAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListMonitoringEndpoints Returns a list of all Monitoring Endpoint objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListMonitoringEndpointsRequest
 */
-func (a *MonitoringEndpointApiService) ListMonitoringEndpoints(ctx context.Context) ApiListMonitoringEndpointsRequest {
+func (a *MonitoringEndpointAPIService) ListMonitoringEndpoints(ctx context.Context) ApiListMonitoringEndpointsRequest {
 	return ApiListMonitoringEndpointsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *MonitoringEndpointApiService) ListMonitoringEndpoints(ctx context.Conte
 // Execute executes the request
 //
 //	@return MonitoringEndpointListResponse
-func (a *MonitoringEndpointApiService) ListMonitoringEndpointsExecute(r ApiListMonitoringEndpointsRequest) (*MonitoringEndpointListResponse, *http.Response, error) {
+func (a *MonitoringEndpointAPIService) ListMonitoringEndpointsExecute(r ApiListMonitoringEndpointsRequest) (*MonitoringEndpointListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *MonitoringEndpointApiService) ListMonitoringEndpointsExecute(r ApiListM
 		localVarReturnValue *MonitoringEndpointListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointApiService.ListMonitoringEndpoints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointAPIService.ListMonitoringEndpoints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *MonitoringEndpointApiService) ListMonitoringEndpointsExecute(r ApiListM
 
 type ApiUpdateMonitoringEndpointRequest struct {
 	ctx                    context.Context
-	ApiService             *MonitoringEndpointApiService
+	ApiService             *MonitoringEndpointAPIService
 	monitoringEndpointName string
 	updateRequest          *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateMonitoringEndpoint Update an existing Monitoring Endpoint by name
 	@param monitoringEndpointName Name of the Monitoring Endpoint
 	@return ApiUpdateMonitoringEndpointRequest
 */
-func (a *MonitoringEndpointApiService) UpdateMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiUpdateMonitoringEndpointRequest {
+func (a *MonitoringEndpointAPIService) UpdateMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiUpdateMonitoringEndpointRequest {
 	return ApiUpdateMonitoringEndpointRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -467,7 +467,7 @@ func (a *MonitoringEndpointApiService) UpdateMonitoringEndpoint(ctx context.Cont
 // Execute executes the request
 //
 //	@return StatsdMonitoringEndpointResponse
-func (a *MonitoringEndpointApiService) UpdateMonitoringEndpointExecute(r ApiUpdateMonitoringEndpointRequest) (*StatsdMonitoringEndpointResponse, *http.Response, error) {
+func (a *MonitoringEndpointAPIService) UpdateMonitoringEndpointExecute(r ApiUpdateMonitoringEndpointRequest) (*StatsdMonitoringEndpointResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *MonitoringEndpointApiService) UpdateMonitoringEndpointExecute(r ApiUpda
 		localVarReturnValue *StatsdMonitoringEndpointResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointApiService.UpdateMonitoringEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointAPIService.UpdateMonitoringEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

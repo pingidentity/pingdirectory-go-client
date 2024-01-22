@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnummappingScimResourceTypeSchemaUrn**](EnummappingScimResourceTypeSchemaUrn.md) |  | 
-**Id** | **string** | Name of the SCIM Resource Type | 
 **CoreSchema** | **string** | The core schema enforced on core attributes at the top level of a SCIM resource representation exposed by thisMapping SCIM Resource Type. | 
 **RequiredSchemaExtension** | Pointer to **[]string** | Required additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type. | [optional] 
 **OptionalSchemaExtension** | Pointer to **[]string** | Optional additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type. | [optional] 
@@ -22,12 +21,13 @@ Name | Type | Description | Notes
 **CreateDNPattern** | Pointer to **string** | Specifies the template to use for the DN when creating new entries. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the SCIM Resource Type | 
 
 ## Methods
 
 ### NewMappingScimResourceTypeResponse
 
-`func NewMappingScimResourceTypeResponse(schemas []EnummappingScimResourceTypeSchemaUrn, id string, coreSchema string, enabled bool, endpoint string, ) *MappingScimResourceTypeResponse`
+`func NewMappingScimResourceTypeResponse(schemas []EnummappingScimResourceTypeSchemaUrn, coreSchema string, enabled bool, endpoint string, id string, ) *MappingScimResourceTypeResponse`
 
 NewMappingScimResourceTypeResponse instantiates a new MappingScimResourceTypeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -60,26 +60,6 @@ and a boolean to check if the value has been set.
 `func (o *MappingScimResourceTypeResponse) SetSchemas(v []EnummappingScimResourceTypeSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
-
-
-### GetId
-
-`func (o *MappingScimResourceTypeResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *MappingScimResourceTypeResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *MappingScimResourceTypeResponse) SetId(v string)`
-
-SetId sets Id field to given value.
 
 
 ### GetCoreSchema
@@ -466,6 +446,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *MappingScimResourceTypeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *MappingScimResourceTypeResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *MappingScimResourceTypeResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *MappingScimResourceTypeResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

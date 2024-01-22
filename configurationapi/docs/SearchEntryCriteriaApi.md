@@ -1,14 +1,14 @@
-# \SearchEntryCriteriaApi
+# \SearchEntryCriteriaAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddSearchEntryCriteria**](SearchEntryCriteriaApi.md#AddSearchEntryCriteria) | **Post** /search-entry-criteria | Add a new Search Entry Criteria to the config
-[**DeleteSearchEntryCriteria**](SearchEntryCriteriaApi.md#DeleteSearchEntryCriteria) | **Delete** /search-entry-criteria/{search-entry-criteria-name} | Delete a Search Entry Criteria
-[**GetSearchEntryCriteria**](SearchEntryCriteriaApi.md#GetSearchEntryCriteria) | **Get** /search-entry-criteria/{search-entry-criteria-name} | Returns a single Search Entry Criteria
-[**ListSearchEntryCriteria**](SearchEntryCriteriaApi.md#ListSearchEntryCriteria) | **Get** /search-entry-criteria | Returns a list of all Search Entry Criteria objects
-[**UpdateSearchEntryCriteria**](SearchEntryCriteriaApi.md#UpdateSearchEntryCriteria) | **Patch** /search-entry-criteria/{search-entry-criteria-name} | Update an existing Search Entry Criteria by name
+[**AddSearchEntryCriteria**](SearchEntryCriteriaAPI.md#AddSearchEntryCriteria) | **Post** /search-entry-criteria | Add a new Search Entry Criteria to the config
+[**DeleteSearchEntryCriteria**](SearchEntryCriteriaAPI.md#DeleteSearchEntryCriteria) | **Delete** /search-entry-criteria/{search-entry-criteria-name} | Delete a Search Entry Criteria
+[**GetSearchEntryCriteria**](SearchEntryCriteriaAPI.md#GetSearchEntryCriteria) | **Get** /search-entry-criteria/{search-entry-criteria-name} | Returns a single Search Entry Criteria
+[**ListSearchEntryCriteria**](SearchEntryCriteriaAPI.md#ListSearchEntryCriteria) | **Get** /search-entry-criteria | Returns a list of all Search Entry Criteria objects
+[**UpdateSearchEntryCriteria**](SearchEntryCriteriaAPI.md#UpdateSearchEntryCriteria) | **Patch** /search-entry-criteria/{search-entry-criteria-name} | Update an existing Search Entry Criteria by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addSearchEntryCriteriaRequest := openapiclient.add_search_entry_criteria_request{AddAggregateSearchEntryCriteriaRequest: openapiclient.NewAddAggregateSearchEntryCriteriaRequest("CriteriaName_example", []openapiclient.EnumaggregateSearchEntryCriteriaSchemaUrn{openapiclient.Enumaggregate-search-entry-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:search-entry-criteria:aggregate")})} // AddSearchEntryCriteriaRequest | Create a new Search Entry Criteria in the config
+    addSearchEntryCriteriaRequest := openapiclient.add_search_entry_criteria_request{AddAggregateSearchEntryCriteriaRequest: openapiclient.NewAddAggregateSearchEntryCriteriaRequest([]openapiclient.EnumaggregateSearchEntryCriteriaSchemaUrn{openapiclient.Enumaggregate-search-entry-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:search-entry-criteria:aggregate")}, "CriteriaName_example")} // AddSearchEntryCriteriaRequest | Create a new Search Entry Criteria in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchEntryCriteriaApi.AddSearchEntryCriteria(context.Background()).AddSearchEntryCriteriaRequest(addSearchEntryCriteriaRequest).Execute()
+    resp, r, err := apiClient.SearchEntryCriteriaAPI.AddSearchEntryCriteria(context.Background()).AddSearchEntryCriteriaRequest(addSearchEntryCriteriaRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaApi.AddSearchEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaAPI.AddSearchEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddSearchEntryCriteria`: AddSearchEntryCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `SearchEntryCriteriaApi.AddSearchEntryCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SearchEntryCriteriaAPI.AddSearchEntryCriteria`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SearchEntryCriteriaApi.DeleteSearchEntryCriteria(context.Background(), searchEntryCriteriaName).Execute()
+    r, err := apiClient.SearchEntryCriteriaAPI.DeleteSearchEntryCriteria(context.Background(), searchEntryCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaApi.DeleteSearchEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaAPI.DeleteSearchEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchEntryCriteriaApi.GetSearchEntryCriteria(context.Background(), searchEntryCriteriaName).Execute()
+    resp, r, err := apiClient.SearchEntryCriteriaAPI.GetSearchEntryCriteria(context.Background(), searchEntryCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaApi.GetSearchEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaAPI.GetSearchEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSearchEntryCriteria`: AddSearchEntryCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `SearchEntryCriteriaApi.GetSearchEntryCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SearchEntryCriteriaAPI.GetSearchEntryCriteria`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchEntryCriteriaApi.ListSearchEntryCriteria(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.SearchEntryCriteriaAPI.ListSearchEntryCriteria(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaApi.ListSearchEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaAPI.ListSearchEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListSearchEntryCriteria`: SearchEntryCriteriaListResponse
-    fmt.Fprintf(os.Stdout, "Response from `SearchEntryCriteriaApi.ListSearchEntryCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SearchEntryCriteriaAPI.ListSearchEntryCriteria`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchEntryCriteriaApi.UpdateSearchEntryCriteria(context.Background(), searchEntryCriteriaName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.SearchEntryCriteriaAPI.UpdateSearchEntryCriteria(context.Background(), searchEntryCriteriaName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaApi.UpdateSearchEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaAPI.UpdateSearchEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSearchEntryCriteria`: AddSearchEntryCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `SearchEntryCriteriaApi.UpdateSearchEntryCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SearchEntryCriteriaAPI.UpdateSearchEntryCriteria`: %v\n", resp)
 }
 ```
 

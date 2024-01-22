@@ -19,8 +19,6 @@ var _ MappedNullable = &ConsentDefinitionLocalizationResponse{}
 
 // ConsentDefinitionLocalizationResponse struct for ConsentDefinitionLocalizationResponse
 type ConsentDefinitionLocalizationResponse struct {
-	// Name of the Consent Definition Localization
-	Id      string                                       `json:"id"`
 	Schemas []EnumconsentDefinitionLocalizationSchemaUrn `json:"schemas,omitempty"`
 	// The locale of this Consent Definition Localization.
 	Locale string `json:"locale"`
@@ -34,19 +32,21 @@ type ConsentDefinitionLocalizationResponse struct {
 	PurposeText                                   string                                             `json:"purposeText"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Consent Definition Localization
+	Id string `json:"id"`
 }
 
 // NewConsentDefinitionLocalizationResponse instantiates a new ConsentDefinitionLocalizationResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConsentDefinitionLocalizationResponse(id string, locale string, version string, dataText string, purposeText string) *ConsentDefinitionLocalizationResponse {
+func NewConsentDefinitionLocalizationResponse(locale string, version string, dataText string, purposeText string, id string) *ConsentDefinitionLocalizationResponse {
 	this := ConsentDefinitionLocalizationResponse{}
-	this.Id = id
 	this.Locale = locale
 	this.Version = version
 	this.DataText = dataText
 	this.PurposeText = purposeText
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewConsentDefinitionLocalizationResponse(id string, locale string, version 
 func NewConsentDefinitionLocalizationResponseWithDefaults() *ConsentDefinitionLocalizationResponse {
 	this := ConsentDefinitionLocalizationResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ConsentDefinitionLocalizationResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ConsentDefinitionLocalizationResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ConsentDefinitionLocalizationResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -306,6 +282,30 @@ func (o *ConsentDefinitionLocalizationResponse) SetUrnpingidentityschemasconfigu
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ConsentDefinitionLocalizationResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ConsentDefinitionLocalizationResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ConsentDefinitionLocalizationResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ConsentDefinitionLocalizationResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -316,7 +316,6 @@ func (o ConsentDefinitionLocalizationResponse) MarshalJSON() ([]byte, error) {
 
 func (o ConsentDefinitionLocalizationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -333,6 +332,7 @@ func (o ConsentDefinitionLocalizationResponse) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

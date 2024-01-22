@@ -19,9 +19,7 @@ var _ MappedNullable = &AddFilterDataSecurityAuditorRequest{}
 
 // AddFilterDataSecurityAuditorRequest struct for AddFilterDataSecurityAuditorRequest
 type AddFilterDataSecurityAuditorRequest struct {
-	// Name of the new Data Security Auditor
-	AuditorName string                                   `json:"auditorName"`
-	Schemas     []EnumfilterDataSecurityAuditorSchemaUrn `json:"schemas"`
+	Schemas []EnumfilterDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
 	// The filter to use to identify entries that should be reported. Multiple filters may be configured, and each reported entry will indicate which of these filter(s) matched that entry.
@@ -33,18 +31,20 @@ type AddFilterDataSecurityAuditorRequest struct {
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
+	// Name of the new Data Security Auditor
+	AuditorName string `json:"auditorName"`
 }
 
 // NewAddFilterDataSecurityAuditorRequest instantiates a new AddFilterDataSecurityAuditorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFilterDataSecurityAuditorRequest(auditorName string, schemas []EnumfilterDataSecurityAuditorSchemaUrn, reportFile string, filter []string) *AddFilterDataSecurityAuditorRequest {
+func NewAddFilterDataSecurityAuditorRequest(schemas []EnumfilterDataSecurityAuditorSchemaUrn, reportFile string, filter []string, auditorName string) *AddFilterDataSecurityAuditorRequest {
 	this := AddFilterDataSecurityAuditorRequest{}
-	this.AuditorName = auditorName
 	this.Schemas = schemas
 	this.ReportFile = reportFile
 	this.Filter = filter
+	this.AuditorName = auditorName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddFilterDataSecurityAuditorRequest(auditorName string, schemas []Enumfi
 func NewAddFilterDataSecurityAuditorRequestWithDefaults() *AddFilterDataSecurityAuditorRequest {
 	this := AddFilterDataSecurityAuditorRequest{}
 	return &this
-}
-
-// GetAuditorName returns the AuditorName field value
-func (o *AddFilterDataSecurityAuditorRequest) GetAuditorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AuditorName
-}
-
-// GetAuditorNameOk returns a tuple with the AuditorName field value
-// and a boolean to check if the value has been set.
-func (o *AddFilterDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AuditorName, true
-}
-
-// SetAuditorName sets field value
-func (o *AddFilterDataSecurityAuditorRequest) SetAuditorName(v string) {
-	o.AuditorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -280,6 +256,30 @@ func (o *AddFilterDataSecurityAuditorRequest) SetAuditSeverity(v EnumdataSecurit
 	o.AuditSeverity = &v
 }
 
+// GetAuditorName returns the AuditorName field value
+func (o *AddFilterDataSecurityAuditorRequest) GetAuditorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AuditorName
+}
+
+// GetAuditorNameOk returns a tuple with the AuditorName field value
+// and a boolean to check if the value has been set.
+func (o *AddFilterDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AuditorName, true
+}
+
+// SetAuditorName sets field value
+func (o *AddFilterDataSecurityAuditorRequest) SetAuditorName(v string) {
+	o.AuditorName = v
+}
+
 func (o AddFilterDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -290,7 +290,6 @@ func (o AddFilterDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddFilterDataSecurityAuditorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["auditorName"] = o.AuditorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["reportFile"] = o.ReportFile
 	toSerialize["filter"] = o.Filter
@@ -306,6 +305,7 @@ func (o AddFilterDataSecurityAuditorRequest) ToMap() (map[string]interface{}, er
 	if !IsNil(o.AuditSeverity) {
 		toSerialize["auditSeverity"] = o.AuditSeverity
 	}
+	toSerialize["auditorName"] = o.AuditorName
 	return toSerialize, nil
 }
 

@@ -1,14 +1,14 @@
-# \LogRetentionPolicyApi
+# \LogRetentionPolicyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLogRetentionPolicy**](LogRetentionPolicyApi.md#AddLogRetentionPolicy) | **Post** /log-retention-policies | Add a new Log Retention Policy to the config
-[**DeleteLogRetentionPolicy**](LogRetentionPolicyApi.md#DeleteLogRetentionPolicy) | **Delete** /log-retention-policies/{log-retention-policy-name} | Delete a Log Retention Policy
-[**GetLogRetentionPolicy**](LogRetentionPolicyApi.md#GetLogRetentionPolicy) | **Get** /log-retention-policies/{log-retention-policy-name} | Returns a single Log Retention Policy
-[**ListLogRetentionPolicies**](LogRetentionPolicyApi.md#ListLogRetentionPolicies) | **Get** /log-retention-policies | Returns a list of all Log Retention Policy objects
-[**UpdateLogRetentionPolicy**](LogRetentionPolicyApi.md#UpdateLogRetentionPolicy) | **Patch** /log-retention-policies/{log-retention-policy-name} | Update an existing Log Retention Policy by name
+[**AddLogRetentionPolicy**](LogRetentionPolicyAPI.md#AddLogRetentionPolicy) | **Post** /log-retention-policies | Add a new Log Retention Policy to the config
+[**DeleteLogRetentionPolicy**](LogRetentionPolicyAPI.md#DeleteLogRetentionPolicy) | **Delete** /log-retention-policies/{log-retention-policy-name} | Delete a Log Retention Policy
+[**GetLogRetentionPolicy**](LogRetentionPolicyAPI.md#GetLogRetentionPolicy) | **Get** /log-retention-policies/{log-retention-policy-name} | Returns a single Log Retention Policy
+[**ListLogRetentionPolicies**](LogRetentionPolicyAPI.md#ListLogRetentionPolicies) | **Get** /log-retention-policies | Returns a list of all Log Retention Policy objects
+[**UpdateLogRetentionPolicy**](LogRetentionPolicyAPI.md#UpdateLogRetentionPolicy) | **Patch** /log-retention-policies/{log-retention-policy-name} | Update an existing Log Retention Policy by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addLogRetentionPolicyRequest := openapiclient.add_log_retention_policy_request{AddFileCountLogRetentionPolicyRequest: openapiclient.NewAddFileCountLogRetentionPolicyRequest("PolicyName_example", []openapiclient.EnumfileCountLogRetentionPolicySchemaUrn{openapiclient.Enumfile-count-log-retention-policySchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-retention-policy:file-count")}, int64(123))} // AddLogRetentionPolicyRequest | Create a new Log Retention Policy in the config
+    addLogRetentionPolicyRequest := openapiclient.add_log_retention_policy_request{AddFileCountLogRetentionPolicyRequest: openapiclient.NewAddFileCountLogRetentionPolicyRequest([]openapiclient.EnumfileCountLogRetentionPolicySchemaUrn{openapiclient.Enumfile-count-log-retention-policySchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-retention-policy:file-count")}, int64(123), "PolicyName_example")} // AddLogRetentionPolicyRequest | Create a new Log Retention Policy in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogRetentionPolicyApi.AddLogRetentionPolicy(context.Background()).AddLogRetentionPolicyRequest(addLogRetentionPolicyRequest).Execute()
+    resp, r, err := apiClient.LogRetentionPolicyAPI.AddLogRetentionPolicy(context.Background()).AddLogRetentionPolicyRequest(addLogRetentionPolicyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyApi.AddLogRetentionPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyAPI.AddLogRetentionPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLogRetentionPolicy`: AddLogRetentionPolicy200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogRetentionPolicyApi.AddLogRetentionPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogRetentionPolicyAPI.AddLogRetentionPolicy`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LogRetentionPolicyApi.DeleteLogRetentionPolicy(context.Background(), logRetentionPolicyName).Execute()
+    r, err := apiClient.LogRetentionPolicyAPI.DeleteLogRetentionPolicy(context.Background(), logRetentionPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyApi.DeleteLogRetentionPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyAPI.DeleteLogRetentionPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogRetentionPolicyApi.GetLogRetentionPolicy(context.Background(), logRetentionPolicyName).Execute()
+    resp, r, err := apiClient.LogRetentionPolicyAPI.GetLogRetentionPolicy(context.Background(), logRetentionPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyApi.GetLogRetentionPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyAPI.GetLogRetentionPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLogRetentionPolicy`: AddLogRetentionPolicy200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogRetentionPolicyApi.GetLogRetentionPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogRetentionPolicyAPI.GetLogRetentionPolicy`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogRetentionPolicyApi.ListLogRetentionPolicies(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.LogRetentionPolicyAPI.ListLogRetentionPolicies(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyApi.ListLogRetentionPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyAPI.ListLogRetentionPolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLogRetentionPolicies`: LogRetentionPolicyListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LogRetentionPolicyApi.ListLogRetentionPolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogRetentionPolicyAPI.ListLogRetentionPolicies`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogRetentionPolicyApi.UpdateLogRetentionPolicy(context.Background(), logRetentionPolicyName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LogRetentionPolicyAPI.UpdateLogRetentionPolicy(context.Background(), logRetentionPolicyName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyApi.UpdateLogRetentionPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyAPI.UpdateLogRetentionPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLogRetentionPolicy`: AddLogRetentionPolicy200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogRetentionPolicyApi.UpdateLogRetentionPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogRetentionPolicyAPI.UpdateLogRetentionPolicy`: %v\n", resp)
 }
 ```
 

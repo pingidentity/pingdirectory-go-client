@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**JsonField** | **string** | The full name of the JSON field to which these constraints apply. | 
 **Schemas** | Pointer to [**[]EnumjsonFieldConstraintsSchemaUrn**](EnumjsonFieldConstraintsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this JSON Field Constraints | [optional] 
+**JsonField** | **string** | Name of the new JSON Field Constraints | 
 **ValueType** | [**EnumjsonFieldConstraintsValueTypeProp**](EnumjsonFieldConstraintsValueTypeProp.md) |  | 
 **IsRequired** | Pointer to **bool** | Indicates whether the target field must be present in JSON objects stored as values of the associated attribute type. | [optional] 
 **IsArray** | Pointer to [**EnumjsonFieldConstraintsIsArrayProp**](EnumjsonFieldConstraintsIsArrayProp.md) |  | [optional] 
@@ -44,26 +44,6 @@ will change when the set of required properties is changed
 NewAddJsonFieldConstraintsRequestWithDefaults instantiates a new AddJsonFieldConstraintsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetJsonField
-
-`func (o *AddJsonFieldConstraintsRequest) GetJsonField() string`
-
-GetJsonField returns the JsonField field if non-nil, zero value otherwise.
-
-### GetJsonFieldOk
-
-`func (o *AddJsonFieldConstraintsRequest) GetJsonFieldOk() (*string, bool)`
-
-GetJsonFieldOk returns a tuple with the JsonField field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetJsonField
-
-`func (o *AddJsonFieldConstraintsRequest) SetJsonField(v string)`
-
-SetJsonField sets JsonField field to given value.
-
 
 ### GetSchemas
 
@@ -114,6 +94,26 @@ SetDescription sets Description field to given value.
 `func (o *AddJsonFieldConstraintsRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetJsonField
+
+`func (o *AddJsonFieldConstraintsRequest) GetJsonField() string`
+
+GetJsonField returns the JsonField field if non-nil, zero value otherwise.
+
+### GetJsonFieldOk
+
+`func (o *AddJsonFieldConstraintsRequest) GetJsonFieldOk() (*string, bool)`
+
+GetJsonFieldOk returns a tuple with the JsonField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJsonField
+
+`func (o *AddJsonFieldConstraintsRequest) SetJsonField(v string)`
+
+SetJsonField sets JsonField field to given value.
+
 
 ### GetValueType
 

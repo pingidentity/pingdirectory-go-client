@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedAccessLogPublisherRequest{}
 
 // AddGroovyScriptedAccessLogPublisherRequest struct for AddGroovyScriptedAccessLogPublisherRequest
 type AddGroovyScriptedAccessLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName string                                          `json:"publisherName"`
-	Schemas       []EnumgroovyScriptedAccessLogPublisherSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedAccessLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Access Log Publisher.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Access Log Publisher. Each configuration property should be given in the form 'name=value'.
@@ -65,18 +63,20 @@ type AddGroovyScriptedAccessLogPublisherRequest struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddGroovyScriptedAccessLogPublisherRequest instantiates a new AddGroovyScriptedAccessLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedAccessLogPublisherRequest(publisherName string, schemas []EnumgroovyScriptedAccessLogPublisherSchemaUrn, scriptClass string, enabled bool) *AddGroovyScriptedAccessLogPublisherRequest {
+func NewAddGroovyScriptedAccessLogPublisherRequest(schemas []EnumgroovyScriptedAccessLogPublisherSchemaUrn, scriptClass string, enabled bool, publisherName string) *AddGroovyScriptedAccessLogPublisherRequest {
 	this := AddGroovyScriptedAccessLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -86,30 +86,6 @@ func NewAddGroovyScriptedAccessLogPublisherRequest(publisherName string, schemas
 func NewAddGroovyScriptedAccessLogPublisherRequestWithDefaults() *AddGroovyScriptedAccessLogPublisherRequest {
 	this := AddGroovyScriptedAccessLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddGroovyScriptedAccessLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddGroovyScriptedAccessLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -824,6 +800,30 @@ func (o *AddGroovyScriptedAccessLogPublisherRequest) SetLoggingErrorBehavior(v E
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddGroovyScriptedAccessLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddGroovyScriptedAccessLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddGroovyScriptedAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -834,7 +834,6 @@ func (o AddGroovyScriptedAccessLogPublisherRequest) MarshalJSON() ([]byte, error
 
 func (o AddGroovyScriptedAccessLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -898,6 +897,7 @@ func (o AddGroovyScriptedAccessLogPublisherRequest) ToMap() (map[string]interfac
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

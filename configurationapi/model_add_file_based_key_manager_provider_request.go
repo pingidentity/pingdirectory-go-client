@@ -19,9 +19,7 @@ var _ MappedNullable = &AddFileBasedKeyManagerProviderRequest{}
 
 // AddFileBasedKeyManagerProviderRequest struct for AddFileBasedKeyManagerProviderRequest
 type AddFileBasedKeyManagerProviderRequest struct {
-	// Name of the new Key Manager Provider
-	ProviderName string                                     `json:"providerName"`
-	Schemas      []EnumfileBasedKeyManagerProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumfileBasedKeyManagerProviderSchemaUrn `json:"schemas"`
 	// Specifies the path to the file that contains the private key information. This may be an absolute path, or a path that is relative to the Directory Server instance root.
 	KeyStoreFile string `json:"keyStoreFile"`
 	// Specifies the format for the data in the key store file.
@@ -42,18 +40,20 @@ type AddFileBasedKeyManagerProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Key Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Key Manager Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddFileBasedKeyManagerProviderRequest instantiates a new AddFileBasedKeyManagerProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFileBasedKeyManagerProviderRequest(providerName string, schemas []EnumfileBasedKeyManagerProviderSchemaUrn, keyStoreFile string, enabled bool) *AddFileBasedKeyManagerProviderRequest {
+func NewAddFileBasedKeyManagerProviderRequest(schemas []EnumfileBasedKeyManagerProviderSchemaUrn, keyStoreFile string, enabled bool, providerName string) *AddFileBasedKeyManagerProviderRequest {
 	this := AddFileBasedKeyManagerProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.KeyStoreFile = keyStoreFile
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewAddFileBasedKeyManagerProviderRequest(providerName string, schemas []Enu
 func NewAddFileBasedKeyManagerProviderRequestWithDefaults() *AddFileBasedKeyManagerProviderRequest {
 	this := AddFileBasedKeyManagerProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddFileBasedKeyManagerProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddFileBasedKeyManagerProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddFileBasedKeyManagerProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -417,6 +393,30 @@ func (o *AddFileBasedKeyManagerProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddFileBasedKeyManagerProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddFileBasedKeyManagerProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddFileBasedKeyManagerProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddFileBasedKeyManagerProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -427,7 +427,6 @@ func (o AddFileBasedKeyManagerProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddFileBasedKeyManagerProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["keyStoreFile"] = o.KeyStoreFile
 	if !IsNil(o.KeyStoreType) {
@@ -455,6 +454,7 @@ func (o AddFileBasedKeyManagerProviderRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

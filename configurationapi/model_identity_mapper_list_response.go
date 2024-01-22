@@ -19,9 +19,9 @@ var _ MappedNullable = &IdentityMapperListResponse{}
 
 // IdentityMapperListResponse struct for IdentityMapperListResponse
 type IdentityMapperListResponse struct {
-	Schemas      []string                                   `json:"schemas,omitempty"`
-	TotalResults *float64                                   `json:"totalResults,omitempty"`
-	Resources    []IdentityMapperListResponseResourcesInner `json:"Resources,omitempty"`
+	Schemas      []string                       `json:"schemas,omitempty"`
+	TotalResults *float64                       `json:"totalResults,omitempty"`
+	Resources    []AddIdentityMapper200Response `json:"Resources,omitempty"`
 }
 
 // NewIdentityMapperListResponse instantiates a new IdentityMapperListResponse object
@@ -106,9 +106,9 @@ func (o *IdentityMapperListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *IdentityMapperListResponse) GetResources() []IdentityMapperListResponseResourcesInner {
+func (o *IdentityMapperListResponse) GetResources() []AddIdentityMapper200Response {
 	if o == nil || IsNil(o.Resources) {
-		var ret []IdentityMapperListResponseResourcesInner
+		var ret []AddIdentityMapper200Response
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *IdentityMapperListResponse) GetResources() []IdentityMapperListResponse
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IdentityMapperListResponse) GetResourcesOk() ([]IdentityMapperListResponseResourcesInner, bool) {
+func (o *IdentityMapperListResponse) GetResourcesOk() ([]AddIdentityMapper200Response, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *IdentityMapperListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []IdentityMapperListResponseResourcesInner and assigns it to the Resources field.
-func (o *IdentityMapperListResponse) SetResources(v []IdentityMapperListResponseResourcesInner) {
+// SetResources gets a reference to the given []AddIdentityMapper200Response and assigns it to the Resources field.
+func (o *IdentityMapperListResponse) SetResources(v []AddIdentityMapper200Response) {
 	o.Resources = v
 }
 

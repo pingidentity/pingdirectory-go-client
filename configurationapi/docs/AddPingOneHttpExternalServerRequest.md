@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumpingOneHttpExternalServerSchemaUrn**](EnumpingOneHttpExternalServerSchemaUrn.md) |  | 
 **HostnameVerificationMethod** | Pointer to [**EnumexternalServerPingOneHttpHostnameVerificationMethodProp**](EnumexternalServerPingOneHttpHostnameVerificationMethodProp.md) |  | [optional] 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use for HTTPS connection-level security. | [optional] 
 **ConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established before aborting a request to PingOne. | [optional] 
 **ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
+**ServerName** | **string** | Name of the new External Server | 
 
 ## Methods
 
 ### NewAddPingOneHttpExternalServerRequest
 
-`func NewAddPingOneHttpExternalServerRequest(serverName string, schemas []EnumpingOneHttpExternalServerSchemaUrn, ) *AddPingOneHttpExternalServerRequest`
+`func NewAddPingOneHttpExternalServerRequest(schemas []EnumpingOneHttpExternalServerSchemaUrn, serverName string, ) *AddPingOneHttpExternalServerRequest`
 
 NewAddPingOneHttpExternalServerRequest instantiates a new AddPingOneHttpExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddPingOneHttpExternalServerRequestWithDefaults instantiates a new AddPingOneHttpExternalServerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetServerName
-
-`func (o *AddPingOneHttpExternalServerRequest) GetServerName() string`
-
-GetServerName returns the ServerName field if non-nil, zero value otherwise.
-
-### GetServerNameOk
-
-`func (o *AddPingOneHttpExternalServerRequest) GetServerNameOk() (*string, bool)`
-
-GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerName
-
-`func (o *AddPingOneHttpExternalServerRequest) SetServerName(v string)`
-
-SetServerName sets ServerName field to given value.
-
 
 ### GetSchemas
 
@@ -195,6 +175,26 @@ SetDescription sets Description field to given value.
 `func (o *AddPingOneHttpExternalServerRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetServerName
+
+`func (o *AddPingOneHttpExternalServerRequest) GetServerName() string`
+
+GetServerName returns the ServerName field if non-nil, zero value otherwise.
+
+### GetServerNameOk
+
+`func (o *AddPingOneHttpExternalServerRequest) GetServerNameOk() (*string, bool)`
+
+GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerName
+
+`func (o *AddPingOneHttpExternalServerRequest) SetServerName(v string)`
+
+SetServerName sets ServerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

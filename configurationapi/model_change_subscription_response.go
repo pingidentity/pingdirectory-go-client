@@ -19,8 +19,6 @@ var _ MappedNullable = &ChangeSubscriptionResponse{}
 
 // ChangeSubscriptionResponse struct for ChangeSubscriptionResponse
 type ChangeSubscriptionResponse struct {
-	// Name of the Change Subscription
-	Id      string                            `json:"id"`
 	Schemas []EnumchangeSubscriptionSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Change Subscription
 	Description *string `json:"description,omitempty"`
@@ -34,6 +32,8 @@ type ChangeSubscriptionResponse struct {
 	ExpirationTime                                *string                                            `json:"expirationTime,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Change Subscription
+	Id string `json:"id"`
 }
 
 // NewChangeSubscriptionResponse instantiates a new ChangeSubscriptionResponse object
@@ -52,30 +52,6 @@ func NewChangeSubscriptionResponse(id string) *ChangeSubscriptionResponse {
 func NewChangeSubscriptionResponseWithDefaults() *ChangeSubscriptionResponse {
 	this := ChangeSubscriptionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ChangeSubscriptionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ChangeSubscriptionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ChangeSubscriptionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -334,6 +310,30 @@ func (o *ChangeSubscriptionResponse) SetUrnpingidentityschemasconfigurationmessa
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ChangeSubscriptionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ChangeSubscriptionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ChangeSubscriptionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ChangeSubscriptionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -344,7 +344,6 @@ func (o ChangeSubscriptionResponse) MarshalJSON() ([]byte, error) {
 
 func (o ChangeSubscriptionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -369,6 +368,7 @@ func (o ChangeSubscriptionResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

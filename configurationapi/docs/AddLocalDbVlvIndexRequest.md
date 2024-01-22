@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IndexName** | **string** | Name of the new Local DB VLV Index | 
 **Schemas** | Pointer to [**[]EnumlocalDbVlvIndexSchemaUrn**](EnumlocalDbVlvIndexSchemaUrn.md) |  | [optional] 
 **BaseDN** | **string** | Specifies the base DN used in the search query that is being indexed. | 
 **Scope** | [**EnumlocalDbVlvIndexScopeProp**](EnumlocalDbVlvIndexScopeProp.md) |  | 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **Name** | **string** | Specifies a unique name for this VLV index. | 
 **MaxBlockSize** | Pointer to **int64** | Specifies the number of entry IDs to store in a single sorted set before it must be split. | [optional] 
 **CacheMode** | Pointer to [**EnumlocalDbVlvIndexCacheModeProp**](EnumlocalDbVlvIndexCacheModeProp.md) |  | [optional] 
+**IndexName** | **string** | Name of the new Local DB VLV Index | 
 
 ## Methods
 
 ### NewAddLocalDbVlvIndexRequest
 
-`func NewAddLocalDbVlvIndexRequest(indexName string, baseDN string, scope EnumlocalDbVlvIndexScopeProp, filter string, sortOrder string, name string, ) *AddLocalDbVlvIndexRequest`
+`func NewAddLocalDbVlvIndexRequest(baseDN string, scope EnumlocalDbVlvIndexScopeProp, filter string, sortOrder string, name string, indexName string, ) *AddLocalDbVlvIndexRequest`
 
 NewAddLocalDbVlvIndexRequest instantiates a new AddLocalDbVlvIndexRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddLocalDbVlvIndexRequestWithDefaults instantiates a new AddLocalDbVlvIndexRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetIndexName
-
-`func (o *AddLocalDbVlvIndexRequest) GetIndexName() string`
-
-GetIndexName returns the IndexName field if non-nil, zero value otherwise.
-
-### GetIndexNameOk
-
-`func (o *AddLocalDbVlvIndexRequest) GetIndexNameOk() (*string, bool)`
-
-GetIndexNameOk returns a tuple with the IndexName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIndexName
-
-`func (o *AddLocalDbVlvIndexRequest) SetIndexName(v string)`
-
-SetIndexName sets IndexName field to given value.
-
 
 ### GetSchemas
 
@@ -227,6 +207,26 @@ SetCacheMode sets CacheMode field to given value.
 `func (o *AddLocalDbVlvIndexRequest) HasCacheMode() bool`
 
 HasCacheMode returns a boolean if a field has been set.
+
+### GetIndexName
+
+`func (o *AddLocalDbVlvIndexRequest) GetIndexName() string`
+
+GetIndexName returns the IndexName field if non-nil, zero value otherwise.
+
+### GetIndexNameOk
+
+`func (o *AddLocalDbVlvIndexRequest) GetIndexNameOk() (*string, bool)`
+
+GetIndexNameOk returns a tuple with the IndexName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexName
+
+`func (o *AddLocalDbVlvIndexRequest) SetIndexName(v string)`
+
+SetIndexName sets IndexName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

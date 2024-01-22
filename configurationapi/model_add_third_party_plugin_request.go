@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyPluginRequest{}
 
 // AddThirdPartyPluginRequest struct for AddThirdPartyPluginRequest
 type AddThirdPartyPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                          `json:"pluginName"`
-	Schemas    []EnumthirdPartyPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyPluginSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Plugin.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Plugin. Each configuration property should be given in the form 'name=value'.
@@ -35,19 +33,21 @@ type AddThirdPartyPluginRequest struct {
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddThirdPartyPluginRequest instantiates a new AddThirdPartyPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyPluginRequest(pluginName string, schemas []EnumthirdPartyPluginSchemaUrn, extensionClass string, enabled bool, pluginType []EnumpluginPluginTypeProp) *AddThirdPartyPluginRequest {
+func NewAddThirdPartyPluginRequest(schemas []EnumthirdPartyPluginSchemaUrn, extensionClass string, enabled bool, pluginType []EnumpluginPluginTypeProp, pluginName string) *AddThirdPartyPluginRequest {
 	this := AddThirdPartyPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
 	this.PluginType = pluginType
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewAddThirdPartyPluginRequest(pluginName string, schemas []EnumthirdPartyPl
 func NewAddThirdPartyPluginRequestWithDefaults() *AddThirdPartyPluginRequest {
 	this := AddThirdPartyPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddThirdPartyPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddThirdPartyPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -307,6 +283,30 @@ func (o *AddThirdPartyPluginRequest) SetInvokeForInternalOperations(v bool) {
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddThirdPartyPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddThirdPartyPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddThirdPartyPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -317,7 +317,6 @@ func (o AddThirdPartyPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -334,6 +333,7 @@ func (o AddThirdPartyPluginRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

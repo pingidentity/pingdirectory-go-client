@@ -1,14 +1,14 @@
-# \CipherStreamProviderApi
+# \CipherStreamProviderAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddCipherStreamProvider**](CipherStreamProviderApi.md#AddCipherStreamProvider) | **Post** /cipher-stream-providers | Add a new Cipher Stream Provider to the config
-[**DeleteCipherStreamProvider**](CipherStreamProviderApi.md#DeleteCipherStreamProvider) | **Delete** /cipher-stream-providers/{cipher-stream-provider-name} | Delete a Cipher Stream Provider
-[**GetCipherStreamProvider**](CipherStreamProviderApi.md#GetCipherStreamProvider) | **Get** /cipher-stream-providers/{cipher-stream-provider-name} | Returns a single Cipher Stream Provider
-[**ListCipherStreamProviders**](CipherStreamProviderApi.md#ListCipherStreamProviders) | **Get** /cipher-stream-providers | Returns a list of all Cipher Stream Provider objects
-[**UpdateCipherStreamProvider**](CipherStreamProviderApi.md#UpdateCipherStreamProvider) | **Patch** /cipher-stream-providers/{cipher-stream-provider-name} | Update an existing Cipher Stream Provider by name
+[**AddCipherStreamProvider**](CipherStreamProviderAPI.md#AddCipherStreamProvider) | **Post** /cipher-stream-providers | Add a new Cipher Stream Provider to the config
+[**DeleteCipherStreamProvider**](CipherStreamProviderAPI.md#DeleteCipherStreamProvider) | **Delete** /cipher-stream-providers/{cipher-stream-provider-name} | Delete a Cipher Stream Provider
+[**GetCipherStreamProvider**](CipherStreamProviderAPI.md#GetCipherStreamProvider) | **Get** /cipher-stream-providers/{cipher-stream-provider-name} | Returns a single Cipher Stream Provider
+[**ListCipherStreamProviders**](CipherStreamProviderAPI.md#ListCipherStreamProviders) | **Get** /cipher-stream-providers | Returns a list of all Cipher Stream Provider objects
+[**UpdateCipherStreamProvider**](CipherStreamProviderAPI.md#UpdateCipherStreamProvider) | **Patch** /cipher-stream-providers/{cipher-stream-provider-name} | Update an existing Cipher Stream Provider by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addCipherStreamProviderRequest := openapiclient.add_cipher_stream_provider_request{AddAmazonKeyManagementServiceCipherStreamProviderRequest: openapiclient.NewAddAmazonKeyManagementServiceCipherStreamProviderRequest("ProviderName_example", []openapiclient.EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn{openapiclient.Enumamazon-key-management-service-cipher-stream-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:amazon-key-management-service")}, "KmsEncryptionKeyArn_example", false)} // AddCipherStreamProviderRequest | Create a new Cipher Stream Provider in the config
+    addCipherStreamProviderRequest := openapiclient.add_cipher_stream_provider_request{AddAmazonKeyManagementServiceCipherStreamProviderRequest: openapiclient.NewAddAmazonKeyManagementServiceCipherStreamProviderRequest([]openapiclient.EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn{openapiclient.Enumamazon-key-management-service-cipher-stream-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:amazon-key-management-service")}, "KmsEncryptionKeyArn_example", false, "ProviderName_example")} // AddCipherStreamProviderRequest | Create a new Cipher Stream Provider in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CipherStreamProviderApi.AddCipherStreamProvider(context.Background()).AddCipherStreamProviderRequest(addCipherStreamProviderRequest).Execute()
+    resp, r, err := apiClient.CipherStreamProviderAPI.AddCipherStreamProvider(context.Background()).AddCipherStreamProviderRequest(addCipherStreamProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderApi.AddCipherStreamProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderAPI.AddCipherStreamProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddCipherStreamProvider`: AddCipherStreamProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `CipherStreamProviderApi.AddCipherStreamProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CipherStreamProviderAPI.AddCipherStreamProvider`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CipherStreamProviderApi.DeleteCipherStreamProvider(context.Background(), cipherStreamProviderName).Execute()
+    r, err := apiClient.CipherStreamProviderAPI.DeleteCipherStreamProvider(context.Background(), cipherStreamProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderApi.DeleteCipherStreamProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderAPI.DeleteCipherStreamProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CipherStreamProviderApi.GetCipherStreamProvider(context.Background(), cipherStreamProviderName).Execute()
+    resp, r, err := apiClient.CipherStreamProviderAPI.GetCipherStreamProvider(context.Background(), cipherStreamProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderApi.GetCipherStreamProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderAPI.GetCipherStreamProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCipherStreamProvider`: AddCipherStreamProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `CipherStreamProviderApi.GetCipherStreamProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CipherStreamProviderAPI.GetCipherStreamProvider`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CipherStreamProviderApi.ListCipherStreamProviders(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.CipherStreamProviderAPI.ListCipherStreamProviders(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderApi.ListCipherStreamProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderAPI.ListCipherStreamProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListCipherStreamProviders`: CipherStreamProviderListResponse
-    fmt.Fprintf(os.Stdout, "Response from `CipherStreamProviderApi.ListCipherStreamProviders`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CipherStreamProviderAPI.ListCipherStreamProviders`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CipherStreamProviderApi.UpdateCipherStreamProvider(context.Background(), cipherStreamProviderName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.CipherStreamProviderAPI.UpdateCipherStreamProvider(context.Background(), cipherStreamProviderName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderApi.UpdateCipherStreamProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderAPI.UpdateCipherStreamProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCipherStreamProvider`: AddCipherStreamProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `CipherStreamProviderApi.UpdateCipherStreamProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CipherStreamProviderAPI.UpdateCipherStreamProvider`: %v\n", resp)
 }
 ```
 

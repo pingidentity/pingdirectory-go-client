@@ -19,8 +19,6 @@ var _ MappedNullable = &SizeLimitLogRetentionPolicyResponse{}
 
 // SizeLimitLogRetentionPolicyResponse struct for SizeLimitLogRetentionPolicyResponse
 type SizeLimitLogRetentionPolicyResponse struct {
-	// Name of the Log Retention Policy
-	Id      string                                     `json:"id"`
 	Schemas []EnumsizeLimitLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the maximum total disk space used by the log files.
 	DiskSpaceUsed string `json:"diskSpaceUsed"`
@@ -28,17 +26,19 @@ type SizeLimitLogRetentionPolicyResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Retention Policy
+	Id string `json:"id"`
 }
 
 // NewSizeLimitLogRetentionPolicyResponse instantiates a new SizeLimitLogRetentionPolicyResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSizeLimitLogRetentionPolicyResponse(id string, schemas []EnumsizeLimitLogRetentionPolicySchemaUrn, diskSpaceUsed string) *SizeLimitLogRetentionPolicyResponse {
+func NewSizeLimitLogRetentionPolicyResponse(schemas []EnumsizeLimitLogRetentionPolicySchemaUrn, diskSpaceUsed string, id string) *SizeLimitLogRetentionPolicyResponse {
 	this := SizeLimitLogRetentionPolicyResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.DiskSpaceUsed = diskSpaceUsed
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewSizeLimitLogRetentionPolicyResponse(id string, schemas []EnumsizeLimitLo
 func NewSizeLimitLogRetentionPolicyResponseWithDefaults() *SizeLimitLogRetentionPolicyResponse {
 	this := SizeLimitLogRetentionPolicyResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SizeLimitLogRetentionPolicyResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SizeLimitLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SizeLimitLogRetentionPolicyResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *SizeLimitLogRetentionPolicyResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SizeLimitLogRetentionPolicyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SizeLimitLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SizeLimitLogRetentionPolicyResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SizeLimitLogRetentionPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o SizeLimitLogRetentionPolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o SizeLimitLogRetentionPolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["diskSpaceUsed"] = o.DiskSpaceUsed
 	if !IsNil(o.Description) {
@@ -240,6 +239,7 @@ func (o SizeLimitLogRetentionPolicyResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

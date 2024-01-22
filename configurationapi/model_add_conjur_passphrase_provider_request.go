@@ -19,9 +19,7 @@ var _ MappedNullable = &AddConjurPassphraseProviderRequest{}
 
 // AddConjurPassphraseProviderRequest struct for AddConjurPassphraseProviderRequest
 type AddConjurPassphraseProviderRequest struct {
-	// Name of the new Passphrase Provider
-	ProviderName string                                  `json:"providerName"`
-	Schemas      []EnumconjurPassphraseProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumconjurPassphraseProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur instance containing the passphrase.
 	ConjurExternalServer string `json:"conjurExternalServer"`
 	// The portion of the path that follows the account name in the URI needed to obtain the desired secret. Any special characters in the path must be URL-encoded.
@@ -32,19 +30,21 @@ type AddConjurPassphraseProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Passphrase Provider is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Passphrase Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddConjurPassphraseProviderRequest instantiates a new AddConjurPassphraseProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConjurPassphraseProviderRequest(providerName string, schemas []EnumconjurPassphraseProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, enabled bool) *AddConjurPassphraseProviderRequest {
+func NewAddConjurPassphraseProviderRequest(schemas []EnumconjurPassphraseProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, enabled bool, providerName string) *AddConjurPassphraseProviderRequest {
 	this := AddConjurPassphraseProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.ConjurExternalServer = conjurExternalServer
 	this.ConjurSecretRelativePath = conjurSecretRelativePath
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddConjurPassphraseProviderRequest(providerName string, schemas []Enumco
 func NewAddConjurPassphraseProviderRequestWithDefaults() *AddConjurPassphraseProviderRequest {
 	this := AddConjurPassphraseProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddConjurPassphraseProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddConjurPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddConjurPassphraseProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -240,6 +216,30 @@ func (o *AddConjurPassphraseProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddConjurPassphraseProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddConjurPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddConjurPassphraseProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddConjurPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -250,7 +250,6 @@ func (o AddConjurPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddConjurPassphraseProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["conjurExternalServer"] = o.ConjurExternalServer
 	toSerialize["conjurSecretRelativePath"] = o.ConjurSecretRelativePath
@@ -261,6 +260,7 @@ func (o AddConjurPassphraseProviderRequest) ToMap() (map[string]interface{}, err
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

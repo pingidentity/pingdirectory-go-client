@@ -19,8 +19,6 @@ var _ MappedNullable = &LdapMappedScimHttpServletExtensionResponse{}
 
 // LdapMappedScimHttpServletExtensionResponse struct for LdapMappedScimHttpServletExtensionResponse
 type LdapMappedScimHttpServletExtensionResponse struct {
-	// Name of the HTTP Servlet Extension
-	Id      string                                            `json:"id"`
 	Schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request.
 	OAuthTokenHandler *string `json:"OAuthTokenHandler,omitempty"`
@@ -70,15 +68,16 @@ type LdapMappedScimHttpServletExtensionResponse struct {
 	CorrelationIDResponseHeader                   *string                                            `json:"correlationIDResponseHeader,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the HTTP Servlet Extension
+	Id string `json:"id"`
 }
 
 // NewLdapMappedScimHttpServletExtensionResponse instantiates a new LdapMappedScimHttpServletExtensionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapMappedScimHttpServletExtensionResponse(id string, schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn, baseContextPath string, temporaryDirectory string, temporaryDirectoryPermissions string, debugLevel EnumhttpServletExtensionDebugLevelProp, debugType []EnumhttpServletExtensionDebugTypeProp, includeStackTrace bool) *LdapMappedScimHttpServletExtensionResponse {
+func NewLdapMappedScimHttpServletExtensionResponse(schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn, baseContextPath string, temporaryDirectory string, temporaryDirectoryPermissions string, debugLevel EnumhttpServletExtensionDebugLevelProp, debugType []EnumhttpServletExtensionDebugTypeProp, includeStackTrace bool, id string) *LdapMappedScimHttpServletExtensionResponse {
 	this := LdapMappedScimHttpServletExtensionResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.BaseContextPath = baseContextPath
 	this.TemporaryDirectory = temporaryDirectory
@@ -86,6 +85,7 @@ func NewLdapMappedScimHttpServletExtensionResponse(id string, schemas []Enumldap
 	this.DebugLevel = debugLevel
 	this.DebugType = debugType
 	this.IncludeStackTrace = includeStackTrace
+	this.Id = id
 	return &this
 }
 
@@ -95,30 +95,6 @@ func NewLdapMappedScimHttpServletExtensionResponse(id string, schemas []Enumldap
 func NewLdapMappedScimHttpServletExtensionResponseWithDefaults() *LdapMappedScimHttpServletExtensionResponse {
 	this := LdapMappedScimHttpServletExtensionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LdapMappedScimHttpServletExtensionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LdapMappedScimHttpServletExtensionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LdapMappedScimHttpServletExtensionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -929,6 +905,30 @@ func (o *LdapMappedScimHttpServletExtensionResponse) SetUrnpingidentityschemasco
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LdapMappedScimHttpServletExtensionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LdapMappedScimHttpServletExtensionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LdapMappedScimHttpServletExtensionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LdapMappedScimHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -939,7 +939,6 @@ func (o LdapMappedScimHttpServletExtensionResponse) MarshalJSON() ([]byte, error
 
 func (o LdapMappedScimHttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.OAuthTokenHandler) {
 		toSerialize["OAuthTokenHandler"] = o.OAuthTokenHandler
@@ -1007,6 +1006,7 @@ func (o LdapMappedScimHttpServletExtensionResponse) ToMap() (map[string]interfac
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

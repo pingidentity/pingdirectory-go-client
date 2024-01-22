@@ -19,8 +19,6 @@ var _ MappedNullable = &GroovyScriptedHttpServletExtensionResponse{}
 
 // GroovyScriptedHttpServletExtensionResponse struct for GroovyScriptedHttpServletExtensionResponse
 type GroovyScriptedHttpServletExtensionResponse struct {
-	// Name of the HTTP Servlet Extension
-	Id      string                                            `json:"id"`
 	Schemas []EnumgroovyScriptedHttpServletExtensionSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension.
 	ScriptClass string `json:"scriptClass"`
@@ -36,17 +34,19 @@ type GroovyScriptedHttpServletExtensionResponse struct {
 	CorrelationIDResponseHeader                   *string                                            `json:"correlationIDResponseHeader,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the HTTP Servlet Extension
+	Id string `json:"id"`
 }
 
 // NewGroovyScriptedHttpServletExtensionResponse instantiates a new GroovyScriptedHttpServletExtensionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroovyScriptedHttpServletExtensionResponse(id string, schemas []EnumgroovyScriptedHttpServletExtensionSchemaUrn, scriptClass string) *GroovyScriptedHttpServletExtensionResponse {
+func NewGroovyScriptedHttpServletExtensionResponse(schemas []EnumgroovyScriptedHttpServletExtensionSchemaUrn, scriptClass string, id string) *GroovyScriptedHttpServletExtensionResponse {
 	this := GroovyScriptedHttpServletExtensionResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewGroovyScriptedHttpServletExtensionResponse(id string, schemas []Enumgroo
 func NewGroovyScriptedHttpServletExtensionResponseWithDefaults() *GroovyScriptedHttpServletExtensionResponse {
 	this := GroovyScriptedHttpServletExtensionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GroovyScriptedHttpServletExtensionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GroovyScriptedHttpServletExtensionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GroovyScriptedHttpServletExtensionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -354,6 +330,30 @@ func (o *GroovyScriptedHttpServletExtensionResponse) SetUrnpingidentityschemasco
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *GroovyScriptedHttpServletExtensionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedHttpServletExtensionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *GroovyScriptedHttpServletExtensionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o GroovyScriptedHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -364,7 +364,6 @@ func (o GroovyScriptedHttpServletExtensionResponse) MarshalJSON() ([]byte, error
 
 func (o GroovyScriptedHttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -388,6 +387,7 @@ func (o GroovyScriptedHttpServletExtensionResponse) ToMap() (map[string]interfac
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

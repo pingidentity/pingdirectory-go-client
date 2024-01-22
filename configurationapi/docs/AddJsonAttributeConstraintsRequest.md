@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeType** | **string** | The name or OID of the LDAP attribute type whose values will be subject to the associated field constraints. This attribute type must be defined in the server schema, and it must have a \&quot;JSON object\&quot; syntax. | 
 **Schemas** | Pointer to [**[]EnumjsonAttributeConstraintsSchemaUrn**](EnumjsonAttributeConstraintsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this JSON Attribute Constraints | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether this JSON Attribute Constraints is enabled. | [optional] 
+**AttributeType** | **string** | Name of the new JSON Attribute Constraints | 
 **AllowUnnamedFields** | Pointer to **bool** | Indicates whether JSON objects stored as values of attributes with the associated attribute-type will be permitted to include fields for which there is no subordinate json-field-constraints definition. If unnamed fields are allowed, then no constraints will be imposed on the values of those fields. However, if unnamed fields are not allowed, then the server will reject any attempt to store a JSON object with a field for which there is no corresponding json-fields-constraints definition. | [optional] 
 
 ## Methods
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddJsonAttributeConstraintsRequestWithDefaults instantiates a new AddJsonAttributeConstraintsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAttributeType
-
-`func (o *AddJsonAttributeConstraintsRequest) GetAttributeType() string`
-
-GetAttributeType returns the AttributeType field if non-nil, zero value otherwise.
-
-### GetAttributeTypeOk
-
-`func (o *AddJsonAttributeConstraintsRequest) GetAttributeTypeOk() (*string, bool)`
-
-GetAttributeTypeOk returns a tuple with the AttributeType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeType
-
-`func (o *AddJsonAttributeConstraintsRequest) SetAttributeType(v string)`
-
-SetAttributeType sets AttributeType field to given value.
-
 
 ### GetSchemas
 
@@ -123,6 +103,26 @@ SetEnabled sets Enabled field to given value.
 `func (o *AddJsonAttributeConstraintsRequest) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+### GetAttributeType
+
+`func (o *AddJsonAttributeConstraintsRequest) GetAttributeType() string`
+
+GetAttributeType returns the AttributeType field if non-nil, zero value otherwise.
+
+### GetAttributeTypeOk
+
+`func (o *AddJsonAttributeConstraintsRequest) GetAttributeTypeOk() (*string, bool)`
+
+GetAttributeTypeOk returns a tuple with the AttributeType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeType
+
+`func (o *AddJsonAttributeConstraintsRequest) SetAttributeType(v string)`
+
+SetAttributeType sets AttributeType field to given value.
+
 
 ### GetAllowUnnamedFields
 

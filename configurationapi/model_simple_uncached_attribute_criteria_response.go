@@ -19,8 +19,6 @@ var _ MappedNullable = &SimpleUncachedAttributeCriteriaResponse{}
 
 // SimpleUncachedAttributeCriteriaResponse struct for SimpleUncachedAttributeCriteriaResponse
 type SimpleUncachedAttributeCriteriaResponse struct {
-	// Name of the Uncached Attribute Criteria
-	Id      string                                         `json:"id"`
 	Schemas []EnumsimpleUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the attribute types for attributes that may be written to the uncached-id2entry database.
 	AttributeType []string `json:"attributeType"`
@@ -34,18 +32,20 @@ type SimpleUncachedAttributeCriteriaResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Uncached Attribute Criteria
+	Id string `json:"id"`
 }
 
 // NewSimpleUncachedAttributeCriteriaResponse instantiates a new SimpleUncachedAttributeCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSimpleUncachedAttributeCriteriaResponse(id string, schemas []EnumsimpleUncachedAttributeCriteriaSchemaUrn, attributeType []string, enabled bool) *SimpleUncachedAttributeCriteriaResponse {
+func NewSimpleUncachedAttributeCriteriaResponse(schemas []EnumsimpleUncachedAttributeCriteriaSchemaUrn, attributeType []string, enabled bool, id string) *SimpleUncachedAttributeCriteriaResponse {
 	this := SimpleUncachedAttributeCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AttributeType = attributeType
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewSimpleUncachedAttributeCriteriaResponse(id string, schemas []EnumsimpleU
 func NewSimpleUncachedAttributeCriteriaResponseWithDefaults() *SimpleUncachedAttributeCriteriaResponse {
 	this := SimpleUncachedAttributeCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SimpleUncachedAttributeCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SimpleUncachedAttributeCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SimpleUncachedAttributeCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -313,6 +289,30 @@ func (o *SimpleUncachedAttributeCriteriaResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SimpleUncachedAttributeCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SimpleUncachedAttributeCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SimpleUncachedAttributeCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SimpleUncachedAttributeCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -323,7 +323,6 @@ func (o SimpleUncachedAttributeCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o SimpleUncachedAttributeCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["attributeType"] = o.AttributeType
 	if !IsNil(o.MinValueCount) {
@@ -342,6 +341,7 @@ func (o SimpleUncachedAttributeCriteriaResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

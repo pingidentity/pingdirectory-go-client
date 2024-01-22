@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]Enumargon2iPasswordStorageSchemeSchemaUrn**](Enumargon2iPasswordStorageSchemeSchemaUrn.md) |  | 
 **IterationCount** | **int64** | The number of rounds of cryptographic processing required in the course of encoding each password. | 
 **ParallelismFactor** | **int64** | The number of concurrent threads that will be used in the course of encoding each password. | 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **DerivedKeyLengthBytes** | **int64** | The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512. | 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
+**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 
 ## Methods
 
 ### NewAddArgon2iPasswordStorageSchemeRequest
 
-`func NewAddArgon2iPasswordStorageSchemeRequest(schemeName string, schemas []Enumargon2iPasswordStorageSchemeSchemaUrn, iterationCount int64, parallelismFactor int64, memoryUsageKb int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool, ) *AddArgon2iPasswordStorageSchemeRequest`
+`func NewAddArgon2iPasswordStorageSchemeRequest(schemas []Enumargon2iPasswordStorageSchemeSchemaUrn, iterationCount int64, parallelismFactor int64, memoryUsageKb int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool, schemeName string, ) *AddArgon2iPasswordStorageSchemeRequest`
 
 NewAddArgon2iPasswordStorageSchemeRequest instantiates a new AddArgon2iPasswordStorageSchemeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddArgon2iPasswordStorageSchemeRequestWithDefaults instantiates a new AddArgon2iPasswordStorageSchemeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSchemeName
-
-`func (o *AddArgon2iPasswordStorageSchemeRequest) GetSchemeName() string`
-
-GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
-
-### GetSchemeNameOk
-
-`func (o *AddArgon2iPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
-
-GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchemeName
-
-`func (o *AddArgon2iPasswordStorageSchemeRequest) SetSchemeName(v string)`
-
-SetSchemeName sets SchemeName field to given value.
-
 
 ### GetSchemas
 
@@ -216,6 +196,26 @@ and a boolean to check if the value has been set.
 `func (o *AddArgon2iPasswordStorageSchemeRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetSchemeName
+
+`func (o *AddArgon2iPasswordStorageSchemeRequest) GetSchemeName() string`
+
+GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
+
+### GetSchemeNameOk
+
+`func (o *AddArgon2iPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
+
+GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemeName
+
+`func (o *AddArgon2iPasswordStorageSchemeRequest) SetSchemeName(v string)`
+
+SetSchemeName sets SchemeName field to given value.
 
 
 

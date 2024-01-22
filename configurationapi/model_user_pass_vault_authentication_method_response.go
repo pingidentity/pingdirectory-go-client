@@ -19,8 +19,6 @@ var _ MappedNullable = &UserPassVaultAuthenticationMethodResponse{}
 
 // UserPassVaultAuthenticationMethodResponse struct for UserPassVaultAuthenticationMethodResponse
 type UserPassVaultAuthenticationMethodResponse struct {
-	// Name of the Vault Authentication Method
-	Id      string                                           `json:"id"`
 	Schemas []EnumuserPassVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The username for the user to authenticate.
 	Username string `json:"username"`
@@ -32,18 +30,20 @@ type UserPassVaultAuthenticationMethodResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Vault Authentication Method
+	Id string `json:"id"`
 }
 
 // NewUserPassVaultAuthenticationMethodResponse instantiates a new UserPassVaultAuthenticationMethodResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserPassVaultAuthenticationMethodResponse(id string, schemas []EnumuserPassVaultAuthenticationMethodSchemaUrn, username string, password string) *UserPassVaultAuthenticationMethodResponse {
+func NewUserPassVaultAuthenticationMethodResponse(schemas []EnumuserPassVaultAuthenticationMethodSchemaUrn, username string, password string, id string) *UserPassVaultAuthenticationMethodResponse {
 	this := UserPassVaultAuthenticationMethodResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Username = username
 	this.Password = password
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewUserPassVaultAuthenticationMethodResponse(id string, schemas []EnumuserP
 func NewUserPassVaultAuthenticationMethodResponseWithDefaults() *UserPassVaultAuthenticationMethodResponse {
 	this := UserPassVaultAuthenticationMethodResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *UserPassVaultAuthenticationMethodResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UserPassVaultAuthenticationMethodResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UserPassVaultAuthenticationMethodResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -279,6 +255,30 @@ func (o *UserPassVaultAuthenticationMethodResponse) SetUrnpingidentityschemascon
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *UserPassVaultAuthenticationMethodResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *UserPassVaultAuthenticationMethodResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *UserPassVaultAuthenticationMethodResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o UserPassVaultAuthenticationMethodResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -289,7 +289,6 @@ func (o UserPassVaultAuthenticationMethodResponse) MarshalJSON() ([]byte, error)
 
 func (o UserPassVaultAuthenticationMethodResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["username"] = o.Username
 	toSerialize["password"] = o.Password
@@ -305,6 +304,7 @@ func (o UserPassVaultAuthenticationMethodResponse) ToMap() (map[string]interface
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

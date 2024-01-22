@@ -19,8 +19,6 @@ var _ MappedNullable = &LdapPassThroughAuthenticationHandlerResponse{}
 
 // LdapPassThroughAuthenticationHandlerResponse struct for LdapPassThroughAuthenticationHandlerResponse
 type LdapPassThroughAuthenticationHandlerResponse struct {
-	// Name of the Pass Through Authentication Handler
-	Id      string                                              `json:"id"`
 	Schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
 	Server           []string                                                 `json:"server"`
@@ -55,20 +53,22 @@ type LdapPassThroughAuthenticationHandlerResponse struct {
 	RequestCriteria                               *string                                            `json:"requestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Pass Through Authentication Handler
+	Id string `json:"id"`
 }
 
 // NewLdapPassThroughAuthenticationHandlerResponse instantiates a new LdapPassThroughAuthenticationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapPassThroughAuthenticationHandlerResponse(id string, schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn, server []string, serverAccessMode EnumpassThroughAuthenticationHandlerServerAccessModeProp, initialConnections int64, maxConnections int64) *LdapPassThroughAuthenticationHandlerResponse {
+func NewLdapPassThroughAuthenticationHandlerResponse(schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn, server []string, serverAccessMode EnumpassThroughAuthenticationHandlerServerAccessModeProp, initialConnections int64, maxConnections int64, id string) *LdapPassThroughAuthenticationHandlerResponse {
 	this := LdapPassThroughAuthenticationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Server = server
 	this.ServerAccessMode = serverAccessMode
 	this.InitialConnections = initialConnections
 	this.MaxConnections = maxConnections
+	this.Id = id
 	return &this
 }
 
@@ -78,30 +78,6 @@ func NewLdapPassThroughAuthenticationHandlerResponse(id string, schemas []Enumld
 func NewLdapPassThroughAuthenticationHandlerResponseWithDefaults() *LdapPassThroughAuthenticationHandlerResponse {
 	this := LdapPassThroughAuthenticationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LdapPassThroughAuthenticationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LdapPassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LdapPassThroughAuthenticationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -672,6 +648,30 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) SetUrnpingidentityschemas
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LdapPassThroughAuthenticationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LdapPassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -682,7 +682,6 @@ func (o LdapPassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byte, err
 
 func (o LdapPassThroughAuthenticationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["server"] = o.Server
 	toSerialize["serverAccessMode"] = o.ServerAccessMode
@@ -730,6 +729,7 @@ func (o LdapPassThroughAuthenticationHandlerResponse) ToMap() (map[string]interf
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

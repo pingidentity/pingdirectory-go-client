@@ -19,9 +19,7 @@ var _ MappedNullable = &AddCustomLoggedStatsRequest{}
 
 // AddCustomLoggedStatsRequest struct for AddCustomLoggedStatsRequest
 type AddCustomLoggedStatsRequest struct {
-	// Name of the new Custom Logged Stats
-	StatsName string                           `json:"statsName"`
-	Schemas   []EnumcustomLoggedStatsSchemaUrn `json:"schemas"`
+	Schemas []EnumcustomLoggedStatsSchemaUrn `json:"schemas"`
 	// A description for this Custom Logged Stats
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Custom Logged Stats object is enabled.
@@ -51,19 +49,21 @@ type AddCustomLoggedStatsRequest struct {
 	DecimalFormat *string `json:"decimalFormat,omitempty"`
 	// If this property is set to true, then the value of any of the monitored attributes here can contribute to whether an interval is considered \"idle\" by the Periodic Stats Logger.
 	NonZeroImpliesNotIdle *bool `json:"nonZeroImpliesNotIdle,omitempty"`
+	// Name of the new Custom Logged Stats
+	StatsName string `json:"statsName"`
 }
 
 // NewAddCustomLoggedStatsRequest instantiates a new AddCustomLoggedStatsRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCustomLoggedStatsRequest(statsName string, schemas []EnumcustomLoggedStatsSchemaUrn, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp) *AddCustomLoggedStatsRequest {
+func NewAddCustomLoggedStatsRequest(schemas []EnumcustomLoggedStatsSchemaUrn, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp, statsName string) *AddCustomLoggedStatsRequest {
 	this := AddCustomLoggedStatsRequest{}
-	this.StatsName = statsName
 	this.Schemas = schemas
 	this.MonitorObjectclass = monitorObjectclass
 	this.AttributeToLog = attributeToLog
 	this.StatisticType = statisticType
+	this.StatsName = statsName
 	return &this
 }
 
@@ -73,30 +73,6 @@ func NewAddCustomLoggedStatsRequest(statsName string, schemas []EnumcustomLogged
 func NewAddCustomLoggedStatsRequestWithDefaults() *AddCustomLoggedStatsRequest {
 	this := AddCustomLoggedStatsRequest{}
 	return &this
-}
-
-// GetStatsName returns the StatsName field value
-func (o *AddCustomLoggedStatsRequest) GetStatsName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.StatsName
-}
-
-// GetStatsNameOk returns a tuple with the StatsName field value
-// and a boolean to check if the value has been set.
-func (o *AddCustomLoggedStatsRequest) GetStatsNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.StatsName, true
-}
-
-// SetStatsName sets field value
-func (o *AddCustomLoggedStatsRequest) SetStatsName(v string) {
-	o.StatsName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -579,6 +555,30 @@ func (o *AddCustomLoggedStatsRequest) SetNonZeroImpliesNotIdle(v bool) {
 	o.NonZeroImpliesNotIdle = &v
 }
 
+// GetStatsName returns the StatsName field value
+func (o *AddCustomLoggedStatsRequest) GetStatsName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.StatsName
+}
+
+// GetStatsNameOk returns a tuple with the StatsName field value
+// and a boolean to check if the value has been set.
+func (o *AddCustomLoggedStatsRequest) GetStatsNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.StatsName, true
+}
+
+// SetStatsName sets field value
+func (o *AddCustomLoggedStatsRequest) SetStatsName(v string) {
+	o.StatsName = v
+}
+
 func (o AddCustomLoggedStatsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -589,7 +589,6 @@ func (o AddCustomLoggedStatsRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddCustomLoggedStatsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["statsName"] = o.StatsName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -630,6 +629,7 @@ func (o AddCustomLoggedStatsRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NonZeroImpliesNotIdle) {
 		toSerialize["nonZeroImpliesNotIdle"] = o.NonZeroImpliesNotIdle
 	}
+	toSerialize["statsName"] = o.StatsName
 	return toSerialize, nil
 }
 

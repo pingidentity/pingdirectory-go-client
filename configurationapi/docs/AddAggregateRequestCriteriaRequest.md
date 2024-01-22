@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Request Criteria | 
 **Schemas** | [**[]EnumaggregateRequestCriteriaSchemaUrn**](EnumaggregateRequestCriteriaSchemaUrn.md) |  | 
 **AllIncludedRequestCriteria** | Pointer to **[]string** | Specifies a request criteria object that must match the associated operation request in order to match the aggregate request criteria. If one or more all-included request criteria objects are provided, then an operation request must match all of them in order to match the aggregate request criteria. | [optional] 
 **AnyIncludedRequestCriteria** | Pointer to **[]string** | Specifies a request criteria object that may match the associated operation request in order to the this aggregate request criteria. If one or more any-included request criteria objects are provided, then an operation request must match at least one of them in order to match the aggregate request criteria. | [optional] 
 **NotAllIncludedRequestCriteria** | Pointer to **[]string** | Specifies a request criteria object that should not match the associated operation request in order to match the aggregate request criteria. If one or more not-all-included request criteria objects are provided, then an operation request must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate request criteria. | [optional] 
 **NoneIncludedRequestCriteria** | Pointer to **[]string** | Specifies a request criteria object that must not match the associated operation request in order to match the aggregate request criteria. If one or more none-included request criteria objects are provided, then an operation request must not match any of them in order to match the aggregate request criteria. | [optional] 
 **Description** | Pointer to **string** | A description for this Request Criteria | [optional] 
+**CriteriaName** | **string** | Name of the new Request Criteria | 
 
 ## Methods
 
 ### NewAddAggregateRequestCriteriaRequest
 
-`func NewAddAggregateRequestCriteriaRequest(criteriaName string, schemas []EnumaggregateRequestCriteriaSchemaUrn, ) *AddAggregateRequestCriteriaRequest`
+`func NewAddAggregateRequestCriteriaRequest(schemas []EnumaggregateRequestCriteriaSchemaUrn, criteriaName string, ) *AddAggregateRequestCriteriaRequest`
 
 NewAddAggregateRequestCriteriaRequest instantiates a new AddAggregateRequestCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddAggregateRequestCriteriaRequestWithDefaults instantiates a new AddAggregateRequestCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddAggregateRequestCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddAggregateRequestCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddAggregateRequestCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -195,6 +175,26 @@ SetDescription sets Description field to given value.
 `func (o *AddAggregateRequestCriteriaRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetCriteriaName
+
+`func (o *AddAggregateRequestCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddAggregateRequestCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddAggregateRequestCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,8 +19,6 @@ var _ MappedNullable = &EncryptionSettingsDatabaseAccessibilityMonitorProviderRe
 
 // EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse struct for EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse
 type EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse struct {
-	// Name of the Monitor Provider
-	Id      string                                                                `json:"id"`
 	Schemas []EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn `json:"schemas"`
 	// The frequency with which this monitor provider should confirm the ability to access the server's encryption settings database.
 	CheckFrequency string `json:"checkFrequency"`
@@ -33,18 +31,20 @@ type EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Monitor Provider
+	Id string `json:"id"`
 }
 
 // NewEncryptionSettingsDatabaseAccessibilityMonitorProviderResponse instantiates a new EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEncryptionSettingsDatabaseAccessibilityMonitorProviderResponse(id string, schemas []EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn, checkFrequency string, enabled bool) *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse {
+func NewEncryptionSettingsDatabaseAccessibilityMonitorProviderResponse(schemas []EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn, checkFrequency string, enabled bool, id string) *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse {
 	this := EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.CheckFrequency = checkFrequency
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewEncryptionSettingsDatabaseAccessibilityMonitorProviderResponse(id string
 func NewEncryptionSettingsDatabaseAccessibilityMonitorProviderResponseWithDefaults() *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse {
 	this := EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -312,6 +288,30 @@ func (o *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) SetUrnp
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -322,7 +322,6 @@ func (o EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) MarshalJ
 
 func (o EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["checkFrequency"] = o.CheckFrequency
 	if !IsNil(o.ProlongedOutageDuration) {
@@ -341,6 +340,7 @@ func (o EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) ToMap() 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ReplicationDomainApiService ReplicationDomainApi service
-type ReplicationDomainApiService service
+// ReplicationDomainAPIService ReplicationDomainAPI service
+type ReplicationDomainAPIService service
 
 type ApiGetReplicationDomainRequest struct {
 	ctx                         context.Context
-	ApiService                  *ReplicationDomainApiService
+	ApiService                  *ReplicationDomainAPIService
 	replicationDomainName       string
 	synchronizationProviderName string
 }
@@ -41,7 +41,7 @@ GetReplicationDomain Returns a single Replication Domain
 	@param synchronizationProviderName Name of the Synchronization Provider
 	@return ApiGetReplicationDomainRequest
 */
-func (a *ReplicationDomainApiService) GetReplicationDomain(ctx context.Context, replicationDomainName string, synchronizationProviderName string) ApiGetReplicationDomainRequest {
+func (a *ReplicationDomainAPIService) GetReplicationDomain(ctx context.Context, replicationDomainName string, synchronizationProviderName string) ApiGetReplicationDomainRequest {
 	return ApiGetReplicationDomainRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -53,7 +53,7 @@ func (a *ReplicationDomainApiService) GetReplicationDomain(ctx context.Context, 
 // Execute executes the request
 //
 //	@return ReplicationDomainResponse
-func (a *ReplicationDomainApiService) GetReplicationDomainExecute(r ApiGetReplicationDomainRequest) (*ReplicationDomainResponse, *http.Response, error) {
+func (a *ReplicationDomainAPIService) GetReplicationDomainExecute(r ApiGetReplicationDomainRequest) (*ReplicationDomainResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -61,7 +61,7 @@ func (a *ReplicationDomainApiService) GetReplicationDomainExecute(r ApiGetReplic
 		localVarReturnValue *ReplicationDomainResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationDomainApiService.GetReplicationDomain")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationDomainAPIService.GetReplicationDomain")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -130,7 +130,7 @@ func (a *ReplicationDomainApiService) GetReplicationDomainExecute(r ApiGetReplic
 
 type ApiListReplicationDomainsRequest struct {
 	ctx                         context.Context
-	ApiService                  *ReplicationDomainApiService
+	ApiService                  *ReplicationDomainAPIService
 	synchronizationProviderName string
 	filter                      *string
 }
@@ -152,7 +152,7 @@ ListReplicationDomains Returns a list of all Replication Domain objects
 	@param synchronizationProviderName Name of the Synchronization Provider
 	@return ApiListReplicationDomainsRequest
 */
-func (a *ReplicationDomainApiService) ListReplicationDomains(ctx context.Context, synchronizationProviderName string) ApiListReplicationDomainsRequest {
+func (a *ReplicationDomainAPIService) ListReplicationDomains(ctx context.Context, synchronizationProviderName string) ApiListReplicationDomainsRequest {
 	return ApiListReplicationDomainsRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -163,7 +163,7 @@ func (a *ReplicationDomainApiService) ListReplicationDomains(ctx context.Context
 // Execute executes the request
 //
 //	@return ReplicationDomainListResponse
-func (a *ReplicationDomainApiService) ListReplicationDomainsExecute(r ApiListReplicationDomainsRequest) (*ReplicationDomainListResponse, *http.Response, error) {
+func (a *ReplicationDomainAPIService) ListReplicationDomainsExecute(r ApiListReplicationDomainsRequest) (*ReplicationDomainListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -171,7 +171,7 @@ func (a *ReplicationDomainApiService) ListReplicationDomainsExecute(r ApiListRep
 		localVarReturnValue *ReplicationDomainListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationDomainApiService.ListReplicationDomains")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationDomainAPIService.ListReplicationDomains")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -242,7 +242,7 @@ func (a *ReplicationDomainApiService) ListReplicationDomainsExecute(r ApiListRep
 
 type ApiUpdateReplicationDomainRequest struct {
 	ctx                         context.Context
-	ApiService                  *ReplicationDomainApiService
+	ApiService                  *ReplicationDomainAPIService
 	replicationDomainName       string
 	synchronizationProviderName string
 	updateRequest               *UpdateRequest
@@ -266,7 +266,7 @@ UpdateReplicationDomain Update an existing Replication Domain by name
 	@param synchronizationProviderName Name of the Synchronization Provider
 	@return ApiUpdateReplicationDomainRequest
 */
-func (a *ReplicationDomainApiService) UpdateReplicationDomain(ctx context.Context, replicationDomainName string, synchronizationProviderName string) ApiUpdateReplicationDomainRequest {
+func (a *ReplicationDomainAPIService) UpdateReplicationDomain(ctx context.Context, replicationDomainName string, synchronizationProviderName string) ApiUpdateReplicationDomainRequest {
 	return ApiUpdateReplicationDomainRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -278,7 +278,7 @@ func (a *ReplicationDomainApiService) UpdateReplicationDomain(ctx context.Contex
 // Execute executes the request
 //
 //	@return ReplicationDomainResponse
-func (a *ReplicationDomainApiService) UpdateReplicationDomainExecute(r ApiUpdateReplicationDomainRequest) (*ReplicationDomainResponse, *http.Response, error) {
+func (a *ReplicationDomainAPIService) UpdateReplicationDomainExecute(r ApiUpdateReplicationDomainRequest) (*ReplicationDomainResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -286,7 +286,7 @@ func (a *ReplicationDomainApiService) UpdateReplicationDomainExecute(r ApiUpdate
 		localVarReturnValue *ReplicationDomainResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationDomainApiService.UpdateReplicationDomain")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationDomainAPIService.UpdateReplicationDomain")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

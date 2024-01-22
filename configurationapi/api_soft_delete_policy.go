@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SoftDeletePolicyApiService SoftDeletePolicyApi service
-type SoftDeletePolicyApiService service
+// SoftDeletePolicyAPIService SoftDeletePolicyAPI service
+type SoftDeletePolicyAPIService service
 
 type ApiAddSoftDeletePolicyRequest struct {
 	ctx                        context.Context
-	ApiService                 *SoftDeletePolicyApiService
+	ApiService                 *SoftDeletePolicyAPIService
 	addSoftDeletePolicyRequest *AddSoftDeletePolicyRequest
 }
 
@@ -44,7 +44,7 @@ AddSoftDeletePolicy Add a new Soft Delete Policy to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddSoftDeletePolicyRequest
 */
-func (a *SoftDeletePolicyApiService) AddSoftDeletePolicy(ctx context.Context) ApiAddSoftDeletePolicyRequest {
+func (a *SoftDeletePolicyAPIService) AddSoftDeletePolicy(ctx context.Context) ApiAddSoftDeletePolicyRequest {
 	return ApiAddSoftDeletePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *SoftDeletePolicyApiService) AddSoftDeletePolicy(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return SoftDeletePolicyResponse
-func (a *SoftDeletePolicyApiService) AddSoftDeletePolicyExecute(r ApiAddSoftDeletePolicyRequest) (*SoftDeletePolicyResponse, *http.Response, error) {
+func (a *SoftDeletePolicyAPIService) AddSoftDeletePolicyExecute(r ApiAddSoftDeletePolicyRequest) (*SoftDeletePolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *SoftDeletePolicyApiService) AddSoftDeletePolicyExecute(r ApiAddSoftDele
 		localVarReturnValue *SoftDeletePolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyApiService.AddSoftDeletePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyAPIService.AddSoftDeletePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *SoftDeletePolicyApiService) AddSoftDeletePolicyExecute(r ApiAddSoftDele
 
 type ApiDeleteSoftDeletePolicyRequest struct {
 	ctx                  context.Context
-	ApiService           *SoftDeletePolicyApiService
+	ApiService           *SoftDeletePolicyAPIService
 	softDeletePolicyName string
 }
 
@@ -149,7 +149,7 @@ DeleteSoftDeletePolicy Delete a Soft Delete Policy
 	@param softDeletePolicyName Name of the Soft Delete Policy
 	@return ApiDeleteSoftDeletePolicyRequest
 */
-func (a *SoftDeletePolicyApiService) DeleteSoftDeletePolicy(ctx context.Context, softDeletePolicyName string) ApiDeleteSoftDeletePolicyRequest {
+func (a *SoftDeletePolicyAPIService) DeleteSoftDeletePolicy(ctx context.Context, softDeletePolicyName string) ApiDeleteSoftDeletePolicyRequest {
 	return ApiDeleteSoftDeletePolicyRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -158,14 +158,14 @@ func (a *SoftDeletePolicyApiService) DeleteSoftDeletePolicy(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *SoftDeletePolicyApiService) DeleteSoftDeletePolicyExecute(r ApiDeleteSoftDeletePolicyRequest) (*http.Response, error) {
+func (a *SoftDeletePolicyAPIService) DeleteSoftDeletePolicyExecute(r ApiDeleteSoftDeletePolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyApiService.DeleteSoftDeletePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyAPIService.DeleteSoftDeletePolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *SoftDeletePolicyApiService) DeleteSoftDeletePolicyExecute(r ApiDeleteSo
 
 type ApiGetSoftDeletePolicyRequest struct {
 	ctx                  context.Context
-	ApiService           *SoftDeletePolicyApiService
+	ApiService           *SoftDeletePolicyAPIService
 	softDeletePolicyName string
 }
 
@@ -239,7 +239,7 @@ GetSoftDeletePolicy Returns a single Soft Delete Policy
 	@param softDeletePolicyName Name of the Soft Delete Policy
 	@return ApiGetSoftDeletePolicyRequest
 */
-func (a *SoftDeletePolicyApiService) GetSoftDeletePolicy(ctx context.Context, softDeletePolicyName string) ApiGetSoftDeletePolicyRequest {
+func (a *SoftDeletePolicyAPIService) GetSoftDeletePolicy(ctx context.Context, softDeletePolicyName string) ApiGetSoftDeletePolicyRequest {
 	return ApiGetSoftDeletePolicyRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -250,7 +250,7 @@ func (a *SoftDeletePolicyApiService) GetSoftDeletePolicy(ctx context.Context, so
 // Execute executes the request
 //
 //	@return SoftDeletePolicyResponse
-func (a *SoftDeletePolicyApiService) GetSoftDeletePolicyExecute(r ApiGetSoftDeletePolicyRequest) (*SoftDeletePolicyResponse, *http.Response, error) {
+func (a *SoftDeletePolicyAPIService) GetSoftDeletePolicyExecute(r ApiGetSoftDeletePolicyRequest) (*SoftDeletePolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *SoftDeletePolicyApiService) GetSoftDeletePolicyExecute(r ApiGetSoftDele
 		localVarReturnValue *SoftDeletePolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyApiService.GetSoftDeletePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyAPIService.GetSoftDeletePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *SoftDeletePolicyApiService) GetSoftDeletePolicyExecute(r ApiGetSoftDele
 
 type ApiListSoftDeletePoliciesRequest struct {
 	ctx        context.Context
-	ApiService *SoftDeletePolicyApiService
+	ApiService *SoftDeletePolicyAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListSoftDeletePolicies Returns a list of all Soft Delete Policy objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListSoftDeletePoliciesRequest
 */
-func (a *SoftDeletePolicyApiService) ListSoftDeletePolicies(ctx context.Context) ApiListSoftDeletePoliciesRequest {
+func (a *SoftDeletePolicyAPIService) ListSoftDeletePolicies(ctx context.Context) ApiListSoftDeletePoliciesRequest {
 	return ApiListSoftDeletePoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *SoftDeletePolicyApiService) ListSoftDeletePolicies(ctx context.Context)
 // Execute executes the request
 //
 //	@return SoftDeletePolicyListResponse
-func (a *SoftDeletePolicyApiService) ListSoftDeletePoliciesExecute(r ApiListSoftDeletePoliciesRequest) (*SoftDeletePolicyListResponse, *http.Response, error) {
+func (a *SoftDeletePolicyAPIService) ListSoftDeletePoliciesExecute(r ApiListSoftDeletePoliciesRequest) (*SoftDeletePolicyListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *SoftDeletePolicyApiService) ListSoftDeletePoliciesExecute(r ApiListSoft
 		localVarReturnValue *SoftDeletePolicyListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyApiService.ListSoftDeletePolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyAPIService.ListSoftDeletePolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *SoftDeletePolicyApiService) ListSoftDeletePoliciesExecute(r ApiListSoft
 
 type ApiUpdateSoftDeletePolicyRequest struct {
 	ctx                  context.Context
-	ApiService           *SoftDeletePolicyApiService
+	ApiService           *SoftDeletePolicyAPIService
 	softDeletePolicyName string
 	updateRequest        *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateSoftDeletePolicy Update an existing Soft Delete Policy by name
 	@param softDeletePolicyName Name of the Soft Delete Policy
 	@return ApiUpdateSoftDeletePolicyRequest
 */
-func (a *SoftDeletePolicyApiService) UpdateSoftDeletePolicy(ctx context.Context, softDeletePolicyName string) ApiUpdateSoftDeletePolicyRequest {
+func (a *SoftDeletePolicyAPIService) UpdateSoftDeletePolicy(ctx context.Context, softDeletePolicyName string) ApiUpdateSoftDeletePolicyRequest {
 	return ApiUpdateSoftDeletePolicyRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -467,7 +467,7 @@ func (a *SoftDeletePolicyApiService) UpdateSoftDeletePolicy(ctx context.Context,
 // Execute executes the request
 //
 //	@return SoftDeletePolicyResponse
-func (a *SoftDeletePolicyApiService) UpdateSoftDeletePolicyExecute(r ApiUpdateSoftDeletePolicyRequest) (*SoftDeletePolicyResponse, *http.Response, error) {
+func (a *SoftDeletePolicyAPIService) UpdateSoftDeletePolicyExecute(r ApiUpdateSoftDeletePolicyRequest) (*SoftDeletePolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *SoftDeletePolicyApiService) UpdateSoftDeletePolicyExecute(r ApiUpdateSo
 		localVarReturnValue *SoftDeletePolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyApiService.UpdateSoftDeletePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SoftDeletePolicyAPIService.UpdateSoftDeletePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

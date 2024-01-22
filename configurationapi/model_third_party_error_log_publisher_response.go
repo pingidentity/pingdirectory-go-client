@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyErrorLogPublisherResponse{}
 
 // ThirdPartyErrorLogPublisherResponse struct for ThirdPartyErrorLogPublisherResponse
 type ThirdPartyErrorLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id      string                                     `json:"id"`
 	Schemas []EnumthirdPartyErrorLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Error Log Publisher.
 	ExtensionClass string `json:"extensionClass"`
@@ -36,18 +34,20 @@ type ThirdPartyErrorLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewThirdPartyErrorLogPublisherResponse instantiates a new ThirdPartyErrorLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyErrorLogPublisherResponse(id string, schemas []EnumthirdPartyErrorLogPublisherSchemaUrn, extensionClass string, enabled bool) *ThirdPartyErrorLogPublisherResponse {
+func NewThirdPartyErrorLogPublisherResponse(schemas []EnumthirdPartyErrorLogPublisherSchemaUrn, extensionClass string, enabled bool, id string) *ThirdPartyErrorLogPublisherResponse {
 	this := ThirdPartyErrorLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewThirdPartyErrorLogPublisherResponse(id string, schemas []EnumthirdPartyE
 func NewThirdPartyErrorLogPublisherResponseWithDefaults() *ThirdPartyErrorLogPublisherResponse {
 	this := ThirdPartyErrorLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyErrorLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyErrorLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyErrorLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -379,6 +355,30 @@ func (o *ThirdPartyErrorLogPublisherResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyErrorLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyErrorLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyErrorLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -389,7 +389,6 @@ func (o ThirdPartyErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 
 func (o ThirdPartyErrorLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -414,6 +413,7 @@ func (o ThirdPartyErrorLogPublisherResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

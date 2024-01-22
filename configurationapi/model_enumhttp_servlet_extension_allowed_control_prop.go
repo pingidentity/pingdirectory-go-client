@@ -20,44 +20,52 @@ type EnumhttpServletExtensionAllowedControlProp string
 
 // List of Enumhttp-servlet-extension-allowedControlProp
 const (
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_ASSERTION                      EnumhttpServletExtensionAllowedControlProp = "assertion"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_ASSURED_REPLICATION            EnumhttpServletExtensionAllowedControlProp = "assured-replication"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_EXCLUDE_BRANCH                 EnumhttpServletExtensionAllowedControlProp = "exclude-branch"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GENERATE_PASSWORD              EnumhttpServletExtensionAllowedControlProp = "generate-password"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GET_EFFECTIVE_RIGHTS           EnumhttpServletExtensionAllowedControlProp = "get-effective-rights"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_IGNORE_NO_USER_MODIFICATION    EnumhttpServletExtensionAllowedControlProp = "ignore-no-user-modification"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_INTERMEDIATE_CLIENT            EnumhttpServletExtensionAllowedControlProp = "intermediate-client"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_JOIN                           EnumhttpServletExtensionAllowedControlProp = "join"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_MANAGE_DSA_IT                  EnumhttpServletExtensionAllowedControlProp = "manage-dsa-it"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_MATCHED_VALUES                 EnumhttpServletExtensionAllowedControlProp = "matched-values"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_MATCHING_ENTRY_COUNT           EnumhttpServletExtensionAllowedControlProp = "matching-entry-count"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_NAME_WITH_ENTRYUUID            EnumhttpServletExtensionAllowedControlProp = "name-with-entryuuid"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_NO_OP                          EnumhttpServletExtensionAllowedControlProp = "no-op"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_OPERATION_PURPOSE              EnumhttpServletExtensionAllowedControlProp = "operation-purpose"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PASSWORD_UPDATE_BEHAVIOR       EnumhttpServletExtensionAllowedControlProp = "password-update-behavior"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PASSWORD_VALIDATION_DETAILS    EnumhttpServletExtensionAllowedControlProp = "password-validation-details"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PERMISSIVE_MODIFY              EnumhttpServletExtensionAllowedControlProp = "permissive-modify"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PERMIT_UNINDEXED_SEARCH        EnumhttpServletExtensionAllowedControlProp = "permit-unindexed-search"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_POST_READ                      EnumhttpServletExtensionAllowedControlProp = "post-read"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PRE_READ                       EnumhttpServletExtensionAllowedControlProp = "pre-read"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PROXIED_AUTHORIZATION_V1       EnumhttpServletExtensionAllowedControlProp = "proxied-authorization-v1"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PROXIED_AUTHORIZATION_V2       EnumhttpServletExtensionAllowedControlProp = "proxied-authorization-v2"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PURGE_PASSWORD                 EnumhttpServletExtensionAllowedControlProp = "purge-password"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_REAL_ATTRIBUTES_ONLY           EnumhttpServletExtensionAllowedControlProp = "real-attributes-only"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_REJECT_UNINDEXED_SEARCH        EnumhttpServletExtensionAllowedControlProp = "reject-unindexed-search"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_RETIRE_PASSWORD                EnumhttpServletExtensionAllowedControlProp = "retire-password"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_SUPPRESS_REFERENTIAL_INTEGRITY EnumhttpServletExtensionAllowedControlProp = "suppress-referential-integrity"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_UNIQUENESS                     EnumhttpServletExtensionAllowedControlProp = "uniqueness"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_VIRTUAL_ATTRIBUTES_ONLY        EnumhttpServletExtensionAllowedControlProp = "virtual-attributes-only"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_ACCESS_LOG_FIELD                 EnumhttpServletExtensionAllowedControlProp = "access-log-field"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_ASSERTION                        EnumhttpServletExtensionAllowedControlProp = "assertion"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_ASSURED_REPLICATION              EnumhttpServletExtensionAllowedControlProp = "assured-replication"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_EXCLUDE_BRANCH                   EnumhttpServletExtensionAllowedControlProp = "exclude-branch"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GENERATE_PASSWORD                EnumhttpServletExtensionAllowedControlProp = "generate-password"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GET_EFFECTIVE_RIGHTS             EnumhttpServletExtensionAllowedControlProp = "get-effective-rights"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GET_PASSWORD_POLICY_STATE_ISSUES EnumhttpServletExtensionAllowedControlProp = "get-password-policy-state-issues"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GET_RECENT_LOGIN_HISTORY         EnumhttpServletExtensionAllowedControlProp = "get-recent-login-history"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GET_USER_RESOURCE_LIMITS         EnumhttpServletExtensionAllowedControlProp = "get-user-resource-limits"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_IGNORE_NO_USER_MODIFICATION      EnumhttpServletExtensionAllowedControlProp = "ignore-no-user-modification"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_INTERMEDIATE_CLIENT              EnumhttpServletExtensionAllowedControlProp = "intermediate-client"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_JOIN                             EnumhttpServletExtensionAllowedControlProp = "join"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_MANAGE_DSA_IT                    EnumhttpServletExtensionAllowedControlProp = "manage-dsa-it"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_MATCHED_VALUES                   EnumhttpServletExtensionAllowedControlProp = "matched-values"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_MATCHING_ENTRY_COUNT             EnumhttpServletExtensionAllowedControlProp = "matching-entry-count"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_NAME_WITH_ENTRYUUID              EnumhttpServletExtensionAllowedControlProp = "name-with-entryuuid"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_NO_OP                            EnumhttpServletExtensionAllowedControlProp = "no-op"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_OPERATION_PURPOSE                EnumhttpServletExtensionAllowedControlProp = "operation-purpose"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PASSWORD_UPDATE_BEHAVIOR         EnumhttpServletExtensionAllowedControlProp = "password-update-behavior"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PASSWORD_VALIDATION_DETAILS      EnumhttpServletExtensionAllowedControlProp = "password-validation-details"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PERMISSIVE_MODIFY                EnumhttpServletExtensionAllowedControlProp = "permissive-modify"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PERMIT_UNINDEXED_SEARCH          EnumhttpServletExtensionAllowedControlProp = "permit-unindexed-search"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_POST_READ                        EnumhttpServletExtensionAllowedControlProp = "post-read"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PRE_READ                         EnumhttpServletExtensionAllowedControlProp = "pre-read"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PROXIED_AUTHORIZATION_V1         EnumhttpServletExtensionAllowedControlProp = "proxied-authorization-v1"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PROXIED_AUTHORIZATION_V2         EnumhttpServletExtensionAllowedControlProp = "proxied-authorization-v2"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_PURGE_PASSWORD                   EnumhttpServletExtensionAllowedControlProp = "purge-password"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_REAL_ATTRIBUTES_ONLY             EnumhttpServletExtensionAllowedControlProp = "real-attributes-only"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_REJECT_UNINDEXED_SEARCH          EnumhttpServletExtensionAllowedControlProp = "reject-unindexed-search"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_RETIRE_PASSWORD                  EnumhttpServletExtensionAllowedControlProp = "retire-password"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_SUPPRESS_REFERENTIAL_INTEGRITY   EnumhttpServletExtensionAllowedControlProp = "suppress-referential-integrity"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_UNIQUENESS                       EnumhttpServletExtensionAllowedControlProp = "uniqueness"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_VIRTUAL_ATTRIBUTES_ONLY          EnumhttpServletExtensionAllowedControlProp = "virtual-attributes-only"
 )
 
 // All allowed values of EnumhttpServletExtensionAllowedControlProp enum
 var AllowedEnumhttpServletExtensionAllowedControlPropEnumValues = []EnumhttpServletExtensionAllowedControlProp{
+	"access-log-field",
 	"assertion",
 	"assured-replication",
 	"exclude-branch",
 	"generate-password",
 	"get-effective-rights",
+	"get-password-policy-state-issues",
+	"get-recent-login-history",
+	"get-user-resource-limits",
 	"ignore-no-user-modification",
 	"intermediate-client",
 	"join",

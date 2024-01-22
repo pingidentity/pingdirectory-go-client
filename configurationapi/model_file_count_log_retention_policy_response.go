@@ -19,8 +19,6 @@ var _ MappedNullable = &FileCountLogRetentionPolicyResponse{}
 
 // FileCountLogRetentionPolicyResponse struct for FileCountLogRetentionPolicyResponse
 type FileCountLogRetentionPolicyResponse struct {
-	// Name of the Log Retention Policy
-	Id      string                                     `json:"id"`
 	Schemas []EnumfileCountLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the number of archived log files to retain before the oldest ones are cleaned.
 	NumberOfFiles int64 `json:"numberOfFiles"`
@@ -28,17 +26,19 @@ type FileCountLogRetentionPolicyResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Retention Policy
+	Id string `json:"id"`
 }
 
 // NewFileCountLogRetentionPolicyResponse instantiates a new FileCountLogRetentionPolicyResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFileCountLogRetentionPolicyResponse(id string, schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int64) *FileCountLogRetentionPolicyResponse {
+func NewFileCountLogRetentionPolicyResponse(schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int64, id string) *FileCountLogRetentionPolicyResponse {
 	this := FileCountLogRetentionPolicyResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.NumberOfFiles = numberOfFiles
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewFileCountLogRetentionPolicyResponse(id string, schemas []EnumfileCountLo
 func NewFileCountLogRetentionPolicyResponseWithDefaults() *FileCountLogRetentionPolicyResponse {
 	this := FileCountLogRetentionPolicyResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *FileCountLogRetentionPolicyResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *FileCountLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *FileCountLogRetentionPolicyResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *FileCountLogRetentionPolicyResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *FileCountLogRetentionPolicyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *FileCountLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *FileCountLogRetentionPolicyResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o FileCountLogRetentionPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o FileCountLogRetentionPolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o FileCountLogRetentionPolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["numberOfFiles"] = o.NumberOfFiles
 	if !IsNil(o.Description) {
@@ -240,6 +239,7 @@ func (o FileCountLogRetentionPolicyResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

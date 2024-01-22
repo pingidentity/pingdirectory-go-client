@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Alert Handler | 
 **Schemas** | [**[]EnumthirdPartyAlertHandlerSchemaUrn**](EnumthirdPartyAlertHandlerSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Alert Handler. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Alert Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **EnabledAlertSeverity** | Pointer to [**[]EnumalertHandlerEnabledAlertSeverityProp**](EnumalertHandlerEnabledAlertSeverityProp.md) |  | [optional] 
 **EnabledAlertType** | Pointer to [**[]EnumalertHandlerEnabledAlertTypeProp**](EnumalertHandlerEnabledAlertTypeProp.md) |  | [optional] 
 **DisabledAlertType** | Pointer to [**[]EnumalertHandlerDisabledAlertTypeProp**](EnumalertHandlerDisabledAlertTypeProp.md) |  | [optional] 
+**HandlerName** | **string** | Name of the new Alert Handler | 
 
 ## Methods
 
 ### NewAddThirdPartyAlertHandlerRequest
 
-`func NewAddThirdPartyAlertHandlerRequest(handlerName string, schemas []EnumthirdPartyAlertHandlerSchemaUrn, extensionClass string, enabled bool, ) *AddThirdPartyAlertHandlerRequest`
+`func NewAddThirdPartyAlertHandlerRequest(schemas []EnumthirdPartyAlertHandlerSchemaUrn, extensionClass string, enabled bool, handlerName string, ) *AddThirdPartyAlertHandlerRequest`
 
 NewAddThirdPartyAlertHandlerRequest instantiates a new AddThirdPartyAlertHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyAlertHandlerRequestWithDefaults instantiates a new AddThirdPartyAlertHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddThirdPartyAlertHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddThirdPartyAlertHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddThirdPartyAlertHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -263,6 +243,26 @@ SetDisabledAlertType sets DisabledAlertType field to given value.
 `func (o *AddThirdPartyAlertHandlerRequest) HasDisabledAlertType() bool`
 
 HasDisabledAlertType returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddThirdPartyAlertHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddThirdPartyAlertHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddThirdPartyAlertHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

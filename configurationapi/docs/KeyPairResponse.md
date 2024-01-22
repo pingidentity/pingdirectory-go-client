@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Key Pair | 
 **Schemas** | Pointer to [**[]EnumkeyPairSchemaUrn**](EnumkeyPairSchemaUrn.md) |  | [optional] 
 **KeyAlgorithm** | [**EnumkeyPairKeyAlgorithmProp**](EnumkeyPairKeyAlgorithmProp.md) |  | 
 **SelfSignedCertificateValidity** | Pointer to **string** | The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens. | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **PrivateKey** | Pointer to **string** | The base64-encoded private key that is encrypted using the preferred encryption settings definition. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Key Pair | 
 
 ## Methods
 
 ### NewKeyPairResponse
 
-`func NewKeyPairResponse(id string, keyAlgorithm EnumkeyPairKeyAlgorithmProp, ) *KeyPairResponse`
+`func NewKeyPairResponse(keyAlgorithm EnumkeyPairKeyAlgorithmProp, id string, ) *KeyPairResponse`
 
 NewKeyPairResponse instantiates a new KeyPairResponse object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewKeyPairResponseWithDefaults instantiates a new KeyPairResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *KeyPairResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *KeyPairResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *KeyPairResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -247,6 +227,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *KeyPairResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *KeyPairResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *KeyPairResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *KeyPairResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

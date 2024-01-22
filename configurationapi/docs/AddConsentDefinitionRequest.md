@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefinitionName** | **string** | Name of the new Consent Definition | 
 **Schemas** | Pointer to [**[]EnumconsentDefinitionSchemaUrn**](EnumconsentDefinitionSchemaUrn.md) |  | [optional] 
 **UniqueID** | **string** | A version-independent unique identifier for this Consent Definition. | 
 **DisplayName** | Pointer to **string** | A human-readable display name for this Consent Definition. | [optional] 
 **Parameter** | Pointer to **[]string** | Optional parameters for this Consent Definition. | [optional] 
 **Description** | Pointer to **string** | A description for this Consent Definition | [optional] 
+**DefinitionName** | **string** | Name of the new Consent Definition | 
 
 ## Methods
 
 ### NewAddConsentDefinitionRequest
 
-`func NewAddConsentDefinitionRequest(definitionName string, uniqueID string, ) *AddConsentDefinitionRequest`
+`func NewAddConsentDefinitionRequest(uniqueID string, definitionName string, ) *AddConsentDefinitionRequest`
 
 NewAddConsentDefinitionRequest instantiates a new AddConsentDefinitionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddConsentDefinitionRequestWithDefaults instantiates a new AddConsentDefinitionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetDefinitionName
-
-`func (o *AddConsentDefinitionRequest) GetDefinitionName() string`
-
-GetDefinitionName returns the DefinitionName field if non-nil, zero value otherwise.
-
-### GetDefinitionNameOk
-
-`func (o *AddConsentDefinitionRequest) GetDefinitionNameOk() (*string, bool)`
-
-GetDefinitionNameOk returns a tuple with the DefinitionName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefinitionName
-
-`func (o *AddConsentDefinitionRequest) SetDefinitionName(v string)`
-
-SetDefinitionName sets DefinitionName field to given value.
-
 
 ### GetSchemas
 
@@ -169,6 +149,26 @@ SetDescription sets Description field to given value.
 `func (o *AddConsentDefinitionRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetDefinitionName
+
+`func (o *AddConsentDefinitionRequest) GetDefinitionName() string`
+
+GetDefinitionName returns the DefinitionName field if non-nil, zero value otherwise.
+
+### GetDefinitionNameOk
+
+`func (o *AddConsentDefinitionRequest) GetDefinitionNameOk() (*string, bool)`
+
+GetDefinitionNameOk returns a tuple with the DefinitionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefinitionName
+
+`func (o *AddConsentDefinitionRequest) SetDefinitionName(v string)`
+
+SetDefinitionName sets DefinitionName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

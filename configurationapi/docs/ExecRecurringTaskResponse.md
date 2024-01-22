@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Recurring Task | 
 **Schemas** | [**[]EnumexecRecurringTaskSchemaUrn**](EnumexecRecurringTaskSchemaUrn.md) |  | 
 **CommandPath** | **string** | The absolute path to the command to execute. It must be an absolute path, the corresponding file must exist, and it must be listed in the config/exec-command-whitelist.txt file. | 
 **CommandArguments** | Pointer to **string** | A string containing the arguments to provide to the command. If the command should be run without arguments, this property should be left undefined. If there should be multiple arguments, then they should be separated with spaces. | [optional] 
@@ -24,12 +23,13 @@ Name | Type | Description | Notes
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Recurring Task | 
 
 ## Methods
 
 ### NewExecRecurringTaskResponse
 
-`func NewExecRecurringTaskResponse(id string, schemas []EnumexecRecurringTaskSchemaUrn, commandPath string, ) *ExecRecurringTaskResponse`
+`func NewExecRecurringTaskResponse(schemas []EnumexecRecurringTaskSchemaUrn, commandPath string, id string, ) *ExecRecurringTaskResponse`
 
 NewExecRecurringTaskResponse instantiates a new ExecRecurringTaskResponse object
 This constructor will assign default values to properties that have it defined,
@@ -43,26 +43,6 @@ will change when the set of required properties is changed
 NewExecRecurringTaskResponseWithDefaults instantiates a new ExecRecurringTaskResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ExecRecurringTaskResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ExecRecurringTaskResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ExecRecurringTaskResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -528,6 +508,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ExecRecurringTaskResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ExecRecurringTaskResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ExecRecurringTaskResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ExecRecurringTaskResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

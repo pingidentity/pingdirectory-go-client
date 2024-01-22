@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BackendName** | **string** | Name of the new Backend | 
 **Schemas** | [**[]EnumlocalDbBackendSchemaUrn**](EnumlocalDbBackendSchemaUrn.md) |  | 
 **UncachedId2entryCacheMode** | Pointer to [**EnumbackendUncachedId2entryCacheModeProp**](EnumbackendUncachedId2entryCacheModeProp.md) |  | [optional] 
 **UncachedAttributeCriteria** | Pointer to **string** | The criteria that will be used to identify attributes that should be written into the uncached-id2entry database rather than the id2entry database. This will only be used for entries in which the associated uncached-entry-criteria does not indicate that the entire entry should be uncached. | [optional] 
@@ -64,12 +63,13 @@ Name | Type | Description | Notes
 **SetDegradedAlertWhenDisabled** | Pointer to **bool** | Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled. | [optional] 
 **ReturnUnavailableWhenDisabled** | Pointer to **bool** | Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled. | [optional] 
 **NotificationManager** | Pointer to **string** | Specifies a notification manager for changes resulting from operations processed through this Backend | [optional] 
+**BackendName** | **string** | Name of the new Backend | 
 
 ## Methods
 
 ### NewAddLocalDbBackendRequest
 
-`func NewAddLocalDbBackendRequest(backendName string, schemas []EnumlocalDbBackendSchemaUrn, backendID string, enabled bool, baseDN []string, ) *AddLocalDbBackendRequest`
+`func NewAddLocalDbBackendRequest(schemas []EnumlocalDbBackendSchemaUrn, backendID string, enabled bool, baseDN []string, backendName string, ) *AddLocalDbBackendRequest`
 
 NewAddLocalDbBackendRequest instantiates a new AddLocalDbBackendRequest object
 This constructor will assign default values to properties that have it defined,
@@ -83,26 +83,6 @@ will change when the set of required properties is changed
 NewAddLocalDbBackendRequestWithDefaults instantiates a new AddLocalDbBackendRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBackendName
-
-`func (o *AddLocalDbBackendRequest) GetBackendName() string`
-
-GetBackendName returns the BackendName field if non-nil, zero value otherwise.
-
-### GetBackendNameOk
-
-`func (o *AddLocalDbBackendRequest) GetBackendNameOk() (*string, bool)`
-
-GetBackendNameOk returns a tuple with the BackendName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBackendName
-
-`func (o *AddLocalDbBackendRequest) SetBackendName(v string)`
-
-SetBackendName sets BackendName field to given value.
-
 
 ### GetSchemas
 
@@ -1558,6 +1538,26 @@ SetNotificationManager sets NotificationManager field to given value.
 `func (o *AddLocalDbBackendRequest) HasNotificationManager() bool`
 
 HasNotificationManager returns a boolean if a field has been set.
+
+### GetBackendName
+
+`func (o *AddLocalDbBackendRequest) GetBackendName() string`
+
+GetBackendName returns the BackendName field if non-nil, zero value otherwise.
+
+### GetBackendNameOk
+
+`func (o *AddLocalDbBackendRequest) GetBackendNameOk() (*string, bool)`
+
+GetBackendNameOk returns a tuple with the BackendName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackendName
+
+`func (o *AddLocalDbBackendRequest) SetBackendName(v string)`
+
+SetBackendName sets BackendName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

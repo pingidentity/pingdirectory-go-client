@@ -19,9 +19,7 @@ var _ MappedNullable = &AddScimSubattributeRequest{}
 
 // AddScimSubattributeRequest struct for AddScimSubattributeRequest
 type AddScimSubattributeRequest struct {
-	// Name of the new SCIM Subattribute
-	SubattributeName string                          `json:"subattributeName"`
-	Schemas          []EnumscimSubattributeSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumscimSubattributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this SCIM Subattribute
 	Description *string                       `json:"description,omitempty"`
 	Type        *EnumscimSubattributeTypeProp `json:"type,omitempty"`
@@ -37,6 +35,8 @@ type AddScimSubattributeRequest struct {
 	Returned       *EnumscimSubattributeReturnedProp   `json:"returned,omitempty"`
 	// Specifies the SCIM resource types that may be referenced. This property is only applicable for sub-attributes that are of type 'reference'. Valid values are: A SCIM resource type (e.g., 'User' or 'Group'), 'external' - indicating the resource is an external resource (e.g., such as a photo), or 'uri' - indicating that the reference is to a service endpoint or an identifier (such as a schema urn).
 	ReferenceType []string `json:"referenceType,omitempty"`
+	// Name of the new SCIM Subattribute
+	SubattributeName string `json:"subattributeName"`
 }
 
 // NewAddScimSubattributeRequest instantiates a new AddScimSubattributeRequest object
@@ -55,30 +55,6 @@ func NewAddScimSubattributeRequest(subattributeName string) *AddScimSubattribute
 func NewAddScimSubattributeRequestWithDefaults() *AddScimSubattributeRequest {
 	this := AddScimSubattributeRequest{}
 	return &this
-}
-
-// GetSubattributeName returns the SubattributeName field value
-func (o *AddScimSubattributeRequest) GetSubattributeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SubattributeName
-}
-
-// GetSubattributeNameOk returns a tuple with the SubattributeName field value
-// and a boolean to check if the value has been set.
-func (o *AddScimSubattributeRequest) GetSubattributeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SubattributeName, true
-}
-
-// SetSubattributeName sets field value
-func (o *AddScimSubattributeRequest) SetSubattributeName(v string) {
-	o.SubattributeName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -401,6 +377,30 @@ func (o *AddScimSubattributeRequest) SetReferenceType(v []string) {
 	o.ReferenceType = v
 }
 
+// GetSubattributeName returns the SubattributeName field value
+func (o *AddScimSubattributeRequest) GetSubattributeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SubattributeName
+}
+
+// GetSubattributeNameOk returns a tuple with the SubattributeName field value
+// and a boolean to check if the value has been set.
+func (o *AddScimSubattributeRequest) GetSubattributeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SubattributeName, true
+}
+
+// SetSubattributeName sets field value
+func (o *AddScimSubattributeRequest) SetSubattributeName(v string) {
+	o.SubattributeName = v
+}
+
 func (o AddScimSubattributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -411,7 +411,6 @@ func (o AddScimSubattributeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddScimSubattributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["subattributeName"] = o.SubattributeName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -442,6 +441,7 @@ func (o AddScimSubattributeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ReferenceType) {
 		toSerialize["referenceType"] = o.ReferenceType
 	}
+	toSerialize["subattributeName"] = o.SubattributeName
 	return toSerialize, nil
 }
 

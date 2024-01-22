@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAmazonSecretsManagerPasswordStorageSchemeRequest{}
 
 // AddAmazonSecretsManagerPasswordStorageSchemeRequest struct for AddAmazonSecretsManagerPasswordStorageSchemeRequest
 type AddAmazonSecretsManagerPasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName string                                                   `json:"schemeName"`
-	Schemas    []EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas []EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The external server with information to use when interacting with the AWS Secrets Manager service.
 	AwsExternalServer string `json:"awsExternalServer"`
 	// The default name of the field in JSON objects contained in the AWS Secrets Manager service that contains the password for the target user.
@@ -30,18 +28,20 @@ type AddAmazonSecretsManagerPasswordStorageSchemeRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddAmazonSecretsManagerPasswordStorageSchemeRequest instantiates a new AddAmazonSecretsManagerPasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAmazonSecretsManagerPasswordStorageSchemeRequest(schemeName string, schemas []EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn, awsExternalServer string, enabled bool) *AddAmazonSecretsManagerPasswordStorageSchemeRequest {
+func NewAddAmazonSecretsManagerPasswordStorageSchemeRequest(schemas []EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn, awsExternalServer string, enabled bool, schemeName string) *AddAmazonSecretsManagerPasswordStorageSchemeRequest {
 	this := AddAmazonSecretsManagerPasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.AwsExternalServer = awsExternalServer
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddAmazonSecretsManagerPasswordStorageSchemeRequest(schemeName string, s
 func NewAddAmazonSecretsManagerPasswordStorageSchemeRequestWithDefaults() *AddAmazonSecretsManagerPasswordStorageSchemeRequest {
 	this := AddAmazonSecretsManagerPasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) SetEnabled(v bool)
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddAmazonSecretsManagerPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddAmazonSecretsManagerPasswordStorageSchemeRequest) MarshalJSON() ([]by
 
 func (o AddAmazonSecretsManagerPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["awsExternalServer"] = o.AwsExternalServer
 	if !IsNil(o.DefaultField) {
@@ -233,6 +232,7 @@ func (o AddAmazonSecretsManagerPasswordStorageSchemeRequest) ToMap() (map[string
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

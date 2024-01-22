@@ -19,8 +19,6 @@ var _ MappedNullable = &GroovyScriptedIdentityMapperResponse{}
 
 // GroovyScriptedIdentityMapperResponse struct for GroovyScriptedIdentityMapperResponse
 type GroovyScriptedIdentityMapperResponse struct {
-	// Name of the Identity Mapper
-	Id      string                                      `json:"id"`
 	Schemas []EnumgroovyScriptedIdentityMapperSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper.
 	ScriptClass string `json:"scriptClass"`
@@ -32,18 +30,20 @@ type GroovyScriptedIdentityMapperResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Identity Mapper
+	Id string `json:"id"`
 }
 
 // NewGroovyScriptedIdentityMapperResponse instantiates a new GroovyScriptedIdentityMapperResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroovyScriptedIdentityMapperResponse(id string, schemas []EnumgroovyScriptedIdentityMapperSchemaUrn, scriptClass string, enabled bool) *GroovyScriptedIdentityMapperResponse {
+func NewGroovyScriptedIdentityMapperResponse(schemas []EnumgroovyScriptedIdentityMapperSchemaUrn, scriptClass string, enabled bool, id string) *GroovyScriptedIdentityMapperResponse {
 	this := GroovyScriptedIdentityMapperResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewGroovyScriptedIdentityMapperResponse(id string, schemas []EnumgroovyScri
 func NewGroovyScriptedIdentityMapperResponseWithDefaults() *GroovyScriptedIdentityMapperResponse {
 	this := GroovyScriptedIdentityMapperResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GroovyScriptedIdentityMapperResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GroovyScriptedIdentityMapperResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GroovyScriptedIdentityMapperResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -279,6 +255,30 @@ func (o *GroovyScriptedIdentityMapperResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *GroovyScriptedIdentityMapperResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedIdentityMapperResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *GroovyScriptedIdentityMapperResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o GroovyScriptedIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -289,7 +289,6 @@ func (o GroovyScriptedIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 
 func (o GroovyScriptedIdentityMapperResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -305,6 +304,7 @@ func (o GroovyScriptedIdentityMapperResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

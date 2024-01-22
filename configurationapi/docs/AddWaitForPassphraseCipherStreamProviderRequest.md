@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 **Schemas** | [**[]EnumwaitForPassphraseCipherStreamProviderSchemaUrn**](EnumwaitForPassphraseCipherStreamProviderSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
+**ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 
 ## Methods
 
 ### NewAddWaitForPassphraseCipherStreamProviderRequest
 
-`func NewAddWaitForPassphraseCipherStreamProviderRequest(providerName string, schemas []EnumwaitForPassphraseCipherStreamProviderSchemaUrn, enabled bool, ) *AddWaitForPassphraseCipherStreamProviderRequest`
+`func NewAddWaitForPassphraseCipherStreamProviderRequest(schemas []EnumwaitForPassphraseCipherStreamProviderSchemaUrn, enabled bool, providerName string, ) *AddWaitForPassphraseCipherStreamProviderRequest`
 
 NewAddWaitForPassphraseCipherStreamProviderRequest instantiates a new AddWaitForPassphraseCipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewAddWaitForPassphraseCipherStreamProviderRequestWithDefaults instantiates a new AddWaitForPassphraseCipherStreamProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddWaitForPassphraseCipherStreamProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -111,6 +91,26 @@ and a boolean to check if the value has been set.
 `func (o *AddWaitForPassphraseCipherStreamProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddWaitForPassphraseCipherStreamProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

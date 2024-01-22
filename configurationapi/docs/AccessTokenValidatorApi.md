@@ -1,14 +1,14 @@
-# \AccessTokenValidatorApi
+# \AccessTokenValidatorAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddAccessTokenValidator**](AccessTokenValidatorApi.md#AddAccessTokenValidator) | **Post** /access-token-validators | Add a new Access Token Validator to the config
-[**DeleteAccessTokenValidator**](AccessTokenValidatorApi.md#DeleteAccessTokenValidator) | **Delete** /access-token-validators/{access-token-validator-name} | Delete a Access Token Validator
-[**GetAccessTokenValidator**](AccessTokenValidatorApi.md#GetAccessTokenValidator) | **Get** /access-token-validators/{access-token-validator-name} | Returns a single Access Token Validator
-[**ListAccessTokenValidators**](AccessTokenValidatorApi.md#ListAccessTokenValidators) | **Get** /access-token-validators | Returns a list of all Access Token Validator objects
-[**UpdateAccessTokenValidator**](AccessTokenValidatorApi.md#UpdateAccessTokenValidator) | **Patch** /access-token-validators/{access-token-validator-name} | Update an existing Access Token Validator by name
+[**AddAccessTokenValidator**](AccessTokenValidatorAPI.md#AddAccessTokenValidator) | **Post** /access-token-validators | Add a new Access Token Validator to the config
+[**DeleteAccessTokenValidator**](AccessTokenValidatorAPI.md#DeleteAccessTokenValidator) | **Delete** /access-token-validators/{access-token-validator-name} | Delete a Access Token Validator
+[**GetAccessTokenValidator**](AccessTokenValidatorAPI.md#GetAccessTokenValidator) | **Get** /access-token-validators/{access-token-validator-name} | Returns a single Access Token Validator
+[**ListAccessTokenValidators**](AccessTokenValidatorAPI.md#ListAccessTokenValidators) | **Get** /access-token-validators | Returns a list of all Access Token Validator objects
+[**UpdateAccessTokenValidator**](AccessTokenValidatorAPI.md#UpdateAccessTokenValidator) | **Patch** /access-token-validators/{access-token-validator-name} | Update an existing Access Token Validator by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addAccessTokenValidatorRequest := openapiclient.add_access_token_validator_request{AddJwtAccessTokenValidatorRequest: openapiclient.NewAddJwtAccessTokenValidatorRequest("ValidatorName_example", []openapiclient.EnumjwtAccessTokenValidatorSchemaUrn{openapiclient.Enumjwt-access-token-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:access-token-validator:jwt")}, false)} // AddAccessTokenValidatorRequest | Create a new Access Token Validator in the config
+    addAccessTokenValidatorRequest := openapiclient.add_access_token_validator_request{AddJwtAccessTokenValidatorRequest: openapiclient.NewAddJwtAccessTokenValidatorRequest([]openapiclient.EnumjwtAccessTokenValidatorSchemaUrn{openapiclient.Enumjwt-access-token-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:access-token-validator:jwt")}, false, "ValidatorName_example")} // AddAccessTokenValidatorRequest | Create a new Access Token Validator in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccessTokenValidatorApi.AddAccessTokenValidator(context.Background()).AddAccessTokenValidatorRequest(addAccessTokenValidatorRequest).Execute()
+    resp, r, err := apiClient.AccessTokenValidatorAPI.AddAccessTokenValidator(context.Background()).AddAccessTokenValidatorRequest(addAccessTokenValidatorRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorApi.AddAccessTokenValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorAPI.AddAccessTokenValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddAccessTokenValidator`: AddAccessTokenValidator200Response
-    fmt.Fprintf(os.Stdout, "Response from `AccessTokenValidatorApi.AddAccessTokenValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AccessTokenValidatorAPI.AddAccessTokenValidator`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AccessTokenValidatorApi.DeleteAccessTokenValidator(context.Background(), accessTokenValidatorName).Execute()
+    r, err := apiClient.AccessTokenValidatorAPI.DeleteAccessTokenValidator(context.Background(), accessTokenValidatorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorApi.DeleteAccessTokenValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorAPI.DeleteAccessTokenValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ## GetAccessTokenValidator
 
-> AddAccessTokenValidator200Response GetAccessTokenValidator(ctx, accessTokenValidatorName).Execute()
+> GetAccessTokenValidator200Response GetAccessTokenValidator(ctx, accessTokenValidatorName).Execute()
 
 Returns a single Access Token Validator
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccessTokenValidatorApi.GetAccessTokenValidator(context.Background(), accessTokenValidatorName).Execute()
+    resp, r, err := apiClient.AccessTokenValidatorAPI.GetAccessTokenValidator(context.Background(), accessTokenValidatorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorApi.GetAccessTokenValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorAPI.GetAccessTokenValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAccessTokenValidator`: AddAccessTokenValidator200Response
-    fmt.Fprintf(os.Stdout, "Response from `AccessTokenValidatorApi.GetAccessTokenValidator`: %v\n", resp)
+    // response from `GetAccessTokenValidator`: GetAccessTokenValidator200Response
+    fmt.Fprintf(os.Stdout, "Response from `AccessTokenValidatorAPI.GetAccessTokenValidator`: %v\n", resp)
 }
 ```
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddAccessTokenValidator200Response**](AddAccessTokenValidator200Response.md)
+[**GetAccessTokenValidator200Response**](GetAccessTokenValidator200Response.md)
 
 ### Authorization
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccessTokenValidatorApi.ListAccessTokenValidators(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.AccessTokenValidatorAPI.ListAccessTokenValidators(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorApi.ListAccessTokenValidators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorAPI.ListAccessTokenValidators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListAccessTokenValidators`: AccessTokenValidatorListResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccessTokenValidatorApi.ListAccessTokenValidators`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AccessTokenValidatorAPI.ListAccessTokenValidators`: %v\n", resp)
 }
 ```
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAccessTokenValidator
 
-> AddAccessTokenValidator200Response UpdateAccessTokenValidator(ctx, accessTokenValidatorName).UpdateRequest(updateRequest).Execute()
+> GetAccessTokenValidator200Response UpdateAccessTokenValidator(ctx, accessTokenValidatorName).UpdateRequest(updateRequest).Execute()
 
 Update an existing Access Token Validator by name
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccessTokenValidatorApi.UpdateAccessTokenValidator(context.Background(), accessTokenValidatorName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.AccessTokenValidatorAPI.UpdateAccessTokenValidator(context.Background(), accessTokenValidatorName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorApi.UpdateAccessTokenValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorAPI.UpdateAccessTokenValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateAccessTokenValidator`: AddAccessTokenValidator200Response
-    fmt.Fprintf(os.Stdout, "Response from `AccessTokenValidatorApi.UpdateAccessTokenValidator`: %v\n", resp)
+    // response from `UpdateAccessTokenValidator`: GetAccessTokenValidator200Response
+    fmt.Fprintf(os.Stdout, "Response from `AccessTokenValidatorAPI.UpdateAccessTokenValidator`: %v\n", resp)
 }
 ```
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddAccessTokenValidator200Response**](AddAccessTokenValidator200Response.md)
+[**GetAccessTokenValidator200Response**](GetAccessTokenValidator200Response.md)
 
 ### Authorization
 

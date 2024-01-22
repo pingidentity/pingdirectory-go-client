@@ -19,8 +19,6 @@ var _ MappedNullable = &CopyLogFileRotationListenerResponse{}
 
 // CopyLogFileRotationListenerResponse struct for CopyLogFileRotationListenerResponse
 type CopyLogFileRotationListenerResponse struct {
-	// Name of the Log File Rotation Listener
-	Id      string                                     `json:"id"`
 	Schemas []EnumcopyLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The path to the directory to which log files should be copied. It must be different from the directory to which the log file is originally written, and administrators should ensure that the filesystem has sufficient space to hold files as they are copied.
 	CopyToDirectory string `json:"copyToDirectory"`
@@ -32,18 +30,20 @@ type CopyLogFileRotationListenerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log File Rotation Listener
+	Id string `json:"id"`
 }
 
 // NewCopyLogFileRotationListenerResponse instantiates a new CopyLogFileRotationListenerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCopyLogFileRotationListenerResponse(id string, schemas []EnumcopyLogFileRotationListenerSchemaUrn, copyToDirectory string, enabled bool) *CopyLogFileRotationListenerResponse {
+func NewCopyLogFileRotationListenerResponse(schemas []EnumcopyLogFileRotationListenerSchemaUrn, copyToDirectory string, enabled bool, id string) *CopyLogFileRotationListenerResponse {
 	this := CopyLogFileRotationListenerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.CopyToDirectory = copyToDirectory
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewCopyLogFileRotationListenerResponse(id string, schemas []EnumcopyLogFile
 func NewCopyLogFileRotationListenerResponseWithDefaults() *CopyLogFileRotationListenerResponse {
 	this := CopyLogFileRotationListenerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CopyLogFileRotationListenerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CopyLogFileRotationListenerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CopyLogFileRotationListenerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -279,6 +255,30 @@ func (o *CopyLogFileRotationListenerResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *CopyLogFileRotationListenerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CopyLogFileRotationListenerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CopyLogFileRotationListenerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o CopyLogFileRotationListenerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -289,7 +289,6 @@ func (o CopyLogFileRotationListenerResponse) MarshalJSON() ([]byte, error) {
 
 func (o CopyLogFileRotationListenerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["copyToDirectory"] = o.CopyToDirectory
 	if !IsNil(o.CompressOnCopy) {
@@ -305,6 +304,7 @@ func (o CopyLogFileRotationListenerResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

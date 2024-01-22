@@ -19,8 +19,6 @@ var _ MappedNullable = &FilterBasedUncachedEntryCriteriaResponse{}
 
 // FilterBasedUncachedEntryCriteriaResponse struct for FilterBasedUncachedEntryCriteriaResponse
 type FilterBasedUncachedEntryCriteriaResponse struct {
-	// Name of the Uncached Entry Criteria
-	Id      string                                          `json:"id"`
 	Schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the search filter that should be used to differentiate entries into cached and uncached sets.
 	Filter string `json:"filter"`
@@ -32,19 +30,21 @@ type FilterBasedUncachedEntryCriteriaResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Uncached Entry Criteria
+	Id string `json:"id"`
 }
 
 // NewFilterBasedUncachedEntryCriteriaResponse instantiates a new FilterBasedUncachedEntryCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFilterBasedUncachedEntryCriteriaResponse(id string, schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, filterIdentifiesUncachedEntries bool, enabled bool) *FilterBasedUncachedEntryCriteriaResponse {
+func NewFilterBasedUncachedEntryCriteriaResponse(schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, filterIdentifiesUncachedEntries bool, enabled bool, id string) *FilterBasedUncachedEntryCriteriaResponse {
 	this := FilterBasedUncachedEntryCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Filter = filter
 	this.FilterIdentifiesUncachedEntries = filterIdentifiesUncachedEntries
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewFilterBasedUncachedEntryCriteriaResponse(id string, schemas []Enumfilter
 func NewFilterBasedUncachedEntryCriteriaResponseWithDefaults() *FilterBasedUncachedEntryCriteriaResponse {
 	this := FilterBasedUncachedEntryCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *FilterBasedUncachedEntryCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *FilterBasedUncachedEntryCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *FilterBasedUncachedEntryCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -272,6 +248,30 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *FilterBasedUncachedEntryCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *FilterBasedUncachedEntryCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *FilterBasedUncachedEntryCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o FilterBasedUncachedEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -282,7 +282,6 @@ func (o FilterBasedUncachedEntryCriteriaResponse) MarshalJSON() ([]byte, error) 
 
 func (o FilterBasedUncachedEntryCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["filter"] = o.Filter
 	toSerialize["filterIdentifiesUncachedEntries"] = o.FilterIdentifiesUncachedEntries
@@ -296,6 +295,7 @@ func (o FilterBasedUncachedEntryCriteriaResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

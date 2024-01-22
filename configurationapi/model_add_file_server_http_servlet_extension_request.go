@@ -19,9 +19,7 @@ var _ MappedNullable = &AddFileServerHttpServletExtensionRequest{}
 
 // AddFileServerHttpServletExtensionRequest struct for AddFileServerHttpServletExtensionRequest
 type AddFileServerHttpServletExtensionRequest struct {
-	// Name of the new HTTP Servlet Extension
-	ExtensionName string                                        `json:"extensionName"`
-	Schemas       []EnumfileServerHttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas []EnumfileServerHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
 	// Specifies the path to the directory on the local filesystem containing the files to be served by this File Server HTTP Servlet Extension. The path must exist, and it must be a directory.
@@ -55,18 +53,20 @@ type AddFileServerHttpServletExtensionRequest struct {
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`
+	// Name of the new HTTP Servlet Extension
+	ExtensionName string `json:"extensionName"`
 }
 
 // NewAddFileServerHttpServletExtensionRequest instantiates a new AddFileServerHttpServletExtensionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFileServerHttpServletExtensionRequest(extensionName string, schemas []EnumfileServerHttpServletExtensionSchemaUrn, baseContextPath string, documentRootDirectory string) *AddFileServerHttpServletExtensionRequest {
+func NewAddFileServerHttpServletExtensionRequest(schemas []EnumfileServerHttpServletExtensionSchemaUrn, baseContextPath string, documentRootDirectory string, extensionName string) *AddFileServerHttpServletExtensionRequest {
 	this := AddFileServerHttpServletExtensionRequest{}
-	this.ExtensionName = extensionName
 	this.Schemas = schemas
 	this.BaseContextPath = baseContextPath
 	this.DocumentRootDirectory = documentRootDirectory
+	this.ExtensionName = extensionName
 	return &this
 }
 
@@ -76,30 +76,6 @@ func NewAddFileServerHttpServletExtensionRequest(extensionName string, schemas [
 func NewAddFileServerHttpServletExtensionRequestWithDefaults() *AddFileServerHttpServletExtensionRequest {
 	this := AddFileServerHttpServletExtensionRequest{}
 	return &this
-}
-
-// GetExtensionName returns the ExtensionName field value
-func (o *AddFileServerHttpServletExtensionRequest) GetExtensionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ExtensionName
-}
-
-// GetExtensionNameOk returns a tuple with the ExtensionName field value
-// and a boolean to check if the value has been set.
-func (o *AddFileServerHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ExtensionName, true
-}
-
-// SetExtensionName sets field value
-func (o *AddFileServerHttpServletExtensionRequest) SetExtensionName(v string) {
-	o.ExtensionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -654,6 +630,30 @@ func (o *AddFileServerHttpServletExtensionRequest) SetCorrelationIDResponseHeade
 	o.CorrelationIDResponseHeader = &v
 }
 
+// GetExtensionName returns the ExtensionName field value
+func (o *AddFileServerHttpServletExtensionRequest) GetExtensionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ExtensionName
+}
+
+// GetExtensionNameOk returns a tuple with the ExtensionName field value
+// and a boolean to check if the value has been set.
+func (o *AddFileServerHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ExtensionName, true
+}
+
+// SetExtensionName sets field value
+func (o *AddFileServerHttpServletExtensionRequest) SetExtensionName(v string) {
+	o.ExtensionName = v
+}
+
 func (o AddFileServerHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -664,7 +664,6 @@ func (o AddFileServerHttpServletExtensionRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddFileServerHttpServletExtensionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["extensionName"] = o.ExtensionName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["baseContextPath"] = o.BaseContextPath
 	toSerialize["documentRootDirectory"] = o.DocumentRootDirectory
@@ -713,6 +712,7 @@ func (o AddFileServerHttpServletExtensionRequest) ToMap() (map[string]interface{
 	if !IsNil(o.CorrelationIDResponseHeader) {
 		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
 	}
+	toSerialize["extensionName"] = o.ExtensionName
 	return toSerialize, nil
 }
 

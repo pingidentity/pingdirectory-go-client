@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSimpleSearchReferenceCriteriaRequest{}
 
 // AddSimpleSearchReferenceCriteriaRequest struct for AddSimpleSearchReferenceCriteriaRequest
 type AddSimpleSearchReferenceCriteriaRequest struct {
-	// Name of the new Search Reference Criteria
-	CriteriaName string                                       `json:"criteriaName"`
-	Schemas      []EnumsimpleSearchReferenceCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumsimpleSearchReferenceCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for references included in this Simple Search Reference Criteria.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
 	// Specifies the OID of a control that must be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain all of those controls.
@@ -34,16 +32,18 @@ type AddSimpleSearchReferenceCriteriaRequest struct {
 	NoneIncludedReferenceControl []string `json:"noneIncludedReferenceControl,omitempty"`
 	// A description for this Search Reference Criteria
 	Description *string `json:"description,omitempty"`
+	// Name of the new Search Reference Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddSimpleSearchReferenceCriteriaRequest instantiates a new AddSimpleSearchReferenceCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSimpleSearchReferenceCriteriaRequest(criteriaName string, schemas []EnumsimpleSearchReferenceCriteriaSchemaUrn) *AddSimpleSearchReferenceCriteriaRequest {
+func NewAddSimpleSearchReferenceCriteriaRequest(schemas []EnumsimpleSearchReferenceCriteriaSchemaUrn, criteriaName string) *AddSimpleSearchReferenceCriteriaRequest {
 	this := AddSimpleSearchReferenceCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddSimpleSearchReferenceCriteriaRequest(criteriaName string, schemas []E
 func NewAddSimpleSearchReferenceCriteriaRequestWithDefaults() *AddSimpleSearchReferenceCriteriaRequest {
 	this := AddSimpleSearchReferenceCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddSimpleSearchReferenceCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -295,6 +271,30 @@ func (o *AddSimpleSearchReferenceCriteriaRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddSimpleSearchReferenceCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddSimpleSearchReferenceCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -305,7 +305,6 @@ func (o AddSimpleSearchReferenceCriteriaRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSimpleSearchReferenceCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
@@ -325,6 +324,7 @@ func (o AddSimpleSearchReferenceCriteriaRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

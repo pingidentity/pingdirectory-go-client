@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LogFieldBehaviorApiService LogFieldBehaviorApi service
-type LogFieldBehaviorApiService service
+// LogFieldBehaviorAPIService LogFieldBehaviorAPI service
+type LogFieldBehaviorAPIService service
 
 type ApiAddLogFieldBehaviorRequest struct {
 	ctx                        context.Context
-	ApiService                 *LogFieldBehaviorApiService
+	ApiService                 *LogFieldBehaviorAPIService
 	addLogFieldBehaviorRequest *AddLogFieldBehaviorRequest
 }
 
@@ -44,7 +44,7 @@ AddLogFieldBehavior Add a new Log Field Behavior to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddLogFieldBehaviorRequest
 */
-func (a *LogFieldBehaviorApiService) AddLogFieldBehavior(ctx context.Context) ApiAddLogFieldBehaviorRequest {
+func (a *LogFieldBehaviorAPIService) AddLogFieldBehavior(ctx context.Context) ApiAddLogFieldBehaviorRequest {
 	return ApiAddLogFieldBehaviorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *LogFieldBehaviorApiService) AddLogFieldBehavior(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return AddLogFieldBehavior200Response
-func (a *LogFieldBehaviorApiService) AddLogFieldBehaviorExecute(r ApiAddLogFieldBehaviorRequest) (*AddLogFieldBehavior200Response, *http.Response, error) {
+func (a *LogFieldBehaviorAPIService) AddLogFieldBehaviorExecute(r ApiAddLogFieldBehaviorRequest) (*AddLogFieldBehavior200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *LogFieldBehaviorApiService) AddLogFieldBehaviorExecute(r ApiAddLogField
 		localVarReturnValue *AddLogFieldBehavior200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorApiService.AddLogFieldBehavior")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorAPIService.AddLogFieldBehavior")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *LogFieldBehaviorApiService) AddLogFieldBehaviorExecute(r ApiAddLogField
 
 type ApiDeleteLogFieldBehaviorRequest struct {
 	ctx                  context.Context
-	ApiService           *LogFieldBehaviorApiService
+	ApiService           *LogFieldBehaviorAPIService
 	logFieldBehaviorName string
 }
 
@@ -149,7 +149,7 @@ DeleteLogFieldBehavior Delete a Log Field Behavior
 	@param logFieldBehaviorName Name of the Log Field Behavior
 	@return ApiDeleteLogFieldBehaviorRequest
 */
-func (a *LogFieldBehaviorApiService) DeleteLogFieldBehavior(ctx context.Context, logFieldBehaviorName string) ApiDeleteLogFieldBehaviorRequest {
+func (a *LogFieldBehaviorAPIService) DeleteLogFieldBehavior(ctx context.Context, logFieldBehaviorName string) ApiDeleteLogFieldBehaviorRequest {
 	return ApiDeleteLogFieldBehaviorRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -158,14 +158,14 @@ func (a *LogFieldBehaviorApiService) DeleteLogFieldBehavior(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *LogFieldBehaviorApiService) DeleteLogFieldBehaviorExecute(r ApiDeleteLogFieldBehaviorRequest) (*http.Response, error) {
+func (a *LogFieldBehaviorAPIService) DeleteLogFieldBehaviorExecute(r ApiDeleteLogFieldBehaviorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorApiService.DeleteLogFieldBehavior")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorAPIService.DeleteLogFieldBehavior")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *LogFieldBehaviorApiService) DeleteLogFieldBehaviorExecute(r ApiDeleteLo
 
 type ApiGetLogFieldBehaviorRequest struct {
 	ctx                  context.Context
-	ApiService           *LogFieldBehaviorApiService
+	ApiService           *LogFieldBehaviorAPIService
 	logFieldBehaviorName string
 }
 
@@ -239,7 +239,7 @@ GetLogFieldBehavior Returns a single Log Field Behavior
 	@param logFieldBehaviorName Name of the Log Field Behavior
 	@return ApiGetLogFieldBehaviorRequest
 */
-func (a *LogFieldBehaviorApiService) GetLogFieldBehavior(ctx context.Context, logFieldBehaviorName string) ApiGetLogFieldBehaviorRequest {
+func (a *LogFieldBehaviorAPIService) GetLogFieldBehavior(ctx context.Context, logFieldBehaviorName string) ApiGetLogFieldBehaviorRequest {
 	return ApiGetLogFieldBehaviorRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -250,7 +250,7 @@ func (a *LogFieldBehaviorApiService) GetLogFieldBehavior(ctx context.Context, lo
 // Execute executes the request
 //
 //	@return AddLogFieldBehavior200Response
-func (a *LogFieldBehaviorApiService) GetLogFieldBehaviorExecute(r ApiGetLogFieldBehaviorRequest) (*AddLogFieldBehavior200Response, *http.Response, error) {
+func (a *LogFieldBehaviorAPIService) GetLogFieldBehaviorExecute(r ApiGetLogFieldBehaviorRequest) (*AddLogFieldBehavior200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *LogFieldBehaviorApiService) GetLogFieldBehaviorExecute(r ApiGetLogField
 		localVarReturnValue *AddLogFieldBehavior200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorApiService.GetLogFieldBehavior")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorAPIService.GetLogFieldBehavior")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *LogFieldBehaviorApiService) GetLogFieldBehaviorExecute(r ApiGetLogField
 
 type ApiListLogFieldBehaviorsRequest struct {
 	ctx        context.Context
-	ApiService *LogFieldBehaviorApiService
+	ApiService *LogFieldBehaviorAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListLogFieldBehaviors Returns a list of all Log Field Behavior objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListLogFieldBehaviorsRequest
 */
-func (a *LogFieldBehaviorApiService) ListLogFieldBehaviors(ctx context.Context) ApiListLogFieldBehaviorsRequest {
+func (a *LogFieldBehaviorAPIService) ListLogFieldBehaviors(ctx context.Context) ApiListLogFieldBehaviorsRequest {
 	return ApiListLogFieldBehaviorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *LogFieldBehaviorApiService) ListLogFieldBehaviors(ctx context.Context) 
 // Execute executes the request
 //
 //	@return LogFieldBehaviorListResponse
-func (a *LogFieldBehaviorApiService) ListLogFieldBehaviorsExecute(r ApiListLogFieldBehaviorsRequest) (*LogFieldBehaviorListResponse, *http.Response, error) {
+func (a *LogFieldBehaviorAPIService) ListLogFieldBehaviorsExecute(r ApiListLogFieldBehaviorsRequest) (*LogFieldBehaviorListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *LogFieldBehaviorApiService) ListLogFieldBehaviorsExecute(r ApiListLogFi
 		localVarReturnValue *LogFieldBehaviorListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorApiService.ListLogFieldBehaviors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorAPIService.ListLogFieldBehaviors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *LogFieldBehaviorApiService) ListLogFieldBehaviorsExecute(r ApiListLogFi
 
 type ApiUpdateLogFieldBehaviorRequest struct {
 	ctx                  context.Context
-	ApiService           *LogFieldBehaviorApiService
+	ApiService           *LogFieldBehaviorAPIService
 	logFieldBehaviorName string
 	updateRequest        *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateLogFieldBehavior Update an existing Log Field Behavior by name
 	@param logFieldBehaviorName Name of the Log Field Behavior
 	@return ApiUpdateLogFieldBehaviorRequest
 */
-func (a *LogFieldBehaviorApiService) UpdateLogFieldBehavior(ctx context.Context, logFieldBehaviorName string) ApiUpdateLogFieldBehaviorRequest {
+func (a *LogFieldBehaviorAPIService) UpdateLogFieldBehavior(ctx context.Context, logFieldBehaviorName string) ApiUpdateLogFieldBehaviorRequest {
 	return ApiUpdateLogFieldBehaviorRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -467,7 +467,7 @@ func (a *LogFieldBehaviorApiService) UpdateLogFieldBehavior(ctx context.Context,
 // Execute executes the request
 //
 //	@return AddLogFieldBehavior200Response
-func (a *LogFieldBehaviorApiService) UpdateLogFieldBehaviorExecute(r ApiUpdateLogFieldBehaviorRequest) (*AddLogFieldBehavior200Response, *http.Response, error) {
+func (a *LogFieldBehaviorAPIService) UpdateLogFieldBehaviorExecute(r ApiUpdateLogFieldBehaviorRequest) (*AddLogFieldBehavior200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *LogFieldBehaviorApiService) UpdateLogFieldBehaviorExecute(r ApiUpdateLo
 		localVarReturnValue *AddLogFieldBehavior200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorApiService.UpdateLogFieldBehavior")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldBehaviorAPIService.UpdateLogFieldBehavior")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

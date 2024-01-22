@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyUncachedEntryCriteriaRequest{}
 
 // AddThirdPartyUncachedEntryCriteriaRequest struct for AddThirdPartyUncachedEntryCriteriaRequest
 type AddThirdPartyUncachedEntryCriteriaRequest struct {
-	// Name of the new Uncached Entry Criteria
-	CriteriaName string                                         `json:"criteriaName"`
-	Schemas      []EnumthirdPartyUncachedEntryCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Uncached Entry Criteria.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Uncached Entry Criteria. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddThirdPartyUncachedEntryCriteriaRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Uncached Entry Criteria is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Uncached Entry Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddThirdPartyUncachedEntryCriteriaRequest instantiates a new AddThirdPartyUncachedEntryCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumthirdPartyUncachedEntryCriteriaSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyUncachedEntryCriteriaRequest {
+func NewAddThirdPartyUncachedEntryCriteriaRequest(schemas []EnumthirdPartyUncachedEntryCriteriaSchemaUrn, extensionClass string, enabled bool, criteriaName string) *AddThirdPartyUncachedEntryCriteriaRequest {
 	this := AddThirdPartyUncachedEntryCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddThirdPartyUncachedEntryCriteriaRequest(criteriaName string, schemas [
 func NewAddThirdPartyUncachedEntryCriteriaRequestWithDefaults() *AddThirdPartyUncachedEntryCriteriaRequest {
 	this := AddThirdPartyUncachedEntryCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddThirdPartyUncachedEntryCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddThirdPartyUncachedEntryCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddThirdPartyUncachedEntryCriteriaRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddThirdPartyUncachedEntryCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddThirdPartyUncachedEntryCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddThirdPartyUncachedEntryCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddThirdPartyUncachedEntryCriteriaRequest) MarshalJSON() ([]byte, error)
 
 func (o AddThirdPartyUncachedEntryCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -233,6 +232,7 @@ func (o AddThirdPartyUncachedEntryCriteriaRequest) ToMap() (map[string]interface
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

@@ -1,11 +1,11 @@
-# \WorkQueueApi
+# \WorkQueueAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetWorkQueue**](WorkQueueApi.md#GetWorkQueue) | **Get** /work-queue | Returns a single Work Queue
-[**UpdateWorkQueue**](WorkQueueApi.md#UpdateWorkQueue) | **Patch** /work-queue | Update an existing Work Queue by name
+[**GetWorkQueue**](WorkQueueAPI.md#GetWorkQueue) | **Get** /work-queue | Returns a single Work Queue
+[**UpdateWorkQueue**](WorkQueueAPI.md#UpdateWorkQueue) | **Patch** /work-queue | Update an existing Work Queue by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkQueueApi.GetWorkQueue(context.Background()).Execute()
+    resp, r, err := apiClient.WorkQueueAPI.GetWorkQueue(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WorkQueueApi.GetWorkQueue``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WorkQueueAPI.GetWorkQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetWorkQueue`: HighThroughputWorkQueueResponse
-    fmt.Fprintf(os.Stdout, "Response from `WorkQueueApi.GetWorkQueue`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WorkQueueAPI.GetWorkQueue`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkQueueApi.UpdateWorkQueue(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.WorkQueueAPI.UpdateWorkQueue(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WorkQueueApi.UpdateWorkQueue``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WorkQueueAPI.UpdateWorkQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateWorkQueue`: HighThroughputWorkQueueResponse
-    fmt.Fprintf(os.Stdout, "Response from `WorkQueueApi.UpdateWorkQueue`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `WorkQueueAPI.UpdateWorkQueue`: %v\n", resp)
 }
 ```
 

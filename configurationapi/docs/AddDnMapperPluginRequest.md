@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumdnMapperPluginSchemaUrn**](EnumdnMapperPluginSchemaUrn.md) |  | 
 **PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **SourceDN** | **string** | Specifies the source DN that may appear in client requests which should be remapped to the target DN. Note that the source DN must not be equal to the target DN. | 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddDnMapperPluginRequest
 
-`func NewAddDnMapperPluginRequest(pluginName string, schemas []EnumdnMapperPluginSchemaUrn, sourceDN string, targetDN string, enabled bool, ) *AddDnMapperPluginRequest`
+`func NewAddDnMapperPluginRequest(schemas []EnumdnMapperPluginSchemaUrn, sourceDN string, targetDN string, enabled bool, pluginName string, ) *AddDnMapperPluginRequest`
 
 NewAddDnMapperPluginRequest instantiates a new AddDnMapperPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewAddDnMapperPluginRequestWithDefaults instantiates a new AddDnMapperPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddDnMapperPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddDnMapperPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddDnMapperPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -310,6 +290,26 @@ SetInvokeForInternalOperations sets InvokeForInternalOperations field to given v
 `func (o *AddDnMapperPluginRequest) HasInvokeForInternalOperations() bool`
 
 HasInvokeForInternalOperations returns a boolean if a field has been set.
+
+### GetPluginName
+
+`func (o *AddDnMapperPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddDnMapperPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddDnMapperPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

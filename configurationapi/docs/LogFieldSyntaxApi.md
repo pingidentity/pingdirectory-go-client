@@ -1,12 +1,12 @@
-# \LogFieldSyntaxApi
+# \LogFieldSyntaxAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetLogFieldSyntax**](LogFieldSyntaxApi.md#GetLogFieldSyntax) | **Get** /log-field-syntaxes/{log-field-syntax-name} | Returns a single Log Field Syntax
-[**ListLogFieldSyntaxes**](LogFieldSyntaxApi.md#ListLogFieldSyntaxes) | **Get** /log-field-syntaxes | Returns a list of all Log Field Syntax objects
-[**UpdateLogFieldSyntax**](LogFieldSyntaxApi.md#UpdateLogFieldSyntax) | **Patch** /log-field-syntaxes/{log-field-syntax-name} | Update an existing Log Field Syntax by name
+[**GetLogFieldSyntax**](LogFieldSyntaxAPI.md#GetLogFieldSyntax) | **Get** /log-field-syntaxes/{log-field-syntax-name} | Returns a single Log Field Syntax
+[**ListLogFieldSyntaxes**](LogFieldSyntaxAPI.md#ListLogFieldSyntaxes) | **Get** /log-field-syntaxes | Returns a list of all Log Field Syntax objects
+[**UpdateLogFieldSyntax**](LogFieldSyntaxAPI.md#UpdateLogFieldSyntax) | **Patch** /log-field-syntaxes/{log-field-syntax-name} | Update an existing Log Field Syntax by name
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldSyntaxApi.GetLogFieldSyntax(context.Background(), logFieldSyntaxName).Execute()
+    resp, r, err := apiClient.LogFieldSyntaxAPI.GetLogFieldSyntax(context.Background(), logFieldSyntaxName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldSyntaxApi.GetLogFieldSyntax``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldSyntaxAPI.GetLogFieldSyntax``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLogFieldSyntax`: GetLogFieldSyntax200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldSyntaxApi.GetLogFieldSyntax`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldSyntaxAPI.GetLogFieldSyntax`: %v\n", resp)
 }
 ```
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldSyntaxApi.ListLogFieldSyntaxes(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.LogFieldSyntaxAPI.ListLogFieldSyntaxes(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldSyntaxApi.ListLogFieldSyntaxes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldSyntaxAPI.ListLogFieldSyntaxes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLogFieldSyntaxes`: LogFieldSyntaxListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldSyntaxApi.ListLogFieldSyntaxes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldSyntaxAPI.ListLogFieldSyntaxes`: %v\n", resp)
 }
 ```
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldSyntaxApi.UpdateLogFieldSyntax(context.Background(), logFieldSyntaxName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LogFieldSyntaxAPI.UpdateLogFieldSyntax(context.Background(), logFieldSyntaxName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldSyntaxApi.UpdateLogFieldSyntax``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldSyntaxAPI.UpdateLogFieldSyntax``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLogFieldSyntax`: GetLogFieldSyntax200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldSyntaxApi.UpdateLogFieldSyntax`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldSyntaxAPI.UpdateLogFieldSyntax`: %v\n", resp)
 }
 ```
 

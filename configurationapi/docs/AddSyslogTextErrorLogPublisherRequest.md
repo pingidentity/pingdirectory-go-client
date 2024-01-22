@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumsyslogTextErrorLogPublisherSchemaUrn**](EnumsyslogTextErrorLogPublisherSchemaUrn.md) |  | 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **SyslogExternalServer** | **[]string** | The syslog server to which messages should be sent. | 
@@ -23,12 +22,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
+**PublisherName** | **string** | Name of the new Log Publisher | 
 
 ## Methods
 
 ### NewAddSyslogTextErrorLogPublisherRequest
 
-`func NewAddSyslogTextErrorLogPublisherRequest(publisherName string, schemas []EnumsyslogTextErrorLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, ) *AddSyslogTextErrorLogPublisherRequest`
+`func NewAddSyslogTextErrorLogPublisherRequest(schemas []EnumsyslogTextErrorLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, publisherName string, ) *AddSyslogTextErrorLogPublisherRequest`
 
 NewAddSyslogTextErrorLogPublisherRequest instantiates a new AddSyslogTextErrorLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -42,26 +42,6 @@ will change when the set of required properties is changed
 NewAddSyslogTextErrorLogPublisherRequestWithDefaults instantiates a new AddSyslogTextErrorLogPublisherRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPublisherName
-
-`func (o *AddSyslogTextErrorLogPublisherRequest) GetPublisherName() string`
-
-GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
-
-### GetPublisherNameOk
-
-`func (o *AddSyslogTextErrorLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
-
-GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublisherName
-
-`func (o *AddSyslogTextErrorLogPublisherRequest) SetPublisherName(v string)`
-
-SetPublisherName sets PublisherName field to given value.
-
 
 ### GetSchemas
 
@@ -497,6 +477,26 @@ SetLoggingErrorBehavior sets LoggingErrorBehavior field to given value.
 `func (o *AddSyslogTextErrorLogPublisherRequest) HasLoggingErrorBehavior() bool`
 
 HasLoggingErrorBehavior returns a boolean if a field has been set.
+
+### GetPublisherName
+
+`func (o *AddSyslogTextErrorLogPublisherRequest) GetPublisherName() string`
+
+GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
+
+### GetPublisherNameOk
+
+`func (o *AddSyslogTextErrorLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
+
+GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublisherName
+
+`func (o *AddSyslogTextErrorLogPublisherRequest) SetPublisherName(v string)`
+
+SetPublisherName sets PublisherName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

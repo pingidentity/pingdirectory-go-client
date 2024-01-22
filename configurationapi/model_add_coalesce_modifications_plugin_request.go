@@ -19,9 +19,7 @@ var _ MappedNullable = &AddCoalesceModificationsPluginRequest{}
 
 // AddCoalesceModificationsPluginRequest struct for AddCoalesceModificationsPluginRequest
 type AddCoalesceModificationsPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                     `json:"pluginName"`
-	Schemas    []EnumcoalesceModificationsPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumcoalesceModificationsPluginSchemaUrn `json:"schemas"`
 	// A reference to request criteria that indicates which modify requests should be coalesced.
 	RequestCriteria string `json:"requestCriteria"`
 	// Specifies the OIDs of the controls that are allowed to be present in operations to coalesce. These controls are passed through when the request is validated, but they will not be included when the background thread applies the coalesced modify requests.
@@ -32,18 +30,20 @@ type AddCoalesceModificationsPluginRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddCoalesceModificationsPluginRequest instantiates a new AddCoalesceModificationsPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCoalesceModificationsPluginRequest(pluginName string, schemas []EnumcoalesceModificationsPluginSchemaUrn, requestCriteria string, enabled bool) *AddCoalesceModificationsPluginRequest {
+func NewAddCoalesceModificationsPluginRequest(schemas []EnumcoalesceModificationsPluginSchemaUrn, requestCriteria string, enabled bool, pluginName string) *AddCoalesceModificationsPluginRequest {
 	this := AddCoalesceModificationsPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.RequestCriteria = requestCriteria
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddCoalesceModificationsPluginRequest(pluginName string, schemas []Enumc
 func NewAddCoalesceModificationsPluginRequestWithDefaults() *AddCoalesceModificationsPluginRequest {
 	this := AddCoalesceModificationsPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddCoalesceModificationsPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddCoalesceModificationsPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddCoalesceModificationsPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -247,6 +223,30 @@ func (o *AddCoalesceModificationsPluginRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddCoalesceModificationsPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddCoalesceModificationsPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddCoalesceModificationsPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddCoalesceModificationsPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -257,7 +257,6 @@ func (o AddCoalesceModificationsPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddCoalesceModificationsPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["requestCriteria"] = o.RequestCriteria
 	if !IsNil(o.AllowedRequestControl) {
@@ -270,6 +269,7 @@ func (o AddCoalesceModificationsPluginRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

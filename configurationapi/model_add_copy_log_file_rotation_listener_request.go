@@ -19,9 +19,7 @@ var _ MappedNullable = &AddCopyLogFileRotationListenerRequest{}
 
 // AddCopyLogFileRotationListenerRequest struct for AddCopyLogFileRotationListenerRequest
 type AddCopyLogFileRotationListenerRequest struct {
-	// Name of the new Log File Rotation Listener
-	ListenerName string                                     `json:"listenerName"`
-	Schemas      []EnumcopyLogFileRotationListenerSchemaUrn `json:"schemas"`
+	Schemas []EnumcopyLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The path to the directory to which log files should be copied. It must be different from the directory to which the log file is originally written, and administrators should ensure that the filesystem has sufficient space to hold files as they are copied.
 	CopyToDirectory string `json:"copyToDirectory"`
 	// Indicates whether the file should be gzip-compressed as it is copied into the destination directory.
@@ -30,18 +28,20 @@ type AddCopyLogFileRotationListenerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log File Rotation Listener is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Log File Rotation Listener
+	ListenerName string `json:"listenerName"`
 }
 
 // NewAddCopyLogFileRotationListenerRequest instantiates a new AddCopyLogFileRotationListenerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCopyLogFileRotationListenerRequest(listenerName string, schemas []EnumcopyLogFileRotationListenerSchemaUrn, copyToDirectory string, enabled bool) *AddCopyLogFileRotationListenerRequest {
+func NewAddCopyLogFileRotationListenerRequest(schemas []EnumcopyLogFileRotationListenerSchemaUrn, copyToDirectory string, enabled bool, listenerName string) *AddCopyLogFileRotationListenerRequest {
 	this := AddCopyLogFileRotationListenerRequest{}
-	this.ListenerName = listenerName
 	this.Schemas = schemas
 	this.CopyToDirectory = copyToDirectory
 	this.Enabled = enabled
+	this.ListenerName = listenerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddCopyLogFileRotationListenerRequest(listenerName string, schemas []Enu
 func NewAddCopyLogFileRotationListenerRequestWithDefaults() *AddCopyLogFileRotationListenerRequest {
 	this := AddCopyLogFileRotationListenerRequest{}
 	return &this
-}
-
-// GetListenerName returns the ListenerName field value
-func (o *AddCopyLogFileRotationListenerRequest) GetListenerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ListenerName
-}
-
-// GetListenerNameOk returns a tuple with the ListenerName field value
-// and a boolean to check if the value has been set.
-func (o *AddCopyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ListenerName, true
-}
-
-// SetListenerName sets field value
-func (o *AddCopyLogFileRotationListenerRequest) SetListenerName(v string) {
-	o.ListenerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddCopyLogFileRotationListenerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetListenerName returns the ListenerName field value
+func (o *AddCopyLogFileRotationListenerRequest) GetListenerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ListenerName
+}
+
+// GetListenerNameOk returns a tuple with the ListenerName field value
+// and a boolean to check if the value has been set.
+func (o *AddCopyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ListenerName, true
+}
+
+// SetListenerName sets field value
+func (o *AddCopyLogFileRotationListenerRequest) SetListenerName(v string) {
+	o.ListenerName = v
+}
+
 func (o AddCopyLogFileRotationListenerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddCopyLogFileRotationListenerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddCopyLogFileRotationListenerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["listenerName"] = o.ListenerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["copyToDirectory"] = o.CopyToDirectory
 	if !IsNil(o.CompressOnCopy) {
@@ -233,6 +232,7 @@ func (o AddCopyLogFileRotationListenerRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["listenerName"] = o.ListenerName
 	return toSerialize, nil
 }
 

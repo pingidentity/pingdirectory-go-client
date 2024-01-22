@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EndpointName** | **string** | Name of the new Monitoring Endpoint | 
 **Schemas** | [**[]EnumstatsdMonitoringEndpointSchemaUrn**](EnumstatsdMonitoringEndpointSchemaUrn.md) |  | 
 **Hostname** | **string** | The name of the host where this StatsD Monitoring Endpoint should send metric data. | 
 **ServerPort** | Pointer to **int64** | Specifies the port number of the endpoint where metric data should be sent. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use if SSL over TCP is to be used for connection-level security. | [optional] 
 **AdditionalTags** | Pointer to **[]string** | Specifies any optional additional tags to include in StatsD messages. Any additional tags will be appended to the end of each StatsD message, separated by commas. Tags should be written in a [key]:[value] format (\&quot;host:server1\&quot;, for example). | [optional] 
 **Enabled** | **bool** | Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server. | 
+**EndpointName** | **string** | Name of the new Monitoring Endpoint | 
 
 ## Methods
 
 ### NewAddStatsdMonitoringEndpointRequest
 
-`func NewAddStatsdMonitoringEndpointRequest(endpointName string, schemas []EnumstatsdMonitoringEndpointSchemaUrn, hostname string, enabled bool, ) *AddStatsdMonitoringEndpointRequest`
+`func NewAddStatsdMonitoringEndpointRequest(schemas []EnumstatsdMonitoringEndpointSchemaUrn, hostname string, enabled bool, endpointName string, ) *AddStatsdMonitoringEndpointRequest`
 
 NewAddStatsdMonitoringEndpointRequest instantiates a new AddStatsdMonitoringEndpointRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddStatsdMonitoringEndpointRequestWithDefaults instantiates a new AddStatsdMonitoringEndpointRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetEndpointName
-
-`func (o *AddStatsdMonitoringEndpointRequest) GetEndpointName() string`
-
-GetEndpointName returns the EndpointName field if non-nil, zero value otherwise.
-
-### GetEndpointNameOk
-
-`func (o *AddStatsdMonitoringEndpointRequest) GetEndpointNameOk() (*string, bool)`
-
-GetEndpointNameOk returns a tuple with the EndpointName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEndpointName
-
-`func (o *AddStatsdMonitoringEndpointRequest) SetEndpointName(v string)`
-
-SetEndpointName sets EndpointName field to given value.
-
 
 ### GetSchemas
 
@@ -210,6 +190,26 @@ and a boolean to check if the value has been set.
 `func (o *AddStatsdMonitoringEndpointRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetEndpointName
+
+`func (o *AddStatsdMonitoringEndpointRequest) GetEndpointName() string`
+
+GetEndpointName returns the EndpointName field if non-nil, zero value otherwise.
+
+### GetEndpointNameOk
+
+`func (o *AddStatsdMonitoringEndpointRequest) GetEndpointNameOk() (*string, bool)`
+
+GetEndpointNameOk returns a tuple with the EndpointName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndpointName
+
+`func (o *AddStatsdMonitoringEndpointRequest) SetEndpointName(v string)`
+
+SetEndpointName sets EndpointName field to given value.
 
 
 

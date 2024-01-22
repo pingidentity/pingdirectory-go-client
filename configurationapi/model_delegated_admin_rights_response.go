@@ -19,8 +19,6 @@ var _ MappedNullable = &DelegatedAdminRightsResponse{}
 
 // DelegatedAdminRightsResponse struct for DelegatedAdminRightsResponse
 type DelegatedAdminRightsResponse struct {
-	// Name of the Delegated Admin Rights
-	Id      string                              `json:"id"`
 	Schemas []EnumdelegatedAdminRightsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Rights
 	Description *string `json:"description,omitempty"`
@@ -32,16 +30,18 @@ type DelegatedAdminRightsResponse struct {
 	AdminGroupDN                                  *string                                            `json:"adminGroupDN,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Delegated Admin Rights
+	Id string `json:"id"`
 }
 
 // NewDelegatedAdminRightsResponse instantiates a new DelegatedAdminRightsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelegatedAdminRightsResponse(id string, enabled bool) *DelegatedAdminRightsResponse {
+func NewDelegatedAdminRightsResponse(enabled bool, id string) *DelegatedAdminRightsResponse {
 	this := DelegatedAdminRightsResponse{}
-	this.Id = id
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewDelegatedAdminRightsResponse(id string, enabled bool) *DelegatedAdminRig
 func NewDelegatedAdminRightsResponseWithDefaults() *DelegatedAdminRightsResponse {
 	this := DelegatedAdminRightsResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DelegatedAdminRightsResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DelegatedAdminRightsResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DelegatedAdminRightsResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -293,6 +269,30 @@ func (o *DelegatedAdminRightsResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DelegatedAdminRightsResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DelegatedAdminRightsResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DelegatedAdminRightsResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DelegatedAdminRightsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -303,7 +303,6 @@ func (o DelegatedAdminRightsResponse) MarshalJSON() ([]byte, error) {
 
 func (o DelegatedAdminRightsResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -323,6 +322,7 @@ func (o DelegatedAdminRightsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

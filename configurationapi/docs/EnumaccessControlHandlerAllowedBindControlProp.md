@@ -3,9 +3,13 @@
 ## Enum
 
 
+* `ACCESS_LOG_FIELD` (value: `"access-log-field"`)
+
 * `ADMINISTRATIVE_OPERATION` (value: `"administrative-operation"`)
 
 * `AUTHORIZATION_IDENTITY` (value: `"authorization-identity"`)
+
+* `GENERATE_ACCESS_TOKEN` (value: `"generate-access-token"`)
 
 * `GET_AUTHORIZATION_ENTRY` (value: `"get-authorization-entry"`)
 

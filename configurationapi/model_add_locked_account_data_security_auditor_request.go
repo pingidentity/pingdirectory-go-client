@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLockedAccountDataSecurityAuditorRequest{}
 
 // AddLockedAccountDataSecurityAuditorRequest struct for AddLockedAccountDataSecurityAuditorRequest
 type AddLockedAccountDataSecurityAuditorRequest struct {
-	// Name of the new Data Security Auditor
-	AuditorName string                                          `json:"auditorName"`
-	Schemas     []EnumlockedAccountDataSecurityAuditorSchemaUrn `json:"schemas"`
+	Schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile *string `json:"reportFile,omitempty"`
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
@@ -33,16 +31,18 @@ type AddLockedAccountDataSecurityAuditorRequest struct {
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
+	// Name of the new Data Security Auditor
+	AuditorName string `json:"auditorName"`
 }
 
 // NewAddLockedAccountDataSecurityAuditorRequest instantiates a new AddLockedAccountDataSecurityAuditorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLockedAccountDataSecurityAuditorRequest(auditorName string, schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn) *AddLockedAccountDataSecurityAuditorRequest {
+func NewAddLockedAccountDataSecurityAuditorRequest(schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn, auditorName string) *AddLockedAccountDataSecurityAuditorRequest {
 	this := AddLockedAccountDataSecurityAuditorRequest{}
-	this.AuditorName = auditorName
 	this.Schemas = schemas
+	this.AuditorName = auditorName
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewAddLockedAccountDataSecurityAuditorRequest(auditorName string, schemas [
 func NewAddLockedAccountDataSecurityAuditorRequestWithDefaults() *AddLockedAccountDataSecurityAuditorRequest {
 	this := AddLockedAccountDataSecurityAuditorRequest{}
 	return &this
-}
-
-// GetAuditorName returns the AuditorName field value
-func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AuditorName
-}
-
-// GetAuditorNameOk returns a tuple with the AuditorName field value
-// and a boolean to check if the value has been set.
-func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AuditorName, true
-}
-
-// SetAuditorName sets field value
-func (o *AddLockedAccountDataSecurityAuditorRequest) SetAuditorName(v string) {
-	o.AuditorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -294,6 +270,30 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) SetAuditSeverity(v Enumdata
 	o.AuditSeverity = &v
 }
 
+// GetAuditorName returns the AuditorName field value
+func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AuditorName
+}
+
+// GetAuditorNameOk returns a tuple with the AuditorName field value
+// and a boolean to check if the value has been set.
+func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AuditorName, true
+}
+
+// SetAuditorName sets field value
+func (o *AddLockedAccountDataSecurityAuditorRequest) SetAuditorName(v string) {
+	o.AuditorName = v
+}
+
 func (o AddLockedAccountDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -304,7 +304,6 @@ func (o AddLockedAccountDataSecurityAuditorRequest) MarshalJSON() ([]byte, error
 
 func (o AddLockedAccountDataSecurityAuditorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["auditorName"] = o.AuditorName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ReportFile) {
 		toSerialize["reportFile"] = o.ReportFile
@@ -324,6 +323,7 @@ func (o AddLockedAccountDataSecurityAuditorRequest) ToMap() (map[string]interfac
 	if !IsNil(o.AuditSeverity) {
 		toSerialize["auditSeverity"] = o.AuditSeverity
 	}
+	toSerialize["auditorName"] = o.AuditorName
 	return toSerialize, nil
 }
 

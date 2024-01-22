@@ -19,8 +19,6 @@ var _ MappedNullable = &JmxAlertHandlerResponse{}
 
 // JmxAlertHandlerResponse struct for JmxAlertHandlerResponse
 type JmxAlertHandlerResponse struct {
-	// Name of the Alert Handler
-	Id      string                         `json:"id"`
 	Schemas []EnumjmxAlertHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether the server should attempt to invoke this JMX Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
@@ -33,17 +31,19 @@ type JmxAlertHandlerResponse struct {
 	DisabledAlertType                             []EnumalertHandlerDisabledAlertTypeProp            `json:"disabledAlertType,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Alert Handler
+	Id string `json:"id"`
 }
 
 // NewJmxAlertHandlerResponse instantiates a new JmxAlertHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJmxAlertHandlerResponse(id string, schemas []EnumjmxAlertHandlerSchemaUrn, enabled bool) *JmxAlertHandlerResponse {
+func NewJmxAlertHandlerResponse(schemas []EnumjmxAlertHandlerSchemaUrn, enabled bool, id string) *JmxAlertHandlerResponse {
 	this := JmxAlertHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewJmxAlertHandlerResponse(id string, schemas []EnumjmxAlertHandlerSchemaUr
 func NewJmxAlertHandlerResponseWithDefaults() *JmxAlertHandlerResponse {
 	this := JmxAlertHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *JmxAlertHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *JmxAlertHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *JmxAlertHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -351,6 +327,30 @@ func (o *JmxAlertHandlerResponse) SetUrnpingidentityschemasconfigurationmessages
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *JmxAlertHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *JmxAlertHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *JmxAlertHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o JmxAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -361,7 +361,6 @@ func (o JmxAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o JmxAlertHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
@@ -385,6 +384,7 @@ func (o JmxAlertHandlerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

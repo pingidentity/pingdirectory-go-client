@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]EnumthirdPartyPasswordStorageSchemeSchemaUrn**](EnumthirdPartyPasswordStorageSchemeSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Password Storage Scheme. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Password Storage Scheme. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
+**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 
 ## Methods
 
 ### NewAddThirdPartyPasswordStorageSchemeRequest
 
-`func NewAddThirdPartyPasswordStorageSchemeRequest(schemeName string, schemas []EnumthirdPartyPasswordStorageSchemeSchemaUrn, extensionClass string, enabled bool, ) *AddThirdPartyPasswordStorageSchemeRequest`
+`func NewAddThirdPartyPasswordStorageSchemeRequest(schemas []EnumthirdPartyPasswordStorageSchemeSchemaUrn, extensionClass string, enabled bool, schemeName string, ) *AddThirdPartyPasswordStorageSchemeRequest`
 
 NewAddThirdPartyPasswordStorageSchemeRequest instantiates a new AddThirdPartyPasswordStorageSchemeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyPasswordStorageSchemeRequestWithDefaults instantiates a new AddThirdPartyPasswordStorageSchemeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSchemeName
-
-`func (o *AddThirdPartyPasswordStorageSchemeRequest) GetSchemeName() string`
-
-GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
-
-### GetSchemeNameOk
-
-`func (o *AddThirdPartyPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
-
-GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchemeName
-
-`func (o *AddThirdPartyPasswordStorageSchemeRequest) SetSchemeName(v string)`
-
-SetSchemeName sets SchemeName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddThirdPartyPasswordStorageSchemeRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetSchemeName
+
+`func (o *AddThirdPartyPasswordStorageSchemeRequest) GetSchemeName() string`
+
+GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
+
+### GetSchemeNameOk
+
+`func (o *AddThirdPartyPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
+
+GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemeName
+
+`func (o *AddThirdPartyPasswordStorageSchemeRequest) SetSchemeName(v string)`
+
+SetSchemeName sets SchemeName field to given value.
 
 
 

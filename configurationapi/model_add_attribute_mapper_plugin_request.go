@@ -19,8 +19,6 @@ var _ MappedNullable = &AddAttributeMapperPluginRequest{}
 
 // AddAttributeMapperPluginRequest struct for AddAttributeMapperPluginRequest
 type AddAttributeMapperPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                               `json:"pluginName"`
 	Schemas    []EnumattributeMapperPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp           `json:"pluginType,omitempty"`
 	// Specifies the source attribute type that may appear in client requests which should be remapped to the target attribute. Note that the source attribute type must be defined in the server schema and must not be equal to the target attribute type.
@@ -37,19 +35,21 @@ type AddAttributeMapperPluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddAttributeMapperPluginRequest instantiates a new AddAttributeMapperPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAttributeMapperPluginRequest(pluginName string, schemas []EnumattributeMapperPluginSchemaUrn, sourceAttribute string, targetAttribute string, enabled bool) *AddAttributeMapperPluginRequest {
+func NewAddAttributeMapperPluginRequest(schemas []EnumattributeMapperPluginSchemaUrn, sourceAttribute string, targetAttribute string, enabled bool, pluginName string) *AddAttributeMapperPluginRequest {
 	this := AddAttributeMapperPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.SourceAttribute = sourceAttribute
 	this.TargetAttribute = targetAttribute
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewAddAttributeMapperPluginRequest(pluginName string, schemas []Enumattribu
 func NewAddAttributeMapperPluginRequestWithDefaults() *AddAttributeMapperPluginRequest {
 	this := AddAttributeMapperPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddAttributeMapperPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddAttributeMapperPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddAttributeMapperPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -341,6 +317,30 @@ func (o *AddAttributeMapperPluginRequest) SetInvokeForInternalOperations(v bool)
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddAttributeMapperPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddAttributeMapperPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddAttributeMapperPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddAttributeMapperPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -351,7 +351,6 @@ func (o AddAttributeMapperPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddAttributeMapperPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
@@ -371,6 +370,7 @@ func (o AddAttributeMapperPluginRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

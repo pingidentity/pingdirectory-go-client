@@ -29,6 +29,7 @@ const (
 	ENUMLOGFIELDBEHAVIORTEXTACCESSOMITFIELDPROP_ASSURANCE_TIMEOUT_MILLIS                                                   EnumlogFieldBehaviorTextAccessOmitFieldProp = "assurance-timeout-millis"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSOMITFIELDPROP_AUTHORIZATION_DN                                                           EnumlogFieldBehaviorTextAccessOmitFieldProp = "authorization-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSOMITFIELDPROP_AUTO_AUTHENTICATED_AS                                                      EnumlogFieldBehaviorTextAccessOmitFieldProp = "auto-authenticated-as"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSOMITFIELDPROP_BIND_ACCESS_TOKEN_ORIGINAL_AUTHENTICATION_TYPE                             EnumlogFieldBehaviorTextAccessOmitFieldProp = "bind-access-token-original-authentication-type"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSOMITFIELDPROP_BIND_AUTHENTICATION_DN                                                     EnumlogFieldBehaviorTextAccessOmitFieldProp = "bind-authentication-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSOMITFIELDPROP_BIND_AUTHENTICATION_FAILURE_ID                                             EnumlogFieldBehaviorTextAccessOmitFieldProp = "bind-authentication-failure-id"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSOMITFIELDPROP_BIND_AUTHENTICATION_FAILURE_NAME                                           EnumlogFieldBehaviorTextAccessOmitFieldProp = "bind-authentication-failure-name"
@@ -287,6 +288,7 @@ var AllowedEnumlogFieldBehaviorTextAccessOmitFieldPropEnumValues = []EnumlogFiel
 	"assurance-timeout-millis",
 	"authorization-dn",
 	"auto-authenticated-as",
+	"bind-access-token-original-authentication-type",
 	"bind-authentication-dn",
 	"bind-authentication-failure-id",
 	"bind-authentication-failure-name",

@@ -19,8 +19,6 @@ var _ MappedNullable = &AggregatePassThroughAuthenticationHandlerResponse{}
 
 // AggregatePassThroughAuthenticationHandlerResponse struct for AggregatePassThroughAuthenticationHandlerResponse
 type AggregatePassThroughAuthenticationHandlerResponse struct {
-	// Name of the Pass Through Authentication Handler
-	Id      string                                                   `json:"id"`
 	Schemas []EnumaggregatePassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// The set of subordinate pass-through authentication handlers that may be used to perform the authentication processing. Handlers will be invoked in order until one is found for which the bind operation matches the associated criteria and either succeeds or fails in a manner that should not be ignored.
 	SubordinatePassThroughAuthenticationHandler []string                                                        `json:"subordinatePassThroughAuthenticationHandler"`
@@ -35,17 +33,19 @@ type AggregatePassThroughAuthenticationHandlerResponse struct {
 	RequestCriteria                               *string                                            `json:"requestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Pass Through Authentication Handler
+	Id string `json:"id"`
 }
 
 // NewAggregatePassThroughAuthenticationHandlerResponse instantiates a new AggregatePassThroughAuthenticationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAggregatePassThroughAuthenticationHandlerResponse(id string, schemas []EnumaggregatePassThroughAuthenticationHandlerSchemaUrn, subordinatePassThroughAuthenticationHandler []string) *AggregatePassThroughAuthenticationHandlerResponse {
+func NewAggregatePassThroughAuthenticationHandlerResponse(schemas []EnumaggregatePassThroughAuthenticationHandlerSchemaUrn, subordinatePassThroughAuthenticationHandler []string, id string) *AggregatePassThroughAuthenticationHandlerResponse {
 	this := AggregatePassThroughAuthenticationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.SubordinatePassThroughAuthenticationHandler = subordinatePassThroughAuthenticationHandler
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewAggregatePassThroughAuthenticationHandlerResponse(id string, schemas []E
 func NewAggregatePassThroughAuthenticationHandlerResponseWithDefaults() *AggregatePassThroughAuthenticationHandlerResponse {
 	this := AggregatePassThroughAuthenticationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AggregatePassThroughAuthenticationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AggregatePassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AggregatePassThroughAuthenticationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -353,6 +329,30 @@ func (o *AggregatePassThroughAuthenticationHandlerResponse) SetUrnpingidentitysc
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AggregatePassThroughAuthenticationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AggregatePassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AggregatePassThroughAuthenticationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AggregatePassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -363,7 +363,6 @@ func (o AggregatePassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byte
 
 func (o AggregatePassThroughAuthenticationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["subordinatePassThroughAuthenticationHandler"] = o.SubordinatePassThroughAuthenticationHandler
 	if !IsNil(o.ContinueOnFailureType) {
@@ -387,6 +386,7 @@ func (o AggregatePassThroughAuthenticationHandlerResponse) ToMap() (map[string]i
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

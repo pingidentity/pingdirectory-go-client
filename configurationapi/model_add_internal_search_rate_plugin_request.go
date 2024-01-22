@@ -19,8 +19,6 @@ var _ MappedNullable = &AddInternalSearchRatePluginRequest{}
 
 // AddInternalSearchRatePluginRequest struct for AddInternalSearchRatePluginRequest
 type AddInternalSearchRatePluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                  `json:"pluginName"`
 	Schemas    []EnuminternalSearchRatePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp              `json:"pluginType,omitempty"`
 	// Specifies the number of concurrent threads that should be used to process the search operations.
@@ -41,19 +39,21 @@ type AddInternalSearchRatePluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddInternalSearchRatePluginRequest instantiates a new AddInternalSearchRatePluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddInternalSearchRatePluginRequest(pluginName string, schemas []EnuminternalSearchRatePluginSchemaUrn, baseDN string, filterPrefix string, enabled bool) *AddInternalSearchRatePluginRequest {
+func NewAddInternalSearchRatePluginRequest(schemas []EnuminternalSearchRatePluginSchemaUrn, baseDN string, filterPrefix string, enabled bool, pluginName string) *AddInternalSearchRatePluginRequest {
 	this := AddInternalSearchRatePluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.BaseDN = baseDN
 	this.FilterPrefix = filterPrefix
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewAddInternalSearchRatePluginRequest(pluginName string, schemas []Enuminte
 func NewAddInternalSearchRatePluginRequestWithDefaults() *AddInternalSearchRatePluginRequest {
 	this := AddInternalSearchRatePluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddInternalSearchRatePluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddInternalSearchRatePluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddInternalSearchRatePluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -409,6 +385,30 @@ func (o *AddInternalSearchRatePluginRequest) SetInvokeForInternalOperations(v bo
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddInternalSearchRatePluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddInternalSearchRatePluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddInternalSearchRatePluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddInternalSearchRatePluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -419,7 +419,6 @@ func (o AddInternalSearchRatePluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddInternalSearchRatePluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
@@ -445,6 +444,7 @@ func (o AddInternalSearchRatePluginRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

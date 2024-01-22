@@ -19,8 +19,6 @@ var _ MappedNullable = &HttpExternalServerResponse{}
 
 // HttpExternalServerResponse struct for HttpExternalServerResponse
 type HttpExternalServerResponse struct {
-	// Name of the External Server
-	Id      string                            `json:"id"`
 	Schemas []EnumhttpExternalServerSchemaUrn `json:"schemas"`
 	// The base URL of the external server, optionally including port number, for example \"https://externalService:9031\".
 	BaseURL                    string                                                `json:"baseURL"`
@@ -39,17 +37,19 @@ type HttpExternalServerResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the External Server
+	Id string `json:"id"`
 }
 
 // NewHttpExternalServerResponse instantiates a new HttpExternalServerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHttpExternalServerResponse(id string, schemas []EnumhttpExternalServerSchemaUrn, baseURL string) *HttpExternalServerResponse {
+func NewHttpExternalServerResponse(schemas []EnumhttpExternalServerSchemaUrn, baseURL string, id string) *HttpExternalServerResponse {
 	this := HttpExternalServerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.BaseURL = baseURL
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewHttpExternalServerResponse(id string, schemas []EnumhttpExternalServerSc
 func NewHttpExternalServerResponseWithDefaults() *HttpExternalServerResponse {
 	this := HttpExternalServerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *HttpExternalServerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *HttpExternalServerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *HttpExternalServerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -421,6 +397,30 @@ func (o *HttpExternalServerResponse) SetUrnpingidentityschemasconfigurationmessa
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *HttpExternalServerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *HttpExternalServerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *HttpExternalServerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o HttpExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -431,7 +431,6 @@ func (o HttpExternalServerResponse) MarshalJSON() ([]byte, error) {
 
 func (o HttpExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["baseURL"] = o.BaseURL
 	if !IsNil(o.HostnameVerificationMethod) {
@@ -461,6 +460,7 @@ func (o HttpExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

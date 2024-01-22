@@ -19,8 +19,6 @@ var _ MappedNullable = &PingOnePassThroughAuthenticationHandlerResponse{}
 
 // PingOnePassThroughAuthenticationHandlerResponse struct for PingOnePassThroughAuthenticationHandlerResponse
 type PingOnePassThroughAuthenticationHandlerResponse struct {
-	// Name of the Pass Through Authentication Handler
-	Id      string                                                 `json:"id"`
 	Schemas []EnumpingOnePassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// Specifies the API endpoint for the PingOne web service.
 	ApiURL string `json:"apiURL"`
@@ -52,15 +50,16 @@ type PingOnePassThroughAuthenticationHandlerResponse struct {
 	RequestCriteria                               *string                                            `json:"requestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Pass Through Authentication Handler
+	Id string `json:"id"`
 }
 
 // NewPingOnePassThroughAuthenticationHandlerResponse instantiates a new PingOnePassThroughAuthenticationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPingOnePassThroughAuthenticationHandlerResponse(id string, schemas []EnumpingOnePassThroughAuthenticationHandlerSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string) *PingOnePassThroughAuthenticationHandlerResponse {
+func NewPingOnePassThroughAuthenticationHandlerResponse(schemas []EnumpingOnePassThroughAuthenticationHandlerSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, id string) *PingOnePassThroughAuthenticationHandlerResponse {
 	this := PingOnePassThroughAuthenticationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ApiURL = apiURL
 	this.AuthURL = authURL
@@ -68,6 +67,7 @@ func NewPingOnePassThroughAuthenticationHandlerResponse(id string, schemas []Enu
 	this.EnvironmentID = environmentID
 	this.UserMappingLocalAttribute = userMappingLocalAttribute
 	this.UserMappingRemoteJSONField = userMappingRemoteJSONField
+	this.Id = id
 	return &this
 }
 
@@ -77,30 +77,6 @@ func NewPingOnePassThroughAuthenticationHandlerResponse(id string, schemas []Enu
 func NewPingOnePassThroughAuthenticationHandlerResponseWithDefaults() *PingOnePassThroughAuthenticationHandlerResponse {
 	this := PingOnePassThroughAuthenticationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *PingOnePassThroughAuthenticationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PingOnePassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *PingOnePassThroughAuthenticationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -591,6 +567,30 @@ func (o *PingOnePassThroughAuthenticationHandlerResponse) SetUrnpingidentitysche
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *PingOnePassThroughAuthenticationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *PingOnePassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *PingOnePassThroughAuthenticationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o PingOnePassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -601,7 +601,6 @@ func (o PingOnePassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byte, 
 
 func (o PingOnePassThroughAuthenticationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["apiURL"] = o.ApiURL
 	toSerialize["authURL"] = o.AuthURL
@@ -639,6 +638,7 @@ func (o PingOnePassThroughAuthenticationHandlerResponse) ToMap() (map[string]int
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

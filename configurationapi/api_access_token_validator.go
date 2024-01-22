@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AccessTokenValidatorApiService AccessTokenValidatorApi service
-type AccessTokenValidatorApiService service
+// AccessTokenValidatorAPIService AccessTokenValidatorAPI service
+type AccessTokenValidatorAPIService service
 
 type ApiAddAccessTokenValidatorRequest struct {
 	ctx                            context.Context
-	ApiService                     *AccessTokenValidatorApiService
+	ApiService                     *AccessTokenValidatorAPIService
 	addAccessTokenValidatorRequest *AddAccessTokenValidatorRequest
 }
 
@@ -44,7 +44,7 @@ AddAccessTokenValidator Add a new Access Token Validator to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddAccessTokenValidatorRequest
 */
-func (a *AccessTokenValidatorApiService) AddAccessTokenValidator(ctx context.Context) ApiAddAccessTokenValidatorRequest {
+func (a *AccessTokenValidatorAPIService) AddAccessTokenValidator(ctx context.Context) ApiAddAccessTokenValidatorRequest {
 	return ApiAddAccessTokenValidatorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *AccessTokenValidatorApiService) AddAccessTokenValidator(ctx context.Con
 // Execute executes the request
 //
 //	@return AddAccessTokenValidator200Response
-func (a *AccessTokenValidatorApiService) AddAccessTokenValidatorExecute(r ApiAddAccessTokenValidatorRequest) (*AddAccessTokenValidator200Response, *http.Response, error) {
+func (a *AccessTokenValidatorAPIService) AddAccessTokenValidatorExecute(r ApiAddAccessTokenValidatorRequest) (*AddAccessTokenValidator200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *AccessTokenValidatorApiService) AddAccessTokenValidatorExecute(r ApiAdd
 		localVarReturnValue *AddAccessTokenValidator200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorApiService.AddAccessTokenValidator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorAPIService.AddAccessTokenValidator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *AccessTokenValidatorApiService) AddAccessTokenValidatorExecute(r ApiAdd
 
 type ApiDeleteAccessTokenValidatorRequest struct {
 	ctx                      context.Context
-	ApiService               *AccessTokenValidatorApiService
+	ApiService               *AccessTokenValidatorAPIService
 	accessTokenValidatorName string
 }
 
@@ -149,7 +149,7 @@ DeleteAccessTokenValidator Delete a Access Token Validator
 	@param accessTokenValidatorName Name of the Access Token Validator
 	@return ApiDeleteAccessTokenValidatorRequest
 */
-func (a *AccessTokenValidatorApiService) DeleteAccessTokenValidator(ctx context.Context, accessTokenValidatorName string) ApiDeleteAccessTokenValidatorRequest {
+func (a *AccessTokenValidatorAPIService) DeleteAccessTokenValidator(ctx context.Context, accessTokenValidatorName string) ApiDeleteAccessTokenValidatorRequest {
 	return ApiDeleteAccessTokenValidatorRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -158,14 +158,14 @@ func (a *AccessTokenValidatorApiService) DeleteAccessTokenValidator(ctx context.
 }
 
 // Execute executes the request
-func (a *AccessTokenValidatorApiService) DeleteAccessTokenValidatorExecute(r ApiDeleteAccessTokenValidatorRequest) (*http.Response, error) {
+func (a *AccessTokenValidatorAPIService) DeleteAccessTokenValidatorExecute(r ApiDeleteAccessTokenValidatorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorApiService.DeleteAccessTokenValidator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorAPIService.DeleteAccessTokenValidator")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,11 +224,11 @@ func (a *AccessTokenValidatorApiService) DeleteAccessTokenValidatorExecute(r Api
 
 type ApiGetAccessTokenValidatorRequest struct {
 	ctx                      context.Context
-	ApiService               *AccessTokenValidatorApiService
+	ApiService               *AccessTokenValidatorAPIService
 	accessTokenValidatorName string
 }
 
-func (r ApiGetAccessTokenValidatorRequest) Execute() (*AddAccessTokenValidator200Response, *http.Response, error) {
+func (r ApiGetAccessTokenValidatorRequest) Execute() (*GetAccessTokenValidator200Response, *http.Response, error) {
 	return r.ApiService.GetAccessTokenValidatorExecute(r)
 }
 
@@ -239,7 +239,7 @@ GetAccessTokenValidator Returns a single Access Token Validator
 	@param accessTokenValidatorName Name of the Access Token Validator
 	@return ApiGetAccessTokenValidatorRequest
 */
-func (a *AccessTokenValidatorApiService) GetAccessTokenValidator(ctx context.Context, accessTokenValidatorName string) ApiGetAccessTokenValidatorRequest {
+func (a *AccessTokenValidatorAPIService) GetAccessTokenValidator(ctx context.Context, accessTokenValidatorName string) ApiGetAccessTokenValidatorRequest {
 	return ApiGetAccessTokenValidatorRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -249,16 +249,16 @@ func (a *AccessTokenValidatorApiService) GetAccessTokenValidator(ctx context.Con
 
 // Execute executes the request
 //
-//	@return AddAccessTokenValidator200Response
-func (a *AccessTokenValidatorApiService) GetAccessTokenValidatorExecute(r ApiGetAccessTokenValidatorRequest) (*AddAccessTokenValidator200Response, *http.Response, error) {
+//	@return GetAccessTokenValidator200Response
+func (a *AccessTokenValidatorAPIService) GetAccessTokenValidatorExecute(r ApiGetAccessTokenValidatorRequest) (*GetAccessTokenValidator200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddAccessTokenValidator200Response
+		localVarReturnValue *GetAccessTokenValidator200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorApiService.GetAccessTokenValidator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorAPIService.GetAccessTokenValidator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *AccessTokenValidatorApiService) GetAccessTokenValidatorExecute(r ApiGet
 
 type ApiListAccessTokenValidatorsRequest struct {
 	ctx        context.Context
-	ApiService *AccessTokenValidatorApiService
+	ApiService *AccessTokenValidatorAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListAccessTokenValidators Returns a list of all Access Token Validator objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListAccessTokenValidatorsRequest
 */
-func (a *AccessTokenValidatorApiService) ListAccessTokenValidators(ctx context.Context) ApiListAccessTokenValidatorsRequest {
+func (a *AccessTokenValidatorAPIService) ListAccessTokenValidators(ctx context.Context) ApiListAccessTokenValidatorsRequest {
 	return ApiListAccessTokenValidatorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *AccessTokenValidatorApiService) ListAccessTokenValidators(ctx context.C
 // Execute executes the request
 //
 //	@return AccessTokenValidatorListResponse
-func (a *AccessTokenValidatorApiService) ListAccessTokenValidatorsExecute(r ApiListAccessTokenValidatorsRequest) (*AccessTokenValidatorListResponse, *http.Response, error) {
+func (a *AccessTokenValidatorAPIService) ListAccessTokenValidatorsExecute(r ApiListAccessTokenValidatorsRequest) (*AccessTokenValidatorListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *AccessTokenValidatorApiService) ListAccessTokenValidatorsExecute(r ApiL
 		localVarReturnValue *AccessTokenValidatorListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorApiService.ListAccessTokenValidators")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorAPIService.ListAccessTokenValidators")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *AccessTokenValidatorApiService) ListAccessTokenValidatorsExecute(r ApiL
 
 type ApiUpdateAccessTokenValidatorRequest struct {
 	ctx                      context.Context
-	ApiService               *AccessTokenValidatorApiService
+	ApiService               *AccessTokenValidatorAPIService
 	accessTokenValidatorName string
 	updateRequest            *UpdateRequest
 }
@@ -445,7 +445,7 @@ func (r ApiUpdateAccessTokenValidatorRequest) UpdateRequest(updateRequest Update
 	return r
 }
 
-func (r ApiUpdateAccessTokenValidatorRequest) Execute() (*AddAccessTokenValidator200Response, *http.Response, error) {
+func (r ApiUpdateAccessTokenValidatorRequest) Execute() (*GetAccessTokenValidator200Response, *http.Response, error) {
 	return r.ApiService.UpdateAccessTokenValidatorExecute(r)
 }
 
@@ -456,7 +456,7 @@ UpdateAccessTokenValidator Update an existing Access Token Validator by name
 	@param accessTokenValidatorName Name of the Access Token Validator
 	@return ApiUpdateAccessTokenValidatorRequest
 */
-func (a *AccessTokenValidatorApiService) UpdateAccessTokenValidator(ctx context.Context, accessTokenValidatorName string) ApiUpdateAccessTokenValidatorRequest {
+func (a *AccessTokenValidatorAPIService) UpdateAccessTokenValidator(ctx context.Context, accessTokenValidatorName string) ApiUpdateAccessTokenValidatorRequest {
 	return ApiUpdateAccessTokenValidatorRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -466,16 +466,16 @@ func (a *AccessTokenValidatorApiService) UpdateAccessTokenValidator(ctx context.
 
 // Execute executes the request
 //
-//	@return AddAccessTokenValidator200Response
-func (a *AccessTokenValidatorApiService) UpdateAccessTokenValidatorExecute(r ApiUpdateAccessTokenValidatorRequest) (*AddAccessTokenValidator200Response, *http.Response, error) {
+//	@return GetAccessTokenValidator200Response
+func (a *AccessTokenValidatorAPIService) UpdateAccessTokenValidatorExecute(r ApiUpdateAccessTokenValidatorRequest) (*GetAccessTokenValidator200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddAccessTokenValidator200Response
+		localVarReturnValue *GetAccessTokenValidator200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorApiService.UpdateAccessTokenValidator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessTokenValidatorAPIService.UpdateAccessTokenValidator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

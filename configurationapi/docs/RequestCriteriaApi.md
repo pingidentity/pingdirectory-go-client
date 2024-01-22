@@ -1,14 +1,14 @@
-# \RequestCriteriaApi
+# \RequestCriteriaAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddRequestCriteria**](RequestCriteriaApi.md#AddRequestCriteria) | **Post** /request-criteria | Add a new Request Criteria to the config
-[**DeleteRequestCriteria**](RequestCriteriaApi.md#DeleteRequestCriteria) | **Delete** /request-criteria/{request-criteria-name} | Delete a Request Criteria
-[**GetRequestCriteria**](RequestCriteriaApi.md#GetRequestCriteria) | **Get** /request-criteria/{request-criteria-name} | Returns a single Request Criteria
-[**ListRequestCriteria**](RequestCriteriaApi.md#ListRequestCriteria) | **Get** /request-criteria | Returns a list of all Request Criteria objects
-[**UpdateRequestCriteria**](RequestCriteriaApi.md#UpdateRequestCriteria) | **Patch** /request-criteria/{request-criteria-name} | Update an existing Request Criteria by name
+[**AddRequestCriteria**](RequestCriteriaAPI.md#AddRequestCriteria) | **Post** /request-criteria | Add a new Request Criteria to the config
+[**DeleteRequestCriteria**](RequestCriteriaAPI.md#DeleteRequestCriteria) | **Delete** /request-criteria/{request-criteria-name} | Delete a Request Criteria
+[**GetRequestCriteria**](RequestCriteriaAPI.md#GetRequestCriteria) | **Get** /request-criteria/{request-criteria-name} | Returns a single Request Criteria
+[**ListRequestCriteria**](RequestCriteriaAPI.md#ListRequestCriteria) | **Get** /request-criteria | Returns a list of all Request Criteria objects
+[**UpdateRequestCriteria**](RequestCriteriaAPI.md#UpdateRequestCriteria) | **Patch** /request-criteria/{request-criteria-name} | Update an existing Request Criteria by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addRequestCriteriaRequest := openapiclient.add_request_criteria_request{AddAggregateRequestCriteriaRequest: openapiclient.NewAddAggregateRequestCriteriaRequest("CriteriaName_example", []openapiclient.EnumaggregateRequestCriteriaSchemaUrn{openapiclient.Enumaggregate-request-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:request-criteria:aggregate")})} // AddRequestCriteriaRequest | Create a new Request Criteria in the config
+    addRequestCriteriaRequest := openapiclient.add_request_criteria_request{AddAggregateRequestCriteriaRequest: openapiclient.NewAddAggregateRequestCriteriaRequest([]openapiclient.EnumaggregateRequestCriteriaSchemaUrn{openapiclient.Enumaggregate-request-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:request-criteria:aggregate")}, "CriteriaName_example")} // AddRequestCriteriaRequest | Create a new Request Criteria in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestCriteriaApi.AddRequestCriteria(context.Background()).AddRequestCriteriaRequest(addRequestCriteriaRequest).Execute()
+    resp, r, err := apiClient.RequestCriteriaAPI.AddRequestCriteria(context.Background()).AddRequestCriteriaRequest(addRequestCriteriaRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaApi.AddRequestCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaAPI.AddRequestCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddRequestCriteria`: AddRequestCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `RequestCriteriaApi.AddRequestCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RequestCriteriaAPI.AddRequestCriteria`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.RequestCriteriaApi.DeleteRequestCriteria(context.Background(), requestCriteriaName).Execute()
+    r, err := apiClient.RequestCriteriaAPI.DeleteRequestCriteria(context.Background(), requestCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaApi.DeleteRequestCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaAPI.DeleteRequestCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestCriteriaApi.GetRequestCriteria(context.Background(), requestCriteriaName).Execute()
+    resp, r, err := apiClient.RequestCriteriaAPI.GetRequestCriteria(context.Background(), requestCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaApi.GetRequestCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaAPI.GetRequestCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRequestCriteria`: AddRequestCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `RequestCriteriaApi.GetRequestCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RequestCriteriaAPI.GetRequestCriteria`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestCriteriaApi.ListRequestCriteria(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.RequestCriteriaAPI.ListRequestCriteria(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaApi.ListRequestCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaAPI.ListRequestCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListRequestCriteria`: RequestCriteriaListResponse
-    fmt.Fprintf(os.Stdout, "Response from `RequestCriteriaApi.ListRequestCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RequestCriteriaAPI.ListRequestCriteria`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RequestCriteriaApi.UpdateRequestCriteria(context.Background(), requestCriteriaName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.RequestCriteriaAPI.UpdateRequestCriteria(context.Background(), requestCriteriaName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaApi.UpdateRequestCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestCriteriaAPI.UpdateRequestCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRequestCriteria`: AddRequestCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `RequestCriteriaApi.UpdateRequestCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RequestCriteriaAPI.UpdateRequestCriteria`: %v\n", resp)
 }
 ```
 

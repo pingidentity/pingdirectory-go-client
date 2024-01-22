@@ -19,8 +19,6 @@ var _ MappedNullable = &ErrorLogFieldMappingResponse{}
 
 // ErrorLogFieldMappingResponse struct for ErrorLogFieldMappingResponse
 type ErrorLogFieldMappingResponse struct {
-	// Name of the Log Field Mapping
-	Id      string                              `json:"id"`
 	Schemas []EnumerrorLogFieldMappingSchemaUrn `json:"schemas"`
 	// The time that the log message was generated.
 	LogFieldTimestamp *string `json:"logFieldTimestamp,omitempty"`
@@ -42,16 +40,18 @@ type ErrorLogFieldMappingResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Field Mapping
+	Id string `json:"id"`
 }
 
 // NewErrorLogFieldMappingResponse instantiates a new ErrorLogFieldMappingResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewErrorLogFieldMappingResponse(id string, schemas []EnumerrorLogFieldMappingSchemaUrn) *ErrorLogFieldMappingResponse {
+func NewErrorLogFieldMappingResponse(schemas []EnumerrorLogFieldMappingSchemaUrn, id string) *ErrorLogFieldMappingResponse {
 	this := ErrorLogFieldMappingResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewErrorLogFieldMappingResponse(id string, schemas []EnumerrorLogFieldMappi
 func NewErrorLogFieldMappingResponseWithDefaults() *ErrorLogFieldMappingResponse {
 	this := ErrorLogFieldMappingResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ErrorLogFieldMappingResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ErrorLogFieldMappingResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ErrorLogFieldMappingResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -463,6 +439,30 @@ func (o *ErrorLogFieldMappingResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ErrorLogFieldMappingResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ErrorLogFieldMappingResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ErrorLogFieldMappingResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ErrorLogFieldMappingResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -473,7 +473,6 @@ func (o ErrorLogFieldMappingResponse) MarshalJSON() ([]byte, error) {
 
 func (o ErrorLogFieldMappingResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.LogFieldTimestamp) {
 		toSerialize["logFieldTimestamp"] = o.LogFieldTimestamp
@@ -508,6 +507,7 @@ func (o ErrorLogFieldMappingResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

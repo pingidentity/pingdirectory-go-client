@@ -19,8 +19,6 @@ var _ MappedNullable = &NoOperationFailureLockoutActionResponse{}
 
 // NoOperationFailureLockoutActionResponse struct for NoOperationFailureLockoutActionResponse
 type NoOperationFailureLockoutActionResponse struct {
-	// Name of the Failure Lockout Action
-	Id      string                                         `json:"id"`
 	Schemas []EnumnoOperationFailureLockoutActionSchemaUrn `json:"schemas"`
 	// Indicates whether to generate an account status notification for cases in which this failure lockout action is invoked for a bind attempt with too many outstanding authentication failures.
 	GenerateAccountStatusNotification *bool `json:"generateAccountStatusNotification,omitempty"`
@@ -28,16 +26,18 @@ type NoOperationFailureLockoutActionResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Failure Lockout Action
+	Id string `json:"id"`
 }
 
 // NewNoOperationFailureLockoutActionResponse instantiates a new NoOperationFailureLockoutActionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNoOperationFailureLockoutActionResponse(id string, schemas []EnumnoOperationFailureLockoutActionSchemaUrn) *NoOperationFailureLockoutActionResponse {
+func NewNoOperationFailureLockoutActionResponse(schemas []EnumnoOperationFailureLockoutActionSchemaUrn, id string) *NoOperationFailureLockoutActionResponse {
 	this := NoOperationFailureLockoutActionResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -47,30 +47,6 @@ func NewNoOperationFailureLockoutActionResponse(id string, schemas []EnumnoOpera
 func NewNoOperationFailureLockoutActionResponseWithDefaults() *NoOperationFailureLockoutActionResponse {
 	this := NoOperationFailureLockoutActionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *NoOperationFailureLockoutActionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *NoOperationFailureLockoutActionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *NoOperationFailureLockoutActionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -225,6 +201,30 @@ func (o *NoOperationFailureLockoutActionResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *NoOperationFailureLockoutActionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *NoOperationFailureLockoutActionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *NoOperationFailureLockoutActionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o NoOperationFailureLockoutActionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -235,7 +235,6 @@ func (o NoOperationFailureLockoutActionResponse) MarshalJSON() ([]byte, error) {
 
 func (o NoOperationFailureLockoutActionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.GenerateAccountStatusNotification) {
 		toSerialize["generateAccountStatusNotification"] = o.GenerateAccountStatusNotification
@@ -249,6 +248,7 @@ func (o NoOperationFailureLockoutActionResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

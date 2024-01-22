@@ -19,8 +19,6 @@ var _ MappedNullable = &GroupRestResourceTypeResponse{}
 
 // GroupRestResourceTypeResponse struct for GroupRestResourceTypeResponse
 type GroupRestResourceTypeResponse struct {
-	// Name of the REST Resource Type
-	Id      string                               `json:"id"`
 	Schemas []EnumgroupRestResourceTypeSchemaUrn `json:"schemas"`
 	// Specifies the name of the group member column that will be displayed in the Delegated Admin UI
 	MembersColumnName *string `json:"membersColumnName,omitempty"`
@@ -64,20 +62,22 @@ type GroupRestResourceTypeResponse struct {
 	DelegatedAdminReportSizeLimit                 *int64                                             `json:"delegatedAdminReportSizeLimit,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the REST Resource Type
+	Id string `json:"id"`
 }
 
 // NewGroupRestResourceTypeResponse instantiates a new GroupRestResourceTypeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroupRestResourceTypeResponse(id string, schemas []EnumgroupRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string) *GroupRestResourceTypeResponse {
+func NewGroupRestResourceTypeResponse(schemas []EnumgroupRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, id string) *GroupRestResourceTypeResponse {
 	this := GroupRestResourceTypeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.ResourceEndpoint = resourceEndpoint
 	this.StructuralLDAPObjectclass = structuralLDAPObjectclass
 	this.SearchBaseDN = searchBaseDN
+	this.Id = id
 	return &this
 }
 
@@ -87,30 +87,6 @@ func NewGroupRestResourceTypeResponse(id string, schemas []EnumgroupRestResource
 func NewGroupRestResourceTypeResponseWithDefaults() *GroupRestResourceTypeResponse {
 	this := GroupRestResourceTypeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GroupRestResourceTypeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GroupRestResourceTypeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GroupRestResourceTypeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -809,6 +785,30 @@ func (o *GroupRestResourceTypeResponse) SetUrnpingidentityschemasconfigurationme
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *GroupRestResourceTypeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *GroupRestResourceTypeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *GroupRestResourceTypeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o GroupRestResourceTypeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -819,7 +819,6 @@ func (o GroupRestResourceTypeResponse) MarshalJSON() ([]byte, error) {
 
 func (o GroupRestResourceTypeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.MembersColumnName) {
 		toSerialize["membersColumnName"] = o.MembersColumnName
@@ -879,6 +878,7 @@ func (o GroupRestResourceTypeResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

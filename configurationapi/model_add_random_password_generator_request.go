@@ -19,9 +19,7 @@ var _ MappedNullable = &AddRandomPasswordGeneratorRequest{}
 
 // AddRandomPasswordGeneratorRequest struct for AddRandomPasswordGeneratorRequest
 type AddRandomPasswordGeneratorRequest struct {
-	// Name of the new Password Generator
-	GeneratorName string                                 `json:"generatorName"`
-	Schemas       []EnumrandomPasswordGeneratorSchemaUrn `json:"schemas"`
+	Schemas []EnumrandomPasswordGeneratorSchemaUrn `json:"schemas"`
 	// Specifies one or more named character sets.
 	PasswordCharacterSet []string `json:"passwordCharacterSet"`
 	// Specifies the format to use for the generated password.
@@ -30,19 +28,21 @@ type AddRandomPasswordGeneratorRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Generator is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Generator
+	GeneratorName string `json:"generatorName"`
 }
 
 // NewAddRandomPasswordGeneratorRequest instantiates a new AddRandomPasswordGeneratorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRandomPasswordGeneratorRequest(generatorName string, schemas []EnumrandomPasswordGeneratorSchemaUrn, passwordCharacterSet []string, passwordFormat string, enabled bool) *AddRandomPasswordGeneratorRequest {
+func NewAddRandomPasswordGeneratorRequest(schemas []EnumrandomPasswordGeneratorSchemaUrn, passwordCharacterSet []string, passwordFormat string, enabled bool, generatorName string) *AddRandomPasswordGeneratorRequest {
 	this := AddRandomPasswordGeneratorRequest{}
-	this.GeneratorName = generatorName
 	this.Schemas = schemas
 	this.PasswordCharacterSet = passwordCharacterSet
 	this.PasswordFormat = passwordFormat
 	this.Enabled = enabled
+	this.GeneratorName = generatorName
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewAddRandomPasswordGeneratorRequest(generatorName string, schemas []Enumra
 func NewAddRandomPasswordGeneratorRequestWithDefaults() *AddRandomPasswordGeneratorRequest {
 	this := AddRandomPasswordGeneratorRequest{}
 	return &this
-}
-
-// GetGeneratorName returns the GeneratorName field value
-func (o *AddRandomPasswordGeneratorRequest) GetGeneratorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.GeneratorName
-}
-
-// GetGeneratorNameOk returns a tuple with the GeneratorName field value
-// and a boolean to check if the value has been set.
-func (o *AddRandomPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GeneratorName, true
-}
-
-// SetGeneratorName sets field value
-func (o *AddRandomPasswordGeneratorRequest) SetGeneratorName(v string) {
-	o.GeneratorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -206,6 +182,30 @@ func (o *AddRandomPasswordGeneratorRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetGeneratorName returns the GeneratorName field value
+func (o *AddRandomPasswordGeneratorRequest) GetGeneratorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.GeneratorName
+}
+
+// GetGeneratorNameOk returns a tuple with the GeneratorName field value
+// and a boolean to check if the value has been set.
+func (o *AddRandomPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GeneratorName, true
+}
+
+// SetGeneratorName sets field value
+func (o *AddRandomPasswordGeneratorRequest) SetGeneratorName(v string) {
+	o.GeneratorName = v
+}
+
 func (o AddRandomPasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -216,7 +216,6 @@ func (o AddRandomPasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddRandomPasswordGeneratorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["generatorName"] = o.GeneratorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["passwordCharacterSet"] = o.PasswordCharacterSet
 	toSerialize["passwordFormat"] = o.PasswordFormat
@@ -224,6 +223,7 @@ func (o AddRandomPasswordGeneratorRequest) ToMap() (map[string]interface{}, erro
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["generatorName"] = o.GeneratorName
 	return toSerialize, nil
 }
 

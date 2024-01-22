@@ -19,8 +19,6 @@ var _ MappedNullable = &LdapCorrelationAttributePairResponse{}
 
 // LdapCorrelationAttributePairResponse struct for LdapCorrelationAttributePairResponse
 type LdapCorrelationAttributePairResponse struct {
-	// Name of the LDAP Correlation Attribute Pair
-	Id      string                                      `json:"id"`
 	Schemas []EnumldapCorrelationAttributePairSchemaUrn `json:"schemas,omitempty"`
 	// The LDAP attribute from the base SCIM Resource Type whose value will be used to match objects in the Correlated LDAP Data View.
 	PrimaryCorrelationAttribute string `json:"primaryCorrelationAttribute"`
@@ -28,17 +26,19 @@ type LdapCorrelationAttributePairResponse struct {
 	SecondaryCorrelationAttribute                 string                                             `json:"secondaryCorrelationAttribute"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the LDAP Correlation Attribute Pair
+	Id string `json:"id"`
 }
 
 // NewLdapCorrelationAttributePairResponse instantiates a new LdapCorrelationAttributePairResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapCorrelationAttributePairResponse(id string, primaryCorrelationAttribute string, secondaryCorrelationAttribute string) *LdapCorrelationAttributePairResponse {
+func NewLdapCorrelationAttributePairResponse(primaryCorrelationAttribute string, secondaryCorrelationAttribute string, id string) *LdapCorrelationAttributePairResponse {
 	this := LdapCorrelationAttributePairResponse{}
-	this.Id = id
 	this.PrimaryCorrelationAttribute = primaryCorrelationAttribute
 	this.SecondaryCorrelationAttribute = secondaryCorrelationAttribute
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewLdapCorrelationAttributePairResponse(id string, primaryCorrelationAttrib
 func NewLdapCorrelationAttributePairResponseWithDefaults() *LdapCorrelationAttributePairResponse {
 	this := LdapCorrelationAttributePairResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LdapCorrelationAttributePairResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LdapCorrelationAttributePairResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LdapCorrelationAttributePairResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -218,6 +194,30 @@ func (o *LdapCorrelationAttributePairResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LdapCorrelationAttributePairResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LdapCorrelationAttributePairResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LdapCorrelationAttributePairResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LdapCorrelationAttributePairResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o LdapCorrelationAttributePairResponse) MarshalJSON() ([]byte, error) {
 
 func (o LdapCorrelationAttributePairResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -240,6 +239,7 @@ func (o LdapCorrelationAttributePairResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

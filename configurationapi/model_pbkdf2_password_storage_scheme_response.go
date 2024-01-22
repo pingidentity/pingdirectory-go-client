@@ -19,8 +19,6 @@ var _ MappedNullable = &Pbkdf2PasswordStorageSchemeResponse{}
 
 // Pbkdf2PasswordStorageSchemeResponse struct for Pbkdf2PasswordStorageSchemeResponse
 type Pbkdf2PasswordStorageSchemeResponse struct {
-	// Name of the Password Storage Scheme
-	Id              string                                        `json:"id"`
 	Schemas         []Enumpbkdf2PasswordStorageSchemeSchemaUrn    `json:"schemas"`
 	DigestAlgorithm *EnumpasswordStorageSchemeDigestAlgorithmProp `json:"digestAlgorithm,omitempty"`
 	// Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000.
@@ -37,20 +35,22 @@ type Pbkdf2PasswordStorageSchemeResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Storage Scheme
+	Id string `json:"id"`
 }
 
 // NewPbkdf2PasswordStorageSchemeResponse instantiates a new Pbkdf2PasswordStorageSchemeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPbkdf2PasswordStorageSchemeResponse(id string, schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, iterationCount int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool) *Pbkdf2PasswordStorageSchemeResponse {
+func NewPbkdf2PasswordStorageSchemeResponse(schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, iterationCount int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool, id string) *Pbkdf2PasswordStorageSchemeResponse {
 	this := Pbkdf2PasswordStorageSchemeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.IterationCount = iterationCount
 	this.SaltLengthBytes = saltLengthBytes
 	this.DerivedKeyLengthBytes = derivedKeyLengthBytes
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewPbkdf2PasswordStorageSchemeResponse(id string, schemas []Enumpbkdf2Passw
 func NewPbkdf2PasswordStorageSchemeResponseWithDefaults() *Pbkdf2PasswordStorageSchemeResponse {
 	this := Pbkdf2PasswordStorageSchemeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *Pbkdf2PasswordStorageSchemeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *Pbkdf2PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *Pbkdf2PasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -366,6 +342,30 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *Pbkdf2PasswordStorageSchemeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *Pbkdf2PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *Pbkdf2PasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o Pbkdf2PasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -376,7 +376,6 @@ func (o Pbkdf2PasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 
 func (o Pbkdf2PasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.DigestAlgorithm) {
 		toSerialize["digestAlgorithm"] = o.DigestAlgorithm
@@ -397,6 +396,7 @@ func (o Pbkdf2PasswordStorageSchemeResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

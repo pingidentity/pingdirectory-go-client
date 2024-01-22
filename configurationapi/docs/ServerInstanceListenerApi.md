@@ -1,12 +1,12 @@
-# \ServerInstanceListenerApi
+# \ServerInstanceListenerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetServerInstanceListener**](ServerInstanceListenerApi.md#GetServerInstanceListener) | **Get** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name} | Returns a single Server Instance Listener
-[**ListServerInstanceListeners**](ServerInstanceListenerApi.md#ListServerInstanceListeners) | **Get** /server-instances/{server-instance-name}/server-instance-listeners | Returns a list of all Server Instance Listener objects
-[**UpdateServerInstanceListener**](ServerInstanceListenerApi.md#UpdateServerInstanceListener) | **Patch** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name} | Update an existing Server Instance Listener by name
+[**GetServerInstanceListener**](ServerInstanceListenerAPI.md#GetServerInstanceListener) | **Get** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name} | Returns a single Server Instance Listener
+[**ListServerInstanceListeners**](ServerInstanceListenerAPI.md#ListServerInstanceListeners) | **Get** /server-instances/{server-instance-name}/server-instance-listeners | Returns a list of all Server Instance Listener objects
+[**UpdateServerInstanceListener**](ServerInstanceListenerAPI.md#UpdateServerInstanceListener) | **Patch** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name} | Update an existing Server Instance Listener by name
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerInstanceListenerApi.GetServerInstanceListener(context.Background(), serverInstanceListenerName, serverInstanceName).Execute()
+    resp, r, err := apiClient.ServerInstanceListenerAPI.GetServerInstanceListener(context.Background(), serverInstanceListenerName, serverInstanceName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceListenerApi.GetServerInstanceListener``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceListenerAPI.GetServerInstanceListener``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetServerInstanceListener`: GetServerInstanceListener200Response
-    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceListenerApi.GetServerInstanceListener`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceListenerAPI.GetServerInstanceListener`: %v\n", resp)
 }
 ```
 
@@ -105,13 +105,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerInstanceListenerApi.ListServerInstanceListeners(context.Background(), serverInstanceName).Filter(filter).Execute()
+    resp, r, err := apiClient.ServerInstanceListenerAPI.ListServerInstanceListeners(context.Background(), serverInstanceName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceListenerApi.ListServerInstanceListeners``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceListenerAPI.ListServerInstanceListeners``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListServerInstanceListeners`: ServerInstanceListenerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceListenerApi.ListServerInstanceListeners`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceListenerAPI.ListServerInstanceListeners`: %v\n", resp)
 }
 ```
 
@@ -176,13 +176,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerInstanceListenerApi.UpdateServerInstanceListener(context.Background(), serverInstanceListenerName, serverInstanceName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ServerInstanceListenerAPI.UpdateServerInstanceListener(context.Background(), serverInstanceListenerName, serverInstanceName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceListenerApi.UpdateServerInstanceListener``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceListenerAPI.UpdateServerInstanceListener``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateServerInstanceListener`: GetServerInstanceListener200Response
-    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceListenerApi.UpdateServerInstanceListener`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceListenerAPI.UpdateServerInstanceListener`: %v\n", resp)
 }
 ```
 

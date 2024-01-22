@@ -19,9 +19,7 @@ var _ MappedNullable = &AddScryptPasswordStorageSchemeRequest{}
 
 // AddScryptPasswordStorageSchemeRequest struct for AddScryptPasswordStorageSchemeRequest
 type AddScryptPasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName string                                     `json:"schemeName"`
-	Schemas    []EnumscryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas []EnumscryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the exponent that should be used for the CPU/memory cost factor. The cost factor must be a power of two, so the value of this property represents the power to which two is raised. The CPU/memory cost factor specifies the number of iterations required for encoding the password, and also affects the amount of memory required during processing. A higher cost factor requires more processing and more memory to generate a password, which makes attacks against the password more expensive.
 	ScryptCpuMemoryCostFactorExponent *int64 `json:"scryptCpuMemoryCostFactorExponent,omitempty"`
 	// Specifies the block size for the digest that will be used in the course of encoding passwords. Increasing the block size while keeping the CPU/memory cost factor constant will increase the amount of memory required to encode a password, but it also increases the ratio of sequential memory access to random memory access (and sequential memory access is generally faster than random memory access).
@@ -34,17 +32,19 @@ type AddScryptPasswordStorageSchemeRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddScryptPasswordStorageSchemeRequest instantiates a new AddScryptPasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddScryptPasswordStorageSchemeRequest(schemeName string, schemas []EnumscryptPasswordStorageSchemeSchemaUrn, enabled bool) *AddScryptPasswordStorageSchemeRequest {
+func NewAddScryptPasswordStorageSchemeRequest(schemas []EnumscryptPasswordStorageSchemeSchemaUrn, enabled bool, schemeName string) *AddScryptPasswordStorageSchemeRequest {
 	this := AddScryptPasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddScryptPasswordStorageSchemeRequest(schemeName string, schemas []Enums
 func NewAddScryptPasswordStorageSchemeRequestWithDefaults() *AddScryptPasswordStorageSchemeRequest {
 	this := AddScryptPasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddScryptPasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddScryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddScryptPasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -288,6 +264,30 @@ func (o *AddScryptPasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddScryptPasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddScryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddScryptPasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddScryptPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -298,7 +298,6 @@ func (o AddScryptPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddScryptPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ScryptCpuMemoryCostFactorExponent) {
 		toSerialize["scryptCpuMemoryCostFactorExponent"] = o.ScryptCpuMemoryCostFactorExponent
@@ -316,6 +315,7 @@ func (o AddScryptPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

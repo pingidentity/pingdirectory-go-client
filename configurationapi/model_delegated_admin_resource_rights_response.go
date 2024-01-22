@@ -19,8 +19,6 @@ var _ MappedNullable = &DelegatedAdminResourceRightsResponse{}
 
 // DelegatedAdminResourceRightsResponse struct for DelegatedAdminResourceRightsResponse
 type DelegatedAdminResourceRightsResponse struct {
-	// Name of the Delegated Admin Resource Rights
-	Id      string                                      `json:"id"`
 	Schemas []EnumdelegatedAdminResourceRightsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Resource Rights
 	Description *string `json:"description,omitempty"`
@@ -36,17 +34,19 @@ type DelegatedAdminResourceRightsResponse struct {
 	ResourcesInGroup                              []string                                           `json:"resourcesInGroup,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Delegated Admin Resource Rights
+	Id string `json:"id"`
 }
 
 // NewDelegatedAdminResourceRightsResponse instantiates a new DelegatedAdminResourceRightsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelegatedAdminResourceRightsResponse(id string, enabled bool, restResourceType string) *DelegatedAdminResourceRightsResponse {
+func NewDelegatedAdminResourceRightsResponse(enabled bool, restResourceType string, id string) *DelegatedAdminResourceRightsResponse {
 	this := DelegatedAdminResourceRightsResponse{}
-	this.Id = id
 	this.Enabled = enabled
 	this.RestResourceType = restResourceType
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewDelegatedAdminResourceRightsResponse(id string, enabled bool, restResour
 func NewDelegatedAdminResourceRightsResponseWithDefaults() *DelegatedAdminResourceRightsResponse {
 	this := DelegatedAdminResourceRightsResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DelegatedAdminResourceRightsResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DelegatedAdminResourceRightsResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DelegatedAdminResourceRightsResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -386,6 +362,30 @@ func (o *DelegatedAdminResourceRightsResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DelegatedAdminResourceRightsResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DelegatedAdminResourceRightsResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DelegatedAdminResourceRightsResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DelegatedAdminResourceRightsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -396,7 +396,6 @@ func (o DelegatedAdminResourceRightsResponse) MarshalJSON() ([]byte, error) {
 
 func (o DelegatedAdminResourceRightsResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -423,6 +422,7 @@ func (o DelegatedAdminResourceRightsResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

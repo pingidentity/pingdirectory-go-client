@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RestResourceType** | **string** | Specifies the resource type applicable to these Delegated Admin Resource Rights. | 
 **Schemas** | Pointer to [**[]EnumdelegatedAdminResourceRightsSchemaUrn**](EnumdelegatedAdminResourceRightsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Resource Rights | [optional] 
 **Enabled** | **bool** | Indicates whether these Delegated Admin Resource Rights are enabled. | 
+**RestResourceType** | **string** | Name of the new Delegated Admin Resource Rights | 
 **AdminPermission** | Pointer to [**[]EnumdelegatedAdminResourceRightsAdminPermissionProp**](EnumdelegatedAdminResourceRightsAdminPermissionProp.md) |  | [optional] 
 **AdminScope** | Pointer to [**EnumdelegatedAdminResourceRightsAdminScopeProp**](EnumdelegatedAdminResourceRightsAdminScopeProp.md) |  | [optional] 
 **ResourceSubtree** | Pointer to **[]string** | Specifies subtrees within the search base whose entries can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-subtrees. | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddDelegatedAdminResourceRightsRequest
 
-`func NewAddDelegatedAdminResourceRightsRequest(restResourceType string, enabled bool, ) *AddDelegatedAdminResourceRightsRequest`
+`func NewAddDelegatedAdminResourceRightsRequest(enabled bool, restResourceType string, ) *AddDelegatedAdminResourceRightsRequest`
 
 NewAddDelegatedAdminResourceRightsRequest instantiates a new AddDelegatedAdminResourceRightsRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddDelegatedAdminResourceRightsRequestWithDefaults instantiates a new AddDelegatedAdminResourceRightsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetRestResourceType
-
-`func (o *AddDelegatedAdminResourceRightsRequest) GetRestResourceType() string`
-
-GetRestResourceType returns the RestResourceType field if non-nil, zero value otherwise.
-
-### GetRestResourceTypeOk
-
-`func (o *AddDelegatedAdminResourceRightsRequest) GetRestResourceTypeOk() (*string, bool)`
-
-GetRestResourceTypeOk returns a tuple with the RestResourceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRestResourceType
-
-`func (o *AddDelegatedAdminResourceRightsRequest) SetRestResourceType(v string)`
-
-SetRestResourceType sets RestResourceType field to given value.
-
 
 ### GetSchemas
 
@@ -120,6 +100,26 @@ and a boolean to check if the value has been set.
 `func (o *AddDelegatedAdminResourceRightsRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetRestResourceType
+
+`func (o *AddDelegatedAdminResourceRightsRequest) GetRestResourceType() string`
+
+GetRestResourceType returns the RestResourceType field if non-nil, zero value otherwise.
+
+### GetRestResourceTypeOk
+
+`func (o *AddDelegatedAdminResourceRightsRequest) GetRestResourceTypeOk() (*string, bool)`
+
+GetRestResourceTypeOk returns a tuple with the RestResourceType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRestResourceType
+
+`func (o *AddDelegatedAdminResourceRightsRequest) SetRestResourceType(v string)`
+
+SetRestResourceType sets RestResourceType field to given value.
 
 
 ### GetAdminPermission

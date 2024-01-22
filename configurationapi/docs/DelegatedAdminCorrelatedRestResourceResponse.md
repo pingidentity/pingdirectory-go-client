@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Delegated Admin Correlated REST Resource | 
 **Schemas** | Pointer to [**[]EnumdelegatedAdminCorrelatedRestResourceSchemaUrn**](EnumdelegatedAdminCorrelatedRestResourceSchemaUrn.md) |  | [optional] 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Correlated REST Resource. | 
 **CorrelatedRESTResource** | **string** | The REST Resource Type that will be linked to this REST Resource Type. | 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **UseSecondaryValueForLinking** | Pointer to **bool** | Indicates whether links should be created using the secondary correlation attribute value. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Delegated Admin Correlated REST Resource | 
 
 ## Methods
 
 ### NewDelegatedAdminCorrelatedRestResourceResponse
 
-`func NewDelegatedAdminCorrelatedRestResourceResponse(id string, displayName string, correlatedRESTResource string, primaryRESTResourceCorrelationAttribute string, secondaryRESTResourceCorrelationAttribute string, ) *DelegatedAdminCorrelatedRestResourceResponse`
+`func NewDelegatedAdminCorrelatedRestResourceResponse(displayName string, correlatedRESTResource string, primaryRESTResourceCorrelationAttribute string, secondaryRESTResourceCorrelationAttribute string, id string, ) *DelegatedAdminCorrelatedRestResourceResponse`
 
 NewDelegatedAdminCorrelatedRestResourceResponse instantiates a new DelegatedAdminCorrelatedRestResourceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewDelegatedAdminCorrelatedRestResourceResponseWithDefaults instantiates a new DelegatedAdminCorrelatedRestResourceResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *DelegatedAdminCorrelatedRestResourceResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *DelegatedAdminCorrelatedRestResourceResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *DelegatedAdminCorrelatedRestResourceResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -232,6 +212,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *DelegatedAdminCorrelatedRestResourceResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *DelegatedAdminCorrelatedRestResourceResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *DelegatedAdminCorrelatedRestResourceResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *DelegatedAdminCorrelatedRestResourceResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

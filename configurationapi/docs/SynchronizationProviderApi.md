@@ -1,12 +1,12 @@
-# \SynchronizationProviderApi
+# \SynchronizationProviderAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetSynchronizationProvider**](SynchronizationProviderApi.md#GetSynchronizationProvider) | **Get** /synchronization-providers/{synchronization-provider-name} | Returns a single Synchronization Provider
-[**ListSynchronizationProviders**](SynchronizationProviderApi.md#ListSynchronizationProviders) | **Get** /synchronization-providers | Returns a list of all Synchronization Provider objects
-[**UpdateSynchronizationProvider**](SynchronizationProviderApi.md#UpdateSynchronizationProvider) | **Patch** /synchronization-providers/{synchronization-provider-name} | Update an existing Synchronization Provider by name
+[**GetSynchronizationProvider**](SynchronizationProviderAPI.md#GetSynchronizationProvider) | **Get** /synchronization-providers/{synchronization-provider-name} | Returns a single Synchronization Provider
+[**ListSynchronizationProviders**](SynchronizationProviderAPI.md#ListSynchronizationProviders) | **Get** /synchronization-providers | Returns a list of all Synchronization Provider objects
+[**UpdateSynchronizationProvider**](SynchronizationProviderAPI.md#UpdateSynchronizationProvider) | **Patch** /synchronization-providers/{synchronization-provider-name} | Update an existing Synchronization Provider by name
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SynchronizationProviderApi.GetSynchronizationProvider(context.Background(), synchronizationProviderName).Execute()
+    resp, r, err := apiClient.SynchronizationProviderAPI.GetSynchronizationProvider(context.Background(), synchronizationProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SynchronizationProviderApi.GetSynchronizationProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SynchronizationProviderAPI.GetSynchronizationProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSynchronizationProvider`: GetSynchronizationProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `SynchronizationProviderApi.GetSynchronizationProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SynchronizationProviderAPI.GetSynchronizationProvider`: %v\n", resp)
 }
 ```
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SynchronizationProviderApi.ListSynchronizationProviders(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.SynchronizationProviderAPI.ListSynchronizationProviders(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SynchronizationProviderApi.ListSynchronizationProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SynchronizationProviderAPI.ListSynchronizationProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListSynchronizationProviders`: SynchronizationProviderListResponse
-    fmt.Fprintf(os.Stdout, "Response from `SynchronizationProviderApi.ListSynchronizationProviders`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SynchronizationProviderAPI.ListSynchronizationProviders`: %v\n", resp)
 }
 ```
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SynchronizationProviderApi.UpdateSynchronizationProvider(context.Background(), synchronizationProviderName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.SynchronizationProviderAPI.UpdateSynchronizationProvider(context.Background(), synchronizationProviderName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SynchronizationProviderApi.UpdateSynchronizationProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SynchronizationProviderAPI.UpdateSynchronizationProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSynchronizationProvider`: GetSynchronizationProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `SynchronizationProviderApi.UpdateSynchronizationProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SynchronizationProviderAPI.UpdateSynchronizationProvider`: %v\n", resp)
 }
 ```
 

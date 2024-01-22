@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ValidatorName** | **string** | Name of the new Access Token Validator | 
 **Schemas** | [**[]EnumpingFederateAccessTokenValidatorSchemaUrn**](EnumpingFederateAccessTokenValidatorSchemaUrn.md) |  | 
 **ClientID** | **string** | The client identifier to use when authenticating to the PingFederate authorization server. | 
 **ClientSecret** | Pointer to **string** | The client secret to use when authenticating to the PingFederate authorization server. | [optional] 
@@ -18,12 +17,13 @@ Name | Type | Description | Notes
 **SubjectClaimName** | Pointer to **string** | The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server. | [optional] 
 **Description** | Pointer to **string** | A description for this Access Token Validator | [optional] 
 **Enabled** | **bool** | Indicates whether this Access Token Validator is enabled for use in Directory Server. | 
+**ValidatorName** | **string** | Name of the new Access Token Validator | 
 
 ## Methods
 
 ### NewAddPingFederateAccessTokenValidatorRequest
 
-`func NewAddPingFederateAccessTokenValidatorRequest(validatorName string, schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, enabled bool, ) *AddPingFederateAccessTokenValidatorRequest`
+`func NewAddPingFederateAccessTokenValidatorRequest(schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, enabled bool, validatorName string, ) *AddPingFederateAccessTokenValidatorRequest`
 
 NewAddPingFederateAccessTokenValidatorRequest instantiates a new AddPingFederateAccessTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,26 +37,6 @@ will change when the set of required properties is changed
 NewAddPingFederateAccessTokenValidatorRequestWithDefaults instantiates a new AddPingFederateAccessTokenValidatorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetValidatorName
-
-`func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorName() string`
-
-GetValidatorName returns the ValidatorName field if non-nil, zero value otherwise.
-
-### GetValidatorNameOk
-
-`func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool)`
-
-GetValidatorNameOk returns a tuple with the ValidatorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValidatorName
-
-`func (o *AddPingFederateAccessTokenValidatorRequest) SetValidatorName(v string)`
-
-SetValidatorName sets ValidatorName field to given value.
-
 
 ### GetSchemas
 
@@ -366,6 +346,26 @@ and a boolean to check if the value has been set.
 `func (o *AddPingFederateAccessTokenValidatorRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetValidatorName
+
+`func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorName() string`
+
+GetValidatorName returns the ValidatorName field if non-nil, zero value otherwise.
+
+### GetValidatorNameOk
+
+`func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool)`
+
+GetValidatorNameOk returns a tuple with the ValidatorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidatorName
+
+`func (o *AddPingFederateAccessTokenValidatorRequest) SetValidatorName(v string)`
+
+SetValidatorName sets ValidatorName field to given value.
 
 
 

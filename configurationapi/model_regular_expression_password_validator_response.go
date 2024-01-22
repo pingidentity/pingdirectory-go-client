@@ -19,8 +19,6 @@ var _ MappedNullable = &RegularExpressionPasswordValidatorResponse{}
 
 // RegularExpressionPasswordValidatorResponse struct for RegularExpressionPasswordValidatorResponse
 type RegularExpressionPasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                            `json:"id"`
 	Schemas []EnumregularExpressionPasswordValidatorSchemaUrn `json:"schemas"`
 	// The regular expression to use for this password validator.
 	MatchPattern  string                                 `json:"matchPattern"`
@@ -35,19 +33,21 @@ type RegularExpressionPasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewRegularExpressionPasswordValidatorResponse instantiates a new RegularExpressionPasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRegularExpressionPasswordValidatorResponse(id string, schemas []EnumregularExpressionPasswordValidatorSchemaUrn, matchPattern string, matchBehavior EnumpasswordValidatorMatchBehaviorProp, enabled bool) *RegularExpressionPasswordValidatorResponse {
+func NewRegularExpressionPasswordValidatorResponse(schemas []EnumregularExpressionPasswordValidatorSchemaUrn, matchPattern string, matchBehavior EnumpasswordValidatorMatchBehaviorProp, enabled bool, id string) *RegularExpressionPasswordValidatorResponse {
 	this := RegularExpressionPasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.MatchPattern = matchPattern
 	this.MatchBehavior = matchBehavior
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewRegularExpressionPasswordValidatorResponse(id string, schemas []Enumregu
 func NewRegularExpressionPasswordValidatorResponseWithDefaults() *RegularExpressionPasswordValidatorResponse {
 	this := RegularExpressionPasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *RegularExpressionPasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *RegularExpressionPasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *RegularExpressionPasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -339,6 +315,30 @@ func (o *RegularExpressionPasswordValidatorResponse) SetUrnpingidentityschemasco
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *RegularExpressionPasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *RegularExpressionPasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *RegularExpressionPasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o RegularExpressionPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -349,7 +349,6 @@ func (o RegularExpressionPasswordValidatorResponse) MarshalJSON() ([]byte, error
 
 func (o RegularExpressionPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["matchPattern"] = o.MatchPattern
 	toSerialize["matchBehavior"] = o.MatchBehavior
@@ -369,6 +368,7 @@ func (o RegularExpressionPasswordValidatorResponse) ToMap() (map[string]interfac
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

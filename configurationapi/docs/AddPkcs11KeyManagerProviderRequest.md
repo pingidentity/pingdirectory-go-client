@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Key Manager Provider | 
 **Schemas** | [**[]Enumpkcs11KeyManagerProviderSchemaUrn**](Enumpkcs11KeyManagerProviderSchemaUrn.md) |  | 
 **Pkcs11ProviderClass** | Pointer to **string** | The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens. | [optional] 
 **Pkcs11ProviderConfigurationFile** | Pointer to **string** | The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens. | [optional] 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **KeyStorePinPassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the clear-text PIN needed to access the PKCS11 Key Manager Provider. | [optional] 
 **Description** | Pointer to **string** | A description for this Key Manager Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Key Manager Provider is enabled for use. | 
+**ProviderName** | **string** | Name of the new Key Manager Provider | 
 
 ## Methods
 
 ### NewAddPkcs11KeyManagerProviderRequest
 
-`func NewAddPkcs11KeyManagerProviderRequest(providerName string, schemas []Enumpkcs11KeyManagerProviderSchemaUrn, enabled bool, ) *AddPkcs11KeyManagerProviderRequest`
+`func NewAddPkcs11KeyManagerProviderRequest(schemas []Enumpkcs11KeyManagerProviderSchemaUrn, enabled bool, providerName string, ) *AddPkcs11KeyManagerProviderRequest`
 
 NewAddPkcs11KeyManagerProviderRequest instantiates a new AddPkcs11KeyManagerProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewAddPkcs11KeyManagerProviderRequestWithDefaults instantiates a new AddPkcs11KeyManagerProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddPkcs11KeyManagerProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddPkcs11KeyManagerProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddPkcs11KeyManagerProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -293,6 +273,26 @@ and a boolean to check if the value has been set.
 `func (o *AddPkcs11KeyManagerProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddPkcs11KeyManagerProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddPkcs11KeyManagerProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddPkcs11KeyManagerProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

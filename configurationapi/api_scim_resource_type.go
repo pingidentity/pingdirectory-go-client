@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ScimResourceTypeApiService ScimResourceTypeApi service
-type ScimResourceTypeApiService service
+// ScimResourceTypeAPIService ScimResourceTypeAPI service
+type ScimResourceTypeAPIService service
 
 type ApiAddScimResourceTypeRequest struct {
 	ctx                        context.Context
-	ApiService                 *ScimResourceTypeApiService
+	ApiService                 *ScimResourceTypeAPIService
 	addScimResourceTypeRequest *AddScimResourceTypeRequest
 }
 
@@ -44,7 +44,7 @@ AddScimResourceType Add a new SCIM Resource Type to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddScimResourceTypeRequest
 */
-func (a *ScimResourceTypeApiService) AddScimResourceType(ctx context.Context) ApiAddScimResourceTypeRequest {
+func (a *ScimResourceTypeAPIService) AddScimResourceType(ctx context.Context) ApiAddScimResourceTypeRequest {
 	return ApiAddScimResourceTypeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ScimResourceTypeApiService) AddScimResourceType(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return AddScimResourceType200Response
-func (a *ScimResourceTypeApiService) AddScimResourceTypeExecute(r ApiAddScimResourceTypeRequest) (*AddScimResourceType200Response, *http.Response, error) {
+func (a *ScimResourceTypeAPIService) AddScimResourceTypeExecute(r ApiAddScimResourceTypeRequest) (*AddScimResourceType200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ScimResourceTypeApiService) AddScimResourceTypeExecute(r ApiAddScimReso
 		localVarReturnValue *AddScimResourceType200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeApiService.AddScimResourceType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeAPIService.AddScimResourceType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ScimResourceTypeApiService) AddScimResourceTypeExecute(r ApiAddScimReso
 
 type ApiDeleteScimResourceTypeRequest struct {
 	ctx                  context.Context
-	ApiService           *ScimResourceTypeApiService
+	ApiService           *ScimResourceTypeAPIService
 	scimResourceTypeName string
 }
 
@@ -149,7 +149,7 @@ DeleteScimResourceType Delete a SCIM Resource Type
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiDeleteScimResourceTypeRequest
 */
-func (a *ScimResourceTypeApiService) DeleteScimResourceType(ctx context.Context, scimResourceTypeName string) ApiDeleteScimResourceTypeRequest {
+func (a *ScimResourceTypeAPIService) DeleteScimResourceType(ctx context.Context, scimResourceTypeName string) ApiDeleteScimResourceTypeRequest {
 	return ApiDeleteScimResourceTypeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -158,14 +158,14 @@ func (a *ScimResourceTypeApiService) DeleteScimResourceType(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *ScimResourceTypeApiService) DeleteScimResourceTypeExecute(r ApiDeleteScimResourceTypeRequest) (*http.Response, error) {
+func (a *ScimResourceTypeAPIService) DeleteScimResourceTypeExecute(r ApiDeleteScimResourceTypeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeApiService.DeleteScimResourceType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeAPIService.DeleteScimResourceType")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ScimResourceTypeApiService) DeleteScimResourceTypeExecute(r ApiDeleteSc
 
 type ApiGetScimResourceTypeRequest struct {
 	ctx                  context.Context
-	ApiService           *ScimResourceTypeApiService
+	ApiService           *ScimResourceTypeAPIService
 	scimResourceTypeName string
 }
 
@@ -239,7 +239,7 @@ GetScimResourceType Returns a single SCIM Resource Type
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiGetScimResourceTypeRequest
 */
-func (a *ScimResourceTypeApiService) GetScimResourceType(ctx context.Context, scimResourceTypeName string) ApiGetScimResourceTypeRequest {
+func (a *ScimResourceTypeAPIService) GetScimResourceType(ctx context.Context, scimResourceTypeName string) ApiGetScimResourceTypeRequest {
 	return ApiGetScimResourceTypeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -250,7 +250,7 @@ func (a *ScimResourceTypeApiService) GetScimResourceType(ctx context.Context, sc
 // Execute executes the request
 //
 //	@return AddScimResourceType200Response
-func (a *ScimResourceTypeApiService) GetScimResourceTypeExecute(r ApiGetScimResourceTypeRequest) (*AddScimResourceType200Response, *http.Response, error) {
+func (a *ScimResourceTypeAPIService) GetScimResourceTypeExecute(r ApiGetScimResourceTypeRequest) (*AddScimResourceType200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ScimResourceTypeApiService) GetScimResourceTypeExecute(r ApiGetScimReso
 		localVarReturnValue *AddScimResourceType200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeApiService.GetScimResourceType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeAPIService.GetScimResourceType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ScimResourceTypeApiService) GetScimResourceTypeExecute(r ApiGetScimReso
 
 type ApiListScimResourceTypesRequest struct {
 	ctx        context.Context
-	ApiService *ScimResourceTypeApiService
+	ApiService *ScimResourceTypeAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListScimResourceTypes Returns a list of all SCIM Resource Type objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListScimResourceTypesRequest
 */
-func (a *ScimResourceTypeApiService) ListScimResourceTypes(ctx context.Context) ApiListScimResourceTypesRequest {
+func (a *ScimResourceTypeAPIService) ListScimResourceTypes(ctx context.Context) ApiListScimResourceTypesRequest {
 	return ApiListScimResourceTypesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ScimResourceTypeApiService) ListScimResourceTypes(ctx context.Context) 
 // Execute executes the request
 //
 //	@return ScimResourceTypeListResponse
-func (a *ScimResourceTypeApiService) ListScimResourceTypesExecute(r ApiListScimResourceTypesRequest) (*ScimResourceTypeListResponse, *http.Response, error) {
+func (a *ScimResourceTypeAPIService) ListScimResourceTypesExecute(r ApiListScimResourceTypesRequest) (*ScimResourceTypeListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ScimResourceTypeApiService) ListScimResourceTypesExecute(r ApiListScimR
 		localVarReturnValue *ScimResourceTypeListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeApiService.ListScimResourceTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeAPIService.ListScimResourceTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ScimResourceTypeApiService) ListScimResourceTypesExecute(r ApiListScimR
 
 type ApiUpdateScimResourceTypeRequest struct {
 	ctx                  context.Context
-	ApiService           *ScimResourceTypeApiService
+	ApiService           *ScimResourceTypeAPIService
 	scimResourceTypeName string
 	updateRequest        *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateScimResourceType Update an existing SCIM Resource Type by name
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiUpdateScimResourceTypeRequest
 */
-func (a *ScimResourceTypeApiService) UpdateScimResourceType(ctx context.Context, scimResourceTypeName string) ApiUpdateScimResourceTypeRequest {
+func (a *ScimResourceTypeAPIService) UpdateScimResourceType(ctx context.Context, scimResourceTypeName string) ApiUpdateScimResourceTypeRequest {
 	return ApiUpdateScimResourceTypeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -467,7 +467,7 @@ func (a *ScimResourceTypeApiService) UpdateScimResourceType(ctx context.Context,
 // Execute executes the request
 //
 //	@return AddScimResourceType200Response
-func (a *ScimResourceTypeApiService) UpdateScimResourceTypeExecute(r ApiUpdateScimResourceTypeRequest) (*AddScimResourceType200Response, *http.Response, error) {
+func (a *ScimResourceTypeAPIService) UpdateScimResourceTypeExecute(r ApiUpdateScimResourceTypeRequest) (*AddScimResourceType200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ScimResourceTypeApiService) UpdateScimResourceTypeExecute(r ApiUpdateSc
 		localVarReturnValue *AddScimResourceType200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeApiService.UpdateScimResourceType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimResourceTypeAPIService.UpdateScimResourceType")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

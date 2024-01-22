@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TypeName** | **string** | Name of the new REST Resource Type | 
 **Schemas** | [**[]EnumgroupRestResourceTypeSchemaUrn**](EnumgroupRestResourceTypeSchemaUrn.md) |  | 
 **MembersColumnName** | Pointer to **string** | Specifies the name of the group member column that will be displayed in the Delegated Admin UI | [optional] 
 **NonmembersColumnName** | Pointer to **string** | Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI | [optional] 
@@ -26,12 +25,13 @@ Name | Type | Description | Notes
 **PrimaryDisplayAttributeType** | Pointer to **string** | Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition. | [optional] 
 **DelegatedAdminSearchSizeLimit** | Pointer to **int64** | The maximum number of resources that may be returned from a search request. | [optional] 
 **DelegatedAdminReportSizeLimit** | Pointer to **int64** | The maximum number of resources that may be included in a report. | [optional] 
+**TypeName** | **string** | Name of the new REST Resource Type | 
 
 ## Methods
 
 ### NewAddGroupRestResourceTypeRequest
 
-`func NewAddGroupRestResourceTypeRequest(typeName string, schemas []EnumgroupRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, ) *AddGroupRestResourceTypeRequest`
+`func NewAddGroupRestResourceTypeRequest(schemas []EnumgroupRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, typeName string, ) *AddGroupRestResourceTypeRequest`
 
 NewAddGroupRestResourceTypeRequest instantiates a new AddGroupRestResourceTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -45,26 +45,6 @@ will change when the set of required properties is changed
 NewAddGroupRestResourceTypeRequestWithDefaults instantiates a new AddGroupRestResourceTypeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTypeName
-
-`func (o *AddGroupRestResourceTypeRequest) GetTypeName() string`
-
-GetTypeName returns the TypeName field if non-nil, zero value otherwise.
-
-### GetTypeNameOk
-
-`func (o *AddGroupRestResourceTypeRequest) GetTypeNameOk() (*string, bool)`
-
-GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeName
-
-`func (o *AddGroupRestResourceTypeRequest) SetTypeName(v string)`
-
-SetTypeName sets TypeName field to given value.
-
 
 ### GetSchemas
 
@@ -565,6 +545,26 @@ SetDelegatedAdminReportSizeLimit sets DelegatedAdminReportSizeLimit field to giv
 `func (o *AddGroupRestResourceTypeRequest) HasDelegatedAdminReportSizeLimit() bool`
 
 HasDelegatedAdminReportSizeLimit returns a boolean if a field has been set.
+
+### GetTypeName
+
+`func (o *AddGroupRestResourceTypeRequest) GetTypeName() string`
+
+GetTypeName returns the TypeName field if non-nil, zero value otherwise.
+
+### GetTypeNameOk
+
+`func (o *AddGroupRestResourceTypeRequest) GetTypeNameOk() (*string, bool)`
+
+GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTypeName
+
+`func (o *AddGroupRestResourceTypeRequest) SetTypeName(v string)`
+
+SetTypeName sets TypeName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

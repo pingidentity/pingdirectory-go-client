@@ -1,14 +1,14 @@
-# \ScimSubattributeApi
+# \ScimSubattributeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddScimSubattribute**](ScimSubattributeApi.md#AddScimSubattribute) | **Post** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes | Add a new SCIM Subattribute to the config
-[**DeleteScimSubattribute**](ScimSubattributeApi.md#DeleteScimSubattribute) | **Delete** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Delete a SCIM Subattribute
-[**GetScimSubattribute**](ScimSubattributeApi.md#GetScimSubattribute) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Returns a single SCIM Subattribute
-[**ListScimSubattributes**](ScimSubattributeApi.md#ListScimSubattributes) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes | Returns a list of all SCIM Subattribute objects
-[**UpdateScimSubattribute**](ScimSubattributeApi.md#UpdateScimSubattribute) | **Patch** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Update an existing SCIM Subattribute by name
+[**AddScimSubattribute**](ScimSubattributeAPI.md#AddScimSubattribute) | **Post** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes | Add a new SCIM Subattribute to the config
+[**DeleteScimSubattribute**](ScimSubattributeAPI.md#DeleteScimSubattribute) | **Delete** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Delete a SCIM Subattribute
+[**GetScimSubattribute**](ScimSubattributeAPI.md#GetScimSubattribute) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Returns a single SCIM Subattribute
+[**ListScimSubattributes**](ScimSubattributeAPI.md#ListScimSubattributes) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes | Returns a list of all SCIM Subattribute objects
+[**UpdateScimSubattribute**](ScimSubattributeAPI.md#UpdateScimSubattribute) | **Patch** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Update an existing SCIM Subattribute by name
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimSubattributeApi.AddScimSubattribute(context.Background(), scimAttributeName, scimSchemaName).AddScimSubattributeRequest(addScimSubattributeRequest).Execute()
+    resp, r, err := apiClient.ScimSubattributeAPI.AddScimSubattribute(context.Background(), scimAttributeName, scimSchemaName).AddScimSubattributeRequest(addScimSubattributeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeApi.AddScimSubattribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeAPI.AddScimSubattribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddScimSubattribute`: ScimSubattributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimSubattributeApi.AddScimSubattribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimSubattributeAPI.AddScimSubattribute`: %v\n", resp)
 }
 ```
 
@@ -110,9 +110,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ScimSubattributeApi.DeleteScimSubattribute(context.Background(), scimSubattributeName, scimAttributeName, scimSchemaName).Execute()
+    r, err := apiClient.ScimSubattributeAPI.DeleteScimSubattribute(context.Background(), scimSubattributeName, scimAttributeName, scimSchemaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeApi.DeleteScimSubattribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeAPI.DeleteScimSubattribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -182,13 +182,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimSubattributeApi.GetScimSubattribute(context.Background(), scimSubattributeName, scimAttributeName, scimSchemaName).Execute()
+    resp, r, err := apiClient.ScimSubattributeAPI.GetScimSubattribute(context.Background(), scimSubattributeName, scimAttributeName, scimSchemaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeApi.GetScimSubattribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeAPI.GetScimSubattribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetScimSubattribute`: ScimSubattributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimSubattributeApi.GetScimSubattribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimSubattributeAPI.GetScimSubattribute`: %v\n", resp)
 }
 ```
 
@@ -256,13 +256,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimSubattributeApi.ListScimSubattributes(context.Background(), scimAttributeName, scimSchemaName).Filter(filter).Execute()
+    resp, r, err := apiClient.ScimSubattributeAPI.ListScimSubattributes(context.Background(), scimAttributeName, scimSchemaName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeApi.ListScimSubattributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeAPI.ListScimSubattributes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListScimSubattributes`: ScimSubattributeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimSubattributeApi.ListScimSubattributes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimSubattributeAPI.ListScimSubattributes`: %v\n", resp)
 }
 ```
 
@@ -330,13 +330,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimSubattributeApi.UpdateScimSubattribute(context.Background(), scimSubattributeName, scimAttributeName, scimSchemaName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ScimSubattributeAPI.UpdateScimSubattribute(context.Background(), scimSubattributeName, scimAttributeName, scimSchemaName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeApi.UpdateScimSubattribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeAPI.UpdateScimSubattribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateScimSubattribute`: ScimSubattributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimSubattributeApi.UpdateScimSubattribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimSubattributeAPI.UpdateScimSubattribute`: %v\n", resp)
 }
 ```
 

@@ -1,11 +1,11 @@
-# \RootDseBackendApi
+# \RootDseBackendAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetRootDseBackend**](RootDseBackendApi.md#GetRootDseBackend) | **Get** /root-dse-backend | Returns a single Root DSE Backend
-[**UpdateRootDseBackend**](RootDseBackendApi.md#UpdateRootDseBackend) | **Patch** /root-dse-backend | Update an existing Root DSE Backend by name
+[**GetRootDseBackend**](RootDseBackendAPI.md#GetRootDseBackend) | **Get** /root-dse-backend | Returns a single Root DSE Backend
+[**UpdateRootDseBackend**](RootDseBackendAPI.md#UpdateRootDseBackend) | **Patch** /root-dse-backend | Update an existing Root DSE Backend by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootDseBackendApi.GetRootDseBackend(context.Background()).Execute()
+    resp, r, err := apiClient.RootDseBackendAPI.GetRootDseBackend(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootDseBackendApi.GetRootDseBackend``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootDseBackendAPI.GetRootDseBackend``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRootDseBackend`: RootDseBackendResponse
-    fmt.Fprintf(os.Stdout, "Response from `RootDseBackendApi.GetRootDseBackend`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RootDseBackendAPI.GetRootDseBackend`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootDseBackendApi.UpdateRootDseBackend(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.RootDseBackendAPI.UpdateRootDseBackend(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootDseBackendApi.UpdateRootDseBackend``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootDseBackendAPI.UpdateRootDseBackend``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRootDseBackend`: RootDseBackendResponse
-    fmt.Fprintf(os.Stdout, "Response from `RootDseBackendApi.UpdateRootDseBackend`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RootDseBackendAPI.UpdateRootDseBackend`: %v\n", resp)
 }
 ```
 

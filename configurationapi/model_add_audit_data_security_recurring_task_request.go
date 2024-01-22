@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAuditDataSecurityRecurringTaskRequest{}
 
 // AddAuditDataSecurityRecurringTaskRequest struct for AddAuditDataSecurityRecurringTaskRequest
 type AddAuditDataSecurityRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                                        `json:"taskName"`
-	Schemas  []EnumauditDataSecurityRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumauditDataSecurityRecurringTaskSchemaUrn `json:"schemas"`
 	// The base directory below which generated reports will be written. Each invocation of the audit-data-security task will create a new subdirectory below this base directory whose name is a timestamp indicating when the report was generated.
 	BaseOutputDirectory *string `json:"baseOutputDirectory,omitempty"`
 	// The set of data security auditors that should be invoked. If no auditors are specified, then all auditors defined in the configuration will be used.
@@ -50,16 +48,18 @@ type AddAuditDataSecurityRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddAuditDataSecurityRecurringTaskRequest instantiates a new AddAuditDataSecurityRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAuditDataSecurityRecurringTaskRequest(taskName string, schemas []EnumauditDataSecurityRecurringTaskSchemaUrn) *AddAuditDataSecurityRecurringTaskRequest {
+func NewAddAuditDataSecurityRecurringTaskRequest(schemas []EnumauditDataSecurityRecurringTaskSchemaUrn, taskName string) *AddAuditDataSecurityRecurringTaskRequest {
 	this := AddAuditDataSecurityRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
+	this.TaskName = taskName
 	return &this
 }
 
@@ -69,30 +69,6 @@ func NewAddAuditDataSecurityRecurringTaskRequest(taskName string, schemas []Enum
 func NewAddAuditDataSecurityRecurringTaskRequestWithDefaults() *AddAuditDataSecurityRecurringTaskRequest {
 	this := AddAuditDataSecurityRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddAuditDataSecurityRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddAuditDataSecurityRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddAuditDataSecurityRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -567,6 +543,30 @@ func (o *AddAuditDataSecurityRecurringTaskRequest) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddAuditDataSecurityRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddAuditDataSecurityRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddAuditDataSecurityRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddAuditDataSecurityRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -577,7 +577,6 @@ func (o AddAuditDataSecurityRecurringTaskRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddAuditDataSecurityRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.BaseOutputDirectory) {
 		toSerialize["baseOutputDirectory"] = o.BaseOutputDirectory
@@ -621,6 +620,7 @@ func (o AddAuditDataSecurityRecurringTaskRequest) ToMap() (map[string]interface{
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

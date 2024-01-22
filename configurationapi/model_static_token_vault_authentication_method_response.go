@@ -19,8 +19,6 @@ var _ MappedNullable = &StaticTokenVaultAuthenticationMethodResponse{}
 
 // StaticTokenVaultAuthenticationMethodResponse struct for StaticTokenVaultAuthenticationMethodResponse
 type StaticTokenVaultAuthenticationMethodResponse struct {
-	// Name of the Vault Authentication Method
-	Id      string                                              `json:"id"`
 	Schemas []EnumstaticTokenVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The static token used to authenticate to the Vault server.
 	VaultAccessToken string `json:"vaultAccessToken"`
@@ -28,17 +26,19 @@ type StaticTokenVaultAuthenticationMethodResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Vault Authentication Method
+	Id string `json:"id"`
 }
 
 // NewStaticTokenVaultAuthenticationMethodResponse instantiates a new StaticTokenVaultAuthenticationMethodResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStaticTokenVaultAuthenticationMethodResponse(id string, schemas []EnumstaticTokenVaultAuthenticationMethodSchemaUrn, vaultAccessToken string) *StaticTokenVaultAuthenticationMethodResponse {
+func NewStaticTokenVaultAuthenticationMethodResponse(schemas []EnumstaticTokenVaultAuthenticationMethodSchemaUrn, vaultAccessToken string, id string) *StaticTokenVaultAuthenticationMethodResponse {
 	this := StaticTokenVaultAuthenticationMethodResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.VaultAccessToken = vaultAccessToken
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewStaticTokenVaultAuthenticationMethodResponse(id string, schemas []Enumst
 func NewStaticTokenVaultAuthenticationMethodResponseWithDefaults() *StaticTokenVaultAuthenticationMethodResponse {
 	this := StaticTokenVaultAuthenticationMethodResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *StaticTokenVaultAuthenticationMethodResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *StaticTokenVaultAuthenticationMethodResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *StaticTokenVaultAuthenticationMethodResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *StaticTokenVaultAuthenticationMethodResponse) SetUrnpingidentityschemas
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *StaticTokenVaultAuthenticationMethodResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *StaticTokenVaultAuthenticationMethodResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *StaticTokenVaultAuthenticationMethodResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o StaticTokenVaultAuthenticationMethodResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o StaticTokenVaultAuthenticationMethodResponse) MarshalJSON() ([]byte, err
 
 func (o StaticTokenVaultAuthenticationMethodResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["vaultAccessToken"] = o.VaultAccessToken
 	if !IsNil(o.Description) {
@@ -240,6 +239,7 @@ func (o StaticTokenVaultAuthenticationMethodResponse) ToMap() (map[string]interf
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

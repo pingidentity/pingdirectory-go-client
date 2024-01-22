@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAmazonSecretsManagerPassphraseProviderRequest{}
 
 // AddAmazonSecretsManagerPassphraseProviderRequest struct for AddAmazonSecretsManagerPassphraseProviderRequest
 type AddAmazonSecretsManagerPassphraseProviderRequest struct {
-	// Name of the new Passphrase Provider
-	ProviderName string                                                `json:"providerName"`
-	Schemas      []EnumamazonSecretsManagerPassphraseProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumamazonSecretsManagerPassphraseProviderSchemaUrn `json:"schemas"`
 	// The external server with information to use when interacting with the AWS Secrets Manager.
 	AwsExternalServer string `json:"awsExternalServer"`
 	// The Amazon Resource Name (ARN) or the user-friendly name of the secret to be retrieved.
@@ -38,20 +36,22 @@ type AddAmazonSecretsManagerPassphraseProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Passphrase Provider is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Passphrase Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddAmazonSecretsManagerPassphraseProviderRequest instantiates a new AddAmazonSecretsManagerPassphraseProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAmazonSecretsManagerPassphraseProviderRequest(providerName string, schemas []EnumamazonSecretsManagerPassphraseProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool) *AddAmazonSecretsManagerPassphraseProviderRequest {
+func NewAddAmazonSecretsManagerPassphraseProviderRequest(schemas []EnumamazonSecretsManagerPassphraseProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool, providerName string) *AddAmazonSecretsManagerPassphraseProviderRequest {
 	this := AddAmazonSecretsManagerPassphraseProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.AwsExternalServer = awsExternalServer
 	this.SecretID = secretID
 	this.SecretFieldName = secretFieldName
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewAddAmazonSecretsManagerPassphraseProviderRequest(providerName string, sc
 func NewAddAmazonSecretsManagerPassphraseProviderRequestWithDefaults() *AddAmazonSecretsManagerPassphraseProviderRequest {
 	this := AddAmazonSecretsManagerPassphraseProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddAmazonSecretsManagerPassphraseProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -335,6 +311,30 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddAmazonSecretsManagerPassphraseProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddAmazonSecretsManagerPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -345,7 +345,6 @@ func (o AddAmazonSecretsManagerPassphraseProviderRequest) MarshalJSON() ([]byte,
 
 func (o AddAmazonSecretsManagerPassphraseProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["awsExternalServer"] = o.AwsExternalServer
 	toSerialize["secretID"] = o.SecretID
@@ -363,6 +362,7 @@ func (o AddAmazonSecretsManagerPassphraseProviderRequest) ToMap() (map[string]in
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

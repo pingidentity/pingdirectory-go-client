@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumcoalesceModificationsPluginSchemaUrn**](EnumcoalesceModificationsPluginSchemaUrn.md) |  | 
 **RequestCriteria** | **string** | A reference to request criteria that indicates which modify requests should be coalesced. | 
 **AllowedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that are allowed to be present in operations to coalesce. These controls are passed through when the request is validated, but they will not be included when the background thread applies the coalesced modify requests. | [optional] 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddCoalesceModificationsPluginRequest
 
-`func NewAddCoalesceModificationsPluginRequest(pluginName string, schemas []EnumcoalesceModificationsPluginSchemaUrn, requestCriteria string, enabled bool, ) *AddCoalesceModificationsPluginRequest`
+`func NewAddCoalesceModificationsPluginRequest(schemas []EnumcoalesceModificationsPluginSchemaUrn, requestCriteria string, enabled bool, pluginName string, ) *AddCoalesceModificationsPluginRequest`
 
 NewAddCoalesceModificationsPluginRequest instantiates a new AddCoalesceModificationsPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddCoalesceModificationsPluginRequestWithDefaults instantiates a new AddCoalesceModificationsPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddCoalesceModificationsPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddCoalesceModificationsPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddCoalesceModificationsPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -184,6 +164,26 @@ and a boolean to check if the value has been set.
 `func (o *AddCoalesceModificationsPluginRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetPluginName
+
+`func (o *AddCoalesceModificationsPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddCoalesceModificationsPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddCoalesceModificationsPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
 
 
 

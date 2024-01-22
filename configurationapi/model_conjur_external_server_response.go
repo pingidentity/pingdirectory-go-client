@@ -19,8 +19,6 @@ var _ MappedNullable = &ConjurExternalServerResponse{}
 
 // ConjurExternalServerResponse struct for ConjurExternalServerResponse
 type ConjurExternalServerResponse struct {
-	// Name of the External Server
-	Id      string                              `json:"id"`
 	Schemas []EnumconjurExternalServerSchemaUrn `json:"schemas"`
 	// The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://conjur.example.com:8443/\".
 	ConjurServerBaseURI []string `json:"conjurServerBaseURI"`
@@ -28,6 +26,10 @@ type ConjurExternalServerResponse struct {
 	ConjurAuthenticationMethod string `json:"conjurAuthenticationMethod"`
 	// The name of the account with which the desired secrets are associated.
 	ConjurAccountName string `json:"conjurAccountName"`
+	// The maximum length of time to wait to obtain an HTTP connection.
+	HttpConnectTimeout *string `json:"httpConnectTimeout,omitempty"`
+	// The maximum length of time to wait for a response to an HTTP request.
+	HttpResponseTimeout *string `json:"httpResponseTimeout,omitempty"`
 	// The path to a file containing the information needed to trust the certificate presented by the Conjur servers.
 	TrustStoreFile *string `json:"trustStoreFile,omitempty"`
 	// The PIN needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
@@ -38,19 +40,21 @@ type ConjurExternalServerResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the External Server
+	Id string `json:"id"`
 }
 
 // NewConjurExternalServerResponse instantiates a new ConjurExternalServerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConjurExternalServerResponse(id string, schemas []EnumconjurExternalServerSchemaUrn, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string) *ConjurExternalServerResponse {
+func NewConjurExternalServerResponse(schemas []EnumconjurExternalServerSchemaUrn, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, id string) *ConjurExternalServerResponse {
 	this := ConjurExternalServerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ConjurServerBaseURI = conjurServerBaseURI
 	this.ConjurAuthenticationMethod = conjurAuthenticationMethod
 	this.ConjurAccountName = conjurAccountName
+	this.Id = id
 	return &this
 }
 
@@ -60,30 +64,6 @@ func NewConjurExternalServerResponse(id string, schemas []EnumconjurExternalServ
 func NewConjurExternalServerResponseWithDefaults() *ConjurExternalServerResponse {
 	this := ConjurExternalServerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ConjurExternalServerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ConjurExternalServerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ConjurExternalServerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -180,6 +160,70 @@ func (o *ConjurExternalServerResponse) GetConjurAccountNameOk() (*string, bool) 
 // SetConjurAccountName sets field value
 func (o *ConjurExternalServerResponse) SetConjurAccountName(v string) {
 	o.ConjurAccountName = v
+}
+
+// GetHttpConnectTimeout returns the HttpConnectTimeout field value if set, zero value otherwise.
+func (o *ConjurExternalServerResponse) GetHttpConnectTimeout() string {
+	if o == nil || IsNil(o.HttpConnectTimeout) {
+		var ret string
+		return ret
+	}
+	return *o.HttpConnectTimeout
+}
+
+// GetHttpConnectTimeoutOk returns a tuple with the HttpConnectTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConjurExternalServerResponse) GetHttpConnectTimeoutOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpConnectTimeout) {
+		return nil, false
+	}
+	return o.HttpConnectTimeout, true
+}
+
+// HasHttpConnectTimeout returns a boolean if a field has been set.
+func (o *ConjurExternalServerResponse) HasHttpConnectTimeout() bool {
+	if o != nil && !IsNil(o.HttpConnectTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpConnectTimeout gets a reference to the given string and assigns it to the HttpConnectTimeout field.
+func (o *ConjurExternalServerResponse) SetHttpConnectTimeout(v string) {
+	o.HttpConnectTimeout = &v
+}
+
+// GetHttpResponseTimeout returns the HttpResponseTimeout field value if set, zero value otherwise.
+func (o *ConjurExternalServerResponse) GetHttpResponseTimeout() string {
+	if o == nil || IsNil(o.HttpResponseTimeout) {
+		var ret string
+		return ret
+	}
+	return *o.HttpResponseTimeout
+}
+
+// GetHttpResponseTimeoutOk returns a tuple with the HttpResponseTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConjurExternalServerResponse) GetHttpResponseTimeoutOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpResponseTimeout) {
+		return nil, false
+	}
+	return o.HttpResponseTimeout, true
+}
+
+// HasHttpResponseTimeout returns a boolean if a field has been set.
+func (o *ConjurExternalServerResponse) HasHttpResponseTimeout() bool {
+	if o != nil && !IsNil(o.HttpResponseTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpResponseTimeout gets a reference to the given string and assigns it to the HttpResponseTimeout field.
+func (o *ConjurExternalServerResponse) SetHttpResponseTimeout(v string) {
+	o.HttpResponseTimeout = &v
 }
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
@@ -374,6 +418,30 @@ func (o *ConjurExternalServerResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ConjurExternalServerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ConjurExternalServerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ConjurExternalServerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ConjurExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -384,11 +452,16 @@ func (o ConjurExternalServerResponse) MarshalJSON() ([]byte, error) {
 
 func (o ConjurExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["conjurServerBaseURI"] = o.ConjurServerBaseURI
 	toSerialize["conjurAuthenticationMethod"] = o.ConjurAuthenticationMethod
 	toSerialize["conjurAccountName"] = o.ConjurAccountName
+	if !IsNil(o.HttpConnectTimeout) {
+		toSerialize["httpConnectTimeout"] = o.HttpConnectTimeout
+	}
+	if !IsNil(o.HttpResponseTimeout) {
+		toSerialize["httpResponseTimeout"] = o.HttpResponseTimeout
+	}
 	if !IsNil(o.TrustStoreFile) {
 		toSerialize["trustStoreFile"] = o.TrustStoreFile
 	}
@@ -407,6 +480,7 @@ func (o ConjurExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

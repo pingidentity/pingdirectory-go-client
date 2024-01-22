@@ -1,14 +1,14 @@
-# \ClientConnectionPolicyApi
+# \ClientConnectionPolicyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddClientConnectionPolicy**](ClientConnectionPolicyApi.md#AddClientConnectionPolicy) | **Post** /client-connection-policies | Add a new Client Connection Policy to the config
-[**DeleteClientConnectionPolicy**](ClientConnectionPolicyApi.md#DeleteClientConnectionPolicy) | **Delete** /client-connection-policies/{client-connection-policy-name} | Delete a Client Connection Policy
-[**GetClientConnectionPolicy**](ClientConnectionPolicyApi.md#GetClientConnectionPolicy) | **Get** /client-connection-policies/{client-connection-policy-name} | Returns a single Client Connection Policy
-[**ListClientConnectionPolicies**](ClientConnectionPolicyApi.md#ListClientConnectionPolicies) | **Get** /client-connection-policies | Returns a list of all Client Connection Policy objects
-[**UpdateClientConnectionPolicy**](ClientConnectionPolicyApi.md#UpdateClientConnectionPolicy) | **Patch** /client-connection-policies/{client-connection-policy-name} | Update an existing Client Connection Policy by name
+[**AddClientConnectionPolicy**](ClientConnectionPolicyAPI.md#AddClientConnectionPolicy) | **Post** /client-connection-policies | Add a new Client Connection Policy to the config
+[**DeleteClientConnectionPolicy**](ClientConnectionPolicyAPI.md#DeleteClientConnectionPolicy) | **Delete** /client-connection-policies/{client-connection-policy-name} | Delete a Client Connection Policy
+[**GetClientConnectionPolicy**](ClientConnectionPolicyAPI.md#GetClientConnectionPolicy) | **Get** /client-connection-policies/{client-connection-policy-name} | Returns a single Client Connection Policy
+[**ListClientConnectionPolicies**](ClientConnectionPolicyAPI.md#ListClientConnectionPolicies) | **Get** /client-connection-policies | Returns a list of all Client Connection Policy objects
+[**UpdateClientConnectionPolicy**](ClientConnectionPolicyAPI.md#UpdateClientConnectionPolicy) | **Patch** /client-connection-policies/{client-connection-policy-name} | Update an existing Client Connection Policy by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addClientConnectionPolicyRequest := *openapiclient.NewAddClientConnectionPolicyRequest("PolicyName_example", "PolicyID_example", false, int64(123)) // AddClientConnectionPolicyRequest | Create a new Client Connection Policy in the config
+    addClientConnectionPolicyRequest := *openapiclient.NewAddClientConnectionPolicyRequest("PolicyID_example", false, int64(123), "PolicyName_example") // AddClientConnectionPolicyRequest | Create a new Client Connection Policy in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClientConnectionPolicyApi.AddClientConnectionPolicy(context.Background()).AddClientConnectionPolicyRequest(addClientConnectionPolicyRequest).Execute()
+    resp, r, err := apiClient.ClientConnectionPolicyAPI.AddClientConnectionPolicy(context.Background()).AddClientConnectionPolicyRequest(addClientConnectionPolicyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyApi.AddClientConnectionPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyAPI.AddClientConnectionPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddClientConnectionPolicy`: ClientConnectionPolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `ClientConnectionPolicyApi.AddClientConnectionPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ClientConnectionPolicyAPI.AddClientConnectionPolicy`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ClientConnectionPolicyApi.DeleteClientConnectionPolicy(context.Background(), clientConnectionPolicyName).Execute()
+    r, err := apiClient.ClientConnectionPolicyAPI.DeleteClientConnectionPolicy(context.Background(), clientConnectionPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyApi.DeleteClientConnectionPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyAPI.DeleteClientConnectionPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClientConnectionPolicyApi.GetClientConnectionPolicy(context.Background(), clientConnectionPolicyName).Execute()
+    resp, r, err := apiClient.ClientConnectionPolicyAPI.GetClientConnectionPolicy(context.Background(), clientConnectionPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyApi.GetClientConnectionPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyAPI.GetClientConnectionPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetClientConnectionPolicy`: ClientConnectionPolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `ClientConnectionPolicyApi.GetClientConnectionPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ClientConnectionPolicyAPI.GetClientConnectionPolicy`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClientConnectionPolicyApi.ListClientConnectionPolicies(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ClientConnectionPolicyAPI.ListClientConnectionPolicies(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyApi.ListClientConnectionPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyAPI.ListClientConnectionPolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListClientConnectionPolicies`: ClientConnectionPolicyListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ClientConnectionPolicyApi.ListClientConnectionPolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ClientConnectionPolicyAPI.ListClientConnectionPolicies`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ClientConnectionPolicyApi.UpdateClientConnectionPolicy(context.Background(), clientConnectionPolicyName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ClientConnectionPolicyAPI.UpdateClientConnectionPolicy(context.Background(), clientConnectionPolicyName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyApi.UpdateClientConnectionPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyAPI.UpdateClientConnectionPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateClientConnectionPolicy`: ClientConnectionPolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `ClientConnectionPolicyApi.UpdateClientConnectionPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ClientConnectionPolicyAPI.UpdateClientConnectionPolicy`: %v\n", resp)
 }
 ```
 

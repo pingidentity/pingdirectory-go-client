@@ -19,15 +19,15 @@ var _ MappedNullable = &AddDelegatedAdminResourceRightsRequest{}
 
 // AddDelegatedAdminResourceRightsRequest struct for AddDelegatedAdminResourceRightsRequest
 type AddDelegatedAdminResourceRightsRequest struct {
-	// Specifies the resource type applicable to these Delegated Admin Resource Rights.
-	RestResourceType string                                      `json:"restResourceType"`
-	Schemas          []EnumdelegatedAdminResourceRightsSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumdelegatedAdminResourceRightsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Resource Rights
 	Description *string `json:"description,omitempty"`
 	// Indicates whether these Delegated Admin Resource Rights are enabled.
-	Enabled         bool                                                  `json:"enabled"`
-	AdminPermission []EnumdelegatedAdminResourceRightsAdminPermissionProp `json:"adminPermission,omitempty"`
-	AdminScope      *EnumdelegatedAdminResourceRightsAdminScopeProp       `json:"adminScope,omitempty"`
+	Enabled bool `json:"enabled"`
+	// Name of the new Delegated Admin Resource Rights
+	RestResourceType string                                                `json:"restResourceType"`
+	AdminPermission  []EnumdelegatedAdminResourceRightsAdminPermissionProp `json:"adminPermission,omitempty"`
+	AdminScope       *EnumdelegatedAdminResourceRightsAdminScopeProp       `json:"adminScope,omitempty"`
 	// Specifies subtrees within the search base whose entries can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-subtrees.
 	ResourceSubtree []string `json:"resourceSubtree,omitempty"`
 	// Specifies groups whose members can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-groups.
@@ -38,10 +38,10 @@ type AddDelegatedAdminResourceRightsRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDelegatedAdminResourceRightsRequest(restResourceType string, enabled bool) *AddDelegatedAdminResourceRightsRequest {
+func NewAddDelegatedAdminResourceRightsRequest(enabled bool, restResourceType string) *AddDelegatedAdminResourceRightsRequest {
 	this := AddDelegatedAdminResourceRightsRequest{}
-	this.RestResourceType = restResourceType
 	this.Enabled = enabled
+	this.RestResourceType = restResourceType
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddDelegatedAdminResourceRightsRequest(restResourceType string, enabled 
 func NewAddDelegatedAdminResourceRightsRequestWithDefaults() *AddDelegatedAdminResourceRightsRequest {
 	this := AddDelegatedAdminResourceRightsRequest{}
 	return &this
-}
-
-// GetRestResourceType returns the RestResourceType field value
-func (o *AddDelegatedAdminResourceRightsRequest) GetRestResourceType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.RestResourceType
-}
-
-// GetRestResourceTypeOk returns a tuple with the RestResourceType field value
-// and a boolean to check if the value has been set.
-func (o *AddDelegatedAdminResourceRightsRequest) GetRestResourceTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.RestResourceType, true
-}
-
-// SetRestResourceType sets field value
-func (o *AddDelegatedAdminResourceRightsRequest) SetRestResourceType(v string) {
-	o.RestResourceType = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -163,6 +139,30 @@ func (o *AddDelegatedAdminResourceRightsRequest) GetEnabledOk() (*bool, bool) {
 // SetEnabled sets field value
 func (o *AddDelegatedAdminResourceRightsRequest) SetEnabled(v bool) {
 	o.Enabled = v
+}
+
+// GetRestResourceType returns the RestResourceType field value
+func (o *AddDelegatedAdminResourceRightsRequest) GetRestResourceType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.RestResourceType
+}
+
+// GetRestResourceTypeOk returns a tuple with the RestResourceType field value
+// and a boolean to check if the value has been set.
+func (o *AddDelegatedAdminResourceRightsRequest) GetRestResourceTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.RestResourceType, true
+}
+
+// SetRestResourceType sets field value
+func (o *AddDelegatedAdminResourceRightsRequest) SetRestResourceType(v string) {
+	o.RestResourceType = v
 }
 
 // GetAdminPermission returns the AdminPermission field value if set, zero value otherwise.
@@ -303,7 +303,6 @@ func (o AddDelegatedAdminResourceRightsRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddDelegatedAdminResourceRightsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["restResourceType"] = o.RestResourceType
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -311,6 +310,7 @@ func (o AddDelegatedAdminResourceRightsRequest) ToMap() (map[string]interface{},
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["restResourceType"] = o.RestResourceType
 	if !IsNil(o.AdminPermission) {
 		toSerialize["adminPermission"] = o.AdminPermission
 	}

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ViewName** | **string** | Name of the new Correlated LDAP Data View | 
 **Schemas** | Pointer to [**[]EnumcorrelatedLdapDataViewSchemaUrn**](EnumcorrelatedLdapDataViewSchemaUrn.md) |  | [optional] 
 **StructuralLDAPObjectclass** | **string** | Specifies the LDAP structural object class that should be exposed by this Correlated LDAP Data View. | 
 **AuxiliaryLDAPObjectclass** | Pointer to **[]string** | Specifies an auxiliary LDAP object class that should be exposed by this Correlated LDAP Data View. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **CreateDNPattern** | Pointer to **string** | Specifies the template to use for the DN when creating new entries. | [optional] 
 **PrimaryCorrelationAttribute** | **string** | The LDAP attribute from the parent SCIM Resource Type whose value will be used to match objects in the Correlated LDAP Data View. If multiple correlation attributes are required they may be created using additional correlation-attribute-pairs. | 
 **SecondaryCorrelationAttribute** | **string** | The LDAP attribute from the Correlated LDAP Data View whose value will be matched with the primary-correlation-attribute. If multiple correlation attributes are required they may be specified by creating additional correlation-attribute-pairs. | 
+**ViewName** | **string** | Name of the new Correlated LDAP Data View | 
 
 ## Methods
 
 ### NewAddCorrelatedLdapDataViewRequest
 
-`func NewAddCorrelatedLdapDataViewRequest(viewName string, structuralLDAPObjectclass string, includeBaseDN string, primaryCorrelationAttribute string, secondaryCorrelationAttribute string, ) *AddCorrelatedLdapDataViewRequest`
+`func NewAddCorrelatedLdapDataViewRequest(structuralLDAPObjectclass string, includeBaseDN string, primaryCorrelationAttribute string, secondaryCorrelationAttribute string, viewName string, ) *AddCorrelatedLdapDataViewRequest`
 
 NewAddCorrelatedLdapDataViewRequest instantiates a new AddCorrelatedLdapDataViewRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddCorrelatedLdapDataViewRequestWithDefaults instantiates a new AddCorrelatedLdapDataViewRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetViewName
-
-`func (o *AddCorrelatedLdapDataViewRequest) GetViewName() string`
-
-GetViewName returns the ViewName field if non-nil, zero value otherwise.
-
-### GetViewNameOk
-
-`func (o *AddCorrelatedLdapDataViewRequest) GetViewNameOk() (*string, bool)`
-
-GetViewNameOk returns a tuple with the ViewName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetViewName
-
-`func (o *AddCorrelatedLdapDataViewRequest) SetViewName(v string)`
-
-SetViewName sets ViewName field to given value.
-
 
 ### GetSchemas
 
@@ -257,6 +237,26 @@ and a boolean to check if the value has been set.
 `func (o *AddCorrelatedLdapDataViewRequest) SetSecondaryCorrelationAttribute(v string)`
 
 SetSecondaryCorrelationAttribute sets SecondaryCorrelationAttribute field to given value.
+
+
+### GetViewName
+
+`func (o *AddCorrelatedLdapDataViewRequest) GetViewName() string`
+
+GetViewName returns the ViewName field if non-nil, zero value otherwise.
+
+### GetViewNameOk
+
+`func (o *AddCorrelatedLdapDataViewRequest) GetViewNameOk() (*string, bool)`
+
+GetViewNameOk returns a tuple with the ViewName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetViewName
+
+`func (o *AddCorrelatedLdapDataViewRequest) SetViewName(v string)`
+
+SetViewName sets ViewName field to given value.
 
 
 

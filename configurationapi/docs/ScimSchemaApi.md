@@ -1,14 +1,14 @@
-# \ScimSchemaApi
+# \ScimSchemaAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddScimSchema**](ScimSchemaApi.md#AddScimSchema) | **Post** /scim-schemas | Add a new SCIM Schema to the config
-[**DeleteScimSchema**](ScimSchemaApi.md#DeleteScimSchema) | **Delete** /scim-schemas/{scim-schema-name} | Delete a SCIM Schema
-[**GetScimSchema**](ScimSchemaApi.md#GetScimSchema) | **Get** /scim-schemas/{scim-schema-name} | Returns a single SCIM Schema
-[**ListScimSchemas**](ScimSchemaApi.md#ListScimSchemas) | **Get** /scim-schemas | Returns a list of all SCIM Schema objects
-[**UpdateScimSchema**](ScimSchemaApi.md#UpdateScimSchema) | **Patch** /scim-schemas/{scim-schema-name} | Update an existing SCIM Schema by name
+[**AddScimSchema**](ScimSchemaAPI.md#AddScimSchema) | **Post** /scim-schemas | Add a new SCIM Schema to the config
+[**DeleteScimSchema**](ScimSchemaAPI.md#DeleteScimSchema) | **Delete** /scim-schemas/{scim-schema-name} | Delete a SCIM Schema
+[**GetScimSchema**](ScimSchemaAPI.md#GetScimSchema) | **Get** /scim-schemas/{scim-schema-name} | Returns a single SCIM Schema
+[**ListScimSchemas**](ScimSchemaAPI.md#ListScimSchemas) | **Get** /scim-schemas | Returns a list of all SCIM Schema objects
+[**UpdateScimSchema**](ScimSchemaAPI.md#UpdateScimSchema) | **Patch** /scim-schemas/{scim-schema-name} | Update an existing SCIM Schema by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addScimSchemaRequest := *openapiclient.NewAddScimSchemaRequest("SchemaName_example", "SchemaURN_example") // AddScimSchemaRequest | Create a new SCIM Schema in the config
+    addScimSchemaRequest := *openapiclient.NewAddScimSchemaRequest("SchemaURN_example", "SchemaName_example") // AddScimSchemaRequest | Create a new SCIM Schema in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimSchemaApi.AddScimSchema(context.Background()).AddScimSchemaRequest(addScimSchemaRequest).Execute()
+    resp, r, err := apiClient.ScimSchemaAPI.AddScimSchema(context.Background()).AddScimSchemaRequest(addScimSchemaRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaApi.AddScimSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaAPI.AddScimSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddScimSchema`: ScimSchemaResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimSchemaApi.AddScimSchema`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimSchemaAPI.AddScimSchema`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ScimSchemaApi.DeleteScimSchema(context.Background(), scimSchemaName).Execute()
+    r, err := apiClient.ScimSchemaAPI.DeleteScimSchema(context.Background(), scimSchemaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaApi.DeleteScimSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaAPI.DeleteScimSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimSchemaApi.GetScimSchema(context.Background(), scimSchemaName).Execute()
+    resp, r, err := apiClient.ScimSchemaAPI.GetScimSchema(context.Background(), scimSchemaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaApi.GetScimSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaAPI.GetScimSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetScimSchema`: ScimSchemaResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimSchemaApi.GetScimSchema`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimSchemaAPI.GetScimSchema`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimSchemaApi.ListScimSchemas(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ScimSchemaAPI.ListScimSchemas(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaApi.ListScimSchemas``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaAPI.ListScimSchemas``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListScimSchemas`: ScimSchemaListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimSchemaApi.ListScimSchemas`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimSchemaAPI.ListScimSchemas`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimSchemaApi.UpdateScimSchema(context.Background(), scimSchemaName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ScimSchemaAPI.UpdateScimSchema(context.Background(), scimSchemaName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaApi.UpdateScimSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaAPI.UpdateScimSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateScimSchema`: ScimSchemaResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimSchemaApi.UpdateScimSchema`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimSchemaAPI.UpdateScimSchema`: %v\n", resp)
 }
 ```
 

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SynchronizationProviderApiService SynchronizationProviderApi service
-type SynchronizationProviderApiService service
+// SynchronizationProviderAPIService SynchronizationProviderAPI service
+type SynchronizationProviderAPIService service
 
 type ApiGetSynchronizationProviderRequest struct {
 	ctx                         context.Context
-	ApiService                  *SynchronizationProviderApiService
+	ApiService                  *SynchronizationProviderAPIService
 	synchronizationProviderName string
 }
 
@@ -39,7 +39,7 @@ GetSynchronizationProvider Returns a single Synchronization Provider
 	@param synchronizationProviderName Name of the Synchronization Provider
 	@return ApiGetSynchronizationProviderRequest
 */
-func (a *SynchronizationProviderApiService) GetSynchronizationProvider(ctx context.Context, synchronizationProviderName string) ApiGetSynchronizationProviderRequest {
+func (a *SynchronizationProviderAPIService) GetSynchronizationProvider(ctx context.Context, synchronizationProviderName string) ApiGetSynchronizationProviderRequest {
 	return ApiGetSynchronizationProviderRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -50,7 +50,7 @@ func (a *SynchronizationProviderApiService) GetSynchronizationProvider(ctx conte
 // Execute executes the request
 //
 //	@return GetSynchronizationProvider200Response
-func (a *SynchronizationProviderApiService) GetSynchronizationProviderExecute(r ApiGetSynchronizationProviderRequest) (*GetSynchronizationProvider200Response, *http.Response, error) {
+func (a *SynchronizationProviderAPIService) GetSynchronizationProviderExecute(r ApiGetSynchronizationProviderRequest) (*GetSynchronizationProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -58,7 +58,7 @@ func (a *SynchronizationProviderApiService) GetSynchronizationProviderExecute(r 
 		localVarReturnValue *GetSynchronizationProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderApiService.GetSynchronizationProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderAPIService.GetSynchronizationProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *SynchronizationProviderApiService) GetSynchronizationProviderExecute(r 
 
 type ApiListSynchronizationProvidersRequest struct {
 	ctx        context.Context
-	ApiService *SynchronizationProviderApiService
+	ApiService *SynchronizationProviderAPIService
 	filter     *string
 }
 
@@ -146,7 +146,7 @@ ListSynchronizationProviders Returns a list of all Synchronization Provider obje
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListSynchronizationProvidersRequest
 */
-func (a *SynchronizationProviderApiService) ListSynchronizationProviders(ctx context.Context) ApiListSynchronizationProvidersRequest {
+func (a *SynchronizationProviderAPIService) ListSynchronizationProviders(ctx context.Context) ApiListSynchronizationProvidersRequest {
 	return ApiListSynchronizationProvidersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *SynchronizationProviderApiService) ListSynchronizationProviders(ctx con
 // Execute executes the request
 //
 //	@return SynchronizationProviderListResponse
-func (a *SynchronizationProviderApiService) ListSynchronizationProvidersExecute(r ApiListSynchronizationProvidersRequest) (*SynchronizationProviderListResponse, *http.Response, error) {
+func (a *SynchronizationProviderAPIService) ListSynchronizationProvidersExecute(r ApiListSynchronizationProvidersRequest) (*SynchronizationProviderListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -164,7 +164,7 @@ func (a *SynchronizationProviderApiService) ListSynchronizationProvidersExecute(
 		localVarReturnValue *SynchronizationProviderListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderApiService.ListSynchronizationProviders")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderAPIService.ListSynchronizationProviders")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -234,7 +234,7 @@ func (a *SynchronizationProviderApiService) ListSynchronizationProvidersExecute(
 
 type ApiUpdateSynchronizationProviderRequest struct {
 	ctx                         context.Context
-	ApiService                  *SynchronizationProviderApiService
+	ApiService                  *SynchronizationProviderAPIService
 	synchronizationProviderName string
 	updateRequest               *UpdateRequest
 }
@@ -256,7 +256,7 @@ UpdateSynchronizationProvider Update an existing Synchronization Provider by nam
 	@param synchronizationProviderName Name of the Synchronization Provider
 	@return ApiUpdateSynchronizationProviderRequest
 */
-func (a *SynchronizationProviderApiService) UpdateSynchronizationProvider(ctx context.Context, synchronizationProviderName string) ApiUpdateSynchronizationProviderRequest {
+func (a *SynchronizationProviderAPIService) UpdateSynchronizationProvider(ctx context.Context, synchronizationProviderName string) ApiUpdateSynchronizationProviderRequest {
 	return ApiUpdateSynchronizationProviderRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -267,7 +267,7 @@ func (a *SynchronizationProviderApiService) UpdateSynchronizationProvider(ctx co
 // Execute executes the request
 //
 //	@return GetSynchronizationProvider200Response
-func (a *SynchronizationProviderApiService) UpdateSynchronizationProviderExecute(r ApiUpdateSynchronizationProviderRequest) (*GetSynchronizationProvider200Response, *http.Response, error) {
+func (a *SynchronizationProviderAPIService) UpdateSynchronizationProviderExecute(r ApiUpdateSynchronizationProviderRequest) (*GetSynchronizationProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -275,7 +275,7 @@ func (a *SynchronizationProviderApiService) UpdateSynchronizationProviderExecute
 		localVarReturnValue *GetSynchronizationProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderApiService.UpdateSynchronizationProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderAPIService.UpdateSynchronizationProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

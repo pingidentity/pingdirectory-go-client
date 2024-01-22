@@ -19,8 +19,6 @@ var _ MappedNullable = &AddPingIdentityDsExternalServerRequest{}
 
 // AddPingIdentityDsExternalServerRequest struct for AddPingIdentityDsExternalServerRequest
 type AddPingIdentityDsExternalServerRequest struct {
-	// Name of the new External Server
-	ServerName              string                                         `json:"serverName"`
 	Schemas                 []EnumpingIdentityDsExternalServerSchemaUrn    `json:"schemas"`
 	VerifyCredentialsMethod *EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod,omitempty"`
 	// Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
@@ -62,17 +60,19 @@ type AddPingIdentityDsExternalServerRequest struct {
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	// Name of the new External Server
+	ServerName string `json:"serverName"`
 }
 
 // NewAddPingIdentityDsExternalServerRequest instantiates a new AddPingIdentityDsExternalServerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingIdentityDsExternalServerRequest(serverName string, schemas []EnumpingIdentityDsExternalServerSchemaUrn, serverHostName string) *AddPingIdentityDsExternalServerRequest {
+func NewAddPingIdentityDsExternalServerRequest(schemas []EnumpingIdentityDsExternalServerSchemaUrn, serverHostName string, serverName string) *AddPingIdentityDsExternalServerRequest {
 	this := AddPingIdentityDsExternalServerRequest{}
-	this.ServerName = serverName
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
+	this.ServerName = serverName
 	return &this
 }
 
@@ -82,30 +82,6 @@ func NewAddPingIdentityDsExternalServerRequest(serverName string, schemas []Enum
 func NewAddPingIdentityDsExternalServerRequestWithDefaults() *AddPingIdentityDsExternalServerRequest {
 	this := AddPingIdentityDsExternalServerRequest{}
 	return &this
-}
-
-// GetServerName returns the ServerName field value
-func (o *AddPingIdentityDsExternalServerRequest) GetServerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerName
-}
-
-// GetServerNameOk returns a tuple with the ServerName field value
-// and a boolean to check if the value has been set.
-func (o *AddPingIdentityDsExternalServerRequest) GetServerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerName, true
-}
-
-// SetServerName sets field value
-func (o *AddPingIdentityDsExternalServerRequest) SetServerName(v string) {
-	o.ServerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -828,6 +804,30 @@ func (o *AddPingIdentityDsExternalServerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetServerName returns the ServerName field value
+func (o *AddPingIdentityDsExternalServerRequest) GetServerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ServerName
+}
+
+// GetServerNameOk returns a tuple with the ServerName field value
+// and a boolean to check if the value has been set.
+func (o *AddPingIdentityDsExternalServerRequest) GetServerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ServerName, true
+}
+
+// SetServerName sets field value
+func (o *AddPingIdentityDsExternalServerRequest) SetServerName(v string) {
+	o.ServerName = v
+}
+
 func (o AddPingIdentityDsExternalServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -838,7 +838,6 @@ func (o AddPingIdentityDsExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPingIdentityDsExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["serverName"] = o.ServerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.VerifyCredentialsMethod) {
 		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
@@ -904,6 +903,7 @@ func (o AddPingIdentityDsExternalServerRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["serverName"] = o.ServerName
 	return toSerialize, nil
 }
 

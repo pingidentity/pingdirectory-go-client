@@ -30,6 +30,11 @@ const (
 	ENUMBACKENDDISABLEDALERTTYPEPROP_ALARM_MAJOR                                                 EnumbackendDisabledAlertTypeProp = "alarm-major"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_ALARM_MINOR                                                 EnumbackendDisabledAlertTypeProp = "alarm-minor"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_ALARM_WARNING                                               EnumbackendDisabledAlertTypeProp = "alarm-warning"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_AMAZON_S3_CREATE_BUCKET_FAILED                              EnumbackendDisabledAlertTypeProp = "amazon-s3-create-bucket-failed"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_AMAZON_S3_DOWNLOAD_FILE_FAILED                              EnumbackendDisabledAlertTypeProp = "amazon-s3-download-file-failed"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_AMAZON_S3_REMOVE_BUCKET_FAILED                              EnumbackendDisabledAlertTypeProp = "amazon-s3-remove-bucket-failed"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_AMAZON_S3_REMOVE_FILE_FAILED                                EnumbackendDisabledAlertTypeProp = "amazon-s3-remove-file-failed"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_AMAZON_S3_UPLOAD_FILE_FAILED                                EnumbackendDisabledAlertTypeProp = "amazon-s3-upload-file-failed"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_BACKEND_DISABLED                                            EnumbackendDisabledAlertTypeProp = "backend-disabled"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_BACKEND_INITIALIZATION_FAILED                               EnumbackendDisabledAlertTypeProp = "backend-initialization-failed"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_BACKUP_FAILED                                               EnumbackendDisabledAlertTypeProp = "backup-failed"
@@ -210,6 +215,7 @@ const (
 	ENUMBACKENDDISABLEDALERTTYPEPROP_REPLACE_CERTIFICATE_FAILED                                  EnumbackendDisabledAlertTypeProp = "replace-certificate-failed"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_REPLICATION_MISSING_CHANGES_RISK                            EnumbackendDisabledAlertTypeProp = "replication-missing-changes-risk"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_REPLICATION_NOT_PURGING_OBSOLETE_REPLICAS                   EnumbackendDisabledAlertTypeProp = "replication-not-purging-obsolete-replicas"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_REPLICATION_MISSING_CHANGES_ACTION                          EnumbackendDisabledAlertTypeProp = "replication-missing-changes-action"
 )
 
 // All allowed values of EnumbackendDisabledAlertTypeProp enum
@@ -224,6 +230,11 @@ var AllowedEnumbackendDisabledAlertTypePropEnumValues = []EnumbackendDisabledAle
 	"alarm-major",
 	"alarm-minor",
 	"alarm-warning",
+	"amazon-s3-create-bucket-failed",
+	"amazon-s3-download-file-failed",
+	"amazon-s3-remove-bucket-failed",
+	"amazon-s3-remove-file-failed",
+	"amazon-s3-upload-file-failed",
 	"backend-disabled",
 	"backend-initialization-failed",
 	"backup-failed",
@@ -404,6 +415,7 @@ var AllowedEnumbackendDisabledAlertTypePropEnumValues = []EnumbackendDisabledAle
 	"replace-certificate-failed",
 	"replication-missing-changes-risk",
 	"replication-not-purging-obsolete-replicas",
+	"replication-missing-changes-action",
 }
 
 func (v *EnumbackendDisabledAlertTypeProp) UnmarshalJSON(src []byte) error {

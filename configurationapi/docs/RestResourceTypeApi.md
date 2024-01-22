@@ -1,14 +1,14 @@
-# \RestResourceTypeApi
+# \RestResourceTypeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddRestResourceType**](RestResourceTypeApi.md#AddRestResourceType) | **Post** /rest-resource-types | Add a new REST Resource Type to the config
-[**DeleteRestResourceType**](RestResourceTypeApi.md#DeleteRestResourceType) | **Delete** /rest-resource-types/{rest-resource-type-name} | Delete a REST Resource Type
-[**GetRestResourceType**](RestResourceTypeApi.md#GetRestResourceType) | **Get** /rest-resource-types/{rest-resource-type-name} | Returns a single REST Resource Type
-[**ListRestResourceTypes**](RestResourceTypeApi.md#ListRestResourceTypes) | **Get** /rest-resource-types | Returns a list of all REST Resource Type objects
-[**UpdateRestResourceType**](RestResourceTypeApi.md#UpdateRestResourceType) | **Patch** /rest-resource-types/{rest-resource-type-name} | Update an existing REST Resource Type by name
+[**AddRestResourceType**](RestResourceTypeAPI.md#AddRestResourceType) | **Post** /rest-resource-types | Add a new REST Resource Type to the config
+[**DeleteRestResourceType**](RestResourceTypeAPI.md#DeleteRestResourceType) | **Delete** /rest-resource-types/{rest-resource-type-name} | Delete a REST Resource Type
+[**GetRestResourceType**](RestResourceTypeAPI.md#GetRestResourceType) | **Get** /rest-resource-types/{rest-resource-type-name} | Returns a single REST Resource Type
+[**ListRestResourceTypes**](RestResourceTypeAPI.md#ListRestResourceTypes) | **Get** /rest-resource-types | Returns a list of all REST Resource Type objects
+[**UpdateRestResourceType**](RestResourceTypeAPI.md#UpdateRestResourceType) | **Patch** /rest-resource-types/{rest-resource-type-name} | Update an existing REST Resource Type by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addRestResourceTypeRequest := openapiclient.add_rest_resource_type_request{AddGenericRestResourceTypeRequest: openapiclient.NewAddGenericRestResourceTypeRequest("TypeName_example", []openapiclient.EnumgenericRestResourceTypeSchemaUrn{openapiclient.Enumgeneric-rest-resource-typeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:rest-resource-type:generic")}, false, "ResourceEndpoint_example", "StructuralLDAPObjectclass_example", "SearchBaseDN_example")} // AddRestResourceTypeRequest | Create a new REST Resource Type in the config
+    addRestResourceTypeRequest := openapiclient.add_rest_resource_type_request{AddGenericRestResourceTypeRequest: openapiclient.NewAddGenericRestResourceTypeRequest([]openapiclient.EnumgenericRestResourceTypeSchemaUrn{openapiclient.Enumgeneric-rest-resource-typeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:rest-resource-type:generic")}, false, "ResourceEndpoint_example", "StructuralLDAPObjectclass_example", "SearchBaseDN_example", "TypeName_example")} // AddRestResourceTypeRequest | Create a new REST Resource Type in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RestResourceTypeApi.AddRestResourceType(context.Background()).AddRestResourceTypeRequest(addRestResourceTypeRequest).Execute()
+    resp, r, err := apiClient.RestResourceTypeAPI.AddRestResourceType(context.Background()).AddRestResourceTypeRequest(addRestResourceTypeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeApi.AddRestResourceType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeAPI.AddRestResourceType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddRestResourceType`: AddRestResourceType200Response
-    fmt.Fprintf(os.Stdout, "Response from `RestResourceTypeApi.AddRestResourceType`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RestResourceTypeAPI.AddRestResourceType`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.RestResourceTypeApi.DeleteRestResourceType(context.Background(), restResourceTypeName).Execute()
+    r, err := apiClient.RestResourceTypeAPI.DeleteRestResourceType(context.Background(), restResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeApi.DeleteRestResourceType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeAPI.DeleteRestResourceType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RestResourceTypeApi.GetRestResourceType(context.Background(), restResourceTypeName).Execute()
+    resp, r, err := apiClient.RestResourceTypeAPI.GetRestResourceType(context.Background(), restResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeApi.GetRestResourceType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeAPI.GetRestResourceType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRestResourceType`: AddRestResourceType200Response
-    fmt.Fprintf(os.Stdout, "Response from `RestResourceTypeApi.GetRestResourceType`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RestResourceTypeAPI.GetRestResourceType`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RestResourceTypeApi.ListRestResourceTypes(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.RestResourceTypeAPI.ListRestResourceTypes(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeApi.ListRestResourceTypes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeAPI.ListRestResourceTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListRestResourceTypes`: RestResourceTypeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `RestResourceTypeApi.ListRestResourceTypes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RestResourceTypeAPI.ListRestResourceTypes`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RestResourceTypeApi.UpdateRestResourceType(context.Background(), restResourceTypeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.RestResourceTypeAPI.UpdateRestResourceType(context.Background(), restResourceTypeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeApi.UpdateRestResourceType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeAPI.UpdateRestResourceType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRestResourceType`: AddRestResourceType200Response
-    fmt.Fprintf(os.Stdout, "Response from `RestResourceTypeApi.UpdateRestResourceType`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RestResourceTypeAPI.UpdateRestResourceType`: %v\n", resp)
 }
 ```
 

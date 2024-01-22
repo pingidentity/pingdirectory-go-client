@@ -19,8 +19,6 @@ var _ MappedNullable = &BlindTrustManagerProviderResponse{}
 
 // BlindTrustManagerProviderResponse struct for BlindTrustManagerProviderResponse
 type BlindTrustManagerProviderResponse struct {
-	// Name of the Trust Manager Provider
-	Id      string                                   `json:"id"`
 	Schemas []EnumblindTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Indicate whether the Trust Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
@@ -28,17 +26,19 @@ type BlindTrustManagerProviderResponse struct {
 	IncludeJVMDefaultIssuers                      *bool                                              `json:"includeJVMDefaultIssuers,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Trust Manager Provider
+	Id string `json:"id"`
 }
 
 // NewBlindTrustManagerProviderResponse instantiates a new BlindTrustManagerProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBlindTrustManagerProviderResponse(id string, schemas []EnumblindTrustManagerProviderSchemaUrn, enabled bool) *BlindTrustManagerProviderResponse {
+func NewBlindTrustManagerProviderResponse(schemas []EnumblindTrustManagerProviderSchemaUrn, enabled bool, id string) *BlindTrustManagerProviderResponse {
 	this := BlindTrustManagerProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewBlindTrustManagerProviderResponse(id string, schemas []EnumblindTrustMan
 func NewBlindTrustManagerProviderResponseWithDefaults() *BlindTrustManagerProviderResponse {
 	this := BlindTrustManagerProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *BlindTrustManagerProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *BlindTrustManagerProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *BlindTrustManagerProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *BlindTrustManagerProviderResponse) SetUrnpingidentityschemasconfigurati
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *BlindTrustManagerProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *BlindTrustManagerProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *BlindTrustManagerProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o BlindTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o BlindTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o BlindTrustManagerProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["enabled"] = o.Enabled
 	if !IsNil(o.IncludeJVMDefaultIssuers) {
@@ -240,6 +239,7 @@ func (o BlindTrustManagerProviderResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

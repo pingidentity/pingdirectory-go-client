@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// DataSecurityAuditorApiService DataSecurityAuditorApi service
-type DataSecurityAuditorApiService service
+// DataSecurityAuditorAPIService DataSecurityAuditorAPI service
+type DataSecurityAuditorAPIService service
 
 type ApiAddDataSecurityAuditorRequest struct {
 	ctx                           context.Context
-	ApiService                    *DataSecurityAuditorApiService
+	ApiService                    *DataSecurityAuditorAPIService
 	addDataSecurityAuditorRequest *AddDataSecurityAuditorRequest
 }
 
@@ -44,7 +44,7 @@ AddDataSecurityAuditor Add a new Data Security Auditor to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddDataSecurityAuditorRequest
 */
-func (a *DataSecurityAuditorApiService) AddDataSecurityAuditor(ctx context.Context) ApiAddDataSecurityAuditorRequest {
+func (a *DataSecurityAuditorAPIService) AddDataSecurityAuditor(ctx context.Context) ApiAddDataSecurityAuditorRequest {
 	return ApiAddDataSecurityAuditorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *DataSecurityAuditorApiService) AddDataSecurityAuditor(ctx context.Conte
 // Execute executes the request
 //
 //	@return AddDataSecurityAuditor200Response
-func (a *DataSecurityAuditorApiService) AddDataSecurityAuditorExecute(r ApiAddDataSecurityAuditorRequest) (*AddDataSecurityAuditor200Response, *http.Response, error) {
+func (a *DataSecurityAuditorAPIService) AddDataSecurityAuditorExecute(r ApiAddDataSecurityAuditorRequest) (*AddDataSecurityAuditor200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *DataSecurityAuditorApiService) AddDataSecurityAuditorExecute(r ApiAddDa
 		localVarReturnValue *AddDataSecurityAuditor200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorApiService.AddDataSecurityAuditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorAPIService.AddDataSecurityAuditor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *DataSecurityAuditorApiService) AddDataSecurityAuditorExecute(r ApiAddDa
 
 type ApiDeleteDataSecurityAuditorRequest struct {
 	ctx                     context.Context
-	ApiService              *DataSecurityAuditorApiService
+	ApiService              *DataSecurityAuditorAPIService
 	dataSecurityAuditorName string
 }
 
@@ -149,7 +149,7 @@ DeleteDataSecurityAuditor Delete a Data Security Auditor
 	@param dataSecurityAuditorName Name of the Data Security Auditor
 	@return ApiDeleteDataSecurityAuditorRequest
 */
-func (a *DataSecurityAuditorApiService) DeleteDataSecurityAuditor(ctx context.Context, dataSecurityAuditorName string) ApiDeleteDataSecurityAuditorRequest {
+func (a *DataSecurityAuditorAPIService) DeleteDataSecurityAuditor(ctx context.Context, dataSecurityAuditorName string) ApiDeleteDataSecurityAuditorRequest {
 	return ApiDeleteDataSecurityAuditorRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -158,14 +158,14 @@ func (a *DataSecurityAuditorApiService) DeleteDataSecurityAuditor(ctx context.Co
 }
 
 // Execute executes the request
-func (a *DataSecurityAuditorApiService) DeleteDataSecurityAuditorExecute(r ApiDeleteDataSecurityAuditorRequest) (*http.Response, error) {
+func (a *DataSecurityAuditorAPIService) DeleteDataSecurityAuditorExecute(r ApiDeleteDataSecurityAuditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorApiService.DeleteDataSecurityAuditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorAPIService.DeleteDataSecurityAuditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *DataSecurityAuditorApiService) DeleteDataSecurityAuditorExecute(r ApiDe
 
 type ApiGetDataSecurityAuditorRequest struct {
 	ctx                     context.Context
-	ApiService              *DataSecurityAuditorApiService
+	ApiService              *DataSecurityAuditorAPIService
 	dataSecurityAuditorName string
 }
 
@@ -239,7 +239,7 @@ GetDataSecurityAuditor Returns a single Data Security Auditor
 	@param dataSecurityAuditorName Name of the Data Security Auditor
 	@return ApiGetDataSecurityAuditorRequest
 */
-func (a *DataSecurityAuditorApiService) GetDataSecurityAuditor(ctx context.Context, dataSecurityAuditorName string) ApiGetDataSecurityAuditorRequest {
+func (a *DataSecurityAuditorAPIService) GetDataSecurityAuditor(ctx context.Context, dataSecurityAuditorName string) ApiGetDataSecurityAuditorRequest {
 	return ApiGetDataSecurityAuditorRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -250,7 +250,7 @@ func (a *DataSecurityAuditorApiService) GetDataSecurityAuditor(ctx context.Conte
 // Execute executes the request
 //
 //	@return AddDataSecurityAuditor200Response
-func (a *DataSecurityAuditorApiService) GetDataSecurityAuditorExecute(r ApiGetDataSecurityAuditorRequest) (*AddDataSecurityAuditor200Response, *http.Response, error) {
+func (a *DataSecurityAuditorAPIService) GetDataSecurityAuditorExecute(r ApiGetDataSecurityAuditorRequest) (*AddDataSecurityAuditor200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *DataSecurityAuditorApiService) GetDataSecurityAuditorExecute(r ApiGetDa
 		localVarReturnValue *AddDataSecurityAuditor200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorApiService.GetDataSecurityAuditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorAPIService.GetDataSecurityAuditor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *DataSecurityAuditorApiService) GetDataSecurityAuditorExecute(r ApiGetDa
 
 type ApiListDataSecurityAuditorsRequest struct {
 	ctx        context.Context
-	ApiService *DataSecurityAuditorApiService
+	ApiService *DataSecurityAuditorAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListDataSecurityAuditors Returns a list of all Data Security Auditor objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListDataSecurityAuditorsRequest
 */
-func (a *DataSecurityAuditorApiService) ListDataSecurityAuditors(ctx context.Context) ApiListDataSecurityAuditorsRequest {
+func (a *DataSecurityAuditorAPIService) ListDataSecurityAuditors(ctx context.Context) ApiListDataSecurityAuditorsRequest {
 	return ApiListDataSecurityAuditorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *DataSecurityAuditorApiService) ListDataSecurityAuditors(ctx context.Con
 // Execute executes the request
 //
 //	@return DataSecurityAuditorListResponse
-func (a *DataSecurityAuditorApiService) ListDataSecurityAuditorsExecute(r ApiListDataSecurityAuditorsRequest) (*DataSecurityAuditorListResponse, *http.Response, error) {
+func (a *DataSecurityAuditorAPIService) ListDataSecurityAuditorsExecute(r ApiListDataSecurityAuditorsRequest) (*DataSecurityAuditorListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *DataSecurityAuditorApiService) ListDataSecurityAuditorsExecute(r ApiLis
 		localVarReturnValue *DataSecurityAuditorListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorApiService.ListDataSecurityAuditors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorAPIService.ListDataSecurityAuditors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *DataSecurityAuditorApiService) ListDataSecurityAuditorsExecute(r ApiLis
 
 type ApiUpdateDataSecurityAuditorRequest struct {
 	ctx                     context.Context
-	ApiService              *DataSecurityAuditorApiService
+	ApiService              *DataSecurityAuditorAPIService
 	dataSecurityAuditorName string
 	updateRequest           *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateDataSecurityAuditor Update an existing Data Security Auditor by name
 	@param dataSecurityAuditorName Name of the Data Security Auditor
 	@return ApiUpdateDataSecurityAuditorRequest
 */
-func (a *DataSecurityAuditorApiService) UpdateDataSecurityAuditor(ctx context.Context, dataSecurityAuditorName string) ApiUpdateDataSecurityAuditorRequest {
+func (a *DataSecurityAuditorAPIService) UpdateDataSecurityAuditor(ctx context.Context, dataSecurityAuditorName string) ApiUpdateDataSecurityAuditorRequest {
 	return ApiUpdateDataSecurityAuditorRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -467,7 +467,7 @@ func (a *DataSecurityAuditorApiService) UpdateDataSecurityAuditor(ctx context.Co
 // Execute executes the request
 //
 //	@return AddDataSecurityAuditor200Response
-func (a *DataSecurityAuditorApiService) UpdateDataSecurityAuditorExecute(r ApiUpdateDataSecurityAuditorRequest) (*AddDataSecurityAuditor200Response, *http.Response, error) {
+func (a *DataSecurityAuditorAPIService) UpdateDataSecurityAuditorExecute(r ApiUpdateDataSecurityAuditorRequest) (*AddDataSecurityAuditor200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *DataSecurityAuditorApiService) UpdateDataSecurityAuditorExecute(r ApiUp
 		localVarReturnValue *AddDataSecurityAuditor200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorApiService.UpdateDataSecurityAuditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataSecurityAuditorAPIService.UpdateDataSecurityAuditor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

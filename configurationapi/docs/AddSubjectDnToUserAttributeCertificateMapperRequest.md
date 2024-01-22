@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MapperName** | **string** | Name of the new Certificate Mapper | 
 **Schemas** | [**[]EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn**](EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn.md) |  | 
 **SubjectAttribute** | Pointer to **string** | Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN. | [optional] 
 **UserBaseDN** | Pointer to **[]string** | Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry. | [optional] 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
+**MapperName** | **string** | Name of the new Certificate Mapper | 
 
 ## Methods
 
 ### NewAddSubjectDnToUserAttributeCertificateMapperRequest
 
-`func NewAddSubjectDnToUserAttributeCertificateMapperRequest(mapperName string, schemas []EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn, enabled bool, ) *AddSubjectDnToUserAttributeCertificateMapperRequest`
+`func NewAddSubjectDnToUserAttributeCertificateMapperRequest(schemas []EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn, enabled bool, mapperName string, ) *AddSubjectDnToUserAttributeCertificateMapperRequest`
 
 NewAddSubjectDnToUserAttributeCertificateMapperRequest instantiates a new AddSubjectDnToUserAttributeCertificateMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddSubjectDnToUserAttributeCertificateMapperRequestWithDefaults instantiates a new AddSubjectDnToUserAttributeCertificateMapperRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMapperName
-
-`func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) GetMapperName() string`
-
-GetMapperName returns the MapperName field if non-nil, zero value otherwise.
-
-### GetMapperNameOk
-
-`func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) GetMapperNameOk() (*string, bool)`
-
-GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMapperName
-
-`func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) SetMapperName(v string)`
-
-SetMapperName sets MapperName field to given value.
-
 
 ### GetSchemas
 
@@ -163,6 +143,26 @@ and a boolean to check if the value has been set.
 `func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetMapperName
+
+`func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) GetMapperName() string`
+
+GetMapperName returns the MapperName field if non-nil, zero value otherwise.
+
+### GetMapperNameOk
+
+`func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) GetMapperNameOk() (*string, bool)`
+
+GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMapperName
+
+`func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) SetMapperName(v string)`
+
+SetMapperName sets MapperName field to given value.
 
 
 

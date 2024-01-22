@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// CipherStreamProviderApiService CipherStreamProviderApi service
-type CipherStreamProviderApiService service
+// CipherStreamProviderAPIService CipherStreamProviderAPI service
+type CipherStreamProviderAPIService service
 
 type ApiAddCipherStreamProviderRequest struct {
 	ctx                            context.Context
-	ApiService                     *CipherStreamProviderApiService
+	ApiService                     *CipherStreamProviderAPIService
 	addCipherStreamProviderRequest *AddCipherStreamProviderRequest
 }
 
@@ -44,7 +44,7 @@ AddCipherStreamProvider Add a new Cipher Stream Provider to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddCipherStreamProviderRequest
 */
-func (a *CipherStreamProviderApiService) AddCipherStreamProvider(ctx context.Context) ApiAddCipherStreamProviderRequest {
+func (a *CipherStreamProviderAPIService) AddCipherStreamProvider(ctx context.Context) ApiAddCipherStreamProviderRequest {
 	return ApiAddCipherStreamProviderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *CipherStreamProviderApiService) AddCipherStreamProvider(ctx context.Con
 // Execute executes the request
 //
 //	@return AddCipherStreamProvider200Response
-func (a *CipherStreamProviderApiService) AddCipherStreamProviderExecute(r ApiAddCipherStreamProviderRequest) (*AddCipherStreamProvider200Response, *http.Response, error) {
+func (a *CipherStreamProviderAPIService) AddCipherStreamProviderExecute(r ApiAddCipherStreamProviderRequest) (*AddCipherStreamProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *CipherStreamProviderApiService) AddCipherStreamProviderExecute(r ApiAdd
 		localVarReturnValue *AddCipherStreamProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderApiService.AddCipherStreamProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderAPIService.AddCipherStreamProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *CipherStreamProviderApiService) AddCipherStreamProviderExecute(r ApiAdd
 
 type ApiDeleteCipherStreamProviderRequest struct {
 	ctx                      context.Context
-	ApiService               *CipherStreamProviderApiService
+	ApiService               *CipherStreamProviderAPIService
 	cipherStreamProviderName string
 }
 
@@ -149,7 +149,7 @@ DeleteCipherStreamProvider Delete a Cipher Stream Provider
 	@param cipherStreamProviderName Name of the Cipher Stream Provider
 	@return ApiDeleteCipherStreamProviderRequest
 */
-func (a *CipherStreamProviderApiService) DeleteCipherStreamProvider(ctx context.Context, cipherStreamProviderName string) ApiDeleteCipherStreamProviderRequest {
+func (a *CipherStreamProviderAPIService) DeleteCipherStreamProvider(ctx context.Context, cipherStreamProviderName string) ApiDeleteCipherStreamProviderRequest {
 	return ApiDeleteCipherStreamProviderRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -158,14 +158,14 @@ func (a *CipherStreamProviderApiService) DeleteCipherStreamProvider(ctx context.
 }
 
 // Execute executes the request
-func (a *CipherStreamProviderApiService) DeleteCipherStreamProviderExecute(r ApiDeleteCipherStreamProviderRequest) (*http.Response, error) {
+func (a *CipherStreamProviderAPIService) DeleteCipherStreamProviderExecute(r ApiDeleteCipherStreamProviderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderApiService.DeleteCipherStreamProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderAPIService.DeleteCipherStreamProvider")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *CipherStreamProviderApiService) DeleteCipherStreamProviderExecute(r Api
 
 type ApiGetCipherStreamProviderRequest struct {
 	ctx                      context.Context
-	ApiService               *CipherStreamProviderApiService
+	ApiService               *CipherStreamProviderAPIService
 	cipherStreamProviderName string
 }
 
@@ -239,7 +239,7 @@ GetCipherStreamProvider Returns a single Cipher Stream Provider
 	@param cipherStreamProviderName Name of the Cipher Stream Provider
 	@return ApiGetCipherStreamProviderRequest
 */
-func (a *CipherStreamProviderApiService) GetCipherStreamProvider(ctx context.Context, cipherStreamProviderName string) ApiGetCipherStreamProviderRequest {
+func (a *CipherStreamProviderAPIService) GetCipherStreamProvider(ctx context.Context, cipherStreamProviderName string) ApiGetCipherStreamProviderRequest {
 	return ApiGetCipherStreamProviderRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -250,7 +250,7 @@ func (a *CipherStreamProviderApiService) GetCipherStreamProvider(ctx context.Con
 // Execute executes the request
 //
 //	@return AddCipherStreamProvider200Response
-func (a *CipherStreamProviderApiService) GetCipherStreamProviderExecute(r ApiGetCipherStreamProviderRequest) (*AddCipherStreamProvider200Response, *http.Response, error) {
+func (a *CipherStreamProviderAPIService) GetCipherStreamProviderExecute(r ApiGetCipherStreamProviderRequest) (*AddCipherStreamProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *CipherStreamProviderApiService) GetCipherStreamProviderExecute(r ApiGet
 		localVarReturnValue *AddCipherStreamProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderApiService.GetCipherStreamProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderAPIService.GetCipherStreamProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *CipherStreamProviderApiService) GetCipherStreamProviderExecute(r ApiGet
 
 type ApiListCipherStreamProvidersRequest struct {
 	ctx        context.Context
-	ApiService *CipherStreamProviderApiService
+	ApiService *CipherStreamProviderAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListCipherStreamProviders Returns a list of all Cipher Stream Provider objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListCipherStreamProvidersRequest
 */
-func (a *CipherStreamProviderApiService) ListCipherStreamProviders(ctx context.Context) ApiListCipherStreamProvidersRequest {
+func (a *CipherStreamProviderAPIService) ListCipherStreamProviders(ctx context.Context) ApiListCipherStreamProvidersRequest {
 	return ApiListCipherStreamProvidersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *CipherStreamProviderApiService) ListCipherStreamProviders(ctx context.C
 // Execute executes the request
 //
 //	@return CipherStreamProviderListResponse
-func (a *CipherStreamProviderApiService) ListCipherStreamProvidersExecute(r ApiListCipherStreamProvidersRequest) (*CipherStreamProviderListResponse, *http.Response, error) {
+func (a *CipherStreamProviderAPIService) ListCipherStreamProvidersExecute(r ApiListCipherStreamProvidersRequest) (*CipherStreamProviderListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *CipherStreamProviderApiService) ListCipherStreamProvidersExecute(r ApiL
 		localVarReturnValue *CipherStreamProviderListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderApiService.ListCipherStreamProviders")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderAPIService.ListCipherStreamProviders")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *CipherStreamProviderApiService) ListCipherStreamProvidersExecute(r ApiL
 
 type ApiUpdateCipherStreamProviderRequest struct {
 	ctx                      context.Context
-	ApiService               *CipherStreamProviderApiService
+	ApiService               *CipherStreamProviderAPIService
 	cipherStreamProviderName string
 	updateRequest            *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateCipherStreamProvider Update an existing Cipher Stream Provider by name
 	@param cipherStreamProviderName Name of the Cipher Stream Provider
 	@return ApiUpdateCipherStreamProviderRequest
 */
-func (a *CipherStreamProviderApiService) UpdateCipherStreamProvider(ctx context.Context, cipherStreamProviderName string) ApiUpdateCipherStreamProviderRequest {
+func (a *CipherStreamProviderAPIService) UpdateCipherStreamProvider(ctx context.Context, cipherStreamProviderName string) ApiUpdateCipherStreamProviderRequest {
 	return ApiUpdateCipherStreamProviderRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -467,7 +467,7 @@ func (a *CipherStreamProviderApiService) UpdateCipherStreamProvider(ctx context.
 // Execute executes the request
 //
 //	@return AddCipherStreamProvider200Response
-func (a *CipherStreamProviderApiService) UpdateCipherStreamProviderExecute(r ApiUpdateCipherStreamProviderRequest) (*AddCipherStreamProvider200Response, *http.Response, error) {
+func (a *CipherStreamProviderAPIService) UpdateCipherStreamProviderExecute(r ApiUpdateCipherStreamProviderRequest) (*AddCipherStreamProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *CipherStreamProviderApiService) UpdateCipherStreamProviderExecute(r Api
 		localVarReturnValue *AddCipherStreamProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderApiService.UpdateCipherStreamProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CipherStreamProviderAPIService.UpdateCipherStreamProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

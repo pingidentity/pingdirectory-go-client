@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Passphrase Provider | 
 **Schemas** | [**[]EnumamazonSecretsManagerPassphraseProviderSchemaUrn**](EnumamazonSecretsManagerPassphraseProviderSchemaUrn.md) |  | 
 **AwsExternalServer** | **string** | The external server with information to use when interacting with the AWS Secrets Manager. | 
 **SecretID** | **string** | The Amazon Resource Name (ARN) or the user-friendly name of the secret to be retrieved. | 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **MaxCacheDuration** | Pointer to **string** | The maximum length of time that the passphrase provider may cache the passphrase that has been read from Vault. A value of zero seconds indicates that the provider should always attempt to read the passphrase from Vault. | [optional] 
 **Description** | Pointer to **string** | A description for this Passphrase Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Passphrase Provider is enabled for use in the server. | 
+**ProviderName** | **string** | Name of the new Passphrase Provider | 
 
 ## Methods
 
 ### NewAddAmazonSecretsManagerPassphraseProviderRequest
 
-`func NewAddAmazonSecretsManagerPassphraseProviderRequest(providerName string, schemas []EnumamazonSecretsManagerPassphraseProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool, ) *AddAmazonSecretsManagerPassphraseProviderRequest`
+`func NewAddAmazonSecretsManagerPassphraseProviderRequest(schemas []EnumamazonSecretsManagerPassphraseProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool, providerName string, ) *AddAmazonSecretsManagerPassphraseProviderRequest`
 
 NewAddAmazonSecretsManagerPassphraseProviderRequest instantiates a new AddAmazonSecretsManagerPassphraseProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddAmazonSecretsManagerPassphraseProviderRequestWithDefaults instantiates a new AddAmazonSecretsManagerPassphraseProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddAmazonSecretsManagerPassphraseProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -252,6 +232,26 @@ and a boolean to check if the value has been set.
 `func (o *AddAmazonSecretsManagerPassphraseProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddAmazonSecretsManagerPassphraseProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &QuickstartHttpServletExtensionResponse{}
 
 // QuickstartHttpServletExtensionResponse struct for QuickstartHttpServletExtensionResponse
 type QuickstartHttpServletExtensionResponse struct {
-	// Name of the HTTP Servlet Extension
-	Id      string                                        `json:"id"`
 	Schemas []EnumquickstartHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the PingFederate server to be configured.
 	Server *string `json:"server,omitempty"`
@@ -34,16 +32,18 @@ type QuickstartHttpServletExtensionResponse struct {
 	CorrelationIDResponseHeader                   *string                                            `json:"correlationIDResponseHeader,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the HTTP Servlet Extension
+	Id string `json:"id"`
 }
 
 // NewQuickstartHttpServletExtensionResponse instantiates a new QuickstartHttpServletExtensionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewQuickstartHttpServletExtensionResponse(id string, schemas []EnumquickstartHttpServletExtensionSchemaUrn) *QuickstartHttpServletExtensionResponse {
+func NewQuickstartHttpServletExtensionResponse(schemas []EnumquickstartHttpServletExtensionSchemaUrn, id string) *QuickstartHttpServletExtensionResponse {
 	this := QuickstartHttpServletExtensionResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewQuickstartHttpServletExtensionResponse(id string, schemas []Enumquicksta
 func NewQuickstartHttpServletExtensionResponseWithDefaults() *QuickstartHttpServletExtensionResponse {
 	this := QuickstartHttpServletExtensionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *QuickstartHttpServletExtensionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *QuickstartHttpServletExtensionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *QuickstartHttpServletExtensionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -327,6 +303,30 @@ func (o *QuickstartHttpServletExtensionResponse) SetUrnpingidentityschemasconfig
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *QuickstartHttpServletExtensionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *QuickstartHttpServletExtensionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *QuickstartHttpServletExtensionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o QuickstartHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -337,7 +337,6 @@ func (o QuickstartHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 
 func (o QuickstartHttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
@@ -360,6 +359,7 @@ func (o QuickstartHttpServletExtensionResponse) ToMap() (map[string]interface{},
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

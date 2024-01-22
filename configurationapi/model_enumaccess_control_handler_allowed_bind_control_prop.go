@@ -20,8 +20,10 @@ type EnumaccessControlHandlerAllowedBindControlProp string
 
 // List of Enumaccess-control-handler-allowedBindControlProp
 const (
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_ACCESS_LOG_FIELD                      EnumaccessControlHandlerAllowedBindControlProp = "access-log-field"
 	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_ADMINISTRATIVE_OPERATION              EnumaccessControlHandlerAllowedBindControlProp = "administrative-operation"
 	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_AUTHORIZATION_IDENTITY                EnumaccessControlHandlerAllowedBindControlProp = "authorization-identity"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GENERATE_ACCESS_TOKEN                 EnumaccessControlHandlerAllowedBindControlProp = "generate-access-token"
 	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_AUTHORIZATION_ENTRY               EnumaccessControlHandlerAllowedBindControlProp = "get-authorization-entry"
 	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_BACKEND_SET_ID                    EnumaccessControlHandlerAllowedBindControlProp = "get-backend-set-id"
 	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_PASSWORD_POLICY_STATE_ISSUES      EnumaccessControlHandlerAllowedBindControlProp = "get-password-policy-state-issues"
@@ -39,8 +41,10 @@ const (
 
 // All allowed values of EnumaccessControlHandlerAllowedBindControlProp enum
 var AllowedEnumaccessControlHandlerAllowedBindControlPropEnumValues = []EnumaccessControlHandlerAllowedBindControlProp{
+	"access-log-field",
 	"administrative-operation",
 	"authorization-identity",
+	"generate-access-token",
 	"get-authorization-entry",
 	"get-backend-set-id",
 	"get-password-policy-state-issues",

@@ -1,12 +1,12 @@
-# \MacSecretKeyApi
+# \MacSecretKeyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMacSecretKey**](MacSecretKeyApi.md#GetMacSecretKey) | **Get** /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name} | Returns a single Mac Secret Key
-[**ListMacSecretKeys**](MacSecretKeyApi.md#ListMacSecretKeys) | **Get** /server-instances/{server-instance-name}/mac-secret-keys | Returns a list of all Mac Secret Key objects
-[**UpdateMacSecretKey**](MacSecretKeyApi.md#UpdateMacSecretKey) | **Patch** /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name} | Update an existing Mac Secret Key by name
+[**GetMacSecretKey**](MacSecretKeyAPI.md#GetMacSecretKey) | **Get** /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name} | Returns a single Mac Secret Key
+[**ListMacSecretKeys**](MacSecretKeyAPI.md#ListMacSecretKeys) | **Get** /server-instances/{server-instance-name}/mac-secret-keys | Returns a list of all Mac Secret Key objects
+[**UpdateMacSecretKey**](MacSecretKeyAPI.md#UpdateMacSecretKey) | **Patch** /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name} | Update an existing Mac Secret Key by name
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MacSecretKeyApi.GetMacSecretKey(context.Background(), macSecretKeyName, serverInstanceName).Execute()
+    resp, r, err := apiClient.MacSecretKeyAPI.GetMacSecretKey(context.Background(), macSecretKeyName, serverInstanceName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MacSecretKeyApi.GetMacSecretKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MacSecretKeyAPI.GetMacSecretKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetMacSecretKey`: MacSecretKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `MacSecretKeyApi.GetMacSecretKey`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MacSecretKeyAPI.GetMacSecretKey`: %v\n", resp)
 }
 ```
 
@@ -105,13 +105,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MacSecretKeyApi.ListMacSecretKeys(context.Background(), serverInstanceName).Filter(filter).Execute()
+    resp, r, err := apiClient.MacSecretKeyAPI.ListMacSecretKeys(context.Background(), serverInstanceName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MacSecretKeyApi.ListMacSecretKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MacSecretKeyAPI.ListMacSecretKeys``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListMacSecretKeys`: MacSecretKeyListResponse
-    fmt.Fprintf(os.Stdout, "Response from `MacSecretKeyApi.ListMacSecretKeys`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MacSecretKeyAPI.ListMacSecretKeys`: %v\n", resp)
 }
 ```
 
@@ -176,13 +176,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MacSecretKeyApi.UpdateMacSecretKey(context.Background(), macSecretKeyName, serverInstanceName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.MacSecretKeyAPI.UpdateMacSecretKey(context.Background(), macSecretKeyName, serverInstanceName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MacSecretKeyApi.UpdateMacSecretKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MacSecretKeyAPI.UpdateMacSecretKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateMacSecretKey`: MacSecretKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `MacSecretKeyApi.UpdateMacSecretKey`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `MacSecretKeyAPI.UpdateMacSecretKey`: %v\n", resp)
 }
 ```
 

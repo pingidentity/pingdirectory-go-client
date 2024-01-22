@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedPluginRequest{}
 
 // AddGroovyScriptedPluginRequest struct for AddGroovyScriptedPluginRequest
 type AddGroovyScriptedPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                              `json:"pluginName"`
-	Schemas    []EnumgroovyScriptedPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedPluginSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Plugin.
 	ScriptClass string `json:"scriptClass"`
 	// Specifies a set of request criteria that may be used to indicate that this Groovy Scripted Plugin should only be invoked for operations in which the associated request matches this criteria.
@@ -35,19 +33,21 @@ type AddGroovyScriptedPluginRequest struct {
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddGroovyScriptedPluginRequest instantiates a new AddGroovyScriptedPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedPluginRequest(pluginName string, schemas []EnumgroovyScriptedPluginSchemaUrn, scriptClass string, enabled bool, pluginType []EnumpluginPluginTypeProp) *AddGroovyScriptedPluginRequest {
+func NewAddGroovyScriptedPluginRequest(schemas []EnumgroovyScriptedPluginSchemaUrn, scriptClass string, enabled bool, pluginType []EnumpluginPluginTypeProp, pluginName string) *AddGroovyScriptedPluginRequest {
 	this := AddGroovyScriptedPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
 	this.PluginType = pluginType
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewAddGroovyScriptedPluginRequest(pluginName string, schemas []EnumgroovySc
 func NewAddGroovyScriptedPluginRequestWithDefaults() *AddGroovyScriptedPluginRequest {
 	this := AddGroovyScriptedPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddGroovyScriptedPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddGroovyScriptedPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -307,6 +283,30 @@ func (o *AddGroovyScriptedPluginRequest) SetInvokeForInternalOperations(v bool) 
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddGroovyScriptedPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddGroovyScriptedPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddGroovyScriptedPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -317,7 +317,6 @@ func (o AddGroovyScriptedPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddGroovyScriptedPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.RequestCriteria) {
@@ -334,6 +333,7 @@ func (o AddGroovyScriptedPluginRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

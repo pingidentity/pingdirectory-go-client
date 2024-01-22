@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLocalDbCompositeIndexRequest{}
 
 // AddLocalDbCompositeIndexRequest struct for AddLocalDbCompositeIndexRequest
 type AddLocalDbCompositeIndexRequest struct {
-	// Name of the new Local DB Composite Index
-	IndexName string                               `json:"indexName"`
-	Schemas   []EnumlocalDbCompositeIndexSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumlocalDbCompositeIndexSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Local DB Composite Index
 	Description *string `json:"description,omitempty"`
 	// A filter pattern that identifies which entries to include in the index.
@@ -35,16 +33,18 @@ type AddLocalDbCompositeIndexRequest struct {
 	// Indicates whether to only prime the internal nodes of the index database, rather than priming both internal and leaf nodes.
 	PrimeInternalNodesOnly *bool                                   `json:"primeInternalNodesOnly,omitempty"`
 	CacheMode              *EnumlocalDbCompositeIndexCacheModeProp `json:"cacheMode,omitempty"`
+	// Name of the new Local DB Composite Index
+	IndexName string `json:"indexName"`
 }
 
 // NewAddLocalDbCompositeIndexRequest instantiates a new AddLocalDbCompositeIndexRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLocalDbCompositeIndexRequest(indexName string, indexFilterPattern string) *AddLocalDbCompositeIndexRequest {
+func NewAddLocalDbCompositeIndexRequest(indexFilterPattern string, indexName string) *AddLocalDbCompositeIndexRequest {
 	this := AddLocalDbCompositeIndexRequest{}
-	this.IndexName = indexName
 	this.IndexFilterPattern = indexFilterPattern
+	this.IndexName = indexName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddLocalDbCompositeIndexRequest(indexName string, indexFilterPattern str
 func NewAddLocalDbCompositeIndexRequestWithDefaults() *AddLocalDbCompositeIndexRequest {
 	this := AddLocalDbCompositeIndexRequest{}
 	return &this
-}
-
-// GetIndexName returns the IndexName field value
-func (o *AddLocalDbCompositeIndexRequest) GetIndexName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.IndexName
-}
-
-// GetIndexNameOk returns a tuple with the IndexName field value
-// and a boolean to check if the value has been set.
-func (o *AddLocalDbCompositeIndexRequest) GetIndexNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.IndexName, true
-}
-
-// SetIndexName sets field value
-func (o *AddLocalDbCompositeIndexRequest) SetIndexName(v string) {
-	o.IndexName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -328,6 +304,30 @@ func (o *AddLocalDbCompositeIndexRequest) SetCacheMode(v EnumlocalDbCompositeInd
 	o.CacheMode = &v
 }
 
+// GetIndexName returns the IndexName field value
+func (o *AddLocalDbCompositeIndexRequest) GetIndexName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.IndexName
+}
+
+// GetIndexNameOk returns a tuple with the IndexName field value
+// and a boolean to check if the value has been set.
+func (o *AddLocalDbCompositeIndexRequest) GetIndexNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.IndexName, true
+}
+
+// SetIndexName sets field value
+func (o *AddLocalDbCompositeIndexRequest) SetIndexName(v string) {
+	o.IndexName = v
+}
+
 func (o AddLocalDbCompositeIndexRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -338,7 +338,6 @@ func (o AddLocalDbCompositeIndexRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLocalDbCompositeIndexRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["indexName"] = o.IndexName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -361,6 +360,7 @@ func (o AddLocalDbCompositeIndexRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.CacheMode) {
 		toSerialize["cacheMode"] = o.CacheMode
 	}
+	toSerialize["indexName"] = o.IndexName
 	return toSerialize, nil
 }
 

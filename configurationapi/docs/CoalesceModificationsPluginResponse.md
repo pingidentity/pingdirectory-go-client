@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumcoalesceModificationsPluginSchemaUrn**](EnumcoalesceModificationsPluginSchemaUrn.md) |  | 
 **RequestCriteria** | **string** | A reference to request criteria that indicates which modify requests should be coalesced. | 
 **AllowedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that are allowed to be present in operations to coalesce. These controls are passed through when the request is validated, but they will not be included when the background thread applies the coalesced modify requests. | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Plugin | 
 
 ## Methods
 
 ### NewCoalesceModificationsPluginResponse
 
-`func NewCoalesceModificationsPluginResponse(id string, schemas []EnumcoalesceModificationsPluginSchemaUrn, requestCriteria string, enabled bool, ) *CoalesceModificationsPluginResponse`
+`func NewCoalesceModificationsPluginResponse(schemas []EnumcoalesceModificationsPluginSchemaUrn, requestCriteria string, enabled bool, id string, ) *CoalesceModificationsPluginResponse`
 
 NewCoalesceModificationsPluginResponse instantiates a new CoalesceModificationsPluginResponse object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewCoalesceModificationsPluginResponseWithDefaults instantiates a new CoalesceModificationsPluginResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *CoalesceModificationsPluginResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CoalesceModificationsPluginResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CoalesceModificationsPluginResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -237,6 +217,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *CoalesceModificationsPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *CoalesceModificationsPluginResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *CoalesceModificationsPluginResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *CoalesceModificationsPluginResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

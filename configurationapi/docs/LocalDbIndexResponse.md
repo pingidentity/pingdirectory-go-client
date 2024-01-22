@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Local DB Index | 
 **Schemas** | Pointer to [**[]EnumlocalDbIndexSchemaUrn**](EnumlocalDbIndexSchemaUrn.md) |  | [optional] 
 **Attribute** | **string** | Specifies the name of the attribute for which the index is to be maintained. | 
 **IndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. | [optional] 
@@ -19,12 +18,13 @@ Name | Type | Description | Notes
 **CacheMode** | Pointer to [**EnumlocalDbIndexCacheModeProp**](EnumlocalDbIndexCacheModeProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Local DB Index | 
 
 ## Methods
 
 ### NewLocalDbIndexResponse
 
-`func NewLocalDbIndexResponse(id string, attribute string, indexType []EnumlocalDbIndexIndexTypeProp, ) *LocalDbIndexResponse`
+`func NewLocalDbIndexResponse(attribute string, indexType []EnumlocalDbIndexIndexTypeProp, id string, ) *LocalDbIndexResponse`
 
 NewLocalDbIndexResponse instantiates a new LocalDbIndexResponse object
 This constructor will assign default values to properties that have it defined,
@@ -38,26 +38,6 @@ will change when the set of required properties is changed
 NewLocalDbIndexResponseWithDefaults instantiates a new LocalDbIndexResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *LocalDbIndexResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *LocalDbIndexResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *LocalDbIndexResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -398,6 +378,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *LocalDbIndexResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *LocalDbIndexResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *LocalDbIndexResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *LocalDbIndexResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,11 +1,11 @@
-# \LdapSdkDebugLoggerApi
+# \LdapSdkDebugLoggerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetLdapSdkDebugLogger**](LdapSdkDebugLoggerApi.md#GetLdapSdkDebugLogger) | **Get** /ldap-sdk-debug-logger | Returns a single LDAP SDK Debug Logger
-[**UpdateLdapSdkDebugLogger**](LdapSdkDebugLoggerApi.md#UpdateLdapSdkDebugLogger) | **Patch** /ldap-sdk-debug-logger | Update an existing LDAP SDK Debug Logger by name
+[**GetLdapSdkDebugLogger**](LdapSdkDebugLoggerAPI.md#GetLdapSdkDebugLogger) | **Get** /ldap-sdk-debug-logger | Returns a single LDAP SDK Debug Logger
+[**UpdateLdapSdkDebugLogger**](LdapSdkDebugLoggerAPI.md#UpdateLdapSdkDebugLogger) | **Patch** /ldap-sdk-debug-logger | Update an existing LDAP SDK Debug Logger by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LdapSdkDebugLoggerApi.GetLdapSdkDebugLogger(context.Background()).Execute()
+    resp, r, err := apiClient.LdapSdkDebugLoggerAPI.GetLdapSdkDebugLogger(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LdapSdkDebugLoggerApi.GetLdapSdkDebugLogger``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LdapSdkDebugLoggerAPI.GetLdapSdkDebugLogger``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLdapSdkDebugLogger`: LdapSdkDebugLoggerResponse
-    fmt.Fprintf(os.Stdout, "Response from `LdapSdkDebugLoggerApi.GetLdapSdkDebugLogger`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LdapSdkDebugLoggerAPI.GetLdapSdkDebugLogger`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LdapSdkDebugLoggerApi.UpdateLdapSdkDebugLogger(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LdapSdkDebugLoggerAPI.UpdateLdapSdkDebugLogger(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LdapSdkDebugLoggerApi.UpdateLdapSdkDebugLogger``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LdapSdkDebugLoggerAPI.UpdateLdapSdkDebugLogger``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLdapSdkDebugLogger`: LdapSdkDebugLoggerResponse
-    fmt.Fprintf(os.Stdout, "Response from `LdapSdkDebugLoggerApi.UpdateLdapSdkDebugLogger`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LdapSdkDebugLoggerAPI.UpdateLdapSdkDebugLogger`: %v\n", resp)
 }
 ```
 

@@ -1,14 +1,14 @@
-# \DelegatedAdminCorrelatedRestResourceApi
+# \DelegatedAdminCorrelatedRestResourceAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceApi.md#AddDelegatedAdminCorrelatedRestResource) | **Post** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources | Add a new Delegated Admin Correlated REST Resource to the config
-[**DeleteDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceApi.md#DeleteDelegatedAdminCorrelatedRestResource) | **Delete** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Delete a Delegated Admin Correlated REST Resource
-[**GetDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceApi.md#GetDelegatedAdminCorrelatedRestResource) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Returns a single Delegated Admin Correlated REST Resource
-[**ListDelegatedAdminCorrelatedRestResources**](DelegatedAdminCorrelatedRestResourceApi.md#ListDelegatedAdminCorrelatedRestResources) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources | Returns a list of all Delegated Admin Correlated REST Resource objects
-[**UpdateDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceApi.md#UpdateDelegatedAdminCorrelatedRestResource) | **Patch** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Update an existing Delegated Admin Correlated REST Resource by name
+[**AddDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceAPI.md#AddDelegatedAdminCorrelatedRestResource) | **Post** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources | Add a new Delegated Admin Correlated REST Resource to the config
+[**DeleteDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceAPI.md#DeleteDelegatedAdminCorrelatedRestResource) | **Delete** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Delete a Delegated Admin Correlated REST Resource
+[**GetDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceAPI.md#GetDelegatedAdminCorrelatedRestResource) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Returns a single Delegated Admin Correlated REST Resource
+[**ListDelegatedAdminCorrelatedRestResources**](DelegatedAdminCorrelatedRestResourceAPI.md#ListDelegatedAdminCorrelatedRestResources) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources | Returns a list of all Delegated Admin Correlated REST Resource objects
+[**UpdateDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceAPI.md#UpdateDelegatedAdminCorrelatedRestResource) | **Patch** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Update an existing Delegated Admin Correlated REST Resource by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     restResourceTypeName := "restResourceTypeName_example" // string | Name of the REST Resource Type
-    addDelegatedAdminCorrelatedRestResourceRequest := *openapiclient.NewAddDelegatedAdminCorrelatedRestResourceRequest("ResourceName_example", "DisplayName_example", "CorrelatedRESTResource_example", "PrimaryRESTResourceCorrelationAttribute_example", "SecondaryRESTResourceCorrelationAttribute_example") // AddDelegatedAdminCorrelatedRestResourceRequest | Create a new Delegated Admin Correlated REST Resource in the config
+    addDelegatedAdminCorrelatedRestResourceRequest := *openapiclient.NewAddDelegatedAdminCorrelatedRestResourceRequest("DisplayName_example", "CorrelatedRESTResource_example", "PrimaryRESTResourceCorrelationAttribute_example", "SecondaryRESTResourceCorrelationAttribute_example", "ResourceName_example") // AddDelegatedAdminCorrelatedRestResourceRequest | Create a new Delegated Admin Correlated REST Resource in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminCorrelatedRestResourceApi.AddDelegatedAdminCorrelatedRestResource(context.Background(), restResourceTypeName).AddDelegatedAdminCorrelatedRestResourceRequest(addDelegatedAdminCorrelatedRestResourceRequest).Execute()
+    resp, r, err := apiClient.DelegatedAdminCorrelatedRestResourceAPI.AddDelegatedAdminCorrelatedRestResource(context.Background(), restResourceTypeName).AddDelegatedAdminCorrelatedRestResourceRequest(addDelegatedAdminCorrelatedRestResourceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceApi.AddDelegatedAdminCorrelatedRestResource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceAPI.AddDelegatedAdminCorrelatedRestResource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddDelegatedAdminCorrelatedRestResource`: DelegatedAdminCorrelatedRestResourceResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminCorrelatedRestResourceApi.AddDelegatedAdminCorrelatedRestResource`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminCorrelatedRestResourceAPI.AddDelegatedAdminCorrelatedRestResource`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DelegatedAdminCorrelatedRestResourceApi.DeleteDelegatedAdminCorrelatedRestResource(context.Background(), delegatedAdminCorrelatedRestResourceName, restResourceTypeName).Execute()
+    r, err := apiClient.DelegatedAdminCorrelatedRestResourceAPI.DeleteDelegatedAdminCorrelatedRestResource(context.Background(), delegatedAdminCorrelatedRestResourceName, restResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceApi.DeleteDelegatedAdminCorrelatedRestResource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceAPI.DeleteDelegatedAdminCorrelatedRestResource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminCorrelatedRestResourceApi.GetDelegatedAdminCorrelatedRestResource(context.Background(), delegatedAdminCorrelatedRestResourceName, restResourceTypeName).Execute()
+    resp, r, err := apiClient.DelegatedAdminCorrelatedRestResourceAPI.GetDelegatedAdminCorrelatedRestResource(context.Background(), delegatedAdminCorrelatedRestResourceName, restResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceApi.GetDelegatedAdminCorrelatedRestResource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceAPI.GetDelegatedAdminCorrelatedRestResource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDelegatedAdminCorrelatedRestResource`: DelegatedAdminCorrelatedRestResourceResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminCorrelatedRestResourceApi.GetDelegatedAdminCorrelatedRestResource`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminCorrelatedRestResourceAPI.GetDelegatedAdminCorrelatedRestResource`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminCorrelatedRestResourceApi.ListDelegatedAdminCorrelatedRestResources(context.Background(), restResourceTypeName).Filter(filter).Execute()
+    resp, r, err := apiClient.DelegatedAdminCorrelatedRestResourceAPI.ListDelegatedAdminCorrelatedRestResources(context.Background(), restResourceTypeName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceApi.ListDelegatedAdminCorrelatedRestResources``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceAPI.ListDelegatedAdminCorrelatedRestResources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListDelegatedAdminCorrelatedRestResources`: DelegatedAdminCorrelatedRestResourceListResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminCorrelatedRestResourceApi.ListDelegatedAdminCorrelatedRestResources`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminCorrelatedRestResourceAPI.ListDelegatedAdminCorrelatedRestResources`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminCorrelatedRestResourceApi.UpdateDelegatedAdminCorrelatedRestResource(context.Background(), delegatedAdminCorrelatedRestResourceName, restResourceTypeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.DelegatedAdminCorrelatedRestResourceAPI.UpdateDelegatedAdminCorrelatedRestResource(context.Background(), delegatedAdminCorrelatedRestResourceName, restResourceTypeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceApi.UpdateDelegatedAdminCorrelatedRestResource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceAPI.UpdateDelegatedAdminCorrelatedRestResource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDelegatedAdminCorrelatedRestResource`: DelegatedAdminCorrelatedRestResourceResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminCorrelatedRestResourceApi.UpdateDelegatedAdminCorrelatedRestResource`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminCorrelatedRestResourceAPI.UpdateDelegatedAdminCorrelatedRestResource`: %v\n", resp)
 }
 ```
 

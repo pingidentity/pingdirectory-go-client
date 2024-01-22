@@ -19,11 +19,11 @@ var _ MappedNullable = &AddGenericDelegatedAdminAttributeRequest{}
 
 // AddGenericDelegatedAdminAttributeRequest struct for AddGenericDelegatedAdminAttributeRequest
 type AddGenericDelegatedAdminAttributeRequest struct {
-	// Specifies the name or OID of the LDAP attribute type.
-	AttributeType string                                        `json:"attributeType"`
-	Schemas       []EnumgenericDelegatedAdminAttributeSchemaUrn `json:"schemas"`
+	Schemas []EnumgenericDelegatedAdminAttributeSchemaUrn `json:"schemas"`
 	// A description for this Delegated Admin Attribute
 	Description *string `json:"description,omitempty"`
+	// Name of the new Delegated Admin Attribute
+	AttributeType string `json:"attributeType"`
 	// A human readable display name for this Delegated Admin Attribute.
 	DisplayName string                                     `json:"displayName"`
 	Mutability  *EnumdelegatedAdminAttributeMutabilityProp `json:"mutability,omitempty"`
@@ -46,10 +46,10 @@ type AddGenericDelegatedAdminAttributeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGenericDelegatedAdminAttributeRequest(attributeType string, schemas []EnumgenericDelegatedAdminAttributeSchemaUrn, displayName string) *AddGenericDelegatedAdminAttributeRequest {
+func NewAddGenericDelegatedAdminAttributeRequest(schemas []EnumgenericDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string) *AddGenericDelegatedAdminAttributeRequest {
 	this := AddGenericDelegatedAdminAttributeRequest{}
-	this.AttributeType = attributeType
 	this.Schemas = schemas
+	this.AttributeType = attributeType
 	this.DisplayName = displayName
 	return &this
 }
@@ -60,30 +60,6 @@ func NewAddGenericDelegatedAdminAttributeRequest(attributeType string, schemas [
 func NewAddGenericDelegatedAdminAttributeRequestWithDefaults() *AddGenericDelegatedAdminAttributeRequest {
 	this := AddGenericDelegatedAdminAttributeRequest{}
 	return &this
-}
-
-// GetAttributeType returns the AttributeType field value
-func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AttributeType
-}
-
-// GetAttributeTypeOk returns a tuple with the AttributeType field value
-// and a boolean to check if the value has been set.
-func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeType, true
-}
-
-// SetAttributeType sets field value
-func (o *AddGenericDelegatedAdminAttributeRequest) SetAttributeType(v string) {
-	o.AttributeType = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -140,6 +116,30 @@ func (o *AddGenericDelegatedAdminAttributeRequest) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *AddGenericDelegatedAdminAttributeRequest) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetAttributeType returns the AttributeType field value
+func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeType() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AttributeType
+}
+
+// GetAttributeTypeOk returns a tuple with the AttributeType field value
+// and a boolean to check if the value has been set.
+func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeType, true
+}
+
+// SetAttributeType sets field value
+func (o *AddGenericDelegatedAdminAttributeRequest) SetAttributeType(v string) {
+	o.AttributeType = v
 }
 
 // GetDisplayName returns the DisplayName field value
@@ -432,11 +432,11 @@ func (o AddGenericDelegatedAdminAttributeRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddGenericDelegatedAdminAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["attributeType"] = o.AttributeType
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["attributeType"] = o.AttributeType
 	toSerialize["displayName"] = o.DisplayName
 	if !IsNil(o.Mutability) {
 		toSerialize["mutability"] = o.Mutability

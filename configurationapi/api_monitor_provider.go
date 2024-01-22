@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// MonitorProviderApiService MonitorProviderApi service
-type MonitorProviderApiService service
+// MonitorProviderAPIService MonitorProviderAPI service
+type MonitorProviderAPIService service
 
 type ApiAddMonitorProviderRequest struct {
 	ctx                       context.Context
-	ApiService                *MonitorProviderApiService
+	ApiService                *MonitorProviderAPIService
 	addMonitorProviderRequest *AddMonitorProviderRequest
 }
 
@@ -44,7 +44,7 @@ AddMonitorProvider Add a new Monitor Provider to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddMonitorProviderRequest
 */
-func (a *MonitorProviderApiService) AddMonitorProvider(ctx context.Context) ApiAddMonitorProviderRequest {
+func (a *MonitorProviderAPIService) AddMonitorProvider(ctx context.Context) ApiAddMonitorProviderRequest {
 	return ApiAddMonitorProviderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *MonitorProviderApiService) AddMonitorProvider(ctx context.Context) ApiA
 // Execute executes the request
 //
 //	@return AddMonitorProvider200Response
-func (a *MonitorProviderApiService) AddMonitorProviderExecute(r ApiAddMonitorProviderRequest) (*AddMonitorProvider200Response, *http.Response, error) {
+func (a *MonitorProviderAPIService) AddMonitorProviderExecute(r ApiAddMonitorProviderRequest) (*AddMonitorProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *MonitorProviderApiService) AddMonitorProviderExecute(r ApiAddMonitorPro
 		localVarReturnValue *AddMonitorProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderApiService.AddMonitorProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderAPIService.AddMonitorProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *MonitorProviderApiService) AddMonitorProviderExecute(r ApiAddMonitorPro
 
 type ApiDeleteMonitorProviderRequest struct {
 	ctx                 context.Context
-	ApiService          *MonitorProviderApiService
+	ApiService          *MonitorProviderAPIService
 	monitorProviderName string
 }
 
@@ -149,7 +149,7 @@ DeleteMonitorProvider Delete a Monitor Provider
 	@param monitorProviderName Name of the Monitor Provider
 	@return ApiDeleteMonitorProviderRequest
 */
-func (a *MonitorProviderApiService) DeleteMonitorProvider(ctx context.Context, monitorProviderName string) ApiDeleteMonitorProviderRequest {
+func (a *MonitorProviderAPIService) DeleteMonitorProvider(ctx context.Context, monitorProviderName string) ApiDeleteMonitorProviderRequest {
 	return ApiDeleteMonitorProviderRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -158,14 +158,14 @@ func (a *MonitorProviderApiService) DeleteMonitorProvider(ctx context.Context, m
 }
 
 // Execute executes the request
-func (a *MonitorProviderApiService) DeleteMonitorProviderExecute(r ApiDeleteMonitorProviderRequest) (*http.Response, error) {
+func (a *MonitorProviderAPIService) DeleteMonitorProviderExecute(r ApiDeleteMonitorProviderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderApiService.DeleteMonitorProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderAPIService.DeleteMonitorProvider")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *MonitorProviderApiService) DeleteMonitorProviderExecute(r ApiDeleteMoni
 
 type ApiGetMonitorProviderRequest struct {
 	ctx                 context.Context
-	ApiService          *MonitorProviderApiService
+	ApiService          *MonitorProviderAPIService
 	monitorProviderName string
 }
 
@@ -239,7 +239,7 @@ GetMonitorProvider Returns a single Monitor Provider
 	@param monitorProviderName Name of the Monitor Provider
 	@return ApiGetMonitorProviderRequest
 */
-func (a *MonitorProviderApiService) GetMonitorProvider(ctx context.Context, monitorProviderName string) ApiGetMonitorProviderRequest {
+func (a *MonitorProviderAPIService) GetMonitorProvider(ctx context.Context, monitorProviderName string) ApiGetMonitorProviderRequest {
 	return ApiGetMonitorProviderRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -250,7 +250,7 @@ func (a *MonitorProviderApiService) GetMonitorProvider(ctx context.Context, moni
 // Execute executes the request
 //
 //	@return GetMonitorProvider200Response
-func (a *MonitorProviderApiService) GetMonitorProviderExecute(r ApiGetMonitorProviderRequest) (*GetMonitorProvider200Response, *http.Response, error) {
+func (a *MonitorProviderAPIService) GetMonitorProviderExecute(r ApiGetMonitorProviderRequest) (*GetMonitorProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *MonitorProviderApiService) GetMonitorProviderExecute(r ApiGetMonitorPro
 		localVarReturnValue *GetMonitorProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderApiService.GetMonitorProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderAPIService.GetMonitorProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *MonitorProviderApiService) GetMonitorProviderExecute(r ApiGetMonitorPro
 
 type ApiListMonitorProvidersRequest struct {
 	ctx        context.Context
-	ApiService *MonitorProviderApiService
+	ApiService *MonitorProviderAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListMonitorProviders Returns a list of all Monitor Provider objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListMonitorProvidersRequest
 */
-func (a *MonitorProviderApiService) ListMonitorProviders(ctx context.Context) ApiListMonitorProvidersRequest {
+func (a *MonitorProviderAPIService) ListMonitorProviders(ctx context.Context) ApiListMonitorProvidersRequest {
 	return ApiListMonitorProvidersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *MonitorProviderApiService) ListMonitorProviders(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return MonitorProviderListResponse
-func (a *MonitorProviderApiService) ListMonitorProvidersExecute(r ApiListMonitorProvidersRequest) (*MonitorProviderListResponse, *http.Response, error) {
+func (a *MonitorProviderAPIService) ListMonitorProvidersExecute(r ApiListMonitorProvidersRequest) (*MonitorProviderListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *MonitorProviderApiService) ListMonitorProvidersExecute(r ApiListMonitor
 		localVarReturnValue *MonitorProviderListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderApiService.ListMonitorProviders")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderAPIService.ListMonitorProviders")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *MonitorProviderApiService) ListMonitorProvidersExecute(r ApiListMonitor
 
 type ApiUpdateMonitorProviderRequest struct {
 	ctx                 context.Context
-	ApiService          *MonitorProviderApiService
+	ApiService          *MonitorProviderAPIService
 	monitorProviderName string
 	updateRequest       *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateMonitorProvider Update an existing Monitor Provider by name
 	@param monitorProviderName Name of the Monitor Provider
 	@return ApiUpdateMonitorProviderRequest
 */
-func (a *MonitorProviderApiService) UpdateMonitorProvider(ctx context.Context, monitorProviderName string) ApiUpdateMonitorProviderRequest {
+func (a *MonitorProviderAPIService) UpdateMonitorProvider(ctx context.Context, monitorProviderName string) ApiUpdateMonitorProviderRequest {
 	return ApiUpdateMonitorProviderRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -467,7 +467,7 @@ func (a *MonitorProviderApiService) UpdateMonitorProvider(ctx context.Context, m
 // Execute executes the request
 //
 //	@return GetMonitorProvider200Response
-func (a *MonitorProviderApiService) UpdateMonitorProviderExecute(r ApiUpdateMonitorProviderRequest) (*GetMonitorProvider200Response, *http.Response, error) {
+func (a *MonitorProviderAPIService) UpdateMonitorProviderExecute(r ApiUpdateMonitorProviderRequest) (*GetMonitorProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *MonitorProviderApiService) UpdateMonitorProviderExecute(r ApiUpdateMoni
 		localVarReturnValue *GetMonitorProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderApiService.UpdateMonitorProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderAPIService.UpdateMonitorProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

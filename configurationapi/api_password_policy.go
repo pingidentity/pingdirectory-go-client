@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// PasswordPolicyApiService PasswordPolicyApi service
-type PasswordPolicyApiService service
+// PasswordPolicyAPIService PasswordPolicyAPI service
+type PasswordPolicyAPIService service
 
 type ApiAddPasswordPolicyRequest struct {
 	ctx                      context.Context
-	ApiService               *PasswordPolicyApiService
+	ApiService               *PasswordPolicyAPIService
 	addPasswordPolicyRequest *AddPasswordPolicyRequest
 }
 
@@ -44,7 +44,7 @@ AddPasswordPolicy Add a new Password Policy to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddPasswordPolicyRequest
 */
-func (a *PasswordPolicyApiService) AddPasswordPolicy(ctx context.Context) ApiAddPasswordPolicyRequest {
+func (a *PasswordPolicyAPIService) AddPasswordPolicy(ctx context.Context) ApiAddPasswordPolicyRequest {
 	return ApiAddPasswordPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *PasswordPolicyApiService) AddPasswordPolicy(ctx context.Context) ApiAdd
 // Execute executes the request
 //
 //	@return PasswordPolicyResponse
-func (a *PasswordPolicyApiService) AddPasswordPolicyExecute(r ApiAddPasswordPolicyRequest) (*PasswordPolicyResponse, *http.Response, error) {
+func (a *PasswordPolicyAPIService) AddPasswordPolicyExecute(r ApiAddPasswordPolicyRequest) (*PasswordPolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *PasswordPolicyApiService) AddPasswordPolicyExecute(r ApiAddPasswordPoli
 		localVarReturnValue *PasswordPolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyApiService.AddPasswordPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyAPIService.AddPasswordPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *PasswordPolicyApiService) AddPasswordPolicyExecute(r ApiAddPasswordPoli
 
 type ApiDeletePasswordPolicyRequest struct {
 	ctx                context.Context
-	ApiService         *PasswordPolicyApiService
+	ApiService         *PasswordPolicyAPIService
 	passwordPolicyName string
 }
 
@@ -149,7 +149,7 @@ DeletePasswordPolicy Delete a Password Policy
 	@param passwordPolicyName Name of the Password Policy
 	@return ApiDeletePasswordPolicyRequest
 */
-func (a *PasswordPolicyApiService) DeletePasswordPolicy(ctx context.Context, passwordPolicyName string) ApiDeletePasswordPolicyRequest {
+func (a *PasswordPolicyAPIService) DeletePasswordPolicy(ctx context.Context, passwordPolicyName string) ApiDeletePasswordPolicyRequest {
 	return ApiDeletePasswordPolicyRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -158,14 +158,14 @@ func (a *PasswordPolicyApiService) DeletePasswordPolicy(ctx context.Context, pas
 }
 
 // Execute executes the request
-func (a *PasswordPolicyApiService) DeletePasswordPolicyExecute(r ApiDeletePasswordPolicyRequest) (*http.Response, error) {
+func (a *PasswordPolicyAPIService) DeletePasswordPolicyExecute(r ApiDeletePasswordPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyApiService.DeletePasswordPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyAPIService.DeletePasswordPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *PasswordPolicyApiService) DeletePasswordPolicyExecute(r ApiDeletePasswo
 
 type ApiGetPasswordPolicyRequest struct {
 	ctx                context.Context
-	ApiService         *PasswordPolicyApiService
+	ApiService         *PasswordPolicyAPIService
 	passwordPolicyName string
 }
 
@@ -239,7 +239,7 @@ GetPasswordPolicy Returns a single Password Policy
 	@param passwordPolicyName Name of the Password Policy
 	@return ApiGetPasswordPolicyRequest
 */
-func (a *PasswordPolicyApiService) GetPasswordPolicy(ctx context.Context, passwordPolicyName string) ApiGetPasswordPolicyRequest {
+func (a *PasswordPolicyAPIService) GetPasswordPolicy(ctx context.Context, passwordPolicyName string) ApiGetPasswordPolicyRequest {
 	return ApiGetPasswordPolicyRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -250,7 +250,7 @@ func (a *PasswordPolicyApiService) GetPasswordPolicy(ctx context.Context, passwo
 // Execute executes the request
 //
 //	@return PasswordPolicyResponse
-func (a *PasswordPolicyApiService) GetPasswordPolicyExecute(r ApiGetPasswordPolicyRequest) (*PasswordPolicyResponse, *http.Response, error) {
+func (a *PasswordPolicyAPIService) GetPasswordPolicyExecute(r ApiGetPasswordPolicyRequest) (*PasswordPolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *PasswordPolicyApiService) GetPasswordPolicyExecute(r ApiGetPasswordPoli
 		localVarReturnValue *PasswordPolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyApiService.GetPasswordPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyAPIService.GetPasswordPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *PasswordPolicyApiService) GetPasswordPolicyExecute(r ApiGetPasswordPoli
 
 type ApiListPasswordPoliciesRequest struct {
 	ctx        context.Context
-	ApiService *PasswordPolicyApiService
+	ApiService *PasswordPolicyAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListPasswordPolicies Returns a list of all Password Policy objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListPasswordPoliciesRequest
 */
-func (a *PasswordPolicyApiService) ListPasswordPolicies(ctx context.Context) ApiListPasswordPoliciesRequest {
+func (a *PasswordPolicyAPIService) ListPasswordPolicies(ctx context.Context) ApiListPasswordPoliciesRequest {
 	return ApiListPasswordPoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *PasswordPolicyApiService) ListPasswordPolicies(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return PasswordPolicyListResponse
-func (a *PasswordPolicyApiService) ListPasswordPoliciesExecute(r ApiListPasswordPoliciesRequest) (*PasswordPolicyListResponse, *http.Response, error) {
+func (a *PasswordPolicyAPIService) ListPasswordPoliciesExecute(r ApiListPasswordPoliciesRequest) (*PasswordPolicyListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *PasswordPolicyApiService) ListPasswordPoliciesExecute(r ApiListPassword
 		localVarReturnValue *PasswordPolicyListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyApiService.ListPasswordPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyAPIService.ListPasswordPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *PasswordPolicyApiService) ListPasswordPoliciesExecute(r ApiListPassword
 
 type ApiUpdatePasswordPolicyRequest struct {
 	ctx                context.Context
-	ApiService         *PasswordPolicyApiService
+	ApiService         *PasswordPolicyAPIService
 	passwordPolicyName string
 	updateRequest      *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdatePasswordPolicy Update an existing Password Policy by name
 	@param passwordPolicyName Name of the Password Policy
 	@return ApiUpdatePasswordPolicyRequest
 */
-func (a *PasswordPolicyApiService) UpdatePasswordPolicy(ctx context.Context, passwordPolicyName string) ApiUpdatePasswordPolicyRequest {
+func (a *PasswordPolicyAPIService) UpdatePasswordPolicy(ctx context.Context, passwordPolicyName string) ApiUpdatePasswordPolicyRequest {
 	return ApiUpdatePasswordPolicyRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -467,7 +467,7 @@ func (a *PasswordPolicyApiService) UpdatePasswordPolicy(ctx context.Context, pas
 // Execute executes the request
 //
 //	@return PasswordPolicyResponse
-func (a *PasswordPolicyApiService) UpdatePasswordPolicyExecute(r ApiUpdatePasswordPolicyRequest) (*PasswordPolicyResponse, *http.Response, error) {
+func (a *PasswordPolicyAPIService) UpdatePasswordPolicyExecute(r ApiUpdatePasswordPolicyRequest) (*PasswordPolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *PasswordPolicyApiService) UpdatePasswordPolicyExecute(r ApiUpdatePasswo
 		localVarReturnValue *PasswordPolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyApiService.UpdatePasswordPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordPolicyAPIService.UpdatePasswordPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

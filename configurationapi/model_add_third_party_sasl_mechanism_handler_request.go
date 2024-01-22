@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartySaslMechanismHandlerRequest{}
 
 // AddThirdPartySaslMechanismHandlerRequest struct for AddThirdPartySaslMechanismHandlerRequest
 type AddThirdPartySaslMechanismHandlerRequest struct {
-	// Name of the new SASL Mechanism Handler
-	HandlerName string                                        `json:"handlerName"`
-	Schemas     []EnumthirdPartySaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartySaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party SASL Mechanism Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party SASL Mechanism Handler. Each configuration property should be given in the form 'name=value'.
@@ -32,18 +30,20 @@ type AddThirdPartySaslMechanismHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the SASL mechanism handler is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new SASL Mechanism Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddThirdPartySaslMechanismHandlerRequest instantiates a new AddThirdPartySaslMechanismHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartySaslMechanismHandlerRequest(handlerName string, schemas []EnumthirdPartySaslMechanismHandlerSchemaUrn, extensionClass string, enabled bool) *AddThirdPartySaslMechanismHandlerRequest {
+func NewAddThirdPartySaslMechanismHandlerRequest(schemas []EnumthirdPartySaslMechanismHandlerSchemaUrn, extensionClass string, enabled bool, handlerName string) *AddThirdPartySaslMechanismHandlerRequest {
 	this := AddThirdPartySaslMechanismHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddThirdPartySaslMechanismHandlerRequest(handlerName string, schemas []E
 func NewAddThirdPartySaslMechanismHandlerRequestWithDefaults() *AddThirdPartySaslMechanismHandlerRequest {
 	this := AddThirdPartySaslMechanismHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddThirdPartySaslMechanismHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartySaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddThirdPartySaslMechanismHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -247,6 +223,30 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddThirdPartySaslMechanismHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartySaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddThirdPartySaslMechanismHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddThirdPartySaslMechanismHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -257,7 +257,6 @@ func (o AddThirdPartySaslMechanismHandlerRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddThirdPartySaslMechanismHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -270,6 +269,7 @@ func (o AddThirdPartySaslMechanismHandlerRequest) ToMap() (map[string]interface{
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

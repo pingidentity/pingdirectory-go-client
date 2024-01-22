@@ -19,9 +19,7 @@ var _ MappedNullable = &AddStaticallyDefinedRecurringTaskRequest{}
 
 // AddStaticallyDefinedRecurringTaskRequest struct for AddStaticallyDefinedRecurringTaskRequest
 type AddStaticallyDefinedRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                                        `json:"taskName"`
-	Schemas  []EnumstaticallyDefinedRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class that provides the logic for the task to be invoked.
 	TaskJavaClass string `json:"taskJavaClass"`
 	// The names or OIDs of the object classes to include in the tasks that are scheduled from this Statically Defined Recurring Task. All object classes must be defined in the server schema, and the combination of object classes must be valid for a task entry.
@@ -44,18 +42,20 @@ type AddStaticallyDefinedRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddStaticallyDefinedRecurringTaskRequest instantiates a new AddStaticallyDefinedRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddStaticallyDefinedRecurringTaskRequest(taskName string, schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn, taskJavaClass string, taskObjectClass []string) *AddStaticallyDefinedRecurringTaskRequest {
+func NewAddStaticallyDefinedRecurringTaskRequest(schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn, taskJavaClass string, taskObjectClass []string, taskName string) *AddStaticallyDefinedRecurringTaskRequest {
 	this := AddStaticallyDefinedRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
 	this.TaskJavaClass = taskJavaClass
 	this.TaskObjectClass = taskObjectClass
+	this.TaskName = taskName
 	return &this
 }
 
@@ -65,30 +65,6 @@ func NewAddStaticallyDefinedRecurringTaskRequest(taskName string, schemas []Enum
 func NewAddStaticallyDefinedRecurringTaskRequestWithDefaults() *AddStaticallyDefinedRecurringTaskRequest {
 	this := AddStaticallyDefinedRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddStaticallyDefinedRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -451,6 +427,30 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddStaticallyDefinedRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddStaticallyDefinedRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -461,7 +461,6 @@ func (o AddStaticallyDefinedRecurringTaskRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddStaticallyDefinedRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["taskJavaClass"] = o.TaskJavaClass
 	toSerialize["taskObjectClass"] = o.TaskObjectClass
@@ -492,6 +491,7 @@ func (o AddStaticallyDefinedRecurringTaskRequest) ToMap() (map[string]interface{
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

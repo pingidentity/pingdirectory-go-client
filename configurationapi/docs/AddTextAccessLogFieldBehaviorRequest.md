@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BehaviorName** | **string** | Name of the new Log Field Behavior | 
 **Schemas** | [**[]EnumtextAccessLogFieldBehaviorSchemaUrn**](EnumtextAccessLogFieldBehaviorSchemaUrn.md) |  | 
 **PreserveField** | Pointer to [**[]EnumlogFieldBehaviorTextAccessPreserveFieldProp**](EnumlogFieldBehaviorTextAccessPreserveFieldProp.md) |  | [optional] 
 **PreserveFieldName** | Pointer to **[]string** | The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
@@ -20,12 +19,13 @@ Name | Type | Description | Notes
 **TokenizeValueComponentsFieldName** | Pointer to **[]string** | The names of any custom fields for which to tokenize components within the value. This should generally only be used for fields that are not available through the tokenize-value-components-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
 **Description** | Pointer to **string** | A description for this Log Field Behavior | [optional] 
 **DefaultBehavior** | Pointer to [**EnumlogFieldBehaviorDefaultBehaviorProp**](EnumlogFieldBehaviorDefaultBehaviorProp.md) |  | [optional] 
+**BehaviorName** | **string** | Name of the new Log Field Behavior | 
 
 ## Methods
 
 ### NewAddTextAccessLogFieldBehaviorRequest
 
-`func NewAddTextAccessLogFieldBehaviorRequest(behaviorName string, schemas []EnumtextAccessLogFieldBehaviorSchemaUrn, ) *AddTextAccessLogFieldBehaviorRequest`
+`func NewAddTextAccessLogFieldBehaviorRequest(schemas []EnumtextAccessLogFieldBehaviorSchemaUrn, behaviorName string, ) *AddTextAccessLogFieldBehaviorRequest`
 
 NewAddTextAccessLogFieldBehaviorRequest instantiates a new AddTextAccessLogFieldBehaviorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -39,26 +39,6 @@ will change when the set of required properties is changed
 NewAddTextAccessLogFieldBehaviorRequestWithDefaults instantiates a new AddTextAccessLogFieldBehaviorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBehaviorName
-
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetBehaviorName() string`
-
-GetBehaviorName returns the BehaviorName field if non-nil, zero value otherwise.
-
-### GetBehaviorNameOk
-
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetBehaviorNameOk() (*string, bool)`
-
-GetBehaviorNameOk returns a tuple with the BehaviorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBehaviorName
-
-`func (o *AddTextAccessLogFieldBehaviorRequest) SetBehaviorName(v string)`
-
-SetBehaviorName sets BehaviorName field to given value.
-
 
 ### GetSchemas
 
@@ -429,6 +409,26 @@ SetDefaultBehavior sets DefaultBehavior field to given value.
 `func (o *AddTextAccessLogFieldBehaviorRequest) HasDefaultBehavior() bool`
 
 HasDefaultBehavior returns a boolean if a field has been set.
+
+### GetBehaviorName
+
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetBehaviorName() string`
+
+GetBehaviorName returns the BehaviorName field if non-nil, zero value otherwise.
+
+### GetBehaviorNameOk
+
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetBehaviorNameOk() (*string, bool)`
+
+GetBehaviorNameOk returns a tuple with the BehaviorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBehaviorName
+
+`func (o *AddTextAccessLogFieldBehaviorRequest) SetBehaviorName(v string)`
+
+SetBehaviorName sets BehaviorName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,13 +19,15 @@ var _ MappedNullable = &VaultExternalServerResponse{}
 
 // VaultExternalServerResponse struct for VaultExternalServerResponse
 type VaultExternalServerResponse struct {
-	// Name of the External Server
-	Id      string                             `json:"id"`
 	Schemas []EnumvaultExternalServerSchemaUrn `json:"schemas"`
 	// The base URL needed to access the Vault server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://vault.example.com:8200/\".
 	VaultServerBaseURI []string `json:"vaultServerBaseURI"`
 	// The mechanism used to authenticate to the Vault server.
 	VaultAuthenticationMethod string `json:"vaultAuthenticationMethod"`
+	// The maximum length of time to wait to obtain an HTTP connection.
+	HttpConnectTimeout *string `json:"httpConnectTimeout,omitempty"`
+	// The maximum length of time to wait for a response to an HTTP request.
+	HttpResponseTimeout *string `json:"httpResponseTimeout,omitempty"`
 	// The path to a file containing the information needed to trust the certificate presented by the Vault servers.
 	TrustStoreFile *string `json:"trustStoreFile,omitempty"`
 	// The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
@@ -36,18 +38,20 @@ type VaultExternalServerResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the External Server
+	Id string `json:"id"`
 }
 
 // NewVaultExternalServerResponse instantiates a new VaultExternalServerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVaultExternalServerResponse(id string, schemas []EnumvaultExternalServerSchemaUrn, vaultServerBaseURI []string, vaultAuthenticationMethod string) *VaultExternalServerResponse {
+func NewVaultExternalServerResponse(schemas []EnumvaultExternalServerSchemaUrn, vaultServerBaseURI []string, vaultAuthenticationMethod string, id string) *VaultExternalServerResponse {
 	this := VaultExternalServerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.VaultServerBaseURI = vaultServerBaseURI
 	this.VaultAuthenticationMethod = vaultAuthenticationMethod
+	this.Id = id
 	return &this
 }
 
@@ -57,30 +61,6 @@ func NewVaultExternalServerResponse(id string, schemas []EnumvaultExternalServer
 func NewVaultExternalServerResponseWithDefaults() *VaultExternalServerResponse {
 	this := VaultExternalServerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *VaultExternalServerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *VaultExternalServerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *VaultExternalServerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -153,6 +133,70 @@ func (o *VaultExternalServerResponse) GetVaultAuthenticationMethodOk() (*string,
 // SetVaultAuthenticationMethod sets field value
 func (o *VaultExternalServerResponse) SetVaultAuthenticationMethod(v string) {
 	o.VaultAuthenticationMethod = v
+}
+
+// GetHttpConnectTimeout returns the HttpConnectTimeout field value if set, zero value otherwise.
+func (o *VaultExternalServerResponse) GetHttpConnectTimeout() string {
+	if o == nil || IsNil(o.HttpConnectTimeout) {
+		var ret string
+		return ret
+	}
+	return *o.HttpConnectTimeout
+}
+
+// GetHttpConnectTimeoutOk returns a tuple with the HttpConnectTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VaultExternalServerResponse) GetHttpConnectTimeoutOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpConnectTimeout) {
+		return nil, false
+	}
+	return o.HttpConnectTimeout, true
+}
+
+// HasHttpConnectTimeout returns a boolean if a field has been set.
+func (o *VaultExternalServerResponse) HasHttpConnectTimeout() bool {
+	if o != nil && !IsNil(o.HttpConnectTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpConnectTimeout gets a reference to the given string and assigns it to the HttpConnectTimeout field.
+func (o *VaultExternalServerResponse) SetHttpConnectTimeout(v string) {
+	o.HttpConnectTimeout = &v
+}
+
+// GetHttpResponseTimeout returns the HttpResponseTimeout field value if set, zero value otherwise.
+func (o *VaultExternalServerResponse) GetHttpResponseTimeout() string {
+	if o == nil || IsNil(o.HttpResponseTimeout) {
+		var ret string
+		return ret
+	}
+	return *o.HttpResponseTimeout
+}
+
+// GetHttpResponseTimeoutOk returns a tuple with the HttpResponseTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VaultExternalServerResponse) GetHttpResponseTimeoutOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpResponseTimeout) {
+		return nil, false
+	}
+	return o.HttpResponseTimeout, true
+}
+
+// HasHttpResponseTimeout returns a boolean if a field has been set.
+func (o *VaultExternalServerResponse) HasHttpResponseTimeout() bool {
+	if o != nil && !IsNil(o.HttpResponseTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpResponseTimeout gets a reference to the given string and assigns it to the HttpResponseTimeout field.
+func (o *VaultExternalServerResponse) SetHttpResponseTimeout(v string) {
+	o.HttpResponseTimeout = &v
 }
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
@@ -347,6 +391,30 @@ func (o *VaultExternalServerResponse) SetUrnpingidentityschemasconfigurationmess
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *VaultExternalServerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *VaultExternalServerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *VaultExternalServerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o VaultExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -357,10 +425,15 @@ func (o VaultExternalServerResponse) MarshalJSON() ([]byte, error) {
 
 func (o VaultExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["vaultServerBaseURI"] = o.VaultServerBaseURI
 	toSerialize["vaultAuthenticationMethod"] = o.VaultAuthenticationMethod
+	if !IsNil(o.HttpConnectTimeout) {
+		toSerialize["httpConnectTimeout"] = o.HttpConnectTimeout
+	}
+	if !IsNil(o.HttpResponseTimeout) {
+		toSerialize["httpResponseTimeout"] = o.HttpResponseTimeout
+	}
 	if !IsNil(o.TrustStoreFile) {
 		toSerialize["trustStoreFile"] = o.TrustStoreFile
 	}
@@ -379,6 +452,7 @@ func (o VaultExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

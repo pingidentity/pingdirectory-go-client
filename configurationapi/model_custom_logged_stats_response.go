@@ -19,8 +19,6 @@ var _ MappedNullable = &CustomLoggedStatsResponse{}
 
 // CustomLoggedStatsResponse struct for CustomLoggedStatsResponse
 type CustomLoggedStatsResponse struct {
-	// Name of the Custom Logged Stats
-	Id      string                           `json:"id"`
 	Schemas []EnumcustomLoggedStatsSchemaUrn `json:"schemas"`
 	// A description for this Custom Logged Stats
 	Description *string `json:"description,omitempty"`
@@ -53,20 +51,22 @@ type CustomLoggedStatsResponse struct {
 	NonZeroImpliesNotIdle                         *bool                                              `json:"nonZeroImpliesNotIdle,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Custom Logged Stats
+	Id string `json:"id"`
 }
 
 // NewCustomLoggedStatsResponse instantiates a new CustomLoggedStatsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomLoggedStatsResponse(id string, schemas []EnumcustomLoggedStatsSchemaUrn, enabled bool, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp) *CustomLoggedStatsResponse {
+func NewCustomLoggedStatsResponse(schemas []EnumcustomLoggedStatsSchemaUrn, enabled bool, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp, id string) *CustomLoggedStatsResponse {
 	this := CustomLoggedStatsResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.MonitorObjectclass = monitorObjectclass
 	this.AttributeToLog = attributeToLog
 	this.StatisticType = statisticType
+	this.Id = id
 	return &this
 }
 
@@ -76,30 +76,6 @@ func NewCustomLoggedStatsResponse(id string, schemas []EnumcustomLoggedStatsSche
 func NewCustomLoggedStatsResponseWithDefaults() *CustomLoggedStatsResponse {
 	this := CustomLoggedStatsResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CustomLoggedStatsResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CustomLoggedStatsResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CustomLoggedStatsResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -638,6 +614,30 @@ func (o *CustomLoggedStatsResponse) SetUrnpingidentityschemasconfigurationmessag
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *CustomLoggedStatsResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CustomLoggedStatsResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CustomLoggedStatsResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o CustomLoggedStatsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -648,7 +648,6 @@ func (o CustomLoggedStatsResponse) MarshalJSON() ([]byte, error) {
 
 func (o CustomLoggedStatsResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -693,6 +692,7 @@ func (o CustomLoggedStatsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

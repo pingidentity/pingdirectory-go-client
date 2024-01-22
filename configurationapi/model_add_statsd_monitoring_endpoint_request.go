@@ -19,9 +19,7 @@ var _ MappedNullable = &AddStatsdMonitoringEndpointRequest{}
 
 // AddStatsdMonitoringEndpointRequest struct for AddStatsdMonitoringEndpointRequest
 type AddStatsdMonitoringEndpointRequest struct {
-	// Name of the new Monitoring Endpoint
-	EndpointName string                                  `json:"endpointName"`
-	Schemas      []EnumstatsdMonitoringEndpointSchemaUrn `json:"schemas"`
+	Schemas []EnumstatsdMonitoringEndpointSchemaUrn `json:"schemas"`
 	// The name of the host where this StatsD Monitoring Endpoint should send metric data.
 	Hostname string `json:"hostname"`
 	// Specifies the port number of the endpoint where metric data should be sent.
@@ -33,18 +31,20 @@ type AddStatsdMonitoringEndpointRequest struct {
 	AdditionalTags []string `json:"additionalTags,omitempty"`
 	// Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Monitoring Endpoint
+	EndpointName string `json:"endpointName"`
 }
 
 // NewAddStatsdMonitoringEndpointRequest instantiates a new AddStatsdMonitoringEndpointRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddStatsdMonitoringEndpointRequest(endpointName string, schemas []EnumstatsdMonitoringEndpointSchemaUrn, hostname string, enabled bool) *AddStatsdMonitoringEndpointRequest {
+func NewAddStatsdMonitoringEndpointRequest(schemas []EnumstatsdMonitoringEndpointSchemaUrn, hostname string, enabled bool, endpointName string) *AddStatsdMonitoringEndpointRequest {
 	this := AddStatsdMonitoringEndpointRequest{}
-	this.EndpointName = endpointName
 	this.Schemas = schemas
 	this.Hostname = hostname
 	this.Enabled = enabled
+	this.EndpointName = endpointName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddStatsdMonitoringEndpointRequest(endpointName string, schemas []Enumst
 func NewAddStatsdMonitoringEndpointRequestWithDefaults() *AddStatsdMonitoringEndpointRequest {
 	this := AddStatsdMonitoringEndpointRequest{}
 	return &this
-}
-
-// GetEndpointName returns the EndpointName field value
-func (o *AddStatsdMonitoringEndpointRequest) GetEndpointName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.EndpointName
-}
-
-// GetEndpointNameOk returns a tuple with the EndpointName field value
-// and a boolean to check if the value has been set.
-func (o *AddStatsdMonitoringEndpointRequest) GetEndpointNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.EndpointName, true
-}
-
-// SetEndpointName sets field value
-func (o *AddStatsdMonitoringEndpointRequest) SetEndpointName(v string) {
-	o.EndpointName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -280,6 +256,30 @@ func (o *AddStatsdMonitoringEndpointRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetEndpointName returns the EndpointName field value
+func (o *AddStatsdMonitoringEndpointRequest) GetEndpointName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.EndpointName
+}
+
+// GetEndpointNameOk returns a tuple with the EndpointName field value
+// and a boolean to check if the value has been set.
+func (o *AddStatsdMonitoringEndpointRequest) GetEndpointNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.EndpointName, true
+}
+
+// SetEndpointName sets field value
+func (o *AddStatsdMonitoringEndpointRequest) SetEndpointName(v string) {
+	o.EndpointName = v
+}
+
 func (o AddStatsdMonitoringEndpointRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -290,7 +290,6 @@ func (o AddStatsdMonitoringEndpointRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddStatsdMonitoringEndpointRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["endpointName"] = o.EndpointName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["hostname"] = o.Hostname
 	if !IsNil(o.ServerPort) {
@@ -306,6 +305,7 @@ func (o AddStatsdMonitoringEndpointRequest) ToMap() (map[string]interface{}, err
 		toSerialize["additionalTags"] = o.AdditionalTags
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["endpointName"] = o.EndpointName
 	return toSerialize, nil
 }
 

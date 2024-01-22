@@ -19,8 +19,6 @@ var _ MappedNullable = &AddJsonFormattedAccessLogFieldBehaviorRequest{}
 
 // AddJsonFormattedAccessLogFieldBehaviorRequest struct for AddJsonFormattedAccessLogFieldBehaviorRequest
 type AddJsonFormattedAccessLogFieldBehaviorRequest struct {
-	// Name of the new Log Field Behavior
-	BehaviorName  string                                                     `json:"behaviorName"`
 	Schemas       []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn         `json:"schemas"`
 	PreserveField []EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp `json:"preserveField,omitempty"`
 	// The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions).
@@ -43,16 +41,18 @@ type AddJsonFormattedAccessLogFieldBehaviorRequest struct {
 	// A description for this Log Field Behavior
 	Description     *string                                  `json:"description,omitempty"`
 	DefaultBehavior *EnumlogFieldBehaviorDefaultBehaviorProp `json:"defaultBehavior,omitempty"`
+	// Name of the new Log Field Behavior
+	BehaviorName string `json:"behaviorName"`
 }
 
 // NewAddJsonFormattedAccessLogFieldBehaviorRequest instantiates a new AddJsonFormattedAccessLogFieldBehaviorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddJsonFormattedAccessLogFieldBehaviorRequest(behaviorName string, schemas []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn) *AddJsonFormattedAccessLogFieldBehaviorRequest {
+func NewAddJsonFormattedAccessLogFieldBehaviorRequest(schemas []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn, behaviorName string) *AddJsonFormattedAccessLogFieldBehaviorRequest {
 	this := AddJsonFormattedAccessLogFieldBehaviorRequest{}
-	this.BehaviorName = behaviorName
 	this.Schemas = schemas
+	this.BehaviorName = behaviorName
 	return &this
 }
 
@@ -62,30 +62,6 @@ func NewAddJsonFormattedAccessLogFieldBehaviorRequest(behaviorName string, schem
 func NewAddJsonFormattedAccessLogFieldBehaviorRequestWithDefaults() *AddJsonFormattedAccessLogFieldBehaviorRequest {
 	this := AddJsonFormattedAccessLogFieldBehaviorRequest{}
 	return &this
-}
-
-// GetBehaviorName returns the BehaviorName field value
-func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) GetBehaviorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.BehaviorName
-}
-
-// GetBehaviorNameOk returns a tuple with the BehaviorName field value
-// and a boolean to check if the value has been set.
-func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) GetBehaviorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.BehaviorName, true
-}
-
-// SetBehaviorName sets field value
-func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) SetBehaviorName(v string) {
-	o.BehaviorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -560,6 +536,30 @@ func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) SetDefaultBehavior(v Enu
 	o.DefaultBehavior = &v
 }
 
+// GetBehaviorName returns the BehaviorName field value
+func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) GetBehaviorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.BehaviorName
+}
+
+// GetBehaviorNameOk returns a tuple with the BehaviorName field value
+// and a boolean to check if the value has been set.
+func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) GetBehaviorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.BehaviorName, true
+}
+
+// SetBehaviorName sets field value
+func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) SetBehaviorName(v string) {
+	o.BehaviorName = v
+}
+
 func (o AddJsonFormattedAccessLogFieldBehaviorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -570,7 +570,6 @@ func (o AddJsonFormattedAccessLogFieldBehaviorRequest) MarshalJSON() ([]byte, er
 
 func (o AddJsonFormattedAccessLogFieldBehaviorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["behaviorName"] = o.BehaviorName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PreserveField) {
 		toSerialize["preserveField"] = o.PreserveField
@@ -614,6 +613,7 @@ func (o AddJsonFormattedAccessLogFieldBehaviorRequest) ToMap() (map[string]inter
 	if !IsNil(o.DefaultBehavior) {
 		toSerialize["defaultBehavior"] = o.DefaultBehavior
 	}
+	toSerialize["behaviorName"] = o.BehaviorName
 	return toSerialize, nil
 }
 

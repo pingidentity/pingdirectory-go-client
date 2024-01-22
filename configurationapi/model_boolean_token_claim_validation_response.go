@@ -19,8 +19,6 @@ var _ MappedNullable = &BooleanTokenClaimValidationResponse{}
 
 // BooleanTokenClaimValidationResponse struct for BooleanTokenClaimValidationResponse
 type BooleanTokenClaimValidationResponse struct {
-	// Name of the Token Claim Validation
-	Id            string                                     `json:"id"`
 	Schemas       []EnumbooleanTokenClaimValidationSchemaUrn `json:"schemas"`
 	RequiredValue EnumtokenClaimValidationRequiredValueProp  `json:"requiredValue"`
 	// A description for this Token Claim Validation
@@ -29,18 +27,20 @@ type BooleanTokenClaimValidationResponse struct {
 	ClaimName                                     string                                             `json:"claimName"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Token Claim Validation
+	Id string `json:"id"`
 }
 
 // NewBooleanTokenClaimValidationResponse instantiates a new BooleanTokenClaimValidationResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBooleanTokenClaimValidationResponse(id string, schemas []EnumbooleanTokenClaimValidationSchemaUrn, requiredValue EnumtokenClaimValidationRequiredValueProp, claimName string) *BooleanTokenClaimValidationResponse {
+func NewBooleanTokenClaimValidationResponse(schemas []EnumbooleanTokenClaimValidationSchemaUrn, requiredValue EnumtokenClaimValidationRequiredValueProp, claimName string, id string) *BooleanTokenClaimValidationResponse {
 	this := BooleanTokenClaimValidationResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.RequiredValue = requiredValue
 	this.ClaimName = claimName
+	this.Id = id
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewBooleanTokenClaimValidationResponse(id string, schemas []EnumbooleanToke
 func NewBooleanTokenClaimValidationResponseWithDefaults() *BooleanTokenClaimValidationResponse {
 	this := BooleanTokenClaimValidationResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *BooleanTokenClaimValidationResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *BooleanTokenClaimValidationResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *BooleanTokenClaimValidationResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -244,6 +220,30 @@ func (o *BooleanTokenClaimValidationResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *BooleanTokenClaimValidationResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *BooleanTokenClaimValidationResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *BooleanTokenClaimValidationResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o BooleanTokenClaimValidationResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -254,7 +254,6 @@ func (o BooleanTokenClaimValidationResponse) MarshalJSON() ([]byte, error) {
 
 func (o BooleanTokenClaimValidationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["requiredValue"] = o.RequiredValue
 	if !IsNil(o.Description) {
@@ -267,6 +266,7 @@ func (o BooleanTokenClaimValidationResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

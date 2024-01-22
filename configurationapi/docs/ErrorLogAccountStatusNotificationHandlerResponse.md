@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Account Status Notification Handler | 
 **Schemas** | [**[]EnumerrorLogAccountStatusNotificationHandlerSchemaUrn**](EnumerrorLogAccountStatusNotificationHandlerSchemaUrn.md) |  | 
 **AccountStatusNotificationType** | [**[]EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp**](EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp.md) |  | 
 **Description** | Pointer to **string** | A description for this Account Status Notification Handler | [optional] 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Account Status Notification Handler | 
 
 ## Methods
 
 ### NewErrorLogAccountStatusNotificationHandlerResponse
 
-`func NewErrorLogAccountStatusNotificationHandlerResponse(id string, schemas []EnumerrorLogAccountStatusNotificationHandlerSchemaUrn, accountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, enabled bool, ) *ErrorLogAccountStatusNotificationHandlerResponse`
+`func NewErrorLogAccountStatusNotificationHandlerResponse(schemas []EnumerrorLogAccountStatusNotificationHandlerSchemaUrn, accountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, enabled bool, id string, ) *ErrorLogAccountStatusNotificationHandlerResponse`
 
 NewErrorLogAccountStatusNotificationHandlerResponse instantiates a new ErrorLogAccountStatusNotificationHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewErrorLogAccountStatusNotificationHandlerResponseWithDefaults instantiates a new ErrorLogAccountStatusNotificationHandlerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ErrorLogAccountStatusNotificationHandlerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -315,6 +295,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ErrorLogAccountStatusNotificationHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ErrorLogAccountStatusNotificationHandlerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

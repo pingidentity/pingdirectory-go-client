@@ -19,8 +19,6 @@ var _ MappedNullable = &AdminAlertAccessLogPublisherResponse{}
 
 // AdminAlertAccessLogPublisherResponse struct for AdminAlertAccessLogPublisherResponse
 type AdminAlertAccessLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id      string                                      `json:"id"`
 	Schemas []EnumadminAlertAccessLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether to log information about connections established to the server.
 	LogConnects *bool `json:"logConnects,omitempty"`
@@ -113,18 +111,20 @@ type AdminAlertAccessLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewAdminAlertAccessLogPublisherResponse instantiates a new AdminAlertAccessLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdminAlertAccessLogPublisherResponse(id string, schemas []EnumadminAlertAccessLogPublisherSchemaUrn, asynchronous bool, enabled bool) *AdminAlertAccessLogPublisherResponse {
+func NewAdminAlertAccessLogPublisherResponse(schemas []EnumadminAlertAccessLogPublisherSchemaUrn, asynchronous bool, enabled bool, id string) *AdminAlertAccessLogPublisherResponse {
 	this := AdminAlertAccessLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Asynchronous = asynchronous
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -134,30 +134,6 @@ func NewAdminAlertAccessLogPublisherResponse(id string, schemas []EnumadminAlert
 func NewAdminAlertAccessLogPublisherResponseWithDefaults() *AdminAlertAccessLogPublisherResponse {
 	this := AdminAlertAccessLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AdminAlertAccessLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AdminAlertAccessLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AdminAlertAccessLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1672,6 +1648,30 @@ func (o *AdminAlertAccessLogPublisherResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AdminAlertAccessLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AdminAlertAccessLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AdminAlertAccessLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AdminAlertAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1682,7 +1682,6 @@ func (o AdminAlertAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 
 func (o AdminAlertAccessLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.LogConnects) {
 		toSerialize["logConnects"] = o.LogConnects
@@ -1821,6 +1820,7 @@ func (o AdminAlertAccessLogPublisherResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

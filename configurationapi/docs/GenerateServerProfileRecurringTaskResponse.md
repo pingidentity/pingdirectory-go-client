@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Recurring Task | 
 **Schemas** | [**[]EnumgenerateServerProfileRecurringTaskSchemaUrn**](EnumgenerateServerProfileRecurringTaskSchemaUrn.md) |  | 
 **ProfileDirectory** | **string** | The directory in which the generated server profiles will be placed. The files will be named with the pattern \&quot;server-profile-{timestamp}.zip\&quot;, where \&quot;{timestamp}\&quot; represents the time that the profile was generated. | 
 **IncludePath** | Pointer to **[]string** | An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root. | [optional] 
@@ -20,12 +19,13 @@ Name | Type | Description | Notes
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Recurring Task | 
 
 ## Methods
 
 ### NewGenerateServerProfileRecurringTaskResponse
 
-`func NewGenerateServerProfileRecurringTaskResponse(id string, schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn, profileDirectory string, ) *GenerateServerProfileRecurringTaskResponse`
+`func NewGenerateServerProfileRecurringTaskResponse(schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn, profileDirectory string, id string, ) *GenerateServerProfileRecurringTaskResponse`
 
 NewGenerateServerProfileRecurringTaskResponse instantiates a new GenerateServerProfileRecurringTaskResponse object
 This constructor will assign default values to properties that have it defined,
@@ -39,26 +39,6 @@ will change when the set of required properties is changed
 NewGenerateServerProfileRecurringTaskResponseWithDefaults instantiates a new GenerateServerProfileRecurringTaskResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *GenerateServerProfileRecurringTaskResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GenerateServerProfileRecurringTaskResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GenerateServerProfileRecurringTaskResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -424,6 +404,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *GenerateServerProfileRecurringTaskResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *GenerateServerProfileRecurringTaskResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *GenerateServerProfileRecurringTaskResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *GenerateServerProfileRecurringTaskResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

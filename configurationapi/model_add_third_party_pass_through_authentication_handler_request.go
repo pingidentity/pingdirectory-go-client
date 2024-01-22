@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyPassThroughAuthenticationHandlerRequest{}
 
 // AddThirdPartyPassThroughAuthenticationHandlerRequest struct for AddThirdPartyPassThroughAuthenticationHandlerRequest
 type AddThirdPartyPassThroughAuthenticationHandlerRequest struct {
-	// Name of the new Pass Through Authentication Handler
-	HandlerName string                                                    `json:"handlerName"`
-	Schemas     []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Pass Through Authentication Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Pass Through Authentication Handler. Each configuration property should be given in the form 'name=value'.
@@ -34,17 +32,19 @@ type AddThirdPartyPassThroughAuthenticationHandlerRequest struct {
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
+	// Name of the new Pass Through Authentication Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddThirdPartyPassThroughAuthenticationHandlerRequest instantiates a new AddThirdPartyPassThroughAuthenticationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyPassThroughAuthenticationHandlerRequest(handlerName string, schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, extensionClass string) *AddThirdPartyPassThroughAuthenticationHandlerRequest {
+func NewAddThirdPartyPassThroughAuthenticationHandlerRequest(schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, extensionClass string, handlerName string) *AddThirdPartyPassThroughAuthenticationHandlerRequest {
 	this := AddThirdPartyPassThroughAuthenticationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddThirdPartyPassThroughAuthenticationHandlerRequest(handlerName string,
 func NewAddThirdPartyPassThroughAuthenticationHandlerRequestWithDefaults() *AddThirdPartyPassThroughAuthenticationHandlerRequest {
 	this := AddThirdPartyPassThroughAuthenticationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -288,6 +264,30 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetRequestCriteri
 	o.RequestCriteria = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddThirdPartyPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -298,7 +298,6 @@ func (o AddThirdPartyPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]b
 
 func (o AddThirdPartyPassThroughAuthenticationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -316,6 +315,7 @@ func (o AddThirdPartyPassThroughAuthenticationHandlerRequest) ToMap() (map[strin
 	if !IsNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

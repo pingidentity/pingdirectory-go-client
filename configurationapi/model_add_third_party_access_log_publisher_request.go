@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyAccessLogPublisherRequest{}
 
 // AddThirdPartyAccessLogPublisherRequest struct for AddThirdPartyAccessLogPublisherRequest
 type AddThirdPartyAccessLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName string                                      `json:"publisherName"`
-	Schemas       []EnumthirdPartyAccessLogPublisherSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyAccessLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Access Log Publisher.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Access Log Publisher. Each configuration property should be given in the form 'name=value'.
@@ -65,18 +63,20 @@ type AddThirdPartyAccessLogPublisherRequest struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddThirdPartyAccessLogPublisherRequest instantiates a new AddThirdPartyAccessLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyAccessLogPublisherRequest(publisherName string, schemas []EnumthirdPartyAccessLogPublisherSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyAccessLogPublisherRequest {
+func NewAddThirdPartyAccessLogPublisherRequest(schemas []EnumthirdPartyAccessLogPublisherSchemaUrn, extensionClass string, enabled bool, publisherName string) *AddThirdPartyAccessLogPublisherRequest {
 	this := AddThirdPartyAccessLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -86,30 +86,6 @@ func NewAddThirdPartyAccessLogPublisherRequest(publisherName string, schemas []E
 func NewAddThirdPartyAccessLogPublisherRequestWithDefaults() *AddThirdPartyAccessLogPublisherRequest {
 	this := AddThirdPartyAccessLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddThirdPartyAccessLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddThirdPartyAccessLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -824,6 +800,30 @@ func (o *AddThirdPartyAccessLogPublisherRequest) SetLoggingErrorBehavior(v Enuml
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddThirdPartyAccessLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddThirdPartyAccessLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddThirdPartyAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -834,7 +834,6 @@ func (o AddThirdPartyAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyAccessLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -898,6 +897,7 @@ func (o AddThirdPartyAccessLogPublisherRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

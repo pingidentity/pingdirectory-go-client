@@ -31,6 +31,8 @@
 
 * `AUTO_AUTHENTICATED_AS` (value: `"auto-authenticated-as"`)
 
+* `BIND_ACCESS_TOKEN_ORIGINAL_AUTHENTICATION_TYPE` (value: `"bind-access-token-original-authentication-type"`)
+
 * `BIND_AUTHENTICATION_DN` (value: `"bind-authentication-dn"`)
 
 * `BIND_AUTHENTICATION_FAILURE_REASON` (value: `"bind-authentication-failure-reason"`)

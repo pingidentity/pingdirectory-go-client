@@ -19,27 +19,27 @@ var _ MappedNullable = &AddStringTokenClaimValidationRequest{}
 
 // AddStringTokenClaimValidationRequest struct for AddStringTokenClaimValidationRequest
 type AddStringTokenClaimValidationRequest struct {
-	// Name of the new Token Claim Validation
-	ValidationName string                                    `json:"validationName"`
-	Schemas        []EnumstringTokenClaimValidationSchemaUrn `json:"schemas"`
+	Schemas []EnumstringTokenClaimValidationSchemaUrn `json:"schemas"`
 	// The set of values that the claim may have to be considered valid.
 	AnyRequiredValue []string `json:"anyRequiredValue"`
 	// A description for this Token Claim Validation
 	Description *string `json:"description,omitempty"`
 	// The name of the claim to be validated.
 	ClaimName string `json:"claimName"`
+	// Name of the new Token Claim Validation
+	ValidationName string `json:"validationName"`
 }
 
 // NewAddStringTokenClaimValidationRequest instantiates a new AddStringTokenClaimValidationRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddStringTokenClaimValidationRequest(validationName string, schemas []EnumstringTokenClaimValidationSchemaUrn, anyRequiredValue []string, claimName string) *AddStringTokenClaimValidationRequest {
+func NewAddStringTokenClaimValidationRequest(schemas []EnumstringTokenClaimValidationSchemaUrn, anyRequiredValue []string, claimName string, validationName string) *AddStringTokenClaimValidationRequest {
 	this := AddStringTokenClaimValidationRequest{}
-	this.ValidationName = validationName
 	this.Schemas = schemas
 	this.AnyRequiredValue = anyRequiredValue
 	this.ClaimName = claimName
+	this.ValidationName = validationName
 	return &this
 }
 
@@ -49,30 +49,6 @@ func NewAddStringTokenClaimValidationRequest(validationName string, schemas []En
 func NewAddStringTokenClaimValidationRequestWithDefaults() *AddStringTokenClaimValidationRequest {
 	this := AddStringTokenClaimValidationRequest{}
 	return &this
-}
-
-// GetValidationName returns the ValidationName field value
-func (o *AddStringTokenClaimValidationRequest) GetValidationName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ValidationName
-}
-
-// GetValidationNameOk returns a tuple with the ValidationName field value
-// and a boolean to check if the value has been set.
-func (o *AddStringTokenClaimValidationRequest) GetValidationNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ValidationName, true
-}
-
-// SetValidationName sets field value
-func (o *AddStringTokenClaimValidationRequest) SetValidationName(v string) {
-	o.ValidationName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -179,6 +155,30 @@ func (o *AddStringTokenClaimValidationRequest) SetClaimName(v string) {
 	o.ClaimName = v
 }
 
+// GetValidationName returns the ValidationName field value
+func (o *AddStringTokenClaimValidationRequest) GetValidationName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ValidationName
+}
+
+// GetValidationNameOk returns a tuple with the ValidationName field value
+// and a boolean to check if the value has been set.
+func (o *AddStringTokenClaimValidationRequest) GetValidationNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ValidationName, true
+}
+
+// SetValidationName sets field value
+func (o *AddStringTokenClaimValidationRequest) SetValidationName(v string) {
+	o.ValidationName = v
+}
+
 func (o AddStringTokenClaimValidationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -189,13 +189,13 @@ func (o AddStringTokenClaimValidationRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddStringTokenClaimValidationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["validationName"] = o.ValidationName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["anyRequiredValue"] = o.AnyRequiredValue
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["claimName"] = o.ClaimName
+	toSerialize["validationName"] = o.ValidationName
 	return toSerialize, nil
 }
 

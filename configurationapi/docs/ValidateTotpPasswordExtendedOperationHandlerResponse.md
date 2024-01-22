@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Extended Operation Handler | 
 **Schemas** | [**[]EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn**](EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn.md) |  | 
 **SharedSecretAttributeType** | Pointer to **string** | The name or OID of the attribute that will be used to hold the shared secret key used during TOTP processing. | [optional] 
 **TimeIntervalDuration** | Pointer to **string** | The duration of the time interval used for TOTP processing. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Extended Operation Handler | 
 
 ## Methods
 
 ### NewValidateTotpPasswordExtendedOperationHandlerResponse
 
-`func NewValidateTotpPasswordExtendedOperationHandlerResponse(id string, schemas []EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn, enabled bool, ) *ValidateTotpPasswordExtendedOperationHandlerResponse`
+`func NewValidateTotpPasswordExtendedOperationHandlerResponse(schemas []EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn, enabled bool, id string, ) *ValidateTotpPasswordExtendedOperationHandlerResponse`
 
 NewValidateTotpPasswordExtendedOperationHandlerResponse instantiates a new ValidateTotpPasswordExtendedOperationHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewValidateTotpPasswordExtendedOperationHandlerResponseWithDefaults instantiates a new ValidateTotpPasswordExtendedOperationHandlerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -268,6 +248,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

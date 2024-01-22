@@ -1,14 +1,14 @@
-# \ConstructedAttributeApi
+# \ConstructedAttributeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddConstructedAttribute**](ConstructedAttributeApi.md#AddConstructedAttribute) | **Post** /constructed-attributes | Add a new Constructed Attribute to the config
-[**DeleteConstructedAttribute**](ConstructedAttributeApi.md#DeleteConstructedAttribute) | **Delete** /constructed-attributes/{constructed-attribute-name} | Delete a Constructed Attribute
-[**GetConstructedAttribute**](ConstructedAttributeApi.md#GetConstructedAttribute) | **Get** /constructed-attributes/{constructed-attribute-name} | Returns a single Constructed Attribute
-[**ListConstructedAttributes**](ConstructedAttributeApi.md#ListConstructedAttributes) | **Get** /constructed-attributes | Returns a list of all Constructed Attribute objects
-[**UpdateConstructedAttribute**](ConstructedAttributeApi.md#UpdateConstructedAttribute) | **Patch** /constructed-attributes/{constructed-attribute-name} | Update an existing Constructed Attribute by name
+[**AddConstructedAttribute**](ConstructedAttributeAPI.md#AddConstructedAttribute) | **Post** /constructed-attributes | Add a new Constructed Attribute to the config
+[**DeleteConstructedAttribute**](ConstructedAttributeAPI.md#DeleteConstructedAttribute) | **Delete** /constructed-attributes/{constructed-attribute-name} | Delete a Constructed Attribute
+[**GetConstructedAttribute**](ConstructedAttributeAPI.md#GetConstructedAttribute) | **Get** /constructed-attributes/{constructed-attribute-name} | Returns a single Constructed Attribute
+[**ListConstructedAttributes**](ConstructedAttributeAPI.md#ListConstructedAttributes) | **Get** /constructed-attributes | Returns a list of all Constructed Attribute objects
+[**UpdateConstructedAttribute**](ConstructedAttributeAPI.md#UpdateConstructedAttribute) | **Patch** /constructed-attributes/{constructed-attribute-name} | Update an existing Constructed Attribute by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addConstructedAttributeRequest := *openapiclient.NewAddConstructedAttributeRequest("AttributeName_example", "AttributeType_example", []string{"ValuePattern_example"}) // AddConstructedAttributeRequest | Create a new Constructed Attribute in the config
+    addConstructedAttributeRequest := *openapiclient.NewAddConstructedAttributeRequest("AttributeType_example", []string{"ValuePattern_example"}, "AttributeName_example") // AddConstructedAttributeRequest | Create a new Constructed Attribute in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConstructedAttributeApi.AddConstructedAttribute(context.Background()).AddConstructedAttributeRequest(addConstructedAttributeRequest).Execute()
+    resp, r, err := apiClient.ConstructedAttributeAPI.AddConstructedAttribute(context.Background()).AddConstructedAttributeRequest(addConstructedAttributeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeApi.AddConstructedAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeAPI.AddConstructedAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddConstructedAttribute`: ConstructedAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConstructedAttributeApi.AddConstructedAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConstructedAttributeAPI.AddConstructedAttribute`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConstructedAttributeApi.DeleteConstructedAttribute(context.Background(), constructedAttributeName).Execute()
+    r, err := apiClient.ConstructedAttributeAPI.DeleteConstructedAttribute(context.Background(), constructedAttributeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeApi.DeleteConstructedAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeAPI.DeleteConstructedAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConstructedAttributeApi.GetConstructedAttribute(context.Background(), constructedAttributeName).Execute()
+    resp, r, err := apiClient.ConstructedAttributeAPI.GetConstructedAttribute(context.Background(), constructedAttributeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeApi.GetConstructedAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeAPI.GetConstructedAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetConstructedAttribute`: ConstructedAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConstructedAttributeApi.GetConstructedAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConstructedAttributeAPI.GetConstructedAttribute`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConstructedAttributeApi.ListConstructedAttributes(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ConstructedAttributeAPI.ListConstructedAttributes(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeApi.ListConstructedAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeAPI.ListConstructedAttributes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListConstructedAttributes`: ConstructedAttributeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConstructedAttributeApi.ListConstructedAttributes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConstructedAttributeAPI.ListConstructedAttributes`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConstructedAttributeApi.UpdateConstructedAttribute(context.Background(), constructedAttributeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ConstructedAttributeAPI.UpdateConstructedAttribute(context.Background(), constructedAttributeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeApi.UpdateConstructedAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeAPI.UpdateConstructedAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateConstructedAttribute`: ConstructedAttributeResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConstructedAttributeApi.UpdateConstructedAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConstructedAttributeAPI.UpdateConstructedAttribute`: %v\n", resp)
 }
 ```
 

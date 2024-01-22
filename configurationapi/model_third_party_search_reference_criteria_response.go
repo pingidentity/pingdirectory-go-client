@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartySearchReferenceCriteriaResponse{}
 
 // ThirdPartySearchReferenceCriteriaResponse struct for ThirdPartySearchReferenceCriteriaResponse
 type ThirdPartySearchReferenceCriteriaResponse struct {
-	// Name of the Search Reference Criteria
-	Id      string                                           `json:"id"`
 	Schemas []EnumthirdPartySearchReferenceCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Search Reference Criteria.
 	ExtensionClass string `json:"extensionClass"`
@@ -30,17 +28,19 @@ type ThirdPartySearchReferenceCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Search Reference Criteria
+	Id string `json:"id"`
 }
 
 // NewThirdPartySearchReferenceCriteriaResponse instantiates a new ThirdPartySearchReferenceCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartySearchReferenceCriteriaResponse(id string, schemas []EnumthirdPartySearchReferenceCriteriaSchemaUrn, extensionClass string) *ThirdPartySearchReferenceCriteriaResponse {
+func NewThirdPartySearchReferenceCriteriaResponse(schemas []EnumthirdPartySearchReferenceCriteriaSchemaUrn, extensionClass string, id string) *ThirdPartySearchReferenceCriteriaResponse {
 	this := ThirdPartySearchReferenceCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.Id = id
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewThirdPartySearchReferenceCriteriaResponse(id string, schemas []Enumthird
 func NewThirdPartySearchReferenceCriteriaResponseWithDefaults() *ThirdPartySearchReferenceCriteriaResponse {
 	this := ThirdPartySearchReferenceCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartySearchReferenceCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartySearchReferenceCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartySearchReferenceCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -252,6 +228,30 @@ func (o *ThirdPartySearchReferenceCriteriaResponse) SetUrnpingidentityschemascon
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartySearchReferenceCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartySearchReferenceCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartySearchReferenceCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartySearchReferenceCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -262,7 +262,6 @@ func (o ThirdPartySearchReferenceCriteriaResponse) MarshalJSON() ([]byte, error)
 
 func (o ThirdPartySearchReferenceCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -277,6 +276,7 @@ func (o ThirdPartySearchReferenceCriteriaResponse) ToMap() (map[string]interface
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

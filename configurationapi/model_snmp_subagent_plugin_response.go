@@ -19,8 +19,6 @@ var _ MappedNullable = &SnmpSubagentPluginResponse{}
 
 // SnmpSubagentPluginResponse struct for SnmpSubagentPluginResponse
 type SnmpSubagentPluginResponse struct {
-	// Name of the Plugin
-	Id      string                            `json:"id"`
 	Schemas []EnumsnmpSubagentPluginSchemaUrn `json:"schemas"`
 	// The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name.
 	ContextName *string `json:"contextName,omitempty"`
@@ -44,19 +42,21 @@ type SnmpSubagentPluginResponse struct {
 	InvokeForInternalOperations                   *bool                                              `json:"invokeForInternalOperations,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewSnmpSubagentPluginResponse instantiates a new SnmpSubagentPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSnmpSubagentPluginResponse(id string, schemas []EnumsnmpSubagentPluginSchemaUrn, agentxAddress string, agentxPort int64, enabled bool) *SnmpSubagentPluginResponse {
+func NewSnmpSubagentPluginResponse(schemas []EnumsnmpSubagentPluginSchemaUrn, agentxAddress string, agentxPort int64, enabled bool, id string) *SnmpSubagentPluginResponse {
 	this := SnmpSubagentPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AgentxAddress = agentxAddress
 	this.AgentxPort = agentxPort
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -66,30 +66,6 @@ func NewSnmpSubagentPluginResponse(id string, schemas []EnumsnmpSubagentPluginSc
 func NewSnmpSubagentPluginResponseWithDefaults() *SnmpSubagentPluginResponse {
 	this := SnmpSubagentPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SnmpSubagentPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SnmpSubagentPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SnmpSubagentPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -476,6 +452,30 @@ func (o *SnmpSubagentPluginResponse) SetUrnpingidentityschemasconfigurationmessa
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SnmpSubagentPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SnmpSubagentPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SnmpSubagentPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SnmpSubagentPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -486,7 +486,6 @@ func (o SnmpSubagentPluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o SnmpSubagentPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ContextName) {
 		toSerialize["contextName"] = o.ContextName
@@ -518,6 +517,7 @@ func (o SnmpSubagentPluginResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

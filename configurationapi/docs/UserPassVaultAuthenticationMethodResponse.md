@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Vault Authentication Method | 
 **Schemas** | [**[]EnumuserPassVaultAuthenticationMethodSchemaUrn**](EnumuserPassVaultAuthenticationMethodSchemaUrn.md) |  | 
 **Username** | **string** | The username for the user to authenticate. | 
 **Password** | **string** | The password for the user to authenticate. | 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Vault Authentication Method | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Vault Authentication Method | 
 
 ## Methods
 
 ### NewUserPassVaultAuthenticationMethodResponse
 
-`func NewUserPassVaultAuthenticationMethodResponse(id string, schemas []EnumuserPassVaultAuthenticationMethodSchemaUrn, username string, password string, ) *UserPassVaultAuthenticationMethodResponse`
+`func NewUserPassVaultAuthenticationMethodResponse(schemas []EnumuserPassVaultAuthenticationMethodSchemaUrn, username string, password string, id string, ) *UserPassVaultAuthenticationMethodResponse`
 
 NewUserPassVaultAuthenticationMethodResponse instantiates a new UserPassVaultAuthenticationMethodResponse object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewUserPassVaultAuthenticationMethodResponseWithDefaults instantiates a new UserPassVaultAuthenticationMethodResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *UserPassVaultAuthenticationMethodResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *UserPassVaultAuthenticationMethodResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *UserPassVaultAuthenticationMethodResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -211,6 +191,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *UserPassVaultAuthenticationMethodResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *UserPassVaultAuthenticationMethodResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *UserPassVaultAuthenticationMethodResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *UserPassVaultAuthenticationMethodResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

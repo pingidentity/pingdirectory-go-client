@@ -19,8 +19,6 @@ var _ MappedNullable = &MockAccessTokenValidatorResponse{}
 
 // MockAccessTokenValidatorResponse struct for MockAccessTokenValidatorResponse
 type MockAccessTokenValidatorResponse struct {
-	// Name of the Access Token Validator
-	Id      string                                  `json:"id"`
 	Schemas []EnummockAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The name of the token claim that contains the OAuth2 client ID.
 	ClientIDClaimName *string `json:"clientIDClaimName,omitempty"`
@@ -38,18 +36,20 @@ type MockAccessTokenValidatorResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Access Token Validator
+	Id string `json:"id"`
 }
 
 // NewMockAccessTokenValidatorResponse instantiates a new MockAccessTokenValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMockAccessTokenValidatorResponse(id string, schemas []EnummockAccessTokenValidatorSchemaUrn, evaluationOrderIndex int64, enabled bool) *MockAccessTokenValidatorResponse {
+func NewMockAccessTokenValidatorResponse(schemas []EnummockAccessTokenValidatorSchemaUrn, evaluationOrderIndex int64, enabled bool, id string) *MockAccessTokenValidatorResponse {
 	this := MockAccessTokenValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewMockAccessTokenValidatorResponse(id string, schemas []EnummockAccessToke
 func NewMockAccessTokenValidatorResponseWithDefaults() *MockAccessTokenValidatorResponse {
 	this := MockAccessTokenValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *MockAccessTokenValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *MockAccessTokenValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *MockAccessTokenValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -381,6 +357,30 @@ func (o *MockAccessTokenValidatorResponse) SetUrnpingidentityschemasconfiguratio
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *MockAccessTokenValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *MockAccessTokenValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *MockAccessTokenValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o MockAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -391,7 +391,6 @@ func (o MockAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o MockAccessTokenValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ClientIDClaimName) {
 		toSerialize["clientIDClaimName"] = o.ClientIDClaimName
@@ -416,6 +415,7 @@ func (o MockAccessTokenValidatorResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

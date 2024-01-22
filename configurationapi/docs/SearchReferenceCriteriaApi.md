@@ -1,14 +1,14 @@
-# \SearchReferenceCriteriaApi
+# \SearchReferenceCriteriaAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddSearchReferenceCriteria**](SearchReferenceCriteriaApi.md#AddSearchReferenceCriteria) | **Post** /search-reference-criteria | Add a new Search Reference Criteria to the config
-[**DeleteSearchReferenceCriteria**](SearchReferenceCriteriaApi.md#DeleteSearchReferenceCriteria) | **Delete** /search-reference-criteria/{search-reference-criteria-name} | Delete a Search Reference Criteria
-[**GetSearchReferenceCriteria**](SearchReferenceCriteriaApi.md#GetSearchReferenceCriteria) | **Get** /search-reference-criteria/{search-reference-criteria-name} | Returns a single Search Reference Criteria
-[**ListSearchReferenceCriteria**](SearchReferenceCriteriaApi.md#ListSearchReferenceCriteria) | **Get** /search-reference-criteria | Returns a list of all Search Reference Criteria objects
-[**UpdateSearchReferenceCriteria**](SearchReferenceCriteriaApi.md#UpdateSearchReferenceCriteria) | **Patch** /search-reference-criteria/{search-reference-criteria-name} | Update an existing Search Reference Criteria by name
+[**AddSearchReferenceCriteria**](SearchReferenceCriteriaAPI.md#AddSearchReferenceCriteria) | **Post** /search-reference-criteria | Add a new Search Reference Criteria to the config
+[**DeleteSearchReferenceCriteria**](SearchReferenceCriteriaAPI.md#DeleteSearchReferenceCriteria) | **Delete** /search-reference-criteria/{search-reference-criteria-name} | Delete a Search Reference Criteria
+[**GetSearchReferenceCriteria**](SearchReferenceCriteriaAPI.md#GetSearchReferenceCriteria) | **Get** /search-reference-criteria/{search-reference-criteria-name} | Returns a single Search Reference Criteria
+[**ListSearchReferenceCriteria**](SearchReferenceCriteriaAPI.md#ListSearchReferenceCriteria) | **Get** /search-reference-criteria | Returns a list of all Search Reference Criteria objects
+[**UpdateSearchReferenceCriteria**](SearchReferenceCriteriaAPI.md#UpdateSearchReferenceCriteria) | **Patch** /search-reference-criteria/{search-reference-criteria-name} | Update an existing Search Reference Criteria by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addSearchReferenceCriteriaRequest := openapiclient.add_search_reference_criteria_request{AddAggregateSearchReferenceCriteriaRequest: openapiclient.NewAddAggregateSearchReferenceCriteriaRequest("CriteriaName_example", []openapiclient.EnumaggregateSearchReferenceCriteriaSchemaUrn{openapiclient.Enumaggregate-search-reference-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:aggregate")})} // AddSearchReferenceCriteriaRequest | Create a new Search Reference Criteria in the config
+    addSearchReferenceCriteriaRequest := openapiclient.add_search_reference_criteria_request{AddAggregateSearchReferenceCriteriaRequest: openapiclient.NewAddAggregateSearchReferenceCriteriaRequest([]openapiclient.EnumaggregateSearchReferenceCriteriaSchemaUrn{openapiclient.Enumaggregate-search-reference-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:aggregate")}, "CriteriaName_example")} // AddSearchReferenceCriteriaRequest | Create a new Search Reference Criteria in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchReferenceCriteriaApi.AddSearchReferenceCriteria(context.Background()).AddSearchReferenceCriteriaRequest(addSearchReferenceCriteriaRequest).Execute()
+    resp, r, err := apiClient.SearchReferenceCriteriaAPI.AddSearchReferenceCriteria(context.Background()).AddSearchReferenceCriteriaRequest(addSearchReferenceCriteriaRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaApi.AddSearchReferenceCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaAPI.AddSearchReferenceCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddSearchReferenceCriteria`: AddSearchReferenceCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `SearchReferenceCriteriaApi.AddSearchReferenceCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SearchReferenceCriteriaAPI.AddSearchReferenceCriteria`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SearchReferenceCriteriaApi.DeleteSearchReferenceCriteria(context.Background(), searchReferenceCriteriaName).Execute()
+    r, err := apiClient.SearchReferenceCriteriaAPI.DeleteSearchReferenceCriteria(context.Background(), searchReferenceCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaApi.DeleteSearchReferenceCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaAPI.DeleteSearchReferenceCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchReferenceCriteriaApi.GetSearchReferenceCriteria(context.Background(), searchReferenceCriteriaName).Execute()
+    resp, r, err := apiClient.SearchReferenceCriteriaAPI.GetSearchReferenceCriteria(context.Background(), searchReferenceCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaApi.GetSearchReferenceCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaAPI.GetSearchReferenceCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSearchReferenceCriteria`: AddSearchReferenceCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `SearchReferenceCriteriaApi.GetSearchReferenceCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SearchReferenceCriteriaAPI.GetSearchReferenceCriteria`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchReferenceCriteriaApi.ListSearchReferenceCriteria(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.SearchReferenceCriteriaAPI.ListSearchReferenceCriteria(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaApi.ListSearchReferenceCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaAPI.ListSearchReferenceCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListSearchReferenceCriteria`: SearchReferenceCriteriaListResponse
-    fmt.Fprintf(os.Stdout, "Response from `SearchReferenceCriteriaApi.ListSearchReferenceCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SearchReferenceCriteriaAPI.ListSearchReferenceCriteria`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchReferenceCriteriaApi.UpdateSearchReferenceCriteria(context.Background(), searchReferenceCriteriaName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.SearchReferenceCriteriaAPI.UpdateSearchReferenceCriteria(context.Background(), searchReferenceCriteriaName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaApi.UpdateSearchReferenceCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchReferenceCriteriaAPI.UpdateSearchReferenceCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSearchReferenceCriteria`: AddSearchReferenceCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `SearchReferenceCriteriaApi.UpdateSearchReferenceCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SearchReferenceCriteriaAPI.UpdateSearchReferenceCriteria`: %v\n", resp)
 }
 ```
 

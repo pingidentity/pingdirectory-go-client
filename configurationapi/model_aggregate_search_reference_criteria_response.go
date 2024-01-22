@@ -19,8 +19,6 @@ var _ MappedNullable = &AggregateSearchReferenceCriteriaResponse{}
 
 // AggregateSearchReferenceCriteriaResponse struct for AggregateSearchReferenceCriteriaResponse
 type AggregateSearchReferenceCriteriaResponse struct {
-	// Name of the Search Reference Criteria
-	Id      string                                          `json:"id"`
 	Schemas []EnumaggregateSearchReferenceCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a search reference criteria object that must match the associated search result reference in order to match the aggregate search reference criteria. If one or more all-included search reference criteria objects are provided, then a search result reference must match all of them in order to match the aggregate search reference criteria.
 	AllIncludedSearchReferenceCriteria []string `json:"allIncludedSearchReferenceCriteria,omitempty"`
@@ -34,16 +32,18 @@ type AggregateSearchReferenceCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Search Reference Criteria
+	Id string `json:"id"`
 }
 
 // NewAggregateSearchReferenceCriteriaResponse instantiates a new AggregateSearchReferenceCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAggregateSearchReferenceCriteriaResponse(id string, schemas []EnumaggregateSearchReferenceCriteriaSchemaUrn) *AggregateSearchReferenceCriteriaResponse {
+func NewAggregateSearchReferenceCriteriaResponse(schemas []EnumaggregateSearchReferenceCriteriaSchemaUrn, id string) *AggregateSearchReferenceCriteriaResponse {
 	this := AggregateSearchReferenceCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAggregateSearchReferenceCriteriaResponse(id string, schemas []Enumaggreg
 func NewAggregateSearchReferenceCriteriaResponseWithDefaults() *AggregateSearchReferenceCriteriaResponse {
 	this := AggregateSearchReferenceCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AggregateSearchReferenceCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AggregateSearchReferenceCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AggregateSearchReferenceCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -327,6 +303,30 @@ func (o *AggregateSearchReferenceCriteriaResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AggregateSearchReferenceCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AggregateSearchReferenceCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AggregateSearchReferenceCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AggregateSearchReferenceCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -337,7 +337,6 @@ func (o AggregateSearchReferenceCriteriaResponse) MarshalJSON() ([]byte, error) 
 
 func (o AggregateSearchReferenceCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllIncludedSearchReferenceCriteria) {
 		toSerialize["allIncludedSearchReferenceCriteria"] = o.AllIncludedSearchReferenceCriteria
@@ -360,6 +359,7 @@ func (o AggregateSearchReferenceCriteriaResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

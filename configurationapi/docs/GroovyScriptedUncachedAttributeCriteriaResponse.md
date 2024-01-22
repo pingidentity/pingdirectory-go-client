@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Uncached Attribute Criteria | 
 **Schemas** | [**[]EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn**](EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Uncached Attribute Criteria. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether this Uncached Attribute Criteria is enabled for use in the server. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Uncached Attribute Criteria | 
 
 ## Methods
 
 ### NewGroovyScriptedUncachedAttributeCriteriaResponse
 
-`func NewGroovyScriptedUncachedAttributeCriteriaResponse(id string, schemas []EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn, scriptClass string, enabled bool, ) *GroovyScriptedUncachedAttributeCriteriaResponse`
+`func NewGroovyScriptedUncachedAttributeCriteriaResponse(schemas []EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn, scriptClass string, enabled bool, id string, ) *GroovyScriptedUncachedAttributeCriteriaResponse`
 
 NewGroovyScriptedUncachedAttributeCriteriaResponse instantiates a new GroovyScriptedUncachedAttributeCriteriaResponse object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewGroovyScriptedUncachedAttributeCriteriaResponseWithDefaults instantiates a new GroovyScriptedUncachedAttributeCriteriaResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GroovyScriptedUncachedAttributeCriteriaResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -211,6 +191,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *GroovyScriptedUncachedAttributeCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *GroovyScriptedUncachedAttributeCriteriaResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

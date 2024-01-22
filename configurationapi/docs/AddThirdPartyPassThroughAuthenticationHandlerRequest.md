@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Pass Through Authentication Handler | 
 **Schemas** | [**[]EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn**](EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Pass Through Authentication Handler. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Pass Through Authentication Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to the external authentication service. | [optional] 
 **ConnectionCriteria** | Pointer to **string** | A reference to connection criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
 **RequestCriteria** | Pointer to **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
+**HandlerName** | **string** | Name of the new Pass Through Authentication Handler | 
 
 ## Methods
 
 ### NewAddThirdPartyPassThroughAuthenticationHandlerRequest
 
-`func NewAddThirdPartyPassThroughAuthenticationHandlerRequest(handlerName string, schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, extensionClass string, ) *AddThirdPartyPassThroughAuthenticationHandlerRequest`
+`func NewAddThirdPartyPassThroughAuthenticationHandlerRequest(schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, extensionClass string, handlerName string, ) *AddThirdPartyPassThroughAuthenticationHandlerRequest`
 
 NewAddThirdPartyPassThroughAuthenticationHandlerRequest instantiates a new AddThirdPartyPassThroughAuthenticationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyPassThroughAuthenticationHandlerRequestWithDefaults instantiates a new AddThirdPartyPassThroughAuthenticationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -216,6 +196,26 @@ SetRequestCriteria sets RequestCriteria field to given value.
 `func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) HasRequestCriteria() bool`
 
 HasRequestCriteria returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

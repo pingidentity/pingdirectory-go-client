@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// DnMapApiService DnMapApi service
-type DnMapApiService service
+// DnMapAPIService DnMapAPI service
+type DnMapAPIService service
 
 type ApiAddDnMapRequest struct {
 	ctx             context.Context
-	ApiService      *DnMapApiService
+	ApiService      *DnMapAPIService
 	addDnMapRequest *AddDnMapRequest
 }
 
@@ -44,7 +44,7 @@ AddDnMap Add a new DN Map to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddDnMapRequest
 */
-func (a *DnMapApiService) AddDnMap(ctx context.Context) ApiAddDnMapRequest {
+func (a *DnMapAPIService) AddDnMap(ctx context.Context) ApiAddDnMapRequest {
 	return ApiAddDnMapRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *DnMapApiService) AddDnMap(ctx context.Context) ApiAddDnMapRequest {
 // Execute executes the request
 //
 //	@return DnMapResponse
-func (a *DnMapApiService) AddDnMapExecute(r ApiAddDnMapRequest) (*DnMapResponse, *http.Response, error) {
+func (a *DnMapAPIService) AddDnMapExecute(r ApiAddDnMapRequest) (*DnMapResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *DnMapApiService) AddDnMapExecute(r ApiAddDnMapRequest) (*DnMapResponse,
 		localVarReturnValue *DnMapResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapApiService.AddDnMap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapAPIService.AddDnMap")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *DnMapApiService) AddDnMapExecute(r ApiAddDnMapRequest) (*DnMapResponse,
 
 type ApiDeleteDnMapRequest struct {
 	ctx        context.Context
-	ApiService *DnMapApiService
+	ApiService *DnMapAPIService
 	dnMapName  string
 }
 
@@ -149,7 +149,7 @@ DeleteDnMap Delete a DN Map
 	@param dnMapName Name of the DN Map
 	@return ApiDeleteDnMapRequest
 */
-func (a *DnMapApiService) DeleteDnMap(ctx context.Context, dnMapName string) ApiDeleteDnMapRequest {
+func (a *DnMapAPIService) DeleteDnMap(ctx context.Context, dnMapName string) ApiDeleteDnMapRequest {
 	return ApiDeleteDnMapRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -158,14 +158,14 @@ func (a *DnMapApiService) DeleteDnMap(ctx context.Context, dnMapName string) Api
 }
 
 // Execute executes the request
-func (a *DnMapApiService) DeleteDnMapExecute(r ApiDeleteDnMapRequest) (*http.Response, error) {
+func (a *DnMapAPIService) DeleteDnMapExecute(r ApiDeleteDnMapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapApiService.DeleteDnMap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapAPIService.DeleteDnMap")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *DnMapApiService) DeleteDnMapExecute(r ApiDeleteDnMapRequest) (*http.Res
 
 type ApiGetDnMapRequest struct {
 	ctx        context.Context
-	ApiService *DnMapApiService
+	ApiService *DnMapAPIService
 	dnMapName  string
 }
 
@@ -239,7 +239,7 @@ GetDnMap Returns a single DN Map
 	@param dnMapName Name of the DN Map
 	@return ApiGetDnMapRequest
 */
-func (a *DnMapApiService) GetDnMap(ctx context.Context, dnMapName string) ApiGetDnMapRequest {
+func (a *DnMapAPIService) GetDnMap(ctx context.Context, dnMapName string) ApiGetDnMapRequest {
 	return ApiGetDnMapRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -250,7 +250,7 @@ func (a *DnMapApiService) GetDnMap(ctx context.Context, dnMapName string) ApiGet
 // Execute executes the request
 //
 //	@return DnMapResponse
-func (a *DnMapApiService) GetDnMapExecute(r ApiGetDnMapRequest) (*DnMapResponse, *http.Response, error) {
+func (a *DnMapAPIService) GetDnMapExecute(r ApiGetDnMapRequest) (*DnMapResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *DnMapApiService) GetDnMapExecute(r ApiGetDnMapRequest) (*DnMapResponse,
 		localVarReturnValue *DnMapResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapApiService.GetDnMap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapAPIService.GetDnMap")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *DnMapApiService) GetDnMapExecute(r ApiGetDnMapRequest) (*DnMapResponse,
 
 type ApiListDnMapsRequest struct {
 	ctx        context.Context
-	ApiService *DnMapApiService
+	ApiService *DnMapAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListDnMaps Returns a list of all DN Map objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListDnMapsRequest
 */
-func (a *DnMapApiService) ListDnMaps(ctx context.Context) ApiListDnMapsRequest {
+func (a *DnMapAPIService) ListDnMaps(ctx context.Context) ApiListDnMapsRequest {
 	return ApiListDnMapsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *DnMapApiService) ListDnMaps(ctx context.Context) ApiListDnMapsRequest {
 // Execute executes the request
 //
 //	@return DnMapListResponse
-func (a *DnMapApiService) ListDnMapsExecute(r ApiListDnMapsRequest) (*DnMapListResponse, *http.Response, error) {
+func (a *DnMapAPIService) ListDnMapsExecute(r ApiListDnMapsRequest) (*DnMapListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *DnMapApiService) ListDnMapsExecute(r ApiListDnMapsRequest) (*DnMapListR
 		localVarReturnValue *DnMapListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapApiService.ListDnMaps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapAPIService.ListDnMaps")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *DnMapApiService) ListDnMapsExecute(r ApiListDnMapsRequest) (*DnMapListR
 
 type ApiUpdateDnMapRequest struct {
 	ctx           context.Context
-	ApiService    *DnMapApiService
+	ApiService    *DnMapAPIService
 	dnMapName     string
 	updateRequest *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateDnMap Update an existing DN Map by name
 	@param dnMapName Name of the DN Map
 	@return ApiUpdateDnMapRequest
 */
-func (a *DnMapApiService) UpdateDnMap(ctx context.Context, dnMapName string) ApiUpdateDnMapRequest {
+func (a *DnMapAPIService) UpdateDnMap(ctx context.Context, dnMapName string) ApiUpdateDnMapRequest {
 	return ApiUpdateDnMapRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -467,7 +467,7 @@ func (a *DnMapApiService) UpdateDnMap(ctx context.Context, dnMapName string) Api
 // Execute executes the request
 //
 //	@return DnMapResponse
-func (a *DnMapApiService) UpdateDnMapExecute(r ApiUpdateDnMapRequest) (*DnMapResponse, *http.Response, error) {
+func (a *DnMapAPIService) UpdateDnMapExecute(r ApiUpdateDnMapRequest) (*DnMapResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *DnMapApiService) UpdateDnMapExecute(r ApiUpdateDnMapRequest) (*DnMapRes
 		localVarReturnValue *DnMapResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapApiService.UpdateDnMap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DnMapAPIService.UpdateDnMap")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

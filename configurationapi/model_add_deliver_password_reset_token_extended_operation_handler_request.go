@@ -19,9 +19,7 @@ var _ MappedNullable = &AddDeliverPasswordResetTokenExtendedOperationHandlerRequ
 
 // AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct for AddDeliverPasswordResetTokenExtendedOperationHandlerRequest
 type AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct {
-	// Name of the new Extended Operation Handler
-	HandlerName string                                                           `json:"handlerName"`
-	Schemas     []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The password generator that will be used to create the password reset token values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
 	// The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms.
@@ -32,19 +30,21 @@ type AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
 	Enabled bool `json:"enabled"`
+	// Name of the new Extended Operation Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest instantiates a new AddDeliverPasswordResetTokenExtendedOperationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest(handlerName string, schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, enabled bool) *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest {
+func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest(schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, enabled bool, handlerName string) *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest {
 	this := AddDeliverPasswordResetTokenExtendedOperationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.PasswordGenerator = passwordGenerator
 	this.DefaultTokenDeliveryMechanism = defaultTokenDeliveryMechanism
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest(handlerName 
 func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequestWithDefaults() *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest {
 	this := AddDeliverPasswordResetTokenExtendedOperationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -240,6 +216,30 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetEnabled
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -250,7 +250,6 @@ func (o AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) MarshalJSON
 
 func (o AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["passwordGenerator"] = o.PasswordGenerator
 	toSerialize["defaultTokenDeliveryMechanism"] = o.DefaultTokenDeliveryMechanism
@@ -261,6 +260,7 @@ func (o AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) ToMap() (ma
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

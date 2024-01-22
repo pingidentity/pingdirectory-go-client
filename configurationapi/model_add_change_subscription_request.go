@@ -19,9 +19,7 @@ var _ MappedNullable = &AddChangeSubscriptionRequest{}
 
 // AddChangeSubscriptionRequest struct for AddChangeSubscriptionRequest
 type AddChangeSubscriptionRequest struct {
-	// Name of the new Change Subscription
-	SubscriptionName string                            `json:"subscriptionName"`
-	Schemas          []EnumchangeSubscriptionSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumchangeSubscriptionSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Change Subscription
 	Description *string `json:"description,omitempty"`
 	// Specifies a set of connection criteria that must match the client connection associated with an operation in order for that operation to be processed by a change subscription handler.
@@ -32,6 +30,8 @@ type AddChangeSubscriptionRequest struct {
 	ResultCriteria *string `json:"resultCriteria,omitempty"`
 	// Specifies a timestamp that provides an expiration time for this change subscription. If an expiration time is provided, then the change subscription will not be active after that time has passed.
 	ExpirationTime *string `json:"expirationTime,omitempty"`
+	// Name of the new Change Subscription
+	SubscriptionName string `json:"subscriptionName"`
 }
 
 // NewAddChangeSubscriptionRequest instantiates a new AddChangeSubscriptionRequest object
@@ -50,30 +50,6 @@ func NewAddChangeSubscriptionRequest(subscriptionName string) *AddChangeSubscrip
 func NewAddChangeSubscriptionRequestWithDefaults() *AddChangeSubscriptionRequest {
 	this := AddChangeSubscriptionRequest{}
 	return &this
-}
-
-// GetSubscriptionName returns the SubscriptionName field value
-func (o *AddChangeSubscriptionRequest) GetSubscriptionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SubscriptionName
-}
-
-// GetSubscriptionNameOk returns a tuple with the SubscriptionName field value
-// and a boolean to check if the value has been set.
-func (o *AddChangeSubscriptionRequest) GetSubscriptionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SubscriptionName, true
-}
-
-// SetSubscriptionName sets field value
-func (o *AddChangeSubscriptionRequest) SetSubscriptionName(v string) {
-	o.SubscriptionName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -268,6 +244,30 @@ func (o *AddChangeSubscriptionRequest) SetExpirationTime(v string) {
 	o.ExpirationTime = &v
 }
 
+// GetSubscriptionName returns the SubscriptionName field value
+func (o *AddChangeSubscriptionRequest) GetSubscriptionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SubscriptionName
+}
+
+// GetSubscriptionNameOk returns a tuple with the SubscriptionName field value
+// and a boolean to check if the value has been set.
+func (o *AddChangeSubscriptionRequest) GetSubscriptionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SubscriptionName, true
+}
+
+// SetSubscriptionName sets field value
+func (o *AddChangeSubscriptionRequest) SetSubscriptionName(v string) {
+	o.SubscriptionName = v
+}
+
 func (o AddChangeSubscriptionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -278,7 +278,6 @@ func (o AddChangeSubscriptionRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddChangeSubscriptionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["subscriptionName"] = o.SubscriptionName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -297,6 +296,7 @@ func (o AddChangeSubscriptionRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExpirationTime) {
 		toSerialize["expirationTime"] = o.ExpirationTime
 	}
+	toSerialize["subscriptionName"] = o.SubscriptionName
 	return toSerialize, nil
 }
 

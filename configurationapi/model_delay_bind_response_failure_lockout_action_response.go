@@ -19,8 +19,6 @@ var _ MappedNullable = &DelayBindResponseFailureLockoutActionResponse{}
 
 // DelayBindResponseFailureLockoutActionResponse struct for DelayBindResponseFailureLockoutActionResponse
 type DelayBindResponseFailureLockoutActionResponse struct {
-	// Name of the Failure Lockout Action
-	Id      string                                               `json:"id"`
 	Schemas []EnumdelayBindResponseFailureLockoutActionSchemaUrn `json:"schemas"`
 	// The length of time to delay the bind response for accounts with too many failed authentication attempts.
 	Delay string `json:"delay"`
@@ -32,17 +30,19 @@ type DelayBindResponseFailureLockoutActionResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Failure Lockout Action
+	Id string `json:"id"`
 }
 
 // NewDelayBindResponseFailureLockoutActionResponse instantiates a new DelayBindResponseFailureLockoutActionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelayBindResponseFailureLockoutActionResponse(id string, schemas []EnumdelayBindResponseFailureLockoutActionSchemaUrn, delay string) *DelayBindResponseFailureLockoutActionResponse {
+func NewDelayBindResponseFailureLockoutActionResponse(schemas []EnumdelayBindResponseFailureLockoutActionSchemaUrn, delay string, id string) *DelayBindResponseFailureLockoutActionResponse {
 	this := DelayBindResponseFailureLockoutActionResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Delay = delay
+	this.Id = id
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewDelayBindResponseFailureLockoutActionResponse(id string, schemas []Enumd
 func NewDelayBindResponseFailureLockoutActionResponseWithDefaults() *DelayBindResponseFailureLockoutActionResponse {
 	this := DelayBindResponseFailureLockoutActionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DelayBindResponseFailureLockoutActionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DelayBindResponseFailureLockoutActionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DelayBindResponseFailureLockoutActionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -286,6 +262,30 @@ func (o *DelayBindResponseFailureLockoutActionResponse) SetUrnpingidentityschema
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DelayBindResponseFailureLockoutActionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DelayBindResponseFailureLockoutActionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DelayBindResponseFailureLockoutActionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DelayBindResponseFailureLockoutActionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -296,7 +296,6 @@ func (o DelayBindResponseFailureLockoutActionResponse) MarshalJSON() ([]byte, er
 
 func (o DelayBindResponseFailureLockoutActionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["delay"] = o.Delay
 	if !IsNil(o.AllowBlockingDelay) {
@@ -314,6 +313,7 @@ func (o DelayBindResponseFailureLockoutActionResponse) ToMap() (map[string]inter
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

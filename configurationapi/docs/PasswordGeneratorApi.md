@@ -1,14 +1,14 @@
-# \PasswordGeneratorApi
+# \PasswordGeneratorAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPasswordGenerator**](PasswordGeneratorApi.md#AddPasswordGenerator) | **Post** /password-generators | Add a new Password Generator to the config
-[**DeletePasswordGenerator**](PasswordGeneratorApi.md#DeletePasswordGenerator) | **Delete** /password-generators/{password-generator-name} | Delete a Password Generator
-[**GetPasswordGenerator**](PasswordGeneratorApi.md#GetPasswordGenerator) | **Get** /password-generators/{password-generator-name} | Returns a single Password Generator
-[**ListPasswordGenerators**](PasswordGeneratorApi.md#ListPasswordGenerators) | **Get** /password-generators | Returns a list of all Password Generator objects
-[**UpdatePasswordGenerator**](PasswordGeneratorApi.md#UpdatePasswordGenerator) | **Patch** /password-generators/{password-generator-name} | Update an existing Password Generator by name
+[**AddPasswordGenerator**](PasswordGeneratorAPI.md#AddPasswordGenerator) | **Post** /password-generators | Add a new Password Generator to the config
+[**DeletePasswordGenerator**](PasswordGeneratorAPI.md#DeletePasswordGenerator) | **Delete** /password-generators/{password-generator-name} | Delete a Password Generator
+[**GetPasswordGenerator**](PasswordGeneratorAPI.md#GetPasswordGenerator) | **Get** /password-generators/{password-generator-name} | Returns a single Password Generator
+[**ListPasswordGenerators**](PasswordGeneratorAPI.md#ListPasswordGenerators) | **Get** /password-generators | Returns a list of all Password Generator objects
+[**UpdatePasswordGenerator**](PasswordGeneratorAPI.md#UpdatePasswordGenerator) | **Patch** /password-generators/{password-generator-name} | Update an existing Password Generator by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addPasswordGeneratorRequest := openapiclient.add_password_generator_request{AddGroovyScriptedPasswordGeneratorRequest: openapiclient.NewAddGroovyScriptedPasswordGeneratorRequest("GeneratorName_example", []openapiclient.EnumgroovyScriptedPasswordGeneratorSchemaUrn{openapiclient.Enumgroovy-scripted-password-generatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:password-generator:groovy-scripted")}, "ScriptClass_example", false)} // AddPasswordGeneratorRequest | Create a new Password Generator in the config
+    addPasswordGeneratorRequest := openapiclient.add_password_generator_request{AddGroovyScriptedPasswordGeneratorRequest: openapiclient.NewAddGroovyScriptedPasswordGeneratorRequest([]openapiclient.EnumgroovyScriptedPasswordGeneratorSchemaUrn{openapiclient.Enumgroovy-scripted-password-generatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:password-generator:groovy-scripted")}, "ScriptClass_example", false, "GeneratorName_example")} // AddPasswordGeneratorRequest | Create a new Password Generator in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordGeneratorApi.AddPasswordGenerator(context.Background()).AddPasswordGeneratorRequest(addPasswordGeneratorRequest).Execute()
+    resp, r, err := apiClient.PasswordGeneratorAPI.AddPasswordGenerator(context.Background()).AddPasswordGeneratorRequest(addPasswordGeneratorRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorApi.AddPasswordGenerator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorAPI.AddPasswordGenerator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddPasswordGenerator`: AddPasswordGenerator200Response
-    fmt.Fprintf(os.Stdout, "Response from `PasswordGeneratorApi.AddPasswordGenerator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordGeneratorAPI.AddPasswordGenerator`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PasswordGeneratorApi.DeletePasswordGenerator(context.Background(), passwordGeneratorName).Execute()
+    r, err := apiClient.PasswordGeneratorAPI.DeletePasswordGenerator(context.Background(), passwordGeneratorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorApi.DeletePasswordGenerator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorAPI.DeletePasswordGenerator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordGeneratorApi.GetPasswordGenerator(context.Background(), passwordGeneratorName).Execute()
+    resp, r, err := apiClient.PasswordGeneratorAPI.GetPasswordGenerator(context.Background(), passwordGeneratorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorApi.GetPasswordGenerator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorAPI.GetPasswordGenerator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPasswordGenerator`: AddPasswordGenerator200Response
-    fmt.Fprintf(os.Stdout, "Response from `PasswordGeneratorApi.GetPasswordGenerator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordGeneratorAPI.GetPasswordGenerator`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordGeneratorApi.ListPasswordGenerators(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.PasswordGeneratorAPI.ListPasswordGenerators(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorApi.ListPasswordGenerators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorAPI.ListPasswordGenerators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPasswordGenerators`: PasswordGeneratorListResponse
-    fmt.Fprintf(os.Stdout, "Response from `PasswordGeneratorApi.ListPasswordGenerators`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordGeneratorAPI.ListPasswordGenerators`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordGeneratorApi.UpdatePasswordGenerator(context.Background(), passwordGeneratorName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.PasswordGeneratorAPI.UpdatePasswordGenerator(context.Background(), passwordGeneratorName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorApi.UpdatePasswordGenerator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorAPI.UpdatePasswordGenerator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePasswordGenerator`: AddPasswordGenerator200Response
-    fmt.Fprintf(os.Stdout, "Response from `PasswordGeneratorApi.UpdatePasswordGenerator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordGeneratorAPI.UpdatePasswordGenerator`: %v\n", resp)
 }
 ```
 

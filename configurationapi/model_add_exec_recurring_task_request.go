@@ -19,9 +19,7 @@ var _ MappedNullable = &AddExecRecurringTaskRequest{}
 
 // AddExecRecurringTaskRequest struct for AddExecRecurringTaskRequest
 type AddExecRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                           `json:"taskName"`
-	Schemas  []EnumexecRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumexecRecurringTaskSchemaUrn `json:"schemas"`
 	// The absolute path to the command to execute. It must be an absolute path, the corresponding file must exist, and it must be listed in the config/exec-command-whitelist.txt file.
 	CommandPath string `json:"commandPath"`
 	// A string containing the arguments to provide to the command. If the command should be run without arguments, this property should be left undefined. If there should be multiple arguments, then they should be separated with spaces.
@@ -53,17 +51,19 @@ type AddExecRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddExecRecurringTaskRequest instantiates a new AddExecRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddExecRecurringTaskRequest(taskName string, schemas []EnumexecRecurringTaskSchemaUrn, commandPath string) *AddExecRecurringTaskRequest {
+func NewAddExecRecurringTaskRequest(schemas []EnumexecRecurringTaskSchemaUrn, commandPath string, taskName string) *AddExecRecurringTaskRequest {
 	this := AddExecRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
 	this.CommandPath = commandPath
+	this.TaskName = taskName
 	return &this
 }
 
@@ -73,30 +73,6 @@ func NewAddExecRecurringTaskRequest(taskName string, schemas []EnumexecRecurring
 func NewAddExecRecurringTaskRequestWithDefaults() *AddExecRecurringTaskRequest {
 	this := AddExecRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddExecRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddExecRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddExecRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -627,6 +603,30 @@ func (o *AddExecRecurringTaskRequest) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddExecRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddExecRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddExecRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddExecRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -637,7 +637,6 @@ func (o AddExecRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddExecRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["commandPath"] = o.CommandPath
 	if !IsNil(o.CommandArguments) {
@@ -685,6 +684,7 @@ func (o AddExecRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// CustomLoggedStatsApiService CustomLoggedStatsApi service
-type CustomLoggedStatsApiService service
+// CustomLoggedStatsAPIService CustomLoggedStatsAPI service
+type CustomLoggedStatsAPIService service
 
 type ApiAddCustomLoggedStatsRequest struct {
 	ctx                         context.Context
-	ApiService                  *CustomLoggedStatsApiService
+	ApiService                  *CustomLoggedStatsAPIService
 	pluginName                  string
 	addCustomLoggedStatsRequest *AddCustomLoggedStatsRequest
 }
@@ -46,7 +46,7 @@ AddCustomLoggedStats Add a new Custom Logged Stats to the config
 	@param pluginName Name of the Plugin
 	@return ApiAddCustomLoggedStatsRequest
 */
-func (a *CustomLoggedStatsApiService) AddCustomLoggedStats(ctx context.Context, pluginName string) ApiAddCustomLoggedStatsRequest {
+func (a *CustomLoggedStatsAPIService) AddCustomLoggedStats(ctx context.Context, pluginName string) ApiAddCustomLoggedStatsRequest {
 	return ApiAddCustomLoggedStatsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -57,7 +57,7 @@ func (a *CustomLoggedStatsApiService) AddCustomLoggedStats(ctx context.Context, 
 // Execute executes the request
 //
 //	@return CustomLoggedStatsResponse
-func (a *CustomLoggedStatsApiService) AddCustomLoggedStatsExecute(r ApiAddCustomLoggedStatsRequest) (*CustomLoggedStatsResponse, *http.Response, error) {
+func (a *CustomLoggedStatsAPIService) AddCustomLoggedStatsExecute(r ApiAddCustomLoggedStatsRequest) (*CustomLoggedStatsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *CustomLoggedStatsApiService) AddCustomLoggedStatsExecute(r ApiAddCustom
 		localVarReturnValue *CustomLoggedStatsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsApiService.AddCustomLoggedStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsAPIService.AddCustomLoggedStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *CustomLoggedStatsApiService) AddCustomLoggedStatsExecute(r ApiAddCustom
 
 type ApiDeleteCustomLoggedStatsRequest struct {
 	ctx                   context.Context
-	ApiService            *CustomLoggedStatsApiService
+	ApiService            *CustomLoggedStatsAPIService
 	customLoggedStatsName string
 	pluginName            string
 }
@@ -155,7 +155,7 @@ DeleteCustomLoggedStats Delete a Custom Logged Stats
 	@param pluginName Name of the Plugin
 	@return ApiDeleteCustomLoggedStatsRequest
 */
-func (a *CustomLoggedStatsApiService) DeleteCustomLoggedStats(ctx context.Context, customLoggedStatsName string, pluginName string) ApiDeleteCustomLoggedStatsRequest {
+func (a *CustomLoggedStatsAPIService) DeleteCustomLoggedStats(ctx context.Context, customLoggedStatsName string, pluginName string) ApiDeleteCustomLoggedStatsRequest {
 	return ApiDeleteCustomLoggedStatsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -165,14 +165,14 @@ func (a *CustomLoggedStatsApiService) DeleteCustomLoggedStats(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *CustomLoggedStatsApiService) DeleteCustomLoggedStatsExecute(r ApiDeleteCustomLoggedStatsRequest) (*http.Response, error) {
+func (a *CustomLoggedStatsAPIService) DeleteCustomLoggedStatsExecute(r ApiDeleteCustomLoggedStatsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsApiService.DeleteCustomLoggedStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsAPIService.DeleteCustomLoggedStats")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *CustomLoggedStatsApiService) DeleteCustomLoggedStatsExecute(r ApiDelete
 
 type ApiGetCustomLoggedStatsRequest struct {
 	ctx                   context.Context
-	ApiService            *CustomLoggedStatsApiService
+	ApiService            *CustomLoggedStatsAPIService
 	customLoggedStatsName string
 	pluginName            string
 }
@@ -249,7 +249,7 @@ GetCustomLoggedStats Returns a single Custom Logged Stats
 	@param pluginName Name of the Plugin
 	@return ApiGetCustomLoggedStatsRequest
 */
-func (a *CustomLoggedStatsApiService) GetCustomLoggedStats(ctx context.Context, customLoggedStatsName string, pluginName string) ApiGetCustomLoggedStatsRequest {
+func (a *CustomLoggedStatsAPIService) GetCustomLoggedStats(ctx context.Context, customLoggedStatsName string, pluginName string) ApiGetCustomLoggedStatsRequest {
 	return ApiGetCustomLoggedStatsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -261,7 +261,7 @@ func (a *CustomLoggedStatsApiService) GetCustomLoggedStats(ctx context.Context, 
 // Execute executes the request
 //
 //	@return CustomLoggedStatsResponse
-func (a *CustomLoggedStatsApiService) GetCustomLoggedStatsExecute(r ApiGetCustomLoggedStatsRequest) (*CustomLoggedStatsResponse, *http.Response, error) {
+func (a *CustomLoggedStatsAPIService) GetCustomLoggedStatsExecute(r ApiGetCustomLoggedStatsRequest) (*CustomLoggedStatsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *CustomLoggedStatsApiService) GetCustomLoggedStatsExecute(r ApiGetCustom
 		localVarReturnValue *CustomLoggedStatsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsApiService.GetCustomLoggedStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsAPIService.GetCustomLoggedStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *CustomLoggedStatsApiService) GetCustomLoggedStatsExecute(r ApiGetCustom
 
 type ApiListCustomLoggedStatsRequest struct {
 	ctx        context.Context
-	ApiService *CustomLoggedStatsApiService
+	ApiService *CustomLoggedStatsAPIService
 	pluginName string
 	filter     *string
 }
@@ -360,7 +360,7 @@ ListCustomLoggedStats Returns a list of all Custom Logged Stats objects
 	@param pluginName Name of the Plugin
 	@return ApiListCustomLoggedStatsRequest
 */
-func (a *CustomLoggedStatsApiService) ListCustomLoggedStats(ctx context.Context, pluginName string) ApiListCustomLoggedStatsRequest {
+func (a *CustomLoggedStatsAPIService) ListCustomLoggedStats(ctx context.Context, pluginName string) ApiListCustomLoggedStatsRequest {
 	return ApiListCustomLoggedStatsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -371,7 +371,7 @@ func (a *CustomLoggedStatsApiService) ListCustomLoggedStats(ctx context.Context,
 // Execute executes the request
 //
 //	@return CustomLoggedStatsListResponse
-func (a *CustomLoggedStatsApiService) ListCustomLoggedStatsExecute(r ApiListCustomLoggedStatsRequest) (*CustomLoggedStatsListResponse, *http.Response, error) {
+func (a *CustomLoggedStatsAPIService) ListCustomLoggedStatsExecute(r ApiListCustomLoggedStatsRequest) (*CustomLoggedStatsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *CustomLoggedStatsApiService) ListCustomLoggedStatsExecute(r ApiListCust
 		localVarReturnValue *CustomLoggedStatsListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsApiService.ListCustomLoggedStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsAPIService.ListCustomLoggedStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *CustomLoggedStatsApiService) ListCustomLoggedStatsExecute(r ApiListCust
 
 type ApiUpdateCustomLoggedStatsRequest struct {
 	ctx                   context.Context
-	ApiService            *CustomLoggedStatsApiService
+	ApiService            *CustomLoggedStatsAPIService
 	customLoggedStatsName string
 	pluginName            string
 	updateRequest         *UpdateRequest
@@ -474,7 +474,7 @@ UpdateCustomLoggedStats Update an existing Custom Logged Stats by name
 	@param pluginName Name of the Plugin
 	@return ApiUpdateCustomLoggedStatsRequest
 */
-func (a *CustomLoggedStatsApiService) UpdateCustomLoggedStats(ctx context.Context, customLoggedStatsName string, pluginName string) ApiUpdateCustomLoggedStatsRequest {
+func (a *CustomLoggedStatsAPIService) UpdateCustomLoggedStats(ctx context.Context, customLoggedStatsName string, pluginName string) ApiUpdateCustomLoggedStatsRequest {
 	return ApiUpdateCustomLoggedStatsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -486,7 +486,7 @@ func (a *CustomLoggedStatsApiService) UpdateCustomLoggedStats(ctx context.Contex
 // Execute executes the request
 //
 //	@return CustomLoggedStatsResponse
-func (a *CustomLoggedStatsApiService) UpdateCustomLoggedStatsExecute(r ApiUpdateCustomLoggedStatsRequest) (*CustomLoggedStatsResponse, *http.Response, error) {
+func (a *CustomLoggedStatsAPIService) UpdateCustomLoggedStatsExecute(r ApiUpdateCustomLoggedStatsRequest) (*CustomLoggedStatsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *CustomLoggedStatsApiService) UpdateCustomLoggedStatsExecute(r ApiUpdate
 		localVarReturnValue *CustomLoggedStatsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsApiService.UpdateCustomLoggedStats")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomLoggedStatsAPIService.UpdateCustomLoggedStats")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

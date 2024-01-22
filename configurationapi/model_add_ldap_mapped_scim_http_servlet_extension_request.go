@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLdapMappedScimHttpServletExtensionRequest{}
 
 // AddLdapMappedScimHttpServletExtensionRequest struct for AddLdapMappedScimHttpServletExtensionRequest
 type AddLdapMappedScimHttpServletExtensionRequest struct {
-	// Name of the new HTTP Servlet Extension
-	ExtensionName string                                            `json:"extensionName"`
-	Schemas       []EnumldapMappedScimHttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request.
 	OAuthTokenHandler *string `json:"OAuthTokenHandler,omitempty"`
 	// Enables HTTP Basic authentication, using a username and password.
@@ -68,16 +66,18 @@ type AddLdapMappedScimHttpServletExtensionRequest struct {
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`
+	// Name of the new HTTP Servlet Extension
+	ExtensionName string `json:"extensionName"`
 }
 
 // NewAddLdapMappedScimHttpServletExtensionRequest instantiates a new AddLdapMappedScimHttpServletExtensionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapMappedScimHttpServletExtensionRequest(extensionName string, schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn) *AddLdapMappedScimHttpServletExtensionRequest {
+func NewAddLdapMappedScimHttpServletExtensionRequest(schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn, extensionName string) *AddLdapMappedScimHttpServletExtensionRequest {
 	this := AddLdapMappedScimHttpServletExtensionRequest{}
-	this.ExtensionName = extensionName
 	this.Schemas = schemas
+	this.ExtensionName = extensionName
 	return &this
 }
 
@@ -87,30 +87,6 @@ func NewAddLdapMappedScimHttpServletExtensionRequest(extensionName string, schem
 func NewAddLdapMappedScimHttpServletExtensionRequestWithDefaults() *AddLdapMappedScimHttpServletExtensionRequest {
 	this := AddLdapMappedScimHttpServletExtensionRequest{}
 	return &this
-}
-
-// GetExtensionName returns the ExtensionName field value
-func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ExtensionName
-}
-
-// GetExtensionNameOk returns a tuple with the ExtensionName field value
-// and a boolean to check if the value has been set.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ExtensionName, true
-}
-
-// SetExtensionName sets field value
-func (o *AddLdapMappedScimHttpServletExtensionRequest) SetExtensionName(v string) {
-	o.ExtensionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -905,6 +881,30 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) SetCorrelationIDResponseH
 	o.CorrelationIDResponseHeader = &v
 }
 
+// GetExtensionName returns the ExtensionName field value
+func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ExtensionName
+}
+
+// GetExtensionNameOk returns a tuple with the ExtensionName field value
+// and a boolean to check if the value has been set.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ExtensionName, true
+}
+
+// SetExtensionName sets field value
+func (o *AddLdapMappedScimHttpServletExtensionRequest) SetExtensionName(v string) {
+	o.ExtensionName = v
+}
+
 func (o AddLdapMappedScimHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -915,7 +915,6 @@ func (o AddLdapMappedScimHttpServletExtensionRequest) MarshalJSON() ([]byte, err
 
 func (o AddLdapMappedScimHttpServletExtensionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["extensionName"] = o.ExtensionName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.OAuthTokenHandler) {
 		toSerialize["OAuthTokenHandler"] = o.OAuthTokenHandler
@@ -989,6 +988,7 @@ func (o AddLdapMappedScimHttpServletExtensionRequest) ToMap() (map[string]interf
 	if !IsNil(o.CorrelationIDResponseHeader) {
 		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
 	}
+	toSerialize["extensionName"] = o.ExtensionName
 	return toSerialize, nil
 }
 

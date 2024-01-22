@@ -19,9 +19,9 @@ var _ MappedNullable = &AddPrometheusMonitorAttributeMetricRequest{}
 
 // AddPrometheusMonitorAttributeMetricRequest struct for AddPrometheusMonitorAttributeMetricRequest
 type AddPrometheusMonitorAttributeMetricRequest struct {
-	// The name that will be used in the metric to be consumed by Prometheus.
-	MetricName string                                          `json:"metricName"`
-	Schemas    []EnumprometheusMonitorAttributeMetricSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumprometheusMonitorAttributeMetricSchemaUrn `json:"schemas,omitempty"`
+	// Name of the new Prometheus Monitor Attribute Metric
+	MetricName string `json:"metricName"`
 	// The name of the monitor attribute that contains the numeric value to be published.
 	MonitorAttributeName string `json:"monitorAttributeName"`
 	// The name of the object class for monitor entries that contain the monitor attribute.
@@ -56,30 +56,6 @@ func NewAddPrometheusMonitorAttributeMetricRequestWithDefaults() *AddPrometheusM
 	return &this
 }
 
-// GetMetricName returns the MetricName field value
-func (o *AddPrometheusMonitorAttributeMetricRequest) GetMetricName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MetricName
-}
-
-// GetMetricNameOk returns a tuple with the MetricName field value
-// and a boolean to check if the value has been set.
-func (o *AddPrometheusMonitorAttributeMetricRequest) GetMetricNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MetricName, true
-}
-
-// SetMetricName sets field value
-func (o *AddPrometheusMonitorAttributeMetricRequest) SetMetricName(v string) {
-	o.MetricName = v
-}
-
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddPrometheusMonitorAttributeMetricRequest) GetSchemas() []EnumprometheusMonitorAttributeMetricSchemaUrn {
 	if o == nil || IsNil(o.Schemas) {
@@ -110,6 +86,30 @@ func (o *AddPrometheusMonitorAttributeMetricRequest) HasSchemas() bool {
 // SetSchemas gets a reference to the given []EnumprometheusMonitorAttributeMetricSchemaUrn and assigns it to the Schemas field.
 func (o *AddPrometheusMonitorAttributeMetricRequest) SetSchemas(v []EnumprometheusMonitorAttributeMetricSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetMetricName returns the MetricName field value
+func (o *AddPrometheusMonitorAttributeMetricRequest) GetMetricName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MetricName
+}
+
+// GetMetricNameOk returns a tuple with the MetricName field value
+// and a boolean to check if the value has been set.
+func (o *AddPrometheusMonitorAttributeMetricRequest) GetMetricNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MetricName, true
+}
+
+// SetMetricName sets field value
+func (o *AddPrometheusMonitorAttributeMetricRequest) SetMetricName(v string) {
+	o.MetricName = v
 }
 
 // GetMonitorAttributeName returns the MonitorAttributeName field value
@@ -290,10 +290,10 @@ func (o AddPrometheusMonitorAttributeMetricRequest) MarshalJSON() ([]byte, error
 
 func (o AddPrometheusMonitorAttributeMetricRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["metricName"] = o.MetricName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
+	toSerialize["metricName"] = o.MetricName
 	toSerialize["monitorAttributeName"] = o.MonitorAttributeName
 	toSerialize["monitorObjectClassName"] = o.MonitorObjectClassName
 	toSerialize["metricType"] = o.MetricType

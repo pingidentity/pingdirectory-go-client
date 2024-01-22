@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumsimpleToExternalBindPluginSchemaUrn**](EnumsimpleToExternalBindPluginSchemaUrn.md) |  | 
 **ConnectionCriteria** | Pointer to **string** | Specifies a connection criteria object that may be used to indicate the set of clients for which this plugin should be used. If a value is provided, then this plugin will only be used for requests from client connections matching this criteria. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a request criteria object that may be used to indicate the set of requests for which this plugin should be used. If a value is provided, then this plugin will only be used for bind requests matching this criteria. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddSimpleToExternalBindPluginRequest
 
-`func NewAddSimpleToExternalBindPluginRequest(pluginName string, schemas []EnumsimpleToExternalBindPluginSchemaUrn, enabled bool, ) *AddSimpleToExternalBindPluginRequest`
+`func NewAddSimpleToExternalBindPluginRequest(schemas []EnumsimpleToExternalBindPluginSchemaUrn, enabled bool, pluginName string, ) *AddSimpleToExternalBindPluginRequest`
 
 NewAddSimpleToExternalBindPluginRequest instantiates a new AddSimpleToExternalBindPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddSimpleToExternalBindPluginRequestWithDefaults instantiates a new AddSimpleToExternalBindPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddSimpleToExternalBindPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddSimpleToExternalBindPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddSimpleToExternalBindPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -163,6 +143,26 @@ and a boolean to check if the value has been set.
 `func (o *AddSimpleToExternalBindPluginRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetPluginName
+
+`func (o *AddSimpleToExternalBindPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddSimpleToExternalBindPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddSimpleToExternalBindPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
 
 
 

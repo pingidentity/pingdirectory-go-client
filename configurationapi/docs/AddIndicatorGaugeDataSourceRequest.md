@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SourceName** | **string** | Name of the new Gauge Data Source | 
 **Schemas** | [**[]EnumindicatorGaugeDataSourceSchemaUrn**](EnumindicatorGaugeDataSourceSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Gauge Data Source | [optional] 
 **AdditionalText** | Pointer to **string** | Additional information about the source of this data that is added to alerts sent as a result of gauges that use this Gauge Data Source. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **ResourceAttribute** | Pointer to **string** | Specifies the attribute whose value is used to identify the specific resource being monitored (e.g. device name). | [optional] 
 **ResourceType** | Pointer to **string** | A string indicating the type of resource being monitored. | [optional] 
 **MinimumUpdateInterval** | Pointer to **string** | The minimum frequency with which gauges using this Gauge Data Source can be configured for update. In order to prevent undesirable side effects, some Gauge Data Sources may use this property to impose a higher bound on the update frequency of gauges. | [optional] 
+**SourceName** | **string** | Name of the new Gauge Data Source | 
 
 ## Methods
 
 ### NewAddIndicatorGaugeDataSourceRequest
 
-`func NewAddIndicatorGaugeDataSourceRequest(sourceName string, schemas []EnumindicatorGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string, ) *AddIndicatorGaugeDataSourceRequest`
+`func NewAddIndicatorGaugeDataSourceRequest(schemas []EnumindicatorGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string, sourceName string, ) *AddIndicatorGaugeDataSourceRequest`
 
 NewAddIndicatorGaugeDataSourceRequest instantiates a new AddIndicatorGaugeDataSourceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddIndicatorGaugeDataSourceRequestWithDefaults instantiates a new AddIndicatorGaugeDataSourceRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSourceName
-
-`func (o *AddIndicatorGaugeDataSourceRequest) GetSourceName() string`
-
-GetSourceName returns the SourceName field if non-nil, zero value otherwise.
-
-### GetSourceNameOk
-
-`func (o *AddIndicatorGaugeDataSourceRequest) GetSourceNameOk() (*string, bool)`
-
-GetSourceNameOk returns a tuple with the SourceName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSourceName
-
-`func (o *AddIndicatorGaugeDataSourceRequest) SetSourceName(v string)`
-
-SetSourceName sets SourceName field to given value.
-
 
 ### GetSchemas
 
@@ -263,6 +243,26 @@ SetMinimumUpdateInterval sets MinimumUpdateInterval field to given value.
 `func (o *AddIndicatorGaugeDataSourceRequest) HasMinimumUpdateInterval() bool`
 
 HasMinimumUpdateInterval returns a boolean if a field has been set.
+
+### GetSourceName
+
+`func (o *AddIndicatorGaugeDataSourceRequest) GetSourceName() string`
+
+GetSourceName returns the SourceName field if non-nil, zero value otherwise.
+
+### GetSourceNameOk
+
+`func (o *AddIndicatorGaugeDataSourceRequest) GetSourceNameOk() (*string, bool)`
+
+GetSourceNameOk returns a tuple with the SourceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceName
+
+`func (o *AddIndicatorGaugeDataSourceRequest) SetSourceName(v string)`
+
+SetSourceName sets SourceName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

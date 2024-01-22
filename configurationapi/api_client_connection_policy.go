@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ClientConnectionPolicyApiService ClientConnectionPolicyApi service
-type ClientConnectionPolicyApiService service
+// ClientConnectionPolicyAPIService ClientConnectionPolicyAPI service
+type ClientConnectionPolicyAPIService service
 
 type ApiAddClientConnectionPolicyRequest struct {
 	ctx                              context.Context
-	ApiService                       *ClientConnectionPolicyApiService
+	ApiService                       *ClientConnectionPolicyAPIService
 	addClientConnectionPolicyRequest *AddClientConnectionPolicyRequest
 }
 
@@ -44,7 +44,7 @@ AddClientConnectionPolicy Add a new Client Connection Policy to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddClientConnectionPolicyRequest
 */
-func (a *ClientConnectionPolicyApiService) AddClientConnectionPolicy(ctx context.Context) ApiAddClientConnectionPolicyRequest {
+func (a *ClientConnectionPolicyAPIService) AddClientConnectionPolicy(ctx context.Context) ApiAddClientConnectionPolicyRequest {
 	return ApiAddClientConnectionPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ClientConnectionPolicyApiService) AddClientConnectionPolicy(ctx context
 // Execute executes the request
 //
 //	@return ClientConnectionPolicyResponse
-func (a *ClientConnectionPolicyApiService) AddClientConnectionPolicyExecute(r ApiAddClientConnectionPolicyRequest) (*ClientConnectionPolicyResponse, *http.Response, error) {
+func (a *ClientConnectionPolicyAPIService) AddClientConnectionPolicyExecute(r ApiAddClientConnectionPolicyRequest) (*ClientConnectionPolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ClientConnectionPolicyApiService) AddClientConnectionPolicyExecute(r Ap
 		localVarReturnValue *ClientConnectionPolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyApiService.AddClientConnectionPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyAPIService.AddClientConnectionPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ClientConnectionPolicyApiService) AddClientConnectionPolicyExecute(r Ap
 
 type ApiDeleteClientConnectionPolicyRequest struct {
 	ctx                        context.Context
-	ApiService                 *ClientConnectionPolicyApiService
+	ApiService                 *ClientConnectionPolicyAPIService
 	clientConnectionPolicyName string
 }
 
@@ -149,7 +149,7 @@ DeleteClientConnectionPolicy Delete a Client Connection Policy
 	@param clientConnectionPolicyName Name of the Client Connection Policy
 	@return ApiDeleteClientConnectionPolicyRequest
 */
-func (a *ClientConnectionPolicyApiService) DeleteClientConnectionPolicy(ctx context.Context, clientConnectionPolicyName string) ApiDeleteClientConnectionPolicyRequest {
+func (a *ClientConnectionPolicyAPIService) DeleteClientConnectionPolicy(ctx context.Context, clientConnectionPolicyName string) ApiDeleteClientConnectionPolicyRequest {
 	return ApiDeleteClientConnectionPolicyRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -158,14 +158,14 @@ func (a *ClientConnectionPolicyApiService) DeleteClientConnectionPolicy(ctx cont
 }
 
 // Execute executes the request
-func (a *ClientConnectionPolicyApiService) DeleteClientConnectionPolicyExecute(r ApiDeleteClientConnectionPolicyRequest) (*http.Response, error) {
+func (a *ClientConnectionPolicyAPIService) DeleteClientConnectionPolicyExecute(r ApiDeleteClientConnectionPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyApiService.DeleteClientConnectionPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyAPIService.DeleteClientConnectionPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ClientConnectionPolicyApiService) DeleteClientConnectionPolicyExecute(r
 
 type ApiGetClientConnectionPolicyRequest struct {
 	ctx                        context.Context
-	ApiService                 *ClientConnectionPolicyApiService
+	ApiService                 *ClientConnectionPolicyAPIService
 	clientConnectionPolicyName string
 }
 
@@ -239,7 +239,7 @@ GetClientConnectionPolicy Returns a single Client Connection Policy
 	@param clientConnectionPolicyName Name of the Client Connection Policy
 	@return ApiGetClientConnectionPolicyRequest
 */
-func (a *ClientConnectionPolicyApiService) GetClientConnectionPolicy(ctx context.Context, clientConnectionPolicyName string) ApiGetClientConnectionPolicyRequest {
+func (a *ClientConnectionPolicyAPIService) GetClientConnectionPolicy(ctx context.Context, clientConnectionPolicyName string) ApiGetClientConnectionPolicyRequest {
 	return ApiGetClientConnectionPolicyRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -250,7 +250,7 @@ func (a *ClientConnectionPolicyApiService) GetClientConnectionPolicy(ctx context
 // Execute executes the request
 //
 //	@return ClientConnectionPolicyResponse
-func (a *ClientConnectionPolicyApiService) GetClientConnectionPolicyExecute(r ApiGetClientConnectionPolicyRequest) (*ClientConnectionPolicyResponse, *http.Response, error) {
+func (a *ClientConnectionPolicyAPIService) GetClientConnectionPolicyExecute(r ApiGetClientConnectionPolicyRequest) (*ClientConnectionPolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ClientConnectionPolicyApiService) GetClientConnectionPolicyExecute(r Ap
 		localVarReturnValue *ClientConnectionPolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyApiService.GetClientConnectionPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyAPIService.GetClientConnectionPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ClientConnectionPolicyApiService) GetClientConnectionPolicyExecute(r Ap
 
 type ApiListClientConnectionPoliciesRequest struct {
 	ctx        context.Context
-	ApiService *ClientConnectionPolicyApiService
+	ApiService *ClientConnectionPolicyAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListClientConnectionPolicies Returns a list of all Client Connection Policy obje
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListClientConnectionPoliciesRequest
 */
-func (a *ClientConnectionPolicyApiService) ListClientConnectionPolicies(ctx context.Context) ApiListClientConnectionPoliciesRequest {
+func (a *ClientConnectionPolicyAPIService) ListClientConnectionPolicies(ctx context.Context) ApiListClientConnectionPoliciesRequest {
 	return ApiListClientConnectionPoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ClientConnectionPolicyApiService) ListClientConnectionPolicies(ctx cont
 // Execute executes the request
 //
 //	@return ClientConnectionPolicyListResponse
-func (a *ClientConnectionPolicyApiService) ListClientConnectionPoliciesExecute(r ApiListClientConnectionPoliciesRequest) (*ClientConnectionPolicyListResponse, *http.Response, error) {
+func (a *ClientConnectionPolicyAPIService) ListClientConnectionPoliciesExecute(r ApiListClientConnectionPoliciesRequest) (*ClientConnectionPolicyListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ClientConnectionPolicyApiService) ListClientConnectionPoliciesExecute(r
 		localVarReturnValue *ClientConnectionPolicyListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyApiService.ListClientConnectionPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyAPIService.ListClientConnectionPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ClientConnectionPolicyApiService) ListClientConnectionPoliciesExecute(r
 
 type ApiUpdateClientConnectionPolicyRequest struct {
 	ctx                        context.Context
-	ApiService                 *ClientConnectionPolicyApiService
+	ApiService                 *ClientConnectionPolicyAPIService
 	clientConnectionPolicyName string
 	updateRequest              *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateClientConnectionPolicy Update an existing Client Connection Policy by name
 	@param clientConnectionPolicyName Name of the Client Connection Policy
 	@return ApiUpdateClientConnectionPolicyRequest
 */
-func (a *ClientConnectionPolicyApiService) UpdateClientConnectionPolicy(ctx context.Context, clientConnectionPolicyName string) ApiUpdateClientConnectionPolicyRequest {
+func (a *ClientConnectionPolicyAPIService) UpdateClientConnectionPolicy(ctx context.Context, clientConnectionPolicyName string) ApiUpdateClientConnectionPolicyRequest {
 	return ApiUpdateClientConnectionPolicyRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -467,7 +467,7 @@ func (a *ClientConnectionPolicyApiService) UpdateClientConnectionPolicy(ctx cont
 // Execute executes the request
 //
 //	@return ClientConnectionPolicyResponse
-func (a *ClientConnectionPolicyApiService) UpdateClientConnectionPolicyExecute(r ApiUpdateClientConnectionPolicyRequest) (*ClientConnectionPolicyResponse, *http.Response, error) {
+func (a *ClientConnectionPolicyAPIService) UpdateClientConnectionPolicyExecute(r ApiUpdateClientConnectionPolicyRequest) (*ClientConnectionPolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ClientConnectionPolicyApiService) UpdateClientConnectionPolicyExecute(r
 		localVarReturnValue *ClientConnectionPolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyApiService.UpdateClientConnectionPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientConnectionPolicyAPIService.UpdateClientConnectionPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPingFederateAccessTokenValidatorRequest{}
 
 // AddPingFederateAccessTokenValidatorRequest struct for AddPingFederateAccessTokenValidatorRequest
 type AddPingFederateAccessTokenValidatorRequest struct {
-	// Name of the new Access Token Validator
-	ValidatorName string                                          `json:"validatorName"`
-	Schemas       []EnumpingFederateAccessTokenValidatorSchemaUrn `json:"schemas"`
+	Schemas []EnumpingFederateAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The client identifier to use when authenticating to the PingFederate authorization server.
 	ClientID string `json:"clientID"`
 	// The client secret to use when authenticating to the PingFederate authorization server.
@@ -46,18 +44,20 @@ type AddPingFederateAccessTokenValidatorRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Access Token Validator is enabled for use in Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Access Token Validator
+	ValidatorName string `json:"validatorName"`
 }
 
 // NewAddPingFederateAccessTokenValidatorRequest instantiates a new AddPingFederateAccessTokenValidatorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingFederateAccessTokenValidatorRequest(validatorName string, schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, enabled bool) *AddPingFederateAccessTokenValidatorRequest {
+func NewAddPingFederateAccessTokenValidatorRequest(schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, enabled bool, validatorName string) *AddPingFederateAccessTokenValidatorRequest {
 	this := AddPingFederateAccessTokenValidatorRequest{}
-	this.ValidatorName = validatorName
 	this.Schemas = schemas
 	this.ClientID = clientID
 	this.Enabled = enabled
+	this.ValidatorName = validatorName
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewAddPingFederateAccessTokenValidatorRequest(validatorName string, schemas
 func NewAddPingFederateAccessTokenValidatorRequestWithDefaults() *AddPingFederateAccessTokenValidatorRequest {
 	this := AddPingFederateAccessTokenValidatorRequest{}
 	return &this
-}
-
-// GetValidatorName returns the ValidatorName field value
-func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ValidatorName
-}
-
-// GetValidatorNameOk returns a tuple with the ValidatorName field value
-// and a boolean to check if the value has been set.
-func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ValidatorName, true
-}
-
-// SetValidatorName sets field value
-func (o *AddPingFederateAccessTokenValidatorRequest) SetValidatorName(v string) {
-	o.ValidatorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -485,6 +461,30 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetValidatorName returns the ValidatorName field value
+func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ValidatorName
+}
+
+// GetValidatorNameOk returns a tuple with the ValidatorName field value
+// and a boolean to check if the value has been set.
+func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ValidatorName, true
+}
+
+// SetValidatorName sets field value
+func (o *AddPingFederateAccessTokenValidatorRequest) SetValidatorName(v string) {
+	o.ValidatorName = v
+}
+
 func (o AddPingFederateAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -495,7 +495,6 @@ func (o AddPingFederateAccessTokenValidatorRequest) MarshalJSON() ([]byte, error
 
 func (o AddPingFederateAccessTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["validatorName"] = o.ValidatorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["clientID"] = o.ClientID
 	if !IsNil(o.ClientSecret) {
@@ -529,6 +528,7 @@ func (o AddPingFederateAccessTokenValidatorRequest) ToMap() (map[string]interfac
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["validatorName"] = o.ValidatorName
 	return toSerialize, nil
 }
 

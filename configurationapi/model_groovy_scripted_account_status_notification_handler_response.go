@@ -19,8 +19,6 @@ var _ MappedNullable = &GroovyScriptedAccountStatusNotificationHandlerResponse{}
 
 // GroovyScriptedAccountStatusNotificationHandlerResponse struct for GroovyScriptedAccountStatusNotificationHandlerResponse
 type GroovyScriptedAccountStatusNotificationHandlerResponse struct {
-	// Name of the Account Status Notification Handler
-	Id      string                                                        `json:"id"`
 	Schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Account Status Notification Handler.
 	ScriptClass string `json:"scriptClass"`
@@ -42,18 +40,20 @@ type GroovyScriptedAccountStatusNotificationHandlerResponse struct {
 	AccountUpdateNotificationRequestCriteria      *string                                            `json:"accountUpdateNotificationRequestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Account Status Notification Handler
+	Id string `json:"id"`
 }
 
 // NewGroovyScriptedAccountStatusNotificationHandlerResponse instantiates a new GroovyScriptedAccountStatusNotificationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroovyScriptedAccountStatusNotificationHandlerResponse(id string, schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn, scriptClass string, enabled bool) *GroovyScriptedAccountStatusNotificationHandlerResponse {
+func NewGroovyScriptedAccountStatusNotificationHandlerResponse(schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn, scriptClass string, enabled bool, id string) *GroovyScriptedAccountStatusNotificationHandlerResponse {
 	this := GroovyScriptedAccountStatusNotificationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewGroovyScriptedAccountStatusNotificationHandlerResponse(id string, schema
 func NewGroovyScriptedAccountStatusNotificationHandlerResponseWithDefaults() *GroovyScriptedAccountStatusNotificationHandlerResponse {
 	this := GroovyScriptedAccountStatusNotificationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -449,6 +425,30 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) SetUrnpingident
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o GroovyScriptedAccountStatusNotificationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -459,7 +459,6 @@ func (o GroovyScriptedAccountStatusNotificationHandlerResponse) MarshalJSON() ([
 
 func (o GroovyScriptedAccountStatusNotificationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -490,6 +489,7 @@ func (o GroovyScriptedAccountStatusNotificationHandlerResponse) ToMap() (map[str
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

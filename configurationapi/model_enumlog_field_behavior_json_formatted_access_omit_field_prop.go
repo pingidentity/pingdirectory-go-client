@@ -34,6 +34,7 @@ const (
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSOMITFIELDPROP_ASSURED_REPLICATION_REQUIREMENTS_ASSURANCE_TIMEOUT_MILLIS                  EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp = "assured-replication-requirements-assurance-timeout-millis"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSOMITFIELDPROP_AUTHORIZATION_DN                                                           EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp = "authorization-dn"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSOMITFIELDPROP_AUTO_AUTHENTICATED_AS                                                      EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp = "auto-authenticated-as"
+	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSOMITFIELDPROP_BIND_ACCESS_TOKEN_ORIGINAL_AUTHENTICATION_TYPE                             EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp = "bind-access-token-original-authentication-type"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSOMITFIELDPROP_BIND_AUTHENTICATION_DN                                                     EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp = "bind-authentication-dn"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSOMITFIELDPROP_BIND_AUTHENTICATION_FAILURE_REASON                                         EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp = "bind-authentication-failure-reason"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSOMITFIELDPROP_BIND_AUTHENTICATION_FAILURE_REASON_ID                                      EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp = "bind-authentication-failure-reason-id"
@@ -342,6 +343,7 @@ var AllowedEnumlogFieldBehaviorJsonFormattedAccessOmitFieldPropEnumValues = []En
 	"assured-replication-requirements-assurance-timeout-millis",
 	"authorization-dn",
 	"auto-authenticated-as",
+	"bind-access-token-original-authentication-type",
 	"bind-authentication-dn",
 	"bind-authentication-failure-reason",
 	"bind-authentication-failure-reason-id",

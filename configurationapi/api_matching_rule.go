@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// MatchingRuleApiService MatchingRuleApi service
-type MatchingRuleApiService service
+// MatchingRuleAPIService MatchingRuleAPI service
+type MatchingRuleAPIService service
 
 type ApiGetMatchingRuleRequest struct {
 	ctx              context.Context
-	ApiService       *MatchingRuleApiService
+	ApiService       *MatchingRuleAPIService
 	matchingRuleName string
 }
 
@@ -39,7 +39,7 @@ GetMatchingRule Returns a single Matching Rule
 	@param matchingRuleName Name of the Matching Rule
 	@return ApiGetMatchingRuleRequest
 */
-func (a *MatchingRuleApiService) GetMatchingRule(ctx context.Context, matchingRuleName string) ApiGetMatchingRuleRequest {
+func (a *MatchingRuleAPIService) GetMatchingRule(ctx context.Context, matchingRuleName string) ApiGetMatchingRuleRequest {
 	return ApiGetMatchingRuleRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -50,7 +50,7 @@ func (a *MatchingRuleApiService) GetMatchingRule(ctx context.Context, matchingRu
 // Execute executes the request
 //
 //	@return GetMatchingRule200Response
-func (a *MatchingRuleApiService) GetMatchingRuleExecute(r ApiGetMatchingRuleRequest) (*GetMatchingRule200Response, *http.Response, error) {
+func (a *MatchingRuleAPIService) GetMatchingRuleExecute(r ApiGetMatchingRuleRequest) (*GetMatchingRule200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -58,7 +58,7 @@ func (a *MatchingRuleApiService) GetMatchingRuleExecute(r ApiGetMatchingRuleRequ
 		localVarReturnValue *GetMatchingRule200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MatchingRuleApiService.GetMatchingRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MatchingRuleAPIService.GetMatchingRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *MatchingRuleApiService) GetMatchingRuleExecute(r ApiGetMatchingRuleRequ
 
 type ApiListMatchingRulesRequest struct {
 	ctx        context.Context
-	ApiService *MatchingRuleApiService
+	ApiService *MatchingRuleAPIService
 	filter     *string
 }
 
@@ -146,7 +146,7 @@ ListMatchingRules Returns a list of all Matching Rule objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListMatchingRulesRequest
 */
-func (a *MatchingRuleApiService) ListMatchingRules(ctx context.Context) ApiListMatchingRulesRequest {
+func (a *MatchingRuleAPIService) ListMatchingRules(ctx context.Context) ApiListMatchingRulesRequest {
 	return ApiListMatchingRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *MatchingRuleApiService) ListMatchingRules(ctx context.Context) ApiListM
 // Execute executes the request
 //
 //	@return MatchingRuleListResponse
-func (a *MatchingRuleApiService) ListMatchingRulesExecute(r ApiListMatchingRulesRequest) (*MatchingRuleListResponse, *http.Response, error) {
+func (a *MatchingRuleAPIService) ListMatchingRulesExecute(r ApiListMatchingRulesRequest) (*MatchingRuleListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -164,7 +164,7 @@ func (a *MatchingRuleApiService) ListMatchingRulesExecute(r ApiListMatchingRules
 		localVarReturnValue *MatchingRuleListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MatchingRuleApiService.ListMatchingRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MatchingRuleAPIService.ListMatchingRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -234,7 +234,7 @@ func (a *MatchingRuleApiService) ListMatchingRulesExecute(r ApiListMatchingRules
 
 type ApiUpdateMatchingRuleRequest struct {
 	ctx              context.Context
-	ApiService       *MatchingRuleApiService
+	ApiService       *MatchingRuleAPIService
 	matchingRuleName string
 	updateRequest    *UpdateRequest
 }
@@ -256,7 +256,7 @@ UpdateMatchingRule Update an existing Matching Rule by name
 	@param matchingRuleName Name of the Matching Rule
 	@return ApiUpdateMatchingRuleRequest
 */
-func (a *MatchingRuleApiService) UpdateMatchingRule(ctx context.Context, matchingRuleName string) ApiUpdateMatchingRuleRequest {
+func (a *MatchingRuleAPIService) UpdateMatchingRule(ctx context.Context, matchingRuleName string) ApiUpdateMatchingRuleRequest {
 	return ApiUpdateMatchingRuleRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -267,7 +267,7 @@ func (a *MatchingRuleApiService) UpdateMatchingRule(ctx context.Context, matchin
 // Execute executes the request
 //
 //	@return GetMatchingRule200Response
-func (a *MatchingRuleApiService) UpdateMatchingRuleExecute(r ApiUpdateMatchingRuleRequest) (*GetMatchingRule200Response, *http.Response, error) {
+func (a *MatchingRuleAPIService) UpdateMatchingRuleExecute(r ApiUpdateMatchingRuleRequest) (*GetMatchingRule200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -275,7 +275,7 @@ func (a *MatchingRuleApiService) UpdateMatchingRuleExecute(r ApiUpdateMatchingRu
 		localVarReturnValue *GetMatchingRule200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MatchingRuleApiService.UpdateMatchingRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MatchingRuleAPIService.UpdateMatchingRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

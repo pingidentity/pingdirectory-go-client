@@ -19,8 +19,6 @@ var _ MappedNullable = &DictionaryPasswordValidatorResponse{}
 
 // DictionaryPasswordValidatorResponse struct for DictionaryPasswordValidatorResponse
 type DictionaryPasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                     `json:"id"`
 	Schemas []EnumdictionaryPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the path to the file containing a list of words that cannot be used as passwords.
 	DictionaryFile string `json:"dictionaryFile"`
@@ -48,20 +46,22 @@ type DictionaryPasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewDictionaryPasswordValidatorResponse instantiates a new DictionaryPasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDictionaryPasswordValidatorResponse(id string, schemas []EnumdictionaryPasswordValidatorSchemaUrn, dictionaryFile string, caseSensitiveValidation bool, testReversedPassword bool, enabled bool) *DictionaryPasswordValidatorResponse {
+func NewDictionaryPasswordValidatorResponse(schemas []EnumdictionaryPasswordValidatorSchemaUrn, dictionaryFile string, caseSensitiveValidation bool, testReversedPassword bool, enabled bool, id string) *DictionaryPasswordValidatorResponse {
 	this := DictionaryPasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.DictionaryFile = dictionaryFile
 	this.CaseSensitiveValidation = caseSensitiveValidation
 	this.TestReversedPassword = testReversedPassword
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -71,30 +71,6 @@ func NewDictionaryPasswordValidatorResponse(id string, schemas []EnumdictionaryP
 func NewDictionaryPasswordValidatorResponseWithDefaults() *DictionaryPasswordValidatorResponse {
 	this := DictionaryPasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DictionaryPasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DictionaryPasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DictionaryPasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -537,6 +513,30 @@ func (o *DictionaryPasswordValidatorResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DictionaryPasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DictionaryPasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DictionaryPasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DictionaryPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -547,7 +547,6 @@ func (o DictionaryPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o DictionaryPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["dictionaryFile"] = o.DictionaryFile
 	toSerialize["caseSensitiveValidation"] = o.CaseSensitiveValidation
@@ -583,6 +582,7 @@ func (o DictionaryPasswordValidatorResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

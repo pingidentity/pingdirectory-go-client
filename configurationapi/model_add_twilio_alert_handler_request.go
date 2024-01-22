@@ -19,9 +19,7 @@ var _ MappedNullable = &AddTwilioAlertHandlerRequest{}
 
 // AddTwilioAlertHandlerRequest struct for AddTwilioAlertHandlerRequest
 type AddTwilioAlertHandlerRequest struct {
-	// Name of the new Alert Handler
-	HandlerName string                            `json:"handlerName"`
-	Schemas     []EnumtwilioAlertHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumtwilioAlertHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether the server should attempt to invoke this Twilio Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
 	// A reference to an HTTP proxy server that should be used for requests sent to the Twilio service.
@@ -44,20 +42,22 @@ type AddTwilioAlertHandlerRequest struct {
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
 	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
 	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
+	// Name of the new Alert Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddTwilioAlertHandlerRequest instantiates a new AddTwilioAlertHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddTwilioAlertHandlerRequest(handlerName string, schemas []EnumtwilioAlertHandlerSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, recipientPhoneNumber []string, enabled bool) *AddTwilioAlertHandlerRequest {
+func NewAddTwilioAlertHandlerRequest(schemas []EnumtwilioAlertHandlerSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, recipientPhoneNumber []string, enabled bool, handlerName string) *AddTwilioAlertHandlerRequest {
 	this := AddTwilioAlertHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.TwilioAccountSID = twilioAccountSID
 	this.SenderPhoneNumber = senderPhoneNumber
 	this.RecipientPhoneNumber = recipientPhoneNumber
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewAddTwilioAlertHandlerRequest(handlerName string, schemas []EnumtwilioAle
 func NewAddTwilioAlertHandlerRequestWithDefaults() *AddTwilioAlertHandlerRequest {
 	this := AddTwilioAlertHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddTwilioAlertHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddTwilioAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddTwilioAlertHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -501,6 +477,30 @@ func (o *AddTwilioAlertHandlerRequest) SetDisabledAlertType(v []EnumalertHandler
 	o.DisabledAlertType = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddTwilioAlertHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddTwilioAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddTwilioAlertHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddTwilioAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -511,7 +511,6 @@ func (o AddTwilioAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddTwilioAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
@@ -544,6 +543,7 @@ func (o AddTwilioAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DisabledAlertType) {
 		toSerialize["disabledAlertType"] = o.DisabledAlertType
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

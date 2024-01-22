@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLocalDbVlvIndexRequest{}
 
 // AddLocalDbVlvIndexRequest struct for AddLocalDbVlvIndexRequest
 type AddLocalDbVlvIndexRequest struct {
-	// Name of the new Local DB VLV Index
-	IndexName string                         `json:"indexName"`
-	Schemas   []EnumlocalDbVlvIndexSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumlocalDbVlvIndexSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the base DN used in the search query that is being indexed.
 	BaseDN string                       `json:"baseDN"`
 	Scope  EnumlocalDbVlvIndexScopeProp `json:"scope"`
@@ -34,20 +32,22 @@ type AddLocalDbVlvIndexRequest struct {
 	// Specifies the number of entry IDs to store in a single sorted set before it must be split.
 	MaxBlockSize *int64                            `json:"maxBlockSize,omitempty"`
 	CacheMode    *EnumlocalDbVlvIndexCacheModeProp `json:"cacheMode,omitempty"`
+	// Name of the new Local DB VLV Index
+	IndexName string `json:"indexName"`
 }
 
 // NewAddLocalDbVlvIndexRequest instantiates a new AddLocalDbVlvIndexRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLocalDbVlvIndexRequest(indexName string, baseDN string, scope EnumlocalDbVlvIndexScopeProp, filter string, sortOrder string, name string) *AddLocalDbVlvIndexRequest {
+func NewAddLocalDbVlvIndexRequest(baseDN string, scope EnumlocalDbVlvIndexScopeProp, filter string, sortOrder string, name string, indexName string) *AddLocalDbVlvIndexRequest {
 	this := AddLocalDbVlvIndexRequest{}
-	this.IndexName = indexName
 	this.BaseDN = baseDN
 	this.Scope = scope
 	this.Filter = filter
 	this.SortOrder = sortOrder
 	this.Name = name
+	this.IndexName = indexName
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewAddLocalDbVlvIndexRequest(indexName string, baseDN string, scope Enumloc
 func NewAddLocalDbVlvIndexRequestWithDefaults() *AddLocalDbVlvIndexRequest {
 	this := AddLocalDbVlvIndexRequest{}
 	return &this
-}
-
-// GetIndexName returns the IndexName field value
-func (o *AddLocalDbVlvIndexRequest) GetIndexName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.IndexName
-}
-
-// GetIndexNameOk returns a tuple with the IndexName field value
-// and a boolean to check if the value has been set.
-func (o *AddLocalDbVlvIndexRequest) GetIndexNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.IndexName, true
-}
-
-// SetIndexName sets field value
-func (o *AddLocalDbVlvIndexRequest) SetIndexName(v string) {
-	o.IndexName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -299,6 +275,30 @@ func (o *AddLocalDbVlvIndexRequest) SetCacheMode(v EnumlocalDbVlvIndexCacheModeP
 	o.CacheMode = &v
 }
 
+// GetIndexName returns the IndexName field value
+func (o *AddLocalDbVlvIndexRequest) GetIndexName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.IndexName
+}
+
+// GetIndexNameOk returns a tuple with the IndexName field value
+// and a boolean to check if the value has been set.
+func (o *AddLocalDbVlvIndexRequest) GetIndexNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.IndexName, true
+}
+
+// SetIndexName sets field value
+func (o *AddLocalDbVlvIndexRequest) SetIndexName(v string) {
+	o.IndexName = v
+}
+
 func (o AddLocalDbVlvIndexRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -309,7 +309,6 @@ func (o AddLocalDbVlvIndexRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLocalDbVlvIndexRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["indexName"] = o.IndexName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -324,6 +323,7 @@ func (o AddLocalDbVlvIndexRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CacheMode) {
 		toSerialize["cacheMode"] = o.CacheMode
 	}
+	toSerialize["indexName"] = o.IndexName
 	return toSerialize, nil
 }
 

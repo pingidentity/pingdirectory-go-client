@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedAccountStatusNotificationHandlerRequest
 
 // AddGroovyScriptedAccountStatusNotificationHandlerRequest struct for AddGroovyScriptedAccountStatusNotificationHandlerRequest
 type AddGroovyScriptedAccountStatusNotificationHandlerRequest struct {
-	// Name of the new Account Status Notification Handler
-	HandlerName string                                                        `json:"handlerName"`
-	Schemas     []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Account Status Notification Handler.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Account Status Notification Handler. Each configuration property should be given in the form 'name=value'.
@@ -40,18 +38,20 @@ type AddGroovyScriptedAccountStatusNotificationHandlerRequest struct {
 	AccountDeletionNotificationRequestCriteria *string `json:"accountDeletionNotificationRequestCriteria,omitempty"`
 	// A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler.
 	AccountUpdateNotificationRequestCriteria *string `json:"accountUpdateNotificationRequestCriteria,omitempty"`
+	// Name of the new Account Status Notification Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddGroovyScriptedAccountStatusNotificationHandlerRequest instantiates a new AddGroovyScriptedAccountStatusNotificationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedAccountStatusNotificationHandlerRequest(handlerName string, schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn, scriptClass string, enabled bool) *AddGroovyScriptedAccountStatusNotificationHandlerRequest {
+func NewAddGroovyScriptedAccountStatusNotificationHandlerRequest(schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn, scriptClass string, enabled bool, handlerName string) *AddGroovyScriptedAccountStatusNotificationHandlerRequest {
 	this := AddGroovyScriptedAccountStatusNotificationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewAddGroovyScriptedAccountStatusNotificationHandlerRequest(handlerName str
 func NewAddGroovyScriptedAccountStatusNotificationHandlerRequestWithDefaults() *AddGroovyScriptedAccountStatusNotificationHandlerRequest {
 	this := AddGroovyScriptedAccountStatusNotificationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -383,6 +359,30 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetAccountUpd
 	o.AccountUpdateNotificationRequestCriteria = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddGroovyScriptedAccountStatusNotificationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -393,7 +393,6 @@ func (o AddGroovyScriptedAccountStatusNotificationHandlerRequest) MarshalJSON() 
 
 func (o AddGroovyScriptedAccountStatusNotificationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -418,6 +417,7 @@ func (o AddGroovyScriptedAccountStatusNotificationHandlerRequest) ToMap() (map[s
 	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

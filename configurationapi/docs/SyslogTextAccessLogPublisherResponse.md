@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Log Publisher | 
 **Schemas** | [**[]EnumsyslogTextAccessLogPublisherSchemaUrn**](EnumsyslogTextAccessLogPublisherSchemaUrn.md) |  | 
 **SyslogExternalServer** | **[]string** | The syslog server to which messages should be sent. | 
 **SyslogFacility** | [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | 
@@ -59,12 +58,13 @@ Name | Type | Description | Notes
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Log Publisher | 
 
 ## Methods
 
 ### NewSyslogTextAccessLogPublisherResponse
 
-`func NewSyslogTextAccessLogPublisherResponse(id string, schemas []EnumsyslogTextAccessLogPublisherSchemaUrn, syslogExternalServer []string, syslogFacility EnumlogPublisherSyslogFacilityProp, syslogSeverity EnumlogPublisherSyslogSeverityProp, asynchronous bool, enabled bool, ) *SyslogTextAccessLogPublisherResponse`
+`func NewSyslogTextAccessLogPublisherResponse(schemas []EnumsyslogTextAccessLogPublisherSchemaUrn, syslogExternalServer []string, syslogFacility EnumlogPublisherSyslogFacilityProp, syslogSeverity EnumlogPublisherSyslogSeverityProp, asynchronous bool, enabled bool, id string, ) *SyslogTextAccessLogPublisherResponse`
 
 NewSyslogTextAccessLogPublisherResponse instantiates a new SyslogTextAccessLogPublisherResponse object
 This constructor will assign default values to properties that have it defined,
@@ -78,26 +78,6 @@ will change when the set of required properties is changed
 NewSyslogTextAccessLogPublisherResponseWithDefaults instantiates a new SyslogTextAccessLogPublisherResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *SyslogTextAccessLogPublisherResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *SyslogTextAccessLogPublisherResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *SyslogTextAccessLogPublisherResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -1418,6 +1398,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *SyslogTextAccessLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *SyslogTextAccessLogPublisherResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *SyslogTextAccessLogPublisherResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *SyslogTextAccessLogPublisherResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

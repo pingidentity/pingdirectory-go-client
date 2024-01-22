@@ -19,8 +19,6 @@ var _ MappedNullable = &LocalDbIndexResponse{}
 
 // LocalDbIndexResponse struct for LocalDbIndexResponse
 type LocalDbIndexResponse struct {
-	// Name of the Local DB Index
-	Id      string                      `json:"id"`
 	Schemas []EnumlocalDbIndexSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the name of the attribute for which the index is to be maintained.
 	Attribute string `json:"attribute"`
@@ -44,17 +42,19 @@ type LocalDbIndexResponse struct {
 	CacheMode                                     *EnumlocalDbIndexCacheModeProp                     `json:"cacheMode,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Local DB Index
+	Id string `json:"id"`
 }
 
 // NewLocalDbIndexResponse instantiates a new LocalDbIndexResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLocalDbIndexResponse(id string, attribute string, indexType []EnumlocalDbIndexIndexTypeProp) *LocalDbIndexResponse {
+func NewLocalDbIndexResponse(attribute string, indexType []EnumlocalDbIndexIndexTypeProp, id string) *LocalDbIndexResponse {
 	this := LocalDbIndexResponse{}
-	this.Id = id
 	this.Attribute = attribute
 	this.IndexType = indexType
+	this.Id = id
 	return &this
 }
 
@@ -64,30 +64,6 @@ func NewLocalDbIndexResponse(id string, attribute string, indexType []EnumlocalD
 func NewLocalDbIndexResponseWithDefaults() *LocalDbIndexResponse {
 	this := LocalDbIndexResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LocalDbIndexResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LocalDbIndexResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LocalDbIndexResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -522,6 +498,30 @@ func (o *LocalDbIndexResponse) SetUrnpingidentityschemasconfigurationmessages20(
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LocalDbIndexResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LocalDbIndexResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LocalDbIndexResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LocalDbIndexResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -532,7 +532,6 @@ func (o LocalDbIndexResponse) MarshalJSON() ([]byte, error) {
 
 func (o LocalDbIndexResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -571,6 +570,7 @@ func (o LocalDbIndexResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

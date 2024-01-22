@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Connection Handler | 
 **Schemas** | [**[]EnumhttpConnectionHandlerSchemaUrn**](EnumhttpConnectionHandlerSchemaUrn.md) |  | 
 **ListenAddress** | Pointer to **string** | Specifies the address on which to listen for connections from HTTP clients. If no value is defined, the server will listen on all addresses on all interfaces. | [optional] 
 **ListenPort** | **int64** | Specifies the port number on which the HTTP Connection Handler will listen for connections from clients. | 
@@ -32,14 +31,16 @@ Name | Type | Description | Notes
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **CorrelationIDRequestHeader** | Pointer to **[]string** | Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **SslClientAuthPolicy** | Pointer to [**EnumconnectionHandlerSslClientAuthPolicyProp**](EnumconnectionHandlerSslClientAuthPolicyProp.md) |  | [optional] 
+**EnableSniHostnameChecks** | Pointer to **bool** | Requires SNI hostnames to match or else throw an Invalid SNI error. | [optional] 
 **Description** | Pointer to **string** | A description for this Connection Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Connection Handler is enabled. | 
+**HandlerName** | **string** | Name of the new Connection Handler | 
 
 ## Methods
 
 ### NewAddHttpConnectionHandlerRequest
 
-`func NewAddHttpConnectionHandlerRequest(handlerName string, schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int64, enabled bool, ) *AddHttpConnectionHandlerRequest`
+`func NewAddHttpConnectionHandlerRequest(schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int64, enabled bool, handlerName string, ) *AddHttpConnectionHandlerRequest`
 
 NewAddHttpConnectionHandlerRequest instantiates a new AddHttpConnectionHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -53,26 +54,6 @@ will change when the set of required properties is changed
 NewAddHttpConnectionHandlerRequestWithDefaults instantiates a new AddHttpConnectionHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddHttpConnectionHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddHttpConnectionHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddHttpConnectionHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -739,6 +720,31 @@ SetSslClientAuthPolicy sets SslClientAuthPolicy field to given value.
 
 HasSslClientAuthPolicy returns a boolean if a field has been set.
 
+### GetEnableSniHostnameChecks
+
+`func (o *AddHttpConnectionHandlerRequest) GetEnableSniHostnameChecks() bool`
+
+GetEnableSniHostnameChecks returns the EnableSniHostnameChecks field if non-nil, zero value otherwise.
+
+### GetEnableSniHostnameChecksOk
+
+`func (o *AddHttpConnectionHandlerRequest) GetEnableSniHostnameChecksOk() (*bool, bool)`
+
+GetEnableSniHostnameChecksOk returns a tuple with the EnableSniHostnameChecks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableSniHostnameChecks
+
+`func (o *AddHttpConnectionHandlerRequest) SetEnableSniHostnameChecks(v bool)`
+
+SetEnableSniHostnameChecks sets EnableSniHostnameChecks field to given value.
+
+### HasEnableSniHostnameChecks
+
+`func (o *AddHttpConnectionHandlerRequest) HasEnableSniHostnameChecks() bool`
+
+HasEnableSniHostnameChecks returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *AddHttpConnectionHandlerRequest) GetDescription() string`
@@ -782,6 +788,26 @@ and a boolean to check if the value has been set.
 `func (o *AddHttpConnectionHandlerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetHandlerName
+
+`func (o *AddHttpConnectionHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddHttpConnectionHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddHttpConnectionHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
 
 
 

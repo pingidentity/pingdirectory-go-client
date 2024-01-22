@@ -19,9 +19,7 @@ var _ MappedNullable = &AddFilterBasedUncachedEntryCriteriaRequest{}
 
 // AddFilterBasedUncachedEntryCriteriaRequest struct for AddFilterBasedUncachedEntryCriteriaRequest
 type AddFilterBasedUncachedEntryCriteriaRequest struct {
-	// Name of the new Uncached Entry Criteria
-	CriteriaName string                                          `json:"criteriaName"`
-	Schemas      []EnumfilterBasedUncachedEntryCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the search filter that should be used to differentiate entries into cached and uncached sets.
 	Filter string `json:"filter"`
 	// Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false).
@@ -30,18 +28,20 @@ type AddFilterBasedUncachedEntryCriteriaRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Uncached Entry Criteria is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Uncached Entry Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddFilterBasedUncachedEntryCriteriaRequest instantiates a new AddFilterBasedUncachedEntryCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFilterBasedUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, enabled bool) *AddFilterBasedUncachedEntryCriteriaRequest {
+func NewAddFilterBasedUncachedEntryCriteriaRequest(schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, enabled bool, criteriaName string) *AddFilterBasedUncachedEntryCriteriaRequest {
 	this := AddFilterBasedUncachedEntryCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
 	this.Filter = filter
 	this.Enabled = enabled
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddFilterBasedUncachedEntryCriteriaRequest(criteriaName string, schemas 
 func NewAddFilterBasedUncachedEntryCriteriaRequestWithDefaults() *AddFilterBasedUncachedEntryCriteriaRequest {
 	this := AddFilterBasedUncachedEntryCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddFilterBasedUncachedEntryCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddFilterBasedUncachedEntryCriteriaRequest) MarshalJSON() ([]byte, error
 
 func (o AddFilterBasedUncachedEntryCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["filter"] = o.Filter
 	if !IsNil(o.FilterIdentifiesUncachedEntries) {
@@ -233,6 +232,7 @@ func (o AddFilterBasedUncachedEntryCriteriaRequest) ToMap() (map[string]interfac
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &SmtpAccountStatusNotificationHandlerResponse{}
 
 // SmtpAccountStatusNotificationHandlerResponse struct for SmtpAccountStatusNotificationHandlerResponse
 type SmtpAccountStatusNotificationHandlerResponse struct {
-	// Name of the Account Status Notification Handler
-	Id      string                                              `json:"id"`
 	Schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// Specifies which attribute in the user's entries may be used to obtain the email address when notifying the end user.
 	EmailAddressAttributeType []string `json:"emailAddressAttributeType,omitempty"`
@@ -54,21 +52,23 @@ type SmtpAccountStatusNotificationHandlerResponse struct {
 	AccountUpdateNotificationRequestCriteria      *string                                            `json:"accountUpdateNotificationRequestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Account Status Notification Handler
+	Id string `json:"id"`
 }
 
 // NewSmtpAccountStatusNotificationHandlerResponse instantiates a new SmtpAccountStatusNotificationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSmtpAccountStatusNotificationHandlerResponse(id string, schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn, sendMessageWithoutEndUserAddress bool, senderAddress string, messageSubject []string, messageTemplateFile []string, enabled bool) *SmtpAccountStatusNotificationHandlerResponse {
+func NewSmtpAccountStatusNotificationHandlerResponse(schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn, sendMessageWithoutEndUserAddress bool, senderAddress string, messageSubject []string, messageTemplateFile []string, enabled bool, id string) *SmtpAccountStatusNotificationHandlerResponse {
 	this := SmtpAccountStatusNotificationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.SendMessageWithoutEndUserAddress = sendMessageWithoutEndUserAddress
 	this.SenderAddress = senderAddress
 	this.MessageSubject = messageSubject
 	this.MessageTemplateFile = messageTemplateFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -78,30 +78,6 @@ func NewSmtpAccountStatusNotificationHandlerResponse(id string, schemas []Enumsm
 func NewSmtpAccountStatusNotificationHandlerResponseWithDefaults() *SmtpAccountStatusNotificationHandlerResponse {
 	this := SmtpAccountStatusNotificationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SmtpAccountStatusNotificationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SmtpAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SmtpAccountStatusNotificationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -632,6 +608,30 @@ func (o *SmtpAccountStatusNotificationHandlerResponse) SetUrnpingidentityschemas
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SmtpAccountStatusNotificationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SmtpAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SmtpAccountStatusNotificationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SmtpAccountStatusNotificationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -642,7 +642,6 @@ func (o SmtpAccountStatusNotificationHandlerResponse) MarshalJSON() ([]byte, err
 
 func (o SmtpAccountStatusNotificationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.EmailAddressAttributeType) {
 		toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
@@ -685,6 +684,7 @@ func (o SmtpAccountStatusNotificationHandlerResponse) ToMap() (map[string]interf
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

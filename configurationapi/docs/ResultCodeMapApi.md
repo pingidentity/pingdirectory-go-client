@@ -1,14 +1,14 @@
-# \ResultCodeMapApi
+# \ResultCodeMapAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddResultCodeMap**](ResultCodeMapApi.md#AddResultCodeMap) | **Post** /result-code-maps | Add a new Result Code Map to the config
-[**DeleteResultCodeMap**](ResultCodeMapApi.md#DeleteResultCodeMap) | **Delete** /result-code-maps/{result-code-map-name} | Delete a Result Code Map
-[**GetResultCodeMap**](ResultCodeMapApi.md#GetResultCodeMap) | **Get** /result-code-maps/{result-code-map-name} | Returns a single Result Code Map
-[**ListResultCodeMaps**](ResultCodeMapApi.md#ListResultCodeMaps) | **Get** /result-code-maps | Returns a list of all Result Code Map objects
-[**UpdateResultCodeMap**](ResultCodeMapApi.md#UpdateResultCodeMap) | **Patch** /result-code-maps/{result-code-map-name} | Update an existing Result Code Map by name
+[**AddResultCodeMap**](ResultCodeMapAPI.md#AddResultCodeMap) | **Post** /result-code-maps | Add a new Result Code Map to the config
+[**DeleteResultCodeMap**](ResultCodeMapAPI.md#DeleteResultCodeMap) | **Delete** /result-code-maps/{result-code-map-name} | Delete a Result Code Map
+[**GetResultCodeMap**](ResultCodeMapAPI.md#GetResultCodeMap) | **Get** /result-code-maps/{result-code-map-name} | Returns a single Result Code Map
+[**ListResultCodeMaps**](ResultCodeMapAPI.md#ListResultCodeMaps) | **Get** /result-code-maps | Returns a list of all Result Code Map objects
+[**UpdateResultCodeMap**](ResultCodeMapAPI.md#UpdateResultCodeMap) | **Patch** /result-code-maps/{result-code-map-name} | Update an existing Result Code Map by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ResultCodeMapApi.AddResultCodeMap(context.Background()).AddResultCodeMapRequest(addResultCodeMapRequest).Execute()
+    resp, r, err := apiClient.ResultCodeMapAPI.AddResultCodeMap(context.Background()).AddResultCodeMapRequest(addResultCodeMapRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapApi.AddResultCodeMap``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapAPI.AddResultCodeMap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddResultCodeMap`: ResultCodeMapResponse
-    fmt.Fprintf(os.Stdout, "Response from `ResultCodeMapApi.AddResultCodeMap`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ResultCodeMapAPI.AddResultCodeMap`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ResultCodeMapApi.DeleteResultCodeMap(context.Background(), resultCodeMapName).Execute()
+    r, err := apiClient.ResultCodeMapAPI.DeleteResultCodeMap(context.Background(), resultCodeMapName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapApi.DeleteResultCodeMap``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapAPI.DeleteResultCodeMap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ResultCodeMapApi.GetResultCodeMap(context.Background(), resultCodeMapName).Execute()
+    resp, r, err := apiClient.ResultCodeMapAPI.GetResultCodeMap(context.Background(), resultCodeMapName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapApi.GetResultCodeMap``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapAPI.GetResultCodeMap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetResultCodeMap`: ResultCodeMapResponse
-    fmt.Fprintf(os.Stdout, "Response from `ResultCodeMapApi.GetResultCodeMap`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ResultCodeMapAPI.GetResultCodeMap`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ResultCodeMapApi.ListResultCodeMaps(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ResultCodeMapAPI.ListResultCodeMaps(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapApi.ListResultCodeMaps``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapAPI.ListResultCodeMaps``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListResultCodeMaps`: ResultCodeMapListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ResultCodeMapApi.ListResultCodeMaps`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ResultCodeMapAPI.ListResultCodeMaps`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ResultCodeMapApi.UpdateResultCodeMap(context.Background(), resultCodeMapName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ResultCodeMapAPI.UpdateResultCodeMap(context.Background(), resultCodeMapName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapApi.UpdateResultCodeMap``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapAPI.UpdateResultCodeMap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateResultCodeMap`: ResultCodeMapResponse
-    fmt.Fprintf(os.Stdout, "Response from `ResultCodeMapApi.UpdateResultCodeMap`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ResultCodeMapAPI.UpdateResultCodeMap`: %v\n", resp)
 }
 ```
 

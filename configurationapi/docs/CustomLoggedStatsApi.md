@@ -1,14 +1,14 @@
-# \CustomLoggedStatsApi
+# \CustomLoggedStatsAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddCustomLoggedStats**](CustomLoggedStatsApi.md#AddCustomLoggedStats) | **Post** /plugin-root/plugins/{plugin-name}/custom-logged-stats | Add a new Custom Logged Stats to the config
-[**DeleteCustomLoggedStats**](CustomLoggedStatsApi.md#DeleteCustomLoggedStats) | **Delete** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Delete a Custom Logged Stats
-[**GetCustomLoggedStats**](CustomLoggedStatsApi.md#GetCustomLoggedStats) | **Get** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Returns a single Custom Logged Stats
-[**ListCustomLoggedStats**](CustomLoggedStatsApi.md#ListCustomLoggedStats) | **Get** /plugin-root/plugins/{plugin-name}/custom-logged-stats | Returns a list of all Custom Logged Stats objects
-[**UpdateCustomLoggedStats**](CustomLoggedStatsApi.md#UpdateCustomLoggedStats) | **Patch** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Update an existing Custom Logged Stats by name
+[**AddCustomLoggedStats**](CustomLoggedStatsAPI.md#AddCustomLoggedStats) | **Post** /plugin-root/plugins/{plugin-name}/custom-logged-stats | Add a new Custom Logged Stats to the config
+[**DeleteCustomLoggedStats**](CustomLoggedStatsAPI.md#DeleteCustomLoggedStats) | **Delete** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Delete a Custom Logged Stats
+[**GetCustomLoggedStats**](CustomLoggedStatsAPI.md#GetCustomLoggedStats) | **Get** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Returns a single Custom Logged Stats
+[**ListCustomLoggedStats**](CustomLoggedStatsAPI.md#ListCustomLoggedStats) | **Get** /plugin-root/plugins/{plugin-name}/custom-logged-stats | Returns a list of all Custom Logged Stats objects
+[**UpdateCustomLoggedStats**](CustomLoggedStatsAPI.md#UpdateCustomLoggedStats) | **Patch** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Update an existing Custom Logged Stats by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     pluginName := "pluginName_example" // string | Name of the Plugin
-    addCustomLoggedStatsRequest := *openapiclient.NewAddCustomLoggedStatsRequest("StatsName_example", []openapiclient.EnumcustomLoggedStatsSchemaUrn{openapiclient.Enumcustom-logged-statsSchemaUrn("urn:pingidentity:schemas:configuration:2.0:custom-logged-stats:custom")}, "MonitorObjectclass_example", []string{"AttributeToLog_example"}, []openapiclient.EnumcustomLoggedStatsStatisticTypeProp{openapiclient.Enumcustom-logged-stats-statisticTypeProp("raw")}) // AddCustomLoggedStatsRequest | Create a new Custom Logged Stats in the config
+    addCustomLoggedStatsRequest := *openapiclient.NewAddCustomLoggedStatsRequest([]openapiclient.EnumcustomLoggedStatsSchemaUrn{openapiclient.Enumcustom-logged-statsSchemaUrn("urn:pingidentity:schemas:configuration:2.0:custom-logged-stats:custom")}, "MonitorObjectclass_example", []string{"AttributeToLog_example"}, []openapiclient.EnumcustomLoggedStatsStatisticTypeProp{openapiclient.Enumcustom-logged-stats-statisticTypeProp("raw")}, "StatsName_example") // AddCustomLoggedStatsRequest | Create a new Custom Logged Stats in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomLoggedStatsApi.AddCustomLoggedStats(context.Background(), pluginName).AddCustomLoggedStatsRequest(addCustomLoggedStatsRequest).Execute()
+    resp, r, err := apiClient.CustomLoggedStatsAPI.AddCustomLoggedStats(context.Background(), pluginName).AddCustomLoggedStatsRequest(addCustomLoggedStatsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsApi.AddCustomLoggedStats``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsAPI.AddCustomLoggedStats``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddCustomLoggedStats`: CustomLoggedStatsResponse
-    fmt.Fprintf(os.Stdout, "Response from `CustomLoggedStatsApi.AddCustomLoggedStats`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CustomLoggedStatsAPI.AddCustomLoggedStats`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomLoggedStatsApi.DeleteCustomLoggedStats(context.Background(), customLoggedStatsName, pluginName).Execute()
+    r, err := apiClient.CustomLoggedStatsAPI.DeleteCustomLoggedStats(context.Background(), customLoggedStatsName, pluginName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsApi.DeleteCustomLoggedStats``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsAPI.DeleteCustomLoggedStats``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomLoggedStatsApi.GetCustomLoggedStats(context.Background(), customLoggedStatsName, pluginName).Execute()
+    resp, r, err := apiClient.CustomLoggedStatsAPI.GetCustomLoggedStats(context.Background(), customLoggedStatsName, pluginName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsApi.GetCustomLoggedStats``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsAPI.GetCustomLoggedStats``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCustomLoggedStats`: CustomLoggedStatsResponse
-    fmt.Fprintf(os.Stdout, "Response from `CustomLoggedStatsApi.GetCustomLoggedStats`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CustomLoggedStatsAPI.GetCustomLoggedStats`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomLoggedStatsApi.ListCustomLoggedStats(context.Background(), pluginName).Filter(filter).Execute()
+    resp, r, err := apiClient.CustomLoggedStatsAPI.ListCustomLoggedStats(context.Background(), pluginName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsApi.ListCustomLoggedStats``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsAPI.ListCustomLoggedStats``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListCustomLoggedStats`: CustomLoggedStatsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `CustomLoggedStatsApi.ListCustomLoggedStats`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CustomLoggedStatsAPI.ListCustomLoggedStats`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomLoggedStatsApi.UpdateCustomLoggedStats(context.Background(), customLoggedStatsName, pluginName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.CustomLoggedStatsAPI.UpdateCustomLoggedStats(context.Background(), customLoggedStatsName, pluginName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsApi.UpdateCustomLoggedStats``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsAPI.UpdateCustomLoggedStats``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCustomLoggedStats`: CustomLoggedStatsResponse
-    fmt.Fprintf(os.Stdout, "Response from `CustomLoggedStatsApi.UpdateCustomLoggedStats`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CustomLoggedStatsAPI.UpdateCustomLoggedStats`: %v\n", resp)
 }
 ```
 

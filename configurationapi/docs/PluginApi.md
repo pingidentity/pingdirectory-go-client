@@ -1,14 +1,14 @@
-# \PluginApi
+# \PluginAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPlugin**](PluginApi.md#AddPlugin) | **Post** /plugin-root/plugins | Add a new Plugin to the config
-[**DeletePlugin**](PluginApi.md#DeletePlugin) | **Delete** /plugin-root/plugins/{plugin-name} | Delete a Plugin
-[**GetPlugin**](PluginApi.md#GetPlugin) | **Get** /plugin-root/plugins/{plugin-name} | Returns a single Plugin
-[**ListPlugins**](PluginApi.md#ListPlugins) | **Get** /plugin-root/plugins | Returns a list of all Plugin objects
-[**UpdatePlugin**](PluginApi.md#UpdatePlugin) | **Patch** /plugin-root/plugins/{plugin-name} | Update an existing Plugin by name
+[**AddPlugin**](PluginAPI.md#AddPlugin) | **Post** /plugin-root/plugins | Add a new Plugin to the config
+[**DeletePlugin**](PluginAPI.md#DeletePlugin) | **Delete** /plugin-root/plugins/{plugin-name} | Delete a Plugin
+[**GetPlugin**](PluginAPI.md#GetPlugin) | **Get** /plugin-root/plugins/{plugin-name} | Returns a single Plugin
+[**ListPlugins**](PluginAPI.md#ListPlugins) | **Get** /plugin-root/plugins | Returns a list of all Plugin objects
+[**UpdatePlugin**](PluginAPI.md#UpdatePlugin) | **Patch** /plugin-root/plugins/{plugin-name} | Update an existing Plugin by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addPluginRequest := openapiclient.add_plugin_request{AddAttributeMapperPluginRequest: openapiclient.NewAddAttributeMapperPluginRequest("PluginName_example", []openapiclient.EnumattributeMapperPluginSchemaUrn{openapiclient.Enumattribute-mapper-pluginSchemaUrn("urn:pingidentity:schemas:configuration:2.0:plugin:attribute-mapper")}, "SourceAttribute_example", "TargetAttribute_example", false)} // AddPluginRequest | Create a new Plugin in the config
+    addPluginRequest := openapiclient.add_plugin_request{AddAttributeMapperPluginRequest: openapiclient.NewAddAttributeMapperPluginRequest([]openapiclient.EnumattributeMapperPluginSchemaUrn{openapiclient.Enumattribute-mapper-pluginSchemaUrn("urn:pingidentity:schemas:configuration:2.0:plugin:attribute-mapper")}, "SourceAttribute_example", "TargetAttribute_example", false, "PluginName_example")} // AddPluginRequest | Create a new Plugin in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PluginApi.AddPlugin(context.Background()).AddPluginRequest(addPluginRequest).Execute()
+    resp, r, err := apiClient.PluginAPI.AddPlugin(context.Background()).AddPluginRequest(addPluginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PluginApi.AddPlugin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PluginAPI.AddPlugin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddPlugin`: AddPlugin200Response
-    fmt.Fprintf(os.Stdout, "Response from `PluginApi.AddPlugin`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PluginAPI.AddPlugin`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PluginApi.DeletePlugin(context.Background(), pluginName).Execute()
+    r, err := apiClient.PluginAPI.DeletePlugin(context.Background(), pluginName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PluginApi.DeletePlugin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PluginAPI.DeletePlugin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PluginApi.GetPlugin(context.Background(), pluginName).Execute()
+    resp, r, err := apiClient.PluginAPI.GetPlugin(context.Background(), pluginName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PluginApi.GetPlugin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PluginAPI.GetPlugin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPlugin`: GetPlugin200Response
-    fmt.Fprintf(os.Stdout, "Response from `PluginApi.GetPlugin`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PluginAPI.GetPlugin`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PluginApi.ListPlugins(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.PluginAPI.ListPlugins(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PluginApi.ListPlugins``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PluginAPI.ListPlugins``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPlugins`: PluginListResponse
-    fmt.Fprintf(os.Stdout, "Response from `PluginApi.ListPlugins`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PluginAPI.ListPlugins`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PluginApi.UpdatePlugin(context.Background(), pluginName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.PluginAPI.UpdatePlugin(context.Background(), pluginName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PluginApi.UpdatePlugin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PluginAPI.UpdatePlugin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePlugin`: GetPlugin200Response
-    fmt.Fprintf(os.Stdout, "Response from `PluginApi.UpdatePlugin`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PluginAPI.UpdatePlugin`: %v\n", resp)
 }
 ```
 

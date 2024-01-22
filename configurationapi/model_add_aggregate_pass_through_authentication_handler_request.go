@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAggregatePassThroughAuthenticationHandlerRequest{}
 
 // AddAggregatePassThroughAuthenticationHandlerRequest struct for AddAggregatePassThroughAuthenticationHandlerRequest
 type AddAggregatePassThroughAuthenticationHandlerRequest struct {
-	// Name of the new Pass Through Authentication Handler
-	HandlerName string                                                   `json:"handlerName"`
-	Schemas     []EnumaggregatePassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumaggregatePassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// The set of subordinate pass-through authentication handlers that may be used to perform the authentication processing. Handlers will be invoked in order until one is found for which the bind operation matches the associated criteria and either succeeds or fails in a manner that should not be ignored.
 	SubordinatePassThroughAuthenticationHandler []string                                                        `json:"subordinatePassThroughAuthenticationHandler"`
 	ContinueOnFailureType                       []EnumpassThroughAuthenticationHandlerContinueOnFailureTypeProp `json:"continueOnFailureType,omitempty"`
@@ -33,17 +31,19 @@ type AddAggregatePassThroughAuthenticationHandlerRequest struct {
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
+	// Name of the new Pass Through Authentication Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddAggregatePassThroughAuthenticationHandlerRequest instantiates a new AddAggregatePassThroughAuthenticationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAggregatePassThroughAuthenticationHandlerRequest(handlerName string, schemas []EnumaggregatePassThroughAuthenticationHandlerSchemaUrn, subordinatePassThroughAuthenticationHandler []string) *AddAggregatePassThroughAuthenticationHandlerRequest {
+func NewAddAggregatePassThroughAuthenticationHandlerRequest(schemas []EnumaggregatePassThroughAuthenticationHandlerSchemaUrn, subordinatePassThroughAuthenticationHandler []string, handlerName string) *AddAggregatePassThroughAuthenticationHandlerRequest {
 	this := AddAggregatePassThroughAuthenticationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.SubordinatePassThroughAuthenticationHandler = subordinatePassThroughAuthenticationHandler
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddAggregatePassThroughAuthenticationHandlerRequest(handlerName string, 
 func NewAddAggregatePassThroughAuthenticationHandlerRequestWithDefaults() *AddAggregatePassThroughAuthenticationHandlerRequest {
 	this := AddAggregatePassThroughAuthenticationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddAggregatePassThroughAuthenticationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddAggregatePassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddAggregatePassThroughAuthenticationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -287,6 +263,30 @@ func (o *AddAggregatePassThroughAuthenticationHandlerRequest) SetRequestCriteria
 	o.RequestCriteria = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddAggregatePassThroughAuthenticationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddAggregatePassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddAggregatePassThroughAuthenticationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddAggregatePassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -297,7 +297,6 @@ func (o AddAggregatePassThroughAuthenticationHandlerRequest) MarshalJSON() ([]by
 
 func (o AddAggregatePassThroughAuthenticationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["subordinatePassThroughAuthenticationHandler"] = o.SubordinatePassThroughAuthenticationHandler
 	if !IsNil(o.ContinueOnFailureType) {
@@ -315,6 +314,7 @@ func (o AddAggregatePassThroughAuthenticationHandlerRequest) ToMap() (map[string
 	if !IsNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

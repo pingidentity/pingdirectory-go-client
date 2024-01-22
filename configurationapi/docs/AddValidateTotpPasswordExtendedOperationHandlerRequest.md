@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 **Schemas** | [**[]EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn**](EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn.md) |  | 
 **SharedSecretAttributeType** | Pointer to **string** | The name or OID of the attribute that will be used to hold the shared secret key used during TOTP processing. | [optional] 
 **TimeIntervalDuration** | Pointer to **string** | The duration of the time interval used for TOTP processing. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **PreventTOTPReuse** | Pointer to **bool** | Indicates whether to prevent clients from re-using TOTP passwords. | [optional] 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
+**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 
 ## Methods
 
 ### NewAddValidateTotpPasswordExtendedOperationHandlerRequest
 
-`func NewAddValidateTotpPasswordExtendedOperationHandlerRequest(handlerName string, schemas []EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn, enabled bool, ) *AddValidateTotpPasswordExtendedOperationHandlerRequest`
+`func NewAddValidateTotpPasswordExtendedOperationHandlerRequest(schemas []EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn, enabled bool, handlerName string, ) *AddValidateTotpPasswordExtendedOperationHandlerRequest`
 
 NewAddValidateTotpPasswordExtendedOperationHandlerRequest instantiates a new AddValidateTotpPasswordExtendedOperationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddValidateTotpPasswordExtendedOperationHandlerRequestWithDefaults instantiates a new AddValidateTotpPasswordExtendedOperationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -215,6 +195,26 @@ and a boolean to check if the value has been set.
 `func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetHandlerName
+
+`func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
 
 
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &LocalDbVlvIndexResponse{}
 
 // LocalDbVlvIndexResponse struct for LocalDbVlvIndexResponse
 type LocalDbVlvIndexResponse struct {
-	// Name of the Local DB VLV Index
-	Id      string                         `json:"id"`
 	Schemas []EnumlocalDbVlvIndexSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the base DN used in the search query that is being indexed.
 	BaseDN string                       `json:"baseDN"`
@@ -36,20 +34,22 @@ type LocalDbVlvIndexResponse struct {
 	CacheMode                                     *EnumlocalDbVlvIndexCacheModeProp                  `json:"cacheMode,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Local DB VLV Index
+	Id string `json:"id"`
 }
 
 // NewLocalDbVlvIndexResponse instantiates a new LocalDbVlvIndexResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLocalDbVlvIndexResponse(id string, baseDN string, scope EnumlocalDbVlvIndexScopeProp, filter string, sortOrder string, name string) *LocalDbVlvIndexResponse {
+func NewLocalDbVlvIndexResponse(baseDN string, scope EnumlocalDbVlvIndexScopeProp, filter string, sortOrder string, name string, id string) *LocalDbVlvIndexResponse {
 	this := LocalDbVlvIndexResponse{}
-	this.Id = id
 	this.BaseDN = baseDN
 	this.Scope = scope
 	this.Filter = filter
 	this.SortOrder = sortOrder
 	this.Name = name
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewLocalDbVlvIndexResponse(id string, baseDN string, scope EnumlocalDbVlvIn
 func NewLocalDbVlvIndexResponseWithDefaults() *LocalDbVlvIndexResponse {
 	this := LocalDbVlvIndexResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LocalDbVlvIndexResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LocalDbVlvIndexResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LocalDbVlvIndexResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -365,6 +341,30 @@ func (o *LocalDbVlvIndexResponse) SetUrnpingidentityschemasconfigurationmessages
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LocalDbVlvIndexResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LocalDbVlvIndexResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LocalDbVlvIndexResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LocalDbVlvIndexResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -375,7 +375,6 @@ func (o LocalDbVlvIndexResponse) MarshalJSON() ([]byte, error) {
 
 func (o LocalDbVlvIndexResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -396,6 +395,7 @@ func (o LocalDbVlvIndexResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

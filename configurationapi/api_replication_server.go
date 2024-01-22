@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ReplicationServerApiService ReplicationServerApi service
-type ReplicationServerApiService service
+// ReplicationServerAPIService ReplicationServerAPI service
+type ReplicationServerAPIService service
 
 type ApiGetReplicationServerRequest struct {
 	ctx                         context.Context
-	ApiService                  *ReplicationServerApiService
+	ApiService                  *ReplicationServerAPIService
 	synchronizationProviderName string
 }
 
@@ -39,7 +39,7 @@ GetReplicationServer Returns a single Replication Server
 	@param synchronizationProviderName Name of the Synchronization Provider
 	@return ApiGetReplicationServerRequest
 */
-func (a *ReplicationServerApiService) GetReplicationServer(ctx context.Context, synchronizationProviderName string) ApiGetReplicationServerRequest {
+func (a *ReplicationServerAPIService) GetReplicationServer(ctx context.Context, synchronizationProviderName string) ApiGetReplicationServerRequest {
 	return ApiGetReplicationServerRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -50,7 +50,7 @@ func (a *ReplicationServerApiService) GetReplicationServer(ctx context.Context, 
 // Execute executes the request
 //
 //	@return ReplicationServerResponse
-func (a *ReplicationServerApiService) GetReplicationServerExecute(r ApiGetReplicationServerRequest) (*ReplicationServerResponse, *http.Response, error) {
+func (a *ReplicationServerAPIService) GetReplicationServerExecute(r ApiGetReplicationServerRequest) (*ReplicationServerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -58,7 +58,7 @@ func (a *ReplicationServerApiService) GetReplicationServerExecute(r ApiGetReplic
 		localVarReturnValue *ReplicationServerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationServerApiService.GetReplicationServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationServerAPIService.GetReplicationServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *ReplicationServerApiService) GetReplicationServerExecute(r ApiGetReplic
 
 type ApiUpdateReplicationServerRequest struct {
 	ctx                         context.Context
-	ApiService                  *ReplicationServerApiService
+	ApiService                  *ReplicationServerAPIService
 	synchronizationProviderName string
 	updateRequest               *UpdateRequest
 }
@@ -148,7 +148,7 @@ UpdateReplicationServer Update an existing Replication Server by name
 	@param synchronizationProviderName Name of the Synchronization Provider
 	@return ApiUpdateReplicationServerRequest
 */
-func (a *ReplicationServerApiService) UpdateReplicationServer(ctx context.Context, synchronizationProviderName string) ApiUpdateReplicationServerRequest {
+func (a *ReplicationServerAPIService) UpdateReplicationServer(ctx context.Context, synchronizationProviderName string) ApiUpdateReplicationServerRequest {
 	return ApiUpdateReplicationServerRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -159,7 +159,7 @@ func (a *ReplicationServerApiService) UpdateReplicationServer(ctx context.Contex
 // Execute executes the request
 //
 //	@return ReplicationServerResponse
-func (a *ReplicationServerApiService) UpdateReplicationServerExecute(r ApiUpdateReplicationServerRequest) (*ReplicationServerResponse, *http.Response, error) {
+func (a *ReplicationServerAPIService) UpdateReplicationServerExecute(r ApiUpdateReplicationServerRequest) (*ReplicationServerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -167,7 +167,7 @@ func (a *ReplicationServerApiService) UpdateReplicationServerExecute(r ApiUpdate
 		localVarReturnValue *ReplicationServerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationServerApiService.UpdateReplicationServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationServerAPIService.UpdateReplicationServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

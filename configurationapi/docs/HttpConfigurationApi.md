@@ -1,11 +1,11 @@
-# \HttpConfigurationApi
+# \HttpConfigurationAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetHttpConfiguration**](HttpConfigurationApi.md#GetHttpConfiguration) | **Get** /http-configuration | Returns a single HTTP Configuration
-[**UpdateHttpConfiguration**](HttpConfigurationApi.md#UpdateHttpConfiguration) | **Patch** /http-configuration | Update an existing HTTP Configuration by name
+[**GetHttpConfiguration**](HttpConfigurationAPI.md#GetHttpConfiguration) | **Get** /http-configuration | Returns a single HTTP Configuration
+[**UpdateHttpConfiguration**](HttpConfigurationAPI.md#UpdateHttpConfiguration) | **Patch** /http-configuration | Update an existing HTTP Configuration by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpConfigurationApi.GetHttpConfiguration(context.Background()).Execute()
+    resp, r, err := apiClient.HttpConfigurationAPI.GetHttpConfiguration(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpConfigurationApi.GetHttpConfiguration``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpConfigurationAPI.GetHttpConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetHttpConfiguration`: HttpConfigurationResponse
-    fmt.Fprintf(os.Stdout, "Response from `HttpConfigurationApi.GetHttpConfiguration`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpConfigurationAPI.GetHttpConfiguration`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpConfigurationApi.UpdateHttpConfiguration(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.HttpConfigurationAPI.UpdateHttpConfiguration(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpConfigurationApi.UpdateHttpConfiguration``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpConfigurationAPI.UpdateHttpConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateHttpConfiguration`: HttpConfigurationResponse
-    fmt.Fprintf(os.Stdout, "Response from `HttpConfigurationApi.UpdateHttpConfiguration`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpConfigurationAPI.UpdateHttpConfiguration`: %v\n", resp)
 }
 ```
 

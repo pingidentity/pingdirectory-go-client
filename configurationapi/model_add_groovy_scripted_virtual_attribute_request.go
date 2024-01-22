@@ -19,8 +19,6 @@ var _ MappedNullable = &AddGroovyScriptedVirtualAttributeRequest{}
 
 // AddGroovyScriptedVirtualAttributeRequest struct for AddGroovyScriptedVirtualAttributeRequest
 type AddGroovyScriptedVirtualAttributeRequest struct {
-	// Name of the new Virtual Attribute
-	Name    string                                        `json:"name"`
 	Schemas []EnumgroovyScriptedVirtualAttributeSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Virtual Attribute.
 	ScriptClass string `json:"scriptClass"`
@@ -48,19 +46,21 @@ type AddGroovyScriptedVirtualAttributeRequest struct {
 	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
+	// Name of the new Virtual Attribute
+	Name string `json:"name"`
 }
 
 // NewAddGroovyScriptedVirtualAttributeRequest instantiates a new AddGroovyScriptedVirtualAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedVirtualAttributeRequest(name string, schemas []EnumgroovyScriptedVirtualAttributeSchemaUrn, scriptClass string, enabled bool, attributeType string) *AddGroovyScriptedVirtualAttributeRequest {
+func NewAddGroovyScriptedVirtualAttributeRequest(schemas []EnumgroovyScriptedVirtualAttributeSchemaUrn, scriptClass string, enabled bool, attributeType string, name string) *AddGroovyScriptedVirtualAttributeRequest {
 	this := AddGroovyScriptedVirtualAttributeRequest{}
-	this.Name = name
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
 	this.AttributeType = attributeType
+	this.Name = name
 	return &this
 }
 
@@ -70,30 +70,6 @@ func NewAddGroovyScriptedVirtualAttributeRequest(name string, schemas []Enumgroo
 func NewAddGroovyScriptedVirtualAttributeRequestWithDefaults() *AddGroovyScriptedVirtualAttributeRequest {
 	this := AddGroovyScriptedVirtualAttributeRequest{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddGroovyScriptedVirtualAttributeRequest) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedVirtualAttributeRequest) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddGroovyScriptedVirtualAttributeRequest) SetName(v string) {
-	o.Name = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -544,6 +520,30 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetAllowIndexConflicts(v bool
 	o.AllowIndexConflicts = &v
 }
 
+// GetName returns the Name field value
+func (o *AddGroovyScriptedVirtualAttributeRequest) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedVirtualAttributeRequest) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *AddGroovyScriptedVirtualAttributeRequest) SetName(v string) {
+	o.Name = v
+}
+
 func (o AddGroovyScriptedVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -554,7 +554,6 @@ func (o AddGroovyScriptedVirtualAttributeRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddGroovyScriptedVirtualAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -592,6 +591,7 @@ func (o AddGroovyScriptedVirtualAttributeRequest) ToMap() (map[string]interface{
 	if !IsNil(o.AllowIndexConflicts) {
 		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
 	}
+	toSerialize["name"] = o.Name
 	return toSerialize, nil
 }
 

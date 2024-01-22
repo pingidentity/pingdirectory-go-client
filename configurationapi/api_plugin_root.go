@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// PluginRootApiService PluginRootApi service
-type PluginRootApiService service
+// PluginRootAPIService PluginRootAPI service
+type PluginRootAPIService service
 
 type ApiGetPluginRootRequest struct {
 	ctx        context.Context
-	ApiService *PluginRootApiService
+	ApiService *PluginRootAPIService
 }
 
 func (r ApiGetPluginRootRequest) Execute() (*PluginRootResponse, *http.Response, error) {
@@ -36,7 +36,7 @@ GetPluginRoot Returns a single Plugin Root
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetPluginRootRequest
 */
-func (a *PluginRootApiService) GetPluginRoot(ctx context.Context) ApiGetPluginRootRequest {
+func (a *PluginRootAPIService) GetPluginRoot(ctx context.Context) ApiGetPluginRootRequest {
 	return ApiGetPluginRootRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *PluginRootApiService) GetPluginRoot(ctx context.Context) ApiGetPluginRo
 // Execute executes the request
 //
 //	@return PluginRootResponse
-func (a *PluginRootApiService) GetPluginRootExecute(r ApiGetPluginRootRequest) (*PluginRootResponse, *http.Response, error) {
+func (a *PluginRootAPIService) GetPluginRootExecute(r ApiGetPluginRootRequest) (*PluginRootResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *PluginRootApiService) GetPluginRootExecute(r ApiGetPluginRootRequest) (
 		localVarReturnValue *PluginRootResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginRootApiService.GetPluginRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginRootAPIService.GetPluginRoot")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *PluginRootApiService) GetPluginRootExecute(r ApiGetPluginRootRequest) (
 
 type ApiUpdatePluginRootRequest struct {
 	ctx           context.Context
-	ApiService    *PluginRootApiService
+	ApiService    *PluginRootAPIService
 	updateRequest *UpdateRequest
 }
 
@@ -141,7 +141,7 @@ UpdatePluginRoot Update an existing Plugin Root by name
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdatePluginRootRequest
 */
-func (a *PluginRootApiService) UpdatePluginRoot(ctx context.Context) ApiUpdatePluginRootRequest {
+func (a *PluginRootAPIService) UpdatePluginRoot(ctx context.Context) ApiUpdatePluginRootRequest {
 	return ApiUpdatePluginRootRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *PluginRootApiService) UpdatePluginRoot(ctx context.Context) ApiUpdatePl
 // Execute executes the request
 //
 //	@return PluginRootResponse
-func (a *PluginRootApiService) UpdatePluginRootExecute(r ApiUpdatePluginRootRequest) (*PluginRootResponse, *http.Response, error) {
+func (a *PluginRootAPIService) UpdatePluginRootExecute(r ApiUpdatePluginRootRequest) (*PluginRootResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *PluginRootApiService) UpdatePluginRootExecute(r ApiUpdatePluginRootRequ
 		localVarReturnValue *PluginRootResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginRootApiService.UpdatePluginRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginRootAPIService.UpdatePluginRoot")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

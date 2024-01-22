@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AccountStatusNotificationHandlerApiService AccountStatusNotificationHandlerApi service
-type AccountStatusNotificationHandlerApiService service
+// AccountStatusNotificationHandlerAPIService AccountStatusNotificationHandlerAPI service
+type AccountStatusNotificationHandlerAPIService service
 
 type ApiAddAccountStatusNotificationHandlerRequest struct {
 	ctx                                        context.Context
-	ApiService                                 *AccountStatusNotificationHandlerApiService
+	ApiService                                 *AccountStatusNotificationHandlerAPIService
 	addAccountStatusNotificationHandlerRequest *AddAccountStatusNotificationHandlerRequest
 }
 
@@ -44,7 +44,7 @@ AddAccountStatusNotificationHandler Add a new Account Status Notification Handle
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddAccountStatusNotificationHandlerRequest
 */
-func (a *AccountStatusNotificationHandlerApiService) AddAccountStatusNotificationHandler(ctx context.Context) ApiAddAccountStatusNotificationHandlerRequest {
+func (a *AccountStatusNotificationHandlerAPIService) AddAccountStatusNotificationHandler(ctx context.Context) ApiAddAccountStatusNotificationHandlerRequest {
 	return ApiAddAccountStatusNotificationHandlerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *AccountStatusNotificationHandlerApiService) AddAccountStatusNotificatio
 // Execute executes the request
 //
 //	@return AddAccountStatusNotificationHandler200Response
-func (a *AccountStatusNotificationHandlerApiService) AddAccountStatusNotificationHandlerExecute(r ApiAddAccountStatusNotificationHandlerRequest) (*AddAccountStatusNotificationHandler200Response, *http.Response, error) {
+func (a *AccountStatusNotificationHandlerAPIService) AddAccountStatusNotificationHandlerExecute(r ApiAddAccountStatusNotificationHandlerRequest) (*AddAccountStatusNotificationHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *AccountStatusNotificationHandlerApiService) AddAccountStatusNotificatio
 		localVarReturnValue *AddAccountStatusNotificationHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerApiService.AddAccountStatusNotificationHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerAPIService.AddAccountStatusNotificationHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *AccountStatusNotificationHandlerApiService) AddAccountStatusNotificatio
 
 type ApiDeleteAccountStatusNotificationHandlerRequest struct {
 	ctx                                  context.Context
-	ApiService                           *AccountStatusNotificationHandlerApiService
+	ApiService                           *AccountStatusNotificationHandlerAPIService
 	accountStatusNotificationHandlerName string
 }
 
@@ -149,7 +149,7 @@ DeleteAccountStatusNotificationHandler Delete a Account Status Notification Hand
 	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler
 	@return ApiDeleteAccountStatusNotificationHandlerRequest
 */
-func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiDeleteAccountStatusNotificationHandlerRequest {
+func (a *AccountStatusNotificationHandlerAPIService) DeleteAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiDeleteAccountStatusNotificationHandlerRequest {
 	return ApiDeleteAccountStatusNotificationHandlerRequest{
 		ApiService:                           a,
 		ctx:                                  ctx,
@@ -158,14 +158,14 @@ func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotifica
 }
 
 // Execute executes the request
-func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotificationHandlerExecute(r ApiDeleteAccountStatusNotificationHandlerRequest) (*http.Response, error) {
+func (a *AccountStatusNotificationHandlerAPIService) DeleteAccountStatusNotificationHandlerExecute(r ApiDeleteAccountStatusNotificationHandlerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerApiService.DeleteAccountStatusNotificationHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerAPIService.DeleteAccountStatusNotificationHandler")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotifica
 
 type ApiGetAccountStatusNotificationHandlerRequest struct {
 	ctx                                  context.Context
-	ApiService                           *AccountStatusNotificationHandlerApiService
+	ApiService                           *AccountStatusNotificationHandlerAPIService
 	accountStatusNotificationHandlerName string
 }
 
@@ -239,7 +239,7 @@ GetAccountStatusNotificationHandler Returns a single Account Status Notification
 	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler
 	@return ApiGetAccountStatusNotificationHandlerRequest
 */
-func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiGetAccountStatusNotificationHandlerRequest {
+func (a *AccountStatusNotificationHandlerAPIService) GetAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiGetAccountStatusNotificationHandlerRequest {
 	return ApiGetAccountStatusNotificationHandlerRequest{
 		ApiService:                           a,
 		ctx:                                  ctx,
@@ -250,7 +250,7 @@ func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificatio
 // Execute executes the request
 //
 //	@return AddAccountStatusNotificationHandler200Response
-func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificationHandlerExecute(r ApiGetAccountStatusNotificationHandlerRequest) (*AddAccountStatusNotificationHandler200Response, *http.Response, error) {
+func (a *AccountStatusNotificationHandlerAPIService) GetAccountStatusNotificationHandlerExecute(r ApiGetAccountStatusNotificationHandlerRequest) (*AddAccountStatusNotificationHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificatio
 		localVarReturnValue *AddAccountStatusNotificationHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerApiService.GetAccountStatusNotificationHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerAPIService.GetAccountStatusNotificationHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificatio
 
 type ApiListAccountStatusNotificationHandlersRequest struct {
 	ctx        context.Context
-	ApiService *AccountStatusNotificationHandlerApiService
+	ApiService *AccountStatusNotificationHandlerAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListAccountStatusNotificationHandlers Returns a list of all Account Status Notif
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListAccountStatusNotificationHandlersRequest
 */
-func (a *AccountStatusNotificationHandlerApiService) ListAccountStatusNotificationHandlers(ctx context.Context) ApiListAccountStatusNotificationHandlersRequest {
+func (a *AccountStatusNotificationHandlerAPIService) ListAccountStatusNotificationHandlers(ctx context.Context) ApiListAccountStatusNotificationHandlersRequest {
 	return ApiListAccountStatusNotificationHandlersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *AccountStatusNotificationHandlerApiService) ListAccountStatusNotificati
 // Execute executes the request
 //
 //	@return AccountStatusNotificationHandlerListResponse
-func (a *AccountStatusNotificationHandlerApiService) ListAccountStatusNotificationHandlersExecute(r ApiListAccountStatusNotificationHandlersRequest) (*AccountStatusNotificationHandlerListResponse, *http.Response, error) {
+func (a *AccountStatusNotificationHandlerAPIService) ListAccountStatusNotificationHandlersExecute(r ApiListAccountStatusNotificationHandlersRequest) (*AccountStatusNotificationHandlerListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *AccountStatusNotificationHandlerApiService) ListAccountStatusNotificati
 		localVarReturnValue *AccountStatusNotificationHandlerListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerApiService.ListAccountStatusNotificationHandlers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerAPIService.ListAccountStatusNotificationHandlers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *AccountStatusNotificationHandlerApiService) ListAccountStatusNotificati
 
 type ApiUpdateAccountStatusNotificationHandlerRequest struct {
 	ctx                                  context.Context
-	ApiService                           *AccountStatusNotificationHandlerApiService
+	ApiService                           *AccountStatusNotificationHandlerAPIService
 	accountStatusNotificationHandlerName string
 	updateRequest                        *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateAccountStatusNotificationHandler Update an existing Account Status Notific
 	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler
 	@return ApiUpdateAccountStatusNotificationHandlerRequest
 */
-func (a *AccountStatusNotificationHandlerApiService) UpdateAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiUpdateAccountStatusNotificationHandlerRequest {
+func (a *AccountStatusNotificationHandlerAPIService) UpdateAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiUpdateAccountStatusNotificationHandlerRequest {
 	return ApiUpdateAccountStatusNotificationHandlerRequest{
 		ApiService:                           a,
 		ctx:                                  ctx,
@@ -467,7 +467,7 @@ func (a *AccountStatusNotificationHandlerApiService) UpdateAccountStatusNotifica
 // Execute executes the request
 //
 //	@return AddAccountStatusNotificationHandler200Response
-func (a *AccountStatusNotificationHandlerApiService) UpdateAccountStatusNotificationHandlerExecute(r ApiUpdateAccountStatusNotificationHandlerRequest) (*AddAccountStatusNotificationHandler200Response, *http.Response, error) {
+func (a *AccountStatusNotificationHandlerAPIService) UpdateAccountStatusNotificationHandlerExecute(r ApiUpdateAccountStatusNotificationHandlerRequest) (*AddAccountStatusNotificationHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *AccountStatusNotificationHandlerApiService) UpdateAccountStatusNotifica
 		localVarReturnValue *AddAccountStatusNotificationHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerApiService.UpdateAccountStatusNotificationHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerAPIService.UpdateAccountStatusNotificationHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,8 +19,6 @@ var _ MappedNullable = &PeriodicStatsLoggerPluginResponse{}
 
 // PeriodicStatsLoggerPluginResponse struct for PeriodicStatsLoggerPluginResponse
 type PeriodicStatsLoggerPluginResponse struct {
-	// Name of the Plugin
-	Id      string                                   `json:"id"`
 	Schemas []EnumperiodicStatsLoggerPluginSchemaUrn `json:"schemas"`
 	// The duration between statistics collection and logging. A new line is logged to the output for each interval. Setting this value too small can have an impact on performance.
 	LogInterval string `json:"logInterval"`
@@ -68,15 +66,16 @@ type PeriodicStatsLoggerPluginResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewPeriodicStatsLoggerPluginResponse instantiates a new PeriodicStatsLoggerPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPeriodicStatsLoggerPluginResponse(id string, schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, enabled bool) *PeriodicStatsLoggerPluginResponse {
+func NewPeriodicStatsLoggerPluginResponse(schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, enabled bool, id string) *PeriodicStatsLoggerPluginResponse {
 	this := PeriodicStatsLoggerPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.LogInterval = logInterval
 	this.CollectionInterval = collectionInterval
@@ -88,6 +87,7 @@ func NewPeriodicStatsLoggerPluginResponse(id string, schemas []EnumperiodicStats
 	this.RotationPolicy = rotationPolicy
 	this.RetentionPolicy = retentionPolicy
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -97,30 +97,6 @@ func NewPeriodicStatsLoggerPluginResponse(id string, schemas []EnumperiodicStats
 func NewPeriodicStatsLoggerPluginResponseWithDefaults() *PeriodicStatsLoggerPluginResponse {
 	this := PeriodicStatsLoggerPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *PeriodicStatsLoggerPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PeriodicStatsLoggerPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *PeriodicStatsLoggerPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1059,6 +1035,30 @@ func (o *PeriodicStatsLoggerPluginResponse) SetUrnpingidentityschemasconfigurati
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *PeriodicStatsLoggerPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *PeriodicStatsLoggerPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *PeriodicStatsLoggerPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o PeriodicStatsLoggerPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1069,7 +1069,6 @@ func (o PeriodicStatsLoggerPluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o PeriodicStatsLoggerPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["logInterval"] = o.LogInterval
 	toSerialize["collectionInterval"] = o.CollectionInterval
@@ -1144,6 +1143,7 @@ func (o PeriodicStatsLoggerPluginResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

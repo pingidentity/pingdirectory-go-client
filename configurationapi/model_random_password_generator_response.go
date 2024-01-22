@@ -19,8 +19,6 @@ var _ MappedNullable = &RandomPasswordGeneratorResponse{}
 
 // RandomPasswordGeneratorResponse struct for RandomPasswordGeneratorResponse
 type RandomPasswordGeneratorResponse struct {
-	// Name of the Password Generator
-	Id      string                                 `json:"id"`
 	Schemas []EnumrandomPasswordGeneratorSchemaUrn `json:"schemas"`
 	// Specifies one or more named character sets.
 	PasswordCharacterSet []string `json:"passwordCharacterSet"`
@@ -32,19 +30,21 @@ type RandomPasswordGeneratorResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Generator
+	Id string `json:"id"`
 }
 
 // NewRandomPasswordGeneratorResponse instantiates a new RandomPasswordGeneratorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRandomPasswordGeneratorResponse(id string, schemas []EnumrandomPasswordGeneratorSchemaUrn, passwordCharacterSet []string, passwordFormat string, enabled bool) *RandomPasswordGeneratorResponse {
+func NewRandomPasswordGeneratorResponse(schemas []EnumrandomPasswordGeneratorSchemaUrn, passwordCharacterSet []string, passwordFormat string, enabled bool, id string) *RandomPasswordGeneratorResponse {
 	this := RandomPasswordGeneratorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PasswordCharacterSet = passwordCharacterSet
 	this.PasswordFormat = passwordFormat
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewRandomPasswordGeneratorResponse(id string, schemas []EnumrandomPasswordG
 func NewRandomPasswordGeneratorResponseWithDefaults() *RandomPasswordGeneratorResponse {
 	this := RandomPasswordGeneratorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *RandomPasswordGeneratorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *RandomPasswordGeneratorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *RandomPasswordGeneratorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -272,6 +248,30 @@ func (o *RandomPasswordGeneratorResponse) SetUrnpingidentityschemasconfiguration
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *RandomPasswordGeneratorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *RandomPasswordGeneratorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *RandomPasswordGeneratorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o RandomPasswordGeneratorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -282,7 +282,6 @@ func (o RandomPasswordGeneratorResponse) MarshalJSON() ([]byte, error) {
 
 func (o RandomPasswordGeneratorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["passwordCharacterSet"] = o.PasswordCharacterSet
 	toSerialize["passwordFormat"] = o.PasswordFormat
@@ -296,6 +295,7 @@ func (o RandomPasswordGeneratorResponse) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

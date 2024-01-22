@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// CryptoManagerApiService CryptoManagerApi service
-type CryptoManagerApiService service
+// CryptoManagerAPIService CryptoManagerAPI service
+type CryptoManagerAPIService service
 
 type ApiGetCryptoManagerRequest struct {
 	ctx        context.Context
-	ApiService *CryptoManagerApiService
+	ApiService *CryptoManagerAPIService
 }
 
 func (r ApiGetCryptoManagerRequest) Execute() (*CryptoManagerResponse, *http.Response, error) {
@@ -36,7 +36,7 @@ GetCryptoManager Returns a single Crypto Manager
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCryptoManagerRequest
 */
-func (a *CryptoManagerApiService) GetCryptoManager(ctx context.Context) ApiGetCryptoManagerRequest {
+func (a *CryptoManagerAPIService) GetCryptoManager(ctx context.Context) ApiGetCryptoManagerRequest {
 	return ApiGetCryptoManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *CryptoManagerApiService) GetCryptoManager(ctx context.Context) ApiGetCr
 // Execute executes the request
 //
 //	@return CryptoManagerResponse
-func (a *CryptoManagerApiService) GetCryptoManagerExecute(r ApiGetCryptoManagerRequest) (*CryptoManagerResponse, *http.Response, error) {
+func (a *CryptoManagerAPIService) GetCryptoManagerExecute(r ApiGetCryptoManagerRequest) (*CryptoManagerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *CryptoManagerApiService) GetCryptoManagerExecute(r ApiGetCryptoManagerR
 		localVarReturnValue *CryptoManagerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CryptoManagerApiService.GetCryptoManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CryptoManagerAPIService.GetCryptoManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *CryptoManagerApiService) GetCryptoManagerExecute(r ApiGetCryptoManagerR
 
 type ApiUpdateCryptoManagerRequest struct {
 	ctx           context.Context
-	ApiService    *CryptoManagerApiService
+	ApiService    *CryptoManagerAPIService
 	updateRequest *UpdateRequest
 }
 
@@ -141,7 +141,7 @@ UpdateCryptoManager Update an existing Crypto Manager by name
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCryptoManagerRequest
 */
-func (a *CryptoManagerApiService) UpdateCryptoManager(ctx context.Context) ApiUpdateCryptoManagerRequest {
+func (a *CryptoManagerAPIService) UpdateCryptoManager(ctx context.Context) ApiUpdateCryptoManagerRequest {
 	return ApiUpdateCryptoManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *CryptoManagerApiService) UpdateCryptoManager(ctx context.Context) ApiUp
 // Execute executes the request
 //
 //	@return CryptoManagerResponse
-func (a *CryptoManagerApiService) UpdateCryptoManagerExecute(r ApiUpdateCryptoManagerRequest) (*CryptoManagerResponse, *http.Response, error) {
+func (a *CryptoManagerAPIService) UpdateCryptoManagerExecute(r ApiUpdateCryptoManagerRequest) (*CryptoManagerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *CryptoManagerApiService) UpdateCryptoManagerExecute(r ApiUpdateCryptoMa
 		localVarReturnValue *CryptoManagerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CryptoManagerApiService.UpdateCryptoManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CryptoManagerAPIService.UpdateCryptoManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

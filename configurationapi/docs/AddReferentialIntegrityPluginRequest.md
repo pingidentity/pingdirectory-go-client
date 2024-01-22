@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumreferentialIntegrityPluginSchemaUrn**](EnumreferentialIntegrityPluginSchemaUrn.md) |  | 
 **PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **AttributeType** | **[]string** | Specifies the attribute types for which referential integrity is to be maintained. | 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddReferentialIntegrityPluginRequest
 
-`func NewAddReferentialIntegrityPluginRequest(pluginName string, schemas []EnumreferentialIntegrityPluginSchemaUrn, attributeType []string, enabled bool, ) *AddReferentialIntegrityPluginRequest`
+`func NewAddReferentialIntegrityPluginRequest(schemas []EnumreferentialIntegrityPluginSchemaUrn, attributeType []string, enabled bool, pluginName string, ) *AddReferentialIntegrityPluginRequest`
 
 NewAddReferentialIntegrityPluginRequest instantiates a new AddReferentialIntegrityPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddReferentialIntegrityPluginRequestWithDefaults instantiates a new AddReferentialIntegrityPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddReferentialIntegrityPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddReferentialIntegrityPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddReferentialIntegrityPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -263,6 +243,26 @@ SetInvokeForInternalOperations sets InvokeForInternalOperations field to given v
 `func (o *AddReferentialIntegrityPluginRequest) HasInvokeForInternalOperations() bool`
 
 HasInvokeForInternalOperations returns a boolean if a field has been set.
+
+### GetPluginName
+
+`func (o *AddReferentialIntegrityPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddReferentialIntegrityPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddReferentialIntegrityPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddErrorLogFieldMappingRequest{}
 
 // AddErrorLogFieldMappingRequest struct for AddErrorLogFieldMappingRequest
 type AddErrorLogFieldMappingRequest struct {
-	// Name of the new Log Field Mapping
-	MappingName string                              `json:"mappingName"`
-	Schemas     []EnumerrorLogFieldMappingSchemaUrn `json:"schemas"`
+	Schemas []EnumerrorLogFieldMappingSchemaUrn `json:"schemas"`
 	// The time that the log message was generated.
 	LogFieldTimestamp *string `json:"logFieldTimestamp,omitempty"`
 	// The name for this Directory Server product, which may be used to identify which product was used to log the message if multiple products log to the same database table.
@@ -40,16 +38,18 @@ type AddErrorLogFieldMappingRequest struct {
 	LogFieldMessage *string `json:"logFieldMessage,omitempty"`
 	// A description for this Log Field Mapping
 	Description *string `json:"description,omitempty"`
+	// Name of the new Log Field Mapping
+	MappingName string `json:"mappingName"`
 }
 
 // NewAddErrorLogFieldMappingRequest instantiates a new AddErrorLogFieldMappingRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddErrorLogFieldMappingRequest(mappingName string, schemas []EnumerrorLogFieldMappingSchemaUrn) *AddErrorLogFieldMappingRequest {
+func NewAddErrorLogFieldMappingRequest(schemas []EnumerrorLogFieldMappingSchemaUrn, mappingName string) *AddErrorLogFieldMappingRequest {
 	this := AddErrorLogFieldMappingRequest{}
-	this.MappingName = mappingName
 	this.Schemas = schemas
+	this.MappingName = mappingName
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewAddErrorLogFieldMappingRequest(mappingName string, schemas []EnumerrorLo
 func NewAddErrorLogFieldMappingRequestWithDefaults() *AddErrorLogFieldMappingRequest {
 	this := AddErrorLogFieldMappingRequest{}
 	return &this
-}
-
-// GetMappingName returns the MappingName field value
-func (o *AddErrorLogFieldMappingRequest) GetMappingName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MappingName
-}
-
-// GetMappingNameOk returns a tuple with the MappingName field value
-// and a boolean to check if the value has been set.
-func (o *AddErrorLogFieldMappingRequest) GetMappingNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MappingName, true
-}
-
-// SetMappingName sets field value
-func (o *AddErrorLogFieldMappingRequest) SetMappingName(v string) {
-	o.MappingName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -397,6 +373,30 @@ func (o *AddErrorLogFieldMappingRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMappingName returns the MappingName field value
+func (o *AddErrorLogFieldMappingRequest) GetMappingName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MappingName
+}
+
+// GetMappingNameOk returns a tuple with the MappingName field value
+// and a boolean to check if the value has been set.
+func (o *AddErrorLogFieldMappingRequest) GetMappingNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MappingName, true
+}
+
+// SetMappingName sets field value
+func (o *AddErrorLogFieldMappingRequest) SetMappingName(v string) {
+	o.MappingName = v
+}
+
 func (o AddErrorLogFieldMappingRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -407,7 +407,6 @@ func (o AddErrorLogFieldMappingRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddErrorLogFieldMappingRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mappingName"] = o.MappingName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.LogFieldTimestamp) {
 		toSerialize["logFieldTimestamp"] = o.LogFieldTimestamp
@@ -436,6 +435,7 @@ func (o AddErrorLogFieldMappingRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["mappingName"] = o.MappingName
 	return toSerialize, nil
 }
 

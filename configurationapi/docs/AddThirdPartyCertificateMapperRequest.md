@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MapperName** | **string** | Name of the new Certificate Mapper | 
 **Schemas** | [**[]EnumthirdPartyCertificateMapperSchemaUrn**](EnumthirdPartyCertificateMapperSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Certificate Mapper. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Certificate Mapper. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
+**MapperName** | **string** | Name of the new Certificate Mapper | 
 
 ## Methods
 
 ### NewAddThirdPartyCertificateMapperRequest
 
-`func NewAddThirdPartyCertificateMapperRequest(mapperName string, schemas []EnumthirdPartyCertificateMapperSchemaUrn, extensionClass string, enabled bool, ) *AddThirdPartyCertificateMapperRequest`
+`func NewAddThirdPartyCertificateMapperRequest(schemas []EnumthirdPartyCertificateMapperSchemaUrn, extensionClass string, enabled bool, mapperName string, ) *AddThirdPartyCertificateMapperRequest`
 
 NewAddThirdPartyCertificateMapperRequest instantiates a new AddThirdPartyCertificateMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyCertificateMapperRequestWithDefaults instantiates a new AddThirdPartyCertificateMapperRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMapperName
-
-`func (o *AddThirdPartyCertificateMapperRequest) GetMapperName() string`
-
-GetMapperName returns the MapperName field if non-nil, zero value otherwise.
-
-### GetMapperNameOk
-
-`func (o *AddThirdPartyCertificateMapperRequest) GetMapperNameOk() (*string, bool)`
-
-GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMapperName
-
-`func (o *AddThirdPartyCertificateMapperRequest) SetMapperName(v string)`
-
-SetMapperName sets MapperName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddThirdPartyCertificateMapperRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetMapperName
+
+`func (o *AddThirdPartyCertificateMapperRequest) GetMapperName() string`
+
+GetMapperName returns the MapperName field if non-nil, zero value otherwise.
+
+### GetMapperNameOk
+
+`func (o *AddThirdPartyCertificateMapperRequest) GetMapperNameOk() (*string, bool)`
+
+GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMapperName
+
+`func (o *AddThirdPartyCertificateMapperRequest) SetMapperName(v string)`
+
+SetMapperName sets MapperName field to given value.
 
 
 

@@ -63,6 +63,7 @@ Name | Type | Description | Notes
 **ExcludeBackendID** | Pointer to **[]string** | The backend ID for a backend to be excluded from the export. | [optional] 
 **RetainPreviousLDIFExportCount** | Pointer to **int64** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **RetainPreviousLDIFExportAge** | Pointer to **string** | The minimum age of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
+**PostLDIFExportTaskProcessor** | Pointer to **[]string** | An optional set of post-LDIF-export task processors that should be invoked for the resulting LDIF export files. | [optional] 
 **BaseOutputDirectory** | **string** | The base directory below which generated reports will be written. Each invocation of the audit-data-security task will create a new subdirectory below this base directory whose name is a timestamp indicating when the report was generated. | 
 **DataSecurityAuditor** | Pointer to **[]string** | The set of data security auditors that should be invoked. If no auditors are specified, then all auditors defined in the configuration will be used. | [optional] 
 **Backend** | Pointer to **[]string** | The set of backends that should be examined. If no backends are specified, then all backends that support this functionality will be included. | [optional] 
@@ -1539,6 +1540,31 @@ SetRetainPreviousLDIFExportAge sets RetainPreviousLDIFExportAge field to given v
 `func (o *AddRecurringTask200Response) HasRetainPreviousLDIFExportAge() bool`
 
 HasRetainPreviousLDIFExportAge returns a boolean if a field has been set.
+
+### GetPostLDIFExportTaskProcessor
+
+`func (o *AddRecurringTask200Response) GetPostLDIFExportTaskProcessor() []string`
+
+GetPostLDIFExportTaskProcessor returns the PostLDIFExportTaskProcessor field if non-nil, zero value otherwise.
+
+### GetPostLDIFExportTaskProcessorOk
+
+`func (o *AddRecurringTask200Response) GetPostLDIFExportTaskProcessorOk() (*[]string, bool)`
+
+GetPostLDIFExportTaskProcessorOk returns a tuple with the PostLDIFExportTaskProcessor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPostLDIFExportTaskProcessor
+
+`func (o *AddRecurringTask200Response) SetPostLDIFExportTaskProcessor(v []string)`
+
+SetPostLDIFExportTaskProcessor sets PostLDIFExportTaskProcessor field to given value.
+
+### HasPostLDIFExportTaskProcessor
+
+`func (o *AddRecurringTask200Response) HasPostLDIFExportTaskProcessor() bool`
+
+HasPostLDIFExportTaskProcessor returns a boolean if a field has been set.
 
 ### GetBaseOutputDirectory
 

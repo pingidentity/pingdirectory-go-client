@@ -1,14 +1,14 @@
-# \LocationApi
+# \LocationAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLocation**](LocationApi.md#AddLocation) | **Post** /locations | Add a new Location to the config
-[**DeleteLocation**](LocationApi.md#DeleteLocation) | **Delete** /locations/{location-name} | Delete a Location
-[**GetLocation**](LocationApi.md#GetLocation) | **Get** /locations/{location-name} | Returns a single Location
-[**ListLocations**](LocationApi.md#ListLocations) | **Get** /locations | Returns a list of all Location objects
-[**UpdateLocation**](LocationApi.md#UpdateLocation) | **Patch** /locations/{location-name} | Update an existing Location by name
+[**AddLocation**](LocationAPI.md#AddLocation) | **Post** /locations | Add a new Location to the config
+[**DeleteLocation**](LocationAPI.md#DeleteLocation) | **Delete** /locations/{location-name} | Delete a Location
+[**GetLocation**](LocationAPI.md#GetLocation) | **Get** /locations/{location-name} | Returns a single Location
+[**ListLocations**](LocationAPI.md#ListLocations) | **Get** /locations | Returns a list of all Location objects
+[**UpdateLocation**](LocationAPI.md#UpdateLocation) | **Patch** /locations/{location-name} | Update an existing Location by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocationApi.AddLocation(context.Background()).AddLocationRequest(addLocationRequest).Execute()
+    resp, r, err := apiClient.LocationAPI.AddLocation(context.Background()).AddLocationRequest(addLocationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.AddLocation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocationAPI.AddLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLocation`: LocationResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocationApi.AddLocation`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocationAPI.AddLocation`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LocationApi.DeleteLocation(context.Background(), locationName).Execute()
+    r, err := apiClient.LocationAPI.DeleteLocation(context.Background(), locationName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.DeleteLocation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocationAPI.DeleteLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocationApi.GetLocation(context.Background(), locationName).Execute()
+    resp, r, err := apiClient.LocationAPI.GetLocation(context.Background(), locationName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.GetLocation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocationAPI.GetLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLocation`: LocationResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocationApi.GetLocation`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocationAPI.GetLocation`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocationApi.ListLocations(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.LocationAPI.ListLocations(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.ListLocations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocationAPI.ListLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLocations`: LocationListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocationApi.ListLocations`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocationAPI.ListLocations`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocationApi.UpdateLocation(context.Background(), locationName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LocationAPI.UpdateLocation(context.Background(), locationName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.UpdateLocation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocationAPI.UpdateLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLocation`: LocationResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocationApi.UpdateLocation`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocationAPI.UpdateLocation`: %v\n", resp)
 }
 ```
 

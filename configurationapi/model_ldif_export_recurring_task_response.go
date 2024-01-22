@@ -19,8 +19,6 @@ var _ MappedNullable = &LdifExportRecurringTaskResponse{}
 
 // LdifExportRecurringTaskResponse struct for LdifExportRecurringTaskResponse
 type LdifExportRecurringTaskResponse struct {
-	// Name of the Recurring Task
-	Id      string                                 `json:"id"`
 	Schemas []EnumldifExportRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which LDIF export files will be placed. The directory must already exist.
 	LdifDirectory string `json:"ldifDirectory"`
@@ -42,6 +40,8 @@ type LdifExportRecurringTaskResponse struct {
 	RetainPreviousLDIFExportAge *string `json:"retainPreviousLDIFExportAge,omitempty"`
 	// The maximum rate, in megabytes per second, at which LDIF exports should be written.
 	MaxMegabytesPerSecond *int64 `json:"maxMegabytesPerSecond,omitempty"`
+	// An optional set of post-LDIF-export task processors that should be invoked for the resulting LDIF export files.
+	PostLDIFExportTaskProcessor []string `json:"postLDIFExportTaskProcessor,omitempty"`
 	// A description for this Recurring Task
 	Description *string `json:"description,omitempty"`
 	// Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
@@ -60,17 +60,19 @@ type LdifExportRecurringTaskResponse struct {
 	AlertOnFailure                                *bool                                              `json:"alertOnFailure,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Recurring Task
+	Id string `json:"id"`
 }
 
 // NewLdifExportRecurringTaskResponse instantiates a new LdifExportRecurringTaskResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdifExportRecurringTaskResponse(id string, schemas []EnumldifExportRecurringTaskSchemaUrn, ldifDirectory string) *LdifExportRecurringTaskResponse {
+func NewLdifExportRecurringTaskResponse(schemas []EnumldifExportRecurringTaskSchemaUrn, ldifDirectory string, id string) *LdifExportRecurringTaskResponse {
 	this := LdifExportRecurringTaskResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.LdifDirectory = ldifDirectory
+	this.Id = id
 	return &this
 }
 
@@ -80,30 +82,6 @@ func NewLdifExportRecurringTaskResponse(id string, schemas []EnumldifExportRecur
 func NewLdifExportRecurringTaskResponseWithDefaults() *LdifExportRecurringTaskResponse {
 	this := LdifExportRecurringTaskResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LdifExportRecurringTaskResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LdifExportRecurringTaskResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LdifExportRecurringTaskResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -442,6 +420,38 @@ func (o *LdifExportRecurringTaskResponse) SetMaxMegabytesPerSecond(v int64) {
 	o.MaxMegabytesPerSecond = &v
 }
 
+// GetPostLDIFExportTaskProcessor returns the PostLDIFExportTaskProcessor field value if set, zero value otherwise.
+func (o *LdifExportRecurringTaskResponse) GetPostLDIFExportTaskProcessor() []string {
+	if o == nil || IsNil(o.PostLDIFExportTaskProcessor) {
+		var ret []string
+		return ret
+	}
+	return o.PostLDIFExportTaskProcessor
+}
+
+// GetPostLDIFExportTaskProcessorOk returns a tuple with the PostLDIFExportTaskProcessor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdifExportRecurringTaskResponse) GetPostLDIFExportTaskProcessorOk() ([]string, bool) {
+	if o == nil || IsNil(o.PostLDIFExportTaskProcessor) {
+		return nil, false
+	}
+	return o.PostLDIFExportTaskProcessor, true
+}
+
+// HasPostLDIFExportTaskProcessor returns a boolean if a field has been set.
+func (o *LdifExportRecurringTaskResponse) HasPostLDIFExportTaskProcessor() bool {
+	if o != nil && !IsNil(o.PostLDIFExportTaskProcessor) {
+		return true
+	}
+
+	return false
+}
+
+// SetPostLDIFExportTaskProcessor gets a reference to the given []string and assigns it to the PostLDIFExportTaskProcessor field.
+func (o *LdifExportRecurringTaskResponse) SetPostLDIFExportTaskProcessor(v []string) {
+	o.PostLDIFExportTaskProcessor = v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -762,6 +772,30 @@ func (o *LdifExportRecurringTaskResponse) SetUrnpingidentityschemasconfiguration
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LdifExportRecurringTaskResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LdifExportRecurringTaskResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LdifExportRecurringTaskResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LdifExportRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -772,7 +806,6 @@ func (o LdifExportRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 
 func (o LdifExportRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["ldifDirectory"] = o.LdifDirectory
 	if !IsNil(o.BackendID) {
@@ -801,6 +834,9 @@ func (o LdifExportRecurringTaskResponse) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.MaxMegabytesPerSecond) {
 		toSerialize["maxMegabytesPerSecond"] = o.MaxMegabytesPerSecond
+	}
+	if !IsNil(o.PostLDIFExportTaskProcessor) {
+		toSerialize["postLDIFExportTaskProcessor"] = o.PostLDIFExportTaskProcessor
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -832,6 +868,7 @@ func (o LdifExportRecurringTaskResponse) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

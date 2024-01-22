@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// RootDseBackendApiService RootDseBackendApi service
-type RootDseBackendApiService service
+// RootDseBackendAPIService RootDseBackendAPI service
+type RootDseBackendAPIService service
 
 type ApiGetRootDseBackendRequest struct {
 	ctx        context.Context
-	ApiService *RootDseBackendApiService
+	ApiService *RootDseBackendAPIService
 }
 
 func (r ApiGetRootDseBackendRequest) Execute() (*RootDseBackendResponse, *http.Response, error) {
@@ -36,7 +36,7 @@ GetRootDseBackend Returns a single Root DSE Backend
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetRootDseBackendRequest
 */
-func (a *RootDseBackendApiService) GetRootDseBackend(ctx context.Context) ApiGetRootDseBackendRequest {
+func (a *RootDseBackendAPIService) GetRootDseBackend(ctx context.Context) ApiGetRootDseBackendRequest {
 	return ApiGetRootDseBackendRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *RootDseBackendApiService) GetRootDseBackend(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return RootDseBackendResponse
-func (a *RootDseBackendApiService) GetRootDseBackendExecute(r ApiGetRootDseBackendRequest) (*RootDseBackendResponse, *http.Response, error) {
+func (a *RootDseBackendAPIService) GetRootDseBackendExecute(r ApiGetRootDseBackendRequest) (*RootDseBackendResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *RootDseBackendApiService) GetRootDseBackendExecute(r ApiGetRootDseBacke
 		localVarReturnValue *RootDseBackendResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDseBackendApiService.GetRootDseBackend")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDseBackendAPIService.GetRootDseBackend")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *RootDseBackendApiService) GetRootDseBackendExecute(r ApiGetRootDseBacke
 
 type ApiUpdateRootDseBackendRequest struct {
 	ctx           context.Context
-	ApiService    *RootDseBackendApiService
+	ApiService    *RootDseBackendAPIService
 	updateRequest *UpdateRequest
 }
 
@@ -141,7 +141,7 @@ UpdateRootDseBackend Update an existing Root DSE Backend by name
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateRootDseBackendRequest
 */
-func (a *RootDseBackendApiService) UpdateRootDseBackend(ctx context.Context) ApiUpdateRootDseBackendRequest {
+func (a *RootDseBackendAPIService) UpdateRootDseBackend(ctx context.Context) ApiUpdateRootDseBackendRequest {
 	return ApiUpdateRootDseBackendRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *RootDseBackendApiService) UpdateRootDseBackend(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return RootDseBackendResponse
-func (a *RootDseBackendApiService) UpdateRootDseBackendExecute(r ApiUpdateRootDseBackendRequest) (*RootDseBackendResponse, *http.Response, error) {
+func (a *RootDseBackendAPIService) UpdateRootDseBackendExecute(r ApiUpdateRootDseBackendRequest) (*RootDseBackendResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *RootDseBackendApiService) UpdateRootDseBackendExecute(r ApiUpdateRootDs
 		localVarReturnValue *RootDseBackendResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDseBackendApiService.UpdateRootDseBackend")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDseBackendAPIService.UpdateRootDseBackend")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

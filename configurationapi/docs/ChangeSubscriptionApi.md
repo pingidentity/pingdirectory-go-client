@@ -1,14 +1,14 @@
-# \ChangeSubscriptionApi
+# \ChangeSubscriptionAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddChangeSubscription**](ChangeSubscriptionApi.md#AddChangeSubscription) | **Post** /change-subscriptions | Add a new Change Subscription to the config
-[**DeleteChangeSubscription**](ChangeSubscriptionApi.md#DeleteChangeSubscription) | **Delete** /change-subscriptions/{change-subscription-name} | Delete a Change Subscription
-[**GetChangeSubscription**](ChangeSubscriptionApi.md#GetChangeSubscription) | **Get** /change-subscriptions/{change-subscription-name} | Returns a single Change Subscription
-[**ListChangeSubscriptions**](ChangeSubscriptionApi.md#ListChangeSubscriptions) | **Get** /change-subscriptions | Returns a list of all Change Subscription objects
-[**UpdateChangeSubscription**](ChangeSubscriptionApi.md#UpdateChangeSubscription) | **Patch** /change-subscriptions/{change-subscription-name} | Update an existing Change Subscription by name
+[**AddChangeSubscription**](ChangeSubscriptionAPI.md#AddChangeSubscription) | **Post** /change-subscriptions | Add a new Change Subscription to the config
+[**DeleteChangeSubscription**](ChangeSubscriptionAPI.md#DeleteChangeSubscription) | **Delete** /change-subscriptions/{change-subscription-name} | Delete a Change Subscription
+[**GetChangeSubscription**](ChangeSubscriptionAPI.md#GetChangeSubscription) | **Get** /change-subscriptions/{change-subscription-name} | Returns a single Change Subscription
+[**ListChangeSubscriptions**](ChangeSubscriptionAPI.md#ListChangeSubscriptions) | **Get** /change-subscriptions | Returns a list of all Change Subscription objects
+[**UpdateChangeSubscription**](ChangeSubscriptionAPI.md#UpdateChangeSubscription) | **Patch** /change-subscriptions/{change-subscription-name} | Update an existing Change Subscription by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ChangeSubscriptionApi.AddChangeSubscription(context.Background()).AddChangeSubscriptionRequest(addChangeSubscriptionRequest).Execute()
+    resp, r, err := apiClient.ChangeSubscriptionAPI.AddChangeSubscription(context.Background()).AddChangeSubscriptionRequest(addChangeSubscriptionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionApi.AddChangeSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionAPI.AddChangeSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddChangeSubscription`: ChangeSubscriptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionApi.AddChangeSubscription`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionAPI.AddChangeSubscription`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ChangeSubscriptionApi.DeleteChangeSubscription(context.Background(), changeSubscriptionName).Execute()
+    r, err := apiClient.ChangeSubscriptionAPI.DeleteChangeSubscription(context.Background(), changeSubscriptionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionApi.DeleteChangeSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionAPI.DeleteChangeSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ChangeSubscriptionApi.GetChangeSubscription(context.Background(), changeSubscriptionName).Execute()
+    resp, r, err := apiClient.ChangeSubscriptionAPI.GetChangeSubscription(context.Background(), changeSubscriptionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionApi.GetChangeSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionAPI.GetChangeSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetChangeSubscription`: ChangeSubscriptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionApi.GetChangeSubscription`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionAPI.GetChangeSubscription`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ChangeSubscriptionApi.ListChangeSubscriptions(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ChangeSubscriptionAPI.ListChangeSubscriptions(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionApi.ListChangeSubscriptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionAPI.ListChangeSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListChangeSubscriptions`: ChangeSubscriptionListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionApi.ListChangeSubscriptions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionAPI.ListChangeSubscriptions`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ChangeSubscriptionApi.UpdateChangeSubscription(context.Background(), changeSubscriptionName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ChangeSubscriptionAPI.UpdateChangeSubscription(context.Background(), changeSubscriptionName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionApi.UpdateChangeSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionAPI.UpdateChangeSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateChangeSubscription`: ChangeSubscriptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionApi.UpdateChangeSubscription`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionAPI.UpdateChangeSubscription`: %v\n", resp)
 }
 ```
 

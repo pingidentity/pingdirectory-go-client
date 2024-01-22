@@ -1,11 +1,11 @@
-# \GlobalConfigurationApi
+# \GlobalConfigurationAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGlobalConfiguration**](GlobalConfigurationApi.md#GetGlobalConfiguration) | **Get** /global-configuration | Returns a single Global Configuration
-[**UpdateGlobalConfiguration**](GlobalConfigurationApi.md#UpdateGlobalConfiguration) | **Patch** /global-configuration | Update an existing Global Configuration by name
+[**GetGlobalConfiguration**](GlobalConfigurationAPI.md#GetGlobalConfiguration) | **Get** /global-configuration | Returns a single Global Configuration
+[**UpdateGlobalConfiguration**](GlobalConfigurationAPI.md#UpdateGlobalConfiguration) | **Patch** /global-configuration | Update an existing Global Configuration by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GlobalConfigurationApi.GetGlobalConfiguration(context.Background()).Execute()
+    resp, r, err := apiClient.GlobalConfigurationAPI.GetGlobalConfiguration(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GlobalConfigurationApi.GetGlobalConfiguration``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GlobalConfigurationAPI.GetGlobalConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetGlobalConfiguration`: GlobalConfigurationResponse
-    fmt.Fprintf(os.Stdout, "Response from `GlobalConfigurationApi.GetGlobalConfiguration`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GlobalConfigurationAPI.GetGlobalConfiguration`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GlobalConfigurationApi.UpdateGlobalConfiguration(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.GlobalConfigurationAPI.UpdateGlobalConfiguration(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GlobalConfigurationApi.UpdateGlobalConfiguration``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GlobalConfigurationAPI.UpdateGlobalConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateGlobalConfiguration`: GlobalConfigurationResponse
-    fmt.Fprintf(os.Stdout, "Response from `GlobalConfigurationApi.UpdateGlobalConfiguration`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GlobalConfigurationAPI.UpdateGlobalConfiguration`: %v\n", resp)
 }
 ```
 

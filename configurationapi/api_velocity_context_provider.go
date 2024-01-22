@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// VelocityContextProviderApiService VelocityContextProviderApi service
-type VelocityContextProviderApiService service
+// VelocityContextProviderAPIService VelocityContextProviderAPI service
+type VelocityContextProviderAPIService service
 
 type ApiAddVelocityContextProviderRequest struct {
 	ctx                               context.Context
-	ApiService                        *VelocityContextProviderApiService
+	ApiService                        *VelocityContextProviderAPIService
 	httpServletExtensionName          string
 	addVelocityContextProviderRequest *AddVelocityContextProviderRequest
 }
@@ -46,7 +46,7 @@ AddVelocityContextProvider Add a new Velocity Context Provider to the config
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiAddVelocityContextProviderRequest
 */
-func (a *VelocityContextProviderApiService) AddVelocityContextProvider(ctx context.Context, httpServletExtensionName string) ApiAddVelocityContextProviderRequest {
+func (a *VelocityContextProviderAPIService) AddVelocityContextProvider(ctx context.Context, httpServletExtensionName string) ApiAddVelocityContextProviderRequest {
 	return ApiAddVelocityContextProviderRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -57,7 +57,7 @@ func (a *VelocityContextProviderApiService) AddVelocityContextProvider(ctx conte
 // Execute executes the request
 //
 //	@return AddVelocityContextProvider200Response
-func (a *VelocityContextProviderApiService) AddVelocityContextProviderExecute(r ApiAddVelocityContextProviderRequest) (*AddVelocityContextProvider200Response, *http.Response, error) {
+func (a *VelocityContextProviderAPIService) AddVelocityContextProviderExecute(r ApiAddVelocityContextProviderRequest) (*AddVelocityContextProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *VelocityContextProviderApiService) AddVelocityContextProviderExecute(r 
 		localVarReturnValue *AddVelocityContextProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderApiService.AddVelocityContextProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderAPIService.AddVelocityContextProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *VelocityContextProviderApiService) AddVelocityContextProviderExecute(r 
 
 type ApiDeleteVelocityContextProviderRequest struct {
 	ctx                         context.Context
-	ApiService                  *VelocityContextProviderApiService
+	ApiService                  *VelocityContextProviderAPIService
 	velocityContextProviderName string
 	httpServletExtensionName    string
 }
@@ -155,7 +155,7 @@ DeleteVelocityContextProvider Delete a Velocity Context Provider
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiDeleteVelocityContextProviderRequest
 */
-func (a *VelocityContextProviderApiService) DeleteVelocityContextProvider(ctx context.Context, velocityContextProviderName string, httpServletExtensionName string) ApiDeleteVelocityContextProviderRequest {
+func (a *VelocityContextProviderAPIService) DeleteVelocityContextProvider(ctx context.Context, velocityContextProviderName string, httpServletExtensionName string) ApiDeleteVelocityContextProviderRequest {
 	return ApiDeleteVelocityContextProviderRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -165,14 +165,14 @@ func (a *VelocityContextProviderApiService) DeleteVelocityContextProvider(ctx co
 }
 
 // Execute executes the request
-func (a *VelocityContextProviderApiService) DeleteVelocityContextProviderExecute(r ApiDeleteVelocityContextProviderRequest) (*http.Response, error) {
+func (a *VelocityContextProviderAPIService) DeleteVelocityContextProviderExecute(r ApiDeleteVelocityContextProviderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderApiService.DeleteVelocityContextProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderAPIService.DeleteVelocityContextProvider")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *VelocityContextProviderApiService) DeleteVelocityContextProviderExecute
 
 type ApiGetVelocityContextProviderRequest struct {
 	ctx                         context.Context
-	ApiService                  *VelocityContextProviderApiService
+	ApiService                  *VelocityContextProviderAPIService
 	velocityContextProviderName string
 	httpServletExtensionName    string
 }
@@ -249,7 +249,7 @@ GetVelocityContextProvider Returns a single Velocity Context Provider
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiGetVelocityContextProviderRequest
 */
-func (a *VelocityContextProviderApiService) GetVelocityContextProvider(ctx context.Context, velocityContextProviderName string, httpServletExtensionName string) ApiGetVelocityContextProviderRequest {
+func (a *VelocityContextProviderAPIService) GetVelocityContextProvider(ctx context.Context, velocityContextProviderName string, httpServletExtensionName string) ApiGetVelocityContextProviderRequest {
 	return ApiGetVelocityContextProviderRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -261,7 +261,7 @@ func (a *VelocityContextProviderApiService) GetVelocityContextProvider(ctx conte
 // Execute executes the request
 //
 //	@return GetVelocityContextProvider200Response
-func (a *VelocityContextProviderApiService) GetVelocityContextProviderExecute(r ApiGetVelocityContextProviderRequest) (*GetVelocityContextProvider200Response, *http.Response, error) {
+func (a *VelocityContextProviderAPIService) GetVelocityContextProviderExecute(r ApiGetVelocityContextProviderRequest) (*GetVelocityContextProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *VelocityContextProviderApiService) GetVelocityContextProviderExecute(r 
 		localVarReturnValue *GetVelocityContextProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderApiService.GetVelocityContextProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderAPIService.GetVelocityContextProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *VelocityContextProviderApiService) GetVelocityContextProviderExecute(r 
 
 type ApiListVelocityContextProvidersRequest struct {
 	ctx                      context.Context
-	ApiService               *VelocityContextProviderApiService
+	ApiService               *VelocityContextProviderAPIService
 	httpServletExtensionName string
 	filter                   *string
 }
@@ -360,7 +360,7 @@ ListVelocityContextProviders Returns a list of all Velocity Context Provider obj
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiListVelocityContextProvidersRequest
 */
-func (a *VelocityContextProviderApiService) ListVelocityContextProviders(ctx context.Context, httpServletExtensionName string) ApiListVelocityContextProvidersRequest {
+func (a *VelocityContextProviderAPIService) ListVelocityContextProviders(ctx context.Context, httpServletExtensionName string) ApiListVelocityContextProvidersRequest {
 	return ApiListVelocityContextProvidersRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -371,7 +371,7 @@ func (a *VelocityContextProviderApiService) ListVelocityContextProviders(ctx con
 // Execute executes the request
 //
 //	@return VelocityContextProviderListResponse
-func (a *VelocityContextProviderApiService) ListVelocityContextProvidersExecute(r ApiListVelocityContextProvidersRequest) (*VelocityContextProviderListResponse, *http.Response, error) {
+func (a *VelocityContextProviderAPIService) ListVelocityContextProvidersExecute(r ApiListVelocityContextProvidersRequest) (*VelocityContextProviderListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *VelocityContextProviderApiService) ListVelocityContextProvidersExecute(
 		localVarReturnValue *VelocityContextProviderListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderApiService.ListVelocityContextProviders")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderAPIService.ListVelocityContextProviders")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *VelocityContextProviderApiService) ListVelocityContextProvidersExecute(
 
 type ApiUpdateVelocityContextProviderRequest struct {
 	ctx                         context.Context
-	ApiService                  *VelocityContextProviderApiService
+	ApiService                  *VelocityContextProviderAPIService
 	velocityContextProviderName string
 	httpServletExtensionName    string
 	updateRequest               *UpdateRequest
@@ -474,7 +474,7 @@ UpdateVelocityContextProvider Update an existing Velocity Context Provider by na
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiUpdateVelocityContextProviderRequest
 */
-func (a *VelocityContextProviderApiService) UpdateVelocityContextProvider(ctx context.Context, velocityContextProviderName string, httpServletExtensionName string) ApiUpdateVelocityContextProviderRequest {
+func (a *VelocityContextProviderAPIService) UpdateVelocityContextProvider(ctx context.Context, velocityContextProviderName string, httpServletExtensionName string) ApiUpdateVelocityContextProviderRequest {
 	return ApiUpdateVelocityContextProviderRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -486,7 +486,7 @@ func (a *VelocityContextProviderApiService) UpdateVelocityContextProvider(ctx co
 // Execute executes the request
 //
 //	@return GetVelocityContextProvider200Response
-func (a *VelocityContextProviderApiService) UpdateVelocityContextProviderExecute(r ApiUpdateVelocityContextProviderRequest) (*GetVelocityContextProvider200Response, *http.Response, error) {
+func (a *VelocityContextProviderAPIService) UpdateVelocityContextProviderExecute(r ApiUpdateVelocityContextProviderRequest) (*GetVelocityContextProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *VelocityContextProviderApiService) UpdateVelocityContextProviderExecute
 		localVarReturnValue *GetVelocityContextProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderApiService.UpdateVelocityContextProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderAPIService.UpdateVelocityContextProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

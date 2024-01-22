@@ -19,11 +19,11 @@ var _ MappedNullable = &AddServerGroupRequest{}
 
 // AddServerGroupRequest struct for AddServerGroupRequest
 type AddServerGroupRequest struct {
-	// Name of the new Server Group
-	GroupName string                     `json:"groupName"`
-	Schemas   []EnumserverGroupSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumserverGroupSchemaUrn `json:"schemas,omitempty"`
 	// A server instance that is a member of this group.
 	Member []string `json:"member,omitempty"`
+	// Name of the new Server Group
+	GroupName string `json:"groupName"`
 }
 
 // NewAddServerGroupRequest instantiates a new AddServerGroupRequest object
@@ -42,30 +42,6 @@ func NewAddServerGroupRequest(groupName string) *AddServerGroupRequest {
 func NewAddServerGroupRequestWithDefaults() *AddServerGroupRequest {
 	this := AddServerGroupRequest{}
 	return &this
-}
-
-// GetGroupName returns the GroupName field value
-func (o *AddServerGroupRequest) GetGroupName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.GroupName
-}
-
-// GetGroupNameOk returns a tuple with the GroupName field value
-// and a boolean to check if the value has been set.
-func (o *AddServerGroupRequest) GetGroupNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GroupName, true
-}
-
-// SetGroupName sets field value
-func (o *AddServerGroupRequest) SetGroupName(v string) {
-	o.GroupName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -132,6 +108,30 @@ func (o *AddServerGroupRequest) SetMember(v []string) {
 	o.Member = v
 }
 
+// GetGroupName returns the GroupName field value
+func (o *AddServerGroupRequest) GetGroupName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.GroupName
+}
+
+// GetGroupNameOk returns a tuple with the GroupName field value
+// and a boolean to check if the value has been set.
+func (o *AddServerGroupRequest) GetGroupNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GroupName, true
+}
+
+// SetGroupName sets field value
+func (o *AddServerGroupRequest) SetGroupName(v string) {
+	o.GroupName = v
+}
+
 func (o AddServerGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -142,13 +142,13 @@ func (o AddServerGroupRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddServerGroupRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["groupName"] = o.GroupName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
 	if !IsNil(o.Member) {
 		toSerialize["member"] = o.Member
 	}
+	toSerialize["groupName"] = o.GroupName
 	return toSerialize, nil
 }
 

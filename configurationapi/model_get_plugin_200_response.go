@@ -17,44 +17,46 @@ import (
 
 // GetPlugin200Response - struct for GetPlugin200Response
 type GetPlugin200Response struct {
-	AttributeMapperPluginResponse                                  *AttributeMapperPluginResponse
-	ChangeSubscriptionNotificationPluginResponse                   *ChangeSubscriptionNotificationPluginResponse
-	ChangelogPasswordEncryptionPluginResponse                      *ChangelogPasswordEncryptionPluginResponse
-	CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse
-	CleanUpExpiredPingfederatePersistentSessionsPluginResponse     *CleanUpExpiredPingfederatePersistentSessionsPluginResponse
-	CleanUpInactivePingfederatePersistentSessionsPluginResponse    *CleanUpInactivePingfederatePersistentSessionsPluginResponse
-	CoalesceModificationsPluginResponse                            *CoalesceModificationsPluginResponse
-	ComposedAttributePluginResponse                                *ComposedAttributePluginResponse
-	CustomPluginResponse                                           *CustomPluginResponse
-	DelayPluginResponse                                            *DelayPluginResponse
-	DnMapperPluginResponse                                         *DnMapperPluginResponse
-	EncryptAttributeValuesPluginResponse                           *EncryptAttributeValuesPluginResponse
-	GroovyScriptedPluginResponse                                   *GroovyScriptedPluginResponse
-	InternalSearchRatePluginResponse                               *InternalSearchRatePluginResponse
-	LastAccessTimePluginResponse                                   *LastAccessTimePluginResponse
-	LastModPluginResponse                                          *LastModPluginResponse
-	LdapResultCodeTrackerPluginResponse                            *LdapResultCodeTrackerPluginResponse
-	ModifiablePasswordPolicyStatePluginResponse                    *ModifiablePasswordPolicyStatePluginResponse
-	MonitorHistoryPluginResponse                                   *MonitorHistoryPluginResponse
-	PassThroughAuthenticationPluginResponse                        *PassThroughAuthenticationPluginResponse
-	PasswordPolicyImportPluginResponse                             *PasswordPolicyImportPluginResponse
-	PeriodicGcPluginResponse                                       *PeriodicGcPluginResponse
-	PeriodicStatsLoggerPluginResponse                              *PeriodicStatsLoggerPluginResponse
-	PingOnePassThroughAuthenticationPluginResponse                 *PingOnePassThroughAuthenticationPluginResponse
-	PluggablePassThroughAuthenticationPluginResponse               *PluggablePassThroughAuthenticationPluginResponse
-	ProcessingTimeHistogramPluginResponse                          *ProcessingTimeHistogramPluginResponse
-	ProfilerPluginResponse                                         *ProfilerPluginResponse
-	PurgeExpiredDataPluginResponse                                 *PurgeExpiredDataPluginResponse
-	ReferentialIntegrityPluginResponse                             *ReferentialIntegrityPluginResponse
-	ReferralOnUpdatePluginResponse                                 *ReferralOnUpdatePluginResponse
-	SearchShutdownPluginResponse                                   *SearchShutdownPluginResponse
-	SevenBitCleanPluginResponse                                    *SevenBitCleanPluginResponse
-	SimpleToExternalBindPluginResponse                             *SimpleToExternalBindPluginResponse
-	SnmpSubagentPluginResponse                                     *SnmpSubagentPluginResponse
-	StatsCollectorPluginResponse                                   *StatsCollectorPluginResponse
-	SubOperationTimingPluginResponse                               *SubOperationTimingPluginResponse
-	ThirdPartyPluginResponse                                       *ThirdPartyPluginResponse
-	UniqueAttributePluginResponse                                  *UniqueAttributePluginResponse
+	AttributeMapperPluginResponse                                      *AttributeMapperPluginResponse
+	ChangeSubscriptionNotificationPluginResponse                       *ChangeSubscriptionNotificationPluginResponse
+	ChangelogPasswordEncryptionPluginResponse                          *ChangelogPasswordEncryptionPluginResponse
+	CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse     *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse
+	CleanUpExpiredPingfederatePersistentSessionsPluginResponse         *CleanUpExpiredPingfederatePersistentSessionsPluginResponse
+	CleanUpInactivePingfederatePersistentSessionsPluginResponse        *CleanUpInactivePingfederatePersistentSessionsPluginResponse
+	CoalesceModificationsPluginResponse                                *CoalesceModificationsPluginResponse
+	ComposedAttributePluginResponse                                    *ComposedAttributePluginResponse
+	CustomPluginResponse                                               *CustomPluginResponse
+	DelayPluginResponse                                                *DelayPluginResponse
+	DnMapperPluginResponse                                             *DnMapperPluginResponse
+	EncryptAttributeValuesPluginResponse                               *EncryptAttributeValuesPluginResponse
+	GroovyScriptedPluginResponse                                       *GroovyScriptedPluginResponse
+	InternalSearchRatePluginResponse                                   *InternalSearchRatePluginResponse
+	InvertedStaticGroupReferentialIntegrityPluginResponse              *InvertedStaticGroupReferentialIntegrityPluginResponse
+	LastAccessTimePluginResponse                                       *LastAccessTimePluginResponse
+	LastModPluginResponse                                              *LastModPluginResponse
+	LdapResultCodeTrackerPluginResponse                                *LdapResultCodeTrackerPluginResponse
+	ModifiablePasswordPolicyStatePluginResponse                        *ModifiablePasswordPolicyStatePluginResponse
+	MonitorHistoryPluginResponse                                       *MonitorHistoryPluginResponse
+	PassThroughAuthenticationPluginResponse                            *PassThroughAuthenticationPluginResponse
+	PasswordPolicyImportPluginResponse                                 *PasswordPolicyImportPluginResponse
+	PeriodicGcPluginResponse                                           *PeriodicGcPluginResponse
+	PeriodicStatsLoggerPluginResponse                                  *PeriodicStatsLoggerPluginResponse
+	PingOnePassThroughAuthenticationPluginResponse                     *PingOnePassThroughAuthenticationPluginResponse
+	PluggablePassThroughAuthenticationPluginResponse                   *PluggablePassThroughAuthenticationPluginResponse
+	ProcessingTimeHistogramPluginResponse                              *ProcessingTimeHistogramPluginResponse
+	ProfilerPluginResponse                                             *ProfilerPluginResponse
+	PurgeExpiredDataPluginResponse                                     *PurgeExpiredDataPluginResponse
+	ReferentialIntegrityPluginResponse                                 *ReferentialIntegrityPluginResponse
+	ReferralOnUpdatePluginResponse                                     *ReferralOnUpdatePluginResponse
+	SearchShutdownPluginResponse                                       *SearchShutdownPluginResponse
+	SevenBitCleanPluginResponse                                        *SevenBitCleanPluginResponse
+	SimpleToExternalBindPluginResponse                                 *SimpleToExternalBindPluginResponse
+	SnmpSubagentPluginResponse                                         *SnmpSubagentPluginResponse
+	StatsCollectorPluginResponse                                       *StatsCollectorPluginResponse
+	SubOperationTimingPluginResponse                                   *SubOperationTimingPluginResponse
+	ThirdPartyPluginResponse                                           *ThirdPartyPluginResponse
+	TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse *TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse
+	UniqueAttributePluginResponse                                      *UniqueAttributePluginResponse
 }
 
 // AttributeMapperPluginResponseAsGetPlugin200Response is a convenience function that returns AttributeMapperPluginResponse wrapped in GetPlugin200Response
@@ -152,6 +154,13 @@ func GroovyScriptedPluginResponseAsGetPlugin200Response(v *GroovyScriptedPluginR
 func InternalSearchRatePluginResponseAsGetPlugin200Response(v *InternalSearchRatePluginResponse) GetPlugin200Response {
 	return GetPlugin200Response{
 		InternalSearchRatePluginResponse: v,
+	}
+}
+
+// InvertedStaticGroupReferentialIntegrityPluginResponseAsGetPlugin200Response is a convenience function that returns InvertedStaticGroupReferentialIntegrityPluginResponse wrapped in GetPlugin200Response
+func InvertedStaticGroupReferentialIntegrityPluginResponseAsGetPlugin200Response(v *InvertedStaticGroupReferentialIntegrityPluginResponse) GetPlugin200Response {
+	return GetPlugin200Response{
+		InvertedStaticGroupReferentialIntegrityPluginResponse: v,
 	}
 }
 
@@ -313,6 +322,13 @@ func SubOperationTimingPluginResponseAsGetPlugin200Response(v *SubOperationTimin
 func ThirdPartyPluginResponseAsGetPlugin200Response(v *ThirdPartyPluginResponse) GetPlugin200Response {
 	return GetPlugin200Response{
 		ThirdPartyPluginResponse: v,
+	}
+}
+
+// TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponseAsGetPlugin200Response is a convenience function that returns TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse wrapped in GetPlugin200Response
+func TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponseAsGetPlugin200Response(v *TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse) GetPlugin200Response {
+	return GetPlugin200Response{
+		TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse: v,
 	}
 }
 
@@ -507,6 +523,19 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.InternalSearchRatePluginResponse = nil
+	}
+
+	// try to unmarshal data into InvertedStaticGroupReferentialIntegrityPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.InvertedStaticGroupReferentialIntegrityPluginResponse)
+	if err == nil {
+		jsonInvertedStaticGroupReferentialIntegrityPluginResponse, _ := json.Marshal(dst.InvertedStaticGroupReferentialIntegrityPluginResponse)
+		if string(jsonInvertedStaticGroupReferentialIntegrityPluginResponse) == "{}" { // empty struct
+			dst.InvertedStaticGroupReferentialIntegrityPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.InvertedStaticGroupReferentialIntegrityPluginResponse = nil
 	}
 
 	// try to unmarshal data into LastAccessTimePluginResponse
@@ -808,6 +837,19 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.ThirdPartyPluginResponse = nil
 	}
 
+	// try to unmarshal data into TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse)
+	if err == nil {
+		jsonTraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse, _ := json.Marshal(dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse)
+		if string(jsonTraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse) == "{}" { // empty struct
+			dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse = nil
+	}
+
 	// try to unmarshal data into UniqueAttributePluginResponse
 	err = newStrictDecoder(data).Decode(&dst.UniqueAttributePluginResponse)
 	if err == nil {
@@ -837,6 +879,7 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.EncryptAttributeValuesPluginResponse = nil
 		dst.GroovyScriptedPluginResponse = nil
 		dst.InternalSearchRatePluginResponse = nil
+		dst.InvertedStaticGroupReferentialIntegrityPluginResponse = nil
 		dst.LastAccessTimePluginResponse = nil
 		dst.LastModPluginResponse = nil
 		dst.LdapResultCodeTrackerPluginResponse = nil
@@ -860,6 +903,7 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.StatsCollectorPluginResponse = nil
 		dst.SubOperationTimingPluginResponse = nil
 		dst.ThirdPartyPluginResponse = nil
+		dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse = nil
 		dst.UniqueAttributePluginResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(GetPlugin200Response)")
@@ -926,6 +970,10 @@ func (src GetPlugin200Response) MarshalJSON() ([]byte, error) {
 
 	if src.InternalSearchRatePluginResponse != nil {
 		return json.Marshal(&src.InternalSearchRatePluginResponse)
+	}
+
+	if src.InvertedStaticGroupReferentialIntegrityPluginResponse != nil {
+		return json.Marshal(&src.InvertedStaticGroupReferentialIntegrityPluginResponse)
 	}
 
 	if src.LastAccessTimePluginResponse != nil {
@@ -1020,6 +1068,10 @@ func (src GetPlugin200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ThirdPartyPluginResponse)
 	}
 
+	if src.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse != nil {
+		return json.Marshal(&src.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse)
+	}
+
 	if src.UniqueAttributePluginResponse != nil {
 		return json.Marshal(&src.UniqueAttributePluginResponse)
 	}
@@ -1086,6 +1138,10 @@ func (obj *GetPlugin200Response) GetActualInstance() interface{} {
 
 	if obj.InternalSearchRatePluginResponse != nil {
 		return obj.InternalSearchRatePluginResponse
+	}
+
+	if obj.InvertedStaticGroupReferentialIntegrityPluginResponse != nil {
+		return obj.InvertedStaticGroupReferentialIntegrityPluginResponse
 	}
 
 	if obj.LastAccessTimePluginResponse != nil {
@@ -1178,6 +1234,10 @@ func (obj *GetPlugin200Response) GetActualInstance() interface{} {
 
 	if obj.ThirdPartyPluginResponse != nil {
 		return obj.ThirdPartyPluginResponse
+	}
+
+	if obj.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse != nil {
+		return obj.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse
 	}
 
 	if obj.UniqueAttributePluginResponse != nil {

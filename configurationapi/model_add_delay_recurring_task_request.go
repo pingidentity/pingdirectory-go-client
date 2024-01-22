@@ -19,9 +19,7 @@ var _ MappedNullable = &AddDelayRecurringTaskRequest{}
 
 // AddDelayRecurringTaskRequest struct for AddDelayRecurringTaskRequest
 type AddDelayRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                            `json:"taskName"`
-	Schemas  []EnumdelayRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumdelayRecurringTaskSchemaUrn `json:"schemas"`
 	// The length of time to sleep before the task completes.
 	SleepDuration *string `json:"sleepDuration,omitempty"`
 	// Indicates that task should wait for up to the specified length of time for the work queue to report that all worker threads are idle and there are no pending operations. Note that this primarily monitors operations that use worker threads, which does not include internal operations (for example, those invoked by extensions), and may not include requests from non-LDAP clients (for example, HTTP-based clients).
@@ -51,16 +49,18 @@ type AddDelayRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddDelayRecurringTaskRequest instantiates a new AddDelayRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDelayRecurringTaskRequest(taskName string, schemas []EnumdelayRecurringTaskSchemaUrn) *AddDelayRecurringTaskRequest {
+func NewAddDelayRecurringTaskRequest(schemas []EnumdelayRecurringTaskSchemaUrn, taskName string) *AddDelayRecurringTaskRequest {
 	this := AddDelayRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
+	this.TaskName = taskName
 	return &this
 }
 
@@ -70,30 +70,6 @@ func NewAddDelayRecurringTaskRequest(taskName string, schemas []EnumdelayRecurri
 func NewAddDelayRecurringTaskRequestWithDefaults() *AddDelayRecurringTaskRequest {
 	this := AddDelayRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddDelayRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddDelayRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddDelayRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -600,6 +576,30 @@ func (o *AddDelayRecurringTaskRequest) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddDelayRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddDelayRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddDelayRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddDelayRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -610,7 +610,6 @@ func (o AddDelayRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddDelayRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.SleepDuration) {
 		toSerialize["sleepDuration"] = o.SleepDuration
@@ -657,6 +656,7 @@ func (o AddDelayRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

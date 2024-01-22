@@ -19,9 +19,7 @@ var _ MappedNullable = &AddJdbcBasedAccessLogPublisherRequest{}
 
 // AddJdbcBasedAccessLogPublisherRequest struct for AddJdbcBasedAccessLogPublisherRequest
 type AddJdbcBasedAccessLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName string                                     `json:"publisherName"`
-	Schemas       []EnumjdbcBasedAccessLogPublisherSchemaUrn `json:"schemas"`
+	Schemas []EnumjdbcBasedAccessLogPublisherSchemaUrn `json:"schemas"`
 	// The JDBC-based Database Server to use for a connection.
 	Server string `json:"server"`
 	// The log field mapping associates loggable fields to database column names. The table name is not part of this mapping.
@@ -69,19 +67,21 @@ type AddJdbcBasedAccessLogPublisherRequest struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddJdbcBasedAccessLogPublisherRequest instantiates a new AddJdbcBasedAccessLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddJdbcBasedAccessLogPublisherRequest(publisherName string, schemas []EnumjdbcBasedAccessLogPublisherSchemaUrn, server string, logFieldMapping string, enabled bool) *AddJdbcBasedAccessLogPublisherRequest {
+func NewAddJdbcBasedAccessLogPublisherRequest(schemas []EnumjdbcBasedAccessLogPublisherSchemaUrn, server string, logFieldMapping string, enabled bool, publisherName string) *AddJdbcBasedAccessLogPublisherRequest {
 	this := AddJdbcBasedAccessLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.Server = server
 	this.LogFieldMapping = logFieldMapping
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -91,30 +91,6 @@ func NewAddJdbcBasedAccessLogPublisherRequest(publisherName string, schemas []En
 func NewAddJdbcBasedAccessLogPublisherRequestWithDefaults() *AddJdbcBasedAccessLogPublisherRequest {
 	this := AddJdbcBasedAccessLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddJdbcBasedAccessLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddJdbcBasedAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddJdbcBasedAccessLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -885,6 +861,30 @@ func (o *AddJdbcBasedAccessLogPublisherRequest) SetLoggingErrorBehavior(v Enumlo
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddJdbcBasedAccessLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddJdbcBasedAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddJdbcBasedAccessLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddJdbcBasedAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -895,7 +895,6 @@ func (o AddJdbcBasedAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddJdbcBasedAccessLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["server"] = o.Server
 	toSerialize["logFieldMapping"] = o.LogFieldMapping
@@ -963,6 +962,7 @@ func (o AddJdbcBasedAccessLogPublisherRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

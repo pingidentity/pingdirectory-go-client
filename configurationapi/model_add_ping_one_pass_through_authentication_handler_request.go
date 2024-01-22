@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPingOnePassThroughAuthenticationHandlerRequest{}
 
 // AddPingOnePassThroughAuthenticationHandlerRequest struct for AddPingOnePassThroughAuthenticationHandlerRequest
 type AddPingOnePassThroughAuthenticationHandlerRequest struct {
-	// Name of the new Pass Through Authentication Handler
-	HandlerName string                                                 `json:"handlerName"`
-	Schemas     []EnumpingOnePassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumpingOnePassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// Specifies the API endpoint for the PingOne web service.
 	ApiURL string `json:"apiURL"`
 	// Specifies the API endpoint for the PingOne authentication service.
@@ -50,15 +48,16 @@ type AddPingOnePassThroughAuthenticationHandlerRequest struct {
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
+	// Name of the new Pass Through Authentication Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddPingOnePassThroughAuthenticationHandlerRequest instantiates a new AddPingOnePassThroughAuthenticationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingOnePassThroughAuthenticationHandlerRequest(handlerName string, schemas []EnumpingOnePassThroughAuthenticationHandlerSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string) *AddPingOnePassThroughAuthenticationHandlerRequest {
+func NewAddPingOnePassThroughAuthenticationHandlerRequest(schemas []EnumpingOnePassThroughAuthenticationHandlerSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, handlerName string) *AddPingOnePassThroughAuthenticationHandlerRequest {
 	this := AddPingOnePassThroughAuthenticationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ApiURL = apiURL
 	this.AuthURL = authURL
@@ -66,6 +65,7 @@ func NewAddPingOnePassThroughAuthenticationHandlerRequest(handlerName string, sc
 	this.EnvironmentID = environmentID
 	this.UserMappingLocalAttribute = userMappingLocalAttribute
 	this.UserMappingRemoteJSONField = userMappingRemoteJSONField
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -75,30 +75,6 @@ func NewAddPingOnePassThroughAuthenticationHandlerRequest(handlerName string, sc
 func NewAddPingOnePassThroughAuthenticationHandlerRequestWithDefaults() *AddPingOnePassThroughAuthenticationHandlerRequest {
 	this := AddPingOnePassThroughAuthenticationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddPingOnePassThroughAuthenticationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddPingOnePassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddPingOnePassThroughAuthenticationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -525,6 +501,30 @@ func (o *AddPingOnePassThroughAuthenticationHandlerRequest) SetRequestCriteria(v
 	o.RequestCriteria = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddPingOnePassThroughAuthenticationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddPingOnePassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddPingOnePassThroughAuthenticationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddPingOnePassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -535,7 +535,6 @@ func (o AddPingOnePassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte
 
 func (o AddPingOnePassThroughAuthenticationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["apiURL"] = o.ApiURL
 	toSerialize["authURL"] = o.AuthURL
@@ -567,6 +566,7 @@ func (o AddPingOnePassThroughAuthenticationHandlerRequest) ToMap() (map[string]i
 	if !IsNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

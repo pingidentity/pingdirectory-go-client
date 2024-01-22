@@ -1,14 +1,14 @@
-# \CorrelatedLdapDataViewApi
+# \CorrelatedLdapDataViewAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddCorrelatedLdapDataView**](CorrelatedLdapDataViewApi.md#AddCorrelatedLdapDataView) | **Post** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views | Add a new Correlated LDAP Data View to the config
-[**DeleteCorrelatedLdapDataView**](CorrelatedLdapDataViewApi.md#DeleteCorrelatedLdapDataView) | **Delete** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name} | Delete a Correlated LDAP Data View
-[**GetCorrelatedLdapDataView**](CorrelatedLdapDataViewApi.md#GetCorrelatedLdapDataView) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name} | Returns a single Correlated LDAP Data View
-[**ListCorrelatedLdapDataViews**](CorrelatedLdapDataViewApi.md#ListCorrelatedLdapDataViews) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views | Returns a list of all Correlated LDAP Data View objects
-[**UpdateCorrelatedLdapDataView**](CorrelatedLdapDataViewApi.md#UpdateCorrelatedLdapDataView) | **Patch** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name} | Update an existing Correlated LDAP Data View by name
+[**AddCorrelatedLdapDataView**](CorrelatedLdapDataViewAPI.md#AddCorrelatedLdapDataView) | **Post** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views | Add a new Correlated LDAP Data View to the config
+[**DeleteCorrelatedLdapDataView**](CorrelatedLdapDataViewAPI.md#DeleteCorrelatedLdapDataView) | **Delete** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name} | Delete a Correlated LDAP Data View
+[**GetCorrelatedLdapDataView**](CorrelatedLdapDataViewAPI.md#GetCorrelatedLdapDataView) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name} | Returns a single Correlated LDAP Data View
+[**ListCorrelatedLdapDataViews**](CorrelatedLdapDataViewAPI.md#ListCorrelatedLdapDataViews) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views | Returns a list of all Correlated LDAP Data View objects
+[**UpdateCorrelatedLdapDataView**](CorrelatedLdapDataViewAPI.md#UpdateCorrelatedLdapDataView) | **Patch** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name} | Update an existing Correlated LDAP Data View by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     scimResourceTypeName := "scimResourceTypeName_example" // string | Name of the SCIM Resource Type
-    addCorrelatedLdapDataViewRequest := *openapiclient.NewAddCorrelatedLdapDataViewRequest("ViewName_example", "StructuralLDAPObjectclass_example", "IncludeBaseDN_example", "PrimaryCorrelationAttribute_example", "SecondaryCorrelationAttribute_example") // AddCorrelatedLdapDataViewRequest | Create a new Correlated LDAP Data View in the config
+    addCorrelatedLdapDataViewRequest := *openapiclient.NewAddCorrelatedLdapDataViewRequest("StructuralLDAPObjectclass_example", "IncludeBaseDN_example", "PrimaryCorrelationAttribute_example", "SecondaryCorrelationAttribute_example", "ViewName_example") // AddCorrelatedLdapDataViewRequest | Create a new Correlated LDAP Data View in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CorrelatedLdapDataViewApi.AddCorrelatedLdapDataView(context.Background(), scimResourceTypeName).AddCorrelatedLdapDataViewRequest(addCorrelatedLdapDataViewRequest).Execute()
+    resp, r, err := apiClient.CorrelatedLdapDataViewAPI.AddCorrelatedLdapDataView(context.Background(), scimResourceTypeName).AddCorrelatedLdapDataViewRequest(addCorrelatedLdapDataViewRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewApi.AddCorrelatedLdapDataView``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewAPI.AddCorrelatedLdapDataView``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddCorrelatedLdapDataView`: CorrelatedLdapDataViewResponse
-    fmt.Fprintf(os.Stdout, "Response from `CorrelatedLdapDataViewApi.AddCorrelatedLdapDataView`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CorrelatedLdapDataViewAPI.AddCorrelatedLdapDataView`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CorrelatedLdapDataViewApi.DeleteCorrelatedLdapDataView(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).Execute()
+    r, err := apiClient.CorrelatedLdapDataViewAPI.DeleteCorrelatedLdapDataView(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewApi.DeleteCorrelatedLdapDataView``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewAPI.DeleteCorrelatedLdapDataView``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CorrelatedLdapDataViewApi.GetCorrelatedLdapDataView(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).Execute()
+    resp, r, err := apiClient.CorrelatedLdapDataViewAPI.GetCorrelatedLdapDataView(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewApi.GetCorrelatedLdapDataView``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewAPI.GetCorrelatedLdapDataView``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCorrelatedLdapDataView`: CorrelatedLdapDataViewResponse
-    fmt.Fprintf(os.Stdout, "Response from `CorrelatedLdapDataViewApi.GetCorrelatedLdapDataView`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CorrelatedLdapDataViewAPI.GetCorrelatedLdapDataView`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CorrelatedLdapDataViewApi.ListCorrelatedLdapDataViews(context.Background(), scimResourceTypeName).Filter(filter).Execute()
+    resp, r, err := apiClient.CorrelatedLdapDataViewAPI.ListCorrelatedLdapDataViews(context.Background(), scimResourceTypeName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewApi.ListCorrelatedLdapDataViews``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewAPI.ListCorrelatedLdapDataViews``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListCorrelatedLdapDataViews`: CorrelatedLdapDataViewListResponse
-    fmt.Fprintf(os.Stdout, "Response from `CorrelatedLdapDataViewApi.ListCorrelatedLdapDataViews`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CorrelatedLdapDataViewAPI.ListCorrelatedLdapDataViews`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CorrelatedLdapDataViewApi.UpdateCorrelatedLdapDataView(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.CorrelatedLdapDataViewAPI.UpdateCorrelatedLdapDataView(context.Background(), correlatedLdapDataViewName, scimResourceTypeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewApi.UpdateCorrelatedLdapDataView``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CorrelatedLdapDataViewAPI.UpdateCorrelatedLdapDataView``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCorrelatedLdapDataView`: CorrelatedLdapDataViewResponse
-    fmt.Fprintf(os.Stdout, "Response from `CorrelatedLdapDataViewApi.UpdateCorrelatedLdapDataView`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CorrelatedLdapDataViewAPI.UpdateCorrelatedLdapDataView`: %v\n", resp)
 }
 ```
 

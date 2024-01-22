@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// LdapSdkDebugLoggerApiService LdapSdkDebugLoggerApi service
-type LdapSdkDebugLoggerApiService service
+// LdapSdkDebugLoggerAPIService LdapSdkDebugLoggerAPI service
+type LdapSdkDebugLoggerAPIService service
 
 type ApiGetLdapSdkDebugLoggerRequest struct {
 	ctx        context.Context
-	ApiService *LdapSdkDebugLoggerApiService
+	ApiService *LdapSdkDebugLoggerAPIService
 }
 
 func (r ApiGetLdapSdkDebugLoggerRequest) Execute() (*LdapSdkDebugLoggerResponse, *http.Response, error) {
@@ -36,7 +36,7 @@ GetLdapSdkDebugLogger Returns a single LDAP SDK Debug Logger
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetLdapSdkDebugLoggerRequest
 */
-func (a *LdapSdkDebugLoggerApiService) GetLdapSdkDebugLogger(ctx context.Context) ApiGetLdapSdkDebugLoggerRequest {
+func (a *LdapSdkDebugLoggerAPIService) GetLdapSdkDebugLogger(ctx context.Context) ApiGetLdapSdkDebugLoggerRequest {
 	return ApiGetLdapSdkDebugLoggerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *LdapSdkDebugLoggerApiService) GetLdapSdkDebugLogger(ctx context.Context
 // Execute executes the request
 //
 //	@return LdapSdkDebugLoggerResponse
-func (a *LdapSdkDebugLoggerApiService) GetLdapSdkDebugLoggerExecute(r ApiGetLdapSdkDebugLoggerRequest) (*LdapSdkDebugLoggerResponse, *http.Response, error) {
+func (a *LdapSdkDebugLoggerAPIService) GetLdapSdkDebugLoggerExecute(r ApiGetLdapSdkDebugLoggerRequest) (*LdapSdkDebugLoggerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *LdapSdkDebugLoggerApiService) GetLdapSdkDebugLoggerExecute(r ApiGetLdap
 		localVarReturnValue *LdapSdkDebugLoggerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapSdkDebugLoggerApiService.GetLdapSdkDebugLogger")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapSdkDebugLoggerAPIService.GetLdapSdkDebugLogger")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *LdapSdkDebugLoggerApiService) GetLdapSdkDebugLoggerExecute(r ApiGetLdap
 
 type ApiUpdateLdapSdkDebugLoggerRequest struct {
 	ctx           context.Context
-	ApiService    *LdapSdkDebugLoggerApiService
+	ApiService    *LdapSdkDebugLoggerAPIService
 	updateRequest *UpdateRequest
 }
 
@@ -141,7 +141,7 @@ UpdateLdapSdkDebugLogger Update an existing LDAP SDK Debug Logger by name
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateLdapSdkDebugLoggerRequest
 */
-func (a *LdapSdkDebugLoggerApiService) UpdateLdapSdkDebugLogger(ctx context.Context) ApiUpdateLdapSdkDebugLoggerRequest {
+func (a *LdapSdkDebugLoggerAPIService) UpdateLdapSdkDebugLogger(ctx context.Context) ApiUpdateLdapSdkDebugLoggerRequest {
 	return ApiUpdateLdapSdkDebugLoggerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *LdapSdkDebugLoggerApiService) UpdateLdapSdkDebugLogger(ctx context.Cont
 // Execute executes the request
 //
 //	@return LdapSdkDebugLoggerResponse
-func (a *LdapSdkDebugLoggerApiService) UpdateLdapSdkDebugLoggerExecute(r ApiUpdateLdapSdkDebugLoggerRequest) (*LdapSdkDebugLoggerResponse, *http.Response, error) {
+func (a *LdapSdkDebugLoggerAPIService) UpdateLdapSdkDebugLoggerExecute(r ApiUpdateLdapSdkDebugLoggerRequest) (*LdapSdkDebugLoggerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *LdapSdkDebugLoggerApiService) UpdateLdapSdkDebugLoggerExecute(r ApiUpda
 		localVarReturnValue *LdapSdkDebugLoggerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapSdkDebugLoggerApiService.UpdateLdapSdkDebugLogger")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapSdkDebugLoggerAPIService.UpdateLdapSdkDebugLogger")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

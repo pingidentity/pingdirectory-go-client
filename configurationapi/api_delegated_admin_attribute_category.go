@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// DelegatedAdminAttributeCategoryApiService DelegatedAdminAttributeCategoryApi service
-type DelegatedAdminAttributeCategoryApiService service
+// DelegatedAdminAttributeCategoryAPIService DelegatedAdminAttributeCategoryAPI service
+type DelegatedAdminAttributeCategoryAPIService service
 
 type ApiAddDelegatedAdminAttributeCategoryRequest struct {
 	ctx                                       context.Context
-	ApiService                                *DelegatedAdminAttributeCategoryApiService
+	ApiService                                *DelegatedAdminAttributeCategoryAPIService
 	addDelegatedAdminAttributeCategoryRequest *AddDelegatedAdminAttributeCategoryRequest
 }
 
@@ -44,7 +44,7 @@ AddDelegatedAdminAttributeCategory Add a new Delegated Admin Attribute Category 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddDelegatedAdminAttributeCategoryRequest
 */
-func (a *DelegatedAdminAttributeCategoryApiService) AddDelegatedAdminAttributeCategory(ctx context.Context) ApiAddDelegatedAdminAttributeCategoryRequest {
+func (a *DelegatedAdminAttributeCategoryAPIService) AddDelegatedAdminAttributeCategory(ctx context.Context) ApiAddDelegatedAdminAttributeCategoryRequest {
 	return ApiAddDelegatedAdminAttributeCategoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) AddDelegatedAdminAttributeCa
 // Execute executes the request
 //
 //	@return DelegatedAdminAttributeCategoryResponse
-func (a *DelegatedAdminAttributeCategoryApiService) AddDelegatedAdminAttributeCategoryExecute(r ApiAddDelegatedAdminAttributeCategoryRequest) (*DelegatedAdminAttributeCategoryResponse, *http.Response, error) {
+func (a *DelegatedAdminAttributeCategoryAPIService) AddDelegatedAdminAttributeCategoryExecute(r ApiAddDelegatedAdminAttributeCategoryRequest) (*DelegatedAdminAttributeCategoryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) AddDelegatedAdminAttributeCa
 		localVarReturnValue *DelegatedAdminAttributeCategoryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryApiService.AddDelegatedAdminAttributeCategory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryAPIService.AddDelegatedAdminAttributeCategory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) AddDelegatedAdminAttributeCa
 
 type ApiDeleteDelegatedAdminAttributeCategoryRequest struct {
 	ctx                                 context.Context
-	ApiService                          *DelegatedAdminAttributeCategoryApiService
+	ApiService                          *DelegatedAdminAttributeCategoryAPIService
 	delegatedAdminAttributeCategoryName string
 }
 
@@ -149,7 +149,7 @@ DeleteDelegatedAdminAttributeCategory Delete a Delegated Admin Attribute Categor
 	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category
 	@return ApiDeleteDelegatedAdminAttributeCategoryRequest
 */
-func (a *DelegatedAdminAttributeCategoryApiService) DeleteDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiDeleteDelegatedAdminAttributeCategoryRequest {
+func (a *DelegatedAdminAttributeCategoryAPIService) DeleteDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiDeleteDelegatedAdminAttributeCategoryRequest {
 	return ApiDeleteDelegatedAdminAttributeCategoryRequest{
 		ApiService:                          a,
 		ctx:                                 ctx,
@@ -158,14 +158,14 @@ func (a *DelegatedAdminAttributeCategoryApiService) DeleteDelegatedAdminAttribut
 }
 
 // Execute executes the request
-func (a *DelegatedAdminAttributeCategoryApiService) DeleteDelegatedAdminAttributeCategoryExecute(r ApiDeleteDelegatedAdminAttributeCategoryRequest) (*http.Response, error) {
+func (a *DelegatedAdminAttributeCategoryAPIService) DeleteDelegatedAdminAttributeCategoryExecute(r ApiDeleteDelegatedAdminAttributeCategoryRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryApiService.DeleteDelegatedAdminAttributeCategory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryAPIService.DeleteDelegatedAdminAttributeCategory")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) DeleteDelegatedAdminAttribut
 
 type ApiGetDelegatedAdminAttributeCategoryRequest struct {
 	ctx                                 context.Context
-	ApiService                          *DelegatedAdminAttributeCategoryApiService
+	ApiService                          *DelegatedAdminAttributeCategoryAPIService
 	delegatedAdminAttributeCategoryName string
 }
 
@@ -239,7 +239,7 @@ GetDelegatedAdminAttributeCategory Returns a single Delegated Admin Attribute Ca
 	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category
 	@return ApiGetDelegatedAdminAttributeCategoryRequest
 */
-func (a *DelegatedAdminAttributeCategoryApiService) GetDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiGetDelegatedAdminAttributeCategoryRequest {
+func (a *DelegatedAdminAttributeCategoryAPIService) GetDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiGetDelegatedAdminAttributeCategoryRequest {
 	return ApiGetDelegatedAdminAttributeCategoryRequest{
 		ApiService:                          a,
 		ctx:                                 ctx,
@@ -250,7 +250,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) GetDelegatedAdminAttributeCa
 // Execute executes the request
 //
 //	@return DelegatedAdminAttributeCategoryResponse
-func (a *DelegatedAdminAttributeCategoryApiService) GetDelegatedAdminAttributeCategoryExecute(r ApiGetDelegatedAdminAttributeCategoryRequest) (*DelegatedAdminAttributeCategoryResponse, *http.Response, error) {
+func (a *DelegatedAdminAttributeCategoryAPIService) GetDelegatedAdminAttributeCategoryExecute(r ApiGetDelegatedAdminAttributeCategoryRequest) (*DelegatedAdminAttributeCategoryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) GetDelegatedAdminAttributeCa
 		localVarReturnValue *DelegatedAdminAttributeCategoryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryApiService.GetDelegatedAdminAttributeCategory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryAPIService.GetDelegatedAdminAttributeCategory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) GetDelegatedAdminAttributeCa
 
 type ApiListDelegatedAdminAttributeCategoriesRequest struct {
 	ctx        context.Context
-	ApiService *DelegatedAdminAttributeCategoryApiService
+	ApiService *DelegatedAdminAttributeCategoryAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListDelegatedAdminAttributeCategories Returns a list of all Delegated Admin Attr
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListDelegatedAdminAttributeCategoriesRequest
 */
-func (a *DelegatedAdminAttributeCategoryApiService) ListDelegatedAdminAttributeCategories(ctx context.Context) ApiListDelegatedAdminAttributeCategoriesRequest {
+func (a *DelegatedAdminAttributeCategoryAPIService) ListDelegatedAdminAttributeCategories(ctx context.Context) ApiListDelegatedAdminAttributeCategoriesRequest {
 	return ApiListDelegatedAdminAttributeCategoriesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) ListDelegatedAdminAttributeC
 // Execute executes the request
 //
 //	@return DelegatedAdminAttributeCategoryListResponse
-func (a *DelegatedAdminAttributeCategoryApiService) ListDelegatedAdminAttributeCategoriesExecute(r ApiListDelegatedAdminAttributeCategoriesRequest) (*DelegatedAdminAttributeCategoryListResponse, *http.Response, error) {
+func (a *DelegatedAdminAttributeCategoryAPIService) ListDelegatedAdminAttributeCategoriesExecute(r ApiListDelegatedAdminAttributeCategoriesRequest) (*DelegatedAdminAttributeCategoryListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) ListDelegatedAdminAttributeC
 		localVarReturnValue *DelegatedAdminAttributeCategoryListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryApiService.ListDelegatedAdminAttributeCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryAPIService.ListDelegatedAdminAttributeCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) ListDelegatedAdminAttributeC
 
 type ApiUpdateDelegatedAdminAttributeCategoryRequest struct {
 	ctx                                 context.Context
-	ApiService                          *DelegatedAdminAttributeCategoryApiService
+	ApiService                          *DelegatedAdminAttributeCategoryAPIService
 	delegatedAdminAttributeCategoryName string
 	updateRequest                       *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateDelegatedAdminAttributeCategory Update an existing Delegated Admin Attribu
 	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category
 	@return ApiUpdateDelegatedAdminAttributeCategoryRequest
 */
-func (a *DelegatedAdminAttributeCategoryApiService) UpdateDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiUpdateDelegatedAdminAttributeCategoryRequest {
+func (a *DelegatedAdminAttributeCategoryAPIService) UpdateDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiUpdateDelegatedAdminAttributeCategoryRequest {
 	return ApiUpdateDelegatedAdminAttributeCategoryRequest{
 		ApiService:                          a,
 		ctx:                                 ctx,
@@ -467,7 +467,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) UpdateDelegatedAdminAttribut
 // Execute executes the request
 //
 //	@return DelegatedAdminAttributeCategoryResponse
-func (a *DelegatedAdminAttributeCategoryApiService) UpdateDelegatedAdminAttributeCategoryExecute(r ApiUpdateDelegatedAdminAttributeCategoryRequest) (*DelegatedAdminAttributeCategoryResponse, *http.Response, error) {
+func (a *DelegatedAdminAttributeCategoryAPIService) UpdateDelegatedAdminAttributeCategoryExecute(r ApiUpdateDelegatedAdminAttributeCategoryRequest) (*DelegatedAdminAttributeCategoryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *DelegatedAdminAttributeCategoryApiService) UpdateDelegatedAdminAttribut
 		localVarReturnValue *DelegatedAdminAttributeCategoryResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryApiService.UpdateDelegatedAdminAttributeCategory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryAPIService.UpdateDelegatedAdminAttributeCategory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

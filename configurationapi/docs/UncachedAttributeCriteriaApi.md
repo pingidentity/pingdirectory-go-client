@@ -1,14 +1,14 @@
-# \UncachedAttributeCriteriaApi
+# \UncachedAttributeCriteriaAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#AddUncachedAttributeCriteria) | **Post** /uncached-attribute-criteria | Add a new Uncached Attribute Criteria to the config
-[**DeleteUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#DeleteUncachedAttributeCriteria) | **Delete** /uncached-attribute-criteria/{uncached-attribute-criteria-name} | Delete a Uncached Attribute Criteria
-[**GetUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#GetUncachedAttributeCriteria) | **Get** /uncached-attribute-criteria/{uncached-attribute-criteria-name} | Returns a single Uncached Attribute Criteria
-[**ListUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#ListUncachedAttributeCriteria) | **Get** /uncached-attribute-criteria | Returns a list of all Uncached Attribute Criteria objects
-[**UpdateUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#UpdateUncachedAttributeCriteria) | **Patch** /uncached-attribute-criteria/{uncached-attribute-criteria-name} | Update an existing Uncached Attribute Criteria by name
+[**AddUncachedAttributeCriteria**](UncachedAttributeCriteriaAPI.md#AddUncachedAttributeCriteria) | **Post** /uncached-attribute-criteria | Add a new Uncached Attribute Criteria to the config
+[**DeleteUncachedAttributeCriteria**](UncachedAttributeCriteriaAPI.md#DeleteUncachedAttributeCriteria) | **Delete** /uncached-attribute-criteria/{uncached-attribute-criteria-name} | Delete a Uncached Attribute Criteria
+[**GetUncachedAttributeCriteria**](UncachedAttributeCriteriaAPI.md#GetUncachedAttributeCriteria) | **Get** /uncached-attribute-criteria/{uncached-attribute-criteria-name} | Returns a single Uncached Attribute Criteria
+[**ListUncachedAttributeCriteria**](UncachedAttributeCriteriaAPI.md#ListUncachedAttributeCriteria) | **Get** /uncached-attribute-criteria | Returns a list of all Uncached Attribute Criteria objects
+[**UpdateUncachedAttributeCriteria**](UncachedAttributeCriteriaAPI.md#UpdateUncachedAttributeCriteria) | **Patch** /uncached-attribute-criteria/{uncached-attribute-criteria-name} | Update an existing Uncached Attribute Criteria by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addUncachedAttributeCriteriaRequest := openapiclient.add_uncached_attribute_criteria_request{AddDefaultUncachedAttributeCriteriaRequest: openapiclient.NewAddDefaultUncachedAttributeCriteriaRequest("CriteriaName_example", []openapiclient.EnumdefaultUncachedAttributeCriteriaSchemaUrn{openapiclient.Enumdefault-uncached-attribute-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:default")}, false)} // AddUncachedAttributeCriteriaRequest | Create a new Uncached Attribute Criteria in the config
+    addUncachedAttributeCriteriaRequest := openapiclient.add_uncached_attribute_criteria_request{AddDefaultUncachedAttributeCriteriaRequest: openapiclient.NewAddDefaultUncachedAttributeCriteriaRequest([]openapiclient.EnumdefaultUncachedAttributeCriteriaSchemaUrn{openapiclient.Enumdefault-uncached-attribute-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:default")}, false, "CriteriaName_example")} // AddUncachedAttributeCriteriaRequest | Create a new Uncached Attribute Criteria in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UncachedAttributeCriteriaApi.AddUncachedAttributeCriteria(context.Background()).AddUncachedAttributeCriteriaRequest(addUncachedAttributeCriteriaRequest).Execute()
+    resp, r, err := apiClient.UncachedAttributeCriteriaAPI.AddUncachedAttributeCriteria(context.Background()).AddUncachedAttributeCriteriaRequest(addUncachedAttributeCriteriaRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaApi.AddUncachedAttributeCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaAPI.AddUncachedAttributeCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddUncachedAttributeCriteria`: AddUncachedAttributeCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `UncachedAttributeCriteriaApi.AddUncachedAttributeCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UncachedAttributeCriteriaAPI.AddUncachedAttributeCriteria`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UncachedAttributeCriteriaApi.DeleteUncachedAttributeCriteria(context.Background(), uncachedAttributeCriteriaName).Execute()
+    r, err := apiClient.UncachedAttributeCriteriaAPI.DeleteUncachedAttributeCriteria(context.Background(), uncachedAttributeCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaApi.DeleteUncachedAttributeCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaAPI.DeleteUncachedAttributeCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UncachedAttributeCriteriaApi.GetUncachedAttributeCriteria(context.Background(), uncachedAttributeCriteriaName).Execute()
+    resp, r, err := apiClient.UncachedAttributeCriteriaAPI.GetUncachedAttributeCriteria(context.Background(), uncachedAttributeCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaApi.GetUncachedAttributeCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaAPI.GetUncachedAttributeCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetUncachedAttributeCriteria`: AddUncachedAttributeCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `UncachedAttributeCriteriaApi.GetUncachedAttributeCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UncachedAttributeCriteriaAPI.GetUncachedAttributeCriteria`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UncachedAttributeCriteriaApi.ListUncachedAttributeCriteria(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.UncachedAttributeCriteriaAPI.ListUncachedAttributeCriteria(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaApi.ListUncachedAttributeCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaAPI.ListUncachedAttributeCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListUncachedAttributeCriteria`: UncachedAttributeCriteriaListResponse
-    fmt.Fprintf(os.Stdout, "Response from `UncachedAttributeCriteriaApi.ListUncachedAttributeCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UncachedAttributeCriteriaAPI.ListUncachedAttributeCriteria`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UncachedAttributeCriteriaApi.UpdateUncachedAttributeCriteria(context.Background(), uncachedAttributeCriteriaName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.UncachedAttributeCriteriaAPI.UpdateUncachedAttributeCriteria(context.Background(), uncachedAttributeCriteriaName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaApi.UpdateUncachedAttributeCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaAPI.UpdateUncachedAttributeCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateUncachedAttributeCriteria`: AddUncachedAttributeCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `UncachedAttributeCriteriaApi.UpdateUncachedAttributeCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UncachedAttributeCriteriaAPI.UpdateUncachedAttributeCriteria`: %v\n", resp)
 }
 ```
 

@@ -38,6 +38,8 @@ Name | Type | Description | Notes
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Password Validator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **PwnedPasswordsBaseURL** | **string** | The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches. | 
 **HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service. | [optional] 
+**HttpConnectTimeout** | Pointer to **string** | The maximum length of time to wait to obtain an HTTP connection. | [optional] 
+**HttpResponseTimeout** | Pointer to **string** | The maximum length of time to wait for a response to an HTTP request. | [optional] 
 **InvokeForAdd** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests. | 
 **InvokeForSelfChange** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password. | 
 **InvokeForAdminReset** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by administrators when changing the password for another user. | 
@@ -853,6 +855,56 @@ SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
 `func (o *AddPasswordValidator200Response) HasHttpProxyExternalServer() bool`
 
 HasHttpProxyExternalServer returns a boolean if a field has been set.
+
+### GetHttpConnectTimeout
+
+`func (o *AddPasswordValidator200Response) GetHttpConnectTimeout() string`
+
+GetHttpConnectTimeout returns the HttpConnectTimeout field if non-nil, zero value otherwise.
+
+### GetHttpConnectTimeoutOk
+
+`func (o *AddPasswordValidator200Response) GetHttpConnectTimeoutOk() (*string, bool)`
+
+GetHttpConnectTimeoutOk returns a tuple with the HttpConnectTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpConnectTimeout
+
+`func (o *AddPasswordValidator200Response) SetHttpConnectTimeout(v string)`
+
+SetHttpConnectTimeout sets HttpConnectTimeout field to given value.
+
+### HasHttpConnectTimeout
+
+`func (o *AddPasswordValidator200Response) HasHttpConnectTimeout() bool`
+
+HasHttpConnectTimeout returns a boolean if a field has been set.
+
+### GetHttpResponseTimeout
+
+`func (o *AddPasswordValidator200Response) GetHttpResponseTimeout() string`
+
+GetHttpResponseTimeout returns the HttpResponseTimeout field if non-nil, zero value otherwise.
+
+### GetHttpResponseTimeoutOk
+
+`func (o *AddPasswordValidator200Response) GetHttpResponseTimeoutOk() (*string, bool)`
+
+GetHttpResponseTimeoutOk returns a tuple with the HttpResponseTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpResponseTimeout
+
+`func (o *AddPasswordValidator200Response) SetHttpResponseTimeout(v string)`
+
+SetHttpResponseTimeout sets HttpResponseTimeout field to given value.
+
+### HasHttpResponseTimeout
+
+`func (o *AddPasswordValidator200Response) HasHttpResponseTimeout() bool`
+
+HasHttpResponseTimeout returns a boolean if a field has been set.
 
 ### GetInvokeForAdd
 

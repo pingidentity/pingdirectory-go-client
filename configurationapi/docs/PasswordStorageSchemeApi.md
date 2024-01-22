@@ -1,14 +1,14 @@
-# \PasswordStorageSchemeApi
+# \PasswordStorageSchemeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPasswordStorageScheme**](PasswordStorageSchemeApi.md#AddPasswordStorageScheme) | **Post** /password-storage-schemes | Add a new Password Storage Scheme to the config
-[**DeletePasswordStorageScheme**](PasswordStorageSchemeApi.md#DeletePasswordStorageScheme) | **Delete** /password-storage-schemes/{password-storage-scheme-name} | Delete a Password Storage Scheme
-[**GetPasswordStorageScheme**](PasswordStorageSchemeApi.md#GetPasswordStorageScheme) | **Get** /password-storage-schemes/{password-storage-scheme-name} | Returns a single Password Storage Scheme
-[**ListPasswordStorageSchemes**](PasswordStorageSchemeApi.md#ListPasswordStorageSchemes) | **Get** /password-storage-schemes | Returns a list of all Password Storage Scheme objects
-[**UpdatePasswordStorageScheme**](PasswordStorageSchemeApi.md#UpdatePasswordStorageScheme) | **Patch** /password-storage-schemes/{password-storage-scheme-name} | Update an existing Password Storage Scheme by name
+[**AddPasswordStorageScheme**](PasswordStorageSchemeAPI.md#AddPasswordStorageScheme) | **Post** /password-storage-schemes | Add a new Password Storage Scheme to the config
+[**DeletePasswordStorageScheme**](PasswordStorageSchemeAPI.md#DeletePasswordStorageScheme) | **Delete** /password-storage-schemes/{password-storage-scheme-name} | Delete a Password Storage Scheme
+[**GetPasswordStorageScheme**](PasswordStorageSchemeAPI.md#GetPasswordStorageScheme) | **Get** /password-storage-schemes/{password-storage-scheme-name} | Returns a single Password Storage Scheme
+[**ListPasswordStorageSchemes**](PasswordStorageSchemeAPI.md#ListPasswordStorageSchemes) | **Get** /password-storage-schemes | Returns a list of all Password Storage Scheme objects
+[**UpdatePasswordStorageScheme**](PasswordStorageSchemeAPI.md#UpdatePasswordStorageScheme) | **Patch** /password-storage-schemes/{password-storage-scheme-name} | Update an existing Password Storage Scheme by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addPasswordStorageSchemeRequest := openapiclient.add_password_storage_scheme_request{AddAes256PasswordStorageSchemeRequest: openapiclient.NewAddAes256PasswordStorageSchemeRequest("SchemeName_example", []openapiclient.Enumaes256PasswordStorageSchemeSchemaUrn{openapiclient.Enumaes-256-password-storage-schemeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:aes-256")}, false)} // AddPasswordStorageSchemeRequest | Create a new Password Storage Scheme in the config
+    addPasswordStorageSchemeRequest := openapiclient.add_password_storage_scheme_request{AddAes256PasswordStorageSchemeRequest: openapiclient.NewAddAes256PasswordStorageSchemeRequest([]openapiclient.Enumaes256PasswordStorageSchemeSchemaUrn{openapiclient.Enumaes-256-password-storage-schemeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:aes-256")}, false, "SchemeName_example")} // AddPasswordStorageSchemeRequest | Create a new Password Storage Scheme in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordStorageSchemeApi.AddPasswordStorageScheme(context.Background()).AddPasswordStorageSchemeRequest(addPasswordStorageSchemeRequest).Execute()
+    resp, r, err := apiClient.PasswordStorageSchemeAPI.AddPasswordStorageScheme(context.Background()).AddPasswordStorageSchemeRequest(addPasswordStorageSchemeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeApi.AddPasswordStorageScheme``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeAPI.AddPasswordStorageScheme``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddPasswordStorageScheme`: AddPasswordStorageScheme200Response
-    fmt.Fprintf(os.Stdout, "Response from `PasswordStorageSchemeApi.AddPasswordStorageScheme`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordStorageSchemeAPI.AddPasswordStorageScheme`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PasswordStorageSchemeApi.DeletePasswordStorageScheme(context.Background(), passwordStorageSchemeName).Execute()
+    r, err := apiClient.PasswordStorageSchemeAPI.DeletePasswordStorageScheme(context.Background(), passwordStorageSchemeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeApi.DeletePasswordStorageScheme``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeAPI.DeletePasswordStorageScheme``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordStorageSchemeApi.GetPasswordStorageScheme(context.Background(), passwordStorageSchemeName).Execute()
+    resp, r, err := apiClient.PasswordStorageSchemeAPI.GetPasswordStorageScheme(context.Background(), passwordStorageSchemeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeApi.GetPasswordStorageScheme``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeAPI.GetPasswordStorageScheme``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPasswordStorageScheme`: GetPasswordStorageScheme200Response
-    fmt.Fprintf(os.Stdout, "Response from `PasswordStorageSchemeApi.GetPasswordStorageScheme`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordStorageSchemeAPI.GetPasswordStorageScheme`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordStorageSchemeApi.ListPasswordStorageSchemes(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.PasswordStorageSchemeAPI.ListPasswordStorageSchemes(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeApi.ListPasswordStorageSchemes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeAPI.ListPasswordStorageSchemes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPasswordStorageSchemes`: PasswordStorageSchemeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `PasswordStorageSchemeApi.ListPasswordStorageSchemes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordStorageSchemeAPI.ListPasswordStorageSchemes`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordStorageSchemeApi.UpdatePasswordStorageScheme(context.Background(), passwordStorageSchemeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.PasswordStorageSchemeAPI.UpdatePasswordStorageScheme(context.Background(), passwordStorageSchemeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeApi.UpdatePasswordStorageScheme``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeAPI.UpdatePasswordStorageScheme``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePasswordStorageScheme`: GetPasswordStorageScheme200Response
-    fmt.Fprintf(os.Stdout, "Response from `PasswordStorageSchemeApi.UpdatePasswordStorageScheme`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordStorageSchemeAPI.UpdatePasswordStorageScheme`: %v\n", resp)
 }
 ```
 

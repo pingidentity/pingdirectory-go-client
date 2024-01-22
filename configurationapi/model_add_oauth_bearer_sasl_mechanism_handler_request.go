@@ -19,9 +19,7 @@ var _ MappedNullable = &AddOauthBearerSaslMechanismHandlerRequest{}
 
 // AddOauthBearerSaslMechanismHandlerRequest struct for AddOauthBearerSaslMechanismHandlerRequest
 type AddOauthBearerSaslMechanismHandlerRequest struct {
-	// Name of the new SASL Mechanism Handler
-	HandlerName string                                         `json:"handlerName"`
-	Schemas     []EnumoauthBearerSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// An access token validator that will ensure that each presented OAuth access token is authentic and trustworthy. It must be configured with an identity mapper that will be used to map the access token to a local entry.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
 	// An ID token validator that will ensure that each presented OpenID Connect ID token is authentic and trustworthy, and that will map the token to a local entry.
@@ -41,17 +39,19 @@ type AddOauthBearerSaslMechanismHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the SASL mechanism handler is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new SASL Mechanism Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddOauthBearerSaslMechanismHandlerRequest instantiates a new AddOauthBearerSaslMechanismHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddOauthBearerSaslMechanismHandlerRequest(handlerName string, schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn, enabled bool) *AddOauthBearerSaslMechanismHandlerRequest {
+func NewAddOauthBearerSaslMechanismHandlerRequest(schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn, enabled bool, handlerName string) *AddOauthBearerSaslMechanismHandlerRequest {
 	this := AddOauthBearerSaslMechanismHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewAddOauthBearerSaslMechanismHandlerRequest(handlerName string, schemas []
 func NewAddOauthBearerSaslMechanismHandlerRequestWithDefaults() *AddOauthBearerSaslMechanismHandlerRequest {
 	this := AddOauthBearerSaslMechanismHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddOauthBearerSaslMechanismHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddOauthBearerSaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddOauthBearerSaslMechanismHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -423,6 +399,30 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddOauthBearerSaslMechanismHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddOauthBearerSaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddOauthBearerSaslMechanismHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddOauthBearerSaslMechanismHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -433,7 +433,6 @@ func (o AddOauthBearerSaslMechanismHandlerRequest) MarshalJSON() ([]byte, error)
 
 func (o AddOauthBearerSaslMechanismHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AccessTokenValidator) {
 		toSerialize["accessTokenValidator"] = o.AccessTokenValidator
@@ -463,6 +462,7 @@ func (o AddOauthBearerSaslMechanismHandlerRequest) ToMap() (map[string]interface
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

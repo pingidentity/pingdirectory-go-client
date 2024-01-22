@@ -19,9 +19,7 @@ var _ MappedNullable = &AddExactMatchIdentityMapperRequest{}
 
 // AddExactMatchIdentityMapperRequest struct for AddExactMatchIdentityMapperRequest
 type AddExactMatchIdentityMapperRequest struct {
-	// Name of the new Identity Mapper
-	MapperName string                                  `json:"mapperName"`
-	Schemas    []EnumexactMatchIdentityMapperSchemaUrn `json:"schemas"`
+	Schemas []EnumexactMatchIdentityMapperSchemaUrn `json:"schemas"`
 	// Specifies the attribute whose value should exactly match the ID string provided to this identity mapper.
 	MatchAttribute []string `json:"matchAttribute,omitempty"`
 	// Specifies the set of base DNs below which to search for users.
@@ -32,17 +30,19 @@ type AddExactMatchIdentityMapperRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Identity Mapper is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Identity Mapper
+	MapperName string `json:"mapperName"`
 }
 
 // NewAddExactMatchIdentityMapperRequest instantiates a new AddExactMatchIdentityMapperRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddExactMatchIdentityMapperRequest(mapperName string, schemas []EnumexactMatchIdentityMapperSchemaUrn, enabled bool) *AddExactMatchIdentityMapperRequest {
+func NewAddExactMatchIdentityMapperRequest(schemas []EnumexactMatchIdentityMapperSchemaUrn, enabled bool, mapperName string) *AddExactMatchIdentityMapperRequest {
 	this := AddExactMatchIdentityMapperRequest{}
-	this.MapperName = mapperName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.MapperName = mapperName
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewAddExactMatchIdentityMapperRequest(mapperName string, schemas []Enumexac
 func NewAddExactMatchIdentityMapperRequestWithDefaults() *AddExactMatchIdentityMapperRequest {
 	this := AddExactMatchIdentityMapperRequest{}
 	return &this
-}
-
-// GetMapperName returns the MapperName field value
-func (o *AddExactMatchIdentityMapperRequest) GetMapperName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MapperName
-}
-
-// GetMapperNameOk returns a tuple with the MapperName field value
-// and a boolean to check if the value has been set.
-func (o *AddExactMatchIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MapperName, true
-}
-
-// SetMapperName sets field value
-func (o *AddExactMatchIdentityMapperRequest) SetMapperName(v string) {
-	o.MapperName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -254,6 +230,30 @@ func (o *AddExactMatchIdentityMapperRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMapperName returns the MapperName field value
+func (o *AddExactMatchIdentityMapperRequest) GetMapperName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MapperName
+}
+
+// GetMapperNameOk returns a tuple with the MapperName field value
+// and a boolean to check if the value has been set.
+func (o *AddExactMatchIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MapperName, true
+}
+
+// SetMapperName sets field value
+func (o *AddExactMatchIdentityMapperRequest) SetMapperName(v string) {
+	o.MapperName = v
+}
+
 func (o AddExactMatchIdentityMapperRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -264,7 +264,6 @@ func (o AddExactMatchIdentityMapperRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddExactMatchIdentityMapperRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mapperName"] = o.MapperName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.MatchAttribute) {
 		toSerialize["matchAttribute"] = o.MatchAttribute
@@ -279,6 +278,7 @@ func (o AddExactMatchIdentityMapperRequest) ToMap() (map[string]interface{}, err
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["mapperName"] = o.MapperName
 	return toSerialize, nil
 }
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Result Criteria | 
 **Schemas** | [**[]EnumsimpleResultCriteriaSchemaUrn**](EnumsimpleResultCriteriaSchemaUrn.md) |  | 
 **RequestCriteria** | Pointer to **string** | Specifies a request criteria object that must match the associated request for operations included in this Simple Result Criteria. | [optional] 
 **ResultCodeCriteria** | Pointer to [**EnumresultCriteriaResultCodeCriteriaProp**](EnumresultCriteriaResultCodeCriteriaProp.md) |  | [optional] 
@@ -36,12 +35,13 @@ Name | Type | Description | Notes
 **NotAllIncludedAuthzUserGroupDN** | Pointer to **[]string** | Specifies the DN of a group in which authorization users should not exist for operations included in this Simple Result Criteria. If any group DNs are provided, then the authorization user must not be a member of at least one of those groups (that is, the user may be a member of zero or more of those groups, but not of all of them). The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed. | [optional] 
 **NoneIncludedAuthzUserGroupDN** | Pointer to **[]string** | Specifies the DN of a group in which authorization users must not exist for operations included in this Simple Result Criteria. If any group DNs are provided, then the authorization user must not be a member any of those groups. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed. | [optional] 
 **Description** | Pointer to **string** | A description for this Result Criteria | [optional] 
+**CriteriaName** | **string** | Name of the new Result Criteria | 
 
 ## Methods
 
 ### NewAddSimpleResultCriteriaRequest
 
-`func NewAddSimpleResultCriteriaRequest(criteriaName string, schemas []EnumsimpleResultCriteriaSchemaUrn, ) *AddSimpleResultCriteriaRequest`
+`func NewAddSimpleResultCriteriaRequest(schemas []EnumsimpleResultCriteriaSchemaUrn, criteriaName string, ) *AddSimpleResultCriteriaRequest`
 
 NewAddSimpleResultCriteriaRequest instantiates a new AddSimpleResultCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -55,26 +55,6 @@ will change when the set of required properties is changed
 NewAddSimpleResultCriteriaRequestWithDefaults instantiates a new AddSimpleResultCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddSimpleResultCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddSimpleResultCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddSimpleResultCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -845,6 +825,26 @@ SetDescription sets Description field to given value.
 `func (o *AddSimpleResultCriteriaRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetCriteriaName
+
+`func (o *AddSimpleResultCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddSimpleResultCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddSimpleResultCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

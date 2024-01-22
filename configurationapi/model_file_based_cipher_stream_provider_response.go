@@ -19,8 +19,6 @@ var _ MappedNullable = &FileBasedCipherStreamProviderResponse{}
 
 // FileBasedCipherStreamProviderResponse struct for FileBasedCipherStreamProviderResponse
 type FileBasedCipherStreamProviderResponse struct {
-	// Name of the Cipher Stream Provider
-	Id      string                                       `json:"id"`
 	Schemas []EnumfileBasedCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The path to the file containing the password to use when generating ciphers.
 	PasswordFile string `json:"passwordFile"`
@@ -36,18 +34,20 @@ type FileBasedCipherStreamProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Cipher Stream Provider
+	Id string `json:"id"`
 }
 
 // NewFileBasedCipherStreamProviderResponse instantiates a new FileBasedCipherStreamProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFileBasedCipherStreamProviderResponse(id string, schemas []EnumfileBasedCipherStreamProviderSchemaUrn, passwordFile string, enabled bool) *FileBasedCipherStreamProviderResponse {
+func NewFileBasedCipherStreamProviderResponse(schemas []EnumfileBasedCipherStreamProviderSchemaUrn, passwordFile string, enabled bool, id string) *FileBasedCipherStreamProviderResponse {
 	this := FileBasedCipherStreamProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PasswordFile = passwordFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewFileBasedCipherStreamProviderResponse(id string, schemas []EnumfileBased
 func NewFileBasedCipherStreamProviderResponseWithDefaults() *FileBasedCipherStreamProviderResponse {
 	this := FileBasedCipherStreamProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *FileBasedCipherStreamProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *FileBasedCipherStreamProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *FileBasedCipherStreamProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -347,6 +323,30 @@ func (o *FileBasedCipherStreamProviderResponse) SetUrnpingidentityschemasconfigu
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *FileBasedCipherStreamProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *FileBasedCipherStreamProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *FileBasedCipherStreamProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o FileBasedCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -357,7 +357,6 @@ func (o FileBasedCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o FileBasedCipherStreamProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["passwordFile"] = o.PasswordFile
 	if !IsNil(o.WaitForPasswordFile) {
@@ -379,6 +378,7 @@ func (o FileBasedCipherStreamProviderResponse) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

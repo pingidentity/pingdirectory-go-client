@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MapName** | **string** | Name of the new Result Code Map | 
 **Schemas** | Pointer to [**[]EnumresultCodeMapSchemaUrn**](EnumresultCodeMapSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Result Code Map | [optional] 
 **BindAccountLockedResultCode** | Pointer to **int64** | Specifies the result code that should be returned if a bind attempt fails because the user&#39;s account is locked as a result of too many failed authentication attempts. | [optional] 
 **BindMissingUserResultCode** | Pointer to **int64** | Specifies the result code that should be returned if a bind attempt fails because the target user entry does not exist in the server. | [optional] 
 **BindMissingPasswordResultCode** | Pointer to **int64** | Specifies the result code that should be returned if a password-based bind attempt fails because the target user entry does not have a password. | [optional] 
 **ServerErrorResultCode** | Pointer to **int64** | Specifies the result code that should be returned if a generic error occurs within the server. | [optional] 
+**MapName** | **string** | Name of the new Result Code Map | 
 
 ## Methods
 
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddResultCodeMapRequestWithDefaults instantiates a new AddResultCodeMapRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMapName
-
-`func (o *AddResultCodeMapRequest) GetMapName() string`
-
-GetMapName returns the MapName field if non-nil, zero value otherwise.
-
-### GetMapNameOk
-
-`func (o *AddResultCodeMapRequest) GetMapNameOk() (*string, bool)`
-
-GetMapNameOk returns a tuple with the MapName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMapName
-
-`func (o *AddResultCodeMapRequest) SetMapName(v string)`
-
-SetMapName sets MapName field to given value.
-
 
 ### GetSchemas
 
@@ -200,6 +180,26 @@ SetServerErrorResultCode sets ServerErrorResultCode field to given value.
 `func (o *AddResultCodeMapRequest) HasServerErrorResultCode() bool`
 
 HasServerErrorResultCode returns a boolean if a field has been set.
+
+### GetMapName
+
+`func (o *AddResultCodeMapRequest) GetMapName() string`
+
+GetMapName returns the MapName field if non-nil, zero value otherwise.
+
+### GetMapNameOk
+
+`func (o *AddResultCodeMapRequest) GetMapNameOk() (*string, bool)`
+
+GetMapNameOk returns a tuple with the MapName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMapName
+
+`func (o *AddResultCodeMapRequest) SetMapName(v string)`
+
+SetMapName sets MapName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

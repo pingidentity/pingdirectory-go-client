@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSyslogJsonHttpOperationLogPublisherRequest{}
 
 // AddSyslogJsonHttpOperationLogPublisherRequest struct for AddSyslogJsonHttpOperationLogPublisherRequest
 type AddSyslogJsonHttpOperationLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName string                                             `json:"publisherName"`
-	Schemas       []EnumsyslogJsonHttpOperationLogPublisherSchemaUrn `json:"schemas"`
+	Schemas []EnumsyslogJsonHttpOperationLogPublisherSchemaUrn `json:"schemas"`
 	// The syslog server to which messages should be sent.
 	SyslogExternalServer []string                            `json:"syslogExternalServer"`
 	SyslogFacility       *EnumlogPublisherSyslogFacilityProp `json:"syslogFacility,omitempty"`
@@ -72,18 +70,20 @@ type AddSyslogJsonHttpOperationLogPublisherRequest struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddSyslogJsonHttpOperationLogPublisherRequest instantiates a new AddSyslogJsonHttpOperationLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSyslogJsonHttpOperationLogPublisherRequest(publisherName string, schemas []EnumsyslogJsonHttpOperationLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool) *AddSyslogJsonHttpOperationLogPublisherRequest {
+func NewAddSyslogJsonHttpOperationLogPublisherRequest(schemas []EnumsyslogJsonHttpOperationLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, publisherName string) *AddSyslogJsonHttpOperationLogPublisherRequest {
 	this := AddSyslogJsonHttpOperationLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.SyslogExternalServer = syslogExternalServer
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -93,30 +93,6 @@ func NewAddSyslogJsonHttpOperationLogPublisherRequest(publisherName string, sche
 func NewAddSyslogJsonHttpOperationLogPublisherRequestWithDefaults() *AddSyslogJsonHttpOperationLogPublisherRequest {
 	this := AddSyslogJsonHttpOperationLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddSyslogJsonHttpOperationLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddSyslogJsonHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddSyslogJsonHttpOperationLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1023,6 +999,30 @@ func (o *AddSyslogJsonHttpOperationLogPublisherRequest) SetLoggingErrorBehavior(
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddSyslogJsonHttpOperationLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddSyslogJsonHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddSyslogJsonHttpOperationLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddSyslogJsonHttpOperationLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1033,7 +1033,6 @@ func (o AddSyslogJsonHttpOperationLogPublisherRequest) MarshalJSON() ([]byte, er
 
 func (o AddSyslogJsonHttpOperationLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["syslogExternalServer"] = o.SyslogExternalServer
 	if !IsNil(o.SyslogFacility) {
@@ -1115,6 +1114,7 @@ func (o AddSyslogJsonHttpOperationLogPublisherRequest) ToMap() (map[string]inter
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

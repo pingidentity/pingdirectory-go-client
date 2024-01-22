@@ -19,8 +19,6 @@ var _ MappedNullable = &CryptPasswordStorageSchemeResponse{}
 
 // CryptPasswordStorageSchemeResponse struct for CryptPasswordStorageSchemeResponse
 type CryptPasswordStorageSchemeResponse struct {
-	// Name of the Password Storage Scheme
-	Id                        string                                                  `json:"id"`
 	Schemas                   []EnumcryptPasswordStorageSchemeSchemaUrn               `json:"schemas"`
 	PasswordEncodingMechanism *EnumpasswordStorageSchemePasswordEncodingMechanismProp `json:"passwordEncodingMechanism,omitempty"`
 	// Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings.
@@ -33,17 +31,19 @@ type CryptPasswordStorageSchemeResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Storage Scheme
+	Id string `json:"id"`
 }
 
 // NewCryptPasswordStorageSchemeResponse instantiates a new CryptPasswordStorageSchemeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCryptPasswordStorageSchemeResponse(id string, schemas []EnumcryptPasswordStorageSchemeSchemaUrn, enabled bool) *CryptPasswordStorageSchemeResponse {
+func NewCryptPasswordStorageSchemeResponse(schemas []EnumcryptPasswordStorageSchemeSchemaUrn, enabled bool, id string) *CryptPasswordStorageSchemeResponse {
 	this := CryptPasswordStorageSchemeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewCryptPasswordStorageSchemeResponse(id string, schemas []EnumcryptPasswor
 func NewCryptPasswordStorageSchemeResponseWithDefaults() *CryptPasswordStorageSchemeResponse {
 	this := CryptPasswordStorageSchemeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CryptPasswordStorageSchemeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CryptPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CryptPasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -319,6 +295,30 @@ func (o *CryptPasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *CryptPasswordStorageSchemeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CryptPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CryptPasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o CryptPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -329,7 +329,6 @@ func (o CryptPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 
 func (o CryptPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PasswordEncodingMechanism) {
 		toSerialize["passwordEncodingMechanism"] = o.PasswordEncodingMechanism
@@ -350,6 +349,7 @@ func (o CryptPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

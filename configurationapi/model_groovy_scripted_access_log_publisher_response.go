@@ -19,8 +19,6 @@ var _ MappedNullable = &GroovyScriptedAccessLogPublisherResponse{}
 
 // GroovyScriptedAccessLogPublisherResponse struct for GroovyScriptedAccessLogPublisherResponse
 type GroovyScriptedAccessLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id      string                                          `json:"id"`
 	Schemas []EnumgroovyScriptedAccessLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Access Log Publisher.
 	ScriptClass string `json:"scriptClass"`
@@ -67,18 +65,20 @@ type GroovyScriptedAccessLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewGroovyScriptedAccessLogPublisherResponse instantiates a new GroovyScriptedAccessLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroovyScriptedAccessLogPublisherResponse(id string, schemas []EnumgroovyScriptedAccessLogPublisherSchemaUrn, scriptClass string, enabled bool) *GroovyScriptedAccessLogPublisherResponse {
+func NewGroovyScriptedAccessLogPublisherResponse(schemas []EnumgroovyScriptedAccessLogPublisherSchemaUrn, scriptClass string, enabled bool, id string) *GroovyScriptedAccessLogPublisherResponse {
 	this := GroovyScriptedAccessLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -88,30 +88,6 @@ func NewGroovyScriptedAccessLogPublisherResponse(id string, schemas []Enumgroovy
 func NewGroovyScriptedAccessLogPublisherResponseWithDefaults() *GroovyScriptedAccessLogPublisherResponse {
 	this := GroovyScriptedAccessLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GroovyScriptedAccessLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GroovyScriptedAccessLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GroovyScriptedAccessLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -890,6 +866,30 @@ func (o *GroovyScriptedAccessLogPublisherResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *GroovyScriptedAccessLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedAccessLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *GroovyScriptedAccessLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o GroovyScriptedAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -900,7 +900,6 @@ func (o GroovyScriptedAccessLogPublisherResponse) MarshalJSON() ([]byte, error) 
 
 func (o GroovyScriptedAccessLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -970,6 +969,7 @@ func (o GroovyScriptedAccessLogPublisherResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

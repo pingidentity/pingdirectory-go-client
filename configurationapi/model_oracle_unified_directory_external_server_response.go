@@ -19,8 +19,6 @@ var _ MappedNullable = &OracleUnifiedDirectoryExternalServerResponse{}
 
 // OracleUnifiedDirectoryExternalServerResponse struct for OracleUnifiedDirectoryExternalServerResponse
 type OracleUnifiedDirectoryExternalServerResponse struct {
-	// Name of the External Server
-	Id      string                                              `json:"id"`
 	Schemas []EnumoracleUnifiedDirectoryExternalServerSchemaUrn `json:"schemas"`
 	// The host name or IP address of the target LDAP server.
 	ServerHostName string `json:"serverHostName"`
@@ -62,15 +60,16 @@ type OracleUnifiedDirectoryExternalServerResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the External Server
+	Id string `json:"id"`
 }
 
 // NewOracleUnifiedDirectoryExternalServerResponse instantiates a new OracleUnifiedDirectoryExternalServerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOracleUnifiedDirectoryExternalServerResponse(id string, schemas []EnumoracleUnifiedDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerOracleUnifiedDirectoryConnectionSecurityProp, authenticationMethod EnumexternalServerOracleUnifiedDirectoryAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *OracleUnifiedDirectoryExternalServerResponse {
+func NewOracleUnifiedDirectoryExternalServerResponse(schemas []EnumoracleUnifiedDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerOracleUnifiedDirectoryConnectionSecurityProp, authenticationMethod EnumexternalServerOracleUnifiedDirectoryAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, id string) *OracleUnifiedDirectoryExternalServerResponse {
 	this := OracleUnifiedDirectoryExternalServerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
 	this.ServerPort = serverPort
@@ -80,6 +79,7 @@ func NewOracleUnifiedDirectoryExternalServerResponse(id string, schemas []Enumor
 	this.MaxConnectionAge = maxConnectionAge
 	this.ConnectTimeout = connectTimeout
 	this.MaxResponseSize = maxResponseSize
+	this.Id = id
 	return &this
 }
 
@@ -89,30 +89,6 @@ func NewOracleUnifiedDirectoryExternalServerResponse(id string, schemas []Enumor
 func NewOracleUnifiedDirectoryExternalServerResponseWithDefaults() *OracleUnifiedDirectoryExternalServerResponse {
 	this := OracleUnifiedDirectoryExternalServerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *OracleUnifiedDirectoryExternalServerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *OracleUnifiedDirectoryExternalServerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *OracleUnifiedDirectoryExternalServerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -811,6 +787,30 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) SetUrnpingidentityschemas
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *OracleUnifiedDirectoryExternalServerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *OracleUnifiedDirectoryExternalServerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *OracleUnifiedDirectoryExternalServerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o OracleUnifiedDirectoryExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -821,7 +821,6 @@ func (o OracleUnifiedDirectoryExternalServerResponse) MarshalJSON() ([]byte, err
 
 func (o OracleUnifiedDirectoryExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["serverHostName"] = o.ServerHostName
 	toSerialize["serverPort"] = o.ServerPort
@@ -876,6 +875,7 @@ func (o OracleUnifiedDirectoryExternalServerResponse) ToMap() (map[string]interf
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

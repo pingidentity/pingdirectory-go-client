@@ -19,9 +19,7 @@ var _ MappedNullable = &AddFileRetentionRecurringTaskRequest{}
 
 // AddFileRetentionRecurringTaskRequest struct for AddFileRetentionRecurringTaskRequest
 type AddFileRetentionRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                                    `json:"taskName"`
-	Schemas  []EnumfileRetentionRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumfileRetentionRecurringTaskSchemaUrn `json:"schemas"`
 	// The path to the directory containing the files to examine. The directory must exist.
 	TargetDirectory string `json:"targetDirectory"`
 	// A pattern that specifies the names of the files to examine. The pattern may contain zero or more asterisks as wildcards, where each wildcard matches zero or more characters. It may also contain at most one occurrence of the special string \"${timestamp}\", which will match a timestamp with the format specified using the timestamp-format property. All other characters in the pattern will be treated literally.
@@ -49,19 +47,21 @@ type AddFileRetentionRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddFileRetentionRecurringTaskRequest instantiates a new AddFileRetentionRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFileRetentionRecurringTaskRequest(taskName string, schemas []EnumfileRetentionRecurringTaskSchemaUrn, targetDirectory string, filenamePattern string, timestampFormat EnumrecurringTaskTimestampFormatProp) *AddFileRetentionRecurringTaskRequest {
+func NewAddFileRetentionRecurringTaskRequest(schemas []EnumfileRetentionRecurringTaskSchemaUrn, targetDirectory string, filenamePattern string, timestampFormat EnumrecurringTaskTimestampFormatProp, taskName string) *AddFileRetentionRecurringTaskRequest {
 	this := AddFileRetentionRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
 	this.TargetDirectory = targetDirectory
 	this.FilenamePattern = filenamePattern
 	this.TimestampFormat = timestampFormat
+	this.TaskName = taskName
 	return &this
 }
 
@@ -71,30 +71,6 @@ func NewAddFileRetentionRecurringTaskRequest(taskName string, schemas []Enumfile
 func NewAddFileRetentionRecurringTaskRequestWithDefaults() *AddFileRetentionRecurringTaskRequest {
 	this := AddFileRetentionRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddFileRetentionRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddFileRetentionRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddFileRetentionRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -545,6 +521,30 @@ func (o *AddFileRetentionRecurringTaskRequest) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddFileRetentionRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddFileRetentionRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddFileRetentionRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddFileRetentionRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -555,7 +555,6 @@ func (o AddFileRetentionRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddFileRetentionRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["targetDirectory"] = o.TargetDirectory
 	toSerialize["filenamePattern"] = o.FilenamePattern
@@ -593,6 +592,7 @@ func (o AddFileRetentionRecurringTaskRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

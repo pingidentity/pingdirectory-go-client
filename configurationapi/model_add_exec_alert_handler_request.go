@@ -19,9 +19,7 @@ var _ MappedNullable = &AddExecAlertHandlerRequest{}
 
 // AddExecAlertHandlerRequest struct for AddExecAlertHandlerRequest
 type AddExecAlertHandlerRequest struct {
-	// Name of the new Alert Handler
-	HandlerName string                          `json:"handlerName"`
-	Schemas     []EnumexecAlertHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumexecAlertHandlerSchemaUrn `json:"schemas"`
 	// Specifies the path of the command to execute, without any arguments. It must be an absolute path for reasons of security and reliability.
 	Command string `json:"command"`
 	// Indicates whether the server should attempt to invoke this Exec Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
@@ -33,18 +31,20 @@ type AddExecAlertHandlerRequest struct {
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
 	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
 	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
+	// Name of the new Alert Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddExecAlertHandlerRequest instantiates a new AddExecAlertHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddExecAlertHandlerRequest(handlerName string, schemas []EnumexecAlertHandlerSchemaUrn, command string, enabled bool) *AddExecAlertHandlerRequest {
+func NewAddExecAlertHandlerRequest(schemas []EnumexecAlertHandlerSchemaUrn, command string, enabled bool, handlerName string) *AddExecAlertHandlerRequest {
 	this := AddExecAlertHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.Command = command
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddExecAlertHandlerRequest(handlerName string, schemas []EnumexecAlertHa
 func NewAddExecAlertHandlerRequestWithDefaults() *AddExecAlertHandlerRequest {
 	this := AddExecAlertHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddExecAlertHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddExecAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddExecAlertHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -312,6 +288,30 @@ func (o *AddExecAlertHandlerRequest) SetDisabledAlertType(v []EnumalertHandlerDi
 	o.DisabledAlertType = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddExecAlertHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddExecAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddExecAlertHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddExecAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -322,7 +322,6 @@ func (o AddExecAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddExecAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["command"] = o.Command
 	if !IsNil(o.Asynchronous) {
@@ -341,6 +340,7 @@ func (o AddExecAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DisabledAlertType) {
 		toSerialize["disabledAlertType"] = o.DisabledAlertType
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

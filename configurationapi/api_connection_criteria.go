@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ConnectionCriteriaApiService ConnectionCriteriaApi service
-type ConnectionCriteriaApiService service
+// ConnectionCriteriaAPIService ConnectionCriteriaAPI service
+type ConnectionCriteriaAPIService service
 
 type ApiAddConnectionCriteriaRequest struct {
 	ctx                          context.Context
-	ApiService                   *ConnectionCriteriaApiService
+	ApiService                   *ConnectionCriteriaAPIService
 	addConnectionCriteriaRequest *AddConnectionCriteriaRequest
 }
 
@@ -44,7 +44,7 @@ AddConnectionCriteria Add a new Connection Criteria to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddConnectionCriteriaRequest
 */
-func (a *ConnectionCriteriaApiService) AddConnectionCriteria(ctx context.Context) ApiAddConnectionCriteriaRequest {
+func (a *ConnectionCriteriaAPIService) AddConnectionCriteria(ctx context.Context) ApiAddConnectionCriteriaRequest {
 	return ApiAddConnectionCriteriaRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ConnectionCriteriaApiService) AddConnectionCriteria(ctx context.Context
 // Execute executes the request
 //
 //	@return AddConnectionCriteria200Response
-func (a *ConnectionCriteriaApiService) AddConnectionCriteriaExecute(r ApiAddConnectionCriteriaRequest) (*AddConnectionCriteria200Response, *http.Response, error) {
+func (a *ConnectionCriteriaAPIService) AddConnectionCriteriaExecute(r ApiAddConnectionCriteriaRequest) (*AddConnectionCriteria200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ConnectionCriteriaApiService) AddConnectionCriteriaExecute(r ApiAddConn
 		localVarReturnValue *AddConnectionCriteria200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaApiService.AddConnectionCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaAPIService.AddConnectionCriteria")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ConnectionCriteriaApiService) AddConnectionCriteriaExecute(r ApiAddConn
 
 type ApiDeleteConnectionCriteriaRequest struct {
 	ctx                    context.Context
-	ApiService             *ConnectionCriteriaApiService
+	ApiService             *ConnectionCriteriaAPIService
 	connectionCriteriaName string
 }
 
@@ -149,7 +149,7 @@ DeleteConnectionCriteria Delete a Connection Criteria
 	@param connectionCriteriaName Name of the Connection Criteria
 	@return ApiDeleteConnectionCriteriaRequest
 */
-func (a *ConnectionCriteriaApiService) DeleteConnectionCriteria(ctx context.Context, connectionCriteriaName string) ApiDeleteConnectionCriteriaRequest {
+func (a *ConnectionCriteriaAPIService) DeleteConnectionCriteria(ctx context.Context, connectionCriteriaName string) ApiDeleteConnectionCriteriaRequest {
 	return ApiDeleteConnectionCriteriaRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -158,14 +158,14 @@ func (a *ConnectionCriteriaApiService) DeleteConnectionCriteria(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *ConnectionCriteriaApiService) DeleteConnectionCriteriaExecute(r ApiDeleteConnectionCriteriaRequest) (*http.Response, error) {
+func (a *ConnectionCriteriaAPIService) DeleteConnectionCriteriaExecute(r ApiDeleteConnectionCriteriaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaApiService.DeleteConnectionCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaAPIService.DeleteConnectionCriteria")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ConnectionCriteriaApiService) DeleteConnectionCriteriaExecute(r ApiDele
 
 type ApiGetConnectionCriteriaRequest struct {
 	ctx                    context.Context
-	ApiService             *ConnectionCriteriaApiService
+	ApiService             *ConnectionCriteriaAPIService
 	connectionCriteriaName string
 }
 
@@ -239,7 +239,7 @@ GetConnectionCriteria Returns a single Connection Criteria
 	@param connectionCriteriaName Name of the Connection Criteria
 	@return ApiGetConnectionCriteriaRequest
 */
-func (a *ConnectionCriteriaApiService) GetConnectionCriteria(ctx context.Context, connectionCriteriaName string) ApiGetConnectionCriteriaRequest {
+func (a *ConnectionCriteriaAPIService) GetConnectionCriteria(ctx context.Context, connectionCriteriaName string) ApiGetConnectionCriteriaRequest {
 	return ApiGetConnectionCriteriaRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -250,7 +250,7 @@ func (a *ConnectionCriteriaApiService) GetConnectionCriteria(ctx context.Context
 // Execute executes the request
 //
 //	@return AddConnectionCriteria200Response
-func (a *ConnectionCriteriaApiService) GetConnectionCriteriaExecute(r ApiGetConnectionCriteriaRequest) (*AddConnectionCriteria200Response, *http.Response, error) {
+func (a *ConnectionCriteriaAPIService) GetConnectionCriteriaExecute(r ApiGetConnectionCriteriaRequest) (*AddConnectionCriteria200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ConnectionCriteriaApiService) GetConnectionCriteriaExecute(r ApiGetConn
 		localVarReturnValue *AddConnectionCriteria200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaApiService.GetConnectionCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaAPIService.GetConnectionCriteria")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ConnectionCriteriaApiService) GetConnectionCriteriaExecute(r ApiGetConn
 
 type ApiListConnectionCriteriaRequest struct {
 	ctx        context.Context
-	ApiService *ConnectionCriteriaApiService
+	ApiService *ConnectionCriteriaAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListConnectionCriteria Returns a list of all Connection Criteria objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListConnectionCriteriaRequest
 */
-func (a *ConnectionCriteriaApiService) ListConnectionCriteria(ctx context.Context) ApiListConnectionCriteriaRequest {
+func (a *ConnectionCriteriaAPIService) ListConnectionCriteria(ctx context.Context) ApiListConnectionCriteriaRequest {
 	return ApiListConnectionCriteriaRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ConnectionCriteriaApiService) ListConnectionCriteria(ctx context.Contex
 // Execute executes the request
 //
 //	@return ConnectionCriteriaListResponse
-func (a *ConnectionCriteriaApiService) ListConnectionCriteriaExecute(r ApiListConnectionCriteriaRequest) (*ConnectionCriteriaListResponse, *http.Response, error) {
+func (a *ConnectionCriteriaAPIService) ListConnectionCriteriaExecute(r ApiListConnectionCriteriaRequest) (*ConnectionCriteriaListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ConnectionCriteriaApiService) ListConnectionCriteriaExecute(r ApiListCo
 		localVarReturnValue *ConnectionCriteriaListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaApiService.ListConnectionCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaAPIService.ListConnectionCriteria")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ConnectionCriteriaApiService) ListConnectionCriteriaExecute(r ApiListCo
 
 type ApiUpdateConnectionCriteriaRequest struct {
 	ctx                    context.Context
-	ApiService             *ConnectionCriteriaApiService
+	ApiService             *ConnectionCriteriaAPIService
 	connectionCriteriaName string
 	updateRequest          *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateConnectionCriteria Update an existing Connection Criteria by name
 	@param connectionCriteriaName Name of the Connection Criteria
 	@return ApiUpdateConnectionCriteriaRequest
 */
-func (a *ConnectionCriteriaApiService) UpdateConnectionCriteria(ctx context.Context, connectionCriteriaName string) ApiUpdateConnectionCriteriaRequest {
+func (a *ConnectionCriteriaAPIService) UpdateConnectionCriteria(ctx context.Context, connectionCriteriaName string) ApiUpdateConnectionCriteriaRequest {
 	return ApiUpdateConnectionCriteriaRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -467,7 +467,7 @@ func (a *ConnectionCriteriaApiService) UpdateConnectionCriteria(ctx context.Cont
 // Execute executes the request
 //
 //	@return AddConnectionCriteria200Response
-func (a *ConnectionCriteriaApiService) UpdateConnectionCriteriaExecute(r ApiUpdateConnectionCriteriaRequest) (*AddConnectionCriteria200Response, *http.Response, error) {
+func (a *ConnectionCriteriaAPIService) UpdateConnectionCriteriaExecute(r ApiUpdateConnectionCriteriaRequest) (*AddConnectionCriteria200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ConnectionCriteriaApiService) UpdateConnectionCriteriaExecute(r ApiUpda
 		localVarReturnValue *AddConnectionCriteria200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaApiService.UpdateConnectionCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionCriteriaAPIService.UpdateConnectionCriteria")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

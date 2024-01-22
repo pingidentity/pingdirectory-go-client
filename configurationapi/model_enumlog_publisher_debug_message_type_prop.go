@@ -32,6 +32,7 @@ const (
 	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_CONSENT_SERVICE_REQUEST_AND_RESPONSE        EnumlogPublisherDebugMessageTypeProp = "consent-service-request-and-response"
 	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_GATEWAY_REQUEST_AND_RESPONSE                EnumlogPublisherDebugMessageTypeProp = "gateway-request-and-response"
 	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_POLICY_REQUEST_AND_RESPONSE                 EnumlogPublisherDebugMessageTypeProp = "policy-request-and-response"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_POLICY_QUERY_REQUEST_AND_RESPONSE           EnumlogPublisherDebugMessageTypeProp = "policy-query-request-and-response"
 )
 
 // All allowed values of EnumlogPublisherDebugMessageTypeProp enum
@@ -48,6 +49,7 @@ var AllowedEnumlogPublisherDebugMessageTypePropEnumValues = []EnumlogPublisherDe
 	"consent-service-request-and-response",
 	"gateway-request-and-response",
 	"policy-request-and-response",
+	"policy-query-request-and-response",
 }
 
 func (v *EnumlogPublisherDebugMessageTypeProp) UnmarshalJSON(src []byte) error {

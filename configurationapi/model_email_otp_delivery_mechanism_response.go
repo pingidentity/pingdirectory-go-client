@@ -19,8 +19,6 @@ var _ MappedNullable = &EmailOtpDeliveryMechanismResponse{}
 
 // EmailOtpDeliveryMechanismResponse struct for EmailOtpDeliveryMechanismResponse
 type EmailOtpDeliveryMechanismResponse struct {
-	// Name of the OTP Delivery Mechanism
-	Id      string                                   `json:"id"`
 	Schemas []EnumemailOtpDeliveryMechanismSchemaUrn `json:"schemas"`
 	// The name or OID of the attribute that holds the email address to which the message should be sent.
 	EmailAddressAttributeType string `json:"emailAddressAttributeType"`
@@ -42,20 +40,22 @@ type EmailOtpDeliveryMechanismResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the OTP Delivery Mechanism
+	Id string `json:"id"`
 }
 
 // NewEmailOtpDeliveryMechanismResponse instantiates a new EmailOtpDeliveryMechanismResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEmailOtpDeliveryMechanismResponse(id string, schemas []EnumemailOtpDeliveryMechanismSchemaUrn, emailAddressAttributeType string, senderAddress string, messageSubject string, enabled bool) *EmailOtpDeliveryMechanismResponse {
+func NewEmailOtpDeliveryMechanismResponse(schemas []EnumemailOtpDeliveryMechanismSchemaUrn, emailAddressAttributeType string, senderAddress string, messageSubject string, enabled bool, id string) *EmailOtpDeliveryMechanismResponse {
 	this := EmailOtpDeliveryMechanismResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.EmailAddressAttributeType = emailAddressAttributeType
 	this.SenderAddress = senderAddress
 	this.MessageSubject = messageSubject
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -65,30 +65,6 @@ func NewEmailOtpDeliveryMechanismResponse(id string, schemas []EnumemailOtpDeliv
 func NewEmailOtpDeliveryMechanismResponseWithDefaults() *EmailOtpDeliveryMechanismResponse {
 	this := EmailOtpDeliveryMechanismResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *EmailOtpDeliveryMechanismResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *EmailOtpDeliveryMechanismResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *EmailOtpDeliveryMechanismResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -435,6 +411,30 @@ func (o *EmailOtpDeliveryMechanismResponse) SetUrnpingidentityschemasconfigurati
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *EmailOtpDeliveryMechanismResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *EmailOtpDeliveryMechanismResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *EmailOtpDeliveryMechanismResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o EmailOtpDeliveryMechanismResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -445,7 +445,6 @@ func (o EmailOtpDeliveryMechanismResponse) MarshalJSON() ([]byte, error) {
 
 func (o EmailOtpDeliveryMechanismResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
 	if !IsNil(o.EmailAddressJSONField) {
@@ -472,6 +471,7 @@ func (o EmailOtpDeliveryMechanismResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

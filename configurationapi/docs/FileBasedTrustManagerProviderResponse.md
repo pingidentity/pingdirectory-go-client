@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Trust Manager Provider | 
 **Schemas** | [**[]EnumfileBasedTrustManagerProviderSchemaUrn**](EnumfileBasedTrustManagerProviderSchemaUrn.md) |  | 
 **TrustStoreFile** | **string** | Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root. | 
 **TrustStoreType** | Pointer to **string** | Specifies the format for the data in the trust store file. | [optional] 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **IncludeJVMDefaultIssuers** | Pointer to **bool** | Indicates whether certificates issued by an authority included in the JVM&#39;s set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Trust Manager Provider | 
 
 ## Methods
 
 ### NewFileBasedTrustManagerProviderResponse
 
-`func NewFileBasedTrustManagerProviderResponse(id string, schemas []EnumfileBasedTrustManagerProviderSchemaUrn, trustStoreFile string, enabled bool, ) *FileBasedTrustManagerProviderResponse`
+`func NewFileBasedTrustManagerProviderResponse(schemas []EnumfileBasedTrustManagerProviderSchemaUrn, trustStoreFile string, enabled bool, id string, ) *FileBasedTrustManagerProviderResponse`
 
 NewFileBasedTrustManagerProviderResponse instantiates a new FileBasedTrustManagerProviderResponse object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewFileBasedTrustManagerProviderResponseWithDefaults instantiates a new FileBasedTrustManagerProviderResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *FileBasedTrustManagerProviderResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *FileBasedTrustManagerProviderResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *FileBasedTrustManagerProviderResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -289,6 +269,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *FileBasedTrustManagerProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *FileBasedTrustManagerProviderResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *FileBasedTrustManagerProviderResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *FileBasedTrustManagerProviderResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

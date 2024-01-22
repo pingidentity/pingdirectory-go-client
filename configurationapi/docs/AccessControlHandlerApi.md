@@ -1,11 +1,11 @@
-# \AccessControlHandlerApi
+# \AccessControlHandlerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAccessControlHandler**](AccessControlHandlerApi.md#GetAccessControlHandler) | **Get** /access-control-handler | Returns a single Access Control Handler
-[**UpdateAccessControlHandler**](AccessControlHandlerApi.md#UpdateAccessControlHandler) | **Patch** /access-control-handler | Update an existing Access Control Handler by name
+[**GetAccessControlHandler**](AccessControlHandlerAPI.md#GetAccessControlHandler) | **Get** /access-control-handler | Returns a single Access Control Handler
+[**UpdateAccessControlHandler**](AccessControlHandlerAPI.md#UpdateAccessControlHandler) | **Patch** /access-control-handler | Update an existing Access Control Handler by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccessControlHandlerApi.GetAccessControlHandler(context.Background()).Execute()
+    resp, r, err := apiClient.AccessControlHandlerAPI.GetAccessControlHandler(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccessControlHandlerApi.GetAccessControlHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AccessControlHandlerAPI.GetAccessControlHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAccessControlHandler`: DseeCompatAccessControlHandlerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccessControlHandlerApi.GetAccessControlHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AccessControlHandlerAPI.GetAccessControlHandler`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AccessControlHandlerApi.UpdateAccessControlHandler(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.AccessControlHandlerAPI.UpdateAccessControlHandler(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AccessControlHandlerApi.UpdateAccessControlHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AccessControlHandlerAPI.UpdateAccessControlHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAccessControlHandler`: DseeCompatAccessControlHandlerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AccessControlHandlerApi.UpdateAccessControlHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AccessControlHandlerAPI.UpdateAccessControlHandler`: %v\n", resp)
 }
 ```
 

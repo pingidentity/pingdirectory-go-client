@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]EnumvaultPasswordStorageSchemeSchemaUrn**](EnumvaultPasswordStorageSchemeSchemaUrn.md) |  | 
 **VaultExternalServer** | **string** | An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase. | 
 **DefaultField** | Pointer to **string** | The default name of the field in JSON objects contained in the AWS Secrets Manager service that contains the password for the target user. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
+**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 
 ## Methods
 
 ### NewAddVaultPasswordStorageSchemeRequest
 
-`func NewAddVaultPasswordStorageSchemeRequest(schemeName string, schemas []EnumvaultPasswordStorageSchemeSchemaUrn, vaultExternalServer string, enabled bool, ) *AddVaultPasswordStorageSchemeRequest`
+`func NewAddVaultPasswordStorageSchemeRequest(schemas []EnumvaultPasswordStorageSchemeSchemaUrn, vaultExternalServer string, enabled bool, schemeName string, ) *AddVaultPasswordStorageSchemeRequest`
 
 NewAddVaultPasswordStorageSchemeRequest instantiates a new AddVaultPasswordStorageSchemeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddVaultPasswordStorageSchemeRequestWithDefaults instantiates a new AddVaultPasswordStorageSchemeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSchemeName
-
-`func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeName() string`
-
-GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
-
-### GetSchemeNameOk
-
-`func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
-
-GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchemeName
-
-`func (o *AddVaultPasswordStorageSchemeRequest) SetSchemeName(v string)`
-
-SetSchemeName sets SchemeName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddVaultPasswordStorageSchemeRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetSchemeName
+
+`func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeName() string`
+
+GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
+
+### GetSchemeNameOk
+
+`func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
+
+GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemeName
+
+`func (o *AddVaultPasswordStorageSchemeRequest) SetSchemeName(v string)`
+
+SetSchemeName sets SchemeName field to given value.
 
 
 

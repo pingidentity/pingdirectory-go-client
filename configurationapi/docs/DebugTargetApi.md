@@ -1,14 +1,14 @@
-# \DebugTargetApi
+# \DebugTargetAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddDebugTarget**](DebugTargetApi.md#AddDebugTarget) | **Post** /log-publishers/{log-publisher-name}/debug-targets | Add a new Debug Target to the config
-[**DeleteDebugTarget**](DebugTargetApi.md#DeleteDebugTarget) | **Delete** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Delete a Debug Target
-[**GetDebugTarget**](DebugTargetApi.md#GetDebugTarget) | **Get** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Returns a single Debug Target
-[**ListDebugTargets**](DebugTargetApi.md#ListDebugTargets) | **Get** /log-publishers/{log-publisher-name}/debug-targets | Returns a list of all Debug Target objects
-[**UpdateDebugTarget**](DebugTargetApi.md#UpdateDebugTarget) | **Patch** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Update an existing Debug Target by name
+[**AddDebugTarget**](DebugTargetAPI.md#AddDebugTarget) | **Post** /log-publishers/{log-publisher-name}/debug-targets | Add a new Debug Target to the config
+[**DeleteDebugTarget**](DebugTargetAPI.md#DeleteDebugTarget) | **Delete** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Delete a Debug Target
+[**GetDebugTarget**](DebugTargetAPI.md#GetDebugTarget) | **Get** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Returns a single Debug Target
+[**ListDebugTargets**](DebugTargetAPI.md#ListDebugTargets) | **Get** /log-publishers/{log-publisher-name}/debug-targets | Returns a list of all Debug Target objects
+[**UpdateDebugTarget**](DebugTargetAPI.md#UpdateDebugTarget) | **Patch** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Update an existing Debug Target by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     logPublisherName := "logPublisherName_example" // string | Name of the Log Publisher
-    addDebugTargetRequest := *openapiclient.NewAddDebugTargetRequest("TargetName_example", "DebugScope_example", openapiclient.Enumdebug-target-debugLevelProp("disabled")) // AddDebugTargetRequest | Create a new Debug Target in the config
+    addDebugTargetRequest := *openapiclient.NewAddDebugTargetRequest("DebugScope_example", openapiclient.Enumdebug-target-debugLevelProp("disabled"), "TargetName_example") // AddDebugTargetRequest | Create a new Debug Target in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DebugTargetApi.AddDebugTarget(context.Background(), logPublisherName).AddDebugTargetRequest(addDebugTargetRequest).Execute()
+    resp, r, err := apiClient.DebugTargetAPI.AddDebugTarget(context.Background(), logPublisherName).AddDebugTargetRequest(addDebugTargetRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetApi.AddDebugTarget``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetAPI.AddDebugTarget``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddDebugTarget`: DebugTargetResponse
-    fmt.Fprintf(os.Stdout, "Response from `DebugTargetApi.AddDebugTarget`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DebugTargetAPI.AddDebugTarget`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DebugTargetApi.DeleteDebugTarget(context.Background(), debugTargetName, logPublisherName).Execute()
+    r, err := apiClient.DebugTargetAPI.DeleteDebugTarget(context.Background(), debugTargetName, logPublisherName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetApi.DeleteDebugTarget``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetAPI.DeleteDebugTarget``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DebugTargetApi.GetDebugTarget(context.Background(), debugTargetName, logPublisherName).Execute()
+    resp, r, err := apiClient.DebugTargetAPI.GetDebugTarget(context.Background(), debugTargetName, logPublisherName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetApi.GetDebugTarget``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetAPI.GetDebugTarget``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDebugTarget`: DebugTargetResponse
-    fmt.Fprintf(os.Stdout, "Response from `DebugTargetApi.GetDebugTarget`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DebugTargetAPI.GetDebugTarget`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DebugTargetApi.ListDebugTargets(context.Background(), logPublisherName).Filter(filter).Execute()
+    resp, r, err := apiClient.DebugTargetAPI.ListDebugTargets(context.Background(), logPublisherName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetApi.ListDebugTargets``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetAPI.ListDebugTargets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListDebugTargets`: DebugTargetListResponse
-    fmt.Fprintf(os.Stdout, "Response from `DebugTargetApi.ListDebugTargets`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DebugTargetAPI.ListDebugTargets`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DebugTargetApi.UpdateDebugTarget(context.Background(), debugTargetName, logPublisherName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.DebugTargetAPI.UpdateDebugTarget(context.Background(), debugTargetName, logPublisherName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetApi.UpdateDebugTarget``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetAPI.UpdateDebugTarget``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDebugTarget`: DebugTargetResponse
-    fmt.Fprintf(os.Stdout, "Response from `DebugTargetApi.UpdateDebugTarget`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DebugTargetAPI.UpdateDebugTarget`: %v\n", resp)
 }
 ```
 

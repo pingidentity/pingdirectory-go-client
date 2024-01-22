@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 **Schemas** | [**[]EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn**](EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
+**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 
 ## Methods
 
 ### NewAddExportReversiblePasswordsExtendedOperationHandlerRequest
 
-`func NewAddExportReversiblePasswordsExtendedOperationHandlerRequest(handlerName string, schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, enabled bool, ) *AddExportReversiblePasswordsExtendedOperationHandlerRequest`
+`func NewAddExportReversiblePasswordsExtendedOperationHandlerRequest(schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, enabled bool, handlerName string, ) *AddExportReversiblePasswordsExtendedOperationHandlerRequest`
 
 NewAddExportReversiblePasswordsExtendedOperationHandlerRequest instantiates a new AddExportReversiblePasswordsExtendedOperationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewAddExportReversiblePasswordsExtendedOperationHandlerRequestWithDefaults instantiates a new AddExportReversiblePasswordsExtendedOperationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -111,6 +91,26 @@ and a boolean to check if the value has been set.
 `func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetHandlerName
+
+`func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
 
 
 

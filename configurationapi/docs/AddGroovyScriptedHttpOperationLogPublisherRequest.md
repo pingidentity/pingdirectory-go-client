@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn**](EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Operation Log Publisher. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted HTTP Operation Log Publisher. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
+**PublisherName** | **string** | Name of the new Log Publisher | 
 
 ## Methods
 
 ### NewAddGroovyScriptedHttpOperationLogPublisherRequest
 
-`func NewAddGroovyScriptedHttpOperationLogPublisherRequest(publisherName string, schemas []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn, scriptClass string, enabled bool, ) *AddGroovyScriptedHttpOperationLogPublisherRequest`
+`func NewAddGroovyScriptedHttpOperationLogPublisherRequest(schemas []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn, scriptClass string, enabled bool, publisherName string, ) *AddGroovyScriptedHttpOperationLogPublisherRequest`
 
 NewAddGroovyScriptedHttpOperationLogPublisherRequest instantiates a new AddGroovyScriptedHttpOperationLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddGroovyScriptedHttpOperationLogPublisherRequestWithDefaults instantiates a new AddGroovyScriptedHttpOperationLogPublisherRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPublisherName
-
-`func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherName() string`
-
-GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
-
-### GetPublisherNameOk
-
-`func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
-
-GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublisherName
-
-`func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) SetPublisherName(v string)`
-
-SetPublisherName sets PublisherName field to given value.
-
 
 ### GetSchemas
 
@@ -185,6 +165,26 @@ SetLoggingErrorBehavior sets LoggingErrorBehavior field to given value.
 `func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) HasLoggingErrorBehavior() bool`
 
 HasLoggingErrorBehavior returns a boolean if a field has been set.
+
+### GetPublisherName
+
+`func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherName() string`
+
+GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
+
+### GetPublisherNameOk
+
+`func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
+
+GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublisherName
+
+`func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) SetPublisherName(v string)`
+
+SetPublisherName sets PublisherName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

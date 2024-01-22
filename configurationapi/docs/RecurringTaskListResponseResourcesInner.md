@@ -69,6 +69,7 @@ Name | Type | Description | Notes
 **ExcludeBackendID** | Pointer to **[]string** | The backend ID for a backend to be excluded from the export. | [optional] 
 **RetainPreviousLDIFExportCount** | Pointer to **int64** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **RetainPreviousLDIFExportAge** | Pointer to **string** | The minimum age of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
+**PostLDIFExportTaskProcessor** | Pointer to **[]string** | An optional set of post-LDIF-export task processors that should be invoked for the resulting LDIF export files. | [optional] 
 **CommandPath** | **string** | The absolute path to the command to execute. It must be an absolute path, the corresponding file must exist, and it must be listed in the config/exec-command-whitelist.txt file. | 
 **CommandArguments** | Pointer to **string** | A string containing the arguments to provide to the command. If the command should be run without arguments, this property should be left undefined. If there should be multiple arguments, then they should be separated with spaces. | [optional] 
 **CommandOutputFileBaseName** | Pointer to **string** | The path and base name for a file to which the command output (both standard output and standard error) should be written. This may be left undefined if the command output should not be recorded into a file. | [optional] 
@@ -1684,6 +1685,31 @@ SetRetainPreviousLDIFExportAge sets RetainPreviousLDIFExportAge field to given v
 `func (o *RecurringTaskListResponseResourcesInner) HasRetainPreviousLDIFExportAge() bool`
 
 HasRetainPreviousLDIFExportAge returns a boolean if a field has been set.
+
+### GetPostLDIFExportTaskProcessor
+
+`func (o *RecurringTaskListResponseResourcesInner) GetPostLDIFExportTaskProcessor() []string`
+
+GetPostLDIFExportTaskProcessor returns the PostLDIFExportTaskProcessor field if non-nil, zero value otherwise.
+
+### GetPostLDIFExportTaskProcessorOk
+
+`func (o *RecurringTaskListResponseResourcesInner) GetPostLDIFExportTaskProcessorOk() (*[]string, bool)`
+
+GetPostLDIFExportTaskProcessorOk returns a tuple with the PostLDIFExportTaskProcessor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPostLDIFExportTaskProcessor
+
+`func (o *RecurringTaskListResponseResourcesInner) SetPostLDIFExportTaskProcessor(v []string)`
+
+SetPostLDIFExportTaskProcessor sets PostLDIFExportTaskProcessor field to given value.
+
+### HasPostLDIFExportTaskProcessor
+
+`func (o *RecurringTaskListResponseResourcesInner) HasPostLDIFExportTaskProcessor() bool`
+
+HasPostLDIFExportTaskProcessor returns a boolean if a field has been set.
 
 ### GetCommandPath
 

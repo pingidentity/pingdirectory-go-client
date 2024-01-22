@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumpluggablePassThroughAuthenticationPluginSchemaUrn**](EnumpluggablePassThroughAuthenticationPluginSchemaUrn.md) |  | 
 **PassThroughAuthenticationHandler** | **string** | The component used to manage authentication with the external authentication service. | 
 **IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to the external authentication service. | [optional] 
@@ -21,12 +20,13 @@ Name | Type | Description | Notes
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Plugin | 
 
 ## Methods
 
 ### NewPluggablePassThroughAuthenticationPluginResponse
 
-`func NewPluggablePassThroughAuthenticationPluginResponse(id string, schemas []EnumpluggablePassThroughAuthenticationPluginSchemaUrn, passThroughAuthenticationHandler string, enabled bool, ) *PluggablePassThroughAuthenticationPluginResponse`
+`func NewPluggablePassThroughAuthenticationPluginResponse(schemas []EnumpluggablePassThroughAuthenticationPluginSchemaUrn, passThroughAuthenticationHandler string, enabled bool, id string, ) *PluggablePassThroughAuthenticationPluginResponse`
 
 NewPluggablePassThroughAuthenticationPluginResponse instantiates a new PluggablePassThroughAuthenticationPluginResponse object
 This constructor will assign default values to properties that have it defined,
@@ -40,26 +40,6 @@ will change when the set of required properties is changed
 NewPluggablePassThroughAuthenticationPluginResponseWithDefaults instantiates a new PluggablePassThroughAuthenticationPluginResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *PluggablePassThroughAuthenticationPluginResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *PluggablePassThroughAuthenticationPluginResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *PluggablePassThroughAuthenticationPluginResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -445,6 +425,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *PluggablePassThroughAuthenticationPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *PluggablePassThroughAuthenticationPluginResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PluggablePassThroughAuthenticationPluginResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PluggablePassThroughAuthenticationPluginResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

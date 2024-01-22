@@ -19,9 +19,7 @@ var _ MappedNullable = &AddUnboundidDeliveredOtpSaslMechanismHandlerRequest{}
 
 // AddUnboundidDeliveredOtpSaslMechanismHandlerRequest struct for AddUnboundidDeliveredOtpSaslMechanismHandlerRequest
 type AddUnboundidDeliveredOtpSaslMechanismHandlerRequest struct {
-	// Name of the new SASL Mechanism Handler
-	HandlerName string                                                   `json:"handlerName"`
-	Schemas     []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \"u:\"-style identities.
 	IdentityMapper string `json:"identityMapper"`
 	// The maximum length of time that a one-time password value should be considered valid.
@@ -30,18 +28,20 @@ type AddUnboundidDeliveredOtpSaslMechanismHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the SASL mechanism handler is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new SASL Mechanism Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest instantiates a new AddUnboundidDeliveredOtpSaslMechanismHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest(handlerName string, schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool) *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest {
+func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest(schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, handlerName string) *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest {
 	this := AddUnboundidDeliveredOtpSaslMechanismHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.IdentityMapper = identityMapper
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest(handlerName string, 
 func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequestWithDefaults() *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest {
 	this := AddUnboundidDeliveredOtpSaslMechanismHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) SetEnabled(v bool)
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) MarshalJSON() ([]by
 
 func (o AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["identityMapper"] = o.IdentityMapper
 	if !IsNil(o.OtpValidityDuration) {
@@ -233,6 +232,7 @@ func (o AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) ToMap() (map[string
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyHttpServletExtensionRequest{}
 
 // AddThirdPartyHttpServletExtensionRequest struct for AddThirdPartyHttpServletExtensionRequest
 type AddThirdPartyHttpServletExtensionRequest struct {
-	// Name of the new HTTP Servlet Extension
-	ExtensionName string                                        `json:"extensionName"`
-	Schemas       []EnumthirdPartyHttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyHttpServletExtensionSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party HTTP Servlet Extension.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party HTTP Servlet Extension. Each configuration property should be given in the form 'name=value'.
@@ -34,17 +32,19 @@ type AddThirdPartyHttpServletExtensionRequest struct {
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`
+	// Name of the new HTTP Servlet Extension
+	ExtensionName string `json:"extensionName"`
 }
 
 // NewAddThirdPartyHttpServletExtensionRequest instantiates a new AddThirdPartyHttpServletExtensionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyHttpServletExtensionRequest(extensionName string, schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, extensionClass string) *AddThirdPartyHttpServletExtensionRequest {
+func NewAddThirdPartyHttpServletExtensionRequest(schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, extensionClass string, extensionName string) *AddThirdPartyHttpServletExtensionRequest {
 	this := AddThirdPartyHttpServletExtensionRequest{}
-	this.ExtensionName = extensionName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.ExtensionName = extensionName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddThirdPartyHttpServletExtensionRequest(extensionName string, schemas [
 func NewAddThirdPartyHttpServletExtensionRequestWithDefaults() *AddThirdPartyHttpServletExtensionRequest {
 	this := AddThirdPartyHttpServletExtensionRequest{}
 	return &this
-}
-
-// GetExtensionName returns the ExtensionName field value
-func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ExtensionName
-}
-
-// GetExtensionNameOk returns a tuple with the ExtensionName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ExtensionName, true
-}
-
-// SetExtensionName sets field value
-func (o *AddThirdPartyHttpServletExtensionRequest) SetExtensionName(v string) {
-	o.ExtensionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -288,6 +264,30 @@ func (o *AddThirdPartyHttpServletExtensionRequest) SetCorrelationIDResponseHeade
 	o.CorrelationIDResponseHeader = &v
 }
 
+// GetExtensionName returns the ExtensionName field value
+func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ExtensionName
+}
+
+// GetExtensionNameOk returns a tuple with the ExtensionName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ExtensionName, true
+}
+
+// SetExtensionName sets field value
+func (o *AddThirdPartyHttpServletExtensionRequest) SetExtensionName(v string) {
+	o.ExtensionName = v
+}
+
 func (o AddThirdPartyHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -298,7 +298,6 @@ func (o AddThirdPartyHttpServletExtensionRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddThirdPartyHttpServletExtensionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["extensionName"] = o.ExtensionName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -316,6 +315,7 @@ func (o AddThirdPartyHttpServletExtensionRequest) ToMap() (map[string]interface{
 	if !IsNil(o.CorrelationIDResponseHeader) {
 		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
 	}
+	toSerialize["extensionName"] = o.ExtensionName
 	return toSerialize, nil
 }
 

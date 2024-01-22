@@ -19,8 +19,6 @@ var _ MappedNullable = &DelayPluginResponse{}
 
 // DelayPluginResponse struct for DelayPluginResponse
 type DelayPluginResponse struct {
-	// Name of the Plugin
-	Id         string                     `json:"id"`
 	Schemas    []EnumdelayPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
 	// The delay to inject for operations matching the associated criteria.
@@ -37,19 +35,21 @@ type DelayPluginResponse struct {
 	InvokeForInternalOperations                   *bool                                              `json:"invokeForInternalOperations,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewDelayPluginResponse instantiates a new DelayPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelayPluginResponse(id string, schemas []EnumdelayPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, delay string, enabled bool) *DelayPluginResponse {
+func NewDelayPluginResponse(schemas []EnumdelayPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, delay string, enabled bool, id string) *DelayPluginResponse {
 	this := DelayPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PluginType = pluginType
 	this.Delay = delay
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewDelayPluginResponse(id string, schemas []EnumdelayPluginSchemaUrn, plugi
 func NewDelayPluginResponseWithDefaults() *DelayPluginResponse {
 	this := DelayPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DelayPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DelayPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DelayPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -373,6 +349,30 @@ func (o *DelayPluginResponse) SetUrnpingidentityschemasconfigurationmessages20(v
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DelayPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DelayPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DelayPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DelayPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -383,7 +383,6 @@ func (o DelayPluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o DelayPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["pluginType"] = o.PluginType
 	toSerialize["delay"] = o.Delay
@@ -406,6 +405,7 @@ func (o DelayPluginResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

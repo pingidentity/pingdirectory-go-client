@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Connection Handler | 
 **Schemas** | [**[]EnumldapConnectionHandlerSchemaUrn**](EnumldapConnectionHandlerSchemaUrn.md) |  | 
 **ListenAddress** | Pointer to **[]string** | Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients. | [optional] 
 **ListenPort** | **int64** | Specifies the port number on which the LDAP Connection Handler will listen for connections from clients. | 
@@ -21,6 +20,7 @@ Name | Type | Description | Notes
 **MaxCancelHandlers** | Pointer to **int64** | Specifies the maximum number of threads that are used to process cancel and abandon requests from clients. | [optional] 
 **NumAcceptHandlers** | Pointer to **int64** | Specifies the number of threads that are used to accept new client connections, and to perform any initial preparation on those connections that may be needed before the connection can be used to read requests and send responses. | [optional] 
 **NumRequestHandlers** | Pointer to **int64** | Specifies the number of request handlers that are used to read requests from clients. | [optional] 
+**RequestHandlerPerConnection** | Pointer to **bool** | Indicates whether a separate request handler thread should be created for each client connection, which can help avoid starvation of client connections for cases in which one or more clients send large numbers of concurrent asynchronous requests. This should only be used for cases in which a relatively small number of connections will be established at any given time, the connections established will generally be long-lived, and at least one client may send high volumes of asynchronous requests. This property can be used to alleviate possible blocking during long-running TLS negotiation on a single request handler which can result in it being unable to acknowledge further client requests until the TLS negotation completes or times out. | [optional] 
 **SslClientAuthPolicy** | Pointer to [**EnumconnectionHandlerSslClientAuthPolicyProp**](EnumconnectionHandlerSslClientAuthPolicyProp.md) |  | [optional] 
 **AcceptBacklog** | Pointer to **int64** | Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts. | [optional] 
 **SslProtocol** | Pointer to **[]string** | Specifies the names of the TLS protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry. | [optional] 
@@ -33,12 +33,13 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether the Connection Handler is enabled. | 
 **AllowedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler. | [optional] 
 **DeniedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler. | [optional] 
+**HandlerName** | **string** | Name of the new Connection Handler | 
 
 ## Methods
 
 ### NewAddLdapConnectionHandlerRequest
 
-`func NewAddLdapConnectionHandlerRequest(handlerName string, schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int64, enabled bool, ) *AddLdapConnectionHandlerRequest`
+`func NewAddLdapConnectionHandlerRequest(schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int64, enabled bool, handlerName string, ) *AddLdapConnectionHandlerRequest`
 
 NewAddLdapConnectionHandlerRequest instantiates a new AddLdapConnectionHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -52,26 +53,6 @@ will change when the set of required properties is changed
 NewAddLdapConnectionHandlerRequestWithDefaults instantiates a new AddLdapConnectionHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddLdapConnectionHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddLdapConnectionHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddLdapConnectionHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -463,6 +444,31 @@ SetNumRequestHandlers sets NumRequestHandlers field to given value.
 
 HasNumRequestHandlers returns a boolean if a field has been set.
 
+### GetRequestHandlerPerConnection
+
+`func (o *AddLdapConnectionHandlerRequest) GetRequestHandlerPerConnection() bool`
+
+GetRequestHandlerPerConnection returns the RequestHandlerPerConnection field if non-nil, zero value otherwise.
+
+### GetRequestHandlerPerConnectionOk
+
+`func (o *AddLdapConnectionHandlerRequest) GetRequestHandlerPerConnectionOk() (*bool, bool)`
+
+GetRequestHandlerPerConnectionOk returns a tuple with the RequestHandlerPerConnection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestHandlerPerConnection
+
+`func (o *AddLdapConnectionHandlerRequest) SetRequestHandlerPerConnection(v bool)`
+
+SetRequestHandlerPerConnection sets RequestHandlerPerConnection field to given value.
+
+### HasRequestHandlerPerConnection
+
+`func (o *AddLdapConnectionHandlerRequest) HasRequestHandlerPerConnection() bool`
+
+HasRequestHandlerPerConnection returns a boolean if a field has been set.
+
 ### GetSslClientAuthPolicy
 
 `func (o *AddLdapConnectionHandlerRequest) GetSslClientAuthPolicy() EnumconnectionHandlerSslClientAuthPolicyProp`
@@ -757,6 +763,26 @@ SetDeniedClient sets DeniedClient field to given value.
 `func (o *AddLdapConnectionHandlerRequest) HasDeniedClient() bool`
 
 HasDeniedClient returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddLdapConnectionHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddLdapConnectionHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddLdapConnectionHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

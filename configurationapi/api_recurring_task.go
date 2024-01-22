@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// RecurringTaskApiService RecurringTaskApi service
-type RecurringTaskApiService service
+// RecurringTaskAPIService RecurringTaskAPI service
+type RecurringTaskAPIService service
 
 type ApiAddRecurringTaskRequest struct {
 	ctx                     context.Context
-	ApiService              *RecurringTaskApiService
+	ApiService              *RecurringTaskAPIService
 	addRecurringTaskRequest *AddRecurringTaskRequest
 }
 
@@ -44,7 +44,7 @@ AddRecurringTask Add a new Recurring Task to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddRecurringTaskRequest
 */
-func (a *RecurringTaskApiService) AddRecurringTask(ctx context.Context) ApiAddRecurringTaskRequest {
+func (a *RecurringTaskAPIService) AddRecurringTask(ctx context.Context) ApiAddRecurringTaskRequest {
 	return ApiAddRecurringTaskRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *RecurringTaskApiService) AddRecurringTask(ctx context.Context) ApiAddRe
 // Execute executes the request
 //
 //	@return AddRecurringTask200Response
-func (a *RecurringTaskApiService) AddRecurringTaskExecute(r ApiAddRecurringTaskRequest) (*AddRecurringTask200Response, *http.Response, error) {
+func (a *RecurringTaskAPIService) AddRecurringTaskExecute(r ApiAddRecurringTaskRequest) (*AddRecurringTask200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *RecurringTaskApiService) AddRecurringTaskExecute(r ApiAddRecurringTaskR
 		localVarReturnValue *AddRecurringTask200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskApiService.AddRecurringTask")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskAPIService.AddRecurringTask")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *RecurringTaskApiService) AddRecurringTaskExecute(r ApiAddRecurringTaskR
 
 type ApiDeleteRecurringTaskRequest struct {
 	ctx               context.Context
-	ApiService        *RecurringTaskApiService
+	ApiService        *RecurringTaskAPIService
 	recurringTaskName string
 }
 
@@ -149,7 +149,7 @@ DeleteRecurringTask Delete a Recurring Task
 	@param recurringTaskName Name of the Recurring Task
 	@return ApiDeleteRecurringTaskRequest
 */
-func (a *RecurringTaskApiService) DeleteRecurringTask(ctx context.Context, recurringTaskName string) ApiDeleteRecurringTaskRequest {
+func (a *RecurringTaskAPIService) DeleteRecurringTask(ctx context.Context, recurringTaskName string) ApiDeleteRecurringTaskRequest {
 	return ApiDeleteRecurringTaskRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -158,14 +158,14 @@ func (a *RecurringTaskApiService) DeleteRecurringTask(ctx context.Context, recur
 }
 
 // Execute executes the request
-func (a *RecurringTaskApiService) DeleteRecurringTaskExecute(r ApiDeleteRecurringTaskRequest) (*http.Response, error) {
+func (a *RecurringTaskAPIService) DeleteRecurringTaskExecute(r ApiDeleteRecurringTaskRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskApiService.DeleteRecurringTask")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskAPIService.DeleteRecurringTask")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *RecurringTaskApiService) DeleteRecurringTaskExecute(r ApiDeleteRecurrin
 
 type ApiGetRecurringTaskRequest struct {
 	ctx               context.Context
-	ApiService        *RecurringTaskApiService
+	ApiService        *RecurringTaskAPIService
 	recurringTaskName string
 }
 
@@ -239,7 +239,7 @@ GetRecurringTask Returns a single Recurring Task
 	@param recurringTaskName Name of the Recurring Task
 	@return ApiGetRecurringTaskRequest
 */
-func (a *RecurringTaskApiService) GetRecurringTask(ctx context.Context, recurringTaskName string) ApiGetRecurringTaskRequest {
+func (a *RecurringTaskAPIService) GetRecurringTask(ctx context.Context, recurringTaskName string) ApiGetRecurringTaskRequest {
 	return ApiGetRecurringTaskRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -250,7 +250,7 @@ func (a *RecurringTaskApiService) GetRecurringTask(ctx context.Context, recurrin
 // Execute executes the request
 //
 //	@return AddRecurringTask200Response
-func (a *RecurringTaskApiService) GetRecurringTaskExecute(r ApiGetRecurringTaskRequest) (*AddRecurringTask200Response, *http.Response, error) {
+func (a *RecurringTaskAPIService) GetRecurringTaskExecute(r ApiGetRecurringTaskRequest) (*AddRecurringTask200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *RecurringTaskApiService) GetRecurringTaskExecute(r ApiGetRecurringTaskR
 		localVarReturnValue *AddRecurringTask200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskApiService.GetRecurringTask")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskAPIService.GetRecurringTask")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *RecurringTaskApiService) GetRecurringTaskExecute(r ApiGetRecurringTaskR
 
 type ApiListRecurringTasksRequest struct {
 	ctx        context.Context
-	ApiService *RecurringTaskApiService
+	ApiService *RecurringTaskAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListRecurringTasks Returns a list of all Recurring Task objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListRecurringTasksRequest
 */
-func (a *RecurringTaskApiService) ListRecurringTasks(ctx context.Context) ApiListRecurringTasksRequest {
+func (a *RecurringTaskAPIService) ListRecurringTasks(ctx context.Context) ApiListRecurringTasksRequest {
 	return ApiListRecurringTasksRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *RecurringTaskApiService) ListRecurringTasks(ctx context.Context) ApiLis
 // Execute executes the request
 //
 //	@return RecurringTaskListResponse
-func (a *RecurringTaskApiService) ListRecurringTasksExecute(r ApiListRecurringTasksRequest) (*RecurringTaskListResponse, *http.Response, error) {
+func (a *RecurringTaskAPIService) ListRecurringTasksExecute(r ApiListRecurringTasksRequest) (*RecurringTaskListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *RecurringTaskApiService) ListRecurringTasksExecute(r ApiListRecurringTa
 		localVarReturnValue *RecurringTaskListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskApiService.ListRecurringTasks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskAPIService.ListRecurringTasks")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *RecurringTaskApiService) ListRecurringTasksExecute(r ApiListRecurringTa
 
 type ApiUpdateRecurringTaskRequest struct {
 	ctx               context.Context
-	ApiService        *RecurringTaskApiService
+	ApiService        *RecurringTaskAPIService
 	recurringTaskName string
 	updateRequest     *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateRecurringTask Update an existing Recurring Task by name
 	@param recurringTaskName Name of the Recurring Task
 	@return ApiUpdateRecurringTaskRequest
 */
-func (a *RecurringTaskApiService) UpdateRecurringTask(ctx context.Context, recurringTaskName string) ApiUpdateRecurringTaskRequest {
+func (a *RecurringTaskAPIService) UpdateRecurringTask(ctx context.Context, recurringTaskName string) ApiUpdateRecurringTaskRequest {
 	return ApiUpdateRecurringTaskRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -467,7 +467,7 @@ func (a *RecurringTaskApiService) UpdateRecurringTask(ctx context.Context, recur
 // Execute executes the request
 //
 //	@return AddRecurringTask200Response
-func (a *RecurringTaskApiService) UpdateRecurringTaskExecute(r ApiUpdateRecurringTaskRequest) (*AddRecurringTask200Response, *http.Response, error) {
+func (a *RecurringTaskAPIService) UpdateRecurringTaskExecute(r ApiUpdateRecurringTaskRequest) (*AddRecurringTask200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *RecurringTaskApiService) UpdateRecurringTaskExecute(r ApiUpdateRecurrin
 		localVarReturnValue *AddRecurringTask200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskApiService.UpdateRecurringTask")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskAPIService.UpdateRecurringTask")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

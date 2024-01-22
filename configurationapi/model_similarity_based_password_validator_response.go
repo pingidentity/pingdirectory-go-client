@@ -19,8 +19,6 @@ var _ MappedNullable = &SimilarityBasedPasswordValidatorResponse{}
 
 // SimilarityBasedPasswordValidatorResponse struct for SimilarityBasedPasswordValidatorResponse
 type SimilarityBasedPasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                          `json:"id"`
 	Schemas []EnumsimilarityBasedPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the minimum difference of new and old password.
 	MinPasswordDifference int64 `json:"minPasswordDifference"`
@@ -34,18 +32,20 @@ type SimilarityBasedPasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewSimilarityBasedPasswordValidatorResponse instantiates a new SimilarityBasedPasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSimilarityBasedPasswordValidatorResponse(id string, schemas []EnumsimilarityBasedPasswordValidatorSchemaUrn, minPasswordDifference int64, enabled bool) *SimilarityBasedPasswordValidatorResponse {
+func NewSimilarityBasedPasswordValidatorResponse(schemas []EnumsimilarityBasedPasswordValidatorSchemaUrn, minPasswordDifference int64, enabled bool, id string) *SimilarityBasedPasswordValidatorResponse {
 	this := SimilarityBasedPasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.MinPasswordDifference = minPasswordDifference
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewSimilarityBasedPasswordValidatorResponse(id string, schemas []Enumsimila
 func NewSimilarityBasedPasswordValidatorResponseWithDefaults() *SimilarityBasedPasswordValidatorResponse {
 	this := SimilarityBasedPasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SimilarityBasedPasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SimilarityBasedPasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SimilarityBasedPasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -313,6 +289,30 @@ func (o *SimilarityBasedPasswordValidatorResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SimilarityBasedPasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SimilarityBasedPasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SimilarityBasedPasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SimilarityBasedPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -323,7 +323,6 @@ func (o SimilarityBasedPasswordValidatorResponse) MarshalJSON() ([]byte, error) 
 
 func (o SimilarityBasedPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["minPasswordDifference"] = o.MinPasswordDifference
 	if !IsNil(o.Description) {
@@ -342,6 +341,7 @@ func (o SimilarityBasedPasswordValidatorResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

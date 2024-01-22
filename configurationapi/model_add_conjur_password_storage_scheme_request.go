@@ -19,27 +19,27 @@ var _ MappedNullable = &AddConjurPasswordStorageSchemeRequest{}
 
 // AddConjurPasswordStorageSchemeRequest struct for AddConjurPasswordStorageSchemeRequest
 type AddConjurPasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName string                                     `json:"schemeName"`
-	Schemas    []EnumconjurPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas []EnumconjurPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur instance containing user passwords.
 	ConjurExternalServer string `json:"conjurExternalServer"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddConjurPasswordStorageSchemeRequest instantiates a new AddConjurPasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConjurPasswordStorageSchemeRequest(schemeName string, schemas []EnumconjurPasswordStorageSchemeSchemaUrn, conjurExternalServer string, enabled bool) *AddConjurPasswordStorageSchemeRequest {
+func NewAddConjurPasswordStorageSchemeRequest(schemas []EnumconjurPasswordStorageSchemeSchemaUrn, conjurExternalServer string, enabled bool, schemeName string) *AddConjurPasswordStorageSchemeRequest {
 	this := AddConjurPasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.ConjurExternalServer = conjurExternalServer
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -49,30 +49,6 @@ func NewAddConjurPasswordStorageSchemeRequest(schemeName string, schemas []Enumc
 func NewAddConjurPasswordStorageSchemeRequestWithDefaults() *AddConjurPasswordStorageSchemeRequest {
 	this := AddConjurPasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddConjurPasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddConjurPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddConjurPasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -179,6 +155,30 @@ func (o *AddConjurPasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddConjurPasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddConjurPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddConjurPasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddConjurPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -189,13 +189,13 @@ func (o AddConjurPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddConjurPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["conjurExternalServer"] = o.ConjurExternalServer
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

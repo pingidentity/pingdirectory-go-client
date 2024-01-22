@@ -19,8 +19,6 @@ var _ MappedNullable = &DnMapResponse{}
 
 // DnMapResponse struct for DnMapResponse
 type DnMapResponse struct {
-	// Name of the DN Map
-	Id      string               `json:"id"`
 	Schemas []EnumdnMapSchemaUrn `json:"schemas,omitempty"`
 	// A description for this DN Map
 	Description *string `json:"description,omitempty"`
@@ -30,17 +28,19 @@ type DnMapResponse struct {
 	ToDNPattern                                   string                                             `json:"toDNPattern"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the DN Map
+	Id string `json:"id"`
 }
 
 // NewDnMapResponse instantiates a new DnMapResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDnMapResponse(id string, fromDNPattern string, toDNPattern string) *DnMapResponse {
+func NewDnMapResponse(fromDNPattern string, toDNPattern string, id string) *DnMapResponse {
 	this := DnMapResponse{}
-	this.Id = id
 	this.FromDNPattern = fromDNPattern
 	this.ToDNPattern = toDNPattern
+	this.Id = id
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewDnMapResponse(id string, fromDNPattern string, toDNPattern string) *DnMa
 func NewDnMapResponseWithDefaults() *DnMapResponse {
 	this := DnMapResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DnMapResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DnMapResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DnMapResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -252,6 +228,30 @@ func (o *DnMapResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaU
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DnMapResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DnMapResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DnMapResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DnMapResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -262,7 +262,6 @@ func (o DnMapResponse) MarshalJSON() ([]byte, error) {
 
 func (o DnMapResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -277,6 +276,7 @@ func (o DnMapResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

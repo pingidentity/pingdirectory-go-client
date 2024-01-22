@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// ConsentServiceApiService ConsentServiceApi service
-type ConsentServiceApiService service
+// ConsentServiceAPIService ConsentServiceAPI service
+type ConsentServiceAPIService service
 
 type ApiGetConsentServiceRequest struct {
 	ctx        context.Context
-	ApiService *ConsentServiceApiService
+	ApiService *ConsentServiceAPIService
 }
 
 func (r ApiGetConsentServiceRequest) Execute() (*ConsentServiceResponse, *http.Response, error) {
@@ -36,7 +36,7 @@ GetConsentService Returns a single Consent Service
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetConsentServiceRequest
 */
-func (a *ConsentServiceApiService) GetConsentService(ctx context.Context) ApiGetConsentServiceRequest {
+func (a *ConsentServiceAPIService) GetConsentService(ctx context.Context) ApiGetConsentServiceRequest {
 	return ApiGetConsentServiceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *ConsentServiceApiService) GetConsentService(ctx context.Context) ApiGet
 // Execute executes the request
 //
 //	@return ConsentServiceResponse
-func (a *ConsentServiceApiService) GetConsentServiceExecute(r ApiGetConsentServiceRequest) (*ConsentServiceResponse, *http.Response, error) {
+func (a *ConsentServiceAPIService) GetConsentServiceExecute(r ApiGetConsentServiceRequest) (*ConsentServiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *ConsentServiceApiService) GetConsentServiceExecute(r ApiGetConsentServi
 		localVarReturnValue *ConsentServiceResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentServiceApiService.GetConsentService")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentServiceAPIService.GetConsentService")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *ConsentServiceApiService) GetConsentServiceExecute(r ApiGetConsentServi
 
 type ApiUpdateConsentServiceRequest struct {
 	ctx           context.Context
-	ApiService    *ConsentServiceApiService
+	ApiService    *ConsentServiceAPIService
 	updateRequest *UpdateRequest
 }
 
@@ -141,7 +141,7 @@ UpdateConsentService Update an existing Consent Service by name
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateConsentServiceRequest
 */
-func (a *ConsentServiceApiService) UpdateConsentService(ctx context.Context) ApiUpdateConsentServiceRequest {
+func (a *ConsentServiceAPIService) UpdateConsentService(ctx context.Context) ApiUpdateConsentServiceRequest {
 	return ApiUpdateConsentServiceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *ConsentServiceApiService) UpdateConsentService(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return ConsentServiceResponse
-func (a *ConsentServiceApiService) UpdateConsentServiceExecute(r ApiUpdateConsentServiceRequest) (*ConsentServiceResponse, *http.Response, error) {
+func (a *ConsentServiceAPIService) UpdateConsentServiceExecute(r ApiUpdateConsentServiceRequest) (*ConsentServiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *ConsentServiceApiService) UpdateConsentServiceExecute(r ApiUpdateConsen
 		localVarReturnValue *ConsentServiceResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentServiceApiService.UpdateConsentService")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentServiceAPIService.UpdateConsentService")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

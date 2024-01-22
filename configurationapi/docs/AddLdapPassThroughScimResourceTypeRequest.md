@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TypeName** | **string** | Name of the new SCIM Resource Type | 
 **Schemas** | [**[]EnumldapPassThroughScimResourceTypeSchemaUrn**](EnumldapPassThroughScimResourceTypeSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this SCIM Resource Type | [optional] 
 **Enabled** | **bool** | Indicates whether the SCIM Resource Type is enabled. | 
@@ -17,12 +16,13 @@ Name | Type | Description | Notes
 **IncludeFilter** | Pointer to **[]string** | The set of LDAP filters that define the LDAP entries that should be included in this SCIM Resource Type. | [optional] 
 **IncludeOperationalAttribute** | Pointer to **[]string** | Specifies the set of operational LDAP attributes to be provided by this SCIM Resource Type. | [optional] 
 **CreateDNPattern** | Pointer to **string** | Specifies the template to use for the DN when creating new entries. | [optional] 
+**TypeName** | **string** | Name of the new SCIM Resource Type | 
 
 ## Methods
 
 ### NewAddLdapPassThroughScimResourceTypeRequest
 
-`func NewAddLdapPassThroughScimResourceTypeRequest(typeName string, schemas []EnumldapPassThroughScimResourceTypeSchemaUrn, enabled bool, endpoint string, ) *AddLdapPassThroughScimResourceTypeRequest`
+`func NewAddLdapPassThroughScimResourceTypeRequest(schemas []EnumldapPassThroughScimResourceTypeSchemaUrn, enabled bool, endpoint string, typeName string, ) *AddLdapPassThroughScimResourceTypeRequest`
 
 NewAddLdapPassThroughScimResourceTypeRequest instantiates a new AddLdapPassThroughScimResourceTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,26 +36,6 @@ will change when the set of required properties is changed
 NewAddLdapPassThroughScimResourceTypeRequestWithDefaults instantiates a new AddLdapPassThroughScimResourceTypeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTypeName
-
-`func (o *AddLdapPassThroughScimResourceTypeRequest) GetTypeName() string`
-
-GetTypeName returns the TypeName field if non-nil, zero value otherwise.
-
-### GetTypeNameOk
-
-`func (o *AddLdapPassThroughScimResourceTypeRequest) GetTypeNameOk() (*string, bool)`
-
-GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeName
-
-`func (o *AddLdapPassThroughScimResourceTypeRequest) SetTypeName(v string)`
-
-SetTypeName sets TypeName field to given value.
-
 
 ### GetSchemas
 
@@ -341,6 +321,26 @@ SetCreateDNPattern sets CreateDNPattern field to given value.
 `func (o *AddLdapPassThroughScimResourceTypeRequest) HasCreateDNPattern() bool`
 
 HasCreateDNPattern returns a boolean if a field has been set.
+
+### GetTypeName
+
+`func (o *AddLdapPassThroughScimResourceTypeRequest) GetTypeName() string`
+
+GetTypeName returns the TypeName field if non-nil, zero value otherwise.
+
+### GetTypeNameOk
+
+`func (o *AddLdapPassThroughScimResourceTypeRequest) GetTypeNameOk() (*string, bool)`
+
+GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTypeName
+
+`func (o *AddLdapPassThroughScimResourceTypeRequest) SetTypeName(v string)`
+
+SetTypeName sets TypeName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

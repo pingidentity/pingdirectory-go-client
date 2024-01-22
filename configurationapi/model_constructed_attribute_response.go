@@ -19,8 +19,6 @@ var _ MappedNullable = &ConstructedAttributeResponse{}
 
 // ConstructedAttributeResponse struct for ConstructedAttributeResponse
 type ConstructedAttributeResponse struct {
-	// Name of the Constructed Attribute
-	Id      string                              `json:"id"`
 	Schemas []EnumconstructedAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Constructed Attribute
 	Description *string `json:"description,omitempty"`
@@ -30,17 +28,19 @@ type ConstructedAttributeResponse struct {
 	ValuePattern                                  []string                                           `json:"valuePattern"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Constructed Attribute
+	Id string `json:"id"`
 }
 
 // NewConstructedAttributeResponse instantiates a new ConstructedAttributeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConstructedAttributeResponse(id string, attributeType string, valuePattern []string) *ConstructedAttributeResponse {
+func NewConstructedAttributeResponse(attributeType string, valuePattern []string, id string) *ConstructedAttributeResponse {
 	this := ConstructedAttributeResponse{}
-	this.Id = id
 	this.AttributeType = attributeType
 	this.ValuePattern = valuePattern
+	this.Id = id
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewConstructedAttributeResponse(id string, attributeType string, valuePatte
 func NewConstructedAttributeResponseWithDefaults() *ConstructedAttributeResponse {
 	this := ConstructedAttributeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ConstructedAttributeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ConstructedAttributeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ConstructedAttributeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -252,6 +228,30 @@ func (o *ConstructedAttributeResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ConstructedAttributeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ConstructedAttributeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ConstructedAttributeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ConstructedAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -262,7 +262,6 @@ func (o ConstructedAttributeResponse) MarshalJSON() ([]byte, error) {
 
 func (o ConstructedAttributeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -277,6 +276,7 @@ func (o ConstructedAttributeResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

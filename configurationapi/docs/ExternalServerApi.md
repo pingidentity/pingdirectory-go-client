@@ -1,14 +1,14 @@
-# \ExternalServerApi
+# \ExternalServerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddExternalServer**](ExternalServerApi.md#AddExternalServer) | **Post** /external-servers | Add a new External Server to the config
-[**DeleteExternalServer**](ExternalServerApi.md#DeleteExternalServer) | **Delete** /external-servers/{external-server-name} | Delete a External Server
-[**GetExternalServer**](ExternalServerApi.md#GetExternalServer) | **Get** /external-servers/{external-server-name} | Returns a single External Server
-[**ListExternalServers**](ExternalServerApi.md#ListExternalServers) | **Get** /external-servers | Returns a list of all External Server objects
-[**UpdateExternalServer**](ExternalServerApi.md#UpdateExternalServer) | **Patch** /external-servers/{external-server-name} | Update an existing External Server by name
+[**AddExternalServer**](ExternalServerAPI.md#AddExternalServer) | **Post** /external-servers | Add a new External Server to the config
+[**DeleteExternalServer**](ExternalServerAPI.md#DeleteExternalServer) | **Delete** /external-servers/{external-server-name} | Delete a External Server
+[**GetExternalServer**](ExternalServerAPI.md#GetExternalServer) | **Get** /external-servers/{external-server-name} | Returns a single External Server
+[**ListExternalServers**](ExternalServerAPI.md#ListExternalServers) | **Get** /external-servers | Returns a list of all External Server objects
+[**UpdateExternalServer**](ExternalServerAPI.md#UpdateExternalServer) | **Patch** /external-servers/{external-server-name} | Update an existing External Server by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addExternalServerRequest := openapiclient.add_external_server_request{AddActiveDirectoryExternalServerRequest: openapiclient.NewAddActiveDirectoryExternalServerRequest("ServerName_example", []openapiclient.EnumactiveDirectoryExternalServerSchemaUrn{openapiclient.Enumactive-directory-external-serverSchemaUrn("urn:pingidentity:schemas:configuration:2.0:external-server:active-directory")}, "ServerHostName_example")} // AddExternalServerRequest | Create a new External Server in the config
+    addExternalServerRequest := openapiclient.add_external_server_request{AddActiveDirectoryExternalServerRequest: openapiclient.NewAddActiveDirectoryExternalServerRequest([]openapiclient.EnumactiveDirectoryExternalServerSchemaUrn{openapiclient.Enumactive-directory-external-serverSchemaUrn("urn:pingidentity:schemas:configuration:2.0:external-server:active-directory")}, "ServerHostName_example", "ServerName_example")} // AddExternalServerRequest | Create a new External Server in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalServerApi.AddExternalServer(context.Background()).AddExternalServerRequest(addExternalServerRequest).Execute()
+    resp, r, err := apiClient.ExternalServerAPI.AddExternalServer(context.Background()).AddExternalServerRequest(addExternalServerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerApi.AddExternalServer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerAPI.AddExternalServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddExternalServer`: AddExternalServer200Response
-    fmt.Fprintf(os.Stdout, "Response from `ExternalServerApi.AddExternalServer`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ExternalServerAPI.AddExternalServer`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ExternalServerApi.DeleteExternalServer(context.Background(), externalServerName).Execute()
+    r, err := apiClient.ExternalServerAPI.DeleteExternalServer(context.Background(), externalServerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerApi.DeleteExternalServer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerAPI.DeleteExternalServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalServerApi.GetExternalServer(context.Background(), externalServerName).Execute()
+    resp, r, err := apiClient.ExternalServerAPI.GetExternalServer(context.Background(), externalServerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerApi.GetExternalServer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerAPI.GetExternalServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetExternalServer`: AddExternalServer200Response
-    fmt.Fprintf(os.Stdout, "Response from `ExternalServerApi.GetExternalServer`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ExternalServerAPI.GetExternalServer`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalServerApi.ListExternalServers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ExternalServerAPI.ListExternalServers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerApi.ListExternalServers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerAPI.ListExternalServers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListExternalServers`: ExternalServerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExternalServerApi.ListExternalServers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ExternalServerAPI.ListExternalServers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalServerApi.UpdateExternalServer(context.Background(), externalServerName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ExternalServerAPI.UpdateExternalServer(context.Background(), externalServerName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerApi.UpdateExternalServer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerAPI.UpdateExternalServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateExternalServer`: AddExternalServer200Response
-    fmt.Fprintf(os.Stdout, "Response from `ExternalServerApi.UpdateExternalServer`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ExternalServerAPI.UpdateExternalServer`: %v\n", resp)
 }
 ```
 

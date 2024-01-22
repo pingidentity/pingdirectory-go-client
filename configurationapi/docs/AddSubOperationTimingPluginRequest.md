@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumsubOperationTimingPluginSchemaUrn**](EnumsubOperationTimingPluginSchemaUrn.md) |  | 
 **PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddSubOperationTimingPluginRequest
 
-`func NewAddSubOperationTimingPluginRequest(pluginName string, schemas []EnumsubOperationTimingPluginSchemaUrn, enabled bool, ) *AddSubOperationTimingPluginRequest`
+`func NewAddSubOperationTimingPluginRequest(schemas []EnumsubOperationTimingPluginSchemaUrn, enabled bool, pluginName string, ) *AddSubOperationTimingPluginRequest`
 
 NewAddSubOperationTimingPluginRequest instantiates a new AddSubOperationTimingPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddSubOperationTimingPluginRequestWithDefaults instantiates a new AddSubOperationTimingPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddSubOperationTimingPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddSubOperationTimingPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddSubOperationTimingPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -215,6 +195,26 @@ and a boolean to check if the value has been set.
 `func (o *AddSubOperationTimingPluginRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetPluginName
+
+`func (o *AddSubOperationTimingPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddSubOperationTimingPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddSubOperationTimingPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
 
 
 

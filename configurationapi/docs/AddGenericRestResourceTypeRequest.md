@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TypeName** | **string** | Name of the new REST Resource Type | 
 **Schemas** | [**[]EnumgenericRestResourceTypeSchemaUrn**](EnumgenericRestResourceTypeSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this REST Resource Type | [optional] 
 **Enabled** | **bool** | Indicates whether the REST Resource Type is enabled. | 
@@ -26,12 +25,13 @@ Name | Type | Description | Notes
 **DelegatedAdminReportSizeLimit** | Pointer to **int64** | The maximum number of resources that may be included in a report. | [optional] 
 **MembersColumnName** | Pointer to **string** | Specifies the name of the group member column that will be displayed in the Delegated Admin UI | [optional] 
 **NonmembersColumnName** | Pointer to **string** | Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI | [optional] 
+**TypeName** | **string** | Name of the new REST Resource Type | 
 
 ## Methods
 
 ### NewAddGenericRestResourceTypeRequest
 
-`func NewAddGenericRestResourceTypeRequest(typeName string, schemas []EnumgenericRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, ) *AddGenericRestResourceTypeRequest`
+`func NewAddGenericRestResourceTypeRequest(schemas []EnumgenericRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, typeName string, ) *AddGenericRestResourceTypeRequest`
 
 NewAddGenericRestResourceTypeRequest instantiates a new AddGenericRestResourceTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -45,26 +45,6 @@ will change when the set of required properties is changed
 NewAddGenericRestResourceTypeRequestWithDefaults instantiates a new AddGenericRestResourceTypeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTypeName
-
-`func (o *AddGenericRestResourceTypeRequest) GetTypeName() string`
-
-GetTypeName returns the TypeName field if non-nil, zero value otherwise.
-
-### GetTypeNameOk
-
-`func (o *AddGenericRestResourceTypeRequest) GetTypeNameOk() (*string, bool)`
-
-GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeName
-
-`func (o *AddGenericRestResourceTypeRequest) SetTypeName(v string)`
-
-SetTypeName sets TypeName field to given value.
-
 
 ### GetSchemas
 
@@ -565,6 +545,26 @@ SetNonmembersColumnName sets NonmembersColumnName field to given value.
 `func (o *AddGenericRestResourceTypeRequest) HasNonmembersColumnName() bool`
 
 HasNonmembersColumnName returns a boolean if a field has been set.
+
+### GetTypeName
+
+`func (o *AddGenericRestResourceTypeRequest) GetTypeName() string`
+
+GetTypeName returns the TypeName field if non-nil, zero value otherwise.
+
+### GetTypeNameOk
+
+`func (o *AddGenericRestResourceTypeRequest) GetTypeNameOk() (*string, bool)`
+
+GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTypeName
+
+`func (o *AddGenericRestResourceTypeRequest) SetTypeName(v string)`
+
+SetTypeName sets TypeName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

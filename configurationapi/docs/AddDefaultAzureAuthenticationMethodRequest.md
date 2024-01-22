@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MethodName** | **string** | Name of the new Azure Authentication Method | 
 **Schemas** | [**[]EnumdefaultAzureAuthenticationMethodSchemaUrn**](EnumdefaultAzureAuthenticationMethodSchemaUrn.md) |  | 
 **TenantID** | Pointer to **string** | The tenant ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_TENANT_ID environment variable. | [optional] 
 **ClientID** | Pointer to **string** | The client ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_CLIENT_ID | [optional] 
 **Description** | Pointer to **string** | A description for this Azure Authentication Method | [optional] 
+**MethodName** | **string** | Name of the new Azure Authentication Method | 
 
 ## Methods
 
 ### NewAddDefaultAzureAuthenticationMethodRequest
 
-`func NewAddDefaultAzureAuthenticationMethodRequest(methodName string, schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn, ) *AddDefaultAzureAuthenticationMethodRequest`
+`func NewAddDefaultAzureAuthenticationMethodRequest(schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn, methodName string, ) *AddDefaultAzureAuthenticationMethodRequest`
 
 NewAddDefaultAzureAuthenticationMethodRequest instantiates a new AddDefaultAzureAuthenticationMethodRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddDefaultAzureAuthenticationMethodRequestWithDefaults instantiates a new AddDefaultAzureAuthenticationMethodRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMethodName
-
-`func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodName() string`
-
-GetMethodName returns the MethodName field if non-nil, zero value otherwise.
-
-### GetMethodNameOk
-
-`func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool)`
-
-GetMethodNameOk returns a tuple with the MethodName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMethodName
-
-`func (o *AddDefaultAzureAuthenticationMethodRequest) SetMethodName(v string)`
-
-SetMethodName sets MethodName field to given value.
-
 
 ### GetSchemas
 
@@ -143,6 +123,26 @@ SetDescription sets Description field to given value.
 `func (o *AddDefaultAzureAuthenticationMethodRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetMethodName
+
+`func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodName() string`
+
+GetMethodName returns the MethodName field if non-nil, zero value otherwise.
+
+### GetMethodNameOk
+
+`func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool)`
+
+GetMethodNameOk returns a tuple with the MethodName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMethodName
+
+`func (o *AddDefaultAzureAuthenticationMethodRequest) SetMethodName(v string)`
+
+SetMethodName sets MethodName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

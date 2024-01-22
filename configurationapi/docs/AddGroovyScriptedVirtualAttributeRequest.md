@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Name of the new Virtual Attribute | 
 **Schemas** | [**[]EnumgroovyScriptedVirtualAttributeSchemaUrn**](EnumgroovyScriptedVirtualAttributeSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Virtual Attribute. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Virtual Attribute. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -20,12 +19,13 @@ Name | Type | Description | Notes
 **MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int64** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
 **MultipleVirtualAttributeMergeBehavior** | Pointer to [**EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp**](EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp.md) |  | [optional] 
 **AllowIndexConflicts** | Pointer to **bool** | Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server. | [optional] 
+**Name** | **string** | Name of the new Virtual Attribute | 
 
 ## Methods
 
 ### NewAddGroovyScriptedVirtualAttributeRequest
 
-`func NewAddGroovyScriptedVirtualAttributeRequest(name string, schemas []EnumgroovyScriptedVirtualAttributeSchemaUrn, scriptClass string, enabled bool, attributeType string, ) *AddGroovyScriptedVirtualAttributeRequest`
+`func NewAddGroovyScriptedVirtualAttributeRequest(schemas []EnumgroovyScriptedVirtualAttributeSchemaUrn, scriptClass string, enabled bool, attributeType string, name string, ) *AddGroovyScriptedVirtualAttributeRequest`
 
 NewAddGroovyScriptedVirtualAttributeRequest instantiates a new AddGroovyScriptedVirtualAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -39,26 +39,6 @@ will change when the set of required properties is changed
 NewAddGroovyScriptedVirtualAttributeRequestWithDefaults instantiates a new AddGroovyScriptedVirtualAttributeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *AddGroovyScriptedVirtualAttributeRequest) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddGroovyScriptedVirtualAttributeRequest) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddGroovyScriptedVirtualAttributeRequest) SetName(v string)`
-
-SetName sets Name field to given value.
-
 
 ### GetSchemas
 
@@ -414,6 +394,26 @@ SetAllowIndexConflicts sets AllowIndexConflicts field to given value.
 `func (o *AddGroovyScriptedVirtualAttributeRequest) HasAllowIndexConflicts() bool`
 
 HasAllowIndexConflicts returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *AddGroovyScriptedVirtualAttributeRequest) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *AddGroovyScriptedVirtualAttributeRequest) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *AddGroovyScriptedVirtualAttributeRequest) SetName(v string)`
+
+SetName sets Name field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

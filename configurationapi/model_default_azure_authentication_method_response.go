@@ -19,8 +19,6 @@ var _ MappedNullable = &DefaultAzureAuthenticationMethodResponse{}
 
 // DefaultAzureAuthenticationMethodResponse struct for DefaultAzureAuthenticationMethodResponse
 type DefaultAzureAuthenticationMethodResponse struct {
-	// Name of the Azure Authentication Method
-	Id      string                                          `json:"id"`
 	Schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The tenant ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_TENANT_ID environment variable.
 	TenantID *string `json:"tenantID,omitempty"`
@@ -30,16 +28,18 @@ type DefaultAzureAuthenticationMethodResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Azure Authentication Method
+	Id string `json:"id"`
 }
 
 // NewDefaultAzureAuthenticationMethodResponse instantiates a new DefaultAzureAuthenticationMethodResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDefaultAzureAuthenticationMethodResponse(id string, schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn) *DefaultAzureAuthenticationMethodResponse {
+func NewDefaultAzureAuthenticationMethodResponse(schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn, id string) *DefaultAzureAuthenticationMethodResponse {
 	this := DefaultAzureAuthenticationMethodResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -49,30 +49,6 @@ func NewDefaultAzureAuthenticationMethodResponse(id string, schemas []Enumdefaul
 func NewDefaultAzureAuthenticationMethodResponseWithDefaults() *DefaultAzureAuthenticationMethodResponse {
 	this := DefaultAzureAuthenticationMethodResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DefaultAzureAuthenticationMethodResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DefaultAzureAuthenticationMethodResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DefaultAzureAuthenticationMethodResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -259,6 +235,30 @@ func (o *DefaultAzureAuthenticationMethodResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DefaultAzureAuthenticationMethodResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DefaultAzureAuthenticationMethodResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DefaultAzureAuthenticationMethodResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DefaultAzureAuthenticationMethodResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -269,7 +269,6 @@ func (o DefaultAzureAuthenticationMethodResponse) MarshalJSON() ([]byte, error) 
 
 func (o DefaultAzureAuthenticationMethodResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.TenantID) {
 		toSerialize["tenantID"] = o.TenantID
@@ -286,6 +285,7 @@ func (o DefaultAzureAuthenticationMethodResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

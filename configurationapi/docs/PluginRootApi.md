@@ -1,11 +1,11 @@
-# \PluginRootApi
+# \PluginRootAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetPluginRoot**](PluginRootApi.md#GetPluginRoot) | **Get** /plugin-root | Returns a single Plugin Root
-[**UpdatePluginRoot**](PluginRootApi.md#UpdatePluginRoot) | **Patch** /plugin-root | Update an existing Plugin Root by name
+[**GetPluginRoot**](PluginRootAPI.md#GetPluginRoot) | **Get** /plugin-root | Returns a single Plugin Root
+[**UpdatePluginRoot**](PluginRootAPI.md#UpdatePluginRoot) | **Patch** /plugin-root | Update an existing Plugin Root by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PluginRootApi.GetPluginRoot(context.Background()).Execute()
+    resp, r, err := apiClient.PluginRootAPI.GetPluginRoot(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PluginRootApi.GetPluginRoot``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PluginRootAPI.GetPluginRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPluginRoot`: PluginRootResponse
-    fmt.Fprintf(os.Stdout, "Response from `PluginRootApi.GetPluginRoot`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PluginRootAPI.GetPluginRoot`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PluginRootApi.UpdatePluginRoot(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.PluginRootAPI.UpdatePluginRoot(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PluginRootApi.UpdatePluginRoot``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PluginRootAPI.UpdatePluginRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePluginRoot`: PluginRootResponse
-    fmt.Fprintf(os.Stdout, "Response from `PluginRootApi.UpdatePluginRoot`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PluginRootAPI.UpdatePluginRoot`: %v\n", resp)
 }
 ```
 

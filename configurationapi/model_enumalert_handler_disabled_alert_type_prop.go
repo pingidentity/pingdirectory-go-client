@@ -30,6 +30,11 @@ const (
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ALARM_MAJOR                                                 EnumalertHandlerDisabledAlertTypeProp = "alarm-major"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ALARM_MINOR                                                 EnumalertHandlerDisabledAlertTypeProp = "alarm-minor"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ALARM_WARNING                                               EnumalertHandlerDisabledAlertTypeProp = "alarm-warning"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_AMAZON_S3_CREATE_BUCKET_FAILED                              EnumalertHandlerDisabledAlertTypeProp = "amazon-s3-create-bucket-failed"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_AMAZON_S3_DOWNLOAD_FILE_FAILED                              EnumalertHandlerDisabledAlertTypeProp = "amazon-s3-download-file-failed"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_AMAZON_S3_REMOVE_BUCKET_FAILED                              EnumalertHandlerDisabledAlertTypeProp = "amazon-s3-remove-bucket-failed"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_AMAZON_S3_REMOVE_FILE_FAILED                                EnumalertHandlerDisabledAlertTypeProp = "amazon-s3-remove-file-failed"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_AMAZON_S3_UPLOAD_FILE_FAILED                                EnumalertHandlerDisabledAlertTypeProp = "amazon-s3-upload-file-failed"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_BACKEND_DISABLED                                            EnumalertHandlerDisabledAlertTypeProp = "backend-disabled"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_BACKEND_INITIALIZATION_FAILED                               EnumalertHandlerDisabledAlertTypeProp = "backend-initialization-failed"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_BACKUP_FAILED                                               EnumalertHandlerDisabledAlertTypeProp = "backup-failed"
@@ -210,6 +215,7 @@ const (
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_REPLACE_CERTIFICATE_FAILED                                  EnumalertHandlerDisabledAlertTypeProp = "replace-certificate-failed"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_REPLICATION_MISSING_CHANGES_RISK                            EnumalertHandlerDisabledAlertTypeProp = "replication-missing-changes-risk"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_REPLICATION_NOT_PURGING_OBSOLETE_REPLICAS                   EnumalertHandlerDisabledAlertTypeProp = "replication-not-purging-obsolete-replicas"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_REPLICATION_MISSING_CHANGES_ACTION                          EnumalertHandlerDisabledAlertTypeProp = "replication-missing-changes-action"
 )
 
 // All allowed values of EnumalertHandlerDisabledAlertTypeProp enum
@@ -224,6 +230,11 @@ var AllowedEnumalertHandlerDisabledAlertTypePropEnumValues = []EnumalertHandlerD
 	"alarm-major",
 	"alarm-minor",
 	"alarm-warning",
+	"amazon-s3-create-bucket-failed",
+	"amazon-s3-download-file-failed",
+	"amazon-s3-remove-bucket-failed",
+	"amazon-s3-remove-file-failed",
+	"amazon-s3-upload-file-failed",
 	"backend-disabled",
 	"backend-initialization-failed",
 	"backup-failed",
@@ -404,6 +415,7 @@ var AllowedEnumalertHandlerDisabledAlertTypePropEnumValues = []EnumalertHandlerD
 	"replace-certificate-failed",
 	"replication-missing-changes-risk",
 	"replication-not-purging-obsolete-replicas",
+	"replication-missing-changes-action",
 }
 
 func (v *EnumalertHandlerDisabledAlertTypeProp) UnmarshalJSON(src []byte) error {

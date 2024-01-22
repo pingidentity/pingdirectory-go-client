@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StatsName** | **string** | Name of the new Custom Logged Stats | 
 **Schemas** | [**[]EnumcustomLoggedStatsSchemaUrn**](EnumcustomLoggedStatsSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Custom Logged Stats | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether the Custom Logged Stats object is enabled. | [optional] 
@@ -21,12 +20,13 @@ Name | Type | Description | Notes
 **DivideValueByAttribute** | Pointer to **string** | An optional property that can scale the resulting value by another attribute in the monitored entry. | [optional] 
 **DecimalFormat** | Pointer to **string** | This provides a way to format the monitored attribute value in the output to control the precision for instance. | [optional] 
 **NonZeroImpliesNotIdle** | Pointer to **bool** | If this property is set to true, then the value of any of the monitored attributes here can contribute to whether an interval is considered \&quot;idle\&quot; by the Periodic Stats Logger. | [optional] 
+**StatsName** | **string** | Name of the new Custom Logged Stats | 
 
 ## Methods
 
 ### NewAddCustomLoggedStatsRequest
 
-`func NewAddCustomLoggedStatsRequest(statsName string, schemas []EnumcustomLoggedStatsSchemaUrn, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp, ) *AddCustomLoggedStatsRequest`
+`func NewAddCustomLoggedStatsRequest(schemas []EnumcustomLoggedStatsSchemaUrn, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp, statsName string, ) *AddCustomLoggedStatsRequest`
 
 NewAddCustomLoggedStatsRequest instantiates a new AddCustomLoggedStatsRequest object
 This constructor will assign default values to properties that have it defined,
@@ -40,26 +40,6 @@ will change when the set of required properties is changed
 NewAddCustomLoggedStatsRequestWithDefaults instantiates a new AddCustomLoggedStatsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetStatsName
-
-`func (o *AddCustomLoggedStatsRequest) GetStatsName() string`
-
-GetStatsName returns the StatsName field if non-nil, zero value otherwise.
-
-### GetStatsNameOk
-
-`func (o *AddCustomLoggedStatsRequest) GetStatsNameOk() (*string, bool)`
-
-GetStatsNameOk returns a tuple with the StatsName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatsName
-
-`func (o *AddCustomLoggedStatsRequest) SetStatsName(v string)`
-
-SetStatsName sets StatsName field to given value.
-
 
 ### GetSchemas
 
@@ -440,6 +420,26 @@ SetNonZeroImpliesNotIdle sets NonZeroImpliesNotIdle field to given value.
 `func (o *AddCustomLoggedStatsRequest) HasNonZeroImpliesNotIdle() bool`
 
 HasNonZeroImpliesNotIdle returns a boolean if a field has been set.
+
+### GetStatsName
+
+`func (o *AddCustomLoggedStatsRequest) GetStatsName() string`
+
+GetStatsName returns the StatsName field if non-nil, zero value otherwise.
+
+### GetStatsNameOk
+
+`func (o *AddCustomLoggedStatsRequest) GetStatsNameOk() (*string, bool)`
+
+GetStatsNameOk returns a tuple with the StatsName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatsName
+
+`func (o *AddCustomLoggedStatsRequest) SetStatsName(v string)`
+
+SetStatsName sets StatsName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

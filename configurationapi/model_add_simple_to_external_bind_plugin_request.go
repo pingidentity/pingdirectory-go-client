@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSimpleToExternalBindPluginRequest{}
 
 // AddSimpleToExternalBindPluginRequest struct for AddSimpleToExternalBindPluginRequest
 type AddSimpleToExternalBindPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                    `json:"pluginName"`
-	Schemas    []EnumsimpleToExternalBindPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumsimpleToExternalBindPluginSchemaUrn `json:"schemas"`
 	// Specifies a connection criteria object that may be used to indicate the set of clients for which this plugin should be used. If a value is provided, then this plugin will only be used for requests from client connections matching this criteria.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// Specifies a request criteria object that may be used to indicate the set of requests for which this plugin should be used. If a value is provided, then this plugin will only be used for bind requests matching this criteria.
@@ -30,17 +28,19 @@ type AddSimpleToExternalBindPluginRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddSimpleToExternalBindPluginRequest instantiates a new AddSimpleToExternalBindPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSimpleToExternalBindPluginRequest(pluginName string, schemas []EnumsimpleToExternalBindPluginSchemaUrn, enabled bool) *AddSimpleToExternalBindPluginRequest {
+func NewAddSimpleToExternalBindPluginRequest(schemas []EnumsimpleToExternalBindPluginSchemaUrn, enabled bool, pluginName string) *AddSimpleToExternalBindPluginRequest {
 	this := AddSimpleToExternalBindPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewAddSimpleToExternalBindPluginRequest(pluginName string, schemas []Enumsi
 func NewAddSimpleToExternalBindPluginRequestWithDefaults() *AddSimpleToExternalBindPluginRequest {
 	this := AddSimpleToExternalBindPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddSimpleToExternalBindPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddSimpleToExternalBindPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddSimpleToExternalBindPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -220,6 +196,30 @@ func (o *AddSimpleToExternalBindPluginRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddSimpleToExternalBindPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddSimpleToExternalBindPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddSimpleToExternalBindPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddSimpleToExternalBindPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -230,7 +230,6 @@ func (o AddSimpleToExternalBindPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSimpleToExternalBindPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ConnectionCriteria) {
 		toSerialize["connectionCriteria"] = o.ConnectionCriteria
@@ -242,6 +241,7 @@ func (o AddSimpleToExternalBindPluginRequest) ToMap() (map[string]interface{}, e
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

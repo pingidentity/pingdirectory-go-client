@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// KeyPairApiService KeyPairApi service
-type KeyPairApiService service
+// KeyPairAPIService KeyPairAPI service
+type KeyPairAPIService service
 
 type ApiAddKeyPairRequest struct {
 	ctx               context.Context
-	ApiService        *KeyPairApiService
+	ApiService        *KeyPairAPIService
 	addKeyPairRequest *AddKeyPairRequest
 }
 
@@ -44,7 +44,7 @@ AddKeyPair Add a new Key Pair to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddKeyPairRequest
 */
-func (a *KeyPairApiService) AddKeyPair(ctx context.Context) ApiAddKeyPairRequest {
+func (a *KeyPairAPIService) AddKeyPair(ctx context.Context) ApiAddKeyPairRequest {
 	return ApiAddKeyPairRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *KeyPairApiService) AddKeyPair(ctx context.Context) ApiAddKeyPairRequest
 // Execute executes the request
 //
 //	@return KeyPairResponse
-func (a *KeyPairApiService) AddKeyPairExecute(r ApiAddKeyPairRequest) (*KeyPairResponse, *http.Response, error) {
+func (a *KeyPairAPIService) AddKeyPairExecute(r ApiAddKeyPairRequest) (*KeyPairResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *KeyPairApiService) AddKeyPairExecute(r ApiAddKeyPairRequest) (*KeyPairR
 		localVarReturnValue *KeyPairResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairApiService.AddKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairAPIService.AddKeyPair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *KeyPairApiService) AddKeyPairExecute(r ApiAddKeyPairRequest) (*KeyPairR
 
 type ApiDeleteKeyPairRequest struct {
 	ctx         context.Context
-	ApiService  *KeyPairApiService
+	ApiService  *KeyPairAPIService
 	keyPairName string
 }
 
@@ -149,7 +149,7 @@ DeleteKeyPair Delete a Key Pair
 	@param keyPairName Name of the Key Pair
 	@return ApiDeleteKeyPairRequest
 */
-func (a *KeyPairApiService) DeleteKeyPair(ctx context.Context, keyPairName string) ApiDeleteKeyPairRequest {
+func (a *KeyPairAPIService) DeleteKeyPair(ctx context.Context, keyPairName string) ApiDeleteKeyPairRequest {
 	return ApiDeleteKeyPairRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -158,14 +158,14 @@ func (a *KeyPairApiService) DeleteKeyPair(ctx context.Context, keyPairName strin
 }
 
 // Execute executes the request
-func (a *KeyPairApiService) DeleteKeyPairExecute(r ApiDeleteKeyPairRequest) (*http.Response, error) {
+func (a *KeyPairAPIService) DeleteKeyPairExecute(r ApiDeleteKeyPairRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairApiService.DeleteKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairAPIService.DeleteKeyPair")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *KeyPairApiService) DeleteKeyPairExecute(r ApiDeleteKeyPairRequest) (*ht
 
 type ApiGetKeyPairRequest struct {
 	ctx         context.Context
-	ApiService  *KeyPairApiService
+	ApiService  *KeyPairAPIService
 	keyPairName string
 }
 
@@ -239,7 +239,7 @@ GetKeyPair Returns a single Key Pair
 	@param keyPairName Name of the Key Pair
 	@return ApiGetKeyPairRequest
 */
-func (a *KeyPairApiService) GetKeyPair(ctx context.Context, keyPairName string) ApiGetKeyPairRequest {
+func (a *KeyPairAPIService) GetKeyPair(ctx context.Context, keyPairName string) ApiGetKeyPairRequest {
 	return ApiGetKeyPairRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -250,7 +250,7 @@ func (a *KeyPairApiService) GetKeyPair(ctx context.Context, keyPairName string) 
 // Execute executes the request
 //
 //	@return KeyPairResponse
-func (a *KeyPairApiService) GetKeyPairExecute(r ApiGetKeyPairRequest) (*KeyPairResponse, *http.Response, error) {
+func (a *KeyPairAPIService) GetKeyPairExecute(r ApiGetKeyPairRequest) (*KeyPairResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *KeyPairApiService) GetKeyPairExecute(r ApiGetKeyPairRequest) (*KeyPairR
 		localVarReturnValue *KeyPairResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairApiService.GetKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairAPIService.GetKeyPair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *KeyPairApiService) GetKeyPairExecute(r ApiGetKeyPairRequest) (*KeyPairR
 
 type ApiListKeyPairsRequest struct {
 	ctx        context.Context
-	ApiService *KeyPairApiService
+	ApiService *KeyPairAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListKeyPairs Returns a list of all Key Pair objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListKeyPairsRequest
 */
-func (a *KeyPairApiService) ListKeyPairs(ctx context.Context) ApiListKeyPairsRequest {
+func (a *KeyPairAPIService) ListKeyPairs(ctx context.Context) ApiListKeyPairsRequest {
 	return ApiListKeyPairsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *KeyPairApiService) ListKeyPairs(ctx context.Context) ApiListKeyPairsReq
 // Execute executes the request
 //
 //	@return KeyPairListResponse
-func (a *KeyPairApiService) ListKeyPairsExecute(r ApiListKeyPairsRequest) (*KeyPairListResponse, *http.Response, error) {
+func (a *KeyPairAPIService) ListKeyPairsExecute(r ApiListKeyPairsRequest) (*KeyPairListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *KeyPairApiService) ListKeyPairsExecute(r ApiListKeyPairsRequest) (*KeyP
 		localVarReturnValue *KeyPairListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairApiService.ListKeyPairs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairAPIService.ListKeyPairs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *KeyPairApiService) ListKeyPairsExecute(r ApiListKeyPairsRequest) (*KeyP
 
 type ApiUpdateKeyPairRequest struct {
 	ctx           context.Context
-	ApiService    *KeyPairApiService
+	ApiService    *KeyPairAPIService
 	keyPairName   string
 	updateRequest *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateKeyPair Update an existing Key Pair by name
 	@param keyPairName Name of the Key Pair
 	@return ApiUpdateKeyPairRequest
 */
-func (a *KeyPairApiService) UpdateKeyPair(ctx context.Context, keyPairName string) ApiUpdateKeyPairRequest {
+func (a *KeyPairAPIService) UpdateKeyPair(ctx context.Context, keyPairName string) ApiUpdateKeyPairRequest {
 	return ApiUpdateKeyPairRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -467,7 +467,7 @@ func (a *KeyPairApiService) UpdateKeyPair(ctx context.Context, keyPairName strin
 // Execute executes the request
 //
 //	@return KeyPairResponse
-func (a *KeyPairApiService) UpdateKeyPairExecute(r ApiUpdateKeyPairRequest) (*KeyPairResponse, *http.Response, error) {
+func (a *KeyPairAPIService) UpdateKeyPairExecute(r ApiUpdateKeyPairRequest) (*KeyPairResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *KeyPairApiService) UpdateKeyPairExecute(r ApiUpdateKeyPairRequest) (*Ke
 		localVarReturnValue *KeyPairResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairApiService.UpdateKeyPair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairAPIService.UpdateKeyPair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

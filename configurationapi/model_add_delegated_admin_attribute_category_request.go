@@ -19,11 +19,11 @@ var _ MappedNullable = &AddDelegatedAdminAttributeCategoryRequest{}
 
 // AddDelegatedAdminAttributeCategoryRequest struct for AddDelegatedAdminAttributeCategoryRequest
 type AddDelegatedAdminAttributeCategoryRequest struct {
-	// A human readable display name for this Delegated Admin Attribute Category.
-	DisplayName string                                         `json:"displayName"`
-	Schemas     []EnumdelegatedAdminAttributeCategorySchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumdelegatedAdminAttributeCategorySchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Attribute Category
 	Description *string `json:"description,omitempty"`
+	// Name of the new Delegated Admin Attribute Category
+	DisplayName string `json:"displayName"`
 	// Delegated Admin Attribute Categories are ordered for display based on this index from least to greatest.
 	DisplayOrderIndex int64 `json:"displayOrderIndex"`
 }
@@ -45,30 +45,6 @@ func NewAddDelegatedAdminAttributeCategoryRequest(displayName string, displayOrd
 func NewAddDelegatedAdminAttributeCategoryRequestWithDefaults() *AddDelegatedAdminAttributeCategoryRequest {
 	this := AddDelegatedAdminAttributeCategoryRequest{}
 	return &this
-}
-
-// GetDisplayName returns the DisplayName field value
-func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.DisplayName
-}
-
-// GetDisplayNameOk returns a tuple with the DisplayName field value
-// and a boolean to check if the value has been set.
-func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.DisplayName, true
-}
-
-// SetDisplayName sets field value
-func (o *AddDelegatedAdminAttributeCategoryRequest) SetDisplayName(v string) {
-	o.DisplayName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -135,6 +111,30 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetDisplayName returns the DisplayName field value
+func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.DisplayName
+}
+
+// GetDisplayNameOk returns a tuple with the DisplayName field value
+// and a boolean to check if the value has been set.
+func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.DisplayName, true
+}
+
+// SetDisplayName sets field value
+func (o *AddDelegatedAdminAttributeCategoryRequest) SetDisplayName(v string) {
+	o.DisplayName = v
+}
+
 // GetDisplayOrderIndex returns the DisplayOrderIndex field value
 func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayOrderIndex() int64 {
 	if o == nil {
@@ -169,13 +169,13 @@ func (o AddDelegatedAdminAttributeCategoryRequest) MarshalJSON() ([]byte, error)
 
 func (o AddDelegatedAdminAttributeCategoryRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["displayName"] = o.DisplayName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["displayName"] = o.DisplayName
 	toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
 	return toSerialize, nil
 }

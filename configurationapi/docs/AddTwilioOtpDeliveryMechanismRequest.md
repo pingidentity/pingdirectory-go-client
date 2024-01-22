@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MechanismName** | **string** | Name of the new OTP Delivery Mechanism | 
 **Schemas** | [**[]EnumtwilioOtpDeliveryMechanismSchemaUrn**](EnumtwilioOtpDeliveryMechanismSchemaUrn.md) |  | 
 **HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Twilio service. | [optional] 
 **TwilioAccountSID** | **string** | The unique identifier assigned to the Twilio account that will be used. | 
@@ -18,12 +17,13 @@ Name | Type | Description | Notes
 **MessageTextAfterOTP** | Pointer to **string** | Any text that should appear in the message after the one-time password value. | [optional] 
 **Description** | Pointer to **string** | A description for this OTP Delivery Mechanism | [optional] 
 **Enabled** | **bool** | Indicates whether this OTP Delivery Mechanism is enabled for use in the server. | 
+**MechanismName** | **string** | Name of the new OTP Delivery Mechanism | 
 
 ## Methods
 
 ### NewAddTwilioOtpDeliveryMechanismRequest
 
-`func NewAddTwilioOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, enabled bool, ) *AddTwilioOtpDeliveryMechanismRequest`
+`func NewAddTwilioOtpDeliveryMechanismRequest(schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, enabled bool, mechanismName string, ) *AddTwilioOtpDeliveryMechanismRequest`
 
 NewAddTwilioOtpDeliveryMechanismRequest instantiates a new AddTwilioOtpDeliveryMechanismRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,26 +37,6 @@ will change when the set of required properties is changed
 NewAddTwilioOtpDeliveryMechanismRequestWithDefaults instantiates a new AddTwilioOtpDeliveryMechanismRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMechanismName
-
-`func (o *AddTwilioOtpDeliveryMechanismRequest) GetMechanismName() string`
-
-GetMechanismName returns the MechanismName field if non-nil, zero value otherwise.
-
-### GetMechanismNameOk
-
-`func (o *AddTwilioOtpDeliveryMechanismRequest) GetMechanismNameOk() (*string, bool)`
-
-GetMechanismNameOk returns a tuple with the MechanismName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMechanismName
-
-`func (o *AddTwilioOtpDeliveryMechanismRequest) SetMechanismName(v string)`
-
-SetMechanismName sets MechanismName field to given value.
-
 
 ### GetSchemas
 
@@ -361,6 +341,26 @@ and a boolean to check if the value has been set.
 `func (o *AddTwilioOtpDeliveryMechanismRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetMechanismName
+
+`func (o *AddTwilioOtpDeliveryMechanismRequest) GetMechanismName() string`
+
+GetMechanismName returns the MechanismName field if non-nil, zero value otherwise.
+
+### GetMechanismNameOk
+
+`func (o *AddTwilioOtpDeliveryMechanismRequest) GetMechanismNameOk() (*string, bool)`
+
+GetMechanismNameOk returns a tuple with the MechanismName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMechanismName
+
+`func (o *AddTwilioOtpDeliveryMechanismRequest) SetMechanismName(v string)`
+
+SetMechanismName sets MechanismName field to given value.
 
 
 

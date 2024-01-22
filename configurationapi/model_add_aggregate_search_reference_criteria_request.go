@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAggregateSearchReferenceCriteriaRequest{}
 
 // AddAggregateSearchReferenceCriteriaRequest struct for AddAggregateSearchReferenceCriteriaRequest
 type AddAggregateSearchReferenceCriteriaRequest struct {
-	// Name of the new Search Reference Criteria
-	CriteriaName string                                          `json:"criteriaName"`
-	Schemas      []EnumaggregateSearchReferenceCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumaggregateSearchReferenceCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a search reference criteria object that must match the associated search result reference in order to match the aggregate search reference criteria. If one or more all-included search reference criteria objects are provided, then a search result reference must match all of them in order to match the aggregate search reference criteria.
 	AllIncludedSearchReferenceCriteria []string `json:"allIncludedSearchReferenceCriteria,omitempty"`
 	// Specifies a search reference criteria object that may match the associated search result reference in order to match the aggregate search reference criteria. If one or more any-included search reference criteria objects are provided, then a search result reference must match at least one of them in order to match the aggregate search reference criteria.
@@ -32,16 +30,18 @@ type AddAggregateSearchReferenceCriteriaRequest struct {
 	NoneIncludedSearchReferenceCriteria []string `json:"noneIncludedSearchReferenceCriteria,omitempty"`
 	// A description for this Search Reference Criteria
 	Description *string `json:"description,omitempty"`
+	// Name of the new Search Reference Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddAggregateSearchReferenceCriteriaRequest instantiates a new AddAggregateSearchReferenceCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAggregateSearchReferenceCriteriaRequest(criteriaName string, schemas []EnumaggregateSearchReferenceCriteriaSchemaUrn) *AddAggregateSearchReferenceCriteriaRequest {
+func NewAddAggregateSearchReferenceCriteriaRequest(schemas []EnumaggregateSearchReferenceCriteriaSchemaUrn, criteriaName string) *AddAggregateSearchReferenceCriteriaRequest {
 	this := AddAggregateSearchReferenceCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddAggregateSearchReferenceCriteriaRequest(criteriaName string, schemas 
 func NewAddAggregateSearchReferenceCriteriaRequestWithDefaults() *AddAggregateSearchReferenceCriteriaRequest {
 	this := AddAggregateSearchReferenceCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddAggregateSearchReferenceCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddAggregateSearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddAggregateSearchReferenceCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -261,6 +237,30 @@ func (o *AddAggregateSearchReferenceCriteriaRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddAggregateSearchReferenceCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddAggregateSearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddAggregateSearchReferenceCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddAggregateSearchReferenceCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -271,7 +271,6 @@ func (o AddAggregateSearchReferenceCriteriaRequest) MarshalJSON() ([]byte, error
 
 func (o AddAggregateSearchReferenceCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllIncludedSearchReferenceCriteria) {
 		toSerialize["allIncludedSearchReferenceCriteria"] = o.AllIncludedSearchReferenceCriteria
@@ -288,6 +287,7 @@ func (o AddAggregateSearchReferenceCriteriaRequest) ToMap() (map[string]interfac
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyChangeSubscriptionHandlerResponse{}
 
 // ThirdPartyChangeSubscriptionHandlerResponse struct for ThirdPartyChangeSubscriptionHandlerResponse
 type ThirdPartyChangeSubscriptionHandlerResponse struct {
-	// Name of the Change Subscription Handler
-	Id      string                                             `json:"id"`
 	Schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Change Subscription Handler.
 	ExtensionClass string `json:"extensionClass"`
@@ -34,18 +32,20 @@ type ThirdPartyChangeSubscriptionHandlerResponse struct {
 	ChangeSubscription                            []string                                           `json:"changeSubscription,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Change Subscription Handler
+	Id string `json:"id"`
 }
 
 // NewThirdPartyChangeSubscriptionHandlerResponse instantiates a new ThirdPartyChangeSubscriptionHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyChangeSubscriptionHandlerResponse(id string, schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn, extensionClass string, enabled bool) *ThirdPartyChangeSubscriptionHandlerResponse {
+func NewThirdPartyChangeSubscriptionHandlerResponse(schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn, extensionClass string, enabled bool, id string) *ThirdPartyChangeSubscriptionHandlerResponse {
 	this := ThirdPartyChangeSubscriptionHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewThirdPartyChangeSubscriptionHandlerResponse(id string, schemas []Enumthi
 func NewThirdPartyChangeSubscriptionHandlerResponseWithDefaults() *ThirdPartyChangeSubscriptionHandlerResponse {
 	this := ThirdPartyChangeSubscriptionHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyChangeSubscriptionHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -313,6 +289,30 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) SetUrnpingidentityschemasc
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyChangeSubscriptionHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -323,7 +323,6 @@ func (o ThirdPartyChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, erro
 
 func (o ThirdPartyChangeSubscriptionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -342,6 +341,7 @@ func (o ThirdPartyChangeSubscriptionHandlerResponse) ToMap() (map[string]interfa
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

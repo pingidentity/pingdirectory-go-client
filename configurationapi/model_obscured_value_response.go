@@ -19,8 +19,6 @@ var _ MappedNullable = &ObscuredValueResponse{}
 
 // ObscuredValueResponse struct for ObscuredValueResponse
 type ObscuredValueResponse struct {
-	// Name of the Obscured Value
-	Id      string                       `json:"id"`
 	Schemas []EnumobscuredValueSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Obscured Value
 	Description *string `json:"description,omitempty"`
@@ -28,16 +26,18 @@ type ObscuredValueResponse struct {
 	ObscuredValue                                 string                                             `json:"obscuredValue"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Obscured Value
+	Id string `json:"id"`
 }
 
 // NewObscuredValueResponse instantiates a new ObscuredValueResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewObscuredValueResponse(id string, obscuredValue string) *ObscuredValueResponse {
+func NewObscuredValueResponse(obscuredValue string, id string) *ObscuredValueResponse {
 	this := ObscuredValueResponse{}
-	this.Id = id
 	this.ObscuredValue = obscuredValue
+	this.Id = id
 	return &this
 }
 
@@ -47,30 +47,6 @@ func NewObscuredValueResponse(id string, obscuredValue string) *ObscuredValueRes
 func NewObscuredValueResponseWithDefaults() *ObscuredValueResponse {
 	this := ObscuredValueResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ObscuredValueResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ObscuredValueResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ObscuredValueResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -225,6 +201,30 @@ func (o *ObscuredValueResponse) SetUrnpingidentityschemasconfigurationmessages20
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ObscuredValueResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ObscuredValueResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ObscuredValueResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ObscuredValueResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -235,7 +235,6 @@ func (o ObscuredValueResponse) MarshalJSON() ([]byte, error) {
 
 func (o ObscuredValueResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -249,6 +248,7 @@ func (o ObscuredValueResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

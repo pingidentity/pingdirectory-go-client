@@ -19,8 +19,6 @@ var _ MappedNullable = &GenericRestResourceTypeResponse{}
 
 // GenericRestResourceTypeResponse struct for GenericRestResourceTypeResponse
 type GenericRestResourceTypeResponse struct {
-	// Name of the REST Resource Type
-	Id      string                                 `json:"id"`
 	Schemas []EnumgenericRestResourceTypeSchemaUrn `json:"schemas"`
 	// A description for this REST Resource Type
 	Description *string `json:"description,omitempty"`
@@ -64,20 +62,22 @@ type GenericRestResourceTypeResponse struct {
 	NonmembersColumnName                          *string                                            `json:"nonmembersColumnName,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the REST Resource Type
+	Id string `json:"id"`
 }
 
 // NewGenericRestResourceTypeResponse instantiates a new GenericRestResourceTypeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericRestResourceTypeResponse(id string, schemas []EnumgenericRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string) *GenericRestResourceTypeResponse {
+func NewGenericRestResourceTypeResponse(schemas []EnumgenericRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, id string) *GenericRestResourceTypeResponse {
 	this := GenericRestResourceTypeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.ResourceEndpoint = resourceEndpoint
 	this.StructuralLDAPObjectclass = structuralLDAPObjectclass
 	this.SearchBaseDN = searchBaseDN
+	this.Id = id
 	return &this
 }
 
@@ -87,30 +87,6 @@ func NewGenericRestResourceTypeResponse(id string, schemas []EnumgenericRestReso
 func NewGenericRestResourceTypeResponseWithDefaults() *GenericRestResourceTypeResponse {
 	this := GenericRestResourceTypeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GenericRestResourceTypeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GenericRestResourceTypeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GenericRestResourceTypeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -809,6 +785,30 @@ func (o *GenericRestResourceTypeResponse) SetUrnpingidentityschemasconfiguration
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *GenericRestResourceTypeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *GenericRestResourceTypeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *GenericRestResourceTypeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o GenericRestResourceTypeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -819,7 +819,6 @@ func (o GenericRestResourceTypeResponse) MarshalJSON() ([]byte, error) {
 
 func (o GenericRestResourceTypeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -879,6 +878,7 @@ func (o GenericRestResourceTypeResponse) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGenericWebApplicationExtensionRequest{}
 
 // AddGenericWebApplicationExtensionRequest struct for AddGenericWebApplicationExtensionRequest
 type AddGenericWebApplicationExtensionRequest struct {
-	// Name of the new Web Application Extension
-	ExtensionName string                                        `json:"extensionName"`
-	Schemas       []EnumgenericWebApplicationExtensionSchemaUrn `json:"schemas"`
+	Schemas []EnumgenericWebApplicationExtensionSchemaUrn `json:"schemas"`
 	// A description for this Web Application Extension
 	Description *string `json:"description,omitempty"`
 	// Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and at least one additional character and must represent a valid HTTP context path.
@@ -36,17 +34,19 @@ type AddGenericWebApplicationExtensionRequest struct {
 	TemporaryDirectory *string `json:"temporaryDirectory,omitempty"`
 	// Specifies an initialization parameter to pass into the web application during startup.
 	InitParameter []string `json:"initParameter,omitempty"`
+	// Name of the new Web Application Extension
+	ExtensionName string `json:"extensionName"`
 }
 
 // NewAddGenericWebApplicationExtensionRequest instantiates a new AddGenericWebApplicationExtensionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGenericWebApplicationExtensionRequest(extensionName string, schemas []EnumgenericWebApplicationExtensionSchemaUrn, baseContextPath string) *AddGenericWebApplicationExtensionRequest {
+func NewAddGenericWebApplicationExtensionRequest(schemas []EnumgenericWebApplicationExtensionSchemaUrn, baseContextPath string, extensionName string) *AddGenericWebApplicationExtensionRequest {
 	this := AddGenericWebApplicationExtensionRequest{}
-	this.ExtensionName = extensionName
 	this.Schemas = schemas
 	this.BaseContextPath = baseContextPath
+	this.ExtensionName = extensionName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddGenericWebApplicationExtensionRequest(extensionName string, schemas [
 func NewAddGenericWebApplicationExtensionRequestWithDefaults() *AddGenericWebApplicationExtensionRequest {
 	this := AddGenericWebApplicationExtensionRequest{}
 	return &this
-}
-
-// GetExtensionName returns the ExtensionName field value
-func (o *AddGenericWebApplicationExtensionRequest) GetExtensionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ExtensionName
-}
-
-// GetExtensionNameOk returns a tuple with the ExtensionName field value
-// and a boolean to check if the value has been set.
-func (o *AddGenericWebApplicationExtensionRequest) GetExtensionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ExtensionName, true
-}
-
-// SetExtensionName sets field value
-func (o *AddGenericWebApplicationExtensionRequest) SetExtensionName(v string) {
-	o.ExtensionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -322,6 +298,30 @@ func (o *AddGenericWebApplicationExtensionRequest) SetInitParameter(v []string) 
 	o.InitParameter = v
 }
 
+// GetExtensionName returns the ExtensionName field value
+func (o *AddGenericWebApplicationExtensionRequest) GetExtensionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ExtensionName
+}
+
+// GetExtensionNameOk returns a tuple with the ExtensionName field value
+// and a boolean to check if the value has been set.
+func (o *AddGenericWebApplicationExtensionRequest) GetExtensionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ExtensionName, true
+}
+
+// SetExtensionName sets field value
+func (o *AddGenericWebApplicationExtensionRequest) SetExtensionName(v string) {
+	o.ExtensionName = v
+}
+
 func (o AddGenericWebApplicationExtensionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -332,7 +332,6 @@ func (o AddGenericWebApplicationExtensionRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddGenericWebApplicationExtensionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["extensionName"] = o.ExtensionName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -353,6 +352,7 @@ func (o AddGenericWebApplicationExtensionRequest) ToMap() (map[string]interface{
 	if !IsNil(o.InitParameter) {
 		toSerialize["initParameter"] = o.InitParameter
 	}
+	toSerialize["extensionName"] = o.ExtensionName
 	return toSerialize, nil
 }
 

@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeName** | **string** | Name of the new Constructed Attribute | 
 **Schemas** | Pointer to [**[]EnumconstructedAttributeSchemaUrn**](EnumconstructedAttributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Constructed Attribute | [optional] 
 **AttributeType** | **string** | Specifies the attribute type for the attribute whose values are to be constructed. | 
 **ValuePattern** | **[]string** | Specifies a pattern for constructing the attribute value using fixed text and attribute values from the entry. | 
+**AttributeName** | **string** | Name of the new Constructed Attribute | 
 
 ## Methods
 
 ### NewAddConstructedAttributeRequest
 
-`func NewAddConstructedAttributeRequest(attributeName string, attributeType string, valuePattern []string, ) *AddConstructedAttributeRequest`
+`func NewAddConstructedAttributeRequest(attributeType string, valuePattern []string, attributeName string, ) *AddConstructedAttributeRequest`
 
 NewAddConstructedAttributeRequest instantiates a new AddConstructedAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddConstructedAttributeRequestWithDefaults instantiates a new AddConstructedAttributeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAttributeName
-
-`func (o *AddConstructedAttributeRequest) GetAttributeName() string`
-
-GetAttributeName returns the AttributeName field if non-nil, zero value otherwise.
-
-### GetAttributeNameOk
-
-`func (o *AddConstructedAttributeRequest) GetAttributeNameOk() (*string, bool)`
-
-GetAttributeNameOk returns a tuple with the AttributeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeName
-
-`func (o *AddConstructedAttributeRequest) SetAttributeName(v string)`
-
-SetAttributeName sets AttributeName field to given value.
-
 
 ### GetSchemas
 
@@ -137,6 +117,26 @@ and a boolean to check if the value has been set.
 `func (o *AddConstructedAttributeRequest) SetValuePattern(v []string)`
 
 SetValuePattern sets ValuePattern field to given value.
+
+
+### GetAttributeName
+
+`func (o *AddConstructedAttributeRequest) GetAttributeName() string`
+
+GetAttributeName returns the AttributeName field if non-nil, zero value otherwise.
+
+### GetAttributeNameOk
+
+`func (o *AddConstructedAttributeRequest) GetAttributeNameOk() (*string, bool)`
+
+GetAttributeNameOk returns a tuple with the AttributeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeName
+
+`func (o *AddConstructedAttributeRequest) SetAttributeName(v string)`
+
+SetAttributeName sets AttributeName field to given value.
 
 
 

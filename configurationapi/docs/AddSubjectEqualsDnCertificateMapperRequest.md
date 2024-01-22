@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MapperName** | **string** | Name of the new Certificate Mapper | 
 **Schemas** | [**[]EnumsubjectEqualsDnCertificateMapperSchemaUrn**](EnumsubjectEqualsDnCertificateMapperSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
+**MapperName** | **string** | Name of the new Certificate Mapper | 
 
 ## Methods
 
 ### NewAddSubjectEqualsDnCertificateMapperRequest
 
-`func NewAddSubjectEqualsDnCertificateMapperRequest(mapperName string, schemas []EnumsubjectEqualsDnCertificateMapperSchemaUrn, enabled bool, ) *AddSubjectEqualsDnCertificateMapperRequest`
+`func NewAddSubjectEqualsDnCertificateMapperRequest(schemas []EnumsubjectEqualsDnCertificateMapperSchemaUrn, enabled bool, mapperName string, ) *AddSubjectEqualsDnCertificateMapperRequest`
 
 NewAddSubjectEqualsDnCertificateMapperRequest instantiates a new AddSubjectEqualsDnCertificateMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewAddSubjectEqualsDnCertificateMapperRequestWithDefaults instantiates a new AddSubjectEqualsDnCertificateMapperRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMapperName
-
-`func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperName() string`
-
-GetMapperName returns the MapperName field if non-nil, zero value otherwise.
-
-### GetMapperNameOk
-
-`func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperNameOk() (*string, bool)`
-
-GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMapperName
-
-`func (o *AddSubjectEqualsDnCertificateMapperRequest) SetMapperName(v string)`
-
-SetMapperName sets MapperName field to given value.
-
 
 ### GetSchemas
 
@@ -111,6 +91,26 @@ and a boolean to check if the value has been set.
 `func (o *AddSubjectEqualsDnCertificateMapperRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetMapperName
+
+`func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperName() string`
+
+GetMapperName returns the MapperName field if non-nil, zero value otherwise.
+
+### GetMapperNameOk
+
+`func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperNameOk() (*string, bool)`
+
+GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMapperName
+
+`func (o *AddSubjectEqualsDnCertificateMapperRequest) SetMapperName(v string)`
+
+SetMapperName sets MapperName field to given value.
 
 
 

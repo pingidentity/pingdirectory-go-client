@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSmtpExternalServerRequest{}
 
 // AddSmtpExternalServerRequest struct for AddSmtpExternalServerRequest
 type AddSmtpExternalServerRequest struct {
-	// Name of the new External Server
-	ServerName string                            `json:"serverName"`
-	Schemas    []EnumsmtpExternalServerSchemaUrn `json:"schemas"`
+	Schemas []EnumsmtpExternalServerSchemaUrn `json:"schemas"`
 	// The host name of the smtp server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number where the smtp server listens for requests.
@@ -39,17 +37,19 @@ type AddSmtpExternalServerRequest struct {
 	SmtpConnectionProperties []string `json:"smtpConnectionProperties,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	// Name of the new External Server
+	ServerName string `json:"serverName"`
 }
 
 // NewAddSmtpExternalServerRequest instantiates a new AddSmtpExternalServerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSmtpExternalServerRequest(serverName string, schemas []EnumsmtpExternalServerSchemaUrn, serverHostName string) *AddSmtpExternalServerRequest {
+func NewAddSmtpExternalServerRequest(schemas []EnumsmtpExternalServerSchemaUrn, serverHostName string, serverName string) *AddSmtpExternalServerRequest {
 	this := AddSmtpExternalServerRequest{}
-	this.ServerName = serverName
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
+	this.ServerName = serverName
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewAddSmtpExternalServerRequest(serverName string, schemas []EnumsmtpExtern
 func NewAddSmtpExternalServerRequestWithDefaults() *AddSmtpExternalServerRequest {
 	this := AddSmtpExternalServerRequest{}
 	return &this
-}
-
-// GetServerName returns the ServerName field value
-func (o *AddSmtpExternalServerRequest) GetServerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerName
-}
-
-// GetServerNameOk returns a tuple with the ServerName field value
-// and a boolean to check if the value has been set.
-func (o *AddSmtpExternalServerRequest) GetServerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerName, true
-}
-
-// SetServerName sets field value
-func (o *AddSmtpExternalServerRequest) SetServerName(v string) {
-	o.ServerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -389,6 +365,30 @@ func (o *AddSmtpExternalServerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetServerName returns the ServerName field value
+func (o *AddSmtpExternalServerRequest) GetServerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ServerName
+}
+
+// GetServerNameOk returns a tuple with the ServerName field value
+// and a boolean to check if the value has been set.
+func (o *AddSmtpExternalServerRequest) GetServerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ServerName, true
+}
+
+// SetServerName sets field value
+func (o *AddSmtpExternalServerRequest) SetServerName(v string) {
+	o.ServerName = v
+}
+
 func (o AddSmtpExternalServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -399,7 +399,6 @@ func (o AddSmtpExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSmtpExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["serverName"] = o.ServerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["serverHostName"] = o.ServerHostName
 	if !IsNil(o.ServerPort) {
@@ -426,6 +425,7 @@ func (o AddSmtpExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["serverName"] = o.ServerName
 	return toSerialize, nil
 }
 

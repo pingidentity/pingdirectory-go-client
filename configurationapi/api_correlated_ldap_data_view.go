@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// CorrelatedLdapDataViewApiService CorrelatedLdapDataViewApi service
-type CorrelatedLdapDataViewApiService service
+// CorrelatedLdapDataViewAPIService CorrelatedLdapDataViewAPI service
+type CorrelatedLdapDataViewAPIService service
 
 type ApiAddCorrelatedLdapDataViewRequest struct {
 	ctx                              context.Context
-	ApiService                       *CorrelatedLdapDataViewApiService
+	ApiService                       *CorrelatedLdapDataViewAPIService
 	scimResourceTypeName             string
 	addCorrelatedLdapDataViewRequest *AddCorrelatedLdapDataViewRequest
 }
@@ -46,7 +46,7 @@ AddCorrelatedLdapDataView Add a new Correlated LDAP Data View to the config
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiAddCorrelatedLdapDataViewRequest
 */
-func (a *CorrelatedLdapDataViewApiService) AddCorrelatedLdapDataView(ctx context.Context, scimResourceTypeName string) ApiAddCorrelatedLdapDataViewRequest {
+func (a *CorrelatedLdapDataViewAPIService) AddCorrelatedLdapDataView(ctx context.Context, scimResourceTypeName string) ApiAddCorrelatedLdapDataViewRequest {
 	return ApiAddCorrelatedLdapDataViewRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -57,7 +57,7 @@ func (a *CorrelatedLdapDataViewApiService) AddCorrelatedLdapDataView(ctx context
 // Execute executes the request
 //
 //	@return CorrelatedLdapDataViewResponse
-func (a *CorrelatedLdapDataViewApiService) AddCorrelatedLdapDataViewExecute(r ApiAddCorrelatedLdapDataViewRequest) (*CorrelatedLdapDataViewResponse, *http.Response, error) {
+func (a *CorrelatedLdapDataViewAPIService) AddCorrelatedLdapDataViewExecute(r ApiAddCorrelatedLdapDataViewRequest) (*CorrelatedLdapDataViewResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *CorrelatedLdapDataViewApiService) AddCorrelatedLdapDataViewExecute(r Ap
 		localVarReturnValue *CorrelatedLdapDataViewResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewApiService.AddCorrelatedLdapDataView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewAPIService.AddCorrelatedLdapDataView")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *CorrelatedLdapDataViewApiService) AddCorrelatedLdapDataViewExecute(r Ap
 
 type ApiDeleteCorrelatedLdapDataViewRequest struct {
 	ctx                        context.Context
-	ApiService                 *CorrelatedLdapDataViewApiService
+	ApiService                 *CorrelatedLdapDataViewAPIService
 	correlatedLdapDataViewName string
 	scimResourceTypeName       string
 }
@@ -155,7 +155,7 @@ DeleteCorrelatedLdapDataView Delete a Correlated LDAP Data View
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiDeleteCorrelatedLdapDataViewRequest
 */
-func (a *CorrelatedLdapDataViewApiService) DeleteCorrelatedLdapDataView(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiDeleteCorrelatedLdapDataViewRequest {
+func (a *CorrelatedLdapDataViewAPIService) DeleteCorrelatedLdapDataView(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiDeleteCorrelatedLdapDataViewRequest {
 	return ApiDeleteCorrelatedLdapDataViewRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -165,14 +165,14 @@ func (a *CorrelatedLdapDataViewApiService) DeleteCorrelatedLdapDataView(ctx cont
 }
 
 // Execute executes the request
-func (a *CorrelatedLdapDataViewApiService) DeleteCorrelatedLdapDataViewExecute(r ApiDeleteCorrelatedLdapDataViewRequest) (*http.Response, error) {
+func (a *CorrelatedLdapDataViewAPIService) DeleteCorrelatedLdapDataViewExecute(r ApiDeleteCorrelatedLdapDataViewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewApiService.DeleteCorrelatedLdapDataView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewAPIService.DeleteCorrelatedLdapDataView")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *CorrelatedLdapDataViewApiService) DeleteCorrelatedLdapDataViewExecute(r
 
 type ApiGetCorrelatedLdapDataViewRequest struct {
 	ctx                        context.Context
-	ApiService                 *CorrelatedLdapDataViewApiService
+	ApiService                 *CorrelatedLdapDataViewAPIService
 	correlatedLdapDataViewName string
 	scimResourceTypeName       string
 }
@@ -249,7 +249,7 @@ GetCorrelatedLdapDataView Returns a single Correlated LDAP Data View
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiGetCorrelatedLdapDataViewRequest
 */
-func (a *CorrelatedLdapDataViewApiService) GetCorrelatedLdapDataView(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiGetCorrelatedLdapDataViewRequest {
+func (a *CorrelatedLdapDataViewAPIService) GetCorrelatedLdapDataView(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiGetCorrelatedLdapDataViewRequest {
 	return ApiGetCorrelatedLdapDataViewRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -261,7 +261,7 @@ func (a *CorrelatedLdapDataViewApiService) GetCorrelatedLdapDataView(ctx context
 // Execute executes the request
 //
 //	@return CorrelatedLdapDataViewResponse
-func (a *CorrelatedLdapDataViewApiService) GetCorrelatedLdapDataViewExecute(r ApiGetCorrelatedLdapDataViewRequest) (*CorrelatedLdapDataViewResponse, *http.Response, error) {
+func (a *CorrelatedLdapDataViewAPIService) GetCorrelatedLdapDataViewExecute(r ApiGetCorrelatedLdapDataViewRequest) (*CorrelatedLdapDataViewResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *CorrelatedLdapDataViewApiService) GetCorrelatedLdapDataViewExecute(r Ap
 		localVarReturnValue *CorrelatedLdapDataViewResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewApiService.GetCorrelatedLdapDataView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewAPIService.GetCorrelatedLdapDataView")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *CorrelatedLdapDataViewApiService) GetCorrelatedLdapDataViewExecute(r Ap
 
 type ApiListCorrelatedLdapDataViewsRequest struct {
 	ctx                  context.Context
-	ApiService           *CorrelatedLdapDataViewApiService
+	ApiService           *CorrelatedLdapDataViewAPIService
 	scimResourceTypeName string
 	filter               *string
 }
@@ -360,7 +360,7 @@ ListCorrelatedLdapDataViews Returns a list of all Correlated LDAP Data View obje
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiListCorrelatedLdapDataViewsRequest
 */
-func (a *CorrelatedLdapDataViewApiService) ListCorrelatedLdapDataViews(ctx context.Context, scimResourceTypeName string) ApiListCorrelatedLdapDataViewsRequest {
+func (a *CorrelatedLdapDataViewAPIService) ListCorrelatedLdapDataViews(ctx context.Context, scimResourceTypeName string) ApiListCorrelatedLdapDataViewsRequest {
 	return ApiListCorrelatedLdapDataViewsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -371,7 +371,7 @@ func (a *CorrelatedLdapDataViewApiService) ListCorrelatedLdapDataViews(ctx conte
 // Execute executes the request
 //
 //	@return CorrelatedLdapDataViewListResponse
-func (a *CorrelatedLdapDataViewApiService) ListCorrelatedLdapDataViewsExecute(r ApiListCorrelatedLdapDataViewsRequest) (*CorrelatedLdapDataViewListResponse, *http.Response, error) {
+func (a *CorrelatedLdapDataViewAPIService) ListCorrelatedLdapDataViewsExecute(r ApiListCorrelatedLdapDataViewsRequest) (*CorrelatedLdapDataViewListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *CorrelatedLdapDataViewApiService) ListCorrelatedLdapDataViewsExecute(r 
 		localVarReturnValue *CorrelatedLdapDataViewListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewApiService.ListCorrelatedLdapDataViews")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewAPIService.ListCorrelatedLdapDataViews")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *CorrelatedLdapDataViewApiService) ListCorrelatedLdapDataViewsExecute(r 
 
 type ApiUpdateCorrelatedLdapDataViewRequest struct {
 	ctx                        context.Context
-	ApiService                 *CorrelatedLdapDataViewApiService
+	ApiService                 *CorrelatedLdapDataViewAPIService
 	correlatedLdapDataViewName string
 	scimResourceTypeName       string
 	updateRequest              *UpdateRequest
@@ -474,7 +474,7 @@ UpdateCorrelatedLdapDataView Update an existing Correlated LDAP Data View by nam
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiUpdateCorrelatedLdapDataViewRequest
 */
-func (a *CorrelatedLdapDataViewApiService) UpdateCorrelatedLdapDataView(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiUpdateCorrelatedLdapDataViewRequest {
+func (a *CorrelatedLdapDataViewAPIService) UpdateCorrelatedLdapDataView(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiUpdateCorrelatedLdapDataViewRequest {
 	return ApiUpdateCorrelatedLdapDataViewRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -486,7 +486,7 @@ func (a *CorrelatedLdapDataViewApiService) UpdateCorrelatedLdapDataView(ctx cont
 // Execute executes the request
 //
 //	@return CorrelatedLdapDataViewResponse
-func (a *CorrelatedLdapDataViewApiService) UpdateCorrelatedLdapDataViewExecute(r ApiUpdateCorrelatedLdapDataViewRequest) (*CorrelatedLdapDataViewResponse, *http.Response, error) {
+func (a *CorrelatedLdapDataViewAPIService) UpdateCorrelatedLdapDataViewExecute(r ApiUpdateCorrelatedLdapDataViewRequest) (*CorrelatedLdapDataViewResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *CorrelatedLdapDataViewApiService) UpdateCorrelatedLdapDataViewExecute(r
 		localVarReturnValue *CorrelatedLdapDataViewResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewApiService.UpdateCorrelatedLdapDataView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CorrelatedLdapDataViewAPIService.UpdateCorrelatedLdapDataView")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Correlated LDAP Data View | 
 **Schemas** | Pointer to [**[]EnumcorrelatedLdapDataViewSchemaUrn**](EnumcorrelatedLdapDataViewSchemaUrn.md) |  | [optional] 
 **StructuralLDAPObjectclass** | **string** | Specifies the LDAP structural object class that should be exposed by this Correlated LDAP Data View. | 
 **AuxiliaryLDAPObjectclass** | Pointer to **[]string** | Specifies an auxiliary LDAP object class that should be exposed by this Correlated LDAP Data View. | [optional] 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **SecondaryCorrelationAttribute** | **string** | The LDAP attribute from the Correlated LDAP Data View whose value will be matched with the primary-correlation-attribute. If multiple correlation attributes are required they may be specified by creating additional correlation-attribute-pairs. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Correlated LDAP Data View | 
 
 ## Methods
 
 ### NewCorrelatedLdapDataViewResponse
 
-`func NewCorrelatedLdapDataViewResponse(id string, structuralLDAPObjectclass string, includeBaseDN string, primaryCorrelationAttribute string, secondaryCorrelationAttribute string, ) *CorrelatedLdapDataViewResponse`
+`func NewCorrelatedLdapDataViewResponse(structuralLDAPObjectclass string, includeBaseDN string, primaryCorrelationAttribute string, secondaryCorrelationAttribute string, id string, ) *CorrelatedLdapDataViewResponse`
 
 NewCorrelatedLdapDataViewResponse instantiates a new CorrelatedLdapDataViewResponse object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewCorrelatedLdapDataViewResponseWithDefaults instantiates a new CorrelatedLdapDataViewResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *CorrelatedLdapDataViewResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CorrelatedLdapDataViewResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CorrelatedLdapDataViewResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -310,6 +290,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *CorrelatedLdapDataViewResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *CorrelatedLdapDataViewResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *CorrelatedLdapDataViewResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *CorrelatedLdapDataViewResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

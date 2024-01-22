@@ -19,9 +19,7 @@ var _ MappedNullable = &AddReplicationAssurancePolicyRequest{}
 
 // AddReplicationAssurancePolicyRequest struct for AddReplicationAssurancePolicyRequest
 type AddReplicationAssurancePolicyRequest struct {
-	// Name of the new Replication Assurance Policy
-	PolicyName string                                    `json:"policyName"`
-	Schemas    []EnumreplicationAssurancePolicySchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumreplicationAssurancePolicySchemaUrn `json:"schemas,omitempty"`
 	// Description of the Replication Assurance Policy.
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it.
@@ -36,17 +34,19 @@ type AddReplicationAssurancePolicyRequest struct {
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// Specifies a request criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
+	// Name of the new Replication Assurance Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddReplicationAssurancePolicyRequest instantiates a new AddReplicationAssurancePolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddReplicationAssurancePolicyRequest(policyName string, evaluationOrderIndex int64, timeout string) *AddReplicationAssurancePolicyRequest {
+func NewAddReplicationAssurancePolicyRequest(evaluationOrderIndex int64, timeout string, policyName string) *AddReplicationAssurancePolicyRequest {
 	this := AddReplicationAssurancePolicyRequest{}
-	this.PolicyName = policyName
 	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.Timeout = timeout
+	this.PolicyName = policyName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddReplicationAssurancePolicyRequest(policyName string, evaluationOrderI
 func NewAddReplicationAssurancePolicyRequestWithDefaults() *AddReplicationAssurancePolicyRequest {
 	this := AddReplicationAssurancePolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddReplicationAssurancePolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddReplicationAssurancePolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddReplicationAssurancePolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -354,6 +330,30 @@ func (o *AddReplicationAssurancePolicyRequest) SetRequestCriteria(v string) {
 	o.RequestCriteria = &v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddReplicationAssurancePolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddReplicationAssurancePolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddReplicationAssurancePolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddReplicationAssurancePolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -364,7 +364,6 @@ func (o AddReplicationAssurancePolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddReplicationAssurancePolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -388,6 +387,7 @@ func (o AddReplicationAssurancePolicyRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

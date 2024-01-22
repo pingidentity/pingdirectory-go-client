@@ -19,8 +19,6 @@ var _ MappedNullable = &ReplicationAssuranceResultCriteriaResponse{}
 
 // ReplicationAssuranceResultCriteriaResponse struct for ReplicationAssuranceResultCriteriaResponse
 type ReplicationAssuranceResultCriteriaResponse struct {
-	// Name of the Result Criteria
-	Id                       string                                            `json:"id"`
 	Schemas                  []EnumreplicationAssuranceResultCriteriaSchemaUrn `json:"schemas"`
 	LocalAssuranceLevel      []EnumresultCriteriaLocalAssuranceLevelProp       `json:"localAssuranceLevel"`
 	RemoteAssuranceLevel     []EnumresultCriteriaRemoteAssuranceLevelProp      `json:"remoteAssuranceLevel"`
@@ -34,18 +32,20 @@ type ReplicationAssuranceResultCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Result Criteria
+	Id string `json:"id"`
 }
 
 // NewReplicationAssuranceResultCriteriaResponse instantiates a new ReplicationAssuranceResultCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReplicationAssuranceResultCriteriaResponse(id string, schemas []EnumreplicationAssuranceResultCriteriaSchemaUrn, localAssuranceLevel []EnumresultCriteriaLocalAssuranceLevelProp, remoteAssuranceLevel []EnumresultCriteriaRemoteAssuranceLevelProp) *ReplicationAssuranceResultCriteriaResponse {
+func NewReplicationAssuranceResultCriteriaResponse(schemas []EnumreplicationAssuranceResultCriteriaSchemaUrn, localAssuranceLevel []EnumresultCriteriaLocalAssuranceLevelProp, remoteAssuranceLevel []EnumresultCriteriaRemoteAssuranceLevelProp, id string) *ReplicationAssuranceResultCriteriaResponse {
 	this := ReplicationAssuranceResultCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.LocalAssuranceLevel = localAssuranceLevel
 	this.RemoteAssuranceLevel = remoteAssuranceLevel
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewReplicationAssuranceResultCriteriaResponse(id string, schemas []Enumrepl
 func NewReplicationAssuranceResultCriteriaResponseWithDefaults() *ReplicationAssuranceResultCriteriaResponse {
 	this := ReplicationAssuranceResultCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ReplicationAssuranceResultCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ReplicationAssuranceResultCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ReplicationAssuranceResultCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -409,6 +385,30 @@ func (o *ReplicationAssuranceResultCriteriaResponse) SetUrnpingidentityschemasco
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ReplicationAssuranceResultCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ReplicationAssuranceResultCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ReplicationAssuranceResultCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ReplicationAssuranceResultCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -419,7 +419,6 @@ func (o ReplicationAssuranceResultCriteriaResponse) MarshalJSON() ([]byte, error
 
 func (o ReplicationAssuranceResultCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["localAssuranceLevel"] = o.LocalAssuranceLevel
 	toSerialize["remoteAssuranceLevel"] = o.RemoteAssuranceLevel
@@ -447,6 +446,7 @@ func (o ReplicationAssuranceResultCriteriaResponse) ToMap() (map[string]interfac
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

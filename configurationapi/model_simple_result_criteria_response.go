@@ -19,8 +19,6 @@ var _ MappedNullable = &SimpleResultCriteriaResponse{}
 
 // SimpleResultCriteriaResponse struct for SimpleResultCriteriaResponse
 type SimpleResultCriteriaResponse struct {
-	// Name of the Result Criteria
-	Id      string                              `json:"id"`
 	Schemas []EnumsimpleResultCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for operations included in this Simple Result Criteria.
 	RequestCriteria        *string                                       `json:"requestCriteria,omitempty"`
@@ -70,16 +68,18 @@ type SimpleResultCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Result Criteria
+	Id string `json:"id"`
 }
 
 // NewSimpleResultCriteriaResponse instantiates a new SimpleResultCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSimpleResultCriteriaResponse(id string, schemas []EnumsimpleResultCriteriaSchemaUrn) *SimpleResultCriteriaResponse {
+func NewSimpleResultCriteriaResponse(schemas []EnumsimpleResultCriteriaSchemaUrn, id string) *SimpleResultCriteriaResponse {
 	this := SimpleResultCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -89,30 +89,6 @@ func NewSimpleResultCriteriaResponse(id string, schemas []EnumsimpleResultCriter
 func NewSimpleResultCriteriaResponseWithDefaults() *SimpleResultCriteriaResponse {
 	this := SimpleResultCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SimpleResultCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SimpleResultCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SimpleResultCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1163,6 +1139,30 @@ func (o *SimpleResultCriteriaResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SimpleResultCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SimpleResultCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SimpleResultCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SimpleResultCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1173,7 +1173,6 @@ func (o SimpleResultCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o SimpleResultCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
@@ -1271,6 +1270,7 @@ func (o SimpleResultCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

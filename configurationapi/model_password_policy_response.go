@@ -19,8 +19,6 @@ var _ MappedNullable = &PasswordPolicyResponse{}
 
 // PasswordPolicyResponse struct for PasswordPolicyResponse
 type PasswordPolicyResponse struct {
-	// Name of the Password Policy
-	Id      string                        `json:"id"`
 	Schemas []EnumpasswordPolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this Password Policy
 	Description *string `json:"description,omitempty"`
@@ -39,6 +37,8 @@ type PasswordPolicyResponse struct {
 	DefaultPasswordStorageScheme []string `json:"defaultPasswordStorageScheme"`
 	// Specifies the names of the password storage schemes that are considered deprecated for this password policy.
 	DeprecatedPasswordStorageScheme []string `json:"deprecatedPasswordStorageScheme,omitempty"`
+	// Indicates whether to re-encode passwords on authentication if the configuration for the underlying password storage scheme has changed.
+	ReEncodePasswordsOnSchemeConfigChange *bool `json:"reEncodePasswordsOnSchemeConfigChange,omitempty"`
 	// Indicates whether user entries can have multiple distinct values for the password attribute.
 	AllowMultiplePasswordValues *bool                                           `json:"allowMultiplePasswordValues,omitempty"`
 	AllowPreEncodedPasswords    *EnumpasswordPolicyAllowPreEncodedPasswordsProp `json:"allowPreEncodedPasswords,omitempty"`
@@ -117,17 +117,19 @@ type PasswordPolicyResponse struct {
 	PreviousLastLoginTimeFormat                   []string                                           `json:"previousLastLoginTimeFormat,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Policy
+	Id string `json:"id"`
 }
 
 // NewPasswordPolicyResponse instantiates a new PasswordPolicyResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPasswordPolicyResponse(id string, passwordAttribute string, defaultPasswordStorageScheme []string) *PasswordPolicyResponse {
+func NewPasswordPolicyResponse(passwordAttribute string, defaultPasswordStorageScheme []string, id string) *PasswordPolicyResponse {
 	this := PasswordPolicyResponse{}
-	this.Id = id
 	this.PasswordAttribute = passwordAttribute
 	this.DefaultPasswordStorageScheme = defaultPasswordStorageScheme
+	this.Id = id
 	return &this
 }
 
@@ -137,30 +139,6 @@ func NewPasswordPolicyResponse(id string, passwordAttribute string, defaultPassw
 func NewPasswordPolicyResponseWithDefaults() *PasswordPolicyResponse {
 	this := PasswordPolicyResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *PasswordPolicyResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PasswordPolicyResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *PasswordPolicyResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -465,6 +443,38 @@ func (o *PasswordPolicyResponse) HasDeprecatedPasswordStorageScheme() bool {
 // SetDeprecatedPasswordStorageScheme gets a reference to the given []string and assigns it to the DeprecatedPasswordStorageScheme field.
 func (o *PasswordPolicyResponse) SetDeprecatedPasswordStorageScheme(v []string) {
 	o.DeprecatedPasswordStorageScheme = v
+}
+
+// GetReEncodePasswordsOnSchemeConfigChange returns the ReEncodePasswordsOnSchemeConfigChange field value if set, zero value otherwise.
+func (o *PasswordPolicyResponse) GetReEncodePasswordsOnSchemeConfigChange() bool {
+	if o == nil || IsNil(o.ReEncodePasswordsOnSchemeConfigChange) {
+		var ret bool
+		return ret
+	}
+	return *o.ReEncodePasswordsOnSchemeConfigChange
+}
+
+// GetReEncodePasswordsOnSchemeConfigChangeOk returns a tuple with the ReEncodePasswordsOnSchemeConfigChange field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PasswordPolicyResponse) GetReEncodePasswordsOnSchemeConfigChangeOk() (*bool, bool) {
+	if o == nil || IsNil(o.ReEncodePasswordsOnSchemeConfigChange) {
+		return nil, false
+	}
+	return o.ReEncodePasswordsOnSchemeConfigChange, true
+}
+
+// HasReEncodePasswordsOnSchemeConfigChange returns a boolean if a field has been set.
+func (o *PasswordPolicyResponse) HasReEncodePasswordsOnSchemeConfigChange() bool {
+	if o != nil && !IsNil(o.ReEncodePasswordsOnSchemeConfigChange) {
+		return true
+	}
+
+	return false
+}
+
+// SetReEncodePasswordsOnSchemeConfigChange gets a reference to the given bool and assigns it to the ReEncodePasswordsOnSchemeConfigChange field.
+func (o *PasswordPolicyResponse) SetReEncodePasswordsOnSchemeConfigChange(v bool) {
+	o.ReEncodePasswordsOnSchemeConfigChange = &v
 }
 
 // GetAllowMultiplePasswordValues returns the AllowMultiplePasswordValues field value if set, zero value otherwise.
@@ -1843,6 +1853,30 @@ func (o *PasswordPolicyResponse) SetUrnpingidentityschemasconfigurationmessages2
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *PasswordPolicyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *PasswordPolicyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *PasswordPolicyResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o PasswordPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1853,7 +1887,6 @@ func (o PasswordPolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o PasswordPolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -1879,6 +1912,9 @@ func (o PasswordPolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize["defaultPasswordStorageScheme"] = o.DefaultPasswordStorageScheme
 	if !IsNil(o.DeprecatedPasswordStorageScheme) {
 		toSerialize["deprecatedPasswordStorageScheme"] = o.DeprecatedPasswordStorageScheme
+	}
+	if !IsNil(o.ReEncodePasswordsOnSchemeConfigChange) {
+		toSerialize["reEncodePasswordsOnSchemeConfigChange"] = o.ReEncodePasswordsOnSchemeConfigChange
 	}
 	if !IsNil(o.AllowMultiplePasswordValues) {
 		toSerialize["allowMultiplePasswordValues"] = o.AllowMultiplePasswordValues
@@ -2009,6 +2045,7 @@ func (o PasswordPolicyResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

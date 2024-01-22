@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// DebugTargetApiService DebugTargetApi service
-type DebugTargetApiService service
+// DebugTargetAPIService DebugTargetAPI service
+type DebugTargetAPIService service
 
 type ApiAddDebugTargetRequest struct {
 	ctx                   context.Context
-	ApiService            *DebugTargetApiService
+	ApiService            *DebugTargetAPIService
 	logPublisherName      string
 	addDebugTargetRequest *AddDebugTargetRequest
 }
@@ -46,7 +46,7 @@ AddDebugTarget Add a new Debug Target to the config
 	@param logPublisherName Name of the Log Publisher
 	@return ApiAddDebugTargetRequest
 */
-func (a *DebugTargetApiService) AddDebugTarget(ctx context.Context, logPublisherName string) ApiAddDebugTargetRequest {
+func (a *DebugTargetAPIService) AddDebugTarget(ctx context.Context, logPublisherName string) ApiAddDebugTargetRequest {
 	return ApiAddDebugTargetRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -57,7 +57,7 @@ func (a *DebugTargetApiService) AddDebugTarget(ctx context.Context, logPublisher
 // Execute executes the request
 //
 //	@return DebugTargetResponse
-func (a *DebugTargetApiService) AddDebugTargetExecute(r ApiAddDebugTargetRequest) (*DebugTargetResponse, *http.Response, error) {
+func (a *DebugTargetAPIService) AddDebugTargetExecute(r ApiAddDebugTargetRequest) (*DebugTargetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *DebugTargetApiService) AddDebugTargetExecute(r ApiAddDebugTargetRequest
 		localVarReturnValue *DebugTargetResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetApiService.AddDebugTarget")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetAPIService.AddDebugTarget")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *DebugTargetApiService) AddDebugTargetExecute(r ApiAddDebugTargetRequest
 
 type ApiDeleteDebugTargetRequest struct {
 	ctx              context.Context
-	ApiService       *DebugTargetApiService
+	ApiService       *DebugTargetAPIService
 	debugTargetName  string
 	logPublisherName string
 }
@@ -155,7 +155,7 @@ DeleteDebugTarget Delete a Debug Target
 	@param logPublisherName Name of the Log Publisher
 	@return ApiDeleteDebugTargetRequest
 */
-func (a *DebugTargetApiService) DeleteDebugTarget(ctx context.Context, debugTargetName string, logPublisherName string) ApiDeleteDebugTargetRequest {
+func (a *DebugTargetAPIService) DeleteDebugTarget(ctx context.Context, debugTargetName string, logPublisherName string) ApiDeleteDebugTargetRequest {
 	return ApiDeleteDebugTargetRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -165,14 +165,14 @@ func (a *DebugTargetApiService) DeleteDebugTarget(ctx context.Context, debugTarg
 }
 
 // Execute executes the request
-func (a *DebugTargetApiService) DeleteDebugTargetExecute(r ApiDeleteDebugTargetRequest) (*http.Response, error) {
+func (a *DebugTargetAPIService) DeleteDebugTargetExecute(r ApiDeleteDebugTargetRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetApiService.DeleteDebugTarget")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetAPIService.DeleteDebugTarget")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *DebugTargetApiService) DeleteDebugTargetExecute(r ApiDeleteDebugTargetR
 
 type ApiGetDebugTargetRequest struct {
 	ctx              context.Context
-	ApiService       *DebugTargetApiService
+	ApiService       *DebugTargetAPIService
 	debugTargetName  string
 	logPublisherName string
 }
@@ -249,7 +249,7 @@ GetDebugTarget Returns a single Debug Target
 	@param logPublisherName Name of the Log Publisher
 	@return ApiGetDebugTargetRequest
 */
-func (a *DebugTargetApiService) GetDebugTarget(ctx context.Context, debugTargetName string, logPublisherName string) ApiGetDebugTargetRequest {
+func (a *DebugTargetAPIService) GetDebugTarget(ctx context.Context, debugTargetName string, logPublisherName string) ApiGetDebugTargetRequest {
 	return ApiGetDebugTargetRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -261,7 +261,7 @@ func (a *DebugTargetApiService) GetDebugTarget(ctx context.Context, debugTargetN
 // Execute executes the request
 //
 //	@return DebugTargetResponse
-func (a *DebugTargetApiService) GetDebugTargetExecute(r ApiGetDebugTargetRequest) (*DebugTargetResponse, *http.Response, error) {
+func (a *DebugTargetAPIService) GetDebugTargetExecute(r ApiGetDebugTargetRequest) (*DebugTargetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *DebugTargetApiService) GetDebugTargetExecute(r ApiGetDebugTargetRequest
 		localVarReturnValue *DebugTargetResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetApiService.GetDebugTarget")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetAPIService.GetDebugTarget")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *DebugTargetApiService) GetDebugTargetExecute(r ApiGetDebugTargetRequest
 
 type ApiListDebugTargetsRequest struct {
 	ctx              context.Context
-	ApiService       *DebugTargetApiService
+	ApiService       *DebugTargetAPIService
 	logPublisherName string
 	filter           *string
 }
@@ -360,7 +360,7 @@ ListDebugTargets Returns a list of all Debug Target objects
 	@param logPublisherName Name of the Log Publisher
 	@return ApiListDebugTargetsRequest
 */
-func (a *DebugTargetApiService) ListDebugTargets(ctx context.Context, logPublisherName string) ApiListDebugTargetsRequest {
+func (a *DebugTargetAPIService) ListDebugTargets(ctx context.Context, logPublisherName string) ApiListDebugTargetsRequest {
 	return ApiListDebugTargetsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -371,7 +371,7 @@ func (a *DebugTargetApiService) ListDebugTargets(ctx context.Context, logPublish
 // Execute executes the request
 //
 //	@return DebugTargetListResponse
-func (a *DebugTargetApiService) ListDebugTargetsExecute(r ApiListDebugTargetsRequest) (*DebugTargetListResponse, *http.Response, error) {
+func (a *DebugTargetAPIService) ListDebugTargetsExecute(r ApiListDebugTargetsRequest) (*DebugTargetListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *DebugTargetApiService) ListDebugTargetsExecute(r ApiListDebugTargetsReq
 		localVarReturnValue *DebugTargetListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetApiService.ListDebugTargets")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetAPIService.ListDebugTargets")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *DebugTargetApiService) ListDebugTargetsExecute(r ApiListDebugTargetsReq
 
 type ApiUpdateDebugTargetRequest struct {
 	ctx              context.Context
-	ApiService       *DebugTargetApiService
+	ApiService       *DebugTargetAPIService
 	debugTargetName  string
 	logPublisherName string
 	updateRequest    *UpdateRequest
@@ -474,7 +474,7 @@ UpdateDebugTarget Update an existing Debug Target by name
 	@param logPublisherName Name of the Log Publisher
 	@return ApiUpdateDebugTargetRequest
 */
-func (a *DebugTargetApiService) UpdateDebugTarget(ctx context.Context, debugTargetName string, logPublisherName string) ApiUpdateDebugTargetRequest {
+func (a *DebugTargetAPIService) UpdateDebugTarget(ctx context.Context, debugTargetName string, logPublisherName string) ApiUpdateDebugTargetRequest {
 	return ApiUpdateDebugTargetRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -486,7 +486,7 @@ func (a *DebugTargetApiService) UpdateDebugTarget(ctx context.Context, debugTarg
 // Execute executes the request
 //
 //	@return DebugTargetResponse
-func (a *DebugTargetApiService) UpdateDebugTargetExecute(r ApiUpdateDebugTargetRequest) (*DebugTargetResponse, *http.Response, error) {
+func (a *DebugTargetAPIService) UpdateDebugTargetExecute(r ApiUpdateDebugTargetRequest) (*DebugTargetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *DebugTargetApiService) UpdateDebugTargetExecute(r ApiUpdateDebugTargetR
 		localVarReturnValue *DebugTargetResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetApiService.UpdateDebugTarget")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DebugTargetAPIService.UpdateDebugTarget")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

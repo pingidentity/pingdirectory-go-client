@@ -19,8 +19,6 @@ var _ MappedNullable = &JdbcBasedErrorLogPublisherResponse{}
 
 // JdbcBasedErrorLogPublisherResponse struct for JdbcBasedErrorLogPublisherResponse
 type JdbcBasedErrorLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id      string                                    `json:"id"`
 	Schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn `json:"schemas"`
 	// The JDBC-based Database Server to use for a connection.
 	Server string `json:"server"`
@@ -40,20 +38,22 @@ type JdbcBasedErrorLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewJdbcBasedErrorLogPublisherResponse instantiates a new JdbcBasedErrorLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJdbcBasedErrorLogPublisherResponse(id string, schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn, server string, logFieldMapping string, logTableName string, enabled bool) *JdbcBasedErrorLogPublisherResponse {
+func NewJdbcBasedErrorLogPublisherResponse(schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn, server string, logFieldMapping string, logTableName string, enabled bool, id string) *JdbcBasedErrorLogPublisherResponse {
 	this := JdbcBasedErrorLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Server = server
 	this.LogFieldMapping = logFieldMapping
 	this.LogTableName = logTableName
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewJdbcBasedErrorLogPublisherResponse(id string, schemas []EnumjdbcBasedErr
 func NewJdbcBasedErrorLogPublisherResponseWithDefaults() *JdbcBasedErrorLogPublisherResponse {
 	this := JdbcBasedErrorLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *JdbcBasedErrorLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *JdbcBasedErrorLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *JdbcBasedErrorLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -433,6 +409,30 @@ func (o *JdbcBasedErrorLogPublisherResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *JdbcBasedErrorLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *JdbcBasedErrorLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *JdbcBasedErrorLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o JdbcBasedErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -443,7 +443,6 @@ func (o JdbcBasedErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 
 func (o JdbcBasedErrorLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["server"] = o.Server
 	toSerialize["logFieldMapping"] = o.LogFieldMapping
@@ -470,6 +469,7 @@ func (o JdbcBasedErrorLogPublisherResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

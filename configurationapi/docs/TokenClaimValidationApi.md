@@ -1,14 +1,14 @@
-# \TokenClaimValidationApi
+# \TokenClaimValidationAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddTokenClaimValidation**](TokenClaimValidationApi.md#AddTokenClaimValidation) | **Post** /id-token-validators/{id-token-validator-name}/token-claim-validations | Add a new Token Claim Validation to the config
-[**DeleteTokenClaimValidation**](TokenClaimValidationApi.md#DeleteTokenClaimValidation) | **Delete** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Delete a Token Claim Validation
-[**GetTokenClaimValidation**](TokenClaimValidationApi.md#GetTokenClaimValidation) | **Get** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Returns a single Token Claim Validation
-[**ListTokenClaimValidations**](TokenClaimValidationApi.md#ListTokenClaimValidations) | **Get** /id-token-validators/{id-token-validator-name}/token-claim-validations | Returns a list of all Token Claim Validation objects
-[**UpdateTokenClaimValidation**](TokenClaimValidationApi.md#UpdateTokenClaimValidation) | **Patch** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Update an existing Token Claim Validation by name
+[**AddTokenClaimValidation**](TokenClaimValidationAPI.md#AddTokenClaimValidation) | **Post** /id-token-validators/{id-token-validator-name}/token-claim-validations | Add a new Token Claim Validation to the config
+[**DeleteTokenClaimValidation**](TokenClaimValidationAPI.md#DeleteTokenClaimValidation) | **Delete** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Delete a Token Claim Validation
+[**GetTokenClaimValidation**](TokenClaimValidationAPI.md#GetTokenClaimValidation) | **Get** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Returns a single Token Claim Validation
+[**ListTokenClaimValidations**](TokenClaimValidationAPI.md#ListTokenClaimValidations) | **Get** /id-token-validators/{id-token-validator-name}/token-claim-validations | Returns a list of all Token Claim Validation objects
+[**UpdateTokenClaimValidation**](TokenClaimValidationAPI.md#UpdateTokenClaimValidation) | **Patch** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Update an existing Token Claim Validation by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     idTokenValidatorName := "idTokenValidatorName_example" // string | Name of the ID Token Validator
-    addTokenClaimValidationRequest := openapiclient.add_token_claim_validation_request{AddBooleanTokenClaimValidationRequest: openapiclient.NewAddBooleanTokenClaimValidationRequest("ValidationName_example", []openapiclient.EnumbooleanTokenClaimValidationSchemaUrn{openapiclient.Enumboolean-token-claim-validationSchemaUrn("urn:pingidentity:schemas:configuration:2.0:token-claim-validation:boolean")}, openapiclient.Enumtoken-claim-validation-requiredValueProp("true"), "ClaimName_example")} // AddTokenClaimValidationRequest | Create a new Token Claim Validation in the config
+    addTokenClaimValidationRequest := openapiclient.add_token_claim_validation_request{AddBooleanTokenClaimValidationRequest: openapiclient.NewAddBooleanTokenClaimValidationRequest([]openapiclient.EnumbooleanTokenClaimValidationSchemaUrn{openapiclient.Enumboolean-token-claim-validationSchemaUrn("urn:pingidentity:schemas:configuration:2.0:token-claim-validation:boolean")}, openapiclient.Enumtoken-claim-validation-requiredValueProp("true"), "ClaimName_example", "ValidationName_example")} // AddTokenClaimValidationRequest | Create a new Token Claim Validation in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenClaimValidationApi.AddTokenClaimValidation(context.Background(), idTokenValidatorName).AddTokenClaimValidationRequest(addTokenClaimValidationRequest).Execute()
+    resp, r, err := apiClient.TokenClaimValidationAPI.AddTokenClaimValidation(context.Background(), idTokenValidatorName).AddTokenClaimValidationRequest(addTokenClaimValidationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationApi.AddTokenClaimValidation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationAPI.AddTokenClaimValidation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddTokenClaimValidation`: AddTokenClaimValidation200Response
-    fmt.Fprintf(os.Stdout, "Response from `TokenClaimValidationApi.AddTokenClaimValidation`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TokenClaimValidationAPI.AddTokenClaimValidation`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TokenClaimValidationApi.DeleteTokenClaimValidation(context.Background(), tokenClaimValidationName, idTokenValidatorName).Execute()
+    r, err := apiClient.TokenClaimValidationAPI.DeleteTokenClaimValidation(context.Background(), tokenClaimValidationName, idTokenValidatorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationApi.DeleteTokenClaimValidation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationAPI.DeleteTokenClaimValidation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenClaimValidationApi.GetTokenClaimValidation(context.Background(), tokenClaimValidationName, idTokenValidatorName).Execute()
+    resp, r, err := apiClient.TokenClaimValidationAPI.GetTokenClaimValidation(context.Background(), tokenClaimValidationName, idTokenValidatorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationApi.GetTokenClaimValidation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationAPI.GetTokenClaimValidation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTokenClaimValidation`: AddTokenClaimValidation200Response
-    fmt.Fprintf(os.Stdout, "Response from `TokenClaimValidationApi.GetTokenClaimValidation`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TokenClaimValidationAPI.GetTokenClaimValidation`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenClaimValidationApi.ListTokenClaimValidations(context.Background(), idTokenValidatorName).Filter(filter).Execute()
+    resp, r, err := apiClient.TokenClaimValidationAPI.ListTokenClaimValidations(context.Background(), idTokenValidatorName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationApi.ListTokenClaimValidations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationAPI.ListTokenClaimValidations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListTokenClaimValidations`: TokenClaimValidationListResponse
-    fmt.Fprintf(os.Stdout, "Response from `TokenClaimValidationApi.ListTokenClaimValidations`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TokenClaimValidationAPI.ListTokenClaimValidations`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TokenClaimValidationApi.UpdateTokenClaimValidation(context.Background(), tokenClaimValidationName, idTokenValidatorName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.TokenClaimValidationAPI.UpdateTokenClaimValidation(context.Background(), tokenClaimValidationName, idTokenValidatorName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationApi.UpdateTokenClaimValidation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationAPI.UpdateTokenClaimValidation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateTokenClaimValidation`: AddTokenClaimValidation200Response
-    fmt.Fprintf(os.Stdout, "Response from `TokenClaimValidationApi.UpdateTokenClaimValidation`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TokenClaimValidationAPI.UpdateTokenClaimValidation`: %v\n", resp)
 }
 ```
 

@@ -1,14 +1,14 @@
-# \PassThroughAuthenticationHandlerApi
+# \PassThroughAuthenticationHandlerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerApi.md#AddPassThroughAuthenticationHandler) | **Post** /pass-through-authentication-handlers | Add a new Pass Through Authentication Handler to the config
-[**DeletePassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerApi.md#DeletePassThroughAuthenticationHandler) | **Delete** /pass-through-authentication-handlers/{pass-through-authentication-handler-name} | Delete a Pass Through Authentication Handler
-[**GetPassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerApi.md#GetPassThroughAuthenticationHandler) | **Get** /pass-through-authentication-handlers/{pass-through-authentication-handler-name} | Returns a single Pass Through Authentication Handler
-[**ListPassThroughAuthenticationHandlers**](PassThroughAuthenticationHandlerApi.md#ListPassThroughAuthenticationHandlers) | **Get** /pass-through-authentication-handlers | Returns a list of all Pass Through Authentication Handler objects
-[**UpdatePassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerApi.md#UpdatePassThroughAuthenticationHandler) | **Patch** /pass-through-authentication-handlers/{pass-through-authentication-handler-name} | Update an existing Pass Through Authentication Handler by name
+[**AddPassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerAPI.md#AddPassThroughAuthenticationHandler) | **Post** /pass-through-authentication-handlers | Add a new Pass Through Authentication Handler to the config
+[**DeletePassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerAPI.md#DeletePassThroughAuthenticationHandler) | **Delete** /pass-through-authentication-handlers/{pass-through-authentication-handler-name} | Delete a Pass Through Authentication Handler
+[**GetPassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerAPI.md#GetPassThroughAuthenticationHandler) | **Get** /pass-through-authentication-handlers/{pass-through-authentication-handler-name} | Returns a single Pass Through Authentication Handler
+[**ListPassThroughAuthenticationHandlers**](PassThroughAuthenticationHandlerAPI.md#ListPassThroughAuthenticationHandlers) | **Get** /pass-through-authentication-handlers | Returns a list of all Pass Through Authentication Handler objects
+[**UpdatePassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerAPI.md#UpdatePassThroughAuthenticationHandler) | **Patch** /pass-through-authentication-handlers/{pass-through-authentication-handler-name} | Update an existing Pass Through Authentication Handler by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addPassThroughAuthenticationHandlerRequest := openapiclient.add_pass_through_authentication_handler_request{AddAggregatePassThroughAuthenticationHandlerRequest: openapiclient.NewAddAggregatePassThroughAuthenticationHandlerRequest("HandlerName_example", []openapiclient.EnumaggregatePassThroughAuthenticationHandlerSchemaUrn{openapiclient.Enumaggregate-pass-through-authentication-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:aggregate")}, []string{"SubordinatePassThroughAuthenticationHandler_example"})} // AddPassThroughAuthenticationHandlerRequest | Create a new Pass Through Authentication Handler in the config
+    addPassThroughAuthenticationHandlerRequest := openapiclient.add_pass_through_authentication_handler_request{AddAggregatePassThroughAuthenticationHandlerRequest: openapiclient.NewAddAggregatePassThroughAuthenticationHandlerRequest([]openapiclient.EnumaggregatePassThroughAuthenticationHandlerSchemaUrn{openapiclient.Enumaggregate-pass-through-authentication-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:aggregate")}, []string{"SubordinatePassThroughAuthenticationHandler_example"}, "HandlerName_example")} // AddPassThroughAuthenticationHandlerRequest | Create a new Pass Through Authentication Handler in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PassThroughAuthenticationHandlerApi.AddPassThroughAuthenticationHandler(context.Background()).AddPassThroughAuthenticationHandlerRequest(addPassThroughAuthenticationHandlerRequest).Execute()
+    resp, r, err := apiClient.PassThroughAuthenticationHandlerAPI.AddPassThroughAuthenticationHandler(context.Background()).AddPassThroughAuthenticationHandlerRequest(addPassThroughAuthenticationHandlerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerApi.AddPassThroughAuthenticationHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerAPI.AddPassThroughAuthenticationHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddPassThroughAuthenticationHandler`: AddPassThroughAuthenticationHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `PassThroughAuthenticationHandlerApi.AddPassThroughAuthenticationHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PassThroughAuthenticationHandlerAPI.AddPassThroughAuthenticationHandler`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PassThroughAuthenticationHandlerApi.DeletePassThroughAuthenticationHandler(context.Background(), passThroughAuthenticationHandlerName).Execute()
+    r, err := apiClient.PassThroughAuthenticationHandlerAPI.DeletePassThroughAuthenticationHandler(context.Background(), passThroughAuthenticationHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerApi.DeletePassThroughAuthenticationHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerAPI.DeletePassThroughAuthenticationHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PassThroughAuthenticationHandlerApi.GetPassThroughAuthenticationHandler(context.Background(), passThroughAuthenticationHandlerName).Execute()
+    resp, r, err := apiClient.PassThroughAuthenticationHandlerAPI.GetPassThroughAuthenticationHandler(context.Background(), passThroughAuthenticationHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerApi.GetPassThroughAuthenticationHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerAPI.GetPassThroughAuthenticationHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPassThroughAuthenticationHandler`: AddPassThroughAuthenticationHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `PassThroughAuthenticationHandlerApi.GetPassThroughAuthenticationHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PassThroughAuthenticationHandlerAPI.GetPassThroughAuthenticationHandler`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PassThroughAuthenticationHandlerApi.ListPassThroughAuthenticationHandlers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.PassThroughAuthenticationHandlerAPI.ListPassThroughAuthenticationHandlers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerApi.ListPassThroughAuthenticationHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerAPI.ListPassThroughAuthenticationHandlers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPassThroughAuthenticationHandlers`: PassThroughAuthenticationHandlerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `PassThroughAuthenticationHandlerApi.ListPassThroughAuthenticationHandlers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PassThroughAuthenticationHandlerAPI.ListPassThroughAuthenticationHandlers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PassThroughAuthenticationHandlerApi.UpdatePassThroughAuthenticationHandler(context.Background(), passThroughAuthenticationHandlerName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.PassThroughAuthenticationHandlerAPI.UpdatePassThroughAuthenticationHandler(context.Background(), passThroughAuthenticationHandlerName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerApi.UpdatePassThroughAuthenticationHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerAPI.UpdatePassThroughAuthenticationHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePassThroughAuthenticationHandler`: AddPassThroughAuthenticationHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `PassThroughAuthenticationHandlerApi.UpdatePassThroughAuthenticationHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PassThroughAuthenticationHandlerAPI.UpdatePassThroughAuthenticationHandler`: %v\n", resp)
 }
 ```
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &PingFederateAccessTokenValidatorResponse{}
 
 // PingFederateAccessTokenValidatorResponse struct for PingFederateAccessTokenValidatorResponse
 type PingFederateAccessTokenValidatorResponse struct {
-	// Name of the Access Token Validator
-	Id      string                                          `json:"id"`
 	Schemas []EnumpingFederateAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The client identifier to use when authenticating to the PingFederate authorization server.
 	ClientID string `json:"clientID"`
@@ -48,19 +46,21 @@ type PingFederateAccessTokenValidatorResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Access Token Validator
+	Id string `json:"id"`
 }
 
 // NewPingFederateAccessTokenValidatorResponse instantiates a new PingFederateAccessTokenValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPingFederateAccessTokenValidatorResponse(id string, schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, evaluationOrderIndex int64, enabled bool) *PingFederateAccessTokenValidatorResponse {
+func NewPingFederateAccessTokenValidatorResponse(schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, evaluationOrderIndex int64, enabled bool, id string) *PingFederateAccessTokenValidatorResponse {
 	this := PingFederateAccessTokenValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ClientID = clientID
 	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -70,30 +70,6 @@ func NewPingFederateAccessTokenValidatorResponse(id string, schemas []EnumpingFe
 func NewPingFederateAccessTokenValidatorResponseWithDefaults() *PingFederateAccessTokenValidatorResponse {
 	this := PingFederateAccessTokenValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *PingFederateAccessTokenValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PingFederateAccessTokenValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *PingFederateAccessTokenValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -544,6 +520,30 @@ func (o *PingFederateAccessTokenValidatorResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *PingFederateAccessTokenValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *PingFederateAccessTokenValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *PingFederateAccessTokenValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o PingFederateAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -554,7 +554,6 @@ func (o PingFederateAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) 
 
 func (o PingFederateAccessTokenValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["clientID"] = o.ClientID
 	if !IsNil(o.ClientSecret) {
@@ -592,6 +591,7 @@ func (o PingFederateAccessTokenValidatorResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

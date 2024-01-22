@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Result Criteria | 
 **Schemas** | [**[]EnumreplicationAssuranceResultCriteriaSchemaUrn**](EnumreplicationAssuranceResultCriteriaSchemaUrn.md) |  | 
 **LocalAssuranceLevel** | Pointer to [**[]EnumresultCriteriaLocalAssuranceLevelProp**](EnumresultCriteriaLocalAssuranceLevelProp.md) |  | [optional] 
 **RemoteAssuranceLevel** | Pointer to [**[]EnumresultCriteriaRemoteAssuranceLevelProp**](EnumresultCriteriaRemoteAssuranceLevelProp.md) |  | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **AssuranceBehaviorAlteredByControl** | Pointer to [**EnumresultCriteriaAssuranceBehaviorAlteredByControlProp**](EnumresultCriteriaAssuranceBehaviorAlteredByControlProp.md) |  | [optional] 
 **AssuranceSatisfied** | Pointer to [**EnumresultCriteriaAssuranceSatisfiedProp**](EnumresultCriteriaAssuranceSatisfiedProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Result Criteria | [optional] 
+**CriteriaName** | **string** | Name of the new Result Criteria | 
 
 ## Methods
 
 ### NewAddReplicationAssuranceResultCriteriaRequest
 
-`func NewAddReplicationAssuranceResultCriteriaRequest(criteriaName string, schemas []EnumreplicationAssuranceResultCriteriaSchemaUrn, ) *AddReplicationAssuranceResultCriteriaRequest`
+`func NewAddReplicationAssuranceResultCriteriaRequest(schemas []EnumreplicationAssuranceResultCriteriaSchemaUrn, criteriaName string, ) *AddReplicationAssuranceResultCriteriaRequest`
 
 NewAddReplicationAssuranceResultCriteriaRequest instantiates a new AddReplicationAssuranceResultCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddReplicationAssuranceResultCriteriaRequestWithDefaults instantiates a new AddReplicationAssuranceResultCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddReplicationAssuranceResultCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -273,6 +253,26 @@ SetDescription sets Description field to given value.
 `func (o *AddReplicationAssuranceResultCriteriaRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetCriteriaName
+
+`func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddReplicationAssuranceResultCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

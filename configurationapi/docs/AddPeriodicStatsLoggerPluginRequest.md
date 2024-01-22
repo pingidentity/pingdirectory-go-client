@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumperiodicStatsLoggerPluginSchemaUrn**](EnumperiodicStatsLoggerPluginSchemaUrn.md) |  | 
 **LogInterval** | Pointer to **string** | The duration between statistics collection and logging. A new line is logged to the output for each interval. Setting this value too small can have an impact on performance. | [optional] 
 **CollectionInterval** | Pointer to **string** | Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered. It should be a multiple of the log-interval. | [optional] 
@@ -35,12 +34,13 @@ Name | Type | Description | Notes
 **IncludedLDAPApplication** | Pointer to **[]string** | If statistics should not be included for all applications, this property names the subset of applications that should be included. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddPeriodicStatsLoggerPluginRequest
 
-`func NewAddPeriodicStatsLoggerPluginRequest(pluginName string, schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logFile string, enabled bool, ) *AddPeriodicStatsLoggerPluginRequest`
+`func NewAddPeriodicStatsLoggerPluginRequest(schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logFile string, enabled bool, pluginName string, ) *AddPeriodicStatsLoggerPluginRequest`
 
 NewAddPeriodicStatsLoggerPluginRequest instantiates a new AddPeriodicStatsLoggerPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -54,26 +54,6 @@ will change when the set of required properties is changed
 NewAddPeriodicStatsLoggerPluginRequestWithDefaults instantiates a new AddPeriodicStatsLoggerPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddPeriodicStatsLoggerPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddPeriodicStatsLoggerPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddPeriodicStatsLoggerPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -808,6 +788,26 @@ and a boolean to check if the value has been set.
 `func (o *AddPeriodicStatsLoggerPluginRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetPluginName
+
+`func (o *AddPeriodicStatsLoggerPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddPeriodicStatsLoggerPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddPeriodicStatsLoggerPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
 
 
 

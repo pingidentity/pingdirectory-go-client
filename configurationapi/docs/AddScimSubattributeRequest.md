@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SubattributeName** | **string** | Name of the new SCIM Subattribute | 
 **Schemas** | Pointer to [**[]EnumscimSubattributeSchemaUrn**](EnumscimSubattributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this SCIM Subattribute | [optional] 
 **Type** | Pointer to [**EnumscimSubattributeTypeProp**](EnumscimSubattributeTypeProp.md) |  | [optional] 
@@ -15,6 +14,7 @@ Name | Type | Description | Notes
 **Mutability** | Pointer to [**EnumscimSubattributeMutabilityProp**](EnumscimSubattributeMutabilityProp.md) |  | [optional] 
 **Returned** | Pointer to [**EnumscimSubattributeReturnedProp**](EnumscimSubattributeReturnedProp.md) |  | [optional] 
 **ReferenceType** | Pointer to **[]string** | Specifies the SCIM resource types that may be referenced. This property is only applicable for sub-attributes that are of type &#39;reference&#39;. Valid values are: A SCIM resource type (e.g., &#39;User&#39; or &#39;Group&#39;), &#39;external&#39; - indicating the resource is an external resource (e.g., such as a photo), or &#39;uri&#39; - indicating that the reference is to a service endpoint or an identifier (such as a schema urn). | [optional] 
+**SubattributeName** | **string** | Name of the new SCIM Subattribute | 
 
 ## Methods
 
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewAddScimSubattributeRequestWithDefaults instantiates a new AddScimSubattributeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSubattributeName
-
-`func (o *AddScimSubattributeRequest) GetSubattributeName() string`
-
-GetSubattributeName returns the SubattributeName field if non-nil, zero value otherwise.
-
-### GetSubattributeNameOk
-
-`func (o *AddScimSubattributeRequest) GetSubattributeNameOk() (*string, bool)`
-
-GetSubattributeNameOk returns a tuple with the SubattributeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubattributeName
-
-`func (o *AddScimSubattributeRequest) SetSubattributeName(v string)`
-
-SetSubattributeName sets SubattributeName field to given value.
-
 
 ### GetSchemas
 
@@ -304,6 +284,26 @@ SetReferenceType sets ReferenceType field to given value.
 `func (o *AddScimSubattributeRequest) HasReferenceType() bool`
 
 HasReferenceType returns a boolean if a field has been set.
+
+### GetSubattributeName
+
+`func (o *AddScimSubattributeRequest) GetSubattributeName() string`
+
+GetSubattributeName returns the SubattributeName field if non-nil, zero value otherwise.
+
+### GetSubattributeNameOk
+
+`func (o *AddScimSubattributeRequest) GetSubattributeNameOk() (*string, bool)`
+
+GetSubattributeNameOk returns a tuple with the SubattributeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubattributeName
+
+`func (o *AddScimSubattributeRequest) SetSubattributeName(v string)`
+
+SetSubattributeName sets SubattributeName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

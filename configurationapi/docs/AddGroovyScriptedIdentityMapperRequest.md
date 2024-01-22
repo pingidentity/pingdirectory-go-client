@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MapperName** | **string** | Name of the new Identity Mapper | 
 **Schemas** | [**[]EnumgroovyScriptedIdentityMapperSchemaUrn**](EnumgroovyScriptedIdentityMapperSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Identity Mapper. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Identity Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Identity Mapper is enabled for use. | 
+**MapperName** | **string** | Name of the new Identity Mapper | 
 
 ## Methods
 
 ### NewAddGroovyScriptedIdentityMapperRequest
 
-`func NewAddGroovyScriptedIdentityMapperRequest(mapperName string, schemas []EnumgroovyScriptedIdentityMapperSchemaUrn, scriptClass string, enabled bool, ) *AddGroovyScriptedIdentityMapperRequest`
+`func NewAddGroovyScriptedIdentityMapperRequest(schemas []EnumgroovyScriptedIdentityMapperSchemaUrn, scriptClass string, enabled bool, mapperName string, ) *AddGroovyScriptedIdentityMapperRequest`
 
 NewAddGroovyScriptedIdentityMapperRequest instantiates a new AddGroovyScriptedIdentityMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddGroovyScriptedIdentityMapperRequestWithDefaults instantiates a new AddGroovyScriptedIdentityMapperRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMapperName
-
-`func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperName() string`
-
-GetMapperName returns the MapperName field if non-nil, zero value otherwise.
-
-### GetMapperNameOk
-
-`func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperNameOk() (*string, bool)`
-
-GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMapperName
-
-`func (o *AddGroovyScriptedIdentityMapperRequest) SetMapperName(v string)`
-
-SetMapperName sets MapperName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddGroovyScriptedIdentityMapperRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetMapperName
+
+`func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperName() string`
+
+GetMapperName returns the MapperName field if non-nil, zero value otherwise.
+
+### GetMapperNameOk
+
+`func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperNameOk() (*string, bool)`
+
+GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMapperName
+
+`func (o *AddGroovyScriptedIdentityMapperRequest) SetMapperName(v string)`
+
+SetMapperName sets MapperName field to given value.
 
 
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyEnhancedPasswordStorageSchemeResponse{}
 
 // ThirdPartyEnhancedPasswordStorageSchemeResponse struct for ThirdPartyEnhancedPasswordStorageSchemeResponse
 type ThirdPartyEnhancedPasswordStorageSchemeResponse struct {
-	// Name of the Password Storage Scheme
-	Id      string                                                 `json:"id"`
 	Schemas []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Enhanced Password Storage Scheme.
 	ExtensionClass string `json:"extensionClass"`
@@ -32,18 +30,20 @@ type ThirdPartyEnhancedPasswordStorageSchemeResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Storage Scheme
+	Id string `json:"id"`
 }
 
 // NewThirdPartyEnhancedPasswordStorageSchemeResponse instantiates a new ThirdPartyEnhancedPasswordStorageSchemeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyEnhancedPasswordStorageSchemeResponse(id string, schemas []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn, extensionClass string, enabled bool) *ThirdPartyEnhancedPasswordStorageSchemeResponse {
+func NewThirdPartyEnhancedPasswordStorageSchemeResponse(schemas []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn, extensionClass string, enabled bool, id string) *ThirdPartyEnhancedPasswordStorageSchemeResponse {
 	this := ThirdPartyEnhancedPasswordStorageSchemeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewThirdPartyEnhancedPasswordStorageSchemeResponse(id string, schemas []Enu
 func NewThirdPartyEnhancedPasswordStorageSchemeResponseWithDefaults() *ThirdPartyEnhancedPasswordStorageSchemeResponse {
 	this := ThirdPartyEnhancedPasswordStorageSchemeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -279,6 +255,30 @@ func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) SetUrnpingidentitysche
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyEnhancedPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -289,7 +289,6 @@ func (o ThirdPartyEnhancedPasswordStorageSchemeResponse) MarshalJSON() ([]byte, 
 
 func (o ThirdPartyEnhancedPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -305,6 +304,7 @@ func (o ThirdPartyEnhancedPasswordStorageSchemeResponse) ToMap() (map[string]int
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

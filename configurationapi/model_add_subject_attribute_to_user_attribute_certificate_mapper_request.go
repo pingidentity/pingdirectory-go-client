@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSubjectAttributeToUserAttributeCertificateMapperReque
 
 // AddSubjectAttributeToUserAttributeCertificateMapperRequest struct for AddSubjectAttributeToUserAttributeCertificateMapperRequest
 type AddSubjectAttributeToUserAttributeCertificateMapperRequest struct {
-	// Name of the new Certificate Mapper
-	MapperName string                                                          `json:"mapperName"`
-	Schemas    []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
+	Schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies a mapping between certificate attributes and user attributes.
 	SubjectAttributeMapping []string `json:"subjectAttributeMapping"`
 	// Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
@@ -30,18 +28,20 @@ type AddSubjectAttributeToUserAttributeCertificateMapperRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Certificate Mapper is enabled.
 	Enabled bool `json:"enabled"`
+	// Name of the new Certificate Mapper
+	MapperName string `json:"mapperName"`
 }
 
 // NewAddSubjectAttributeToUserAttributeCertificateMapperRequest instantiates a new AddSubjectAttributeToUserAttributeCertificateMapperRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSubjectAttributeToUserAttributeCertificateMapperRequest(mapperName string, schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn, subjectAttributeMapping []string, enabled bool) *AddSubjectAttributeToUserAttributeCertificateMapperRequest {
+func NewAddSubjectAttributeToUserAttributeCertificateMapperRequest(schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn, subjectAttributeMapping []string, enabled bool, mapperName string) *AddSubjectAttributeToUserAttributeCertificateMapperRequest {
 	this := AddSubjectAttributeToUserAttributeCertificateMapperRequest{}
-	this.MapperName = mapperName
 	this.Schemas = schemas
 	this.SubjectAttributeMapping = subjectAttributeMapping
 	this.Enabled = enabled
+	this.MapperName = mapperName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddSubjectAttributeToUserAttributeCertificateMapperRequest(mapperName st
 func NewAddSubjectAttributeToUserAttributeCertificateMapperRequestWithDefaults() *AddSubjectAttributeToUserAttributeCertificateMapperRequest {
 	this := AddSubjectAttributeToUserAttributeCertificateMapperRequest{}
 	return &this
-}
-
-// GetMapperName returns the MapperName field value
-func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetMapperName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MapperName
-}
-
-// GetMapperNameOk returns a tuple with the MapperName field value
-// and a boolean to check if the value has been set.
-func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MapperName, true
-}
-
-// SetMapperName sets field value
-func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) SetMapperName(v string) {
-	o.MapperName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) SetEnabled(
 	o.Enabled = v
 }
 
+// GetMapperName returns the MapperName field value
+func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetMapperName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MapperName
+}
+
+// GetMapperNameOk returns a tuple with the MapperName field value
+// and a boolean to check if the value has been set.
+func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MapperName, true
+}
+
+// SetMapperName sets field value
+func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) SetMapperName(v string) {
+	o.MapperName = v
+}
+
 func (o AddSubjectAttributeToUserAttributeCertificateMapperRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddSubjectAttributeToUserAttributeCertificateMapperRequest) MarshalJSON(
 
 func (o AddSubjectAttributeToUserAttributeCertificateMapperRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mapperName"] = o.MapperName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["subjectAttributeMapping"] = o.SubjectAttributeMapping
 	if !IsNil(o.UserBaseDN) {
@@ -233,6 +232,7 @@ func (o AddSubjectAttributeToUserAttributeCertificateMapperRequest) ToMap() (map
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["mapperName"] = o.MapperName
 	return toSerialize, nil
 }
 

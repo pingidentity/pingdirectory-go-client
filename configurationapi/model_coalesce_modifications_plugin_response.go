@@ -19,8 +19,6 @@ var _ MappedNullable = &CoalesceModificationsPluginResponse{}
 
 // CoalesceModificationsPluginResponse struct for CoalesceModificationsPluginResponse
 type CoalesceModificationsPluginResponse struct {
-	// Name of the Plugin
-	Id      string                                     `json:"id"`
 	Schemas []EnumcoalesceModificationsPluginSchemaUrn `json:"schemas"`
 	// A reference to request criteria that indicates which modify requests should be coalesced.
 	RequestCriteria string `json:"requestCriteria"`
@@ -34,18 +32,20 @@ type CoalesceModificationsPluginResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewCoalesceModificationsPluginResponse instantiates a new CoalesceModificationsPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCoalesceModificationsPluginResponse(id string, schemas []EnumcoalesceModificationsPluginSchemaUrn, requestCriteria string, enabled bool) *CoalesceModificationsPluginResponse {
+func NewCoalesceModificationsPluginResponse(schemas []EnumcoalesceModificationsPluginSchemaUrn, requestCriteria string, enabled bool, id string) *CoalesceModificationsPluginResponse {
 	this := CoalesceModificationsPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.RequestCriteria = requestCriteria
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewCoalesceModificationsPluginResponse(id string, schemas []EnumcoalesceMod
 func NewCoalesceModificationsPluginResponseWithDefaults() *CoalesceModificationsPluginResponse {
 	this := CoalesceModificationsPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CoalesceModificationsPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CoalesceModificationsPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CoalesceModificationsPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -313,6 +289,30 @@ func (o *CoalesceModificationsPluginResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *CoalesceModificationsPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CoalesceModificationsPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CoalesceModificationsPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o CoalesceModificationsPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -323,7 +323,6 @@ func (o CoalesceModificationsPluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o CoalesceModificationsPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["requestCriteria"] = o.RequestCriteria
 	if !IsNil(o.AllowedRequestControl) {
@@ -342,6 +341,7 @@ func (o CoalesceModificationsPluginResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &GenericWebApplicationExtensionResponse{}
 
 // GenericWebApplicationExtensionResponse struct for GenericWebApplicationExtensionResponse
 type GenericWebApplicationExtensionResponse struct {
-	// Name of the Web Application Extension
-	Id      string                                        `json:"id"`
 	Schemas []EnumgenericWebApplicationExtensionSchemaUrn `json:"schemas"`
 	// A description for this Web Application Extension
 	Description *string `json:"description,omitempty"`
@@ -38,17 +36,19 @@ type GenericWebApplicationExtensionResponse struct {
 	InitParameter                                 []string                                           `json:"initParameter,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Web Application Extension
+	Id string `json:"id"`
 }
 
 // NewGenericWebApplicationExtensionResponse instantiates a new GenericWebApplicationExtensionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericWebApplicationExtensionResponse(id string, schemas []EnumgenericWebApplicationExtensionSchemaUrn, baseContextPath string) *GenericWebApplicationExtensionResponse {
+func NewGenericWebApplicationExtensionResponse(schemas []EnumgenericWebApplicationExtensionSchemaUrn, baseContextPath string, id string) *GenericWebApplicationExtensionResponse {
 	this := GenericWebApplicationExtensionResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.BaseContextPath = baseContextPath
+	this.Id = id
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewGenericWebApplicationExtensionResponse(id string, schemas []EnumgenericW
 func NewGenericWebApplicationExtensionResponseWithDefaults() *GenericWebApplicationExtensionResponse {
 	this := GenericWebApplicationExtensionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GenericWebApplicationExtensionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GenericWebApplicationExtensionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GenericWebApplicationExtensionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -388,6 +364,30 @@ func (o *GenericWebApplicationExtensionResponse) SetUrnpingidentityschemasconfig
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *GenericWebApplicationExtensionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *GenericWebApplicationExtensionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *GenericWebApplicationExtensionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o GenericWebApplicationExtensionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -398,7 +398,6 @@ func (o GenericWebApplicationExtensionResponse) MarshalJSON() ([]byte, error) {
 
 func (o GenericWebApplicationExtensionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -425,6 +424,7 @@ func (o GenericWebApplicationExtensionResponse) ToMap() (map[string]interface{},
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

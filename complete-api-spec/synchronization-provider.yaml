@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
 tags:
 - description: Access synchronization-providers
   name: synchronization-provider
@@ -374,6 +374,15 @@ components:
       - "never"
       description: >-
           Specifies when the replication traffic should be compressed.
+    Enumreplication-server-missingChangesPolicyProp:
+      type: string
+      enum:
+      - "maximum-integrity"
+      - "favor-integrity"
+      - "favor-availability"
+      - "maximum-availability"
+      description: >-
+          Determines how the server responds when replication detects that some changes might have been missed. Each missing changes policy is a set of missing changes actions to take for a set of missing changes types. The value configured here acts as a default for all replication domains on this replication server.
     replication-server-response:
       allOf:
       - type: object
@@ -438,6 +447,12 @@ components:
             type: integer
             description: >-
                 Specifies the missing changes alert threshold as a percentage of the total pending changes. For instance, a value of 80 indicates that the replica is 80% of the way to losing changes.
+          missingChangesPolicy:
+            $ref: '#/components/schemas/Enumreplication-server-missingChangesPolicyProp'
+          includeAllRemoteServersStateInMonitorMessage:
+            type: boolean
+            description: >-
+                Indicates monitor messages should include information about remote servers.
       - $ref: '#/components/schemas/meta'
       required:
       - replicationServerID
@@ -448,6 +463,16 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:replication-server"
+    Enumreplication-domain-missingChangesPolicyProp:
+      type: string
+      enum:
+      - "maximum-integrity"
+      - "favor-integrity"
+      - "favor-availability"
+      - "maximum-availability"
+      - "use-server-default"
+      description: >-
+          Determines how the server responds when replication detects that some changes might have been missed. Each missing changes policy is a set of missing changes actions to take for a set of missing changes types. The value configured here only applies to this particular replication domain.
     replication-domain-response:
       allOf:
       - type: object
@@ -494,6 +519,8 @@ components:
             type: string
             description: >-
                 Defines how long to wait before retrying certain operations, specifically operations that might have failed because they depend on an operation from a different server that has not yet replicated to this instance.
+          missingChangesPolicy:
+            $ref: '#/components/schemas/Enumreplication-domain-missingChangesPolicyProp'
       - $ref: '#/components/schemas/meta'
       required:
       - id

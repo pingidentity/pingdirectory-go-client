@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the External Server | 
 **Schemas** | [**[]EnumactiveDirectoryExternalServerSchemaUrn**](EnumactiveDirectoryExternalServerSchemaUrn.md) |  | 
 **BindDN** | Pointer to **string** | The DN to use to bind to the target LDAP server if simple authentication is required. The authentication identity can also be specified in User-Principal-Name (UPN) format. | [optional] 
 **ServerHostName** | **string** | The host name or IP address of the target LDAP server. | 
@@ -29,12 +28,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the External Server | 
 
 ## Methods
 
 ### NewActiveDirectoryExternalServerResponse
 
-`func NewActiveDirectoryExternalServerResponse(id string, schemas []EnumactiveDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerActiveDirectoryConnectionSecurityProp, authenticationMethod EnumexternalServerActiveDirectoryAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *ActiveDirectoryExternalServerResponse`
+`func NewActiveDirectoryExternalServerResponse(schemas []EnumactiveDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerActiveDirectoryConnectionSecurityProp, authenticationMethod EnumexternalServerActiveDirectoryAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, id string, ) *ActiveDirectoryExternalServerResponse`
 
 NewActiveDirectoryExternalServerResponse instantiates a new ActiveDirectoryExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -48,26 +48,6 @@ will change when the set of required properties is changed
 NewActiveDirectoryExternalServerResponseWithDefaults instantiates a new ActiveDirectoryExternalServerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ActiveDirectoryExternalServerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ActiveDirectoryExternalServerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ActiveDirectoryExternalServerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -623,6 +603,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ActiveDirectoryExternalServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ActiveDirectoryExternalServerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ActiveDirectoryExternalServerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ActiveDirectoryExternalServerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyDataSecurityAuditorRequest{}
 
 // AddThirdPartyDataSecurityAuditorRequest struct for AddThirdPartyDataSecurityAuditorRequest
 type AddThirdPartyDataSecurityAuditorRequest struct {
-	// Name of the new Data Security Auditor
-	AuditorName string                                       `json:"auditorName"`
-	Schemas     []EnumthirdPartyDataSecurityAuditorSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Data Security Auditor.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Data Security Auditor. Each configuration property should be given in the form 'name=value'.
@@ -35,18 +33,20 @@ type AddThirdPartyDataSecurityAuditorRequest struct {
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
+	// Name of the new Data Security Auditor
+	AuditorName string `json:"auditorName"`
 }
 
 // NewAddThirdPartyDataSecurityAuditorRequest instantiates a new AddThirdPartyDataSecurityAuditorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyDataSecurityAuditorRequest(auditorName string, schemas []EnumthirdPartyDataSecurityAuditorSchemaUrn, extensionClass string, reportFile string) *AddThirdPartyDataSecurityAuditorRequest {
+func NewAddThirdPartyDataSecurityAuditorRequest(schemas []EnumthirdPartyDataSecurityAuditorSchemaUrn, extensionClass string, reportFile string, auditorName string) *AddThirdPartyDataSecurityAuditorRequest {
 	this := AddThirdPartyDataSecurityAuditorRequest{}
-	this.AuditorName = auditorName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.ReportFile = reportFile
+	this.AuditorName = auditorName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddThirdPartyDataSecurityAuditorRequest(auditorName string, schemas []En
 func NewAddThirdPartyDataSecurityAuditorRequestWithDefaults() *AddThirdPartyDataSecurityAuditorRequest {
 	this := AddThirdPartyDataSecurityAuditorRequest{}
 	return &this
-}
-
-// GetAuditorName returns the AuditorName field value
-func (o *AddThirdPartyDataSecurityAuditorRequest) GetAuditorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AuditorName
-}
-
-// GetAuditorNameOk returns a tuple with the AuditorName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AuditorName, true
-}
-
-// SetAuditorName sets field value
-func (o *AddThirdPartyDataSecurityAuditorRequest) SetAuditorName(v string) {
-	o.AuditorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -314,6 +290,30 @@ func (o *AddThirdPartyDataSecurityAuditorRequest) SetAuditSeverity(v EnumdataSec
 	o.AuditSeverity = &v
 }
 
+// GetAuditorName returns the AuditorName field value
+func (o *AddThirdPartyDataSecurityAuditorRequest) GetAuditorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AuditorName
+}
+
+// GetAuditorNameOk returns a tuple with the AuditorName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AuditorName, true
+}
+
+// SetAuditorName sets field value
+func (o *AddThirdPartyDataSecurityAuditorRequest) SetAuditorName(v string) {
+	o.AuditorName = v
+}
+
 func (o AddThirdPartyDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -324,7 +324,6 @@ func (o AddThirdPartyDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyDataSecurityAuditorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["auditorName"] = o.AuditorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -343,6 +342,7 @@ func (o AddThirdPartyDataSecurityAuditorRequest) ToMap() (map[string]interface{}
 	if !IsNil(o.AuditSeverity) {
 		toSerialize["auditSeverity"] = o.AuditSeverity
 	}
+	toSerialize["auditorName"] = o.AuditorName
 	return toSerialize, nil
 }
 

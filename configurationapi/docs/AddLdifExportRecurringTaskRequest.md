@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaskName** | **string** | Name of the new Recurring Task | 
 **Schemas** | [**[]EnumldifExportRecurringTaskSchemaUrn**](EnumldifExportRecurringTaskSchemaUrn.md) |  | 
 **LdifDirectory** | Pointer to **string** | The directory in which LDIF export files will be placed. The directory must already exist. | [optional] 
 **BackendID** | Pointer to **[]string** | The backend ID for a backend to be exported. | [optional] 
@@ -16,6 +15,7 @@ Name | Type | Description | Notes
 **RetainPreviousLDIFExportCount** | Pointer to **int64** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **RetainPreviousLDIFExportAge** | Pointer to **string** | The minimum age of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **MaxMegabytesPerSecond** | Pointer to **int64** | The maximum rate, in megabytes per second, at which LDIF exports should be written. | [optional] 
+**PostLDIFExportTaskProcessor** | Pointer to **[]string** | An optional set of post-LDIF-export task processors that should be invoked for the resulting LDIF export files. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
 **CancelOnTaskDependencyFailure** | Pointer to **bool** | Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running). | [optional] 
 **EmailOnStart** | Pointer to **[]string** | The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration. | [optional] 
@@ -24,12 +24,13 @@ Name | Type | Description | Notes
 **AlertOnStart** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running. | [optional] 
 **AlertOnSuccess** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully. | [optional] 
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
+**TaskName** | **string** | Name of the new Recurring Task | 
 
 ## Methods
 
 ### NewAddLdifExportRecurringTaskRequest
 
-`func NewAddLdifExportRecurringTaskRequest(taskName string, schemas []EnumldifExportRecurringTaskSchemaUrn, ) *AddLdifExportRecurringTaskRequest`
+`func NewAddLdifExportRecurringTaskRequest(schemas []EnumldifExportRecurringTaskSchemaUrn, taskName string, ) *AddLdifExportRecurringTaskRequest`
 
 NewAddLdifExportRecurringTaskRequest instantiates a new AddLdifExportRecurringTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -43,26 +44,6 @@ will change when the set of required properties is changed
 NewAddLdifExportRecurringTaskRequestWithDefaults instantiates a new AddLdifExportRecurringTaskRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTaskName
-
-`func (o *AddLdifExportRecurringTaskRequest) GetTaskName() string`
-
-GetTaskName returns the TaskName field if non-nil, zero value otherwise.
-
-### GetTaskNameOk
-
-`func (o *AddLdifExportRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
-
-GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaskName
-
-`func (o *AddLdifExportRecurringTaskRequest) SetTaskName(v string)`
-
-SetTaskName sets TaskName field to given value.
-
 
 ### GetSchemas
 
@@ -334,6 +315,31 @@ SetMaxMegabytesPerSecond sets MaxMegabytesPerSecond field to given value.
 
 HasMaxMegabytesPerSecond returns a boolean if a field has been set.
 
+### GetPostLDIFExportTaskProcessor
+
+`func (o *AddLdifExportRecurringTaskRequest) GetPostLDIFExportTaskProcessor() []string`
+
+GetPostLDIFExportTaskProcessor returns the PostLDIFExportTaskProcessor field if non-nil, zero value otherwise.
+
+### GetPostLDIFExportTaskProcessorOk
+
+`func (o *AddLdifExportRecurringTaskRequest) GetPostLDIFExportTaskProcessorOk() (*[]string, bool)`
+
+GetPostLDIFExportTaskProcessorOk returns a tuple with the PostLDIFExportTaskProcessor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPostLDIFExportTaskProcessor
+
+`func (o *AddLdifExportRecurringTaskRequest) SetPostLDIFExportTaskProcessor(v []string)`
+
+SetPostLDIFExportTaskProcessor sets PostLDIFExportTaskProcessor field to given value.
+
+### HasPostLDIFExportTaskProcessor
+
+`func (o *AddLdifExportRecurringTaskRequest) HasPostLDIFExportTaskProcessor() bool`
+
+HasPostLDIFExportTaskProcessor returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *AddLdifExportRecurringTaskRequest) GetDescription() string`
@@ -533,6 +539,26 @@ SetAlertOnFailure sets AlertOnFailure field to given value.
 `func (o *AddLdifExportRecurringTaskRequest) HasAlertOnFailure() bool`
 
 HasAlertOnFailure returns a boolean if a field has been set.
+
+### GetTaskName
+
+`func (o *AddLdifExportRecurringTaskRequest) GetTaskName() string`
+
+GetTaskName returns the TaskName field if non-nil, zero value otherwise.
+
+### GetTaskNameOk
+
+`func (o *AddLdifExportRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
+
+GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskName
+
+`func (o *AddLdifExportRecurringTaskRequest) SetTaskName(v string)`
+
+SetTaskName sets TaskName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,14 +1,14 @@
-# \DelegatedAdminResourceRightsApi
+# \DelegatedAdminResourceRightsAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#AddDelegatedAdminResourceRights) | **Post** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights | Add a new Delegated Admin Resource Rights to the config
-[**DeleteDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#DeleteDelegatedAdminResourceRights) | **Delete** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Delete a Delegated Admin Resource Rights
-[**GetDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#GetDelegatedAdminResourceRights) | **Get** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Returns a single Delegated Admin Resource Rights
-[**ListDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#ListDelegatedAdminResourceRights) | **Get** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights | Returns a list of all Delegated Admin Resource Rights objects
-[**UpdateDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#UpdateDelegatedAdminResourceRights) | **Patch** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Update an existing Delegated Admin Resource Rights by name
+[**AddDelegatedAdminResourceRights**](DelegatedAdminResourceRightsAPI.md#AddDelegatedAdminResourceRights) | **Post** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights | Add a new Delegated Admin Resource Rights to the config
+[**DeleteDelegatedAdminResourceRights**](DelegatedAdminResourceRightsAPI.md#DeleteDelegatedAdminResourceRights) | **Delete** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Delete a Delegated Admin Resource Rights
+[**GetDelegatedAdminResourceRights**](DelegatedAdminResourceRightsAPI.md#GetDelegatedAdminResourceRights) | **Get** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Returns a single Delegated Admin Resource Rights
+[**ListDelegatedAdminResourceRights**](DelegatedAdminResourceRightsAPI.md#ListDelegatedAdminResourceRights) | **Get** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights | Returns a list of all Delegated Admin Resource Rights objects
+[**UpdateDelegatedAdminResourceRights**](DelegatedAdminResourceRightsAPI.md#UpdateDelegatedAdminResourceRights) | **Patch** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Update an existing Delegated Admin Resource Rights by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     delegatedAdminRightsName := "delegatedAdminRightsName_example" // string | Name of the Delegated Admin Rights
-    addDelegatedAdminResourceRightsRequest := *openapiclient.NewAddDelegatedAdminResourceRightsRequest("RestResourceType_example", false) // AddDelegatedAdminResourceRightsRequest | Create a new Delegated Admin Resource Rights in the config
+    addDelegatedAdminResourceRightsRequest := *openapiclient.NewAddDelegatedAdminResourceRightsRequest(false, "RestResourceType_example") // AddDelegatedAdminResourceRightsRequest | Create a new Delegated Admin Resource Rights in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminResourceRightsApi.AddDelegatedAdminResourceRights(context.Background(), delegatedAdminRightsName).AddDelegatedAdminResourceRightsRequest(addDelegatedAdminResourceRightsRequest).Execute()
+    resp, r, err := apiClient.DelegatedAdminResourceRightsAPI.AddDelegatedAdminResourceRights(context.Background(), delegatedAdminRightsName).AddDelegatedAdminResourceRightsRequest(addDelegatedAdminResourceRightsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsApi.AddDelegatedAdminResourceRights``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsAPI.AddDelegatedAdminResourceRights``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddDelegatedAdminResourceRights`: DelegatedAdminResourceRightsResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminResourceRightsApi.AddDelegatedAdminResourceRights`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminResourceRightsAPI.AddDelegatedAdminResourceRights`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DelegatedAdminResourceRightsApi.DeleteDelegatedAdminResourceRights(context.Background(), delegatedAdminResourceRightsName, delegatedAdminRightsName).Execute()
+    r, err := apiClient.DelegatedAdminResourceRightsAPI.DeleteDelegatedAdminResourceRights(context.Background(), delegatedAdminResourceRightsName, delegatedAdminRightsName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsApi.DeleteDelegatedAdminResourceRights``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsAPI.DeleteDelegatedAdminResourceRights``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminResourceRightsApi.GetDelegatedAdminResourceRights(context.Background(), delegatedAdminResourceRightsName, delegatedAdminRightsName).Execute()
+    resp, r, err := apiClient.DelegatedAdminResourceRightsAPI.GetDelegatedAdminResourceRights(context.Background(), delegatedAdminResourceRightsName, delegatedAdminRightsName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsApi.GetDelegatedAdminResourceRights``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsAPI.GetDelegatedAdminResourceRights``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDelegatedAdminResourceRights`: DelegatedAdminResourceRightsResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminResourceRightsApi.GetDelegatedAdminResourceRights`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminResourceRightsAPI.GetDelegatedAdminResourceRights`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminResourceRightsApi.ListDelegatedAdminResourceRights(context.Background(), delegatedAdminRightsName).Filter(filter).Execute()
+    resp, r, err := apiClient.DelegatedAdminResourceRightsAPI.ListDelegatedAdminResourceRights(context.Background(), delegatedAdminRightsName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsApi.ListDelegatedAdminResourceRights``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsAPI.ListDelegatedAdminResourceRights``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListDelegatedAdminResourceRights`: DelegatedAdminResourceRightsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminResourceRightsApi.ListDelegatedAdminResourceRights`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminResourceRightsAPI.ListDelegatedAdminResourceRights`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminResourceRightsApi.UpdateDelegatedAdminResourceRights(context.Background(), delegatedAdminResourceRightsName, delegatedAdminRightsName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.DelegatedAdminResourceRightsAPI.UpdateDelegatedAdminResourceRights(context.Background(), delegatedAdminResourceRightsName, delegatedAdminRightsName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsApi.UpdateDelegatedAdminResourceRights``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsAPI.UpdateDelegatedAdminResourceRights``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDelegatedAdminResourceRights`: DelegatedAdminResourceRightsResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminResourceRightsApi.UpdateDelegatedAdminResourceRights`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminResourceRightsAPI.UpdateDelegatedAdminResourceRights`: %v\n", resp)
 }
 ```
 

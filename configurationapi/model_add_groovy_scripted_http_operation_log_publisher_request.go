@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedHttpOperationLogPublisherRequest{}
 
 // AddGroovyScriptedHttpOperationLogPublisherRequest struct for AddGroovyScriptedHttpOperationLogPublisherRequest
 type AddGroovyScriptedHttpOperationLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName string                                                 `json:"publisherName"`
-	Schemas       []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Operation Log Publisher.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted HTTP Operation Log Publisher. Each configuration property should be given in the form 'name=value'.
@@ -31,18 +29,20 @@ type AddGroovyScriptedHttpOperationLogPublisherRequest struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddGroovyScriptedHttpOperationLogPublisherRequest instantiates a new AddGroovyScriptedHttpOperationLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedHttpOperationLogPublisherRequest(publisherName string, schemas []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn, scriptClass string, enabled bool) *AddGroovyScriptedHttpOperationLogPublisherRequest {
+func NewAddGroovyScriptedHttpOperationLogPublisherRequest(schemas []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn, scriptClass string, enabled bool, publisherName string) *AddGroovyScriptedHttpOperationLogPublisherRequest {
 	this := AddGroovyScriptedHttpOperationLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewAddGroovyScriptedHttpOperationLogPublisherRequest(publisherName string, 
 func NewAddGroovyScriptedHttpOperationLogPublisherRequestWithDefaults() *AddGroovyScriptedHttpOperationLogPublisherRequest {
 	this := AddGroovyScriptedHttpOperationLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -246,6 +222,30 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) SetLoggingErrorBehav
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddGroovyScriptedHttpOperationLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -256,7 +256,6 @@ func (o AddGroovyScriptedHttpOperationLogPublisherRequest) MarshalJSON() ([]byte
 
 func (o AddGroovyScriptedHttpOperationLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -269,6 +268,7 @@ func (o AddGroovyScriptedHttpOperationLogPublisherRequest) ToMap() (map[string]i
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

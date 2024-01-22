@@ -19,9 +19,7 @@ var _ MappedNullable = &AddIndicatorGaugeDataSourceRequest{}
 
 // AddIndicatorGaugeDataSourceRequest struct for AddIndicatorGaugeDataSourceRequest
 type AddIndicatorGaugeDataSourceRequest struct {
-	// Name of the new Gauge Data Source
-	SourceName string                                  `json:"sourceName"`
-	Schemas    []EnumindicatorGaugeDataSourceSchemaUrn `json:"schemas"`
+	Schemas []EnumindicatorGaugeDataSourceSchemaUrn `json:"schemas"`
 	// A description for this Gauge Data Source
 	Description *string `json:"description,omitempty"`
 	// Additional information about the source of this data that is added to alerts sent as a result of gauges that use this Gauge Data Source.
@@ -38,18 +36,20 @@ type AddIndicatorGaugeDataSourceRequest struct {
 	ResourceType *string `json:"resourceType,omitempty"`
 	// The minimum frequency with which gauges using this Gauge Data Source can be configured for update. In order to prevent undesirable side effects, some Gauge Data Sources may use this property to impose a higher bound on the update frequency of gauges.
 	MinimumUpdateInterval *string `json:"minimumUpdateInterval,omitempty"`
+	// Name of the new Gauge Data Source
+	SourceName string `json:"sourceName"`
 }
 
 // NewAddIndicatorGaugeDataSourceRequest instantiates a new AddIndicatorGaugeDataSourceRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddIndicatorGaugeDataSourceRequest(sourceName string, schemas []EnumindicatorGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string) *AddIndicatorGaugeDataSourceRequest {
+func NewAddIndicatorGaugeDataSourceRequest(schemas []EnumindicatorGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string, sourceName string) *AddIndicatorGaugeDataSourceRequest {
 	this := AddIndicatorGaugeDataSourceRequest{}
-	this.SourceName = sourceName
 	this.Schemas = schemas
 	this.MonitorObjectclass = monitorObjectclass
 	this.MonitorAttribute = monitorAttribute
+	this.SourceName = sourceName
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewAddIndicatorGaugeDataSourceRequest(sourceName string, schemas []Enumindi
 func NewAddIndicatorGaugeDataSourceRequestWithDefaults() *AddIndicatorGaugeDataSourceRequest {
 	this := AddIndicatorGaugeDataSourceRequest{}
 	return &this
-}
-
-// GetSourceName returns the SourceName field value
-func (o *AddIndicatorGaugeDataSourceRequest) GetSourceName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SourceName
-}
-
-// GetSourceNameOk returns a tuple with the SourceName field value
-// and a boolean to check if the value has been set.
-func (o *AddIndicatorGaugeDataSourceRequest) GetSourceNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SourceName, true
-}
-
-// SetSourceName sets field value
-func (o *AddIndicatorGaugeDataSourceRequest) SetSourceName(v string) {
-	o.SourceName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -349,6 +325,30 @@ func (o *AddIndicatorGaugeDataSourceRequest) SetMinimumUpdateInterval(v string) 
 	o.MinimumUpdateInterval = &v
 }
 
+// GetSourceName returns the SourceName field value
+func (o *AddIndicatorGaugeDataSourceRequest) GetSourceName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SourceName
+}
+
+// GetSourceNameOk returns a tuple with the SourceName field value
+// and a boolean to check if the value has been set.
+func (o *AddIndicatorGaugeDataSourceRequest) GetSourceNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SourceName, true
+}
+
+// SetSourceName sets field value
+func (o *AddIndicatorGaugeDataSourceRequest) SetSourceName(v string) {
+	o.SourceName = v
+}
+
 func (o AddIndicatorGaugeDataSourceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -359,7 +359,6 @@ func (o AddIndicatorGaugeDataSourceRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddIndicatorGaugeDataSourceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["sourceName"] = o.SourceName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -381,6 +380,7 @@ func (o AddIndicatorGaugeDataSourceRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.MinimumUpdateInterval) {
 		toSerialize["minimumUpdateInterval"] = o.MinimumUpdateInterval
 	}
+	toSerialize["sourceName"] = o.SourceName
 	return toSerialize, nil
 }
 

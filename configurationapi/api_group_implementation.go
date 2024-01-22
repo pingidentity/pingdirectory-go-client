@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// GroupImplementationApiService GroupImplementationApi service
-type GroupImplementationApiService service
+// GroupImplementationAPIService GroupImplementationAPI service
+type GroupImplementationAPIService service
 
 type ApiGetGroupImplementationRequest struct {
 	ctx                     context.Context
-	ApiService              *GroupImplementationApiService
+	ApiService              *GroupImplementationAPIService
 	groupImplementationName string
 }
 
@@ -39,7 +39,7 @@ GetGroupImplementation Returns a single Group Implementation
 	@param groupImplementationName Name of the Group Implementation
 	@return ApiGetGroupImplementationRequest
 */
-func (a *GroupImplementationApiService) GetGroupImplementation(ctx context.Context, groupImplementationName string) ApiGetGroupImplementationRequest {
+func (a *GroupImplementationAPIService) GetGroupImplementation(ctx context.Context, groupImplementationName string) ApiGetGroupImplementationRequest {
 	return ApiGetGroupImplementationRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -50,7 +50,7 @@ func (a *GroupImplementationApiService) GetGroupImplementation(ctx context.Conte
 // Execute executes the request
 //
 //	@return GetGroupImplementation200Response
-func (a *GroupImplementationApiService) GetGroupImplementationExecute(r ApiGetGroupImplementationRequest) (*GetGroupImplementation200Response, *http.Response, error) {
+func (a *GroupImplementationAPIService) GetGroupImplementationExecute(r ApiGetGroupImplementationRequest) (*GetGroupImplementation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -58,7 +58,7 @@ func (a *GroupImplementationApiService) GetGroupImplementationExecute(r ApiGetGr
 		localVarReturnValue *GetGroupImplementation200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupImplementationApiService.GetGroupImplementation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupImplementationAPIService.GetGroupImplementation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *GroupImplementationApiService) GetGroupImplementationExecute(r ApiGetGr
 
 type ApiListGroupImplementationsRequest struct {
 	ctx        context.Context
-	ApiService *GroupImplementationApiService
+	ApiService *GroupImplementationAPIService
 	filter     *string
 }
 
@@ -146,7 +146,7 @@ ListGroupImplementations Returns a list of all Group Implementation objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListGroupImplementationsRequest
 */
-func (a *GroupImplementationApiService) ListGroupImplementations(ctx context.Context) ApiListGroupImplementationsRequest {
+func (a *GroupImplementationAPIService) ListGroupImplementations(ctx context.Context) ApiListGroupImplementationsRequest {
 	return ApiListGroupImplementationsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *GroupImplementationApiService) ListGroupImplementations(ctx context.Con
 // Execute executes the request
 //
 //	@return GroupImplementationListResponse
-func (a *GroupImplementationApiService) ListGroupImplementationsExecute(r ApiListGroupImplementationsRequest) (*GroupImplementationListResponse, *http.Response, error) {
+func (a *GroupImplementationAPIService) ListGroupImplementationsExecute(r ApiListGroupImplementationsRequest) (*GroupImplementationListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -164,7 +164,7 @@ func (a *GroupImplementationApiService) ListGroupImplementationsExecute(r ApiLis
 		localVarReturnValue *GroupImplementationListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupImplementationApiService.ListGroupImplementations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupImplementationAPIService.ListGroupImplementations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -234,7 +234,7 @@ func (a *GroupImplementationApiService) ListGroupImplementationsExecute(r ApiLis
 
 type ApiUpdateGroupImplementationRequest struct {
 	ctx                     context.Context
-	ApiService              *GroupImplementationApiService
+	ApiService              *GroupImplementationAPIService
 	groupImplementationName string
 	updateRequest           *UpdateRequest
 }
@@ -256,7 +256,7 @@ UpdateGroupImplementation Update an existing Group Implementation by name
 	@param groupImplementationName Name of the Group Implementation
 	@return ApiUpdateGroupImplementationRequest
 */
-func (a *GroupImplementationApiService) UpdateGroupImplementation(ctx context.Context, groupImplementationName string) ApiUpdateGroupImplementationRequest {
+func (a *GroupImplementationAPIService) UpdateGroupImplementation(ctx context.Context, groupImplementationName string) ApiUpdateGroupImplementationRequest {
 	return ApiUpdateGroupImplementationRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -267,7 +267,7 @@ func (a *GroupImplementationApiService) UpdateGroupImplementation(ctx context.Co
 // Execute executes the request
 //
 //	@return GetGroupImplementation200Response
-func (a *GroupImplementationApiService) UpdateGroupImplementationExecute(r ApiUpdateGroupImplementationRequest) (*GetGroupImplementation200Response, *http.Response, error) {
+func (a *GroupImplementationAPIService) UpdateGroupImplementationExecute(r ApiUpdateGroupImplementationRequest) (*GetGroupImplementation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -275,7 +275,7 @@ func (a *GroupImplementationApiService) UpdateGroupImplementationExecute(r ApiUp
 		localVarReturnValue *GetGroupImplementation200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupImplementationApiService.UpdateGroupImplementation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupImplementationAPIService.UpdateGroupImplementation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

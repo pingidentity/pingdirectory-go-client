@@ -17,32 +17,34 @@ import (
 
 // AddPlugin200Response - struct for AddPlugin200Response
 type AddPlugin200Response struct {
-	AttributeMapperPluginResponse                                  *AttributeMapperPluginResponse
-	CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse
-	CleanUpExpiredPingfederatePersistentSessionsPluginResponse     *CleanUpExpiredPingfederatePersistentSessionsPluginResponse
-	CleanUpInactivePingfederatePersistentSessionsPluginResponse    *CleanUpInactivePingfederatePersistentSessionsPluginResponse
-	CoalesceModificationsPluginResponse                            *CoalesceModificationsPluginResponse
-	ComposedAttributePluginResponse                                *ComposedAttributePluginResponse
-	DelayPluginResponse                                            *DelayPluginResponse
-	DnMapperPluginResponse                                         *DnMapperPluginResponse
-	GroovyScriptedPluginResponse                                   *GroovyScriptedPluginResponse
-	InternalSearchRatePluginResponse                               *InternalSearchRatePluginResponse
-	ModifiablePasswordPolicyStatePluginResponse                    *ModifiablePasswordPolicyStatePluginResponse
-	PassThroughAuthenticationPluginResponse                        *PassThroughAuthenticationPluginResponse
-	PeriodicGcPluginResponse                                       *PeriodicGcPluginResponse
-	PeriodicStatsLoggerPluginResponse                              *PeriodicStatsLoggerPluginResponse
-	PingOnePassThroughAuthenticationPluginResponse                 *PingOnePassThroughAuthenticationPluginResponse
-	PluggablePassThroughAuthenticationPluginResponse               *PluggablePassThroughAuthenticationPluginResponse
-	PurgeExpiredDataPluginResponse                                 *PurgeExpiredDataPluginResponse
-	ReferentialIntegrityPluginResponse                             *ReferentialIntegrityPluginResponse
-	ReferralOnUpdatePluginResponse                                 *ReferralOnUpdatePluginResponse
-	SearchShutdownPluginResponse                                   *SearchShutdownPluginResponse
-	SevenBitCleanPluginResponse                                    *SevenBitCleanPluginResponse
-	SimpleToExternalBindPluginResponse                             *SimpleToExternalBindPluginResponse
-	SnmpSubagentPluginResponse                                     *SnmpSubagentPluginResponse
-	SubOperationTimingPluginResponse                               *SubOperationTimingPluginResponse
-	ThirdPartyPluginResponse                                       *ThirdPartyPluginResponse
-	UniqueAttributePluginResponse                                  *UniqueAttributePluginResponse
+	AttributeMapperPluginResponse                                      *AttributeMapperPluginResponse
+	CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse     *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse
+	CleanUpExpiredPingfederatePersistentSessionsPluginResponse         *CleanUpExpiredPingfederatePersistentSessionsPluginResponse
+	CleanUpInactivePingfederatePersistentSessionsPluginResponse        *CleanUpInactivePingfederatePersistentSessionsPluginResponse
+	CoalesceModificationsPluginResponse                                *CoalesceModificationsPluginResponse
+	ComposedAttributePluginResponse                                    *ComposedAttributePluginResponse
+	DelayPluginResponse                                                *DelayPluginResponse
+	DnMapperPluginResponse                                             *DnMapperPluginResponse
+	GroovyScriptedPluginResponse                                       *GroovyScriptedPluginResponse
+	InternalSearchRatePluginResponse                                   *InternalSearchRatePluginResponse
+	InvertedStaticGroupReferentialIntegrityPluginResponse              *InvertedStaticGroupReferentialIntegrityPluginResponse
+	ModifiablePasswordPolicyStatePluginResponse                        *ModifiablePasswordPolicyStatePluginResponse
+	PassThroughAuthenticationPluginResponse                            *PassThroughAuthenticationPluginResponse
+	PeriodicGcPluginResponse                                           *PeriodicGcPluginResponse
+	PeriodicStatsLoggerPluginResponse                                  *PeriodicStatsLoggerPluginResponse
+	PingOnePassThroughAuthenticationPluginResponse                     *PingOnePassThroughAuthenticationPluginResponse
+	PluggablePassThroughAuthenticationPluginResponse                   *PluggablePassThroughAuthenticationPluginResponse
+	PurgeExpiredDataPluginResponse                                     *PurgeExpiredDataPluginResponse
+	ReferentialIntegrityPluginResponse                                 *ReferentialIntegrityPluginResponse
+	ReferralOnUpdatePluginResponse                                     *ReferralOnUpdatePluginResponse
+	SearchShutdownPluginResponse                                       *SearchShutdownPluginResponse
+	SevenBitCleanPluginResponse                                        *SevenBitCleanPluginResponse
+	SimpleToExternalBindPluginResponse                                 *SimpleToExternalBindPluginResponse
+	SnmpSubagentPluginResponse                                         *SnmpSubagentPluginResponse
+	SubOperationTimingPluginResponse                                   *SubOperationTimingPluginResponse
+	ThirdPartyPluginResponse                                           *ThirdPartyPluginResponse
+	TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse *TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse
+	UniqueAttributePluginResponse                                      *UniqueAttributePluginResponse
 }
 
 // AttributeMapperPluginResponseAsAddPlugin200Response is a convenience function that returns AttributeMapperPluginResponse wrapped in AddPlugin200Response
@@ -112,6 +114,13 @@ func GroovyScriptedPluginResponseAsAddPlugin200Response(v *GroovyScriptedPluginR
 func InternalSearchRatePluginResponseAsAddPlugin200Response(v *InternalSearchRatePluginResponse) AddPlugin200Response {
 	return AddPlugin200Response{
 		InternalSearchRatePluginResponse: v,
+	}
+}
+
+// InvertedStaticGroupReferentialIntegrityPluginResponseAsAddPlugin200Response is a convenience function that returns InvertedStaticGroupReferentialIntegrityPluginResponse wrapped in AddPlugin200Response
+func InvertedStaticGroupReferentialIntegrityPluginResponseAsAddPlugin200Response(v *InvertedStaticGroupReferentialIntegrityPluginResponse) AddPlugin200Response {
+	return AddPlugin200Response{
+		InvertedStaticGroupReferentialIntegrityPluginResponse: v,
 	}
 }
 
@@ -217,6 +226,13 @@ func SubOperationTimingPluginResponseAsAddPlugin200Response(v *SubOperationTimin
 func ThirdPartyPluginResponseAsAddPlugin200Response(v *ThirdPartyPluginResponse) AddPlugin200Response {
 	return AddPlugin200Response{
 		ThirdPartyPluginResponse: v,
+	}
+}
+
+// TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponseAsAddPlugin200Response is a convenience function that returns TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse wrapped in AddPlugin200Response
+func TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponseAsAddPlugin200Response(v *TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse) AddPlugin200Response {
+	return AddPlugin200Response{
+		TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse: v,
 	}
 }
 
@@ -359,6 +375,19 @@ func (dst *AddPlugin200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.InternalSearchRatePluginResponse = nil
+	}
+
+	// try to unmarshal data into InvertedStaticGroupReferentialIntegrityPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.InvertedStaticGroupReferentialIntegrityPluginResponse)
+	if err == nil {
+		jsonInvertedStaticGroupReferentialIntegrityPluginResponse, _ := json.Marshal(dst.InvertedStaticGroupReferentialIntegrityPluginResponse)
+		if string(jsonInvertedStaticGroupReferentialIntegrityPluginResponse) == "{}" { // empty struct
+			dst.InvertedStaticGroupReferentialIntegrityPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.InvertedStaticGroupReferentialIntegrityPluginResponse = nil
 	}
 
 	// try to unmarshal data into ModifiablePasswordPolicyStatePluginResponse
@@ -556,6 +585,19 @@ func (dst *AddPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.ThirdPartyPluginResponse = nil
 	}
 
+	// try to unmarshal data into TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse)
+	if err == nil {
+		jsonTraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse, _ := json.Marshal(dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse)
+		if string(jsonTraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse) == "{}" { // empty struct
+			dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse = nil
+	}
+
 	// try to unmarshal data into UniqueAttributePluginResponse
 	err = newStrictDecoder(data).Decode(&dst.UniqueAttributePluginResponse)
 	if err == nil {
@@ -581,6 +623,7 @@ func (dst *AddPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.DnMapperPluginResponse = nil
 		dst.GroovyScriptedPluginResponse = nil
 		dst.InternalSearchRatePluginResponse = nil
+		dst.InvertedStaticGroupReferentialIntegrityPluginResponse = nil
 		dst.ModifiablePasswordPolicyStatePluginResponse = nil
 		dst.PassThroughAuthenticationPluginResponse = nil
 		dst.PeriodicGcPluginResponse = nil
@@ -596,6 +639,7 @@ func (dst *AddPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.SnmpSubagentPluginResponse = nil
 		dst.SubOperationTimingPluginResponse = nil
 		dst.ThirdPartyPluginResponse = nil
+		dst.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse = nil
 		dst.UniqueAttributePluginResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddPlugin200Response)")
@@ -646,6 +690,10 @@ func (src AddPlugin200Response) MarshalJSON() ([]byte, error) {
 
 	if src.InternalSearchRatePluginResponse != nil {
 		return json.Marshal(&src.InternalSearchRatePluginResponse)
+	}
+
+	if src.InvertedStaticGroupReferentialIntegrityPluginResponse != nil {
+		return json.Marshal(&src.InvertedStaticGroupReferentialIntegrityPluginResponse)
 	}
 
 	if src.ModifiablePasswordPolicyStatePluginResponse != nil {
@@ -708,6 +756,10 @@ func (src AddPlugin200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ThirdPartyPluginResponse)
 	}
 
+	if src.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse != nil {
+		return json.Marshal(&src.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse)
+	}
+
 	if src.UniqueAttributePluginResponse != nil {
 		return json.Marshal(&src.UniqueAttributePluginResponse)
 	}
@@ -758,6 +810,10 @@ func (obj *AddPlugin200Response) GetActualInstance() interface{} {
 
 	if obj.InternalSearchRatePluginResponse != nil {
 		return obj.InternalSearchRatePluginResponse
+	}
+
+	if obj.InvertedStaticGroupReferentialIntegrityPluginResponse != nil {
+		return obj.InvertedStaticGroupReferentialIntegrityPluginResponse
 	}
 
 	if obj.ModifiablePasswordPolicyStatePluginResponse != nil {
@@ -818,6 +874,10 @@ func (obj *AddPlugin200Response) GetActualInstance() interface{} {
 
 	if obj.ThirdPartyPluginResponse != nil {
 		return obj.ThirdPartyPluginResponse
+	}
+
+	if obj.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse != nil {
+		return obj.TraditionalStaticGroupSupportForInvertedStaticGroupsPluginResponse
 	}
 
 	if obj.UniqueAttributePluginResponse != nil {

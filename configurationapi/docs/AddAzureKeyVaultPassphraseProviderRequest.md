@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Passphrase Provider | 
 **Schemas** | [**[]EnumazureKeyVaultPassphraseProviderSchemaUrn**](EnumazureKeyVaultPassphraseProviderSchemaUrn.md) |  | 
 **KeyVaultURI** | **string** | The URI that identifies the Azure Key Vault from which the secret is to be retrieved. | 
 **AzureAuthenticationMethod** | **string** | The mechanism used to authenticate to the Azure service. | 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **MaxCacheDuration** | Pointer to **string** | The maximum length of time that the passphrase provider may cache the passphrase that has been read from Azure Key Vault. A value of zero seconds indicates that the provider should always attempt to read the passphrase from the Azure service. | [optional] 
 **Description** | Pointer to **string** | A description for this Passphrase Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Passphrase Provider is enabled for use in the server. | 
+**ProviderName** | **string** | Name of the new Passphrase Provider | 
 
 ## Methods
 
 ### NewAddAzureKeyVaultPassphraseProviderRequest
 
-`func NewAddAzureKeyVaultPassphraseProviderRequest(providerName string, schemas []EnumazureKeyVaultPassphraseProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, enabled bool, ) *AddAzureKeyVaultPassphraseProviderRequest`
+`func NewAddAzureKeyVaultPassphraseProviderRequest(schemas []EnumazureKeyVaultPassphraseProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, enabled bool, providerName string, ) *AddAzureKeyVaultPassphraseProviderRequest`
 
 NewAddAzureKeyVaultPassphraseProviderRequest instantiates a new AddAzureKeyVaultPassphraseProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddAzureKeyVaultPassphraseProviderRequestWithDefaults instantiates a new AddAzureKeyVaultPassphraseProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddAzureKeyVaultPassphraseProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddAzureKeyVaultPassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddAzureKeyVaultPassphraseProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -226,6 +206,26 @@ and a boolean to check if the value has been set.
 `func (o *AddAzureKeyVaultPassphraseProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddAzureKeyVaultPassphraseProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddAzureKeyVaultPassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddAzureKeyVaultPassphraseProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

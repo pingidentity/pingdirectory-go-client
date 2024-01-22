@@ -1,14 +1,14 @@
-# \ScimAttributeMappingApi
+# \ScimAttributeMappingAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddScimAttributeMapping**](ScimAttributeMappingApi.md#AddScimAttributeMapping) | **Post** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings | Add a new SCIM Attribute Mapping to the config
-[**DeleteScimAttributeMapping**](ScimAttributeMappingApi.md#DeleteScimAttributeMapping) | **Delete** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Delete a SCIM Attribute Mapping
-[**GetScimAttributeMapping**](ScimAttributeMappingApi.md#GetScimAttributeMapping) | **Get** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Returns a single SCIM Attribute Mapping
-[**ListScimAttributeMappings**](ScimAttributeMappingApi.md#ListScimAttributeMappings) | **Get** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings | Returns a list of all SCIM Attribute Mapping objects
-[**UpdateScimAttributeMapping**](ScimAttributeMappingApi.md#UpdateScimAttributeMapping) | **Patch** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Update an existing SCIM Attribute Mapping by name
+[**AddScimAttributeMapping**](ScimAttributeMappingAPI.md#AddScimAttributeMapping) | **Post** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings | Add a new SCIM Attribute Mapping to the config
+[**DeleteScimAttributeMapping**](ScimAttributeMappingAPI.md#DeleteScimAttributeMapping) | **Delete** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Delete a SCIM Attribute Mapping
+[**GetScimAttributeMapping**](ScimAttributeMappingAPI.md#GetScimAttributeMapping) | **Get** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Returns a single SCIM Attribute Mapping
+[**ListScimAttributeMappings**](ScimAttributeMappingAPI.md#ListScimAttributeMappings) | **Get** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings | Returns a list of all SCIM Attribute Mapping objects
+[**UpdateScimAttributeMapping**](ScimAttributeMappingAPI.md#UpdateScimAttributeMapping) | **Patch** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Update an existing SCIM Attribute Mapping by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     scimResourceTypeName := "scimResourceTypeName_example" // string | Name of the SCIM Resource Type
-    addScimAttributeMappingRequest := *openapiclient.NewAddScimAttributeMappingRequest("MappingName_example", "ScimResourceTypeAttribute_example", "LdapAttribute_example") // AddScimAttributeMappingRequest | Create a new SCIM Attribute Mapping in the config
+    addScimAttributeMappingRequest := *openapiclient.NewAddScimAttributeMappingRequest("ScimResourceTypeAttribute_example", "LdapAttribute_example", "MappingName_example") // AddScimAttributeMappingRequest | Create a new SCIM Attribute Mapping in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimAttributeMappingApi.AddScimAttributeMapping(context.Background(), scimResourceTypeName).AddScimAttributeMappingRequest(addScimAttributeMappingRequest).Execute()
+    resp, r, err := apiClient.ScimAttributeMappingAPI.AddScimAttributeMapping(context.Background(), scimResourceTypeName).AddScimAttributeMappingRequest(addScimAttributeMappingRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingApi.AddScimAttributeMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingAPI.AddScimAttributeMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddScimAttributeMapping`: ScimAttributeMappingResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeMappingApi.AddScimAttributeMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeMappingAPI.AddScimAttributeMapping`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ScimAttributeMappingApi.DeleteScimAttributeMapping(context.Background(), scimAttributeMappingName, scimResourceTypeName).Execute()
+    r, err := apiClient.ScimAttributeMappingAPI.DeleteScimAttributeMapping(context.Background(), scimAttributeMappingName, scimResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingApi.DeleteScimAttributeMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingAPI.DeleteScimAttributeMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimAttributeMappingApi.GetScimAttributeMapping(context.Background(), scimAttributeMappingName, scimResourceTypeName).Execute()
+    resp, r, err := apiClient.ScimAttributeMappingAPI.GetScimAttributeMapping(context.Background(), scimAttributeMappingName, scimResourceTypeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingApi.GetScimAttributeMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingAPI.GetScimAttributeMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetScimAttributeMapping`: ScimAttributeMappingResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeMappingApi.GetScimAttributeMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeMappingAPI.GetScimAttributeMapping`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimAttributeMappingApi.ListScimAttributeMappings(context.Background(), scimResourceTypeName).Filter(filter).Execute()
+    resp, r, err := apiClient.ScimAttributeMappingAPI.ListScimAttributeMappings(context.Background(), scimResourceTypeName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingApi.ListScimAttributeMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingAPI.ListScimAttributeMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListScimAttributeMappings`: ScimAttributeMappingListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeMappingApi.ListScimAttributeMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeMappingAPI.ListScimAttributeMappings`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ScimAttributeMappingApi.UpdateScimAttributeMapping(context.Background(), scimAttributeMappingName, scimResourceTypeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ScimAttributeMappingAPI.UpdateScimAttributeMapping(context.Background(), scimAttributeMappingName, scimResourceTypeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingApi.UpdateScimAttributeMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingAPI.UpdateScimAttributeMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateScimAttributeMapping`: ScimAttributeMappingResponse
-    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeMappingApi.UpdateScimAttributeMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeMappingAPI.UpdateScimAttributeMapping`: %v\n", resp)
 }
 ```
 

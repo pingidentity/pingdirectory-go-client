@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LogRetentionPolicyApiService LogRetentionPolicyApi service
-type LogRetentionPolicyApiService service
+// LogRetentionPolicyAPIService LogRetentionPolicyAPI service
+type LogRetentionPolicyAPIService service
 
 type ApiAddLogRetentionPolicyRequest struct {
 	ctx                          context.Context
-	ApiService                   *LogRetentionPolicyApiService
+	ApiService                   *LogRetentionPolicyAPIService
 	addLogRetentionPolicyRequest *AddLogRetentionPolicyRequest
 }
 
@@ -44,7 +44,7 @@ AddLogRetentionPolicy Add a new Log Retention Policy to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddLogRetentionPolicyRequest
 */
-func (a *LogRetentionPolicyApiService) AddLogRetentionPolicy(ctx context.Context) ApiAddLogRetentionPolicyRequest {
+func (a *LogRetentionPolicyAPIService) AddLogRetentionPolicy(ctx context.Context) ApiAddLogRetentionPolicyRequest {
 	return ApiAddLogRetentionPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *LogRetentionPolicyApiService) AddLogRetentionPolicy(ctx context.Context
 // Execute executes the request
 //
 //	@return AddLogRetentionPolicy200Response
-func (a *LogRetentionPolicyApiService) AddLogRetentionPolicyExecute(r ApiAddLogRetentionPolicyRequest) (*AddLogRetentionPolicy200Response, *http.Response, error) {
+func (a *LogRetentionPolicyAPIService) AddLogRetentionPolicyExecute(r ApiAddLogRetentionPolicyRequest) (*AddLogRetentionPolicy200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *LogRetentionPolicyApiService) AddLogRetentionPolicyExecute(r ApiAddLogR
 		localVarReturnValue *AddLogRetentionPolicy200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyApiService.AddLogRetentionPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyAPIService.AddLogRetentionPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *LogRetentionPolicyApiService) AddLogRetentionPolicyExecute(r ApiAddLogR
 
 type ApiDeleteLogRetentionPolicyRequest struct {
 	ctx                    context.Context
-	ApiService             *LogRetentionPolicyApiService
+	ApiService             *LogRetentionPolicyAPIService
 	logRetentionPolicyName string
 }
 
@@ -149,7 +149,7 @@ DeleteLogRetentionPolicy Delete a Log Retention Policy
 	@param logRetentionPolicyName Name of the Log Retention Policy
 	@return ApiDeleteLogRetentionPolicyRequest
 */
-func (a *LogRetentionPolicyApiService) DeleteLogRetentionPolicy(ctx context.Context, logRetentionPolicyName string) ApiDeleteLogRetentionPolicyRequest {
+func (a *LogRetentionPolicyAPIService) DeleteLogRetentionPolicy(ctx context.Context, logRetentionPolicyName string) ApiDeleteLogRetentionPolicyRequest {
 	return ApiDeleteLogRetentionPolicyRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -158,14 +158,14 @@ func (a *LogRetentionPolicyApiService) DeleteLogRetentionPolicy(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *LogRetentionPolicyApiService) DeleteLogRetentionPolicyExecute(r ApiDeleteLogRetentionPolicyRequest) (*http.Response, error) {
+func (a *LogRetentionPolicyAPIService) DeleteLogRetentionPolicyExecute(r ApiDeleteLogRetentionPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyApiService.DeleteLogRetentionPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyAPIService.DeleteLogRetentionPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *LogRetentionPolicyApiService) DeleteLogRetentionPolicyExecute(r ApiDele
 
 type ApiGetLogRetentionPolicyRequest struct {
 	ctx                    context.Context
-	ApiService             *LogRetentionPolicyApiService
+	ApiService             *LogRetentionPolicyAPIService
 	logRetentionPolicyName string
 }
 
@@ -239,7 +239,7 @@ GetLogRetentionPolicy Returns a single Log Retention Policy
 	@param logRetentionPolicyName Name of the Log Retention Policy
 	@return ApiGetLogRetentionPolicyRequest
 */
-func (a *LogRetentionPolicyApiService) GetLogRetentionPolicy(ctx context.Context, logRetentionPolicyName string) ApiGetLogRetentionPolicyRequest {
+func (a *LogRetentionPolicyAPIService) GetLogRetentionPolicy(ctx context.Context, logRetentionPolicyName string) ApiGetLogRetentionPolicyRequest {
 	return ApiGetLogRetentionPolicyRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -250,7 +250,7 @@ func (a *LogRetentionPolicyApiService) GetLogRetentionPolicy(ctx context.Context
 // Execute executes the request
 //
 //	@return AddLogRetentionPolicy200Response
-func (a *LogRetentionPolicyApiService) GetLogRetentionPolicyExecute(r ApiGetLogRetentionPolicyRequest) (*AddLogRetentionPolicy200Response, *http.Response, error) {
+func (a *LogRetentionPolicyAPIService) GetLogRetentionPolicyExecute(r ApiGetLogRetentionPolicyRequest) (*AddLogRetentionPolicy200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *LogRetentionPolicyApiService) GetLogRetentionPolicyExecute(r ApiGetLogR
 		localVarReturnValue *AddLogRetentionPolicy200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyApiService.GetLogRetentionPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyAPIService.GetLogRetentionPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *LogRetentionPolicyApiService) GetLogRetentionPolicyExecute(r ApiGetLogR
 
 type ApiListLogRetentionPoliciesRequest struct {
 	ctx        context.Context
-	ApiService *LogRetentionPolicyApiService
+	ApiService *LogRetentionPolicyAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListLogRetentionPolicies Returns a list of all Log Retention Policy objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListLogRetentionPoliciesRequest
 */
-func (a *LogRetentionPolicyApiService) ListLogRetentionPolicies(ctx context.Context) ApiListLogRetentionPoliciesRequest {
+func (a *LogRetentionPolicyAPIService) ListLogRetentionPolicies(ctx context.Context) ApiListLogRetentionPoliciesRequest {
 	return ApiListLogRetentionPoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *LogRetentionPolicyApiService) ListLogRetentionPolicies(ctx context.Cont
 // Execute executes the request
 //
 //	@return LogRetentionPolicyListResponse
-func (a *LogRetentionPolicyApiService) ListLogRetentionPoliciesExecute(r ApiListLogRetentionPoliciesRequest) (*LogRetentionPolicyListResponse, *http.Response, error) {
+func (a *LogRetentionPolicyAPIService) ListLogRetentionPoliciesExecute(r ApiListLogRetentionPoliciesRequest) (*LogRetentionPolicyListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *LogRetentionPolicyApiService) ListLogRetentionPoliciesExecute(r ApiList
 		localVarReturnValue *LogRetentionPolicyListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyApiService.ListLogRetentionPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyAPIService.ListLogRetentionPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *LogRetentionPolicyApiService) ListLogRetentionPoliciesExecute(r ApiList
 
 type ApiUpdateLogRetentionPolicyRequest struct {
 	ctx                    context.Context
-	ApiService             *LogRetentionPolicyApiService
+	ApiService             *LogRetentionPolicyAPIService
 	logRetentionPolicyName string
 	updateRequest          *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateLogRetentionPolicy Update an existing Log Retention Policy by name
 	@param logRetentionPolicyName Name of the Log Retention Policy
 	@return ApiUpdateLogRetentionPolicyRequest
 */
-func (a *LogRetentionPolicyApiService) UpdateLogRetentionPolicy(ctx context.Context, logRetentionPolicyName string) ApiUpdateLogRetentionPolicyRequest {
+func (a *LogRetentionPolicyAPIService) UpdateLogRetentionPolicy(ctx context.Context, logRetentionPolicyName string) ApiUpdateLogRetentionPolicyRequest {
 	return ApiUpdateLogRetentionPolicyRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -467,7 +467,7 @@ func (a *LogRetentionPolicyApiService) UpdateLogRetentionPolicy(ctx context.Cont
 // Execute executes the request
 //
 //	@return AddLogRetentionPolicy200Response
-func (a *LogRetentionPolicyApiService) UpdateLogRetentionPolicyExecute(r ApiUpdateLogRetentionPolicyRequest) (*AddLogRetentionPolicy200Response, *http.Response, error) {
+func (a *LogRetentionPolicyAPIService) UpdateLogRetentionPolicyExecute(r ApiUpdateLogRetentionPolicyRequest) (*AddLogRetentionPolicy200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *LogRetentionPolicyApiService) UpdateLogRetentionPolicyExecute(r ApiUpda
 		localVarReturnValue *AddLogRetentionPolicy200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyApiService.UpdateLogRetentionPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRetentionPolicyAPIService.UpdateLogRetentionPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

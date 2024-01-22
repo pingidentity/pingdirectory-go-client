@@ -1,14 +1,14 @@
-# \LogPublisherApi
+# \LogPublisherAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLogPublisher**](LogPublisherApi.md#AddLogPublisher) | **Post** /log-publishers | Add a new Log Publisher to the config
-[**DeleteLogPublisher**](LogPublisherApi.md#DeleteLogPublisher) | **Delete** /log-publishers/{log-publisher-name} | Delete a Log Publisher
-[**GetLogPublisher**](LogPublisherApi.md#GetLogPublisher) | **Get** /log-publishers/{log-publisher-name} | Returns a single Log Publisher
-[**ListLogPublishers**](LogPublisherApi.md#ListLogPublishers) | **Get** /log-publishers | Returns a list of all Log Publisher objects
-[**UpdateLogPublisher**](LogPublisherApi.md#UpdateLogPublisher) | **Patch** /log-publishers/{log-publisher-name} | Update an existing Log Publisher by name
+[**AddLogPublisher**](LogPublisherAPI.md#AddLogPublisher) | **Post** /log-publishers | Add a new Log Publisher to the config
+[**DeleteLogPublisher**](LogPublisherAPI.md#DeleteLogPublisher) | **Delete** /log-publishers/{log-publisher-name} | Delete a Log Publisher
+[**GetLogPublisher**](LogPublisherAPI.md#GetLogPublisher) | **Get** /log-publishers/{log-publisher-name} | Returns a single Log Publisher
+[**ListLogPublishers**](LogPublisherAPI.md#ListLogPublishers) | **Get** /log-publishers | Returns a list of all Log Publisher objects
+[**UpdateLogPublisher**](LogPublisherAPI.md#UpdateLogPublisher) | **Patch** /log-publishers/{log-publisher-name} | Update an existing Log Publisher by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addLogPublisherRequest := openapiclient.add_log_publisher_request{AddAdminAlertAccessLogPublisherRequest: openapiclient.NewAddAdminAlertAccessLogPublisherRequest("PublisherName_example", []openapiclient.EnumadminAlertAccessLogPublisherSchemaUrn{openapiclient.Enumadmin-alert-access-log-publisherSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-publisher:admin-alert-access")}, false)} // AddLogPublisherRequest | Create a new Log Publisher in the config
+    addLogPublisherRequest := openapiclient.add_log_publisher_request{AddAdminAlertAccessLogPublisherRequest: openapiclient.NewAddAdminAlertAccessLogPublisherRequest([]openapiclient.EnumadminAlertAccessLogPublisherSchemaUrn{openapiclient.Enumadmin-alert-access-log-publisherSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-publisher:admin-alert-access")}, false, "PublisherName_example")} // AddLogPublisherRequest | Create a new Log Publisher in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogPublisherApi.AddLogPublisher(context.Background()).AddLogPublisherRequest(addLogPublisherRequest).Execute()
+    resp, r, err := apiClient.LogPublisherAPI.AddLogPublisher(context.Background()).AddLogPublisherRequest(addLogPublisherRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherApi.AddLogPublisher``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherAPI.AddLogPublisher``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLogPublisher`: AddLogPublisher200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogPublisherApi.AddLogPublisher`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogPublisherAPI.AddLogPublisher`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LogPublisherApi.DeleteLogPublisher(context.Background(), logPublisherName).Execute()
+    r, err := apiClient.LogPublisherAPI.DeleteLogPublisher(context.Background(), logPublisherName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherApi.DeleteLogPublisher``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherAPI.DeleteLogPublisher``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogPublisherApi.GetLogPublisher(context.Background(), logPublisherName).Execute()
+    resp, r, err := apiClient.LogPublisherAPI.GetLogPublisher(context.Background(), logPublisherName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherApi.GetLogPublisher``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherAPI.GetLogPublisher``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLogPublisher`: GetLogPublisher200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogPublisherApi.GetLogPublisher`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogPublisherAPI.GetLogPublisher`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogPublisherApi.ListLogPublishers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.LogPublisherAPI.ListLogPublishers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherApi.ListLogPublishers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherAPI.ListLogPublishers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLogPublishers`: LogPublisherListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LogPublisherApi.ListLogPublishers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogPublisherAPI.ListLogPublishers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogPublisherApi.UpdateLogPublisher(context.Background(), logPublisherName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LogPublisherAPI.UpdateLogPublisher(context.Background(), logPublisherName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherApi.UpdateLogPublisher``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherAPI.UpdateLogPublisher``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLogPublisher`: GetLogPublisher200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogPublisherApi.UpdateLogPublisher`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogPublisherAPI.UpdateLogPublisher`: %v\n", resp)
 }
 ```
 

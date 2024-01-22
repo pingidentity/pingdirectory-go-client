@@ -19,8 +19,6 @@ var _ MappedNullable = &DebugTargetResponse{}
 
 // DebugTargetResponse struct for DebugTargetResponse
 type DebugTargetResponse struct {
-	// Name of the Debug Target
-	Id      string                     `json:"id"`
 	Schemas []EnumdebugTargetSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the fully-qualified Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, com.unboundid.directory.server.core.DirectoryServer#startUp).
 	DebugScope    string                             `json:"debugScope"`
@@ -38,17 +36,19 @@ type DebugTargetResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Debug Target
+	Id string `json:"id"`
 }
 
 // NewDebugTargetResponse instantiates a new DebugTargetResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDebugTargetResponse(id string, debugScope string, debugLevel EnumdebugTargetDebugLevelProp) *DebugTargetResponse {
+func NewDebugTargetResponse(debugScope string, debugLevel EnumdebugTargetDebugLevelProp, id string) *DebugTargetResponse {
 	this := DebugTargetResponse{}
-	this.Id = id
 	this.DebugScope = debugScope
 	this.DebugLevel = debugLevel
+	this.Id = id
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewDebugTargetResponse(id string, debugScope string, debugLevel EnumdebugTa
 func NewDebugTargetResponseWithDefaults() *DebugTargetResponse {
 	this := DebugTargetResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DebugTargetResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DebugTargetResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DebugTargetResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -420,6 +396,30 @@ func (o *DebugTargetResponse) SetUrnpingidentityschemasconfigurationmessages20(v
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DebugTargetResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DebugTargetResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DebugTargetResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DebugTargetResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -430,7 +430,6 @@ func (o DebugTargetResponse) MarshalJSON() ([]byte, error) {
 
 func (o DebugTargetResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -460,6 +459,7 @@ func (o DebugTargetResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

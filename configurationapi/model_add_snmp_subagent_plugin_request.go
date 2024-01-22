@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSnmpSubagentPluginRequest{}
 
 // AddSnmpSubagentPluginRequest struct for AddSnmpSubagentPluginRequest
 type AddSnmpSubagentPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                            `json:"pluginName"`
-	Schemas    []EnumsnmpSubagentPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumsnmpSubagentPluginSchemaUrn `json:"schemas"`
 	// The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name.
 	ContextName *string `json:"contextName,omitempty"`
 	// The hostname or IP address of the SNMP master agent.
@@ -42,17 +40,19 @@ type AddSnmpSubagentPluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddSnmpSubagentPluginRequest instantiates a new AddSnmpSubagentPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSnmpSubagentPluginRequest(pluginName string, schemas []EnumsnmpSubagentPluginSchemaUrn, enabled bool) *AddSnmpSubagentPluginRequest {
+func NewAddSnmpSubagentPluginRequest(schemas []EnumsnmpSubagentPluginSchemaUrn, enabled bool, pluginName string) *AddSnmpSubagentPluginRequest {
 	this := AddSnmpSubagentPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -62,30 +62,6 @@ func NewAddSnmpSubagentPluginRequest(pluginName string, schemas []EnumsnmpSubage
 func NewAddSnmpSubagentPluginRequestWithDefaults() *AddSnmpSubagentPluginRequest {
 	this := AddSnmpSubagentPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddSnmpSubagentPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddSnmpSubagentPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddSnmpSubagentPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -424,6 +400,30 @@ func (o *AddSnmpSubagentPluginRequest) SetInvokeForInternalOperations(v bool) {
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddSnmpSubagentPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddSnmpSubagentPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddSnmpSubagentPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddSnmpSubagentPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -434,7 +434,6 @@ func (o AddSnmpSubagentPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSnmpSubagentPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ContextName) {
 		toSerialize["contextName"] = o.ContextName
@@ -464,6 +463,7 @@ func (o AddSnmpSubagentPluginRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

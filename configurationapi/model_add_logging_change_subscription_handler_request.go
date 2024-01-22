@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLoggingChangeSubscriptionHandlerRequest{}
 
 // AddLoggingChangeSubscriptionHandlerRequest struct for AddLoggingChangeSubscriptionHandlerRequest
 type AddLoggingChangeSubscriptionHandlerRequest struct {
-	// Name of the new Change Subscription Handler
-	HandlerName string                                          `json:"handlerName"`
-	Schemas     []EnumloggingChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the log file in which the change notification messages will be written.
 	LogFile *string `json:"logFile,omitempty"`
 	// A description for this Change Subscription Handler
@@ -30,17 +28,19 @@ type AddLoggingChangeSubscriptionHandlerRequest struct {
 	Enabled bool `json:"enabled"`
 	// The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
 	ChangeSubscription []string `json:"changeSubscription,omitempty"`
+	// Name of the new Change Subscription Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddLoggingChangeSubscriptionHandlerRequest instantiates a new AddLoggingChangeSubscriptionHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLoggingChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn, enabled bool) *AddLoggingChangeSubscriptionHandlerRequest {
+func NewAddLoggingChangeSubscriptionHandlerRequest(schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn, enabled bool, handlerName string) *AddLoggingChangeSubscriptionHandlerRequest {
 	this := AddLoggingChangeSubscriptionHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewAddLoggingChangeSubscriptionHandlerRequest(handlerName string, schemas [
 func NewAddLoggingChangeSubscriptionHandlerRequestWithDefaults() *AddLoggingChangeSubscriptionHandlerRequest {
 	this := AddLoggingChangeSubscriptionHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddLoggingChangeSubscriptionHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddLoggingChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddLoggingChangeSubscriptionHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -220,6 +196,30 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) SetChangeSubscription(v []s
 	o.ChangeSubscription = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddLoggingChangeSubscriptionHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddLoggingChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddLoggingChangeSubscriptionHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddLoggingChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -230,7 +230,6 @@ func (o AddLoggingChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte, error
 
 func (o AddLoggingChangeSubscriptionHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.LogFile) {
 		toSerialize["logFile"] = o.LogFile
@@ -242,6 +241,7 @@ func (o AddLoggingChangeSubscriptionHandlerRequest) ToMap() (map[string]interfac
 	if !IsNil(o.ChangeSubscription) {
 		toSerialize["changeSubscription"] = o.ChangeSubscription
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

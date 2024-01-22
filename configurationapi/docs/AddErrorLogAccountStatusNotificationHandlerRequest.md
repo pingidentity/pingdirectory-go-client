@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Account Status Notification Handler | 
 **Schemas** | [**[]EnumerrorLogAccountStatusNotificationHandlerSchemaUrn**](EnumerrorLogAccountStatusNotificationHandlerSchemaUrn.md) |  | 
 **AccountStatusNotificationType** | [**[]EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp**](EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp.md) |  | 
 **Description** | Pointer to **string** | A description for this Account Status Notification Handler | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **AccountCreationNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which add requests should result in account creation notifications for this handler. | [optional] 
 **AccountDeletionNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which delete requests should result in account deletion notifications for this handler. | [optional] 
 **AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
+**HandlerName** | **string** | Name of the new Account Status Notification Handler | 
 
 ## Methods
 
 ### NewAddErrorLogAccountStatusNotificationHandlerRequest
 
-`func NewAddErrorLogAccountStatusNotificationHandlerRequest(handlerName string, schemas []EnumerrorLogAccountStatusNotificationHandlerSchemaUrn, accountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, enabled bool, ) *AddErrorLogAccountStatusNotificationHandlerRequest`
+`func NewAddErrorLogAccountStatusNotificationHandlerRequest(schemas []EnumerrorLogAccountStatusNotificationHandlerSchemaUrn, accountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, enabled bool, handlerName string, ) *AddErrorLogAccountStatusNotificationHandlerRequest`
 
 NewAddErrorLogAccountStatusNotificationHandlerRequest instantiates a new AddErrorLogAccountStatusNotificationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddErrorLogAccountStatusNotificationHandlerRequestWithDefaults instantiates a new AddErrorLogAccountStatusNotificationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -263,6 +243,26 @@ SetAccountUpdateNotificationRequestCriteria sets AccountUpdateNotificationReques
 `func (o *AddErrorLogAccountStatusNotificationHandlerRequest) HasAccountUpdateNotificationRequestCriteria() bool`
 
 HasAccountUpdateNotificationRequestCriteria returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

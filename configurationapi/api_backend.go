@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// BackendApiService BackendApi service
-type BackendApiService service
+// BackendAPIService BackendAPI service
+type BackendAPIService service
 
 type ApiAddBackendRequest struct {
 	ctx                      context.Context
-	ApiService               *BackendApiService
+	ApiService               *BackendAPIService
 	addLocalDbBackendRequest *AddLocalDbBackendRequest
 }
 
@@ -44,7 +44,7 @@ AddBackend Add a new Backend to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddBackendRequest
 */
-func (a *BackendApiService) AddBackend(ctx context.Context) ApiAddBackendRequest {
+func (a *BackendAPIService) AddBackend(ctx context.Context) ApiAddBackendRequest {
 	return ApiAddBackendRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *BackendApiService) AddBackend(ctx context.Context) ApiAddBackendRequest
 // Execute executes the request
 //
 //	@return AddBackend200Response
-func (a *BackendApiService) AddBackendExecute(r ApiAddBackendRequest) (*AddBackend200Response, *http.Response, error) {
+func (a *BackendAPIService) AddBackendExecute(r ApiAddBackendRequest) (*AddBackend200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *BackendApiService) AddBackendExecute(r ApiAddBackendRequest) (*AddBacke
 		localVarReturnValue *AddBackend200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendApiService.AddBackend")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendAPIService.AddBackend")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *BackendApiService) AddBackendExecute(r ApiAddBackendRequest) (*AddBacke
 
 type ApiDeleteBackendRequest struct {
 	ctx         context.Context
-	ApiService  *BackendApiService
+	ApiService  *BackendAPIService
 	backendName string
 }
 
@@ -149,7 +149,7 @@ DeleteBackend Delete a Backend
 	@param backendName Name of the Backend
 	@return ApiDeleteBackendRequest
 */
-func (a *BackendApiService) DeleteBackend(ctx context.Context, backendName string) ApiDeleteBackendRequest {
+func (a *BackendAPIService) DeleteBackend(ctx context.Context, backendName string) ApiDeleteBackendRequest {
 	return ApiDeleteBackendRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -158,14 +158,14 @@ func (a *BackendApiService) DeleteBackend(ctx context.Context, backendName strin
 }
 
 // Execute executes the request
-func (a *BackendApiService) DeleteBackendExecute(r ApiDeleteBackendRequest) (*http.Response, error) {
+func (a *BackendAPIService) DeleteBackendExecute(r ApiDeleteBackendRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendApiService.DeleteBackend")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendAPIService.DeleteBackend")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *BackendApiService) DeleteBackendExecute(r ApiDeleteBackendRequest) (*ht
 
 type ApiGetBackendRequest struct {
 	ctx         context.Context
-	ApiService  *BackendApiService
+	ApiService  *BackendAPIService
 	backendName string
 }
 
@@ -239,7 +239,7 @@ GetBackend Returns a single Backend
 	@param backendName Name of the Backend
 	@return ApiGetBackendRequest
 */
-func (a *BackendApiService) GetBackend(ctx context.Context, backendName string) ApiGetBackendRequest {
+func (a *BackendAPIService) GetBackend(ctx context.Context, backendName string) ApiGetBackendRequest {
 	return ApiGetBackendRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -250,7 +250,7 @@ func (a *BackendApiService) GetBackend(ctx context.Context, backendName string) 
 // Execute executes the request
 //
 //	@return GetBackend200Response
-func (a *BackendApiService) GetBackendExecute(r ApiGetBackendRequest) (*GetBackend200Response, *http.Response, error) {
+func (a *BackendAPIService) GetBackendExecute(r ApiGetBackendRequest) (*GetBackend200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *BackendApiService) GetBackendExecute(r ApiGetBackendRequest) (*GetBacke
 		localVarReturnValue *GetBackend200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendApiService.GetBackend")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendAPIService.GetBackend")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *BackendApiService) GetBackendExecute(r ApiGetBackendRequest) (*GetBacke
 
 type ApiListBackendsRequest struct {
 	ctx        context.Context
-	ApiService *BackendApiService
+	ApiService *BackendAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListBackends Returns a list of all Backend objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListBackendsRequest
 */
-func (a *BackendApiService) ListBackends(ctx context.Context) ApiListBackendsRequest {
+func (a *BackendAPIService) ListBackends(ctx context.Context) ApiListBackendsRequest {
 	return ApiListBackendsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *BackendApiService) ListBackends(ctx context.Context) ApiListBackendsReq
 // Execute executes the request
 //
 //	@return BackendListResponse
-func (a *BackendApiService) ListBackendsExecute(r ApiListBackendsRequest) (*BackendListResponse, *http.Response, error) {
+func (a *BackendAPIService) ListBackendsExecute(r ApiListBackendsRequest) (*BackendListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *BackendApiService) ListBackendsExecute(r ApiListBackendsRequest) (*Back
 		localVarReturnValue *BackendListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendApiService.ListBackends")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendAPIService.ListBackends")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *BackendApiService) ListBackendsExecute(r ApiListBackendsRequest) (*Back
 
 type ApiUpdateBackendRequest struct {
 	ctx           context.Context
-	ApiService    *BackendApiService
+	ApiService    *BackendAPIService
 	backendName   string
 	updateRequest *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateBackend Update an existing Backend by name
 	@param backendName Name of the Backend
 	@return ApiUpdateBackendRequest
 */
-func (a *BackendApiService) UpdateBackend(ctx context.Context, backendName string) ApiUpdateBackendRequest {
+func (a *BackendAPIService) UpdateBackend(ctx context.Context, backendName string) ApiUpdateBackendRequest {
 	return ApiUpdateBackendRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -467,7 +467,7 @@ func (a *BackendApiService) UpdateBackend(ctx context.Context, backendName strin
 // Execute executes the request
 //
 //	@return GetBackend200Response
-func (a *BackendApiService) UpdateBackendExecute(r ApiUpdateBackendRequest) (*GetBackend200Response, *http.Response, error) {
+func (a *BackendAPIService) UpdateBackendExecute(r ApiUpdateBackendRequest) (*GetBackend200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *BackendApiService) UpdateBackendExecute(r ApiUpdateBackendRequest) (*Ge
 		localVarReturnValue *GetBackend200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendApiService.UpdateBackend")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendAPIService.UpdateBackend")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

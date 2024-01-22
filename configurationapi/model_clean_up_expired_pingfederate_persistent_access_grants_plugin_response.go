@@ -19,8 +19,6 @@ var _ MappedNullable = &CleanUpExpiredPingfederatePersistentAccessGrantsPluginRe
 
 // CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse struct for CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse
 type CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse struct {
-	// Name of the Plugin
-	Id      string                                                                `json:"id"`
 	Schemas []EnumcleanUpExpiredPingfederatePersistentAccessGrantsPluginSchemaUrn `json:"schemas"`
 	// This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
 	PollingInterval string `json:"pollingInterval"`
@@ -36,20 +34,22 @@ type CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewCleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse instantiates a new CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse(id string, schemas []EnumcleanUpExpiredPingfederatePersistentAccessGrantsPluginSchemaUrn, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, enabled bool) *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse {
+func NewCleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse(schemas []EnumcleanUpExpiredPingfederatePersistentAccessGrantsPluginSchemaUrn, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, enabled bool, id string) *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse {
 	this := CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PollingInterval = pollingInterval
 	this.MaxUpdatesPerSecond = maxUpdatesPerSecond
 	this.NumDeleteThreads = numDeleteThreads
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewCleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse(id string
 func NewCleanUpExpiredPingfederatePersistentAccessGrantsPluginResponseWithDefaults() *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse {
 	this := CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -333,6 +309,30 @@ func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetUrnp
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -343,7 +343,6 @@ func (o CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) MarshalJ
 
 func (o CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["pollingInterval"] = o.PollingInterval
 	if !IsNil(o.PeerServerPriorityIndex) {
@@ -361,6 +360,7 @@ func (o CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) ToMap() 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

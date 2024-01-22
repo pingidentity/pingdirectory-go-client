@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ConnectionHandlerApiService ConnectionHandlerApi service
-type ConnectionHandlerApiService service
+// ConnectionHandlerAPIService ConnectionHandlerAPI service
+type ConnectionHandlerAPIService service
 
 type ApiAddConnectionHandlerRequest struct {
 	ctx                         context.Context
-	ApiService                  *ConnectionHandlerApiService
+	ApiService                  *ConnectionHandlerAPIService
 	addConnectionHandlerRequest *AddConnectionHandlerRequest
 }
 
@@ -44,7 +44,7 @@ AddConnectionHandler Add a new Connection Handler to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddConnectionHandlerRequest
 */
-func (a *ConnectionHandlerApiService) AddConnectionHandler(ctx context.Context) ApiAddConnectionHandlerRequest {
+func (a *ConnectionHandlerAPIService) AddConnectionHandler(ctx context.Context) ApiAddConnectionHandlerRequest {
 	return ApiAddConnectionHandlerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ConnectionHandlerApiService) AddConnectionHandler(ctx context.Context) 
 // Execute executes the request
 //
 //	@return AddConnectionHandler200Response
-func (a *ConnectionHandlerApiService) AddConnectionHandlerExecute(r ApiAddConnectionHandlerRequest) (*AddConnectionHandler200Response, *http.Response, error) {
+func (a *ConnectionHandlerAPIService) AddConnectionHandlerExecute(r ApiAddConnectionHandlerRequest) (*AddConnectionHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ConnectionHandlerApiService) AddConnectionHandlerExecute(r ApiAddConnec
 		localVarReturnValue *AddConnectionHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerApiService.AddConnectionHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerAPIService.AddConnectionHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ConnectionHandlerApiService) AddConnectionHandlerExecute(r ApiAddConnec
 
 type ApiDeleteConnectionHandlerRequest struct {
 	ctx                   context.Context
-	ApiService            *ConnectionHandlerApiService
+	ApiService            *ConnectionHandlerAPIService
 	connectionHandlerName string
 }
 
@@ -149,7 +149,7 @@ DeleteConnectionHandler Delete a Connection Handler
 	@param connectionHandlerName Name of the Connection Handler
 	@return ApiDeleteConnectionHandlerRequest
 */
-func (a *ConnectionHandlerApiService) DeleteConnectionHandler(ctx context.Context, connectionHandlerName string) ApiDeleteConnectionHandlerRequest {
+func (a *ConnectionHandlerAPIService) DeleteConnectionHandler(ctx context.Context, connectionHandlerName string) ApiDeleteConnectionHandlerRequest {
 	return ApiDeleteConnectionHandlerRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -158,14 +158,14 @@ func (a *ConnectionHandlerApiService) DeleteConnectionHandler(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *ConnectionHandlerApiService) DeleteConnectionHandlerExecute(r ApiDeleteConnectionHandlerRequest) (*http.Response, error) {
+func (a *ConnectionHandlerAPIService) DeleteConnectionHandlerExecute(r ApiDeleteConnectionHandlerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerApiService.DeleteConnectionHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerAPIService.DeleteConnectionHandler")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ConnectionHandlerApiService) DeleteConnectionHandlerExecute(r ApiDelete
 
 type ApiGetConnectionHandlerRequest struct {
 	ctx                   context.Context
-	ApiService            *ConnectionHandlerApiService
+	ApiService            *ConnectionHandlerAPIService
 	connectionHandlerName string
 }
 
@@ -239,7 +239,7 @@ GetConnectionHandler Returns a single Connection Handler
 	@param connectionHandlerName Name of the Connection Handler
 	@return ApiGetConnectionHandlerRequest
 */
-func (a *ConnectionHandlerApiService) GetConnectionHandler(ctx context.Context, connectionHandlerName string) ApiGetConnectionHandlerRequest {
+func (a *ConnectionHandlerAPIService) GetConnectionHandler(ctx context.Context, connectionHandlerName string) ApiGetConnectionHandlerRequest {
 	return ApiGetConnectionHandlerRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -250,7 +250,7 @@ func (a *ConnectionHandlerApiService) GetConnectionHandler(ctx context.Context, 
 // Execute executes the request
 //
 //	@return AddConnectionHandler200Response
-func (a *ConnectionHandlerApiService) GetConnectionHandlerExecute(r ApiGetConnectionHandlerRequest) (*AddConnectionHandler200Response, *http.Response, error) {
+func (a *ConnectionHandlerAPIService) GetConnectionHandlerExecute(r ApiGetConnectionHandlerRequest) (*AddConnectionHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ConnectionHandlerApiService) GetConnectionHandlerExecute(r ApiGetConnec
 		localVarReturnValue *AddConnectionHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerApiService.GetConnectionHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerAPIService.GetConnectionHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ConnectionHandlerApiService) GetConnectionHandlerExecute(r ApiGetConnec
 
 type ApiListConnectionHandlersRequest struct {
 	ctx        context.Context
-	ApiService *ConnectionHandlerApiService
+	ApiService *ConnectionHandlerAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListConnectionHandlers Returns a list of all Connection Handler objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListConnectionHandlersRequest
 */
-func (a *ConnectionHandlerApiService) ListConnectionHandlers(ctx context.Context) ApiListConnectionHandlersRequest {
+func (a *ConnectionHandlerAPIService) ListConnectionHandlers(ctx context.Context) ApiListConnectionHandlersRequest {
 	return ApiListConnectionHandlersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ConnectionHandlerApiService) ListConnectionHandlers(ctx context.Context
 // Execute executes the request
 //
 //	@return ConnectionHandlerListResponse
-func (a *ConnectionHandlerApiService) ListConnectionHandlersExecute(r ApiListConnectionHandlersRequest) (*ConnectionHandlerListResponse, *http.Response, error) {
+func (a *ConnectionHandlerAPIService) ListConnectionHandlersExecute(r ApiListConnectionHandlersRequest) (*ConnectionHandlerListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ConnectionHandlerApiService) ListConnectionHandlersExecute(r ApiListCon
 		localVarReturnValue *ConnectionHandlerListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerApiService.ListConnectionHandlers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerAPIService.ListConnectionHandlers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ConnectionHandlerApiService) ListConnectionHandlersExecute(r ApiListCon
 
 type ApiUpdateConnectionHandlerRequest struct {
 	ctx                   context.Context
-	ApiService            *ConnectionHandlerApiService
+	ApiService            *ConnectionHandlerAPIService
 	connectionHandlerName string
 	updateRequest         *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateConnectionHandler Update an existing Connection Handler by name
 	@param connectionHandlerName Name of the Connection Handler
 	@return ApiUpdateConnectionHandlerRequest
 */
-func (a *ConnectionHandlerApiService) UpdateConnectionHandler(ctx context.Context, connectionHandlerName string) ApiUpdateConnectionHandlerRequest {
+func (a *ConnectionHandlerAPIService) UpdateConnectionHandler(ctx context.Context, connectionHandlerName string) ApiUpdateConnectionHandlerRequest {
 	return ApiUpdateConnectionHandlerRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -467,7 +467,7 @@ func (a *ConnectionHandlerApiService) UpdateConnectionHandler(ctx context.Contex
 // Execute executes the request
 //
 //	@return AddConnectionHandler200Response
-func (a *ConnectionHandlerApiService) UpdateConnectionHandlerExecute(r ApiUpdateConnectionHandlerRequest) (*AddConnectionHandler200Response, *http.Response, error) {
+func (a *ConnectionHandlerAPIService) UpdateConnectionHandlerExecute(r ApiUpdateConnectionHandlerRequest) (*AddConnectionHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ConnectionHandlerApiService) UpdateConnectionHandlerExecute(r ApiUpdate
 		localVarReturnValue *AddConnectionHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerApiService.UpdateConnectionHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerAPIService.UpdateConnectionHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

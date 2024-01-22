@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// AccessControlHandlerApiService AccessControlHandlerApi service
-type AccessControlHandlerApiService service
+// AccessControlHandlerAPIService AccessControlHandlerAPI service
+type AccessControlHandlerAPIService service
 
 type ApiGetAccessControlHandlerRequest struct {
 	ctx        context.Context
-	ApiService *AccessControlHandlerApiService
+	ApiService *AccessControlHandlerAPIService
 }
 
 func (r ApiGetAccessControlHandlerRequest) Execute() (*DseeCompatAccessControlHandlerResponse, *http.Response, error) {
@@ -36,7 +36,7 @@ GetAccessControlHandler Returns a single Access Control Handler
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAccessControlHandlerRequest
 */
-func (a *AccessControlHandlerApiService) GetAccessControlHandler(ctx context.Context) ApiGetAccessControlHandlerRequest {
+func (a *AccessControlHandlerAPIService) GetAccessControlHandler(ctx context.Context) ApiGetAccessControlHandlerRequest {
 	return ApiGetAccessControlHandlerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *AccessControlHandlerApiService) GetAccessControlHandler(ctx context.Con
 // Execute executes the request
 //
 //	@return DseeCompatAccessControlHandlerResponse
-func (a *AccessControlHandlerApiService) GetAccessControlHandlerExecute(r ApiGetAccessControlHandlerRequest) (*DseeCompatAccessControlHandlerResponse, *http.Response, error) {
+func (a *AccessControlHandlerAPIService) GetAccessControlHandlerExecute(r ApiGetAccessControlHandlerRequest) (*DseeCompatAccessControlHandlerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *AccessControlHandlerApiService) GetAccessControlHandlerExecute(r ApiGet
 		localVarReturnValue *DseeCompatAccessControlHandlerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlHandlerApiService.GetAccessControlHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlHandlerAPIService.GetAccessControlHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *AccessControlHandlerApiService) GetAccessControlHandlerExecute(r ApiGet
 
 type ApiUpdateAccessControlHandlerRequest struct {
 	ctx           context.Context
-	ApiService    *AccessControlHandlerApiService
+	ApiService    *AccessControlHandlerAPIService
 	updateRequest *UpdateRequest
 }
 
@@ -141,7 +141,7 @@ UpdateAccessControlHandler Update an existing Access Control Handler by name
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAccessControlHandlerRequest
 */
-func (a *AccessControlHandlerApiService) UpdateAccessControlHandler(ctx context.Context) ApiUpdateAccessControlHandlerRequest {
+func (a *AccessControlHandlerAPIService) UpdateAccessControlHandler(ctx context.Context) ApiUpdateAccessControlHandlerRequest {
 	return ApiUpdateAccessControlHandlerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *AccessControlHandlerApiService) UpdateAccessControlHandler(ctx context.
 // Execute executes the request
 //
 //	@return DseeCompatAccessControlHandlerResponse
-func (a *AccessControlHandlerApiService) UpdateAccessControlHandlerExecute(r ApiUpdateAccessControlHandlerRequest) (*DseeCompatAccessControlHandlerResponse, *http.Response, error) {
+func (a *AccessControlHandlerAPIService) UpdateAccessControlHandlerExecute(r ApiUpdateAccessControlHandlerRequest) (*DseeCompatAccessControlHandlerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *AccessControlHandlerApiService) UpdateAccessControlHandlerExecute(r Api
 		localVarReturnValue *DseeCompatAccessControlHandlerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlHandlerApiService.UpdateAccessControlHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlHandlerAPIService.UpdateAccessControlHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

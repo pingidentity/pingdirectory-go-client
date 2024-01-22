@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GaugeName** | **string** | Name of the new Gauge | 
 **Schemas** | [**[]EnumindicatorGaugeSchemaUrn**](EnumindicatorGaugeSchemaUrn.md) |  | 
 **GaugeDataSource** | **string** | Specifies the source of data to use in determining this Indicator Gauge&#39;s severity and status. | 
 **CriticalValue** | Pointer to **string** | A regular expression pattern that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be critical. | [optional] 
@@ -21,12 +20,13 @@ Name | Type | Description | Notes
 **ExcludeResource** | Pointer to **[]string** | Specifies resources to exclude from being monitored. | [optional] 
 **ServerUnavailableSeverityLevel** | Pointer to [**EnumgaugeServerUnavailableSeverityLevelProp**](EnumgaugeServerUnavailableSeverityLevelProp.md) |  | [optional] 
 **ServerDegradedSeverityLevel** | Pointer to [**EnumgaugeServerDegradedSeverityLevelProp**](EnumgaugeServerDegradedSeverityLevelProp.md) |  | [optional] 
+**GaugeName** | **string** | Name of the new Gauge | 
 
 ## Methods
 
 ### NewAddIndicatorGaugeRequest
 
-`func NewAddIndicatorGaugeRequest(gaugeName string, schemas []EnumindicatorGaugeSchemaUrn, gaugeDataSource string, ) *AddIndicatorGaugeRequest`
+`func NewAddIndicatorGaugeRequest(schemas []EnumindicatorGaugeSchemaUrn, gaugeDataSource string, gaugeName string, ) *AddIndicatorGaugeRequest`
 
 NewAddIndicatorGaugeRequest instantiates a new AddIndicatorGaugeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -40,26 +40,6 @@ will change when the set of required properties is changed
 NewAddIndicatorGaugeRequestWithDefaults instantiates a new AddIndicatorGaugeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetGaugeName
-
-`func (o *AddIndicatorGaugeRequest) GetGaugeName() string`
-
-GetGaugeName returns the GaugeName field if non-nil, zero value otherwise.
-
-### GetGaugeNameOk
-
-`func (o *AddIndicatorGaugeRequest) GetGaugeNameOk() (*string, bool)`
-
-GetGaugeNameOk returns a tuple with the GaugeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGaugeName
-
-`func (o *AddIndicatorGaugeRequest) SetGaugeName(v string)`
-
-SetGaugeName sets GaugeName field to given value.
-
 
 ### GetSchemas
 
@@ -450,6 +430,26 @@ SetServerDegradedSeverityLevel sets ServerDegradedSeverityLevel field to given v
 `func (o *AddIndicatorGaugeRequest) HasServerDegradedSeverityLevel() bool`
 
 HasServerDegradedSeverityLevel returns a boolean if a field has been set.
+
+### GetGaugeName
+
+`func (o *AddIndicatorGaugeRequest) GetGaugeName() string`
+
+GetGaugeName returns the GaugeName field if non-nil, zero value otherwise.
+
+### GetGaugeNameOk
+
+`func (o *AddIndicatorGaugeRequest) GetGaugeNameOk() (*string, bool)`
+
+GetGaugeNameOk returns a tuple with the GaugeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGaugeName
+
+`func (o *AddIndicatorGaugeRequest) SetGaugeName(v string)`
+
+SetGaugeName sets GaugeName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

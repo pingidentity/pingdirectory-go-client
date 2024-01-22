@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Passphrase Provider | 
 **Schemas** | [**[]EnumfileBasedPassphraseProviderSchemaUrn**](EnumfileBasedPassphraseProviderSchemaUrn.md) |  | 
 **PasswordFile** | **string** | The path to the file containing the passphrase. | 
 **MaxCacheDuration** | Pointer to **string** | The maximum length of time that the passphrase provider may cache the passphrase that has been read from the target file. A value of zero seconds indicates that the provider should always attempt to read the passphrase from the file. | [optional] 
 **Description** | Pointer to **string** | A description for this Passphrase Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Passphrase Provider is enabled for use in the server. | 
+**ProviderName** | **string** | Name of the new Passphrase Provider | 
 
 ## Methods
 
 ### NewAddFileBasedPassphraseProviderRequest
 
-`func NewAddFileBasedPassphraseProviderRequest(providerName string, schemas []EnumfileBasedPassphraseProviderSchemaUrn, passwordFile string, enabled bool, ) *AddFileBasedPassphraseProviderRequest`
+`func NewAddFileBasedPassphraseProviderRequest(schemas []EnumfileBasedPassphraseProviderSchemaUrn, passwordFile string, enabled bool, providerName string, ) *AddFileBasedPassphraseProviderRequest`
 
 NewAddFileBasedPassphraseProviderRequest instantiates a new AddFileBasedPassphraseProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddFileBasedPassphraseProviderRequestWithDefaults instantiates a new AddFileBasedPassphraseProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddFileBasedPassphraseProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddFileBasedPassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddFileBasedPassphraseProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddFileBasedPassphraseProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddFileBasedPassphraseProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddFileBasedPassphraseProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddFileBasedPassphraseProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

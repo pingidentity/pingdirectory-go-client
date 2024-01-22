@@ -1,14 +1,14 @@
-# \ReplicationAssurancePolicyApi
+# \ReplicationAssurancePolicyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddReplicationAssurancePolicy**](ReplicationAssurancePolicyApi.md#AddReplicationAssurancePolicy) | **Post** /replication-assurance-policies | Add a new Replication Assurance Policy to the config
-[**DeleteReplicationAssurancePolicy**](ReplicationAssurancePolicyApi.md#DeleteReplicationAssurancePolicy) | **Delete** /replication-assurance-policies/{replication-assurance-policy-name} | Delete a Replication Assurance Policy
-[**GetReplicationAssurancePolicy**](ReplicationAssurancePolicyApi.md#GetReplicationAssurancePolicy) | **Get** /replication-assurance-policies/{replication-assurance-policy-name} | Returns a single Replication Assurance Policy
-[**ListReplicationAssurancePolicies**](ReplicationAssurancePolicyApi.md#ListReplicationAssurancePolicies) | **Get** /replication-assurance-policies | Returns a list of all Replication Assurance Policy objects
-[**UpdateReplicationAssurancePolicy**](ReplicationAssurancePolicyApi.md#UpdateReplicationAssurancePolicy) | **Patch** /replication-assurance-policies/{replication-assurance-policy-name} | Update an existing Replication Assurance Policy by name
+[**AddReplicationAssurancePolicy**](ReplicationAssurancePolicyAPI.md#AddReplicationAssurancePolicy) | **Post** /replication-assurance-policies | Add a new Replication Assurance Policy to the config
+[**DeleteReplicationAssurancePolicy**](ReplicationAssurancePolicyAPI.md#DeleteReplicationAssurancePolicy) | **Delete** /replication-assurance-policies/{replication-assurance-policy-name} | Delete a Replication Assurance Policy
+[**GetReplicationAssurancePolicy**](ReplicationAssurancePolicyAPI.md#GetReplicationAssurancePolicy) | **Get** /replication-assurance-policies/{replication-assurance-policy-name} | Returns a single Replication Assurance Policy
+[**ListReplicationAssurancePolicies**](ReplicationAssurancePolicyAPI.md#ListReplicationAssurancePolicies) | **Get** /replication-assurance-policies | Returns a list of all Replication Assurance Policy objects
+[**UpdateReplicationAssurancePolicy**](ReplicationAssurancePolicyAPI.md#UpdateReplicationAssurancePolicy) | **Patch** /replication-assurance-policies/{replication-assurance-policy-name} | Update an existing Replication Assurance Policy by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addReplicationAssurancePolicyRequest := *openapiclient.NewAddReplicationAssurancePolicyRequest("PolicyName_example", int64(123), "Timeout_example") // AddReplicationAssurancePolicyRequest | Create a new Replication Assurance Policy in the config
+    addReplicationAssurancePolicyRequest := *openapiclient.NewAddReplicationAssurancePolicyRequest(int64(123), "Timeout_example", "PolicyName_example") // AddReplicationAssurancePolicyRequest | Create a new Replication Assurance Policy in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReplicationAssurancePolicyApi.AddReplicationAssurancePolicy(context.Background()).AddReplicationAssurancePolicyRequest(addReplicationAssurancePolicyRequest).Execute()
+    resp, r, err := apiClient.ReplicationAssurancePolicyAPI.AddReplicationAssurancePolicy(context.Background()).AddReplicationAssurancePolicyRequest(addReplicationAssurancePolicyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyApi.AddReplicationAssurancePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyAPI.AddReplicationAssurancePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddReplicationAssurancePolicy`: ReplicationAssurancePolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `ReplicationAssurancePolicyApi.AddReplicationAssurancePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationAssurancePolicyAPI.AddReplicationAssurancePolicy`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ReplicationAssurancePolicyApi.DeleteReplicationAssurancePolicy(context.Background(), replicationAssurancePolicyName).Execute()
+    r, err := apiClient.ReplicationAssurancePolicyAPI.DeleteReplicationAssurancePolicy(context.Background(), replicationAssurancePolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyApi.DeleteReplicationAssurancePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyAPI.DeleteReplicationAssurancePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReplicationAssurancePolicyApi.GetReplicationAssurancePolicy(context.Background(), replicationAssurancePolicyName).Execute()
+    resp, r, err := apiClient.ReplicationAssurancePolicyAPI.GetReplicationAssurancePolicy(context.Background(), replicationAssurancePolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyApi.GetReplicationAssurancePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyAPI.GetReplicationAssurancePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetReplicationAssurancePolicy`: ReplicationAssurancePolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `ReplicationAssurancePolicyApi.GetReplicationAssurancePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationAssurancePolicyAPI.GetReplicationAssurancePolicy`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReplicationAssurancePolicyApi.ListReplicationAssurancePolicies(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ReplicationAssurancePolicyAPI.ListReplicationAssurancePolicies(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyApi.ListReplicationAssurancePolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyAPI.ListReplicationAssurancePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListReplicationAssurancePolicies`: ReplicationAssurancePolicyListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ReplicationAssurancePolicyApi.ListReplicationAssurancePolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationAssurancePolicyAPI.ListReplicationAssurancePolicies`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReplicationAssurancePolicyApi.UpdateReplicationAssurancePolicy(context.Background(), replicationAssurancePolicyName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ReplicationAssurancePolicyAPI.UpdateReplicationAssurancePolicy(context.Background(), replicationAssurancePolicyName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyApi.UpdateReplicationAssurancePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyAPI.UpdateReplicationAssurancePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateReplicationAssurancePolicy`: ReplicationAssurancePolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `ReplicationAssurancePolicyApi.UpdateReplicationAssurancePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationAssurancePolicyAPI.UpdateReplicationAssurancePolicy`: %v\n", resp)
 }
 ```
 

@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]EnumcryptPasswordStorageSchemeSchemaUrn**](EnumcryptPasswordStorageSchemeSchemaUrn.md) |  | 
 **PasswordEncodingMechanism** | Pointer to [**EnumpasswordStorageSchemePasswordEncodingMechanismProp**](EnumpasswordStorageSchemePasswordEncodingMechanismProp.md) |  | [optional] 
 **NumDigestRounds** | Pointer to **int64** | Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings. | [optional] 
 **MaxPasswordLength** | Pointer to **int64** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
+**SchemeName** | **string** | Name of the new Password Storage Scheme | 
 
 ## Methods
 
 ### NewAddCryptPasswordStorageSchemeRequest
 
-`func NewAddCryptPasswordStorageSchemeRequest(schemeName string, schemas []EnumcryptPasswordStorageSchemeSchemaUrn, enabled bool, ) *AddCryptPasswordStorageSchemeRequest`
+`func NewAddCryptPasswordStorageSchemeRequest(schemas []EnumcryptPasswordStorageSchemeSchemaUrn, enabled bool, schemeName string, ) *AddCryptPasswordStorageSchemeRequest`
 
 NewAddCryptPasswordStorageSchemeRequest instantiates a new AddCryptPasswordStorageSchemeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddCryptPasswordStorageSchemeRequestWithDefaults instantiates a new AddCryptPasswordStorageSchemeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSchemeName
-
-`func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeName() string`
-
-GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
-
-### GetSchemeNameOk
-
-`func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
-
-GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchemeName
-
-`func (o *AddCryptPasswordStorageSchemeRequest) SetSchemeName(v string)`
-
-SetSchemeName sets SchemeName field to given value.
-
 
 ### GetSchemas
 
@@ -189,6 +169,26 @@ and a boolean to check if the value has been set.
 `func (o *AddCryptPasswordStorageSchemeRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetSchemeName
+
+`func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeName() string`
+
+GetSchemeName returns the SchemeName field if non-nil, zero value otherwise.
+
+### GetSchemeNameOk
+
+`func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool)`
+
+GetSchemeNameOk returns a tuple with the SchemeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemeName
+
+`func (o *AddCryptPasswordStorageSchemeRequest) SetSchemeName(v string)`
+
+SetSchemeName sets SchemeName field to given value.
 
 
 

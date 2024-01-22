@@ -19,8 +19,6 @@ var _ MappedNullable = &AddUniqueAttributePluginRequest{}
 
 // AddUniqueAttributePluginRequest struct for AddUniqueAttributePluginRequest
 type AddUniqueAttributePluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                               `json:"pluginName"`
 	Schemas    []EnumuniqueAttributePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp           `json:"pluginType,omitempty"`
 	// Specifies the type of attributes to check for value uniqueness.
@@ -38,18 +36,20 @@ type AddUniqueAttributePluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddUniqueAttributePluginRequest instantiates a new AddUniqueAttributePluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddUniqueAttributePluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, type_ []string, enabled bool) *AddUniqueAttributePluginRequest {
+func NewAddUniqueAttributePluginRequest(schemas []EnumuniqueAttributePluginSchemaUrn, type_ []string, enabled bool, pluginName string) *AddUniqueAttributePluginRequest {
 	this := AddUniqueAttributePluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.Type = type_
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewAddUniqueAttributePluginRequest(pluginName string, schemas []EnumuniqueA
 func NewAddUniqueAttributePluginRequestWithDefaults() *AddUniqueAttributePluginRequest {
 	this := AddUniqueAttributePluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddUniqueAttributePluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddUniqueAttributePluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddUniqueAttributePluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -381,6 +357,30 @@ func (o *AddUniqueAttributePluginRequest) SetInvokeForInternalOperations(v bool)
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddUniqueAttributePluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddUniqueAttributePluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddUniqueAttributePluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddUniqueAttributePluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -391,7 +391,6 @@ func (o AddUniqueAttributePluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddUniqueAttributePluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
@@ -416,6 +415,7 @@ func (o AddUniqueAttributePluginRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

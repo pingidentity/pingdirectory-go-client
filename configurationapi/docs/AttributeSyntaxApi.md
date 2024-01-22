@@ -1,12 +1,12 @@
-# \AttributeSyntaxApi
+# \AttributeSyntaxAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAttributeSyntax**](AttributeSyntaxApi.md#GetAttributeSyntax) | **Get** /attribute-syntaxes/{attribute-syntax-name} | Returns a single Attribute Syntax
-[**ListAttributeSyntaxes**](AttributeSyntaxApi.md#ListAttributeSyntaxes) | **Get** /attribute-syntaxes | Returns a list of all Attribute Syntax objects
-[**UpdateAttributeSyntax**](AttributeSyntaxApi.md#UpdateAttributeSyntax) | **Patch** /attribute-syntaxes/{attribute-syntax-name} | Update an existing Attribute Syntax by name
+[**GetAttributeSyntax**](AttributeSyntaxAPI.md#GetAttributeSyntax) | **Get** /attribute-syntaxes/{attribute-syntax-name} | Returns a single Attribute Syntax
+[**ListAttributeSyntaxes**](AttributeSyntaxAPI.md#ListAttributeSyntaxes) | **Get** /attribute-syntaxes | Returns a list of all Attribute Syntax objects
+[**UpdateAttributeSyntax**](AttributeSyntaxAPI.md#UpdateAttributeSyntax) | **Patch** /attribute-syntaxes/{attribute-syntax-name} | Update an existing Attribute Syntax by name
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttributeSyntaxApi.GetAttributeSyntax(context.Background(), attributeSyntaxName).Execute()
+    resp, r, err := apiClient.AttributeSyntaxAPI.GetAttributeSyntax(context.Background(), attributeSyntaxName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AttributeSyntaxApi.GetAttributeSyntax``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AttributeSyntaxAPI.GetAttributeSyntax``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAttributeSyntax`: GetAttributeSyntax200Response
-    fmt.Fprintf(os.Stdout, "Response from `AttributeSyntaxApi.GetAttributeSyntax`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AttributeSyntaxAPI.GetAttributeSyntax`: %v\n", resp)
 }
 ```
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttributeSyntaxApi.ListAttributeSyntaxes(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.AttributeSyntaxAPI.ListAttributeSyntaxes(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AttributeSyntaxApi.ListAttributeSyntaxes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AttributeSyntaxAPI.ListAttributeSyntaxes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListAttributeSyntaxes`: AttributeSyntaxListResponse
-    fmt.Fprintf(os.Stdout, "Response from `AttributeSyntaxApi.ListAttributeSyntaxes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AttributeSyntaxAPI.ListAttributeSyntaxes`: %v\n", resp)
 }
 ```
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttributeSyntaxApi.UpdateAttributeSyntax(context.Background(), attributeSyntaxName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.AttributeSyntaxAPI.UpdateAttributeSyntax(context.Background(), attributeSyntaxName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AttributeSyntaxApi.UpdateAttributeSyntax``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AttributeSyntaxAPI.UpdateAttributeSyntax``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAttributeSyntax`: GetAttributeSyntax200Response
-    fmt.Fprintf(os.Stdout, "Response from `AttributeSyntaxApi.UpdateAttributeSyntax`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AttributeSyntaxAPI.UpdateAttributeSyntax`: %v\n", resp)
 }
 ```
 

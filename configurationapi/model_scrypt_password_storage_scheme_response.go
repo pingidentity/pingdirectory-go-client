@@ -19,8 +19,6 @@ var _ MappedNullable = &ScryptPasswordStorageSchemeResponse{}
 
 // ScryptPasswordStorageSchemeResponse struct for ScryptPasswordStorageSchemeResponse
 type ScryptPasswordStorageSchemeResponse struct {
-	// Name of the Password Storage Scheme
-	Id      string                                     `json:"id"`
 	Schemas []EnumscryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the exponent that should be used for the CPU/memory cost factor. The cost factor must be a power of two, so the value of this property represents the power to which two is raised. The CPU/memory cost factor specifies the number of iterations required for encoding the password, and also affects the amount of memory required during processing. A higher cost factor requires more processing and more memory to generate a password, which makes attacks against the password more expensive.
 	ScryptCpuMemoryCostFactorExponent *int64 `json:"scryptCpuMemoryCostFactorExponent,omitempty"`
@@ -36,17 +34,19 @@ type ScryptPasswordStorageSchemeResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Storage Scheme
+	Id string `json:"id"`
 }
 
 // NewScryptPasswordStorageSchemeResponse instantiates a new ScryptPasswordStorageSchemeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewScryptPasswordStorageSchemeResponse(id string, schemas []EnumscryptPasswordStorageSchemeSchemaUrn, enabled bool) *ScryptPasswordStorageSchemeResponse {
+func NewScryptPasswordStorageSchemeResponse(schemas []EnumscryptPasswordStorageSchemeSchemaUrn, enabled bool, id string) *ScryptPasswordStorageSchemeResponse {
 	this := ScryptPasswordStorageSchemeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewScryptPasswordStorageSchemeResponse(id string, schemas []EnumscryptPassw
 func NewScryptPasswordStorageSchemeResponseWithDefaults() *ScryptPasswordStorageSchemeResponse {
 	this := ScryptPasswordStorageSchemeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ScryptPasswordStorageSchemeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ScryptPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ScryptPasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -354,6 +330,30 @@ func (o *ScryptPasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ScryptPasswordStorageSchemeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ScryptPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ScryptPasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ScryptPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -364,7 +364,6 @@ func (o ScryptPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 
 func (o ScryptPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ScryptCpuMemoryCostFactorExponent) {
 		toSerialize["scryptCpuMemoryCostFactorExponent"] = o.ScryptCpuMemoryCostFactorExponent
@@ -388,6 +387,7 @@ func (o ScryptPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

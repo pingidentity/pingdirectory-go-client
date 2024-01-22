@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 **Schemas** | [**[]EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn**](EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn.md) |  | 
 **PasswordGenerator** | **string** | The password generator that will be used to create the password reset token values to be delivered to the end user. | 
 **DefaultTokenDeliveryMechanism** | **[]string** | The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms. | 
 **PasswordResetTokenValidityDuration** | Pointer to **string** | The maximum length of time that a password reset token should be considered valid. | [optional] 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
+**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 
 ## Methods
 
 ### NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest
 
-`func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest(handlerName string, schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, enabled bool, ) *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest`
+`func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest(schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, enabled bool, handlerName string, ) *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest`
 
 NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest instantiates a new AddDeliverPasswordResetTokenExtendedOperationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequestWithDefaults instantiates a new AddDeliverPasswordResetTokenExtendedOperationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -179,6 +159,26 @@ and a boolean to check if the value has been set.
 `func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetHandlerName
+
+`func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
 
 
 

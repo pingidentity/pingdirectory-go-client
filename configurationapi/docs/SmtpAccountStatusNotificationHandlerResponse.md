@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Account Status Notification Handler | 
 **Schemas** | [**[]EnumsmtpAccountStatusNotificationHandlerSchemaUrn**](EnumsmtpAccountStatusNotificationHandlerSchemaUrn.md) |  | 
 **EmailAddressAttributeType** | Pointer to **[]string** | Specifies which attribute in the user&#39;s entries may be used to obtain the email address when notifying the end user. | [optional] 
 **EmailAddressJSONField** | Pointer to **string** | The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string. | [optional] 
@@ -23,12 +22,13 @@ Name | Type | Description | Notes
 **AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Account Status Notification Handler | 
 
 ## Methods
 
 ### NewSmtpAccountStatusNotificationHandlerResponse
 
-`func NewSmtpAccountStatusNotificationHandlerResponse(id string, schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn, sendMessageWithoutEndUserAddress bool, senderAddress string, messageSubject []string, messageTemplateFile []string, enabled bool, ) *SmtpAccountStatusNotificationHandlerResponse`
+`func NewSmtpAccountStatusNotificationHandlerResponse(schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn, sendMessageWithoutEndUserAddress bool, senderAddress string, messageSubject []string, messageTemplateFile []string, enabled bool, id string, ) *SmtpAccountStatusNotificationHandlerResponse`
 
 NewSmtpAccountStatusNotificationHandlerResponse instantiates a new SmtpAccountStatusNotificationHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -42,26 +42,6 @@ will change when the set of required properties is changed
 NewSmtpAccountStatusNotificationHandlerResponseWithDefaults instantiates a new SmtpAccountStatusNotificationHandlerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *SmtpAccountStatusNotificationHandlerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *SmtpAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *SmtpAccountStatusNotificationHandlerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -482,6 +462,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *SmtpAccountStatusNotificationHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *SmtpAccountStatusNotificationHandlerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *SmtpAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *SmtpAccountStatusNotificationHandlerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

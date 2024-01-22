@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RightsName** | **string** | Name of the new Delegated Admin Rights | 
 **Schemas** | Pointer to [**[]EnumdelegatedAdminRightsSchemaUrn**](EnumdelegatedAdminRightsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Rights | [optional] 
 **Enabled** | **bool** | Indicates whether the Delegated Admin Rights is enabled. | 
 **AdminUserDN** | Pointer to **string** | Specifies the DN of an administrative user who has authority to manage resources. Either admin-user-dn or admin-group-dn must be specified, but not both. | [optional] 
 **AdminGroupDN** | Pointer to **string** | Specifies the DN of a group of administrative users who have authority to manage resources. Either admin-user-dn or admin-group-dn must be specified, but not both. | [optional] 
+**RightsName** | **string** | Name of the new Delegated Admin Rights | 
 
 ## Methods
 
 ### NewAddDelegatedAdminRightsRequest
 
-`func NewAddDelegatedAdminRightsRequest(rightsName string, enabled bool, ) *AddDelegatedAdminRightsRequest`
+`func NewAddDelegatedAdminRightsRequest(enabled bool, rightsName string, ) *AddDelegatedAdminRightsRequest`
 
 NewAddDelegatedAdminRightsRequest instantiates a new AddDelegatedAdminRightsRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddDelegatedAdminRightsRequestWithDefaults instantiates a new AddDelegatedAdminRightsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetRightsName
-
-`func (o *AddDelegatedAdminRightsRequest) GetRightsName() string`
-
-GetRightsName returns the RightsName field if non-nil, zero value otherwise.
-
-### GetRightsNameOk
-
-`func (o *AddDelegatedAdminRightsRequest) GetRightsNameOk() (*string, bool)`
-
-GetRightsNameOk returns a tuple with the RightsName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRightsName
-
-`func (o *AddDelegatedAdminRightsRequest) SetRightsName(v string)`
-
-SetRightsName sets RightsName field to given value.
-
 
 ### GetSchemas
 
@@ -169,6 +149,26 @@ SetAdminGroupDN sets AdminGroupDN field to given value.
 `func (o *AddDelegatedAdminRightsRequest) HasAdminGroupDN() bool`
 
 HasAdminGroupDN returns a boolean if a field has been set.
+
+### GetRightsName
+
+`func (o *AddDelegatedAdminRightsRequest) GetRightsName() string`
+
+GetRightsName returns the RightsName field if non-nil, zero value otherwise.
+
+### GetRightsNameOk
+
+`func (o *AddDelegatedAdminRightsRequest) GetRightsNameOk() (*string, bool)`
+
+GetRightsNameOk returns a tuple with the RightsName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRightsName
+
+`func (o *AddDelegatedAdminRightsRequest) SetRightsName(v string)`
+
+SetRightsName sets RightsName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

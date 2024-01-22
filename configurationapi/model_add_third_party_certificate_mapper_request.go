@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyCertificateMapperRequest{}
 
 // AddThirdPartyCertificateMapperRequest struct for AddThirdPartyCertificateMapperRequest
 type AddThirdPartyCertificateMapperRequest struct {
-	// Name of the new Certificate Mapper
-	MapperName string                                     `json:"mapperName"`
-	Schemas    []EnumthirdPartyCertificateMapperSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyCertificateMapperSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Certificate Mapper.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Certificate Mapper. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddThirdPartyCertificateMapperRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Certificate Mapper is enabled.
 	Enabled bool `json:"enabled"`
+	// Name of the new Certificate Mapper
+	MapperName string `json:"mapperName"`
 }
 
 // NewAddThirdPartyCertificateMapperRequest instantiates a new AddThirdPartyCertificateMapperRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyCertificateMapperRequest(mapperName string, schemas []EnumthirdPartyCertificateMapperSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyCertificateMapperRequest {
+func NewAddThirdPartyCertificateMapperRequest(schemas []EnumthirdPartyCertificateMapperSchemaUrn, extensionClass string, enabled bool, mapperName string) *AddThirdPartyCertificateMapperRequest {
 	this := AddThirdPartyCertificateMapperRequest{}
-	this.MapperName = mapperName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.MapperName = mapperName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddThirdPartyCertificateMapperRequest(mapperName string, schemas []Enumt
 func NewAddThirdPartyCertificateMapperRequestWithDefaults() *AddThirdPartyCertificateMapperRequest {
 	this := AddThirdPartyCertificateMapperRequest{}
 	return &this
-}
-
-// GetMapperName returns the MapperName field value
-func (o *AddThirdPartyCertificateMapperRequest) GetMapperName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MapperName
-}
-
-// GetMapperNameOk returns a tuple with the MapperName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MapperName, true
-}
-
-// SetMapperName sets field value
-func (o *AddThirdPartyCertificateMapperRequest) SetMapperName(v string) {
-	o.MapperName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddThirdPartyCertificateMapperRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMapperName returns the MapperName field value
+func (o *AddThirdPartyCertificateMapperRequest) GetMapperName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MapperName
+}
+
+// GetMapperNameOk returns a tuple with the MapperName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MapperName, true
+}
+
+// SetMapperName sets field value
+func (o *AddThirdPartyCertificateMapperRequest) SetMapperName(v string) {
+	o.MapperName = v
+}
+
 func (o AddThirdPartyCertificateMapperRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddThirdPartyCertificateMapperRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyCertificateMapperRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mapperName"] = o.MapperName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -233,6 +232,7 @@ func (o AddThirdPartyCertificateMapperRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["mapperName"] = o.MapperName
 	return toSerialize, nil
 }
 

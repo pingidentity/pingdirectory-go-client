@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ChangeSubscriptionHandlerApiService ChangeSubscriptionHandlerApi service
-type ChangeSubscriptionHandlerApiService service
+// ChangeSubscriptionHandlerAPIService ChangeSubscriptionHandlerAPI service
+type ChangeSubscriptionHandlerAPIService service
 
 type ApiAddChangeSubscriptionHandlerRequest struct {
 	ctx                                 context.Context
-	ApiService                          *ChangeSubscriptionHandlerApiService
+	ApiService                          *ChangeSubscriptionHandlerAPIService
 	addChangeSubscriptionHandlerRequest *AddChangeSubscriptionHandlerRequest
 }
 
@@ -44,7 +44,7 @@ AddChangeSubscriptionHandler Add a new Change Subscription Handler to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddChangeSubscriptionHandlerRequest
 */
-func (a *ChangeSubscriptionHandlerApiService) AddChangeSubscriptionHandler(ctx context.Context) ApiAddChangeSubscriptionHandlerRequest {
+func (a *ChangeSubscriptionHandlerAPIService) AddChangeSubscriptionHandler(ctx context.Context) ApiAddChangeSubscriptionHandlerRequest {
 	return ApiAddChangeSubscriptionHandlerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ChangeSubscriptionHandlerApiService) AddChangeSubscriptionHandler(ctx c
 // Execute executes the request
 //
 //	@return AddChangeSubscriptionHandler200Response
-func (a *ChangeSubscriptionHandlerApiService) AddChangeSubscriptionHandlerExecute(r ApiAddChangeSubscriptionHandlerRequest) (*AddChangeSubscriptionHandler200Response, *http.Response, error) {
+func (a *ChangeSubscriptionHandlerAPIService) AddChangeSubscriptionHandlerExecute(r ApiAddChangeSubscriptionHandlerRequest) (*AddChangeSubscriptionHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ChangeSubscriptionHandlerApiService) AddChangeSubscriptionHandlerExecut
 		localVarReturnValue *AddChangeSubscriptionHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerApiService.AddChangeSubscriptionHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerAPIService.AddChangeSubscriptionHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ChangeSubscriptionHandlerApiService) AddChangeSubscriptionHandlerExecut
 
 type ApiDeleteChangeSubscriptionHandlerRequest struct {
 	ctx                           context.Context
-	ApiService                    *ChangeSubscriptionHandlerApiService
+	ApiService                    *ChangeSubscriptionHandlerAPIService
 	changeSubscriptionHandlerName string
 }
 
@@ -149,7 +149,7 @@ DeleteChangeSubscriptionHandler Delete a Change Subscription Handler
 	@param changeSubscriptionHandlerName Name of the Change Subscription Handler
 	@return ApiDeleteChangeSubscriptionHandlerRequest
 */
-func (a *ChangeSubscriptionHandlerApiService) DeleteChangeSubscriptionHandler(ctx context.Context, changeSubscriptionHandlerName string) ApiDeleteChangeSubscriptionHandlerRequest {
+func (a *ChangeSubscriptionHandlerAPIService) DeleteChangeSubscriptionHandler(ctx context.Context, changeSubscriptionHandlerName string) ApiDeleteChangeSubscriptionHandlerRequest {
 	return ApiDeleteChangeSubscriptionHandlerRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -158,14 +158,14 @@ func (a *ChangeSubscriptionHandlerApiService) DeleteChangeSubscriptionHandler(ct
 }
 
 // Execute executes the request
-func (a *ChangeSubscriptionHandlerApiService) DeleteChangeSubscriptionHandlerExecute(r ApiDeleteChangeSubscriptionHandlerRequest) (*http.Response, error) {
+func (a *ChangeSubscriptionHandlerAPIService) DeleteChangeSubscriptionHandlerExecute(r ApiDeleteChangeSubscriptionHandlerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerApiService.DeleteChangeSubscriptionHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerAPIService.DeleteChangeSubscriptionHandler")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ChangeSubscriptionHandlerApiService) DeleteChangeSubscriptionHandlerExe
 
 type ApiGetChangeSubscriptionHandlerRequest struct {
 	ctx                           context.Context
-	ApiService                    *ChangeSubscriptionHandlerApiService
+	ApiService                    *ChangeSubscriptionHandlerAPIService
 	changeSubscriptionHandlerName string
 }
 
@@ -239,7 +239,7 @@ GetChangeSubscriptionHandler Returns a single Change Subscription Handler
 	@param changeSubscriptionHandlerName Name of the Change Subscription Handler
 	@return ApiGetChangeSubscriptionHandlerRequest
 */
-func (a *ChangeSubscriptionHandlerApiService) GetChangeSubscriptionHandler(ctx context.Context, changeSubscriptionHandlerName string) ApiGetChangeSubscriptionHandlerRequest {
+func (a *ChangeSubscriptionHandlerAPIService) GetChangeSubscriptionHandler(ctx context.Context, changeSubscriptionHandlerName string) ApiGetChangeSubscriptionHandlerRequest {
 	return ApiGetChangeSubscriptionHandlerRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -250,7 +250,7 @@ func (a *ChangeSubscriptionHandlerApiService) GetChangeSubscriptionHandler(ctx c
 // Execute executes the request
 //
 //	@return AddChangeSubscriptionHandler200Response
-func (a *ChangeSubscriptionHandlerApiService) GetChangeSubscriptionHandlerExecute(r ApiGetChangeSubscriptionHandlerRequest) (*AddChangeSubscriptionHandler200Response, *http.Response, error) {
+func (a *ChangeSubscriptionHandlerAPIService) GetChangeSubscriptionHandlerExecute(r ApiGetChangeSubscriptionHandlerRequest) (*AddChangeSubscriptionHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ChangeSubscriptionHandlerApiService) GetChangeSubscriptionHandlerExecut
 		localVarReturnValue *AddChangeSubscriptionHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerApiService.GetChangeSubscriptionHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerAPIService.GetChangeSubscriptionHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ChangeSubscriptionHandlerApiService) GetChangeSubscriptionHandlerExecut
 
 type ApiListChangeSubscriptionHandlersRequest struct {
 	ctx        context.Context
-	ApiService *ChangeSubscriptionHandlerApiService
+	ApiService *ChangeSubscriptionHandlerAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListChangeSubscriptionHandlers Returns a list of all Change Subscription Handler
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListChangeSubscriptionHandlersRequest
 */
-func (a *ChangeSubscriptionHandlerApiService) ListChangeSubscriptionHandlers(ctx context.Context) ApiListChangeSubscriptionHandlersRequest {
+func (a *ChangeSubscriptionHandlerAPIService) ListChangeSubscriptionHandlers(ctx context.Context) ApiListChangeSubscriptionHandlersRequest {
 	return ApiListChangeSubscriptionHandlersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ChangeSubscriptionHandlerApiService) ListChangeSubscriptionHandlers(ctx
 // Execute executes the request
 //
 //	@return ChangeSubscriptionHandlerListResponse
-func (a *ChangeSubscriptionHandlerApiService) ListChangeSubscriptionHandlersExecute(r ApiListChangeSubscriptionHandlersRequest) (*ChangeSubscriptionHandlerListResponse, *http.Response, error) {
+func (a *ChangeSubscriptionHandlerAPIService) ListChangeSubscriptionHandlersExecute(r ApiListChangeSubscriptionHandlersRequest) (*ChangeSubscriptionHandlerListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ChangeSubscriptionHandlerApiService) ListChangeSubscriptionHandlersExec
 		localVarReturnValue *ChangeSubscriptionHandlerListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerApiService.ListChangeSubscriptionHandlers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerAPIService.ListChangeSubscriptionHandlers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ChangeSubscriptionHandlerApiService) ListChangeSubscriptionHandlersExec
 
 type ApiUpdateChangeSubscriptionHandlerRequest struct {
 	ctx                           context.Context
-	ApiService                    *ChangeSubscriptionHandlerApiService
+	ApiService                    *ChangeSubscriptionHandlerAPIService
 	changeSubscriptionHandlerName string
 	updateRequest                 *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateChangeSubscriptionHandler Update an existing Change Subscription Handler b
 	@param changeSubscriptionHandlerName Name of the Change Subscription Handler
 	@return ApiUpdateChangeSubscriptionHandlerRequest
 */
-func (a *ChangeSubscriptionHandlerApiService) UpdateChangeSubscriptionHandler(ctx context.Context, changeSubscriptionHandlerName string) ApiUpdateChangeSubscriptionHandlerRequest {
+func (a *ChangeSubscriptionHandlerAPIService) UpdateChangeSubscriptionHandler(ctx context.Context, changeSubscriptionHandlerName string) ApiUpdateChangeSubscriptionHandlerRequest {
 	return ApiUpdateChangeSubscriptionHandlerRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -467,7 +467,7 @@ func (a *ChangeSubscriptionHandlerApiService) UpdateChangeSubscriptionHandler(ct
 // Execute executes the request
 //
 //	@return AddChangeSubscriptionHandler200Response
-func (a *ChangeSubscriptionHandlerApiService) UpdateChangeSubscriptionHandlerExecute(r ApiUpdateChangeSubscriptionHandlerRequest) (*AddChangeSubscriptionHandler200Response, *http.Response, error) {
+func (a *ChangeSubscriptionHandlerAPIService) UpdateChangeSubscriptionHandlerExecute(r ApiUpdateChangeSubscriptionHandlerRequest) (*AddChangeSubscriptionHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ChangeSubscriptionHandlerApiService) UpdateChangeSubscriptionHandlerExe
 		localVarReturnValue *AddChangeSubscriptionHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerApiService.UpdateChangeSubscriptionHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionHandlerAPIService.UpdateChangeSubscriptionHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

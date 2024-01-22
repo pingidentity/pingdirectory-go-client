@@ -19,8 +19,6 @@ var _ MappedNullable = &AttributeMapperPluginResponse{}
 
 // AttributeMapperPluginResponse struct for AttributeMapperPluginResponse
 type AttributeMapperPluginResponse struct {
-	// Name of the Plugin
-	Id         string                               `json:"id"`
 	Schemas    []EnumattributeMapperPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp           `json:"pluginType"`
 	// Specifies the source attribute type that may appear in client requests which should be remapped to the target attribute. Note that the source attribute type must be defined in the server schema and must not be equal to the target attribute type.
@@ -39,15 +37,16 @@ type AttributeMapperPluginResponse struct {
 	InvokeForInternalOperations                   *bool                                              `json:"invokeForInternalOperations,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewAttributeMapperPluginResponse instantiates a new AttributeMapperPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttributeMapperPluginResponse(id string, schemas []EnumattributeMapperPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, sourceAttribute string, targetAttribute string, enableControlMapping bool, alwaysMapResponses bool, enabled bool) *AttributeMapperPluginResponse {
+func NewAttributeMapperPluginResponse(schemas []EnumattributeMapperPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, sourceAttribute string, targetAttribute string, enableControlMapping bool, alwaysMapResponses bool, enabled bool, id string) *AttributeMapperPluginResponse {
 	this := AttributeMapperPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PluginType = pluginType
 	this.SourceAttribute = sourceAttribute
@@ -55,6 +54,7 @@ func NewAttributeMapperPluginResponse(id string, schemas []EnumattributeMapperPl
 	this.EnableControlMapping = enableControlMapping
 	this.AlwaysMapResponses = alwaysMapResponses
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -64,30 +64,6 @@ func NewAttributeMapperPluginResponse(id string, schemas []EnumattributeMapperPl
 func NewAttributeMapperPluginResponseWithDefaults() *AttributeMapperPluginResponse {
 	this := AttributeMapperPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AttributeMapperPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AttributeMapperPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AttributeMapperPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -386,6 +362,30 @@ func (o *AttributeMapperPluginResponse) SetUrnpingidentityschemasconfigurationme
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AttributeMapperPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AttributeMapperPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AttributeMapperPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AttributeMapperPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -396,7 +396,6 @@ func (o AttributeMapperPluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o AttributeMapperPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["pluginType"] = o.PluginType
 	toSerialize["sourceAttribute"] = o.SourceAttribute
@@ -416,6 +415,7 @@ func (o AttributeMapperPluginResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

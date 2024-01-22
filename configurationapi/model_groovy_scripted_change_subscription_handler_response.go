@@ -19,8 +19,6 @@ var _ MappedNullable = &GroovyScriptedChangeSubscriptionHandlerResponse{}
 
 // GroovyScriptedChangeSubscriptionHandlerResponse struct for GroovyScriptedChangeSubscriptionHandlerResponse
 type GroovyScriptedChangeSubscriptionHandlerResponse struct {
-	// Name of the Change Subscription Handler
-	Id      string                                                 `json:"id"`
 	Schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Change Subscription Handler.
 	ScriptClass string `json:"scriptClass"`
@@ -34,18 +32,20 @@ type GroovyScriptedChangeSubscriptionHandlerResponse struct {
 	ChangeSubscription                            []string                                           `json:"changeSubscription,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Change Subscription Handler
+	Id string `json:"id"`
 }
 
 // NewGroovyScriptedChangeSubscriptionHandlerResponse instantiates a new GroovyScriptedChangeSubscriptionHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroovyScriptedChangeSubscriptionHandlerResponse(id string, schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn, scriptClass string, enabled bool) *GroovyScriptedChangeSubscriptionHandlerResponse {
+func NewGroovyScriptedChangeSubscriptionHandlerResponse(schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn, scriptClass string, enabled bool, id string) *GroovyScriptedChangeSubscriptionHandlerResponse {
 	this := GroovyScriptedChangeSubscriptionHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewGroovyScriptedChangeSubscriptionHandlerResponse(id string, schemas []Enu
 func NewGroovyScriptedChangeSubscriptionHandlerResponseWithDefaults() *GroovyScriptedChangeSubscriptionHandlerResponse {
 	this := GroovyScriptedChangeSubscriptionHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -313,6 +289,30 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetUrnpingidentitysche
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o GroovyScriptedChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -323,7 +323,6 @@ func (o GroovyScriptedChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, 
 
 func (o GroovyScriptedChangeSubscriptionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -342,6 +341,7 @@ func (o GroovyScriptedChangeSubscriptionHandlerResponse) ToMap() (map[string]int
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

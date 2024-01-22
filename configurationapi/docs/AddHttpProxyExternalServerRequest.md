@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumhttpProxyExternalServerSchemaUrn**](EnumhttpProxyExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The host name or IP address of the HTTP Proxy External Server. | 
 **ServerPort** | **int64** | The port on which the HTTP Proxy External Server is listening for connections. | 
 **BasicAuthenticationUsername** | Pointer to **string** | The username to use to authenticate to the HTTP Proxy External Server. | [optional] 
 **BasicAuthenticationPassphraseProvider** | Pointer to **string** | A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
+**ServerName** | **string** | Name of the new External Server | 
 
 ## Methods
 
 ### NewAddHttpProxyExternalServerRequest
 
-`func NewAddHttpProxyExternalServerRequest(serverName string, schemas []EnumhttpProxyExternalServerSchemaUrn, serverHostName string, serverPort int64, ) *AddHttpProxyExternalServerRequest`
+`func NewAddHttpProxyExternalServerRequest(schemas []EnumhttpProxyExternalServerSchemaUrn, serverHostName string, serverPort int64, serverName string, ) *AddHttpProxyExternalServerRequest`
 
 NewAddHttpProxyExternalServerRequest instantiates a new AddHttpProxyExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddHttpProxyExternalServerRequestWithDefaults instantiates a new AddHttpProxyExternalServerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetServerName
-
-`func (o *AddHttpProxyExternalServerRequest) GetServerName() string`
-
-GetServerName returns the ServerName field if non-nil, zero value otherwise.
-
-### GetServerNameOk
-
-`func (o *AddHttpProxyExternalServerRequest) GetServerNameOk() (*string, bool)`
-
-GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerName
-
-`func (o *AddHttpProxyExternalServerRequest) SetServerName(v string)`
-
-SetServerName sets ServerName field to given value.
-
 
 ### GetSchemas
 
@@ -185,6 +165,26 @@ SetDescription sets Description field to given value.
 `func (o *AddHttpProxyExternalServerRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetServerName
+
+`func (o *AddHttpProxyExternalServerRequest) GetServerName() string`
+
+GetServerName returns the ServerName field if non-nil, zero value otherwise.
+
+### GetServerNameOk
+
+`func (o *AddHttpProxyExternalServerRequest) GetServerNameOk() (*string, bool)`
+
+GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerName
+
+`func (o *AddHttpProxyExternalServerRequest) SetServerName(v string)`
+
+SetServerName sets ServerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

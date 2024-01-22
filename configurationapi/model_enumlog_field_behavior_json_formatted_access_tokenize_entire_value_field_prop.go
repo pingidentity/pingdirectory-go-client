@@ -34,6 +34,7 @@ const (
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSTOKENIZEENTIREVALUEFIELDPROP_ASSURED_REPLICATION_REQUIREMENTS_ASSURANCE_TIMEOUT_MILLIS                  EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp = "assured-replication-requirements-assurance-timeout-millis"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSTOKENIZEENTIREVALUEFIELDPROP_AUTHORIZATION_DN                                                           EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp = "authorization-dn"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSTOKENIZEENTIREVALUEFIELDPROP_AUTO_AUTHENTICATED_AS                                                      EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp = "auto-authenticated-as"
+	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSTOKENIZEENTIREVALUEFIELDPROP_BIND_ACCESS_TOKEN_ORIGINAL_AUTHENTICATION_TYPE                             EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp = "bind-access-token-original-authentication-type"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSTOKENIZEENTIREVALUEFIELDPROP_BIND_AUTHENTICATION_DN                                                     EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp = "bind-authentication-dn"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSTOKENIZEENTIREVALUEFIELDPROP_BIND_AUTHENTICATION_FAILURE_REASON                                         EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp = "bind-authentication-failure-reason"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSTOKENIZEENTIREVALUEFIELDPROP_BIND_AUTHENTICATION_FAILURE_REASON_ID                                      EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp = "bind-authentication-failure-reason-id"
@@ -342,6 +343,7 @@ var AllowedEnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldPropEn
 	"assured-replication-requirements-assurance-timeout-millis",
 	"authorization-dn",
 	"auto-authenticated-as",
+	"bind-access-token-original-authentication-type",
 	"bind-authentication-dn",
 	"bind-authentication-failure-reason",
 	"bind-authentication-failure-reason-id",

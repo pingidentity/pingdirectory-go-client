@@ -1,12 +1,12 @@
-# \ServerInstanceApi
+# \ServerInstanceAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetServerInstance**](ServerInstanceApi.md#GetServerInstance) | **Get** /server-instances/{server-instance-name} | Returns a single Server Instance
-[**ListServerInstances**](ServerInstanceApi.md#ListServerInstances) | **Get** /server-instances | Returns a list of all Server Instance objects
-[**UpdateServerInstance**](ServerInstanceApi.md#UpdateServerInstance) | **Patch** /server-instances/{server-instance-name} | Update an existing Server Instance by name
+[**GetServerInstance**](ServerInstanceAPI.md#GetServerInstance) | **Get** /server-instances/{server-instance-name} | Returns a single Server Instance
+[**ListServerInstances**](ServerInstanceAPI.md#ListServerInstances) | **Get** /server-instances | Returns a list of all Server Instance objects
+[**UpdateServerInstance**](ServerInstanceAPI.md#UpdateServerInstance) | **Patch** /server-instances/{server-instance-name} | Update an existing Server Instance by name
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerInstanceApi.GetServerInstance(context.Background(), serverInstanceName).Execute()
+    resp, r, err := apiClient.ServerInstanceAPI.GetServerInstance(context.Background(), serverInstanceName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceApi.GetServerInstance``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceAPI.GetServerInstance``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetServerInstance`: GetServerInstance200Response
-    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceApi.GetServerInstance`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceAPI.GetServerInstance`: %v\n", resp)
 }
 ```
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerInstanceApi.ListServerInstances(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ServerInstanceAPI.ListServerInstances(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceApi.ListServerInstances``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceAPI.ListServerInstances``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListServerInstances`: ServerInstanceListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceApi.ListServerInstances`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceAPI.ListServerInstances`: %v\n", resp)
 }
 ```
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerInstanceApi.UpdateServerInstance(context.Background(), serverInstanceName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ServerInstanceAPI.UpdateServerInstance(context.Background(), serverInstanceName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceApi.UpdateServerInstance``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerInstanceAPI.UpdateServerInstance``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateServerInstance`: GetServerInstance200Response
-    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceApi.UpdateServerInstance`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerInstanceAPI.UpdateServerInstance`: %v\n", resp)
 }
 ```
 

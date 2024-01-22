@@ -19,8 +19,6 @@ var _ MappedNullable = &Argon2iPasswordStorageSchemeResponse{}
 
 // Argon2iPasswordStorageSchemeResponse struct for Argon2iPasswordStorageSchemeResponse
 type Argon2iPasswordStorageSchemeResponse struct {
-	// Name of the Password Storage Scheme
-	Id      string                                      `json:"id"`
 	Schemas []Enumargon2iPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The number of rounds of cryptographic processing required in the course of encoding each password.
 	IterationCount int64 `json:"iterationCount"`
@@ -38,15 +36,16 @@ type Argon2iPasswordStorageSchemeResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Storage Scheme
+	Id string `json:"id"`
 }
 
 // NewArgon2iPasswordStorageSchemeResponse instantiates a new Argon2iPasswordStorageSchemeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewArgon2iPasswordStorageSchemeResponse(id string, schemas []Enumargon2iPasswordStorageSchemeSchemaUrn, iterationCount int64, parallelismFactor int64, memoryUsageKb int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool) *Argon2iPasswordStorageSchemeResponse {
+func NewArgon2iPasswordStorageSchemeResponse(schemas []Enumargon2iPasswordStorageSchemeSchemaUrn, iterationCount int64, parallelismFactor int64, memoryUsageKb int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool, id string) *Argon2iPasswordStorageSchemeResponse {
 	this := Argon2iPasswordStorageSchemeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.IterationCount = iterationCount
 	this.ParallelismFactor = parallelismFactor
@@ -54,6 +53,7 @@ func NewArgon2iPasswordStorageSchemeResponse(id string, schemas []Enumargon2iPas
 	this.SaltLengthBytes = saltLengthBytes
 	this.DerivedKeyLengthBytes = derivedKeyLengthBytes
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewArgon2iPasswordStorageSchemeResponse(id string, schemas []Enumargon2iPas
 func NewArgon2iPasswordStorageSchemeResponseWithDefaults() *Argon2iPasswordStorageSchemeResponse {
 	this := Argon2iPasswordStorageSchemeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *Argon2iPasswordStorageSchemeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *Argon2iPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *Argon2iPasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -353,6 +329,30 @@ func (o *Argon2iPasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *Argon2iPasswordStorageSchemeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *Argon2iPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *Argon2iPasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o Argon2iPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -363,7 +363,6 @@ func (o Argon2iPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 
 func (o Argon2iPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["iterationCount"] = o.IterationCount
 	toSerialize["parallelismFactor"] = o.ParallelismFactor
@@ -380,6 +379,7 @@ func (o Argon2iPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

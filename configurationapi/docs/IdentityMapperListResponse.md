@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]IdentityMapperListResponseResourcesInner**](IdentityMapperListResponseResourcesInner.md) |  | [optional] 
+**Resources** | Pointer to [**[]AddIdentityMapper200Response**](AddIdentityMapper200Response.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *IdentityMapperListResponse) GetResources() []IdentityMapperListResponseResourcesInner`
+`func (o *IdentityMapperListResponse) GetResources() []AddIdentityMapper200Response`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *IdentityMapperListResponse) GetResourcesOk() (*[]IdentityMapperListResponseResourcesInner, bool)`
+`func (o *IdentityMapperListResponse) GetResourcesOk() (*[]AddIdentityMapper200Response, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *IdentityMapperListResponse) SetResources(v []IdentityMapperListResponseResourcesInner)`
+`func (o *IdentityMapperListResponse) SetResources(v []AddIdentityMapper200Response)`
 
 SetResources sets Resources field to given value.
 

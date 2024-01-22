@@ -19,8 +19,6 @@ var _ MappedNullable = &FifoEntryCacheResponse{}
 
 // FifoEntryCacheResponse struct for FifoEntryCacheResponse
 type FifoEntryCacheResponse struct {
-	// Name of the Entry Cache
-	Id      string                        `json:"id"`
 	Schemas []EnumfifoEntryCacheSchemaUrn `json:"schemas"`
 	// Specifies the maximum amount of memory, as a percentage of the total maximum JVM heap size, that this cache should occupy when full. If the amount of memory the cache is using is greater than this amount, then an attempt to put a new entry in the cache will be ignored and will cause the oldest entry to be purged.
 	MaxMemoryPercent *int64 `json:"maxMemoryPercent,omitempty"`
@@ -46,18 +44,20 @@ type FifoEntryCacheResponse struct {
 	CacheUnindexedSearchResults                   *bool                                              `json:"cacheUnindexedSearchResults,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Entry Cache
+	Id string `json:"id"`
 }
 
 // NewFifoEntryCacheResponse instantiates a new FifoEntryCacheResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFifoEntryCacheResponse(id string, schemas []EnumfifoEntryCacheSchemaUrn, enabled bool, cacheLevel int64) *FifoEntryCacheResponse {
+func NewFifoEntryCacheResponse(schemas []EnumfifoEntryCacheSchemaUrn, enabled bool, cacheLevel int64, id string) *FifoEntryCacheResponse {
 	this := FifoEntryCacheResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.CacheLevel = cacheLevel
+	this.Id = id
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewFifoEntryCacheResponse(id string, schemas []EnumfifoEntryCacheSchemaUrn,
 func NewFifoEntryCacheResponseWithDefaults() *FifoEntryCacheResponse {
 	this := FifoEntryCacheResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *FifoEntryCacheResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *FifoEntryCacheResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *FifoEntryCacheResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -517,6 +493,30 @@ func (o *FifoEntryCacheResponse) SetUrnpingidentityschemasconfigurationmessages2
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *FifoEntryCacheResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *FifoEntryCacheResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *FifoEntryCacheResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o FifoEntryCacheResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -527,7 +527,6 @@ func (o FifoEntryCacheResponse) MarshalJSON() ([]byte, error) {
 
 func (o FifoEntryCacheResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.MaxMemoryPercent) {
 		toSerialize["maxMemoryPercent"] = o.MaxMemoryPercent
@@ -564,6 +563,7 @@ func (o FifoEntryCacheResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

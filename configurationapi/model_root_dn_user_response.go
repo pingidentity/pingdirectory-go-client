@@ -19,8 +19,6 @@ var _ MappedNullable = &RootDnUserResponse{}
 
 // RootDnUserResponse struct for RootDnUserResponse
 type RootDnUserResponse struct {
-	// Name of the Root DN User
-	Id      string                    `json:"id"`
 	Schemas []EnumrootDnUserSchemaUrn `json:"schemas,omitempty"`
 	// Specifies one or more alternate DNs that can be used to bind to the server as this User.
 	AlternateBindDN []string `json:"alternateBindDN,omitempty"`
@@ -88,15 +86,16 @@ type RootDnUserResponse struct {
 	MayProxyAsURL                                 []string                                           `json:"mayProxyAsURL,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Root DN User
+	Id string `json:"id"`
 }
 
 // NewRootDnUserResponse instantiates a new RootDnUserResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRootDnUserResponse(id string, inheritDefaultRootPrivileges bool, searchResultEntryLimit int64, timeLimitSeconds int64, lookThroughEntryLimit int64, idleTimeLimitSeconds int64, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool) *RootDnUserResponse {
+func NewRootDnUserResponse(inheritDefaultRootPrivileges bool, searchResultEntryLimit int64, timeLimitSeconds int64, lookThroughEntryLimit int64, idleTimeLimitSeconds int64, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool, id string) *RootDnUserResponse {
 	this := RootDnUserResponse{}
-	this.Id = id
 	this.InheritDefaultRootPrivileges = inheritDefaultRootPrivileges
 	this.SearchResultEntryLimit = searchResultEntryLimit
 	this.TimeLimitSeconds = timeLimitSeconds
@@ -105,6 +104,7 @@ func NewRootDnUserResponse(id string, inheritDefaultRootPrivileges bool, searchR
 	this.PasswordPolicy = passwordPolicy
 	this.RequireSecureAuthentication = requireSecureAuthentication
 	this.RequireSecureConnections = requireSecureConnections
+	this.Id = id
 	return &this
 }
 
@@ -114,30 +114,6 @@ func NewRootDnUserResponse(id string, inheritDefaultRootPrivileges bool, searchR
 func NewRootDnUserResponseWithDefaults() *RootDnUserResponse {
 	this := RootDnUserResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *RootDnUserResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *RootDnUserResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *RootDnUserResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -1228,6 +1204,30 @@ func (o *RootDnUserResponse) SetUrnpingidentityschemasconfigurationmessages20(v 
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *RootDnUserResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *RootDnUserResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *RootDnUserResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o RootDnUserResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1238,7 +1238,6 @@ func (o RootDnUserResponse) MarshalJSON() ([]byte, error) {
 
 func (o RootDnUserResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -1331,6 +1330,7 @@ func (o RootDnUserResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

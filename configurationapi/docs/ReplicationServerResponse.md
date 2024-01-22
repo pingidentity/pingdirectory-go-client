@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | Pointer to [**[]EnumreplicationServerSchemaUrn**](EnumreplicationServerSchemaUrn.md) |  | [optional] 
 **ReplicationServerID** | **int64** | Specifies a unique identifier for the Replication Server. | 
 **ReplicationDBDirectory** | **string** | The path where the Replication Server stores all persistent information. | 
@@ -18,8 +20,8 @@ Name | Type | Description | Notes
 **RestrictedDomain** | Pointer to **[]string** | Specifies the base DN of domains that are only replicated between server instances that belong to the same replication set. | [optional] 
 **GatewayPriority** | **int64** | Specifies the gateway priority of the Replication Server in the current location. | 
 **MissingChangesAlertThresholdPercent** | Pointer to **int64** | Specifies the missing changes alert threshold as a percentage of the total pending changes. For instance, a value of 80 indicates that the replica is 80% of the way to losing changes. | [optional] 
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**MissingChangesPolicy** | Pointer to [**EnumreplicationServerMissingChangesPolicyProp**](EnumreplicationServerMissingChangesPolicyProp.md) |  | [optional] 
+**IncludeAllRemoteServersStateInMonitorMessage** | Pointer to **bool** | Indicates monitor messages should include information about remote servers. | [optional] 
 
 ## Methods
 
@@ -39,6 +41,56 @@ will change when the set of required properties is changed
 NewReplicationServerResponseWithDefaults instantiates a new ReplicationServerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMeta
+
+`func (o *ReplicationServerResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *ReplicationServerResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *ReplicationServerResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *ReplicationServerResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *ReplicationServerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *ReplicationServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *ReplicationServerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *ReplicationServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetSchemas
 
@@ -370,55 +422,55 @@ SetMissingChangesAlertThresholdPercent sets MissingChangesAlertThresholdPercent 
 
 HasMissingChangesAlertThresholdPercent returns a boolean if a field has been set.
 
-### GetMeta
+### GetMissingChangesPolicy
 
-`func (o *ReplicationServerResponse) GetMeta() MetaMeta`
+`func (o *ReplicationServerResponse) GetMissingChangesPolicy() EnumreplicationServerMissingChangesPolicyProp`
 
-GetMeta returns the Meta field if non-nil, zero value otherwise.
+GetMissingChangesPolicy returns the MissingChangesPolicy field if non-nil, zero value otherwise.
 
-### GetMetaOk
+### GetMissingChangesPolicyOk
 
-`func (o *ReplicationServerResponse) GetMetaOk() (*MetaMeta, bool)`
+`func (o *ReplicationServerResponse) GetMissingChangesPolicyOk() (*EnumreplicationServerMissingChangesPolicyProp, bool)`
 
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+GetMissingChangesPolicyOk returns a tuple with the MissingChangesPolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMeta
+### SetMissingChangesPolicy
 
-`func (o *ReplicationServerResponse) SetMeta(v MetaMeta)`
+`func (o *ReplicationServerResponse) SetMissingChangesPolicy(v EnumreplicationServerMissingChangesPolicyProp)`
 
-SetMeta sets Meta field to given value.
+SetMissingChangesPolicy sets MissingChangesPolicy field to given value.
 
-### HasMeta
+### HasMissingChangesPolicy
 
-`func (o *ReplicationServerResponse) HasMeta() bool`
+`func (o *ReplicationServerResponse) HasMissingChangesPolicy() bool`
 
-HasMeta returns a boolean if a field has been set.
+HasMissingChangesPolicy returns a boolean if a field has been set.
 
-### GetUrnpingidentityschemasconfigurationmessages20
+### GetIncludeAllRemoteServersStateInMonitorMessage
 
-`func (o *ReplicationServerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+`func (o *ReplicationServerResponse) GetIncludeAllRemoteServersStateInMonitorMessage() bool`
 
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+GetIncludeAllRemoteServersStateInMonitorMessage returns the IncludeAllRemoteServersStateInMonitorMessage field if non-nil, zero value otherwise.
 
-### GetUrnpingidentityschemasconfigurationmessages20Ok
+### GetIncludeAllRemoteServersStateInMonitorMessageOk
 
-`func (o *ReplicationServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+`func (o *ReplicationServerResponse) GetIncludeAllRemoteServersStateInMonitorMessageOk() (*bool, bool)`
 
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+GetIncludeAllRemoteServersStateInMonitorMessageOk returns a tuple with the IncludeAllRemoteServersStateInMonitorMessage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUrnpingidentityschemasconfigurationmessages20
+### SetIncludeAllRemoteServersStateInMonitorMessage
 
-`func (o *ReplicationServerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+`func (o *ReplicationServerResponse) SetIncludeAllRemoteServersStateInMonitorMessage(v bool)`
 
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+SetIncludeAllRemoteServersStateInMonitorMessage sets IncludeAllRemoteServersStateInMonitorMessage field to given value.
 
-### HasUrnpingidentityschemasconfigurationmessages20
+### HasIncludeAllRemoteServersStateInMonitorMessage
 
-`func (o *ReplicationServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+`func (o *ReplicationServerResponse) HasIncludeAllRemoteServersStateInMonitorMessage() bool`
 
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+HasIncludeAllRemoteServersStateInMonitorMessage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

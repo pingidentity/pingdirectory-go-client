@@ -1,14 +1,14 @@
-# \CertificateMapperApi
+# \CertificateMapperAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddCertificateMapper**](CertificateMapperApi.md#AddCertificateMapper) | **Post** /certificate-mappers | Add a new Certificate Mapper to the config
-[**DeleteCertificateMapper**](CertificateMapperApi.md#DeleteCertificateMapper) | **Delete** /certificate-mappers/{certificate-mapper-name} | Delete a Certificate Mapper
-[**GetCertificateMapper**](CertificateMapperApi.md#GetCertificateMapper) | **Get** /certificate-mappers/{certificate-mapper-name} | Returns a single Certificate Mapper
-[**ListCertificateMappers**](CertificateMapperApi.md#ListCertificateMappers) | **Get** /certificate-mappers | Returns a list of all Certificate Mapper objects
-[**UpdateCertificateMapper**](CertificateMapperApi.md#UpdateCertificateMapper) | **Patch** /certificate-mappers/{certificate-mapper-name} | Update an existing Certificate Mapper by name
+[**AddCertificateMapper**](CertificateMapperAPI.md#AddCertificateMapper) | **Post** /certificate-mappers | Add a new Certificate Mapper to the config
+[**DeleteCertificateMapper**](CertificateMapperAPI.md#DeleteCertificateMapper) | **Delete** /certificate-mappers/{certificate-mapper-name} | Delete a Certificate Mapper
+[**GetCertificateMapper**](CertificateMapperAPI.md#GetCertificateMapper) | **Get** /certificate-mappers/{certificate-mapper-name} | Returns a single Certificate Mapper
+[**ListCertificateMappers**](CertificateMapperAPI.md#ListCertificateMappers) | **Get** /certificate-mappers | Returns a list of all Certificate Mapper objects
+[**UpdateCertificateMapper**](CertificateMapperAPI.md#UpdateCertificateMapper) | **Patch** /certificate-mappers/{certificate-mapper-name} | Update an existing Certificate Mapper by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addCertificateMapperRequest := openapiclient.add_certificate_mapper_request{AddFingerprintCertificateMapperRequest: openapiclient.NewAddFingerprintCertificateMapperRequest("MapperName_example", []openapiclient.EnumfingerprintCertificateMapperSchemaUrn{openapiclient.Enumfingerprint-certificate-mapperSchemaUrn("urn:pingidentity:schemas:configuration:2.0:certificate-mapper:fingerprint")}, openapiclient.Enumcertificate-mapper-fingerprintAlgorithmProp("md5"), false)} // AddCertificateMapperRequest | Create a new Certificate Mapper in the config
+    addCertificateMapperRequest := openapiclient.add_certificate_mapper_request{AddFingerprintCertificateMapperRequest: openapiclient.NewAddFingerprintCertificateMapperRequest([]openapiclient.EnumfingerprintCertificateMapperSchemaUrn{openapiclient.Enumfingerprint-certificate-mapperSchemaUrn("urn:pingidentity:schemas:configuration:2.0:certificate-mapper:fingerprint")}, openapiclient.Enumcertificate-mapper-fingerprintAlgorithmProp("md5"), false, "MapperName_example")} // AddCertificateMapperRequest | Create a new Certificate Mapper in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateMapperApi.AddCertificateMapper(context.Background()).AddCertificateMapperRequest(addCertificateMapperRequest).Execute()
+    resp, r, err := apiClient.CertificateMapperAPI.AddCertificateMapper(context.Background()).AddCertificateMapperRequest(addCertificateMapperRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperApi.AddCertificateMapper``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperAPI.AddCertificateMapper``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddCertificateMapper`: AddCertificateMapper200Response
-    fmt.Fprintf(os.Stdout, "Response from `CertificateMapperApi.AddCertificateMapper`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificateMapperAPI.AddCertificateMapper`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CertificateMapperApi.DeleteCertificateMapper(context.Background(), certificateMapperName).Execute()
+    r, err := apiClient.CertificateMapperAPI.DeleteCertificateMapper(context.Background(), certificateMapperName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperApi.DeleteCertificateMapper``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperAPI.DeleteCertificateMapper``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateMapperApi.GetCertificateMapper(context.Background(), certificateMapperName).Execute()
+    resp, r, err := apiClient.CertificateMapperAPI.GetCertificateMapper(context.Background(), certificateMapperName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperApi.GetCertificateMapper``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperAPI.GetCertificateMapper``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCertificateMapper`: AddCertificateMapper200Response
-    fmt.Fprintf(os.Stdout, "Response from `CertificateMapperApi.GetCertificateMapper`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificateMapperAPI.GetCertificateMapper`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateMapperApi.ListCertificateMappers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.CertificateMapperAPI.ListCertificateMappers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperApi.ListCertificateMappers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperAPI.ListCertificateMappers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListCertificateMappers`: CertificateMapperListResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateMapperApi.ListCertificateMappers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificateMapperAPI.ListCertificateMappers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateMapperApi.UpdateCertificateMapper(context.Background(), certificateMapperName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.CertificateMapperAPI.UpdateCertificateMapper(context.Background(), certificateMapperName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperApi.UpdateCertificateMapper``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperAPI.UpdateCertificateMapper``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCertificateMapper`: AddCertificateMapper200Response
-    fmt.Fprintf(os.Stdout, "Response from `CertificateMapperApi.UpdateCertificateMapper`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CertificateMapperAPI.UpdateCertificateMapper`: %v\n", resp)
 }
 ```
 

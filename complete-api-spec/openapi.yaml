@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
 tags:
 - description: Access the Global Configuration
   name: global-configuration
@@ -67,6 +67,8 @@ tags:
   name: soft-delete-policy
 - description: Access recurring-task-chains
   name: recurring-task-chain
+- description: Access post-ldif-export-task-processors
+  name: post-ldif-export-task-processor
 - description: Access gauges
   name: gauge
 - description: Access search-reference-criteria
@@ -693,6 +695,7 @@ paths:
           application/json:
             schema:
               oneOf:
+              - $ref: '#/components/schemas/add-traditional-static-group-support-for-inverted-static-groups-plugin-request'
               - $ref: '#/components/schemas/add-internal-search-rate-plugin-request'
               - $ref: '#/components/schemas/add-modifiable-password-policy-state-plugin-request'
               - $ref: '#/components/schemas/add-seven-bit-clean-plugin-request'
@@ -719,6 +722,7 @@ paths:
               - $ref: '#/components/schemas/add-pluggable-pass-through-authentication-plugin-request'
               - $ref: '#/components/schemas/add-referential-integrity-plugin-request'
               - $ref: '#/components/schemas/add-unique-attribute-plugin-request'
+              - $ref: '#/components/schemas/add-inverted-static-group-referential-integrity-plugin-request'
         description: Create a new Plugin in the config
         required: true
       responses:
@@ -728,6 +732,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
                 - $ref: '#/components/schemas/internal-search-rate-plugin-response'
                 - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
                 - $ref: '#/components/schemas/seven-bit-clean-plugin-response'
@@ -754,6 +759,7 @@ paths:
                 - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-response'
                 - $ref: '#/components/schemas/referential-integrity-plugin-response'
                 - $ref: '#/components/schemas/unique-attribute-plugin-response'
+                - $ref: '#/components/schemas/inverted-static-group-referential-integrity-plugin-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -815,6 +821,7 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/last-access-time-plugin-response'
                 - $ref: '#/components/schemas/stats-collector-plugin-response'
+                - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
                 - $ref: '#/components/schemas/internal-search-rate-plugin-response'
                 - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
                 - $ref: '#/components/schemas/seven-bit-clean-plugin-response'
@@ -851,6 +858,7 @@ paths:
                 - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-response'
                 - $ref: '#/components/schemas/referential-integrity-plugin-response'
                 - $ref: '#/components/schemas/unique-attribute-plugin-response'
+                - $ref: '#/components/schemas/inverted-static-group-referential-integrity-plugin-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -889,6 +897,7 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/last-access-time-plugin-response'
                 - $ref: '#/components/schemas/stats-collector-plugin-response'
+                - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
                 - $ref: '#/components/schemas/internal-search-rate-plugin-response'
                 - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
                 - $ref: '#/components/schemas/seven-bit-clean-plugin-response'
@@ -925,6 +934,7 @@ paths:
                 - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-response'
                 - $ref: '#/components/schemas/referential-integrity-plugin-response'
                 - $ref: '#/components/schemas/unique-attribute-plugin-response'
+                - $ref: '#/components/schemas/inverted-static-group-referential-integrity-plugin-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -1394,6 +1404,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/bind-access-token-validator-response'
                 - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
                 - $ref: '#/components/schemas/jwt-access-token-validator-response'
                 - $ref: '#/components/schemas/mock-access-token-validator-response'
@@ -1434,6 +1445,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/bind-access-token-validator-response'
                 - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
                 - $ref: '#/components/schemas/jwt-access-token-validator-response'
                 - $ref: '#/components/schemas/mock-access-token-validator-response'
@@ -2806,6 +2818,7 @@ paths:
           application/json:
             schema:
               oneOf:
+              - $ref: '#/components/schemas/add-upload-to-s3-log-file-rotation-listener-request'
               - $ref: '#/components/schemas/add-summarize-log-file-rotation-listener-request'
               - $ref: '#/components/schemas/add-copy-log-file-rotation-listener-request'
               - $ref: '#/components/schemas/add-third-party-log-file-rotation-listener-request'
@@ -2818,6 +2831,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/upload-to-s3-log-file-rotation-listener-response'
                 - $ref: '#/components/schemas/summarize-log-file-rotation-listener-response'
                 - $ref: '#/components/schemas/copy-log-file-rotation-listener-response'
                 - $ref: '#/components/schemas/third-party-log-file-rotation-listener-response'
@@ -2880,6 +2894,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/upload-to-s3-log-file-rotation-listener-response'
                 - $ref: '#/components/schemas/summarize-log-file-rotation-listener-response'
                 - $ref: '#/components/schemas/copy-log-file-rotation-listener-response'
                 - $ref: '#/components/schemas/third-party-log-file-rotation-listener-response'
@@ -2919,6 +2934,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/upload-to-s3-log-file-rotation-listener-response'
                 - $ref: '#/components/schemas/summarize-log-file-rotation-listener-response'
                 - $ref: '#/components/schemas/copy-log-file-rotation-listener-response'
                 - $ref: '#/components/schemas/third-party-log-file-rotation-listener-response'
@@ -5200,6 +5216,7 @@ paths:
             schema:
               oneOf:
               - $ref: '#/components/schemas/add-ldap-pass-through-scim-resource-type-request'
+              - $ref: '#/components/schemas/add-mapping-scim-resource-type-request'
               - $ref: '#/components/schemas/add-ldap-mapping-scim-resource-type-request'
         description: Create a new SCIM Resource Type in the config
         required: true
@@ -5211,6 +5228,7 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/ldap-pass-through-scim-resource-type-response'
+                - $ref: '#/components/schemas/mapping-scim-resource-type-response'
                 - $ref: '#/components/schemas/ldap-mapping-scim-resource-type-response'
         "401":
           description: Requestor cannot be authenticated
@@ -5272,6 +5290,7 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/ldap-pass-through-scim-resource-type-response'
+                - $ref: '#/components/schemas/mapping-scim-resource-type-response'
                 - $ref: '#/components/schemas/ldap-mapping-scim-resource-type-response'
         "401":
           description: Requestor cannot be authenticated
@@ -5310,6 +5329,7 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/ldap-pass-through-scim-resource-type-response'
+                - $ref: '#/components/schemas/mapping-scim-resource-type-response'
                 - $ref: '#/components/schemas/ldap-mapping-scim-resource-type-response'
         "401":
           description: Requestor cannot be authenticated
@@ -6806,6 +6826,166 @@ paths:
       - basicAuth: []
       tags:
       - recurring-task-chain
+  /post-ldif-export-task-processors:
+    get:
+      summary: Returns a list of all Post LDIF Export Task Processor objects
+      operationId: list-post-ldif-export-task-processors
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-ldif-export-task-processorListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
+    post:
+      summary: Add a new Post LDIF Export Task Processor to the config
+      operationId: add-post-ldif-export-task-processor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-upload-to-s3-post-ldif-export-task-processor-request'
+              - $ref: '#/components/schemas/add-third-party-post-ldif-export-task-processor-request'
+        description: Create a new Post LDIF Export Task Processor in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-response'
+                - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Post LDIF Export Task Processor already exists
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
+  /post-ldif-export-task-processors/{post-ldif-export-task-processor-name}:
+    delete:
+      summary: Delete a Post LDIF Export Task Processor
+      operationId: delete-post-ldif-export-task-processor
+      parameters:
+      - description: Name of the Post LDIF Export Task Processor
+        explode: false
+        in: path
+        name: post-ldif-export-task-processor-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Post LDIF Export Task Processor does not exist
+        "409":
+          description: The Post LDIF Export Task Processor cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
+    get:
+      summary: Returns a single Post LDIF Export Task Processor
+      operationId: get-post-ldif-export-task-processor
+      parameters:
+      - description: Name of the Post LDIF Export Task Processor
+        explode: false
+        in: path
+        name: post-ldif-export-task-processor-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-response'
+                - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Post LDIF Export Task Processor does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
+    patch:
+      summary: Update an existing Post LDIF Export Task Processor by name
+      operationId: update-post-ldif-export-task-processor
+      parameters:
+      - description: Name of the Post LDIF Export Task Processor
+        explode: false
+        in: path
+        name: post-ldif-export-task-processor-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Post LDIF Export Task Processor
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-response'
+                - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Post LDIF Export Task Processor does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
   /gauges:
     get:
       summary: Returns a list of all Gauge objects
@@ -12496,6 +12676,7 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/static-group-implementation-response'
+                - $ref: '#/components/schemas/inverted-static-group-implementation-response'
                 - $ref: '#/components/schemas/virtual-static-group-implementation-response'
                 - $ref: '#/components/schemas/dynamic-group-implementation-response'
         "401":
@@ -12535,6 +12716,7 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/static-group-implementation-response'
+                - $ref: '#/components/schemas/inverted-static-group-implementation-response'
                 - $ref: '#/components/schemas/virtual-static-group-implementation-response'
                 - $ref: '#/components/schemas/dynamic-group-implementation-response'
         "401":
@@ -15442,6 +15624,7 @@ paths:
               oneOf:
               - $ref: '#/components/schemas/add-exact-match-identity-mapper-request'
               - $ref: '#/components/schemas/add-groovy-scripted-identity-mapper-request'
+              - $ref: '#/components/schemas/add-dn-identity-mapper-request'
               - $ref: '#/components/schemas/add-regular-expression-identity-mapper-request'
               - $ref: '#/components/schemas/add-aggregate-identity-mapper-request'
               - $ref: '#/components/schemas/add-third-party-identity-mapper-request'
@@ -15456,6 +15639,7 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/exact-match-identity-mapper-response'
                 - $ref: '#/components/schemas/groovy-scripted-identity-mapper-response'
+                - $ref: '#/components/schemas/dn-identity-mapper-response'
                 - $ref: '#/components/schemas/regular-expression-identity-mapper-response'
                 - $ref: '#/components/schemas/aggregate-identity-mapper-response'
                 - $ref: '#/components/schemas/third-party-identity-mapper-response'
@@ -15520,6 +15704,7 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/exact-match-identity-mapper-response'
                 - $ref: '#/components/schemas/groovy-scripted-identity-mapper-response'
+                - $ref: '#/components/schemas/dn-identity-mapper-response'
                 - $ref: '#/components/schemas/regular-expression-identity-mapper-response'
                 - $ref: '#/components/schemas/aggregate-identity-mapper-response'
                 - $ref: '#/components/schemas/third-party-identity-mapper-response'
@@ -15561,6 +15746,7 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/exact-match-identity-mapper-response'
                 - $ref: '#/components/schemas/groovy-scripted-identity-mapper-response'
+                - $ref: '#/components/schemas/dn-identity-mapper-response'
                 - $ref: '#/components/schemas/regular-expression-identity-mapper-response'
                 - $ref: '#/components/schemas/aggregate-identity-mapper-response'
                 - $ref: '#/components/schemas/third-party-identity-mapper-response'
@@ -19243,6 +19429,14 @@ components:
                 Specifies the length of time that must expire before duplicate messages are sent via the administrative alert framework.
           writabilityMode:
             $ref: '#/components/schemas/Enumglobal-configuration-writabilityModeProp'
+          useSharedDatabaseCacheAcrossAllLocalDBBackends:
+            type: boolean
+            description: >-
+                Indicates whether the server should use a common database cache that is shared across all local DB backends instead of maintaining a separate cache for each backend.
+          sharedLocalDBBackendDatabaseCachePercent:
+            type: integer
+            description: >-
+                Specifies the percentage of the JVM memory to allocate to the database cache that is shared across all local DB backends.
           unrecoverableDatabaseErrorMode:
             $ref: '#/components/schemas/Enumglobal-configuration-unrecoverableDatabaseErrorModeProp'
           databaseOnVirtualizedOrNetworkStorage:
@@ -20198,6 +20392,82 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:stats-collector"
+    Enumplugin-traditionalStaticGroupObjectClassProp:
+      type: string
+      enum:
+      - "groupOfNames"
+      - "groupOfUniqueNames"
+      - "groupOfEntries"
+      description: >-
+          The object class that defines the type of traditional static group that this plugin will attempt to emulate for inverted static groups.
+    Enumplugin-readOperationSupportProp:
+      type: string
+      enum:
+      - "disabled"
+      - "enabled-without-support-for-retrieving-membership"
+      - "enabled-with-support-for-retrieving-direct-membership"
+      - "enabled-with-support-for-retrieving-nested-membership"
+      description: >-
+          The level of support that the server should offer to allow treating search and compare operations targeting inverted static groups as if they were traditional static groups.
+    add-traditional-static-group-support-for-inverted-static-groups-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            type: string
+            description: >-
+                Name of the new Plugin
+      - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-shared'
+      required:
+      - pluginName
+    traditional-static-group-support-for-inverted-static-groups-plugin-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Plugin
+      - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    traditional-static-group-support-for-inverted-static-groups-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumtraditional-static-group-support-for-inverted-static-groups-pluginSchemaUrn'
+        traditionalStaticGroupObjectClass:
+          $ref: '#/components/schemas/Enumplugin-traditionalStaticGroupObjectClassProp'
+        maximumMembershipUpdatesPerModify:
+          type: integer
+          description: >-
+              An integer property that specifies the maximum number of membership changes that will be supported in a single modify operation. A value of zero indicates that modify operations targeting the group entry should not be permitted to alter the set of members for the group.
+        readOperationSupport:
+          $ref: '#/components/schemas/Enumplugin-readOperationSupportProp'
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - enabled
+    Enumtraditional-static-group-support-for-inverted-static-groups-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:traditional-static-group-support-for-inverted-static-groups"
     Enumplugin-pluginTypeProp:
       type: string
       enum:
@@ -23545,6 +23815,69 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:snmp-master-agent"
+    add-inverted-static-group-referential-integrity-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            type: string
+            description: >-
+                Name of the new Plugin
+      - $ref: '#/components/schemas/inverted-static-group-referential-integrity-plugin-shared'
+      required:
+      - pluginName
+    inverted-static-group-referential-integrity-plugin-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Plugin
+      - $ref: '#/components/schemas/inverted-static-group-referential-integrity-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    inverted-static-group-referential-integrity-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enuminverted-static-group-referential-integrity-pluginSchemaUrn'
+        preventAddingMembersToNonexistentGroups:
+          type: boolean
+          description: >-
+              Indicates whether the server should prevent updates to user entries that attempt to add them as a member of an inverted static group that does not exist.
+        preventAddingGroupsAsInvertedStaticGroupMembers:
+          type: boolean
+          description: >-
+              Indicates whether the server should prevent attempts to add a group as a regular member of an inverted static group. If the members of another group should be considered members of an inverted static group, then the other group should be added as a nested group rather than a regular member.
+        preventNestingNonexistentGroups:
+          type: boolean
+          description: >-
+              Indicates whether the server should prevent updates to inverted static groups that add references to nested groups that don't exist.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - enabled
+    Enuminverted-static-group-referential-integrity-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:inverted-static-group-referential-integrity"
     Enumcustom-logged-stats-statisticTypeProp:
       type: string
       enum:
@@ -23679,6 +24012,7 @@ components:
             oneOf:
             - $ref: '#/components/schemas/last-access-time-plugin-response'
             - $ref: '#/components/schemas/stats-collector-plugin-response'
+            - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
             - $ref: '#/components/schemas/internal-search-rate-plugin-response'
             - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
             - $ref: '#/components/schemas/seven-bit-clean-plugin-response'
@@ -23722,6 +24056,7 @@ components:
             - $ref: '#/components/schemas/referential-integrity-plugin-response'
             - $ref: '#/components/schemas/unique-attribute-plugin-response'
             - $ref: '#/components/schemas/snmp-master-agent-plugin-response'
+            - $ref: '#/components/schemas/inverted-static-group-referential-integrity-plugin-response'
     custom-logged-statsListResponse:
       type: object
       properties:
@@ -23962,6 +24297,85 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:mock"
+    Enumaccess-token-validator-allowedAuthenticationTypeProp:
+      type: string
+      enum:
+      - "simple"
+      - "sasl"
+      description: >-
+          Specifies the authentication types for bind operations that may be used to generate access tokens, and for which generated access tokens will be accepted.
+    bind-access-token-validator-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumbind-access-token-validatorSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Access Token Validator
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether this Bind Access Token Validator is enabled for use in Directory Server.
+          persistAccessTokens:
+            type: boolean
+            description: >-
+                Indicates whether access tokens should be persisted in user entries.
+          maximumTokenLifetime:
+            type: string
+            description: >-
+                Specifies the maximum length of time that a generated token should be considered valid. If this is not specified, then generated access tokens will not expire.
+          allowedAuthenticationType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumaccess-token-validator-allowedAuthenticationTypeProp'
+          allowedSASLMechanism:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of the SASL mechanisms for which access tokens may be generated, and for which generated access tokens will be accepted.
+          generateTokenResultCriteria:
+            type: string
+            description: >-
+                A reference to a request criteria object that may be used to identify the types of bind operations for which access tokens may be generated. If no criteria is specified, then access tokens may be generated for any bind operations that satisfy the other requirements configured in this validator.
+          includedScope:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of any scopes that should be granted to a client that authenticates with a bind access token. By default, no scopes will be granted.
+          identityMapper:
+            type: string
+            description: >-
+                Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
+          subjectClaimName:
+            type: string
+            description: >-
+                The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
+          description:
+            type: string
+            description: >-
+                A description for this Access Token Validator
+          evaluationOrderIndex:
+            type: integer
+            description: >-
+                When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+      - evaluationOrderIndex
+    Enumbind-access-token-validatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:bind"
     add-ping-federate-access-token-validator-request:
       allOf:
       - type: object
@@ -24274,6 +24688,7 @@ components:
             oneOf:
             - $ref: '#/components/schemas/external-api-gateway-access-token-validator-response'
             - $ref: '#/components/schemas/mock-access-token-validator-response'
+            - $ref: '#/components/schemas/bind-access-token-validator-response'
             - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
             - $ref: '#/components/schemas/jwt-access-token-validator-response'
             - $ref: '#/components/schemas/third-party-access-token-validator-response'
@@ -25177,6 +25592,7 @@ components:
       - "assured-replication-requirements-assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-reason"
       - "bind-authentication-failure-reason-id"
@@ -25486,6 +25902,7 @@ components:
       - "assured-replication-requirements-assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-reason"
       - "bind-authentication-failure-reason-id"
@@ -25795,6 +26212,7 @@ components:
       - "assured-replication-requirements-assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-reason"
       - "bind-authentication-failure-reason-id"
@@ -26104,6 +26522,7 @@ components:
       - "assured-replication-requirements-assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-reason"
       - "bind-authentication-failure-reason-id"
@@ -26413,6 +26832,7 @@ components:
       - "assured-replication-requirements-assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-reason"
       - "bind-authentication-failure-reason-id"
@@ -26722,6 +27142,7 @@ components:
       - "assured-replication-requirements-assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-reason"
       - "bind-authentication-failure-reason-id"
@@ -27141,6 +27562,7 @@ components:
       - "assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-id"
       - "bind-authentication-failure-name"
@@ -27400,6 +27822,7 @@ components:
       - "assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-id"
       - "bind-authentication-failure-name"
@@ -27659,6 +28082,7 @@ components:
       - "assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-id"
       - "bind-authentication-failure-name"
@@ -27918,6 +28342,7 @@ components:
       - "assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-id"
       - "bind-authentication-failure-name"
@@ -28177,6 +28602,7 @@ components:
       - "assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-id"
       - "bind-authentication-failure-name"
@@ -28436,6 +28862,7 @@ components:
       - "assurance-timeout-millis"
       - "authorization-dn"
       - "auto-authenticated-as"
+      - "bind-access-token-original-authentication-type"
       - "bind-authentication-dn"
       - "bind-authentication-failure-id"
       - "bind-authentication-failure-name"
@@ -29739,6 +30166,83 @@ components:
             oneOf:
             - $ref: '#/components/schemas/certificate-inter-server-authentication-info-response'
             - $ref: '#/components/schemas/password-inter-server-authentication-info-response'
+    add-upload-to-s3-log-file-rotation-listener-request:
+      allOf:
+      - type: object
+        properties:
+          listenerName:
+            type: string
+            description: >-
+                Name of the new Log File Rotation Listener
+      - $ref: '#/components/schemas/upload-to-s3-log-file-rotation-listener-shared'
+      required:
+      - listenerName
+    upload-to-s3-log-file-rotation-listener-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Log File Rotation Listener
+      - $ref: '#/components/schemas/upload-to-s3-log-file-rotation-listener-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    upload-to-s3-log-file-rotation-listener-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumupload-to-s3-log-file-rotation-listenerSchemaUrn'
+        awsExternalServer:
+          type: string
+          description: >-
+              The external server with information to use when interacting with the AWS S3 service.
+        s3BucketName:
+          type: string
+          description: >-
+              The name of the S3 bucket into which rotated log files should be copied.
+        targetThroughputInMegabitsPerSecond:
+          type: integer
+          description: >-
+              The target throughput to attempt to achieve for data transfers to or from S3, in megabits per second.
+        maximumConcurrentTransferConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections that may be used when transferring data to or from S3.
+        maximumFileCountToRetain:
+          type: integer
+          description: >-
+              The maximum number of existing files matching the file retention pattern that should be retained in the S3 bucket after successfully uploading a newly rotated file.
+        maximumFileAgeToRetain:
+          type: string
+          description: >-
+              The maximum length of time to retain files matching the file retention pattern that should be retained in the S3 bucket after successfully uploading a newly rotated file.
+        fileRetentionPattern:
+          type: string
+          description: >-
+              A regular expression pattern that will be used to identify which files are candidates for automatic removal based on the maximum-file-count-to-retain and maximum-file-age-to-retain properties. By default, all files in the bucket will be eligible for removal by retention processing.
+        description:
+          type: string
+          description: >-
+              A description for this Log File Rotation Listener
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Log File Rotation Listener is enabled for use.
+      required:
+      - schemas
+      - awsExternalServer
+      - s3BucketName
+      - enabled
+    Enumupload-to-s3-log-file-rotation-listenerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:upload-to-s3"
     add-summarize-log-file-rotation-listener-request:
       allOf:
       - type: object
@@ -29919,6 +30423,7 @@ components:
           type: array
           items:
             oneOf:
+            - $ref: '#/components/schemas/upload-to-s3-log-file-rotation-listener-response'
             - $ref: '#/components/schemas/summarize-log-file-rotation-listener-response'
             - $ref: '#/components/schemas/copy-log-file-rotation-listener-response'
             - $ref: '#/components/schemas/third-party-log-file-rotation-listener-response'
@@ -30055,6 +30560,10 @@ components:
             type: string
           description: >-
               Specifies the names of the password storage schemes that are considered deprecated for this password policy.
+        reEncodePasswordsOnSchemeConfigChange:
+          type: boolean
+          description: >-
+              Indicates whether to re-encode passwords on authentication if the configuration for the underlying password storage scheme has changed.
         allowMultiplePasswordValues:
           type: boolean
           description: >-
@@ -30804,6 +31313,15 @@ components:
       - "never"
       description: >-
           Specifies when the replication traffic should be compressed.
+    Enumreplication-server-missingChangesPolicyProp:
+      type: string
+      enum:
+      - "maximum-integrity"
+      - "favor-integrity"
+      - "favor-availability"
+      - "maximum-availability"
+      description: >-
+          Determines how the server responds when replication detects that some changes might have been missed. Each missing changes policy is a set of missing changes actions to take for a set of missing changes types. The value configured here acts as a default for all replication domains on this replication server.
     replication-server-response:
       allOf:
       - type: object
@@ -30868,6 +31386,12 @@ components:
             type: integer
             description: >-
                 Specifies the missing changes alert threshold as a percentage of the total pending changes. For instance, a value of 80 indicates that the replica is 80% of the way to losing changes.
+          missingChangesPolicy:
+            $ref: '#/components/schemas/Enumreplication-server-missingChangesPolicyProp'
+          includeAllRemoteServersStateInMonitorMessage:
+            type: boolean
+            description: >-
+                Indicates monitor messages should include information about remote servers.
       - $ref: '#/components/schemas/meta'
       required:
       - replicationServerID
@@ -30878,6 +31402,16 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:replication-server"
+    Enumreplication-domain-missingChangesPolicyProp:
+      type: string
+      enum:
+      - "maximum-integrity"
+      - "favor-integrity"
+      - "favor-availability"
+      - "maximum-availability"
+      - "use-server-default"
+      description: >-
+          Determines how the server responds when replication detects that some changes might have been missed. Each missing changes policy is a set of missing changes actions to take for a set of missing changes types. The value configured here only applies to this particular replication domain.
     replication-domain-response:
       allOf:
       - type: object
@@ -30924,6 +31458,8 @@ components:
             type: string
             description: >-
                 Defines how long to wait before retrying certain operations, specifically operations that might have failed because they depend on an operation from a different server that has not yet replicated to this instance.
+          missingChangesPolicy:
+            $ref: '#/components/schemas/Enumreplication-domain-missingChangesPolicyProp'
       - $ref: '#/components/schemas/meta'
       required:
       - id
@@ -33055,89 +33591,105 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:scim-resource-type:ldap-pass-through"
+    add-mapping-scim-resource-type-request:
+      allOf:
+      - type: object
+        properties:
+          typeName:
+            type: string
+            description: >-
+                Name of the new SCIM Resource Type
+      - $ref: '#/components/schemas/mapping-scim-resource-type-shared'
+      required:
+      - typeName
     mapping-scim-resource-type-response:
       allOf:
       - type: object
         properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enummapping-scim-resource-typeSchemaUrn'
           id:
             type: string
             description: >-
                 Name of the SCIM Resource Type
-          coreSchema:
-            type: string
-            description: >-
-                The core schema enforced on core attributes at the top level of a SCIM resource representation exposed by thisMapping SCIM Resource Type.
-          requiredSchemaExtension:
-            type: array
-            items:
-              type: string
-            description: >-
-                Required additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type.
-          optionalSchemaExtension:
-            type: array
-            items:
-              type: string
-            description: >-
-                Optional additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type.
-          description:
-            type: string
-            description: >-
-                A description for this SCIM Resource Type
-          enabled:
-            type: boolean
-            description: >-
-                Indicates whether the SCIM Resource Type is enabled.
-          endpoint:
-            type: string
-            description: >-
-                The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
-          lookthroughLimit:
-            type: integer
-            description: >-
-                The maximum number of resources that the SCIM Resource Type should "look through" in the course of processing a search request.
-          schemaCheckingOption:
-            type: array
-            items:
-              $ref: '#/components/schemas/Enumscim-resource-type-schemaCheckingOptionProp'
-          structuralLDAPObjectclass:
-            type: string
-            description: >-
-                Specifies the LDAP structural object class that should be exposed by this SCIM Resource Type.
-          auxiliaryLDAPObjectclass:
-            type: array
-            items:
-              type: string
-            description: >-
-                Specifies an auxiliary LDAP object class that should be exposed by this SCIM Resource Type.
-          includeBaseDN:
-            type: string
-            description: >-
-                Specifies the base DN of the branch of the LDAP directory that can be accessed by this SCIM Resource Type.
-          includeFilter:
-            type: array
-            items:
-              type: string
-            description: >-
-                The set of LDAP filters that define the LDAP entries that should be included in this SCIM Resource Type.
-          includeOperationalAttribute:
-            type: array
-            items:
-              type: string
-            description: >-
-                Specifies the set of operational LDAP attributes to be provided by this SCIM Resource Type.
-          createDNPattern:
-            type: string
-            description: >-
-                Specifies the template to use for the DN when creating new entries.
+      - $ref: '#/components/schemas/mapping-scim-resource-type-shared'
       - $ref: '#/components/schemas/meta'
       required:
       - id
+    mapping-scim-resource-type-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enummapping-scim-resource-typeSchemaUrn'
+        coreSchema:
+          type: string
+          description: >-
+              The core schema enforced on core attributes at the top level of a SCIM resource representation exposed by thisMapping SCIM Resource Type.
+        requiredSchemaExtension:
+          type: array
+          items:
+            type: string
+          description: >-
+              Required additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type.
+        optionalSchemaExtension:
+          type: array
+          items:
+            type: string
+          description: >-
+              Optional additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type.
+        description:
+          type: string
+          description: >-
+              A description for this SCIM Resource Type
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the SCIM Resource Type is enabled.
+        endpoint:
+          type: string
+          description: >-
+              The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
+        lookthroughLimit:
+          type: integer
+          description: >-
+              The maximum number of resources that the SCIM Resource Type should "look through" in the course of processing a search request.
+        schemaCheckingOption:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumscim-resource-type-schemaCheckingOptionProp'
+        structuralLDAPObjectclass:
+          type: string
+          description: >-
+              Specifies the LDAP structural object class that should be exposed by this SCIM Resource Type.
+        auxiliaryLDAPObjectclass:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies an auxiliary LDAP object class that should be exposed by this SCIM Resource Type.
+        includeBaseDN:
+          type: string
+          description: >-
+              Specifies the base DN of the branch of the LDAP directory that can be accessed by this SCIM Resource Type.
+        includeFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of LDAP filters that define the LDAP entries that should be included in this SCIM Resource Type.
+        includeOperationalAttribute:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the set of operational LDAP attributes to be provided by this SCIM Resource Type.
+        createDNPattern:
+          type: string
+          description: >-
+              Specifies the template to use for the DN when creating new entries.
+      required:
       - schemas
       - coreSchema
       - enabled
@@ -35923,6 +36475,158 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/recurring-task-chain-response'
+    add-upload-to-s3-post-ldif-export-task-processor-request:
+      allOf:
+      - type: object
+        properties:
+          processorName:
+            type: string
+            description: >-
+                Name of the new Post LDIF Export Task Processor
+      - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-shared'
+      required:
+      - processorName
+    upload-to-s3-post-ldif-export-task-processor-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Post LDIF Export Task Processor
+      - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    upload-to-s3-post-ldif-export-task-processor-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumupload-to-s3-post-ldif-export-task-processorSchemaUrn'
+        awsExternalServer:
+          type: string
+          description: >-
+              The external server with information to use when interacting with the AWS S3 service.
+        s3BucketName:
+          type: string
+          description: >-
+              The name of the S3 bucket into which LDIF files should be copied.
+        targetThroughputInMegabitsPerSecond:
+          type: integer
+          description: >-
+              The target throughput to attempt to achieve for data transfers to or from S3, in megabits per second.
+        maximumConcurrentTransferConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections that may be used when transferring data to or from S3.
+        maximumFileCountToRetain:
+          type: integer
+          description: >-
+              The maximum number of existing files matching the file retention pattern that should be retained in the S3 bucket after successfully uploading a newly exported file.
+        maximumFileAgeToRetain:
+          type: string
+          description: >-
+              The maximum length of time to retain files matching the file retention pattern that should be retained in the S3 bucket after successfully uploading a newly exported file.
+        fileRetentionPattern:
+          type: string
+          description: >-
+              A regular expression pattern that will be used to identify which files are candidates for automatic removal based on the maximum-file-count-to-retain and maximum-file-age-to-retain properties. By default, all files in the bucket will be eligible for removal by retention processing.
+        description:
+          type: string
+          description: >-
+              A description for this Post LDIF Export Task Processor
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Post LDIF Export Task Processor is enabled for use.
+      required:
+      - schemas
+      - awsExternalServer
+      - s3BucketName
+      - enabled
+    Enumupload-to-s3-post-ldif-export-task-processorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:post-ldif-export-task-processor:upload-to-s3"
+    add-third-party-post-ldif-export-task-processor-request:
+      allOf:
+      - type: object
+        properties:
+          processorName:
+            type: string
+            description: >-
+                Name of the new Post LDIF Export Task Processor
+      - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-shared'
+      required:
+      - processorName
+    third-party-post-ldif-export-task-processor-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Post LDIF Export Task Processor
+      - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    third-party-post-ldif-export-task-processor-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-post-ldif-export-task-processorSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Post LDIF Export Task Processor.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Post LDIF Export Task Processor. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Post LDIF Export Task Processor
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Post LDIF Export Task Processor is enabled for use.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-party-post-ldif-export-task-processorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:post-ldif-export-task-processor:third-party"
+    post-ldif-export-task-processorListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-response'
+            - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-response'
     Enumgauge-overrideSeverityProp:
       type: string
       enum:
@@ -36654,8 +37358,10 @@ components:
     Enumaccess-control-handler-allowedBindControlProp:
       type: string
       enum:
+      - "access-log-field"
       - "administrative-operation"
       - "authorization-identity"
+      - "generate-access-token"
       - "get-authorization-entry"
       - "get-backend-set-id"
       - "get-password-policy-state-issues"
@@ -36747,6 +37453,11 @@ components:
       - "alarm-major"
       - "alarm-minor"
       - "alarm-warning"
+      - "amazon-s3-create-bucket-failed"
+      - "amazon-s3-download-file-failed"
+      - "amazon-s3-remove-bucket-failed"
+      - "amazon-s3-remove-file-failed"
+      - "amazon-s3-upload-file-failed"
       - "backend-disabled"
       - "backend-initialization-failed"
       - "backup-failed"
@@ -36927,6 +37638,7 @@ components:
       - "replace-certificate-failed"
       - "replication-missing-changes-risk"
       - "replication-not-purging-obsolete-replicas"
+      - "replication-missing-changes-action"
       description: >-
           Specifies the names of the alert types that are enabled for this alert handler.
     Enumalert-handler-disabledAlertTypeProp:
@@ -36942,6 +37654,11 @@ components:
       - "alarm-major"
       - "alarm-minor"
       - "alarm-warning"
+      - "amazon-s3-create-bucket-failed"
+      - "amazon-s3-download-file-failed"
+      - "amazon-s3-remove-bucket-failed"
+      - "amazon-s3-remove-file-failed"
+      - "amazon-s3-upload-file-failed"
       - "backend-disabled"
       - "backend-initialization-failed"
       - "backup-failed"
@@ -37122,6 +37839,7 @@ components:
       - "replace-certificate-failed"
       - "replication-missing-changes-risk"
       - "replication-not-purging-obsolete-replicas"
+      - "replication-missing-changes-action"
       description: >-
           Specifies the names of the alert types that are disabled for this alert handler.
     output-alert-handler-response:
@@ -41431,6 +42149,14 @@ components:
           type: string
           description: >-
               A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
+        httpConnectTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait to obtain an HTTP connection.
+        httpResponseTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait for a response to an HTTP request.
         invokeForAdd:
           type: boolean
           description: >-
@@ -42048,6 +42774,10 @@ components:
               Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         sslClientAuthPolicy:
           $ref: '#/components/schemas/Enumconnection-handler-sslClientAuthPolicyProp'
+        enableSniHostnameChecks:
+          type: boolean
+          description: >-
+              Requires SNI hostnames to match or else throw an Invalid SNI error.
         description:
           type: string
           description: >-
@@ -42234,6 +42964,10 @@ components:
           type: integer
           description: >-
               Specifies the number of request handlers that are used to read requests from clients.
+        requestHandlerPerConnection:
+          type: boolean
+          description: >-
+              Indicates whether a separate request handler thread should be created for each client connection, which can help avoid starvation of client connections for cases in which one or more clients send large numbers of concurrent asynchronous requests. This should only be used for cases in which a relatively small number of connections will be established at any given time, the connections established will generally be long-lived, and at least one client may send high volumes of asynchronous requests. This property can be used to alleviate possible blocking during long-running TLS negotiation on a single request handler which can result in it being unable to acknowledge further client requests until the TLS negotation completes or times out.
         sslClientAuthPolicy:
           $ref: '#/components/schemas/Enumconnection-handler-sslClientAuthPolicyProp'
         acceptBacklog:
@@ -44452,6 +45186,7 @@ components:
       - "consent-service-request-and-response"
       - "gateway-request-and-response"
       - "policy-request-and-response"
+      - "policy-query-request-and-response"
       description: >-
           Specifies the debug message types which can be logged. Note that enabling these may result in sensitive information being logged.
     Enumlog-publisher-httpMessageTypeProp:
@@ -45443,6 +46178,108 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:syslog-based-access"
+    file-based-policy-query-log-publisher-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumfile-based-policy-query-log-publisherSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Log Publisher
+          asynchronous:
+            type: boolean
+            description: >-
+                Indicates whether the File Based Policy Query Log Publisher will publish records asynchronously.
+          queueSize:
+            type: integer
+            description: >-
+                The maximum number of log records that can be stored in the asynchronous queue.
+          bufferSize:
+            type: string
+            description: >-
+                Specifies the log file buffer size.
+          timeInterval:
+            type: string
+            description: >-
+                Specifies the interval at which to check whether the log files need to be rotated.
+          logFile:
+            type: string
+            description: >-
+                The file name to use for the log files generated by the File Based Policy Query Log Publisher. The path to the file can be specified either as relative to the server root or as an absolute path.
+          logFilePermissions:
+            type: string
+            description: >-
+                The UNIX permissions of the log files created by this File Based Policy Query Log Publisher.
+          rotationPolicy:
+            type: array
+            items:
+              type: string
+            description: >-
+                The rotation policy to use for the File Based Policy Query Log Publisher .
+          rotationListener:
+            type: array
+            items:
+              type: string
+            description: >-
+                A listener that should be notified whenever a log file is rotated out of service.
+          retentionPolicy:
+            type: array
+            items:
+              type: string
+            description: >-
+                The retention policy to use for the File Based Policy Query Log Publisher .
+          compressionMechanism:
+            $ref: '#/components/schemas/Enumlog-publisher-compressionMechanismProp'
+          signLog:
+            type: boolean
+            description: >-
+                Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
+          encryptLog:
+            type: boolean
+            description: >-
+                Indicates whether log files should be encrypted so that their content is not available to unauthorized users.
+          encryptionSettingsDefinitionID:
+            type: string
+            description: >-
+                Specifies the ID of the encryption settings definition that should be used to encrypt the data. If this is not provided, the server's preferred encryption settings definition will be used. The "encryption-settings list" command can be used to obtain a list of the encryption settings definitions available in the server.
+          append:
+            type: boolean
+            description: >-
+                Specifies whether to append to existing log files.
+          includeQueryResponse:
+            type: boolean
+            description: >-
+                Specifies whether Policy Query messages recorded by the log publisher will include full responses from the PDP.
+          description:
+            type: string
+            description: >-
+                A description for this Log Publisher
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Log Publisher is enabled for use.
+          loggingErrorBehavior:
+            $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - asynchronous
+      - logFile
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - enabled
+    Enumfile-based-policy-query-log-publisherSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-policy-query"
     Enumlog-publisher-file-based-json-audit-softDeleteEntryAuditBehaviorProp:
       type: string
       enum:
@@ -50671,6 +51508,7 @@ components:
             - $ref: '#/components/schemas/console-json-error-log-publisher-response'
             - $ref: '#/components/schemas/syslog-text-error-log-publisher-response'
             - $ref: '#/components/schemas/syslog-based-access-log-publisher-response'
+            - $ref: '#/components/schemas/file-based-policy-query-log-publisher-response'
             - $ref: '#/components/schemas/file-based-json-audit-log-publisher-response'
             - $ref: '#/components/schemas/file-based-debug-log-publisher-response'
             - $ref: '#/components/schemas/console-json-sync-failed-ops-log-publisher-response'
@@ -53097,6 +53935,14 @@ components:
           type: string
           description: >-
               The mechanism used to authenticate to the Vault server.
+        httpConnectTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait to obtain an HTTP connection.
+        httpResponseTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait for a response to an HTTP request.
         trustStoreFile:
           type: string
           description: >-
@@ -53974,6 +54820,14 @@ components:
           type: string
           description: >-
               The name of the account with which the desired secrets are associated.
+        httpConnectTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait to obtain an HTTP connection.
+        httpResponseTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait for a response to an HTTP request.
         trustStoreFile:
           type: string
           description: >-
@@ -55260,6 +56114,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:group-implementation:static"
+    inverted-static-group-implementation-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enuminverted-static-group-implementationSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Group Implementation
+          description:
+            type: string
+            description: >-
+                A description for this Group Implementation
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Group Implementation is enabled.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enuminverted-static-group-implementationSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:group-implementation:inverted-static"
     group-implementationListResponse:
       type: object
       properties:
@@ -55278,6 +56163,7 @@ components:
             - $ref: '#/components/schemas/virtual-static-group-implementation-response'
             - $ref: '#/components/schemas/dynamic-group-implementation-response'
             - $ref: '#/components/schemas/static-group-implementation-response'
+            - $ref: '#/components/schemas/inverted-static-group-implementation-response'
     add-indicator-gauge-data-source-request:
       allOf:
       - type: object
@@ -56922,6 +57808,11 @@ components:
       - "alarm-major"
       - "alarm-minor"
       - "alarm-warning"
+      - "amazon-s3-create-bucket-failed"
+      - "amazon-s3-download-file-failed"
+      - "amazon-s3-remove-bucket-failed"
+      - "amazon-s3-remove-file-failed"
+      - "amazon-s3-upload-file-failed"
       - "backend-disabled"
       - "backend-initialization-failed"
       - "backup-failed"
@@ -57102,6 +57993,7 @@ components:
       - "replace-certificate-failed"
       - "replication-missing-changes-risk"
       - "replication-not-purging-obsolete-replicas"
+      - "replication-missing-changes-action"
       description: >-
           Specifies the names of the alert types that should not be added to the backend. This can be used to suppress high volume alerts that might trigger hitting the max-alerts limit sooner than desired. Disabled alert types will not be sent out over persistent searches on this backend.
     alert-backend-response:
@@ -60240,11 +61132,15 @@ components:
     Enumhttp-servlet-extension-allowedControlProp:
       type: string
       enum:
+      - "access-log-field"
       - "assertion"
       - "assured-replication"
       - "exclude-branch"
       - "generate-password"
       - "get-effective-rights"
+      - "get-password-policy-state-issues"
+      - "get-recent-login-history"
+      - "get-user-resource-limits"
       - "ignore-no-user-modification"
       - "intermediate-client"
       - "join"
@@ -64921,6 +65817,111 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:exact-match"
+    add-groovy-scripted-identity-mapper-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            type: string
+            description: >-
+                Name of the new Identity Mapper
+      - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
+      required:
+      - mapperName
+    groovy-scripted-identity-mapper-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Identity Mapper
+      - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    groovy-scripted-identity-mapper-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scripted-identity-mapperSchemaUrn'
+        scriptClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Scripted Identity Mapper. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Identity Mapper
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Identity Mapper is enabled for use.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+    Enumgroovy-scripted-identity-mapperSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:groovy-scripted"
+    add-dn-identity-mapper-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            type: string
+            description: >-
+                Name of the new Identity Mapper
+      - $ref: '#/components/schemas/dn-identity-mapper-shared'
+      required:
+      - mapperName
+    dn-identity-mapper-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Identity Mapper
+      - $ref: '#/components/schemas/dn-identity-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    dn-identity-mapper-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdn-identity-mapperSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Identity Mapper
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Identity Mapper is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumdn-identity-mapperSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:dn"
     add-regular-expression-identity-mapper-request:
       allOf:
       - type: object
@@ -64994,64 +65995,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:regular-expression"
-    add-groovy-scripted-identity-mapper-request:
-      allOf:
-      - type: object
-        properties:
-          mapperName:
-            type: string
-            description: >-
-                Name of the new Identity Mapper
-      - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
-      required:
-      - mapperName
-    groovy-scripted-identity-mapper-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Identity Mapper
-      - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    groovy-scripted-identity-mapper-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumgroovy-scripted-identity-mapperSchemaUrn'
-        scriptClass:
-          type: string
-          description: >-
-              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper.
-        scriptArgument:
-          type: array
-          items:
-            type: string
-          description: >-
-              The set of arguments used to customize the behavior for the Scripted Identity Mapper. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: >-
-              A description for this Identity Mapper
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Identity Mapper is enabled for use.
-      required:
-      - schemas
-      - scriptClass
-      - enabled
-    Enumgroovy-scripted-identity-mapperSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:groovy-scripted"
     add-aggregate-identity-mapper-request:
       allOf:
       - type: object
@@ -65185,8 +66128,9 @@ components:
           items:
             oneOf:
             - $ref: '#/components/schemas/exact-match-identity-mapper-response'
-            - $ref: '#/components/schemas/regular-expression-identity-mapper-response'
             - $ref: '#/components/schemas/groovy-scripted-identity-mapper-response'
+            - $ref: '#/components/schemas/dn-identity-mapper-response'
+            - $ref: '#/components/schemas/regular-expression-identity-mapper-response'
             - $ref: '#/components/schemas/aggregate-identity-mapper-response'
             - $ref: '#/components/schemas/third-party-identity-mapper-response'
     add-generate-server-profile-recurring-task-request:
@@ -66026,6 +66970,12 @@ components:
           type: integer
           description: >-
               The maximum rate, in megabytes per second, at which LDIF exports should be written.
+        postLDIFExportTaskProcessor:
+          type: array
+          items:
+            type: string
+          description: >-
+              An optional set of post-LDIF-export task processors that should be invoked for the resulting LDIF export files.
         description:
           type: string
           description: >-
@@ -67499,6 +68449,14 @@ components:
             type: string
             description: >-
                 A reference to an HTTP proxy server that should be used for requests sent to the YubiKey validation service.
+          httpConnectTimeout:
+            type: string
+            description: >-
+                The maximum length of time to wait to obtain an HTTP connection.
+          httpResponseTimeout:
+            type: string
+            description: >-
+                The maximum length of time to wait for a response to an HTTP request.
           identityMapper:
             type: string
             description: >-

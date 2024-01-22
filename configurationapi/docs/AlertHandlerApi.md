@@ -1,14 +1,14 @@
-# \AlertHandlerApi
+# \AlertHandlerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddAlertHandler**](AlertHandlerApi.md#AddAlertHandler) | **Post** /alert-handlers | Add a new Alert Handler to the config
-[**DeleteAlertHandler**](AlertHandlerApi.md#DeleteAlertHandler) | **Delete** /alert-handlers/{alert-handler-name} | Delete a Alert Handler
-[**GetAlertHandler**](AlertHandlerApi.md#GetAlertHandler) | **Get** /alert-handlers/{alert-handler-name} | Returns a single Alert Handler
-[**ListAlertHandlers**](AlertHandlerApi.md#ListAlertHandlers) | **Get** /alert-handlers | Returns a list of all Alert Handler objects
-[**UpdateAlertHandler**](AlertHandlerApi.md#UpdateAlertHandler) | **Patch** /alert-handlers/{alert-handler-name} | Update an existing Alert Handler by name
+[**AddAlertHandler**](AlertHandlerAPI.md#AddAlertHandler) | **Post** /alert-handlers | Add a new Alert Handler to the config
+[**DeleteAlertHandler**](AlertHandlerAPI.md#DeleteAlertHandler) | **Delete** /alert-handlers/{alert-handler-name} | Delete a Alert Handler
+[**GetAlertHandler**](AlertHandlerAPI.md#GetAlertHandler) | **Get** /alert-handlers/{alert-handler-name} | Returns a single Alert Handler
+[**ListAlertHandlers**](AlertHandlerAPI.md#ListAlertHandlers) | **Get** /alert-handlers | Returns a list of all Alert Handler objects
+[**UpdateAlertHandler**](AlertHandlerAPI.md#UpdateAlertHandler) | **Patch** /alert-handlers/{alert-handler-name} | Update an existing Alert Handler by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addAlertHandlerRequest := openapiclient.add_alert_handler_request{AddErrorLogAlertHandlerRequest: openapiclient.NewAddErrorLogAlertHandlerRequest("HandlerName_example", []openapiclient.EnumerrorLogAlertHandlerSchemaUrn{openapiclient.Enumerror-log-alert-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:alert-handler:error-log")}, false)} // AddAlertHandlerRequest | Create a new Alert Handler in the config
+    addAlertHandlerRequest := openapiclient.add_alert_handler_request{AddErrorLogAlertHandlerRequest: openapiclient.NewAddErrorLogAlertHandlerRequest([]openapiclient.EnumerrorLogAlertHandlerSchemaUrn{openapiclient.Enumerror-log-alert-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:alert-handler:error-log")}, false, "HandlerName_example")} // AddAlertHandlerRequest | Create a new Alert Handler in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlertHandlerApi.AddAlertHandler(context.Background()).AddAlertHandlerRequest(addAlertHandlerRequest).Execute()
+    resp, r, err := apiClient.AlertHandlerAPI.AddAlertHandler(context.Background()).AddAlertHandlerRequest(addAlertHandlerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerApi.AddAlertHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerAPI.AddAlertHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddAlertHandler`: AddAlertHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `AlertHandlerApi.AddAlertHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AlertHandlerAPI.AddAlertHandler`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AlertHandlerApi.DeleteAlertHandler(context.Background(), alertHandlerName).Execute()
+    r, err := apiClient.AlertHandlerAPI.DeleteAlertHandler(context.Background(), alertHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerApi.DeleteAlertHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerAPI.DeleteAlertHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlertHandlerApi.GetAlertHandler(context.Background(), alertHandlerName).Execute()
+    resp, r, err := apiClient.AlertHandlerAPI.GetAlertHandler(context.Background(), alertHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerApi.GetAlertHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerAPI.GetAlertHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAlertHandler`: GetAlertHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `AlertHandlerApi.GetAlertHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AlertHandlerAPI.GetAlertHandler`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlertHandlerApi.ListAlertHandlers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.AlertHandlerAPI.ListAlertHandlers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerApi.ListAlertHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerAPI.ListAlertHandlers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListAlertHandlers`: AlertHandlerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `AlertHandlerApi.ListAlertHandlers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AlertHandlerAPI.ListAlertHandlers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlertHandlerApi.UpdateAlertHandler(context.Background(), alertHandlerName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.AlertHandlerAPI.UpdateAlertHandler(context.Background(), alertHandlerName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerApi.UpdateAlertHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlertHandlerAPI.UpdateAlertHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAlertHandler`: GetAlertHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `AlertHandlerApi.UpdateAlertHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AlertHandlerAPI.UpdateAlertHandler`: %v\n", resp)
 }
 ```
 

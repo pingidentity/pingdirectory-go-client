@@ -19,8 +19,6 @@ var _ MappedNullable = &VelocityTemplateLoaderResponse{}
 
 // VelocityTemplateLoaderResponse struct for VelocityTemplateLoaderResponse
 type VelocityTemplateLoaderResponse struct {
-	// Name of the Velocity Template Loader
-	Id      string                                `json:"id"`
 	Schemas []EnumvelocityTemplateLoaderSchemaUrn `json:"schemas,omitempty"`
 	// Indicates whether this Velocity Template Loader is enabled.
 	Enabled *bool `json:"enabled,omitempty"`
@@ -36,17 +34,19 @@ type VelocityTemplateLoaderResponse struct {
 	TemplateDirectory                             *string                                            `json:"templateDirectory,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Velocity Template Loader
+	Id string `json:"id"`
 }
 
 // NewVelocityTemplateLoaderResponse instantiates a new VelocityTemplateLoaderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVelocityTemplateLoaderResponse(id string, evaluationOrderIndex int64, mimeTypeMatcher string) *VelocityTemplateLoaderResponse {
+func NewVelocityTemplateLoaderResponse(evaluationOrderIndex int64, mimeTypeMatcher string, id string) *VelocityTemplateLoaderResponse {
 	this := VelocityTemplateLoaderResponse{}
-	this.Id = id
 	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.MimeTypeMatcher = mimeTypeMatcher
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewVelocityTemplateLoaderResponse(id string, evaluationOrderIndex int64, mi
 func NewVelocityTemplateLoaderResponseWithDefaults() *VelocityTemplateLoaderResponse {
 	this := VelocityTemplateLoaderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *VelocityTemplateLoaderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *VelocityTemplateLoaderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *VelocityTemplateLoaderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -354,6 +330,30 @@ func (o *VelocityTemplateLoaderResponse) SetUrnpingidentityschemasconfigurationm
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *VelocityTemplateLoaderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *VelocityTemplateLoaderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *VelocityTemplateLoaderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o VelocityTemplateLoaderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -364,7 +364,6 @@ func (o VelocityTemplateLoaderResponse) MarshalJSON() ([]byte, error) {
 
 func (o VelocityTemplateLoaderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -388,6 +387,7 @@ func (o VelocityTemplateLoaderResponse) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

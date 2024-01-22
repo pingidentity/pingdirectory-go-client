@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// HttpConfigurationApiService HttpConfigurationApi service
-type HttpConfigurationApiService service
+// HttpConfigurationAPIService HttpConfigurationAPI service
+type HttpConfigurationAPIService service
 
 type ApiGetHttpConfigurationRequest struct {
 	ctx        context.Context
-	ApiService *HttpConfigurationApiService
+	ApiService *HttpConfigurationAPIService
 }
 
 func (r ApiGetHttpConfigurationRequest) Execute() (*HttpConfigurationResponse, *http.Response, error) {
@@ -36,7 +36,7 @@ GetHttpConfiguration Returns a single HTTP Configuration
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetHttpConfigurationRequest
 */
-func (a *HttpConfigurationApiService) GetHttpConfiguration(ctx context.Context) ApiGetHttpConfigurationRequest {
+func (a *HttpConfigurationAPIService) GetHttpConfiguration(ctx context.Context) ApiGetHttpConfigurationRequest {
 	return ApiGetHttpConfigurationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *HttpConfigurationApiService) GetHttpConfiguration(ctx context.Context) 
 // Execute executes the request
 //
 //	@return HttpConfigurationResponse
-func (a *HttpConfigurationApiService) GetHttpConfigurationExecute(r ApiGetHttpConfigurationRequest) (*HttpConfigurationResponse, *http.Response, error) {
+func (a *HttpConfigurationAPIService) GetHttpConfigurationExecute(r ApiGetHttpConfigurationRequest) (*HttpConfigurationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *HttpConfigurationApiService) GetHttpConfigurationExecute(r ApiGetHttpCo
 		localVarReturnValue *HttpConfigurationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpConfigurationApiService.GetHttpConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpConfigurationAPIService.GetHttpConfiguration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *HttpConfigurationApiService) GetHttpConfigurationExecute(r ApiGetHttpCo
 
 type ApiUpdateHttpConfigurationRequest struct {
 	ctx           context.Context
-	ApiService    *HttpConfigurationApiService
+	ApiService    *HttpConfigurationAPIService
 	updateRequest *UpdateRequest
 }
 
@@ -141,7 +141,7 @@ UpdateHttpConfiguration Update an existing HTTP Configuration by name
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateHttpConfigurationRequest
 */
-func (a *HttpConfigurationApiService) UpdateHttpConfiguration(ctx context.Context) ApiUpdateHttpConfigurationRequest {
+func (a *HttpConfigurationAPIService) UpdateHttpConfiguration(ctx context.Context) ApiUpdateHttpConfigurationRequest {
 	return ApiUpdateHttpConfigurationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *HttpConfigurationApiService) UpdateHttpConfiguration(ctx context.Contex
 // Execute executes the request
 //
 //	@return HttpConfigurationResponse
-func (a *HttpConfigurationApiService) UpdateHttpConfigurationExecute(r ApiUpdateHttpConfigurationRequest) (*HttpConfigurationResponse, *http.Response, error) {
+func (a *HttpConfigurationAPIService) UpdateHttpConfigurationExecute(r ApiUpdateHttpConfigurationRequest) (*HttpConfigurationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *HttpConfigurationApiService) UpdateHttpConfigurationExecute(r ApiUpdate
 		localVarReturnValue *HttpConfigurationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpConfigurationApiService.UpdateHttpConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpConfigurationAPIService.UpdateHttpConfiguration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

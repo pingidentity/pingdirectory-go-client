@@ -19,8 +19,6 @@ var _ MappedNullable = &LdapConnectionHandlerResponse{}
 
 // LdapConnectionHandlerResponse struct for LdapConnectionHandlerResponse
 type LdapConnectionHandlerResponse struct {
-	// Name of the Connection Handler
-	Id      string                               `json:"id"`
 	Schemas []EnumldapConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients.
 	ListenAddress []string `json:"listenAddress,omitempty"`
@@ -51,8 +49,10 @@ type LdapConnectionHandlerResponse struct {
 	// Specifies the number of threads that are used to accept new client connections, and to perform any initial preparation on those connections that may be needed before the connection can be used to read requests and send responses.
 	NumAcceptHandlers *int64 `json:"numAcceptHandlers,omitempty"`
 	// Specifies the number of request handlers that are used to read requests from clients.
-	NumRequestHandlers  *int64                                        `json:"numRequestHandlers,omitempty"`
-	SslClientAuthPolicy *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
+	NumRequestHandlers *int64 `json:"numRequestHandlers,omitempty"`
+	// Indicates whether a separate request handler thread should be created for each client connection, which can help avoid starvation of client connections for cases in which one or more clients send large numbers of concurrent asynchronous requests. This should only be used for cases in which a relatively small number of connections will be established at any given time, the connections established will generally be long-lived, and at least one client may send high volumes of asynchronous requests. This property can be used to alleviate possible blocking during long-running TLS negotiation on a single request handler which can result in it being unable to acknowledge further client requests until the TLS negotation completes or times out.
+	RequestHandlerPerConnection *bool                                         `json:"requestHandlerPerConnection,omitempty"`
+	SslClientAuthPolicy         *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts.
 	AcceptBacklog *int64 `json:"acceptBacklog,omitempty"`
 	// Specifies the names of the TLS protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
@@ -77,18 +77,20 @@ type LdapConnectionHandlerResponse struct {
 	DeniedClient                                  []string                                           `json:"deniedClient,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Connection Handler
+	Id string `json:"id"`
 }
 
 // NewLdapConnectionHandlerResponse instantiates a new LdapConnectionHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapConnectionHandlerResponse(id string, schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int64, enabled bool) *LdapConnectionHandlerResponse {
+func NewLdapConnectionHandlerResponse(schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int64, enabled bool, id string) *LdapConnectionHandlerResponse {
 	this := LdapConnectionHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ListenPort = listenPort
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -98,30 +100,6 @@ func NewLdapConnectionHandlerResponse(id string, schemas []EnumldapConnectionHan
 func NewLdapConnectionHandlerResponseWithDefaults() *LdapConnectionHandlerResponse {
 	this := LdapConnectionHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LdapConnectionHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LdapConnectionHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LdapConnectionHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -620,6 +598,38 @@ func (o *LdapConnectionHandlerResponse) SetNumRequestHandlers(v int64) {
 	o.NumRequestHandlers = &v
 }
 
+// GetRequestHandlerPerConnection returns the RequestHandlerPerConnection field value if set, zero value otherwise.
+func (o *LdapConnectionHandlerResponse) GetRequestHandlerPerConnection() bool {
+	if o == nil || IsNil(o.RequestHandlerPerConnection) {
+		var ret bool
+		return ret
+	}
+	return *o.RequestHandlerPerConnection
+}
+
+// GetRequestHandlerPerConnectionOk returns a tuple with the RequestHandlerPerConnection field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapConnectionHandlerResponse) GetRequestHandlerPerConnectionOk() (*bool, bool) {
+	if o == nil || IsNil(o.RequestHandlerPerConnection) {
+		return nil, false
+	}
+	return o.RequestHandlerPerConnection, true
+}
+
+// HasRequestHandlerPerConnection returns a boolean if a field has been set.
+func (o *LdapConnectionHandlerResponse) HasRequestHandlerPerConnection() bool {
+	if o != nil && !IsNil(o.RequestHandlerPerConnection) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestHandlerPerConnection gets a reference to the given bool and assigns it to the RequestHandlerPerConnection field.
+func (o *LdapConnectionHandlerResponse) SetRequestHandlerPerConnection(v bool) {
+	o.RequestHandlerPerConnection = &v
+}
+
 // GetSslClientAuthPolicy returns the SslClientAuthPolicy field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetSslClientAuthPolicy() EnumconnectionHandlerSslClientAuthPolicyProp {
 	if o == nil || IsNil(o.SslClientAuthPolicy) {
@@ -1060,6 +1070,30 @@ func (o *LdapConnectionHandlerResponse) SetUrnpingidentityschemasconfigurationme
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LdapConnectionHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LdapConnectionHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LdapConnectionHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LdapConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1070,7 +1104,6 @@ func (o LdapConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o LdapConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ListenAddress) {
 		toSerialize["listenAddress"] = o.ListenAddress
@@ -1115,6 +1148,9 @@ func (o LdapConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NumRequestHandlers) {
 		toSerialize["numRequestHandlers"] = o.NumRequestHandlers
 	}
+	if !IsNil(o.RequestHandlerPerConnection) {
+		toSerialize["requestHandlerPerConnection"] = o.RequestHandlerPerConnection
+	}
 	if !IsNil(o.SslClientAuthPolicy) {
 		toSerialize["sslClientAuthPolicy"] = o.SslClientAuthPolicy
 	}
@@ -1155,6 +1191,7 @@ func (o LdapConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &ConsoleJsonAuditLogPublisherResponse{}
 
 // ConsoleJsonAuditLogPublisherResponse struct for ConsoleJsonAuditLogPublisherResponse
 type ConsoleJsonAuditLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id      string                                      `json:"id"`
 	Schemas []EnumconsoleJsonAuditLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether the Console JSON Audit Log Publisher is enabled for use.
 	Enabled        bool                                `json:"enabled"`
@@ -73,17 +71,19 @@ type ConsoleJsonAuditLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewConsoleJsonAuditLogPublisherResponse instantiates a new ConsoleJsonAuditLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConsoleJsonAuditLogPublisherResponse(id string, schemas []EnumconsoleJsonAuditLogPublisherSchemaUrn, enabled bool) *ConsoleJsonAuditLogPublisherResponse {
+func NewConsoleJsonAuditLogPublisherResponse(schemas []EnumconsoleJsonAuditLogPublisherSchemaUrn, enabled bool, id string) *ConsoleJsonAuditLogPublisherResponse {
 	this := ConsoleJsonAuditLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -93,30 +93,6 @@ func NewConsoleJsonAuditLogPublisherResponse(id string, schemas []EnumconsoleJso
 func NewConsoleJsonAuditLogPublisherResponseWithDefaults() *ConsoleJsonAuditLogPublisherResponse {
 	this := ConsoleJsonAuditLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ConsoleJsonAuditLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ConsoleJsonAuditLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ConsoleJsonAuditLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1031,6 +1007,30 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ConsoleJsonAuditLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ConsoleJsonAuditLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ConsoleJsonAuditLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ConsoleJsonAuditLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1041,7 +1041,6 @@ func (o ConsoleJsonAuditLogPublisherResponse) MarshalJSON() ([]byte, error) {
 
 func (o ConsoleJsonAuditLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["enabled"] = o.Enabled
 	if !IsNil(o.OutputLocation) {
@@ -1125,6 +1124,7 @@ func (o ConsoleJsonAuditLogPublisherResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

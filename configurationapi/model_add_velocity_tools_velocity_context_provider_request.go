@@ -19,9 +19,7 @@ var _ MappedNullable = &AddVelocityToolsVelocityContextProviderRequest{}
 
 // AddVelocityToolsVelocityContextProviderRequest struct for AddVelocityToolsVelocityContextProviderRequest
 type AddVelocityToolsVelocityContextProviderRequest struct {
-	// Name of the new Velocity Context Provider
-	ProviderName string                                              `json:"providerName"`
-	Schemas      []EnumvelocityToolsVelocityContextProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of a Velocity Tool class that will be initialized for each request. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.
 	RequestTool []string `json:"requestTool,omitempty"`
 	// The fully-qualified name of a Velocity Tool class that will be initialized for each session. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.
@@ -37,16 +35,18 @@ type AddVelocityToolsVelocityContextProviderRequest struct {
 	ExcludedView []string `json:"excludedView,omitempty"`
 	// Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
+	// Name of the new Velocity Context Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddVelocityToolsVelocityContextProviderRequest instantiates a new AddVelocityToolsVelocityContextProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddVelocityToolsVelocityContextProviderRequest(providerName string, schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn) *AddVelocityToolsVelocityContextProviderRequest {
+func NewAddVelocityToolsVelocityContextProviderRequest(schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn, providerName string) *AddVelocityToolsVelocityContextProviderRequest {
 	this := AddVelocityToolsVelocityContextProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddVelocityToolsVelocityContextProviderRequest(providerName string, sche
 func NewAddVelocityToolsVelocityContextProviderRequestWithDefaults() *AddVelocityToolsVelocityContextProviderRequest {
 	this := AddVelocityToolsVelocityContextProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddVelocityToolsVelocityContextProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddVelocityToolsVelocityContextProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddVelocityToolsVelocityContextProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -362,6 +338,30 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetResponseHeader(v []s
 	o.ResponseHeader = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddVelocityToolsVelocityContextProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddVelocityToolsVelocityContextProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddVelocityToolsVelocityContextProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddVelocityToolsVelocityContextProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -372,7 +372,6 @@ func (o AddVelocityToolsVelocityContextProviderRequest) MarshalJSON() ([]byte, e
 
 func (o AddVelocityToolsVelocityContextProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.RequestTool) {
 		toSerialize["requestTool"] = o.RequestTool
@@ -398,6 +397,7 @@ func (o AddVelocityToolsVelocityContextProviderRequest) ToMap() (map[string]inte
 	if !IsNil(o.ResponseHeader) {
 		toSerialize["responseHeader"] = o.ResponseHeader
 	}
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

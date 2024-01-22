@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Uncached Entry Criteria | 
 **Schemas** | [**[]EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn**](EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Entry Criteria. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Uncached Entry Criteria. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Uncached Entry Criteria | [optional] 
 **Enabled** | **bool** | Indicates whether this Uncached Entry Criteria is enabled for use in the server. | 
+**CriteriaName** | **string** | Name of the new Uncached Entry Criteria | 
 
 ## Methods
 
 ### NewAddGroovyScriptedUncachedEntryCriteriaRequest
 
-`func NewAddGroovyScriptedUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn, scriptClass string, enabled bool, ) *AddGroovyScriptedUncachedEntryCriteriaRequest`
+`func NewAddGroovyScriptedUncachedEntryCriteriaRequest(schemas []EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn, scriptClass string, enabled bool, criteriaName string, ) *AddGroovyScriptedUncachedEntryCriteriaRequest`
 
 NewAddGroovyScriptedUncachedEntryCriteriaRequest instantiates a new AddGroovyScriptedUncachedEntryCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddGroovyScriptedUncachedEntryCriteriaRequestWithDefaults instantiates a new AddGroovyScriptedUncachedEntryCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetCriteriaName
+
+`func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
 
 
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaskName** | **string** | Name of the new Recurring Task | 
 **Schemas** | [**[]EnumfileRetentionRecurringTaskSchemaUrn**](EnumfileRetentionRecurringTaskSchemaUrn.md) |  | 
 **TargetDirectory** | **string** | The path to the directory containing the files to examine. The directory must exist. | 
 **FilenamePattern** | **string** | A pattern that specifies the names of the files to examine. The pattern may contain zero or more asterisks as wildcards, where each wildcard matches zero or more characters. It may also contain at most one occurrence of the special string \&quot;${timestamp}\&quot;, which will match a timestamp with the format specified using the timestamp-format property. All other characters in the pattern will be treated literally. | 
@@ -20,12 +19,13 @@ Name | Type | Description | Notes
 **AlertOnStart** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running. | [optional] 
 **AlertOnSuccess** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully. | [optional] 
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
+**TaskName** | **string** | Name of the new Recurring Task | 
 
 ## Methods
 
 ### NewAddFileRetentionRecurringTaskRequest
 
-`func NewAddFileRetentionRecurringTaskRequest(taskName string, schemas []EnumfileRetentionRecurringTaskSchemaUrn, targetDirectory string, filenamePattern string, timestampFormat EnumrecurringTaskTimestampFormatProp, ) *AddFileRetentionRecurringTaskRequest`
+`func NewAddFileRetentionRecurringTaskRequest(schemas []EnumfileRetentionRecurringTaskSchemaUrn, targetDirectory string, filenamePattern string, timestampFormat EnumrecurringTaskTimestampFormatProp, taskName string, ) *AddFileRetentionRecurringTaskRequest`
 
 NewAddFileRetentionRecurringTaskRequest instantiates a new AddFileRetentionRecurringTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -39,26 +39,6 @@ will change when the set of required properties is changed
 NewAddFileRetentionRecurringTaskRequestWithDefaults instantiates a new AddFileRetentionRecurringTaskRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTaskName
-
-`func (o *AddFileRetentionRecurringTaskRequest) GetTaskName() string`
-
-GetTaskName returns the TaskName field if non-nil, zero value otherwise.
-
-### GetTaskNameOk
-
-`func (o *AddFileRetentionRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
-
-GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaskName
-
-`func (o *AddFileRetentionRecurringTaskRequest) SetTaskName(v string)`
-
-SetTaskName sets TaskName field to given value.
-
 
 ### GetSchemas
 
@@ -414,6 +394,26 @@ SetAlertOnFailure sets AlertOnFailure field to given value.
 `func (o *AddFileRetentionRecurringTaskRequest) HasAlertOnFailure() bool`
 
 HasAlertOnFailure returns a boolean if a field has been set.
+
+### GetTaskName
+
+`func (o *AddFileRetentionRecurringTaskRequest) GetTaskName() string`
+
+GetTaskName returns the TaskName field if non-nil, zero value otherwise.
+
+### GetTaskNameOk
+
+`func (o *AddFileRetentionRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
+
+GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskName
+
+`func (o *AddFileRetentionRecurringTaskRequest) SetTaskName(v string)`
+
+SetTaskName sets TaskName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

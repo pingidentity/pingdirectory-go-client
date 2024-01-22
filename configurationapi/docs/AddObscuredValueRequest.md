@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ValueName** | **string** | Name of the new Obscured Value | 
 **Schemas** | Pointer to [**[]EnumobscuredValueSchemaUrn**](EnumobscuredValueSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Obscured Value | [optional] 
 **ObscuredValue** | **string** | The value to be stored in an obscured form. | 
+**ValueName** | **string** | Name of the new Obscured Value | 
 
 ## Methods
 
 ### NewAddObscuredValueRequest
 
-`func NewAddObscuredValueRequest(valueName string, obscuredValue string, ) *AddObscuredValueRequest`
+`func NewAddObscuredValueRequest(obscuredValue string, valueName string, ) *AddObscuredValueRequest`
 
 NewAddObscuredValueRequest instantiates a new AddObscuredValueRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewAddObscuredValueRequestWithDefaults instantiates a new AddObscuredValueRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetValueName
-
-`func (o *AddObscuredValueRequest) GetValueName() string`
-
-GetValueName returns the ValueName field if non-nil, zero value otherwise.
-
-### GetValueNameOk
-
-`func (o *AddObscuredValueRequest) GetValueNameOk() (*string, bool)`
-
-GetValueNameOk returns a tuple with the ValueName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValueName
-
-`func (o *AddObscuredValueRequest) SetValueName(v string)`
-
-SetValueName sets ValueName field to given value.
-
 
 ### GetSchemas
 
@@ -116,6 +96,26 @@ and a boolean to check if the value has been set.
 `func (o *AddObscuredValueRequest) SetObscuredValue(v string)`
 
 SetObscuredValue sets ObscuredValue field to given value.
+
+
+### GetValueName
+
+`func (o *AddObscuredValueRequest) GetValueName() string`
+
+GetValueName returns the ValueName field if non-nil, zero value otherwise.
+
+### GetValueNameOk
+
+`func (o *AddObscuredValueRequest) GetValueNameOk() (*string, bool)`
+
+GetValueNameOk returns a tuple with the ValueName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValueName
+
+`func (o *AddObscuredValueRequest) SetValueName(v string)`
+
+SetValueName sets ValueName field to given value.
 
 
 

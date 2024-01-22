@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Recurring Task | 
 **Schemas** | [**[]EnumleaveLockdownModeRecurringTaskSchemaUrn**](EnumleaveLockdownModeRecurringTaskSchemaUrn.md) |  | 
 **Reason** | Pointer to **string** | The reason that the server is being taken out of in lockdown mode. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
@@ -17,12 +16,13 @@ Name | Type | Description | Notes
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Recurring Task | 
 
 ## Methods
 
 ### NewLeaveLockdownModeRecurringTaskResponse
 
-`func NewLeaveLockdownModeRecurringTaskResponse(id string, schemas []EnumleaveLockdownModeRecurringTaskSchemaUrn, ) *LeaveLockdownModeRecurringTaskResponse`
+`func NewLeaveLockdownModeRecurringTaskResponse(schemas []EnumleaveLockdownModeRecurringTaskSchemaUrn, id string, ) *LeaveLockdownModeRecurringTaskResponse`
 
 NewLeaveLockdownModeRecurringTaskResponse instantiates a new LeaveLockdownModeRecurringTaskResponse object
 This constructor will assign default values to properties that have it defined,
@@ -36,26 +36,6 @@ will change when the set of required properties is changed
 NewLeaveLockdownModeRecurringTaskResponseWithDefaults instantiates a new LeaveLockdownModeRecurringTaskResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *LeaveLockdownModeRecurringTaskResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *LeaveLockdownModeRecurringTaskResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *LeaveLockdownModeRecurringTaskResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -351,6 +331,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *LeaveLockdownModeRecurringTaskResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *LeaveLockdownModeRecurringTaskResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *LeaveLockdownModeRecurringTaskResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *LeaveLockdownModeRecurringTaskResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

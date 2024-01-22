@@ -19,8 +19,6 @@ var _ MappedNullable = &AddAdminAlertAccountStatusNotificationHandlerRequest{}
 
 // AddAdminAlertAccountStatusNotificationHandlerRequest struct for AddAdminAlertAccountStatusNotificationHandlerRequest
 type AddAdminAlertAccountStatusNotificationHandlerRequest struct {
-	// Name of the new Account Status Notification Handler
-	HandlerName                   string                                                                  `json:"handlerName"`
 	Schemas                       []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn               `json:"schemas"`
 	AccountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp `json:"accountStatusNotificationType"`
 	// A description for this Account Status Notification Handler
@@ -37,18 +35,20 @@ type AddAdminAlertAccountStatusNotificationHandlerRequest struct {
 	AccountDeletionNotificationRequestCriteria *string `json:"accountDeletionNotificationRequestCriteria,omitempty"`
 	// A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler.
 	AccountUpdateNotificationRequestCriteria *string `json:"accountUpdateNotificationRequestCriteria,omitempty"`
+	// Name of the new Account Status Notification Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddAdminAlertAccountStatusNotificationHandlerRequest instantiates a new AddAdminAlertAccountStatusNotificationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAdminAlertAccountStatusNotificationHandlerRequest(handlerName string, schemas []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn, accountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, enabled bool) *AddAdminAlertAccountStatusNotificationHandlerRequest {
+func NewAddAdminAlertAccountStatusNotificationHandlerRequest(schemas []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn, accountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, enabled bool, handlerName string) *AddAdminAlertAccountStatusNotificationHandlerRequest {
 	this := AddAdminAlertAccountStatusNotificationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.AccountStatusNotificationType = accountStatusNotificationType
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewAddAdminAlertAccountStatusNotificationHandlerRequest(handlerName string,
 func NewAddAdminAlertAccountStatusNotificationHandlerRequestWithDefaults() *AddAdminAlertAccountStatusNotificationHandlerRequest {
 	this := AddAdminAlertAccountStatusNotificationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -348,6 +324,30 @@ func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) SetAccountUpdateN
 	o.AccountUpdateNotificationRequestCriteria = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddAdminAlertAccountStatusNotificationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -358,7 +358,6 @@ func (o AddAdminAlertAccountStatusNotificationHandlerRequest) MarshalJSON() ([]b
 
 func (o AddAdminAlertAccountStatusNotificationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["accountStatusNotificationType"] = o.AccountStatusNotificationType
 	if !IsNil(o.Description) {
@@ -380,6 +379,7 @@ func (o AddAdminAlertAccountStatusNotificationHandlerRequest) ToMap() (map[strin
 	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

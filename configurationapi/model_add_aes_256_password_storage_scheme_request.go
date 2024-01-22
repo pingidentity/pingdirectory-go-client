@@ -19,26 +19,26 @@ var _ MappedNullable = &AddAes256PasswordStorageSchemeRequest{}
 
 // AddAes256PasswordStorageSchemeRequest struct for AddAes256PasswordStorageSchemeRequest
 type AddAes256PasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName string                                     `json:"schemeName"`
-	Schemas    []Enumaes256PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas []Enumaes256PasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The identifier for the encryption settings definition that should be used to derive the encryption key to use when encrypting new passwords. If this is not provided, the server's preferred encryption settings definition will be used.
 	EncryptionSettingsDefinitionID *string `json:"encryptionSettingsDefinitionID,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddAes256PasswordStorageSchemeRequest instantiates a new AddAes256PasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAes256PasswordStorageSchemeRequest(schemeName string, schemas []Enumaes256PasswordStorageSchemeSchemaUrn, enabled bool) *AddAes256PasswordStorageSchemeRequest {
+func NewAddAes256PasswordStorageSchemeRequest(schemas []Enumaes256PasswordStorageSchemeSchemaUrn, enabled bool, schemeName string) *AddAes256PasswordStorageSchemeRequest {
 	this := AddAes256PasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewAddAes256PasswordStorageSchemeRequest(schemeName string, schemas []Enuma
 func NewAddAes256PasswordStorageSchemeRequestWithDefaults() *AddAes256PasswordStorageSchemeRequest {
 	this := AddAes256PasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddAes256PasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddAes256PasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddAes256PasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -186,6 +162,30 @@ func (o *AddAes256PasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddAes256PasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddAes256PasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddAes256PasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddAes256PasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -196,7 +196,6 @@ func (o AddAes256PasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddAes256PasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.EncryptionSettingsDefinitionID) {
 		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
@@ -205,6 +204,7 @@ func (o AddAes256PasswordStorageSchemeRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

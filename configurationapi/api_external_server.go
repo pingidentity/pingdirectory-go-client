@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ExternalServerApiService ExternalServerApi service
-type ExternalServerApiService service
+// ExternalServerAPIService ExternalServerAPI service
+type ExternalServerAPIService service
 
 type ApiAddExternalServerRequest struct {
 	ctx                      context.Context
-	ApiService               *ExternalServerApiService
+	ApiService               *ExternalServerAPIService
 	addExternalServerRequest *AddExternalServerRequest
 }
 
@@ -44,7 +44,7 @@ AddExternalServer Add a new External Server to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddExternalServerRequest
 */
-func (a *ExternalServerApiService) AddExternalServer(ctx context.Context) ApiAddExternalServerRequest {
+func (a *ExternalServerAPIService) AddExternalServer(ctx context.Context) ApiAddExternalServerRequest {
 	return ApiAddExternalServerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ExternalServerApiService) AddExternalServer(ctx context.Context) ApiAdd
 // Execute executes the request
 //
 //	@return AddExternalServer200Response
-func (a *ExternalServerApiService) AddExternalServerExecute(r ApiAddExternalServerRequest) (*AddExternalServer200Response, *http.Response, error) {
+func (a *ExternalServerAPIService) AddExternalServerExecute(r ApiAddExternalServerRequest) (*AddExternalServer200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ExternalServerApiService) AddExternalServerExecute(r ApiAddExternalServ
 		localVarReturnValue *AddExternalServer200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerApiService.AddExternalServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerAPIService.AddExternalServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ExternalServerApiService) AddExternalServerExecute(r ApiAddExternalServ
 
 type ApiDeleteExternalServerRequest struct {
 	ctx                context.Context
-	ApiService         *ExternalServerApiService
+	ApiService         *ExternalServerAPIService
 	externalServerName string
 }
 
@@ -149,7 +149,7 @@ DeleteExternalServer Delete a External Server
 	@param externalServerName Name of the External Server
 	@return ApiDeleteExternalServerRequest
 */
-func (a *ExternalServerApiService) DeleteExternalServer(ctx context.Context, externalServerName string) ApiDeleteExternalServerRequest {
+func (a *ExternalServerAPIService) DeleteExternalServer(ctx context.Context, externalServerName string) ApiDeleteExternalServerRequest {
 	return ApiDeleteExternalServerRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -158,14 +158,14 @@ func (a *ExternalServerApiService) DeleteExternalServer(ctx context.Context, ext
 }
 
 // Execute executes the request
-func (a *ExternalServerApiService) DeleteExternalServerExecute(r ApiDeleteExternalServerRequest) (*http.Response, error) {
+func (a *ExternalServerAPIService) DeleteExternalServerExecute(r ApiDeleteExternalServerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerApiService.DeleteExternalServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerAPIService.DeleteExternalServer")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ExternalServerApiService) DeleteExternalServerExecute(r ApiDeleteExtern
 
 type ApiGetExternalServerRequest struct {
 	ctx                context.Context
-	ApiService         *ExternalServerApiService
+	ApiService         *ExternalServerAPIService
 	externalServerName string
 }
 
@@ -239,7 +239,7 @@ GetExternalServer Returns a single External Server
 	@param externalServerName Name of the External Server
 	@return ApiGetExternalServerRequest
 */
-func (a *ExternalServerApiService) GetExternalServer(ctx context.Context, externalServerName string) ApiGetExternalServerRequest {
+func (a *ExternalServerAPIService) GetExternalServer(ctx context.Context, externalServerName string) ApiGetExternalServerRequest {
 	return ApiGetExternalServerRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -250,7 +250,7 @@ func (a *ExternalServerApiService) GetExternalServer(ctx context.Context, extern
 // Execute executes the request
 //
 //	@return AddExternalServer200Response
-func (a *ExternalServerApiService) GetExternalServerExecute(r ApiGetExternalServerRequest) (*AddExternalServer200Response, *http.Response, error) {
+func (a *ExternalServerAPIService) GetExternalServerExecute(r ApiGetExternalServerRequest) (*AddExternalServer200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ExternalServerApiService) GetExternalServerExecute(r ApiGetExternalServ
 		localVarReturnValue *AddExternalServer200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerApiService.GetExternalServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerAPIService.GetExternalServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ExternalServerApiService) GetExternalServerExecute(r ApiGetExternalServ
 
 type ApiListExternalServersRequest struct {
 	ctx        context.Context
-	ApiService *ExternalServerApiService
+	ApiService *ExternalServerAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListExternalServers Returns a list of all External Server objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListExternalServersRequest
 */
-func (a *ExternalServerApiService) ListExternalServers(ctx context.Context) ApiListExternalServersRequest {
+func (a *ExternalServerAPIService) ListExternalServers(ctx context.Context) ApiListExternalServersRequest {
 	return ApiListExternalServersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ExternalServerApiService) ListExternalServers(ctx context.Context) ApiL
 // Execute executes the request
 //
 //	@return ExternalServerListResponse
-func (a *ExternalServerApiService) ListExternalServersExecute(r ApiListExternalServersRequest) (*ExternalServerListResponse, *http.Response, error) {
+func (a *ExternalServerAPIService) ListExternalServersExecute(r ApiListExternalServersRequest) (*ExternalServerListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ExternalServerApiService) ListExternalServersExecute(r ApiListExternalS
 		localVarReturnValue *ExternalServerListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerApiService.ListExternalServers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerAPIService.ListExternalServers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ExternalServerApiService) ListExternalServersExecute(r ApiListExternalS
 
 type ApiUpdateExternalServerRequest struct {
 	ctx                context.Context
-	ApiService         *ExternalServerApiService
+	ApiService         *ExternalServerAPIService
 	externalServerName string
 	updateRequest      *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateExternalServer Update an existing External Server by name
 	@param externalServerName Name of the External Server
 	@return ApiUpdateExternalServerRequest
 */
-func (a *ExternalServerApiService) UpdateExternalServer(ctx context.Context, externalServerName string) ApiUpdateExternalServerRequest {
+func (a *ExternalServerAPIService) UpdateExternalServer(ctx context.Context, externalServerName string) ApiUpdateExternalServerRequest {
 	return ApiUpdateExternalServerRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -467,7 +467,7 @@ func (a *ExternalServerApiService) UpdateExternalServer(ctx context.Context, ext
 // Execute executes the request
 //
 //	@return AddExternalServer200Response
-func (a *ExternalServerApiService) UpdateExternalServerExecute(r ApiUpdateExternalServerRequest) (*AddExternalServer200Response, *http.Response, error) {
+func (a *ExternalServerAPIService) UpdateExternalServerExecute(r ApiUpdateExternalServerRequest) (*AddExternalServer200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ExternalServerApiService) UpdateExternalServerExecute(r ApiUpdateExtern
 		localVarReturnValue *AddExternalServer200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerApiService.UpdateExternalServer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalServerAPIService.UpdateExternalServer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

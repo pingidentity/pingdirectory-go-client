@@ -19,8 +19,6 @@ var _ MappedNullable = &LdifConnectionHandlerResponse{}
 
 // LdifConnectionHandlerResponse struct for LdifConnectionHandlerResponse
 type LdifConnectionHandlerResponse struct {
-	// Name of the Connection Handler
-	Id      string                               `json:"id"`
 	Schemas []EnumldifConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
 	AllowedClient []string `json:"allowedClient,omitempty"`
@@ -36,19 +34,21 @@ type LdifConnectionHandlerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Connection Handler
+	Id string `json:"id"`
 }
 
 // NewLdifConnectionHandlerResponse instantiates a new LdifConnectionHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdifConnectionHandlerResponse(id string, schemas []EnumldifConnectionHandlerSchemaUrn, ldifDirectory string, pollInterval string, enabled bool) *LdifConnectionHandlerResponse {
+func NewLdifConnectionHandlerResponse(schemas []EnumldifConnectionHandlerSchemaUrn, ldifDirectory string, pollInterval string, enabled bool, id string) *LdifConnectionHandlerResponse {
 	this := LdifConnectionHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.LdifDirectory = ldifDirectory
 	this.PollInterval = pollInterval
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewLdifConnectionHandlerResponse(id string, schemas []EnumldifConnectionHan
 func NewLdifConnectionHandlerResponseWithDefaults() *LdifConnectionHandlerResponse {
 	this := LdifConnectionHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LdifConnectionHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LdifConnectionHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LdifConnectionHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -340,6 +316,30 @@ func (o *LdifConnectionHandlerResponse) SetUrnpingidentityschemasconfigurationme
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LdifConnectionHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LdifConnectionHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LdifConnectionHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LdifConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -350,7 +350,6 @@ func (o LdifConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o LdifConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllowedClient) {
 		toSerialize["allowedClient"] = o.AllowedClient
@@ -370,6 +369,7 @@ func (o LdifConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

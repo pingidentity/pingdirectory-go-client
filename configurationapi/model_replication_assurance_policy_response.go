@@ -19,8 +19,6 @@ var _ MappedNullable = &ReplicationAssurancePolicyResponse{}
 
 // ReplicationAssurancePolicyResponse struct for ReplicationAssurancePolicyResponse
 type ReplicationAssurancePolicyResponse struct {
-	// Name of the Replication Assurance Policy
-	Id      string                                    `json:"id"`
 	Schemas []EnumreplicationAssurancePolicySchemaUrn `json:"schemas,omitempty"`
 	// Description of the Replication Assurance Policy.
 	Description *string `json:"description,omitempty"`
@@ -38,20 +36,22 @@ type ReplicationAssurancePolicyResponse struct {
 	RequestCriteria                               *string                                            `json:"requestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Replication Assurance Policy
+	Id string `json:"id"`
 }
 
 // NewReplicationAssurancePolicyResponse instantiates a new ReplicationAssurancePolicyResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReplicationAssurancePolicyResponse(id string, enabled bool, evaluationOrderIndex int64, localLevel EnumreplicationAssurancePolicyLocalLevelProp, remoteLevel EnumreplicationAssurancePolicyRemoteLevelProp, timeout string) *ReplicationAssurancePolicyResponse {
+func NewReplicationAssurancePolicyResponse(enabled bool, evaluationOrderIndex int64, localLevel EnumreplicationAssurancePolicyLocalLevelProp, remoteLevel EnumreplicationAssurancePolicyRemoteLevelProp, timeout string, id string) *ReplicationAssurancePolicyResponse {
 	this := ReplicationAssurancePolicyResponse{}
-	this.Id = id
 	this.Enabled = enabled
 	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.LocalLevel = localLevel
 	this.RemoteLevel = remoteLevel
 	this.Timeout = timeout
+	this.Id = id
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewReplicationAssurancePolicyResponse(id string, enabled bool, evaluationOr
 func NewReplicationAssurancePolicyResponseWithDefaults() *ReplicationAssurancePolicyResponse {
 	this := ReplicationAssurancePolicyResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ReplicationAssurancePolicyResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ReplicationAssurancePolicyResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ReplicationAssurancePolicyResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -399,6 +375,30 @@ func (o *ReplicationAssurancePolicyResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ReplicationAssurancePolicyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ReplicationAssurancePolicyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ReplicationAssurancePolicyResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ReplicationAssurancePolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -409,7 +409,6 @@ func (o ReplicationAssurancePolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o ReplicationAssurancePolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -433,6 +432,7 @@ func (o ReplicationAssurancePolicyResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

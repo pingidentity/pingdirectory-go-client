@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the OAuth Token Handler | 
 **Schemas** | [**[]EnumgroovyScriptedOauthTokenHandlerSchemaUrn**](EnumgroovyScriptedOauthTokenHandlerSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted OAuth Token Handler. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted OAuth Token Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this OAuth Token Handler | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the OAuth Token Handler | 
 
 ## Methods
 
 ### NewGroovyScriptedOauthTokenHandlerResponse
 
-`func NewGroovyScriptedOauthTokenHandlerResponse(id string, schemas []EnumgroovyScriptedOauthTokenHandlerSchemaUrn, scriptClass string, ) *GroovyScriptedOauthTokenHandlerResponse`
+`func NewGroovyScriptedOauthTokenHandlerResponse(schemas []EnumgroovyScriptedOauthTokenHandlerSchemaUrn, scriptClass string, id string, ) *GroovyScriptedOauthTokenHandlerResponse`
 
 NewGroovyScriptedOauthTokenHandlerResponse instantiates a new GroovyScriptedOauthTokenHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewGroovyScriptedOauthTokenHandlerResponseWithDefaults instantiates a new GroovyScriptedOauthTokenHandlerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *GroovyScriptedOauthTokenHandlerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GroovyScriptedOauthTokenHandlerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GroovyScriptedOauthTokenHandlerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -190,6 +170,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *GroovyScriptedOauthTokenHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *GroovyScriptedOauthTokenHandlerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *GroovyScriptedOauthTokenHandlerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *GroovyScriptedOauthTokenHandlerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

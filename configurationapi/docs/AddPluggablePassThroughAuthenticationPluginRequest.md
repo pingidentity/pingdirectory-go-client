@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumpluggablePassThroughAuthenticationPluginSchemaUrn**](EnumpluggablePassThroughAuthenticationPluginSchemaUrn.md) |  | 
 **PassThroughAuthenticationHandler** | **string** | The component used to manage authentication with the external authentication service. | 
 **IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to the external authentication service. | [optional] 
@@ -19,12 +18,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddPluggablePassThroughAuthenticationPluginRequest
 
-`func NewAddPluggablePassThroughAuthenticationPluginRequest(pluginName string, schemas []EnumpluggablePassThroughAuthenticationPluginSchemaUrn, passThroughAuthenticationHandler string, enabled bool, ) *AddPluggablePassThroughAuthenticationPluginRequest`
+`func NewAddPluggablePassThroughAuthenticationPluginRequest(schemas []EnumpluggablePassThroughAuthenticationPluginSchemaUrn, passThroughAuthenticationHandler string, enabled bool, pluginName string, ) *AddPluggablePassThroughAuthenticationPluginRequest`
 
 NewAddPluggablePassThroughAuthenticationPluginRequest instantiates a new AddPluggablePassThroughAuthenticationPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,26 +38,6 @@ will change when the set of required properties is changed
 NewAddPluggablePassThroughAuthenticationPluginRequestWithDefaults instantiates a new AddPluggablePassThroughAuthenticationPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -393,6 +373,26 @@ SetInvokeForInternalOperations sets InvokeForInternalOperations field to given v
 `func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasInvokeForInternalOperations() bool`
 
 HasInvokeForInternalOperations returns a boolean if a field has been set.
+
+### GetPluginName
+
+`func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

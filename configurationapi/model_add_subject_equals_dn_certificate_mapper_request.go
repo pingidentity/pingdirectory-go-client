@@ -19,24 +19,24 @@ var _ MappedNullable = &AddSubjectEqualsDnCertificateMapperRequest{}
 
 // AddSubjectEqualsDnCertificateMapperRequest struct for AddSubjectEqualsDnCertificateMapperRequest
 type AddSubjectEqualsDnCertificateMapperRequest struct {
-	// Name of the new Certificate Mapper
-	MapperName string                                          `json:"mapperName"`
-	Schemas    []EnumsubjectEqualsDnCertificateMapperSchemaUrn `json:"schemas"`
+	Schemas []EnumsubjectEqualsDnCertificateMapperSchemaUrn `json:"schemas"`
 	// A description for this Certificate Mapper
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Certificate Mapper is enabled.
 	Enabled bool `json:"enabled"`
+	// Name of the new Certificate Mapper
+	MapperName string `json:"mapperName"`
 }
 
 // NewAddSubjectEqualsDnCertificateMapperRequest instantiates a new AddSubjectEqualsDnCertificateMapperRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSubjectEqualsDnCertificateMapperRequest(mapperName string, schemas []EnumsubjectEqualsDnCertificateMapperSchemaUrn, enabled bool) *AddSubjectEqualsDnCertificateMapperRequest {
+func NewAddSubjectEqualsDnCertificateMapperRequest(schemas []EnumsubjectEqualsDnCertificateMapperSchemaUrn, enabled bool, mapperName string) *AddSubjectEqualsDnCertificateMapperRequest {
 	this := AddSubjectEqualsDnCertificateMapperRequest{}
-	this.MapperName = mapperName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.MapperName = mapperName
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewAddSubjectEqualsDnCertificateMapperRequest(mapperName string, schemas []
 func NewAddSubjectEqualsDnCertificateMapperRequestWithDefaults() *AddSubjectEqualsDnCertificateMapperRequest {
 	this := AddSubjectEqualsDnCertificateMapperRequest{}
 	return &this
-}
-
-// GetMapperName returns the MapperName field value
-func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MapperName
-}
-
-// GetMapperNameOk returns a tuple with the MapperName field value
-// and a boolean to check if the value has been set.
-func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MapperName, true
-}
-
-// SetMapperName sets field value
-func (o *AddSubjectEqualsDnCertificateMapperRequest) SetMapperName(v string) {
-	o.MapperName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -152,6 +128,30 @@ func (o *AddSubjectEqualsDnCertificateMapperRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMapperName returns the MapperName field value
+func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MapperName
+}
+
+// GetMapperNameOk returns a tuple with the MapperName field value
+// and a boolean to check if the value has been set.
+func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MapperName, true
+}
+
+// SetMapperName sets field value
+func (o *AddSubjectEqualsDnCertificateMapperRequest) SetMapperName(v string) {
+	o.MapperName = v
+}
+
 func (o AddSubjectEqualsDnCertificateMapperRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -162,12 +162,12 @@ func (o AddSubjectEqualsDnCertificateMapperRequest) MarshalJSON() ([]byte, error
 
 func (o AddSubjectEqualsDnCertificateMapperRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mapperName"] = o.MapperName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["mapperName"] = o.MapperName
 	return toSerialize, nil
 }
 

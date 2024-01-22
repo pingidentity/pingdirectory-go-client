@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAzureKeyVaultCipherStreamProviderRequest{}
 
 // AddAzureKeyVaultCipherStreamProviderRequest struct for AddAzureKeyVaultCipherStreamProviderRequest
 type AddAzureKeyVaultCipherStreamProviderRequest struct {
-	// Name of the new Cipher Stream Provider
-	ProviderName string                                           `json:"providerName"`
-	Schemas      []EnumazureKeyVaultCipherStreamProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The URI that identifies the Azure Key Vault from which the secret is to be retrieved.
 	KeyVaultURI string `json:"keyVaultURI"`
 	// The mechanism used to authenticate to the Azure service.
@@ -38,20 +36,22 @@ type AddAzureKeyVaultCipherStreamProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Cipher Stream Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddAzureKeyVaultCipherStreamProviderRequest instantiates a new AddAzureKeyVaultCipherStreamProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAzureKeyVaultCipherStreamProviderRequest(providerName string, schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, enabled bool) *AddAzureKeyVaultCipherStreamProviderRequest {
+func NewAddAzureKeyVaultCipherStreamProviderRequest(schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, enabled bool, providerName string) *AddAzureKeyVaultCipherStreamProviderRequest {
 	this := AddAzureKeyVaultCipherStreamProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.KeyVaultURI = keyVaultURI
 	this.AzureAuthenticationMethod = azureAuthenticationMethod
 	this.SecretName = secretName
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewAddAzureKeyVaultCipherStreamProviderRequest(providerName string, schemas
 func NewAddAzureKeyVaultCipherStreamProviderRequestWithDefaults() *AddAzureKeyVaultCipherStreamProviderRequest {
 	this := AddAzureKeyVaultCipherStreamProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -335,6 +311,30 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddAzureKeyVaultCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -345,7 +345,6 @@ func (o AddAzureKeyVaultCipherStreamProviderRequest) MarshalJSON() ([]byte, erro
 
 func (o AddAzureKeyVaultCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["keyVaultURI"] = o.KeyVaultURI
 	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
@@ -363,6 +362,7 @@ func (o AddAzureKeyVaultCipherStreamProviderRequest) ToMap() (map[string]interfa
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

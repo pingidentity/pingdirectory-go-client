@@ -19,8 +19,6 @@ var _ MappedNullable = &InternalSearchRatePluginResponse{}
 
 // InternalSearchRatePluginResponse struct for InternalSearchRatePluginResponse
 type InternalSearchRatePluginResponse struct {
-	// Name of the Plugin
-	Id         string                                  `json:"id"`
 	Schemas    []EnuminternalSearchRatePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp              `json:"pluginType"`
 	// Specifies the number of concurrent threads that should be used to process the search operations.
@@ -43,21 +41,23 @@ type InternalSearchRatePluginResponse struct {
 	InvokeForInternalOperations                   *bool                                              `json:"invokeForInternalOperations,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewInternalSearchRatePluginResponse instantiates a new InternalSearchRatePluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInternalSearchRatePluginResponse(id string, schemas []EnuminternalSearchRatePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN string, filterPrefix string, enabled bool) *InternalSearchRatePluginResponse {
+func NewInternalSearchRatePluginResponse(schemas []EnuminternalSearchRatePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN string, filterPrefix string, enabled bool, id string) *InternalSearchRatePluginResponse {
 	this := InternalSearchRatePluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PluginType = pluginType
 	this.NumThreads = numThreads
 	this.BaseDN = baseDN
 	this.FilterPrefix = filterPrefix
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewInternalSearchRatePluginResponse(id string, schemas []EnuminternalSearch
 func NewInternalSearchRatePluginResponseWithDefaults() *InternalSearchRatePluginResponse {
 	this := InternalSearchRatePluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *InternalSearchRatePluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *InternalSearchRatePluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *InternalSearchRatePluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -461,6 +437,30 @@ func (o *InternalSearchRatePluginResponse) SetUrnpingidentityschemasconfiguratio
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *InternalSearchRatePluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *InternalSearchRatePluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *InternalSearchRatePluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o InternalSearchRatePluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -471,7 +471,6 @@ func (o InternalSearchRatePluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o InternalSearchRatePluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["pluginType"] = o.PluginType
 	toSerialize["numThreads"] = o.NumThreads
@@ -499,6 +498,7 @@ func (o InternalSearchRatePluginResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

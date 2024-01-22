@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Alert Handler | 
 **Schemas** | [**[]EnumexecAlertHandlerSchemaUrn**](EnumexecAlertHandlerSchemaUrn.md) |  | 
 **Command** | **string** | Specifies the path of the command to execute, without any arguments. It must be an absolute path for reasons of security and reliability. | 
 **Asynchronous** | Pointer to **bool** | Indicates whether the server should attempt to invoke this Exec Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated. | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **EnabledAlertSeverity** | Pointer to [**[]EnumalertHandlerEnabledAlertSeverityProp**](EnumalertHandlerEnabledAlertSeverityProp.md) |  | [optional] 
 **EnabledAlertType** | Pointer to [**[]EnumalertHandlerEnabledAlertTypeProp**](EnumalertHandlerEnabledAlertTypeProp.md) |  | [optional] 
 **DisabledAlertType** | Pointer to [**[]EnumalertHandlerDisabledAlertTypeProp**](EnumalertHandlerDisabledAlertTypeProp.md) |  | [optional] 
+**HandlerName** | **string** | Name of the new Alert Handler | 
 
 ## Methods
 
 ### NewAddExecAlertHandlerRequest
 
-`func NewAddExecAlertHandlerRequest(handlerName string, schemas []EnumexecAlertHandlerSchemaUrn, command string, enabled bool, ) *AddExecAlertHandlerRequest`
+`func NewAddExecAlertHandlerRequest(schemas []EnumexecAlertHandlerSchemaUrn, command string, enabled bool, handlerName string, ) *AddExecAlertHandlerRequest`
 
 NewAddExecAlertHandlerRequest instantiates a new AddExecAlertHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddExecAlertHandlerRequestWithDefaults instantiates a new AddExecAlertHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddExecAlertHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddExecAlertHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddExecAlertHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -237,6 +217,26 @@ SetDisabledAlertType sets DisabledAlertType field to given value.
 `func (o *AddExecAlertHandlerRequest) HasDisabledAlertType() bool`
 
 HasDisabledAlertType returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddExecAlertHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddExecAlertHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddExecAlertHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

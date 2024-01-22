@@ -19,8 +19,6 @@ var _ MappedNullable = &EnterLockdownModeRecurringTaskResponse{}
 
 // EnterLockdownModeRecurringTaskResponse struct for EnterLockdownModeRecurringTaskResponse
 type EnterLockdownModeRecurringTaskResponse struct {
-	// Name of the Recurring Task
-	Id      string                                        `json:"id"`
 	Schemas []EnumenterLockdownModeRecurringTaskSchemaUrn `json:"schemas"`
 	// The reason that the server is being placed in lockdown mode.
 	Reason *string `json:"reason,omitempty"`
@@ -42,16 +40,18 @@ type EnterLockdownModeRecurringTaskResponse struct {
 	AlertOnFailure                                *bool                                              `json:"alertOnFailure,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Recurring Task
+	Id string `json:"id"`
 }
 
 // NewEnterLockdownModeRecurringTaskResponse instantiates a new EnterLockdownModeRecurringTaskResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEnterLockdownModeRecurringTaskResponse(id string, schemas []EnumenterLockdownModeRecurringTaskSchemaUrn) *EnterLockdownModeRecurringTaskResponse {
+func NewEnterLockdownModeRecurringTaskResponse(schemas []EnumenterLockdownModeRecurringTaskSchemaUrn, id string) *EnterLockdownModeRecurringTaskResponse {
 	this := EnterLockdownModeRecurringTaskResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewEnterLockdownModeRecurringTaskResponse(id string, schemas []EnumenterLoc
 func NewEnterLockdownModeRecurringTaskResponseWithDefaults() *EnterLockdownModeRecurringTaskResponse {
 	this := EnterLockdownModeRecurringTaskResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *EnterLockdownModeRecurringTaskResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *EnterLockdownModeRecurringTaskResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *EnterLockdownModeRecurringTaskResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -463,6 +439,30 @@ func (o *EnterLockdownModeRecurringTaskResponse) SetUrnpingidentityschemasconfig
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *EnterLockdownModeRecurringTaskResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *EnterLockdownModeRecurringTaskResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *EnterLockdownModeRecurringTaskResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o EnterLockdownModeRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -473,7 +473,6 @@ func (o EnterLockdownModeRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 
 func (o EnterLockdownModeRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
@@ -508,6 +507,7 @@ func (o EnterLockdownModeRecurringTaskResponse) ToMap() (map[string]interface{},
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

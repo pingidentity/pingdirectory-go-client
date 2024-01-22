@@ -19,8 +19,6 @@ var _ MappedNullable = &LocalDbBackendResponse{}
 
 // LocalDbBackendResponse struct for LocalDbBackendResponse
 type LocalDbBackendResponse struct {
-	// Name of the Backend
-	Id                        string                                    `json:"id"`
 	Schemas                   []EnumlocalDbBackendSchemaUrn             `json:"schemas"`
 	UncachedId2entryCacheMode *EnumbackendUncachedId2entryCacheModeProp `json:"uncachedId2entryCacheMode,omitempty"`
 	// The criteria that will be used to identify attributes that should be written into the uncached-id2entry database rather than the id2entry database. This will only be used for entries in which the associated uncached-entry-criteria does not indicate that the entire entry should be uncached.
@@ -127,15 +125,16 @@ type LocalDbBackendResponse struct {
 	NotificationManager                           *string                                            `json:"notificationManager,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Backend
+	Id string `json:"id"`
 }
 
 // NewLocalDbBackendResponse instantiates a new LocalDbBackendResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLocalDbBackendResponse(id string, schemas []EnumlocalDbBackendSchemaUrn, writabilityMode EnumbackendWritabilityModeProp, dbDirectory string, importTempDirectory string, backendID string, enabled bool, baseDN []string) *LocalDbBackendResponse {
+func NewLocalDbBackendResponse(schemas []EnumlocalDbBackendSchemaUrn, writabilityMode EnumbackendWritabilityModeProp, dbDirectory string, importTempDirectory string, backendID string, enabled bool, baseDN []string, id string) *LocalDbBackendResponse {
 	this := LocalDbBackendResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.WritabilityMode = writabilityMode
 	this.DbDirectory = dbDirectory
@@ -143,6 +142,7 @@ func NewLocalDbBackendResponse(id string, schemas []EnumlocalDbBackendSchemaUrn,
 	this.BackendID = backendID
 	this.Enabled = enabled
 	this.BaseDN = baseDN
+	this.Id = id
 	return &this
 }
 
@@ -152,30 +152,6 @@ func NewLocalDbBackendResponse(id string, schemas []EnumlocalDbBackendSchemaUrn,
 func NewLocalDbBackendResponseWithDefaults() *LocalDbBackendResponse {
 	this := LocalDbBackendResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LocalDbBackendResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LocalDbBackendResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -2074,6 +2050,30 @@ func (o *LocalDbBackendResponse) SetUrnpingidentityschemasconfigurationmessages2
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LocalDbBackendResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LocalDbBackendResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LocalDbBackendResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LocalDbBackendResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -2084,7 +2084,6 @@ func (o LocalDbBackendResponse) MarshalJSON() ([]byte, error) {
 
 func (o LocalDbBackendResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.UncachedId2entryCacheMode) {
 		toSerialize["uncachedId2entryCacheMode"] = o.UncachedId2entryCacheMode
@@ -2254,6 +2253,7 @@ func (o LocalDbBackendResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

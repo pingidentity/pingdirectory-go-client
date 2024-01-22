@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumsearchShutdownPluginSchemaUrn**](EnumsearchShutdownPluginSchemaUrn.md) |  | 
 **BaseDN** | Pointer to **string** | The base DN to use for the search. | [optional] 
 **Scope** | [**EnumpluginScopeProp**](EnumpluginScopeProp.md) |  | 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **PreviousFileExtension** | Pointer to **string** | An extension that should be appended to the name of an existing output file rather than deleting it. If a file already exists with the full previous file name, then it will be deleted before the current file is renamed to become the previous file. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddSearchShutdownPluginRequest
 
-`func NewAddSearchShutdownPluginRequest(pluginName string, schemas []EnumsearchShutdownPluginSchemaUrn, scope EnumpluginScopeProp, filter string, outputFile string, enabled bool, ) *AddSearchShutdownPluginRequest`
+`func NewAddSearchShutdownPluginRequest(schemas []EnumsearchShutdownPluginSchemaUrn, scope EnumpluginScopeProp, filter string, outputFile string, enabled bool, pluginName string, ) *AddSearchShutdownPluginRequest`
 
 NewAddSearchShutdownPluginRequest instantiates a new AddSearchShutdownPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddSearchShutdownPluginRequestWithDefaults instantiates a new AddSearchShutdownPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddSearchShutdownPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddSearchShutdownPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddSearchShutdownPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -252,6 +232,26 @@ and a boolean to check if the value has been set.
 `func (o *AddSearchShutdownPluginRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetPluginName
+
+`func (o *AddSearchShutdownPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddSearchShutdownPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddSearchShutdownPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
 
 
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPkcs11KeyManagerProviderRequest{}
 
 // AddPkcs11KeyManagerProviderRequest struct for AddPkcs11KeyManagerProviderRequest
 type AddPkcs11KeyManagerProviderRequest struct {
-	// Name of the new Key Manager Provider
-	ProviderName string                                  `json:"providerName"`
-	Schemas      []Enumpkcs11KeyManagerProviderSchemaUrn `json:"schemas"`
+	Schemas []Enumpkcs11KeyManagerProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
 	Pkcs11ProviderClass *string `json:"pkcs11ProviderClass,omitempty"`
 	// The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens.
@@ -40,17 +38,19 @@ type AddPkcs11KeyManagerProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Key Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Key Manager Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddPkcs11KeyManagerProviderRequest instantiates a new AddPkcs11KeyManagerProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPkcs11KeyManagerProviderRequest(providerName string, schemas []Enumpkcs11KeyManagerProviderSchemaUrn, enabled bool) *AddPkcs11KeyManagerProviderRequest {
+func NewAddPkcs11KeyManagerProviderRequest(schemas []Enumpkcs11KeyManagerProviderSchemaUrn, enabled bool, providerName string) *AddPkcs11KeyManagerProviderRequest {
 	this := AddPkcs11KeyManagerProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewAddPkcs11KeyManagerProviderRequest(providerName string, schemas []Enumpk
 func NewAddPkcs11KeyManagerProviderRequestWithDefaults() *AddPkcs11KeyManagerProviderRequest {
 	this := AddPkcs11KeyManagerProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddPkcs11KeyManagerProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddPkcs11KeyManagerProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddPkcs11KeyManagerProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -390,6 +366,30 @@ func (o *AddPkcs11KeyManagerProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddPkcs11KeyManagerProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddPkcs11KeyManagerProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddPkcs11KeyManagerProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddPkcs11KeyManagerProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -400,7 +400,6 @@ func (o AddPkcs11KeyManagerProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPkcs11KeyManagerProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Pkcs11ProviderClass) {
 		toSerialize["pkcs11ProviderClass"] = o.Pkcs11ProviderClass
@@ -427,6 +426,7 @@ func (o AddPkcs11KeyManagerProviderRequest) ToMap() (map[string]interface{}, err
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

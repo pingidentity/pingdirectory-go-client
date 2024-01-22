@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// GaugeDataSourceApiService GaugeDataSourceApi service
-type GaugeDataSourceApiService service
+// GaugeDataSourceAPIService GaugeDataSourceAPI service
+type GaugeDataSourceAPIService service
 
 type ApiAddGaugeDataSourceRequest struct {
 	ctx                       context.Context
-	ApiService                *GaugeDataSourceApiService
+	ApiService                *GaugeDataSourceAPIService
 	addGaugeDataSourceRequest *AddGaugeDataSourceRequest
 }
 
@@ -44,7 +44,7 @@ AddGaugeDataSource Add a new Gauge Data Source to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddGaugeDataSourceRequest
 */
-func (a *GaugeDataSourceApiService) AddGaugeDataSource(ctx context.Context) ApiAddGaugeDataSourceRequest {
+func (a *GaugeDataSourceAPIService) AddGaugeDataSource(ctx context.Context) ApiAddGaugeDataSourceRequest {
 	return ApiAddGaugeDataSourceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *GaugeDataSourceApiService) AddGaugeDataSource(ctx context.Context) ApiA
 // Execute executes the request
 //
 //	@return AddGaugeDataSource200Response
-func (a *GaugeDataSourceApiService) AddGaugeDataSourceExecute(r ApiAddGaugeDataSourceRequest) (*AddGaugeDataSource200Response, *http.Response, error) {
+func (a *GaugeDataSourceAPIService) AddGaugeDataSourceExecute(r ApiAddGaugeDataSourceRequest) (*AddGaugeDataSource200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *GaugeDataSourceApiService) AddGaugeDataSourceExecute(r ApiAddGaugeDataS
 		localVarReturnValue *AddGaugeDataSource200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceApiService.AddGaugeDataSource")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceAPIService.AddGaugeDataSource")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *GaugeDataSourceApiService) AddGaugeDataSourceExecute(r ApiAddGaugeDataS
 
 type ApiDeleteGaugeDataSourceRequest struct {
 	ctx                 context.Context
-	ApiService          *GaugeDataSourceApiService
+	ApiService          *GaugeDataSourceAPIService
 	gaugeDataSourceName string
 }
 
@@ -149,7 +149,7 @@ DeleteGaugeDataSource Delete a Gauge Data Source
 	@param gaugeDataSourceName Name of the Gauge Data Source
 	@return ApiDeleteGaugeDataSourceRequest
 */
-func (a *GaugeDataSourceApiService) DeleteGaugeDataSource(ctx context.Context, gaugeDataSourceName string) ApiDeleteGaugeDataSourceRequest {
+func (a *GaugeDataSourceAPIService) DeleteGaugeDataSource(ctx context.Context, gaugeDataSourceName string) ApiDeleteGaugeDataSourceRequest {
 	return ApiDeleteGaugeDataSourceRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -158,14 +158,14 @@ func (a *GaugeDataSourceApiService) DeleteGaugeDataSource(ctx context.Context, g
 }
 
 // Execute executes the request
-func (a *GaugeDataSourceApiService) DeleteGaugeDataSourceExecute(r ApiDeleteGaugeDataSourceRequest) (*http.Response, error) {
+func (a *GaugeDataSourceAPIService) DeleteGaugeDataSourceExecute(r ApiDeleteGaugeDataSourceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceApiService.DeleteGaugeDataSource")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceAPIService.DeleteGaugeDataSource")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *GaugeDataSourceApiService) DeleteGaugeDataSourceExecute(r ApiDeleteGaug
 
 type ApiGetGaugeDataSourceRequest struct {
 	ctx                 context.Context
-	ApiService          *GaugeDataSourceApiService
+	ApiService          *GaugeDataSourceAPIService
 	gaugeDataSourceName string
 }
 
@@ -239,7 +239,7 @@ GetGaugeDataSource Returns a single Gauge Data Source
 	@param gaugeDataSourceName Name of the Gauge Data Source
 	@return ApiGetGaugeDataSourceRequest
 */
-func (a *GaugeDataSourceApiService) GetGaugeDataSource(ctx context.Context, gaugeDataSourceName string) ApiGetGaugeDataSourceRequest {
+func (a *GaugeDataSourceAPIService) GetGaugeDataSource(ctx context.Context, gaugeDataSourceName string) ApiGetGaugeDataSourceRequest {
 	return ApiGetGaugeDataSourceRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -250,7 +250,7 @@ func (a *GaugeDataSourceApiService) GetGaugeDataSource(ctx context.Context, gaug
 // Execute executes the request
 //
 //	@return AddGaugeDataSource200Response
-func (a *GaugeDataSourceApiService) GetGaugeDataSourceExecute(r ApiGetGaugeDataSourceRequest) (*AddGaugeDataSource200Response, *http.Response, error) {
+func (a *GaugeDataSourceAPIService) GetGaugeDataSourceExecute(r ApiGetGaugeDataSourceRequest) (*AddGaugeDataSource200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *GaugeDataSourceApiService) GetGaugeDataSourceExecute(r ApiGetGaugeDataS
 		localVarReturnValue *AddGaugeDataSource200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceApiService.GetGaugeDataSource")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceAPIService.GetGaugeDataSource")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *GaugeDataSourceApiService) GetGaugeDataSourceExecute(r ApiGetGaugeDataS
 
 type ApiListGaugeDataSourcesRequest struct {
 	ctx        context.Context
-	ApiService *GaugeDataSourceApiService
+	ApiService *GaugeDataSourceAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListGaugeDataSources Returns a list of all Gauge Data Source objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListGaugeDataSourcesRequest
 */
-func (a *GaugeDataSourceApiService) ListGaugeDataSources(ctx context.Context) ApiListGaugeDataSourcesRequest {
+func (a *GaugeDataSourceAPIService) ListGaugeDataSources(ctx context.Context) ApiListGaugeDataSourcesRequest {
 	return ApiListGaugeDataSourcesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *GaugeDataSourceApiService) ListGaugeDataSources(ctx context.Context) Ap
 // Execute executes the request
 //
 //	@return GaugeDataSourceListResponse
-func (a *GaugeDataSourceApiService) ListGaugeDataSourcesExecute(r ApiListGaugeDataSourcesRequest) (*GaugeDataSourceListResponse, *http.Response, error) {
+func (a *GaugeDataSourceAPIService) ListGaugeDataSourcesExecute(r ApiListGaugeDataSourcesRequest) (*GaugeDataSourceListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *GaugeDataSourceApiService) ListGaugeDataSourcesExecute(r ApiListGaugeDa
 		localVarReturnValue *GaugeDataSourceListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceApiService.ListGaugeDataSources")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceAPIService.ListGaugeDataSources")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *GaugeDataSourceApiService) ListGaugeDataSourcesExecute(r ApiListGaugeDa
 
 type ApiUpdateGaugeDataSourceRequest struct {
 	ctx                 context.Context
-	ApiService          *GaugeDataSourceApiService
+	ApiService          *GaugeDataSourceAPIService
 	gaugeDataSourceName string
 	updateRequest       *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateGaugeDataSource Update an existing Gauge Data Source by name
 	@param gaugeDataSourceName Name of the Gauge Data Source
 	@return ApiUpdateGaugeDataSourceRequest
 */
-func (a *GaugeDataSourceApiService) UpdateGaugeDataSource(ctx context.Context, gaugeDataSourceName string) ApiUpdateGaugeDataSourceRequest {
+func (a *GaugeDataSourceAPIService) UpdateGaugeDataSource(ctx context.Context, gaugeDataSourceName string) ApiUpdateGaugeDataSourceRequest {
 	return ApiUpdateGaugeDataSourceRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -467,7 +467,7 @@ func (a *GaugeDataSourceApiService) UpdateGaugeDataSource(ctx context.Context, g
 // Execute executes the request
 //
 //	@return AddGaugeDataSource200Response
-func (a *GaugeDataSourceApiService) UpdateGaugeDataSourceExecute(r ApiUpdateGaugeDataSourceRequest) (*AddGaugeDataSource200Response, *http.Response, error) {
+func (a *GaugeDataSourceAPIService) UpdateGaugeDataSourceExecute(r ApiUpdateGaugeDataSourceRequest) (*AddGaugeDataSource200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *GaugeDataSourceApiService) UpdateGaugeDataSourceExecute(r ApiUpdateGaug
 		localVarReturnValue *AddGaugeDataSource200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceApiService.UpdateGaugeDataSource")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeDataSourceAPIService.UpdateGaugeDataSource")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

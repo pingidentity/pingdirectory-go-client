@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaskName** | **string** | Name of the new Recurring Task | 
 **Schemas** | [**[]EnumstaticallyDefinedRecurringTaskSchemaUrn**](EnumstaticallyDefinedRecurringTaskSchemaUrn.md) |  | 
 **TaskJavaClass** | **string** | The fully-qualified name of the Java class that provides the logic for the task to be invoked. | 
 **TaskObjectClass** | **[]string** | The names or OIDs of the object classes to include in the tasks that are scheduled from this Statically Defined Recurring Task. All object classes must be defined in the server schema, and the combination of object classes must be valid for a task entry. | 
@@ -17,12 +16,13 @@ Name | Type | Description | Notes
 **AlertOnStart** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running. | [optional] 
 **AlertOnSuccess** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully. | [optional] 
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
+**TaskName** | **string** | Name of the new Recurring Task | 
 
 ## Methods
 
 ### NewAddStaticallyDefinedRecurringTaskRequest
 
-`func NewAddStaticallyDefinedRecurringTaskRequest(taskName string, schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn, taskJavaClass string, taskObjectClass []string, ) *AddStaticallyDefinedRecurringTaskRequest`
+`func NewAddStaticallyDefinedRecurringTaskRequest(schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn, taskJavaClass string, taskObjectClass []string, taskName string, ) *AddStaticallyDefinedRecurringTaskRequest`
 
 NewAddStaticallyDefinedRecurringTaskRequest instantiates a new AddStaticallyDefinedRecurringTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,26 +36,6 @@ will change when the set of required properties is changed
 NewAddStaticallyDefinedRecurringTaskRequestWithDefaults instantiates a new AddStaticallyDefinedRecurringTaskRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTaskName
-
-`func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskName() string`
-
-GetTaskName returns the TaskName field if non-nil, zero value otherwise.
-
-### GetTaskNameOk
-
-`func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
-
-GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaskName
-
-`func (o *AddStaticallyDefinedRecurringTaskRequest) SetTaskName(v string)`
-
-SetTaskName sets TaskName field to given value.
-
 
 ### GetSchemas
 
@@ -341,6 +321,26 @@ SetAlertOnFailure sets AlertOnFailure field to given value.
 `func (o *AddStaticallyDefinedRecurringTaskRequest) HasAlertOnFailure() bool`
 
 HasAlertOnFailure returns a boolean if a field has been set.
+
+### GetTaskName
+
+`func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskName() string`
+
+GetTaskName returns the TaskName field if non-nil, zero value otherwise.
+
+### GetTaskNameOk
+
+`func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
+
+GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskName
+
+`func (o *AddStaticallyDefinedRecurringTaskRequest) SetTaskName(v string)`
+
+SetTaskName sets TaskName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

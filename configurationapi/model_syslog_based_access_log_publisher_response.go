@@ -19,8 +19,6 @@ var _ MappedNullable = &SyslogBasedAccessLogPublisherResponse{}
 
 // SyslogBasedAccessLogPublisherResponse struct for SyslogBasedAccessLogPublisherResponse
 type SyslogBasedAccessLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id      string                                       `json:"id"`
 	Schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether the Syslog Based Access Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
@@ -119,21 +117,23 @@ type SyslogBasedAccessLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewSyslogBasedAccessLogPublisherResponse instantiates a new SyslogBasedAccessLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSyslogBasedAccessLogPublisherResponse(id string, schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int64, syslogFacility int64, asynchronous bool) *SyslogBasedAccessLogPublisherResponse {
+func NewSyslogBasedAccessLogPublisherResponse(schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int64, syslogFacility int64, asynchronous bool, id string) *SyslogBasedAccessLogPublisherResponse {
 	this := SyslogBasedAccessLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.ServerHostName = serverHostName
 	this.ServerPort = serverPort
 	this.SyslogFacility = syslogFacility
 	this.Asynchronous = asynchronous
+	this.Id = id
 	return &this
 }
 
@@ -143,30 +143,6 @@ func NewSyslogBasedAccessLogPublisherResponse(id string, schemas []EnumsyslogBas
 func NewSyslogBasedAccessLogPublisherResponseWithDefaults() *SyslogBasedAccessLogPublisherResponse {
 	this := SyslogBasedAccessLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SyslogBasedAccessLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SyslogBasedAccessLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SyslogBasedAccessLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1753,6 +1729,30 @@ func (o *SyslogBasedAccessLogPublisherResponse) SetUrnpingidentityschemasconfigu
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SyslogBasedAccessLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SyslogBasedAccessLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SyslogBasedAccessLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SyslogBasedAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1763,7 +1763,6 @@ func (o SyslogBasedAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 
 func (o SyslogBasedAccessLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["enabled"] = o.Enabled
 	toSerialize["serverHostName"] = o.ServerHostName
@@ -1905,6 +1904,7 @@ func (o SyslogBasedAccessLogPublisherResponse) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

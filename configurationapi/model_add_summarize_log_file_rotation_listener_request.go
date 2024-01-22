@@ -19,26 +19,26 @@ var _ MappedNullable = &AddSummarizeLogFileRotationListenerRequest{}
 
 // AddSummarizeLogFileRotationListenerRequest struct for AddSummarizeLogFileRotationListenerRequest
 type AddSummarizeLogFileRotationListenerRequest struct {
-	// Name of the new Log File Rotation Listener
-	ListenerName string                                          `json:"listenerName"`
-	Schemas      []EnumsummarizeLogFileRotationListenerSchemaUrn `json:"schemas"`
+	Schemas []EnumsummarizeLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The path to the directory in which the summarize-access-log output should be written. If no value is provided, the output file will be written into the same directory as the rotated log file.
 	OutputDirectory *string `json:"outputDirectory,omitempty"`
 	// A description for this Log File Rotation Listener
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log File Rotation Listener is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Log File Rotation Listener
+	ListenerName string `json:"listenerName"`
 }
 
 // NewAddSummarizeLogFileRotationListenerRequest instantiates a new AddSummarizeLogFileRotationListenerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSummarizeLogFileRotationListenerRequest(listenerName string, schemas []EnumsummarizeLogFileRotationListenerSchemaUrn, enabled bool) *AddSummarizeLogFileRotationListenerRequest {
+func NewAddSummarizeLogFileRotationListenerRequest(schemas []EnumsummarizeLogFileRotationListenerSchemaUrn, enabled bool, listenerName string) *AddSummarizeLogFileRotationListenerRequest {
 	this := AddSummarizeLogFileRotationListenerRequest{}
-	this.ListenerName = listenerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.ListenerName = listenerName
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewAddSummarizeLogFileRotationListenerRequest(listenerName string, schemas 
 func NewAddSummarizeLogFileRotationListenerRequestWithDefaults() *AddSummarizeLogFileRotationListenerRequest {
 	this := AddSummarizeLogFileRotationListenerRequest{}
 	return &this
-}
-
-// GetListenerName returns the ListenerName field value
-func (o *AddSummarizeLogFileRotationListenerRequest) GetListenerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ListenerName
-}
-
-// GetListenerNameOk returns a tuple with the ListenerName field value
-// and a boolean to check if the value has been set.
-func (o *AddSummarizeLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ListenerName, true
-}
-
-// SetListenerName sets field value
-func (o *AddSummarizeLogFileRotationListenerRequest) SetListenerName(v string) {
-	o.ListenerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -186,6 +162,30 @@ func (o *AddSummarizeLogFileRotationListenerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetListenerName returns the ListenerName field value
+func (o *AddSummarizeLogFileRotationListenerRequest) GetListenerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ListenerName
+}
+
+// GetListenerNameOk returns a tuple with the ListenerName field value
+// and a boolean to check if the value has been set.
+func (o *AddSummarizeLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ListenerName, true
+}
+
+// SetListenerName sets field value
+func (o *AddSummarizeLogFileRotationListenerRequest) SetListenerName(v string) {
+	o.ListenerName = v
+}
+
 func (o AddSummarizeLogFileRotationListenerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -196,7 +196,6 @@ func (o AddSummarizeLogFileRotationListenerRequest) MarshalJSON() ([]byte, error
 
 func (o AddSummarizeLogFileRotationListenerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["listenerName"] = o.ListenerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.OutputDirectory) {
 		toSerialize["outputDirectory"] = o.OutputDirectory
@@ -205,6 +204,7 @@ func (o AddSummarizeLogFileRotationListenerRequest) ToMap() (map[string]interfac
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["listenerName"] = o.ListenerName
 	return toSerialize, nil
 }
 

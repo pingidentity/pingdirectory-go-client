@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the SCIM Attribute | 
 **Schemas** | Pointer to [**[]EnumscimAttributeSchemaUrn**](EnumscimAttributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this SCIM Attribute | [optional] 
 **Name** | **string** | The name of the attribute. | 
@@ -18,12 +17,13 @@ Name | Type | Description | Notes
 **ReferenceType** | Pointer to **[]string** | Specifies the SCIM resource types that may be referenced. This property is only applicable for attributes that are of type &#39;reference&#39;. Valid values are: A SCIM resource type (e.g., &#39;User&#39; or &#39;Group&#39;), &#39;external&#39; - indicating the resource is an external resource (e.g., such as a photo), or &#39;uri&#39; - indicating that the reference is to a service endpoint or an identifier (such as a schema urn). | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the SCIM Attribute | 
 
 ## Methods
 
 ### NewScimAttributeResponse
 
-`func NewScimAttributeResponse(id string, name string, type_ EnumscimAttributeTypeProp, required bool, caseExact bool, multiValued bool, mutability EnumscimAttributeMutabilityProp, returned EnumscimAttributeReturnedProp, ) *ScimAttributeResponse`
+`func NewScimAttributeResponse(name string, type_ EnumscimAttributeTypeProp, required bool, caseExact bool, multiValued bool, mutability EnumscimAttributeMutabilityProp, returned EnumscimAttributeReturnedProp, id string, ) *ScimAttributeResponse`
 
 NewScimAttributeResponse instantiates a new ScimAttributeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -37,26 +37,6 @@ will change when the set of required properties is changed
 NewScimAttributeResponseWithDefaults instantiates a new ScimAttributeResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ScimAttributeResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ScimAttributeResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ScimAttributeResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -347,6 +327,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ScimAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ScimAttributeResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ScimAttributeResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ScimAttributeResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

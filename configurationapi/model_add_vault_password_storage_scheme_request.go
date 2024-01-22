@@ -19,9 +19,7 @@ var _ MappedNullable = &AddVaultPasswordStorageSchemeRequest{}
 
 // AddVaultPasswordStorageSchemeRequest struct for AddVaultPasswordStorageSchemeRequest
 type AddVaultPasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName string                                    `json:"schemeName"`
-	Schemas    []EnumvaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas []EnumvaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase.
 	VaultExternalServer string `json:"vaultExternalServer"`
 	// The default name of the field in JSON objects contained in the AWS Secrets Manager service that contains the password for the target user.
@@ -30,18 +28,20 @@ type AddVaultPasswordStorageSchemeRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddVaultPasswordStorageSchemeRequest instantiates a new AddVaultPasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddVaultPasswordStorageSchemeRequest(schemeName string, schemas []EnumvaultPasswordStorageSchemeSchemaUrn, vaultExternalServer string, enabled bool) *AddVaultPasswordStorageSchemeRequest {
+func NewAddVaultPasswordStorageSchemeRequest(schemas []EnumvaultPasswordStorageSchemeSchemaUrn, vaultExternalServer string, enabled bool, schemeName string) *AddVaultPasswordStorageSchemeRequest {
 	this := AddVaultPasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.VaultExternalServer = vaultExternalServer
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddVaultPasswordStorageSchemeRequest(schemeName string, schemas []Enumva
 func NewAddVaultPasswordStorageSchemeRequestWithDefaults() *AddVaultPasswordStorageSchemeRequest {
 	this := AddVaultPasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddVaultPasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddVaultPasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddVaultPasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddVaultPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddVaultPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddVaultPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["vaultExternalServer"] = o.VaultExternalServer
 	if !IsNil(o.DefaultField) {
@@ -233,6 +232,7 @@ func (o AddVaultPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, e
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

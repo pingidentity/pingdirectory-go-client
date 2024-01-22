@@ -1,14 +1,14 @@
-# \FailureLockoutActionApi
+# \FailureLockoutActionAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddFailureLockoutAction**](FailureLockoutActionApi.md#AddFailureLockoutAction) | **Post** /failure-lockout-actions | Add a new Failure Lockout Action to the config
-[**DeleteFailureLockoutAction**](FailureLockoutActionApi.md#DeleteFailureLockoutAction) | **Delete** /failure-lockout-actions/{failure-lockout-action-name} | Delete a Failure Lockout Action
-[**GetFailureLockoutAction**](FailureLockoutActionApi.md#GetFailureLockoutAction) | **Get** /failure-lockout-actions/{failure-lockout-action-name} | Returns a single Failure Lockout Action
-[**ListFailureLockoutActions**](FailureLockoutActionApi.md#ListFailureLockoutActions) | **Get** /failure-lockout-actions | Returns a list of all Failure Lockout Action objects
-[**UpdateFailureLockoutAction**](FailureLockoutActionApi.md#UpdateFailureLockoutAction) | **Patch** /failure-lockout-actions/{failure-lockout-action-name} | Update an existing Failure Lockout Action by name
+[**AddFailureLockoutAction**](FailureLockoutActionAPI.md#AddFailureLockoutAction) | **Post** /failure-lockout-actions | Add a new Failure Lockout Action to the config
+[**DeleteFailureLockoutAction**](FailureLockoutActionAPI.md#DeleteFailureLockoutAction) | **Delete** /failure-lockout-actions/{failure-lockout-action-name} | Delete a Failure Lockout Action
+[**GetFailureLockoutAction**](FailureLockoutActionAPI.md#GetFailureLockoutAction) | **Get** /failure-lockout-actions/{failure-lockout-action-name} | Returns a single Failure Lockout Action
+[**ListFailureLockoutActions**](FailureLockoutActionAPI.md#ListFailureLockoutActions) | **Get** /failure-lockout-actions | Returns a list of all Failure Lockout Action objects
+[**UpdateFailureLockoutAction**](FailureLockoutActionAPI.md#UpdateFailureLockoutAction) | **Patch** /failure-lockout-actions/{failure-lockout-action-name} | Update an existing Failure Lockout Action by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addFailureLockoutActionRequest := openapiclient.add_failure_lockout_action_request{AddDelayBindResponseFailureLockoutActionRequest: openapiclient.NewAddDelayBindResponseFailureLockoutActionRequest("ActionName_example", []openapiclient.EnumdelayBindResponseFailureLockoutActionSchemaUrn{openapiclient.Enumdelay-bind-response-failure-lockout-actionSchemaUrn("urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:delay-bind-response")}, "Delay_example")} // AddFailureLockoutActionRequest | Create a new Failure Lockout Action in the config
+    addFailureLockoutActionRequest := openapiclient.add_failure_lockout_action_request{AddDelayBindResponseFailureLockoutActionRequest: openapiclient.NewAddDelayBindResponseFailureLockoutActionRequest([]openapiclient.EnumdelayBindResponseFailureLockoutActionSchemaUrn{openapiclient.Enumdelay-bind-response-failure-lockout-actionSchemaUrn("urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:delay-bind-response")}, "Delay_example", "ActionName_example")} // AddFailureLockoutActionRequest | Create a new Failure Lockout Action in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FailureLockoutActionApi.AddFailureLockoutAction(context.Background()).AddFailureLockoutActionRequest(addFailureLockoutActionRequest).Execute()
+    resp, r, err := apiClient.FailureLockoutActionAPI.AddFailureLockoutAction(context.Background()).AddFailureLockoutActionRequest(addFailureLockoutActionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionApi.AddFailureLockoutAction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionAPI.AddFailureLockoutAction``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddFailureLockoutAction`: AddFailureLockoutAction200Response
-    fmt.Fprintf(os.Stdout, "Response from `FailureLockoutActionApi.AddFailureLockoutAction`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `FailureLockoutActionAPI.AddFailureLockoutAction`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.FailureLockoutActionApi.DeleteFailureLockoutAction(context.Background(), failureLockoutActionName).Execute()
+    r, err := apiClient.FailureLockoutActionAPI.DeleteFailureLockoutAction(context.Background(), failureLockoutActionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionApi.DeleteFailureLockoutAction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionAPI.DeleteFailureLockoutAction``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FailureLockoutActionApi.GetFailureLockoutAction(context.Background(), failureLockoutActionName).Execute()
+    resp, r, err := apiClient.FailureLockoutActionAPI.GetFailureLockoutAction(context.Background(), failureLockoutActionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionApi.GetFailureLockoutAction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionAPI.GetFailureLockoutAction``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetFailureLockoutAction`: AddFailureLockoutAction200Response
-    fmt.Fprintf(os.Stdout, "Response from `FailureLockoutActionApi.GetFailureLockoutAction`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `FailureLockoutActionAPI.GetFailureLockoutAction`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FailureLockoutActionApi.ListFailureLockoutActions(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.FailureLockoutActionAPI.ListFailureLockoutActions(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionApi.ListFailureLockoutActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionAPI.ListFailureLockoutActions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListFailureLockoutActions`: FailureLockoutActionListResponse
-    fmt.Fprintf(os.Stdout, "Response from `FailureLockoutActionApi.ListFailureLockoutActions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `FailureLockoutActionAPI.ListFailureLockoutActions`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FailureLockoutActionApi.UpdateFailureLockoutAction(context.Background(), failureLockoutActionName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.FailureLockoutActionAPI.UpdateFailureLockoutAction(context.Background(), failureLockoutActionName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionApi.UpdateFailureLockoutAction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionAPI.UpdateFailureLockoutAction``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateFailureLockoutAction`: AddFailureLockoutAction200Response
-    fmt.Fprintf(os.Stdout, "Response from `FailureLockoutActionApi.UpdateFailureLockoutAction`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `FailureLockoutActionAPI.UpdateFailureLockoutAction`: %v\n", resp)
 }
 ```
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &AddReferentialIntegrityPluginRequest{}
 
 // AddReferentialIntegrityPluginRequest struct for AddReferentialIntegrityPluginRequest
 type AddReferentialIntegrityPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                    `json:"pluginName"`
 	Schemas    []EnumreferentialIntegrityPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp                `json:"pluginType,omitempty"`
 	// Specifies the attribute types for which referential integrity is to be maintained.
@@ -37,18 +35,20 @@ type AddReferentialIntegrityPluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddReferentialIntegrityPluginRequest instantiates a new AddReferentialIntegrityPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddReferentialIntegrityPluginRequest(pluginName string, schemas []EnumreferentialIntegrityPluginSchemaUrn, attributeType []string, enabled bool) *AddReferentialIntegrityPluginRequest {
+func NewAddReferentialIntegrityPluginRequest(schemas []EnumreferentialIntegrityPluginSchemaUrn, attributeType []string, enabled bool, pluginName string) *AddReferentialIntegrityPluginRequest {
 	this := AddReferentialIntegrityPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.AttributeType = attributeType
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewAddReferentialIntegrityPluginRequest(pluginName string, schemas []Enumre
 func NewAddReferentialIntegrityPluginRequestWithDefaults() *AddReferentialIntegrityPluginRequest {
 	this := AddReferentialIntegrityPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddReferentialIntegrityPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddReferentialIntegrityPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddReferentialIntegrityPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -348,6 +324,30 @@ func (o *AddReferentialIntegrityPluginRequest) SetInvokeForInternalOperations(v 
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddReferentialIntegrityPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddReferentialIntegrityPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddReferentialIntegrityPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddReferentialIntegrityPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -358,7 +358,6 @@ func (o AddReferentialIntegrityPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddReferentialIntegrityPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
@@ -380,6 +379,7 @@ func (o AddReferentialIntegrityPluginRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

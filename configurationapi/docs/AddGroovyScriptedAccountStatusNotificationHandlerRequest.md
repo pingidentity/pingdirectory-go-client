@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Account Status Notification Handler | 
 **Schemas** | [**[]EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn**](EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Account Status Notification Handler. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Account Status Notification Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **AccountCreationNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which add requests should result in account creation notifications for this handler. | [optional] 
 **AccountDeletionNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which delete requests should result in account deletion notifications for this handler. | [optional] 
 **AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
+**HandlerName** | **string** | Name of the new Account Status Notification Handler | 
 
 ## Methods
 
 ### NewAddGroovyScriptedAccountStatusNotificationHandlerRequest
 
-`func NewAddGroovyScriptedAccountStatusNotificationHandlerRequest(handlerName string, schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn, scriptClass string, enabled bool, ) *AddGroovyScriptedAccountStatusNotificationHandlerRequest`
+`func NewAddGroovyScriptedAccountStatusNotificationHandlerRequest(schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn, scriptClass string, enabled bool, handlerName string, ) *AddGroovyScriptedAccountStatusNotificationHandlerRequest`
 
 NewAddGroovyScriptedAccountStatusNotificationHandlerRequest instantiates a new AddGroovyScriptedAccountStatusNotificationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewAddGroovyScriptedAccountStatusNotificationHandlerRequestWithDefaults instantiates a new AddGroovyScriptedAccountStatusNotificationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -289,6 +269,26 @@ SetAccountUpdateNotificationRequestCriteria sets AccountUpdateNotificationReques
 `func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) HasAccountUpdateNotificationRequestCriteria() bool`
 
 HasAccountUpdateNotificationRequestCriteria returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

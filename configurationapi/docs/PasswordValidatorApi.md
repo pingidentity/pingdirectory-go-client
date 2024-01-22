@@ -1,14 +1,14 @@
-# \PasswordValidatorApi
+# \PasswordValidatorAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPasswordValidator**](PasswordValidatorApi.md#AddPasswordValidator) | **Post** /password-validators | Add a new Password Validator to the config
-[**DeletePasswordValidator**](PasswordValidatorApi.md#DeletePasswordValidator) | **Delete** /password-validators/{password-validator-name} | Delete a Password Validator
-[**GetPasswordValidator**](PasswordValidatorApi.md#GetPasswordValidator) | **Get** /password-validators/{password-validator-name} | Returns a single Password Validator
-[**ListPasswordValidators**](PasswordValidatorApi.md#ListPasswordValidators) | **Get** /password-validators | Returns a list of all Password Validator objects
-[**UpdatePasswordValidator**](PasswordValidatorApi.md#UpdatePasswordValidator) | **Patch** /password-validators/{password-validator-name} | Update an existing Password Validator by name
+[**AddPasswordValidator**](PasswordValidatorAPI.md#AddPasswordValidator) | **Post** /password-validators | Add a new Password Validator to the config
+[**DeletePasswordValidator**](PasswordValidatorAPI.md#DeletePasswordValidator) | **Delete** /password-validators/{password-validator-name} | Delete a Password Validator
+[**GetPasswordValidator**](PasswordValidatorAPI.md#GetPasswordValidator) | **Get** /password-validators/{password-validator-name} | Returns a single Password Validator
+[**ListPasswordValidators**](PasswordValidatorAPI.md#ListPasswordValidators) | **Get** /password-validators | Returns a list of all Password Validator objects
+[**UpdatePasswordValidator**](PasswordValidatorAPI.md#UpdatePasswordValidator) | **Patch** /password-validators/{password-validator-name} | Update an existing Password Validator by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addPasswordValidatorRequest := openapiclient.add_password_validator_request{AddAttributeValuePasswordValidatorRequest: openapiclient.NewAddAttributeValuePasswordValidatorRequest("ValidatorName_example", []openapiclient.EnumattributeValuePasswordValidatorSchemaUrn{openapiclient.Enumattribute-value-password-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:password-validator:attribute-value")}, false, false)} // AddPasswordValidatorRequest | Create a new Password Validator in the config
+    addPasswordValidatorRequest := openapiclient.add_password_validator_request{AddAttributeValuePasswordValidatorRequest: openapiclient.NewAddAttributeValuePasswordValidatorRequest([]openapiclient.EnumattributeValuePasswordValidatorSchemaUrn{openapiclient.Enumattribute-value-password-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:password-validator:attribute-value")}, false, false, "ValidatorName_example")} // AddPasswordValidatorRequest | Create a new Password Validator in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordValidatorApi.AddPasswordValidator(context.Background()).AddPasswordValidatorRequest(addPasswordValidatorRequest).Execute()
+    resp, r, err := apiClient.PasswordValidatorAPI.AddPasswordValidator(context.Background()).AddPasswordValidatorRequest(addPasswordValidatorRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorApi.AddPasswordValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorAPI.AddPasswordValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddPasswordValidator`: AddPasswordValidator200Response
-    fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorApi.AddPasswordValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorAPI.AddPasswordValidator`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PasswordValidatorApi.DeletePasswordValidator(context.Background(), passwordValidatorName).Execute()
+    r, err := apiClient.PasswordValidatorAPI.DeletePasswordValidator(context.Background(), passwordValidatorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorApi.DeletePasswordValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorAPI.DeletePasswordValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordValidatorApi.GetPasswordValidator(context.Background(), passwordValidatorName).Execute()
+    resp, r, err := apiClient.PasswordValidatorAPI.GetPasswordValidator(context.Background(), passwordValidatorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorApi.GetPasswordValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorAPI.GetPasswordValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPasswordValidator`: GetPasswordValidator200Response
-    fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorApi.GetPasswordValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorAPI.GetPasswordValidator`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordValidatorApi.ListPasswordValidators(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.PasswordValidatorAPI.ListPasswordValidators(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorApi.ListPasswordValidators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorAPI.ListPasswordValidators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPasswordValidators`: PasswordValidatorListResponse
-    fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorApi.ListPasswordValidators`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorAPI.ListPasswordValidators`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordValidatorApi.UpdatePasswordValidator(context.Background(), passwordValidatorName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.PasswordValidatorAPI.UpdatePasswordValidator(context.Background(), passwordValidatorName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorApi.UpdatePasswordValidator``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorAPI.UpdatePasswordValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePasswordValidator`: GetPasswordValidator200Response
-    fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorApi.UpdatePasswordValidator`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorAPI.UpdatePasswordValidator`: %v\n", resp)
 }
 ```
 

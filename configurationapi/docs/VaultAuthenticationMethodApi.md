@@ -1,14 +1,14 @@
-# \VaultAuthenticationMethodApi
+# \VaultAuthenticationMethodAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddVaultAuthenticationMethod**](VaultAuthenticationMethodApi.md#AddVaultAuthenticationMethod) | **Post** /vault-authentication-methods | Add a new Vault Authentication Method to the config
-[**DeleteVaultAuthenticationMethod**](VaultAuthenticationMethodApi.md#DeleteVaultAuthenticationMethod) | **Delete** /vault-authentication-methods/{vault-authentication-method-name} | Delete a Vault Authentication Method
-[**GetVaultAuthenticationMethod**](VaultAuthenticationMethodApi.md#GetVaultAuthenticationMethod) | **Get** /vault-authentication-methods/{vault-authentication-method-name} | Returns a single Vault Authentication Method
-[**ListVaultAuthenticationMethods**](VaultAuthenticationMethodApi.md#ListVaultAuthenticationMethods) | **Get** /vault-authentication-methods | Returns a list of all Vault Authentication Method objects
-[**UpdateVaultAuthenticationMethod**](VaultAuthenticationMethodApi.md#UpdateVaultAuthenticationMethod) | **Patch** /vault-authentication-methods/{vault-authentication-method-name} | Update an existing Vault Authentication Method by name
+[**AddVaultAuthenticationMethod**](VaultAuthenticationMethodAPI.md#AddVaultAuthenticationMethod) | **Post** /vault-authentication-methods | Add a new Vault Authentication Method to the config
+[**DeleteVaultAuthenticationMethod**](VaultAuthenticationMethodAPI.md#DeleteVaultAuthenticationMethod) | **Delete** /vault-authentication-methods/{vault-authentication-method-name} | Delete a Vault Authentication Method
+[**GetVaultAuthenticationMethod**](VaultAuthenticationMethodAPI.md#GetVaultAuthenticationMethod) | **Get** /vault-authentication-methods/{vault-authentication-method-name} | Returns a single Vault Authentication Method
+[**ListVaultAuthenticationMethods**](VaultAuthenticationMethodAPI.md#ListVaultAuthenticationMethods) | **Get** /vault-authentication-methods | Returns a list of all Vault Authentication Method objects
+[**UpdateVaultAuthenticationMethod**](VaultAuthenticationMethodAPI.md#UpdateVaultAuthenticationMethod) | **Patch** /vault-authentication-methods/{vault-authentication-method-name} | Update an existing Vault Authentication Method by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addVaultAuthenticationMethodRequest := openapiclient.add_vault_authentication_method_request{AddAppRoleVaultAuthenticationMethodRequest: openapiclient.NewAddAppRoleVaultAuthenticationMethodRequest("MethodName_example", []openapiclient.EnumappRoleVaultAuthenticationMethodSchemaUrn{openapiclient.Enumapp-role-vault-authentication-methodSchemaUrn("urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:app-role")}, "VaultRoleID_example", "VaultSecretID_example")} // AddVaultAuthenticationMethodRequest | Create a new Vault Authentication Method in the config
+    addVaultAuthenticationMethodRequest := openapiclient.add_vault_authentication_method_request{AddAppRoleVaultAuthenticationMethodRequest: openapiclient.NewAddAppRoleVaultAuthenticationMethodRequest([]openapiclient.EnumappRoleVaultAuthenticationMethodSchemaUrn{openapiclient.Enumapp-role-vault-authentication-methodSchemaUrn("urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:app-role")}, "VaultRoleID_example", "VaultSecretID_example", "MethodName_example")} // AddVaultAuthenticationMethodRequest | Create a new Vault Authentication Method in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VaultAuthenticationMethodApi.AddVaultAuthenticationMethod(context.Background()).AddVaultAuthenticationMethodRequest(addVaultAuthenticationMethodRequest).Execute()
+    resp, r, err := apiClient.VaultAuthenticationMethodAPI.AddVaultAuthenticationMethod(context.Background()).AddVaultAuthenticationMethodRequest(addVaultAuthenticationMethodRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodApi.AddVaultAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodAPI.AddVaultAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddVaultAuthenticationMethod`: AddVaultAuthenticationMethod200Response
-    fmt.Fprintf(os.Stdout, "Response from `VaultAuthenticationMethodApi.AddVaultAuthenticationMethod`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VaultAuthenticationMethodAPI.AddVaultAuthenticationMethod`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VaultAuthenticationMethodApi.DeleteVaultAuthenticationMethod(context.Background(), vaultAuthenticationMethodName).Execute()
+    r, err := apiClient.VaultAuthenticationMethodAPI.DeleteVaultAuthenticationMethod(context.Background(), vaultAuthenticationMethodName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodApi.DeleteVaultAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodAPI.DeleteVaultAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VaultAuthenticationMethodApi.GetVaultAuthenticationMethod(context.Background(), vaultAuthenticationMethodName).Execute()
+    resp, r, err := apiClient.VaultAuthenticationMethodAPI.GetVaultAuthenticationMethod(context.Background(), vaultAuthenticationMethodName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodApi.GetVaultAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodAPI.GetVaultAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetVaultAuthenticationMethod`: AddVaultAuthenticationMethod200Response
-    fmt.Fprintf(os.Stdout, "Response from `VaultAuthenticationMethodApi.GetVaultAuthenticationMethod`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VaultAuthenticationMethodAPI.GetVaultAuthenticationMethod`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VaultAuthenticationMethodApi.ListVaultAuthenticationMethods(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.VaultAuthenticationMethodAPI.ListVaultAuthenticationMethods(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodApi.ListVaultAuthenticationMethods``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodAPI.ListVaultAuthenticationMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListVaultAuthenticationMethods`: VaultAuthenticationMethodListResponse
-    fmt.Fprintf(os.Stdout, "Response from `VaultAuthenticationMethodApi.ListVaultAuthenticationMethods`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VaultAuthenticationMethodAPI.ListVaultAuthenticationMethods`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VaultAuthenticationMethodApi.UpdateVaultAuthenticationMethod(context.Background(), vaultAuthenticationMethodName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.VaultAuthenticationMethodAPI.UpdateVaultAuthenticationMethod(context.Background(), vaultAuthenticationMethodName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodApi.UpdateVaultAuthenticationMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodAPI.UpdateVaultAuthenticationMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateVaultAuthenticationMethod`: AddVaultAuthenticationMethod200Response
-    fmt.Fprintf(os.Stdout, "Response from `VaultAuthenticationMethodApi.UpdateVaultAuthenticationMethod`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VaultAuthenticationMethodAPI.UpdateVaultAuthenticationMethod`: %v\n", resp)
 }
 ```
 

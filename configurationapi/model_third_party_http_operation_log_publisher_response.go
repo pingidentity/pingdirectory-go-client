@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyHttpOperationLogPublisherResponse{}
 
 // ThirdPartyHttpOperationLogPublisherResponse struct for ThirdPartyHttpOperationLogPublisherResponse
 type ThirdPartyHttpOperationLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id      string                                             `json:"id"`
 	Schemas []EnumthirdPartyHttpOperationLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party HTTP Operation Log Publisher.
 	ExtensionClass string `json:"extensionClass"`
@@ -33,18 +31,20 @@ type ThirdPartyHttpOperationLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewThirdPartyHttpOperationLogPublisherResponse instantiates a new ThirdPartyHttpOperationLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyHttpOperationLogPublisherResponse(id string, schemas []EnumthirdPartyHttpOperationLogPublisherSchemaUrn, extensionClass string, enabled bool) *ThirdPartyHttpOperationLogPublisherResponse {
+func NewThirdPartyHttpOperationLogPublisherResponse(schemas []EnumthirdPartyHttpOperationLogPublisherSchemaUrn, extensionClass string, enabled bool, id string) *ThirdPartyHttpOperationLogPublisherResponse {
 	this := ThirdPartyHttpOperationLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewThirdPartyHttpOperationLogPublisherResponse(id string, schemas []Enumthi
 func NewThirdPartyHttpOperationLogPublisherResponseWithDefaults() *ThirdPartyHttpOperationLogPublisherResponse {
 	this := ThirdPartyHttpOperationLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyHttpOperationLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyHttpOperationLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyHttpOperationLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -312,6 +288,30 @@ func (o *ThirdPartyHttpOperationLogPublisherResponse) SetUrnpingidentityschemasc
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyHttpOperationLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyHttpOperationLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyHttpOperationLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyHttpOperationLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -322,7 +322,6 @@ func (o ThirdPartyHttpOperationLogPublisherResponse) MarshalJSON() ([]byte, erro
 
 func (o ThirdPartyHttpOperationLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -341,6 +340,7 @@ func (o ThirdPartyHttpOperationLogPublisherResponse) ToMap() (map[string]interfa
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

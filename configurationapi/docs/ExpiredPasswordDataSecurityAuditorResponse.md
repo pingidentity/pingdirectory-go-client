@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Data Security Auditor | 
 **Schemas** | [**[]EnumexpiredPasswordDataSecurityAuditorSchemaUrn**](EnumexpiredPasswordDataSecurityAuditorSchemaUrn.md) |  | 
 **ReportFile** | **string** | Specifies the name of the detailed report file. | 
 **IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Data Security Auditor | 
 
 ## Methods
 
 ### NewExpiredPasswordDataSecurityAuditorResponse
 
-`func NewExpiredPasswordDataSecurityAuditorResponse(id string, schemas []EnumexpiredPasswordDataSecurityAuditorSchemaUrn, reportFile string, enabled bool, ) *ExpiredPasswordDataSecurityAuditorResponse`
+`func NewExpiredPasswordDataSecurityAuditorResponse(schemas []EnumexpiredPasswordDataSecurityAuditorSchemaUrn, reportFile string, enabled bool, id string, ) *ExpiredPasswordDataSecurityAuditorResponse`
 
 NewExpiredPasswordDataSecurityAuditorResponse instantiates a new ExpiredPasswordDataSecurityAuditorResponse object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewExpiredPasswordDataSecurityAuditorResponseWithDefaults instantiates a new ExpiredPasswordDataSecurityAuditorResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ExpiredPasswordDataSecurityAuditorResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ExpiredPasswordDataSecurityAuditorResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ExpiredPasswordDataSecurityAuditorResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -263,6 +243,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ExpiredPasswordDataSecurityAuditorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ExpiredPasswordDataSecurityAuditorResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ExpiredPasswordDataSecurityAuditorResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ExpiredPasswordDataSecurityAuditorResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

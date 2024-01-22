@@ -19,13 +19,15 @@ var _ MappedNullable = &PwnedPasswordsPasswordValidatorResponse{}
 
 // PwnedPasswordsPasswordValidatorResponse struct for PwnedPasswordsPasswordValidatorResponse
 type PwnedPasswordsPasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                         `json:"id"`
 	Schemas []EnumpwnedPasswordsPasswordValidatorSchemaUrn `json:"schemas"`
 	// The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches.
 	PwnedPasswordsBaseURL string `json:"pwnedPasswordsBaseURL"`
 	// A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
 	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
+	// The maximum length of time to wait to obtain an HTTP connection.
+	HttpConnectTimeout *string `json:"httpConnectTimeout,omitempty"`
+	// The maximum length of time to wait for a response to an HTTP request.
+	HttpResponseTimeout *string `json:"httpResponseTimeout,omitempty"`
 	// Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests.
 	InvokeForAdd bool `json:"invokeForAdd"`
 	// Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password.
@@ -48,15 +50,16 @@ type PwnedPasswordsPasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewPwnedPasswordsPasswordValidatorResponse instantiates a new PwnedPasswordsPasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPwnedPasswordsPasswordValidatorResponse(id string, schemas []EnumpwnedPasswordsPasswordValidatorSchemaUrn, pwnedPasswordsBaseURL string, invokeForAdd bool, invokeForSelfChange bool, invokeForAdminReset bool, acceptPasswordOnServiceError bool, enabled bool) *PwnedPasswordsPasswordValidatorResponse {
+func NewPwnedPasswordsPasswordValidatorResponse(schemas []EnumpwnedPasswordsPasswordValidatorSchemaUrn, pwnedPasswordsBaseURL string, invokeForAdd bool, invokeForSelfChange bool, invokeForAdminReset bool, acceptPasswordOnServiceError bool, enabled bool, id string) *PwnedPasswordsPasswordValidatorResponse {
 	this := PwnedPasswordsPasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PwnedPasswordsBaseURL = pwnedPasswordsBaseURL
 	this.InvokeForAdd = invokeForAdd
@@ -64,6 +67,7 @@ func NewPwnedPasswordsPasswordValidatorResponse(id string, schemas []EnumpwnedPa
 	this.InvokeForAdminReset = invokeForAdminReset
 	this.AcceptPasswordOnServiceError = acceptPasswordOnServiceError
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -73,30 +77,6 @@ func NewPwnedPasswordsPasswordValidatorResponse(id string, schemas []EnumpwnedPa
 func NewPwnedPasswordsPasswordValidatorResponseWithDefaults() *PwnedPasswordsPasswordValidatorResponse {
 	this := PwnedPasswordsPasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *PwnedPasswordsPasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PwnedPasswordsPasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *PwnedPasswordsPasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -177,6 +157,70 @@ func (o *PwnedPasswordsPasswordValidatorResponse) HasHttpProxyExternalServer() b
 // SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
 func (o *PwnedPasswordsPasswordValidatorResponse) SetHttpProxyExternalServer(v string) {
 	o.HttpProxyExternalServer = &v
+}
+
+// GetHttpConnectTimeout returns the HttpConnectTimeout field value if set, zero value otherwise.
+func (o *PwnedPasswordsPasswordValidatorResponse) GetHttpConnectTimeout() string {
+	if o == nil || IsNil(o.HttpConnectTimeout) {
+		var ret string
+		return ret
+	}
+	return *o.HttpConnectTimeout
+}
+
+// GetHttpConnectTimeoutOk returns a tuple with the HttpConnectTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PwnedPasswordsPasswordValidatorResponse) GetHttpConnectTimeoutOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpConnectTimeout) {
+		return nil, false
+	}
+	return o.HttpConnectTimeout, true
+}
+
+// HasHttpConnectTimeout returns a boolean if a field has been set.
+func (o *PwnedPasswordsPasswordValidatorResponse) HasHttpConnectTimeout() bool {
+	if o != nil && !IsNil(o.HttpConnectTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpConnectTimeout gets a reference to the given string and assigns it to the HttpConnectTimeout field.
+func (o *PwnedPasswordsPasswordValidatorResponse) SetHttpConnectTimeout(v string) {
+	o.HttpConnectTimeout = &v
+}
+
+// GetHttpResponseTimeout returns the HttpResponseTimeout field value if set, zero value otherwise.
+func (o *PwnedPasswordsPasswordValidatorResponse) GetHttpResponseTimeout() string {
+	if o == nil || IsNil(o.HttpResponseTimeout) {
+		var ret string
+		return ret
+	}
+	return *o.HttpResponseTimeout
+}
+
+// GetHttpResponseTimeoutOk returns a tuple with the HttpResponseTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PwnedPasswordsPasswordValidatorResponse) GetHttpResponseTimeoutOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpResponseTimeout) {
+		return nil, false
+	}
+	return o.HttpResponseTimeout, true
+}
+
+// HasHttpResponseTimeout returns a boolean if a field has been set.
+func (o *PwnedPasswordsPasswordValidatorResponse) HasHttpResponseTimeout() bool {
+	if o != nil && !IsNil(o.HttpResponseTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpResponseTimeout gets a reference to the given string and assigns it to the HttpResponseTimeout field.
+func (o *PwnedPasswordsPasswordValidatorResponse) SetHttpResponseTimeout(v string) {
+	o.HttpResponseTimeout = &v
 }
 
 // GetInvokeForAdd returns the InvokeForAdd field value
@@ -523,6 +567,30 @@ func (o *PwnedPasswordsPasswordValidatorResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *PwnedPasswordsPasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *PwnedPasswordsPasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *PwnedPasswordsPasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o PwnedPasswordsPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -533,11 +601,16 @@ func (o PwnedPasswordsPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o PwnedPasswordsPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["pwnedPasswordsBaseURL"] = o.PwnedPasswordsBaseURL
 	if !IsNil(o.HttpProxyExternalServer) {
 		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
+	}
+	if !IsNil(o.HttpConnectTimeout) {
+		toSerialize["httpConnectTimeout"] = o.HttpConnectTimeout
+	}
+	if !IsNil(o.HttpResponseTimeout) {
+		toSerialize["httpResponseTimeout"] = o.HttpResponseTimeout
 	}
 	toSerialize["invokeForAdd"] = o.InvokeForAdd
 	toSerialize["invokeForSelfChange"] = o.InvokeForSelfChange
@@ -565,6 +638,7 @@ func (o PwnedPasswordsPasswordValidatorResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

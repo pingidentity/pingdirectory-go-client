@@ -1,14 +1,14 @@
-# \TopologyAdminUserApi
+# \TopologyAdminUserAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddTopologyAdminUser**](TopologyAdminUserApi.md#AddTopologyAdminUser) | **Post** /topology-admin-users | Add a new Topology Admin User to the config
-[**DeleteTopologyAdminUser**](TopologyAdminUserApi.md#DeleteTopologyAdminUser) | **Delete** /topology-admin-users/{topology-admin-user-name} | Delete a Topology Admin User
-[**GetTopologyAdminUser**](TopologyAdminUserApi.md#GetTopologyAdminUser) | **Get** /topology-admin-users/{topology-admin-user-name} | Returns a single Topology Admin User
-[**ListTopologyAdminUsers**](TopologyAdminUserApi.md#ListTopologyAdminUsers) | **Get** /topology-admin-users | Returns a list of all Topology Admin User objects
-[**UpdateTopologyAdminUser**](TopologyAdminUserApi.md#UpdateTopologyAdminUser) | **Patch** /topology-admin-users/{topology-admin-user-name} | Update an existing Topology Admin User by name
+[**AddTopologyAdminUser**](TopologyAdminUserAPI.md#AddTopologyAdminUser) | **Post** /topology-admin-users | Add a new Topology Admin User to the config
+[**DeleteTopologyAdminUser**](TopologyAdminUserAPI.md#DeleteTopologyAdminUser) | **Delete** /topology-admin-users/{topology-admin-user-name} | Delete a Topology Admin User
+[**GetTopologyAdminUser**](TopologyAdminUserAPI.md#GetTopologyAdminUser) | **Get** /topology-admin-users/{topology-admin-user-name} | Returns a single Topology Admin User
+[**ListTopologyAdminUsers**](TopologyAdminUserAPI.md#ListTopologyAdminUsers) | **Get** /topology-admin-users | Returns a list of all Topology Admin User objects
+[**UpdateTopologyAdminUser**](TopologyAdminUserAPI.md#UpdateTopologyAdminUser) | **Patch** /topology-admin-users/{topology-admin-user-name} | Update an existing Topology Admin User by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopologyAdminUserApi.AddTopologyAdminUser(context.Background()).AddTopologyAdminUserRequest(addTopologyAdminUserRequest).Execute()
+    resp, r, err := apiClient.TopologyAdminUserAPI.AddTopologyAdminUser(context.Background()).AddTopologyAdminUserRequest(addTopologyAdminUserRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserApi.AddTopologyAdminUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserAPI.AddTopologyAdminUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddTopologyAdminUser`: TopologyAdminUserResponse
-    fmt.Fprintf(os.Stdout, "Response from `TopologyAdminUserApi.AddTopologyAdminUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TopologyAdminUserAPI.AddTopologyAdminUser`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TopologyAdminUserApi.DeleteTopologyAdminUser(context.Background(), topologyAdminUserName).Execute()
+    r, err := apiClient.TopologyAdminUserAPI.DeleteTopologyAdminUser(context.Background(), topologyAdminUserName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserApi.DeleteTopologyAdminUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserAPI.DeleteTopologyAdminUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopologyAdminUserApi.GetTopologyAdminUser(context.Background(), topologyAdminUserName).Execute()
+    resp, r, err := apiClient.TopologyAdminUserAPI.GetTopologyAdminUser(context.Background(), topologyAdminUserName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserApi.GetTopologyAdminUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserAPI.GetTopologyAdminUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTopologyAdminUser`: TopologyAdminUserResponse
-    fmt.Fprintf(os.Stdout, "Response from `TopologyAdminUserApi.GetTopologyAdminUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TopologyAdminUserAPI.GetTopologyAdminUser`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopologyAdminUserApi.ListTopologyAdminUsers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.TopologyAdminUserAPI.ListTopologyAdminUsers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserApi.ListTopologyAdminUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserAPI.ListTopologyAdminUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListTopologyAdminUsers`: TopologyAdminUserListResponse
-    fmt.Fprintf(os.Stdout, "Response from `TopologyAdminUserApi.ListTopologyAdminUsers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TopologyAdminUserAPI.ListTopologyAdminUsers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopologyAdminUserApi.UpdateTopologyAdminUser(context.Background(), topologyAdminUserName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.TopologyAdminUserAPI.UpdateTopologyAdminUser(context.Background(), topologyAdminUserName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserApi.UpdateTopologyAdminUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserAPI.UpdateTopologyAdminUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateTopologyAdminUser`: TopologyAdminUserResponse
-    fmt.Fprintf(os.Stdout, "Response from `TopologyAdminUserApi.UpdateTopologyAdminUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TopologyAdminUserAPI.UpdateTopologyAdminUser`: %v\n", resp)
 }
 ```
 

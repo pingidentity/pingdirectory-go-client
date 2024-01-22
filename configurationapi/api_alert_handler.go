@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AlertHandlerApiService AlertHandlerApi service
-type AlertHandlerApiService service
+// AlertHandlerAPIService AlertHandlerAPI service
+type AlertHandlerAPIService service
 
 type ApiAddAlertHandlerRequest struct {
 	ctx                    context.Context
-	ApiService             *AlertHandlerApiService
+	ApiService             *AlertHandlerAPIService
 	addAlertHandlerRequest *AddAlertHandlerRequest
 }
 
@@ -44,7 +44,7 @@ AddAlertHandler Add a new Alert Handler to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddAlertHandlerRequest
 */
-func (a *AlertHandlerApiService) AddAlertHandler(ctx context.Context) ApiAddAlertHandlerRequest {
+func (a *AlertHandlerAPIService) AddAlertHandler(ctx context.Context) ApiAddAlertHandlerRequest {
 	return ApiAddAlertHandlerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *AlertHandlerApiService) AddAlertHandler(ctx context.Context) ApiAddAler
 // Execute executes the request
 //
 //	@return AddAlertHandler200Response
-func (a *AlertHandlerApiService) AddAlertHandlerExecute(r ApiAddAlertHandlerRequest) (*AddAlertHandler200Response, *http.Response, error) {
+func (a *AlertHandlerAPIService) AddAlertHandlerExecute(r ApiAddAlertHandlerRequest) (*AddAlertHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *AlertHandlerApiService) AddAlertHandlerExecute(r ApiAddAlertHandlerRequ
 		localVarReturnValue *AddAlertHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerApiService.AddAlertHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerAPIService.AddAlertHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *AlertHandlerApiService) AddAlertHandlerExecute(r ApiAddAlertHandlerRequ
 
 type ApiDeleteAlertHandlerRequest struct {
 	ctx              context.Context
-	ApiService       *AlertHandlerApiService
+	ApiService       *AlertHandlerAPIService
 	alertHandlerName string
 }
 
@@ -149,7 +149,7 @@ DeleteAlertHandler Delete a Alert Handler
 	@param alertHandlerName Name of the Alert Handler
 	@return ApiDeleteAlertHandlerRequest
 */
-func (a *AlertHandlerApiService) DeleteAlertHandler(ctx context.Context, alertHandlerName string) ApiDeleteAlertHandlerRequest {
+func (a *AlertHandlerAPIService) DeleteAlertHandler(ctx context.Context, alertHandlerName string) ApiDeleteAlertHandlerRequest {
 	return ApiDeleteAlertHandlerRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -158,14 +158,14 @@ func (a *AlertHandlerApiService) DeleteAlertHandler(ctx context.Context, alertHa
 }
 
 // Execute executes the request
-func (a *AlertHandlerApiService) DeleteAlertHandlerExecute(r ApiDeleteAlertHandlerRequest) (*http.Response, error) {
+func (a *AlertHandlerAPIService) DeleteAlertHandlerExecute(r ApiDeleteAlertHandlerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerApiService.DeleteAlertHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerAPIService.DeleteAlertHandler")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *AlertHandlerApiService) DeleteAlertHandlerExecute(r ApiDeleteAlertHandl
 
 type ApiGetAlertHandlerRequest struct {
 	ctx              context.Context
-	ApiService       *AlertHandlerApiService
+	ApiService       *AlertHandlerAPIService
 	alertHandlerName string
 }
 
@@ -239,7 +239,7 @@ GetAlertHandler Returns a single Alert Handler
 	@param alertHandlerName Name of the Alert Handler
 	@return ApiGetAlertHandlerRequest
 */
-func (a *AlertHandlerApiService) GetAlertHandler(ctx context.Context, alertHandlerName string) ApiGetAlertHandlerRequest {
+func (a *AlertHandlerAPIService) GetAlertHandler(ctx context.Context, alertHandlerName string) ApiGetAlertHandlerRequest {
 	return ApiGetAlertHandlerRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -250,7 +250,7 @@ func (a *AlertHandlerApiService) GetAlertHandler(ctx context.Context, alertHandl
 // Execute executes the request
 //
 //	@return GetAlertHandler200Response
-func (a *AlertHandlerApiService) GetAlertHandlerExecute(r ApiGetAlertHandlerRequest) (*GetAlertHandler200Response, *http.Response, error) {
+func (a *AlertHandlerAPIService) GetAlertHandlerExecute(r ApiGetAlertHandlerRequest) (*GetAlertHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *AlertHandlerApiService) GetAlertHandlerExecute(r ApiGetAlertHandlerRequ
 		localVarReturnValue *GetAlertHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerApiService.GetAlertHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerAPIService.GetAlertHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *AlertHandlerApiService) GetAlertHandlerExecute(r ApiGetAlertHandlerRequ
 
 type ApiListAlertHandlersRequest struct {
 	ctx        context.Context
-	ApiService *AlertHandlerApiService
+	ApiService *AlertHandlerAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListAlertHandlers Returns a list of all Alert Handler objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListAlertHandlersRequest
 */
-func (a *AlertHandlerApiService) ListAlertHandlers(ctx context.Context) ApiListAlertHandlersRequest {
+func (a *AlertHandlerAPIService) ListAlertHandlers(ctx context.Context) ApiListAlertHandlersRequest {
 	return ApiListAlertHandlersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *AlertHandlerApiService) ListAlertHandlers(ctx context.Context) ApiListA
 // Execute executes the request
 //
 //	@return AlertHandlerListResponse
-func (a *AlertHandlerApiService) ListAlertHandlersExecute(r ApiListAlertHandlersRequest) (*AlertHandlerListResponse, *http.Response, error) {
+func (a *AlertHandlerAPIService) ListAlertHandlersExecute(r ApiListAlertHandlersRequest) (*AlertHandlerListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *AlertHandlerApiService) ListAlertHandlersExecute(r ApiListAlertHandlers
 		localVarReturnValue *AlertHandlerListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerApiService.ListAlertHandlers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerAPIService.ListAlertHandlers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *AlertHandlerApiService) ListAlertHandlersExecute(r ApiListAlertHandlers
 
 type ApiUpdateAlertHandlerRequest struct {
 	ctx              context.Context
-	ApiService       *AlertHandlerApiService
+	ApiService       *AlertHandlerAPIService
 	alertHandlerName string
 	updateRequest    *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateAlertHandler Update an existing Alert Handler by name
 	@param alertHandlerName Name of the Alert Handler
 	@return ApiUpdateAlertHandlerRequest
 */
-func (a *AlertHandlerApiService) UpdateAlertHandler(ctx context.Context, alertHandlerName string) ApiUpdateAlertHandlerRequest {
+func (a *AlertHandlerAPIService) UpdateAlertHandler(ctx context.Context, alertHandlerName string) ApiUpdateAlertHandlerRequest {
 	return ApiUpdateAlertHandlerRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -467,7 +467,7 @@ func (a *AlertHandlerApiService) UpdateAlertHandler(ctx context.Context, alertHa
 // Execute executes the request
 //
 //	@return GetAlertHandler200Response
-func (a *AlertHandlerApiService) UpdateAlertHandlerExecute(r ApiUpdateAlertHandlerRequest) (*GetAlertHandler200Response, *http.Response, error) {
+func (a *AlertHandlerAPIService) UpdateAlertHandlerExecute(r ApiUpdateAlertHandlerRequest) (*GetAlertHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *AlertHandlerApiService) UpdateAlertHandlerExecute(r ApiUpdateAlertHandl
 		localVarReturnValue *GetAlertHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerApiService.UpdateAlertHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerAPIService.UpdateAlertHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

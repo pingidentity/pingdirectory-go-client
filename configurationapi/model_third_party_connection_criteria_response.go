@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyConnectionCriteriaResponse{}
 
 // ThirdPartyConnectionCriteriaResponse struct for ThirdPartyConnectionCriteriaResponse
 type ThirdPartyConnectionCriteriaResponse struct {
-	// Name of the Connection Criteria
-	Id      string                                      `json:"id"`
 	Schemas []EnumthirdPartyConnectionCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Connection Criteria.
 	ExtensionClass string `json:"extensionClass"`
@@ -30,17 +28,19 @@ type ThirdPartyConnectionCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Connection Criteria
+	Id string `json:"id"`
 }
 
 // NewThirdPartyConnectionCriteriaResponse instantiates a new ThirdPartyConnectionCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyConnectionCriteriaResponse(id string, schemas []EnumthirdPartyConnectionCriteriaSchemaUrn, extensionClass string) *ThirdPartyConnectionCriteriaResponse {
+func NewThirdPartyConnectionCriteriaResponse(schemas []EnumthirdPartyConnectionCriteriaSchemaUrn, extensionClass string, id string) *ThirdPartyConnectionCriteriaResponse {
 	this := ThirdPartyConnectionCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.Id = id
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewThirdPartyConnectionCriteriaResponse(id string, schemas []EnumthirdParty
 func NewThirdPartyConnectionCriteriaResponseWithDefaults() *ThirdPartyConnectionCriteriaResponse {
 	this := ThirdPartyConnectionCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyConnectionCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyConnectionCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyConnectionCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -252,6 +228,30 @@ func (o *ThirdPartyConnectionCriteriaResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyConnectionCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyConnectionCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyConnectionCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyConnectionCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -262,7 +262,6 @@ func (o ThirdPartyConnectionCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o ThirdPartyConnectionCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -277,6 +276,7 @@ func (o ThirdPartyConnectionCriteriaResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

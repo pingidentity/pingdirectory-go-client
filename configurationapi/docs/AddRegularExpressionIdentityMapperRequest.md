@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MapperName** | **string** | Name of the new Identity Mapper | 
 **Schemas** | [**[]EnumregularExpressionIdentityMapperSchemaUrn**](EnumregularExpressionIdentityMapperSchemaUrn.md) |  | 
 **MatchAttribute** | Pointer to **[]string** | Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression. | [optional] 
 **MatchBaseDN** | Pointer to **[]string** | Specifies the base DN(s) that should be used when performing searches to map the provided ID string to a user entry. If multiple values are given, searches are performed below all the specified base DNs. | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **ReplacePattern** | Pointer to **string** | Specifies the replacement pattern that should be used for substrings in the ID string that match the provided regular expression pattern. | [optional] 
 **Description** | Pointer to **string** | A description for this Identity Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Identity Mapper is enabled for use. | 
+**MapperName** | **string** | Name of the new Identity Mapper | 
 
 ## Methods
 
 ### NewAddRegularExpressionIdentityMapperRequest
 
-`func NewAddRegularExpressionIdentityMapperRequest(mapperName string, schemas []EnumregularExpressionIdentityMapperSchemaUrn, matchPattern string, enabled bool, ) *AddRegularExpressionIdentityMapperRequest`
+`func NewAddRegularExpressionIdentityMapperRequest(schemas []EnumregularExpressionIdentityMapperSchemaUrn, matchPattern string, enabled bool, mapperName string, ) *AddRegularExpressionIdentityMapperRequest`
 
 NewAddRegularExpressionIdentityMapperRequest instantiates a new AddRegularExpressionIdentityMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddRegularExpressionIdentityMapperRequestWithDefaults instantiates a new AddRegularExpressionIdentityMapperRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMapperName
-
-`func (o *AddRegularExpressionIdentityMapperRequest) GetMapperName() string`
-
-GetMapperName returns the MapperName field if non-nil, zero value otherwise.
-
-### GetMapperNameOk
-
-`func (o *AddRegularExpressionIdentityMapperRequest) GetMapperNameOk() (*string, bool)`
-
-GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMapperName
-
-`func (o *AddRegularExpressionIdentityMapperRequest) SetMapperName(v string)`
-
-SetMapperName sets MapperName field to given value.
-
 
 ### GetSchemas
 
@@ -236,6 +216,26 @@ and a boolean to check if the value has been set.
 `func (o *AddRegularExpressionIdentityMapperRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetMapperName
+
+`func (o *AddRegularExpressionIdentityMapperRequest) GetMapperName() string`
+
+GetMapperName returns the MapperName field if non-nil, zero value otherwise.
+
+### GetMapperNameOk
+
+`func (o *AddRegularExpressionIdentityMapperRequest) GetMapperNameOk() (*string, bool)`
+
+GetMapperNameOk returns a tuple with the MapperName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMapperName
+
+`func (o *AddRegularExpressionIdentityMapperRequest) SetMapperName(v string)`
+
+SetMapperName sets MapperName field to given value.
 
 
 

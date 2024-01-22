@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
 tags:
 - description: Access external-servers
   name: external-server
@@ -2241,6 +2241,14 @@ components:
           type: string
           description: >-
               The mechanism used to authenticate to the Vault server.
+        httpConnectTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait to obtain an HTTP connection.
+        httpResponseTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait for a response to an HTTP request.
         trustStoreFile:
           type: string
           description: >-
@@ -3118,6 +3126,14 @@ components:
           type: string
           description: >-
               The name of the account with which the desired secrets are associated.
+        httpConnectTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait to obtain an HTTP connection.
+        httpResponseTimeout:
+          type: string
+          description: >-
+              The maximum length of time to wait for a response to an HTTP request.
         trustStoreFile:
           type: string
           description: >-

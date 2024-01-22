@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyExtendedOperationHandlerRequest{}
 
 // AddThirdPartyExtendedOperationHandlerRequest struct for AddThirdPartyExtendedOperationHandlerRequest
 type AddThirdPartyExtendedOperationHandlerRequest struct {
-	// Name of the new Extended Operation Handler
-	HandlerName string                                            `json:"handlerName"`
-	Schemas     []EnumthirdPartyExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Extended Operation Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Extended Operation Handler. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddThirdPartyExtendedOperationHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
 	Enabled bool `json:"enabled"`
+	// Name of the new Extended Operation Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddThirdPartyExtendedOperationHandlerRequest instantiates a new AddThirdPartyExtendedOperationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyExtendedOperationHandlerRequest(handlerName string, schemas []EnumthirdPartyExtendedOperationHandlerSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyExtendedOperationHandlerRequest {
+func NewAddThirdPartyExtendedOperationHandlerRequest(schemas []EnumthirdPartyExtendedOperationHandlerSchemaUrn, extensionClass string, enabled bool, handlerName string) *AddThirdPartyExtendedOperationHandlerRequest {
 	this := AddThirdPartyExtendedOperationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddThirdPartyExtendedOperationHandlerRequest(handlerName string, schemas
 func NewAddThirdPartyExtendedOperationHandlerRequestWithDefaults() *AddThirdPartyExtendedOperationHandlerRequest {
 	this := AddThirdPartyExtendedOperationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddThirdPartyExtendedOperationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddThirdPartyExtendedOperationHandlerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddThirdPartyExtendedOperationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddThirdPartyExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddThirdPartyExtendedOperationHandlerRequest) MarshalJSON() ([]byte, err
 
 func (o AddThirdPartyExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -233,6 +232,7 @@ func (o AddThirdPartyExtendedOperationHandlerRequest) ToMap() (map[string]interf
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

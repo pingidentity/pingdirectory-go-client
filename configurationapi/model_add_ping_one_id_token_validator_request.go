@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPingOneIdTokenValidatorRequest{}
 
 // AddPingOneIdTokenValidatorRequest struct for AddPingOneIdTokenValidatorRequest
 type AddPingOneIdTokenValidatorRequest struct {
-	// Name of the new ID Token Validator
-	ValidatorName string                                 `json:"validatorName"`
-	Schemas       []EnumpingOneIdTokenValidatorSchemaUrn `json:"schemas"`
+	Schemas []EnumpingOneIdTokenValidatorSchemaUrn `json:"schemas"`
 	// Specifies a PingOne base issuer URL.
 	IssuerURL string `json:"issuerURL"`
 	// Specifies HTTPS connection settings for the PingOne OpenID Connect provider.
@@ -42,20 +40,22 @@ type AddPingOneIdTokenValidatorRequest struct {
 	JwksCacheDuration *string `json:"jwksCacheDuration,omitempty"`
 	// When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
 	EvaluationOrderIndex int64 `json:"evaluationOrderIndex"`
+	// Name of the new ID Token Validator
+	ValidatorName string `json:"validatorName"`
 }
 
 // NewAddPingOneIdTokenValidatorRequest instantiates a new AddPingOneIdTokenValidatorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingOneIdTokenValidatorRequest(validatorName string, schemas []EnumpingOneIdTokenValidatorSchemaUrn, issuerURL string, enabled bool, identityMapper string, evaluationOrderIndex int64) *AddPingOneIdTokenValidatorRequest {
+func NewAddPingOneIdTokenValidatorRequest(schemas []EnumpingOneIdTokenValidatorSchemaUrn, issuerURL string, enabled bool, identityMapper string, evaluationOrderIndex int64, validatorName string) *AddPingOneIdTokenValidatorRequest {
 	this := AddPingOneIdTokenValidatorRequest{}
-	this.ValidatorName = validatorName
 	this.Schemas = schemas
 	this.IssuerURL = issuerURL
 	this.Enabled = enabled
 	this.IdentityMapper = identityMapper
 	this.EvaluationOrderIndex = evaluationOrderIndex
+	this.ValidatorName = validatorName
 	return &this
 }
 
@@ -65,30 +65,6 @@ func NewAddPingOneIdTokenValidatorRequest(validatorName string, schemas []Enumpi
 func NewAddPingOneIdTokenValidatorRequestWithDefaults() *AddPingOneIdTokenValidatorRequest {
 	this := AddPingOneIdTokenValidatorRequest{}
 	return &this
-}
-
-// GetValidatorName returns the ValidatorName field value
-func (o *AddPingOneIdTokenValidatorRequest) GetValidatorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ValidatorName
-}
-
-// GetValidatorNameOk returns a tuple with the ValidatorName field value
-// and a boolean to check if the value has been set.
-func (o *AddPingOneIdTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ValidatorName, true
-}
-
-// SetValidatorName sets field value
-func (o *AddPingOneIdTokenValidatorRequest) SetValidatorName(v string) {
-	o.ValidatorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -403,6 +379,30 @@ func (o *AddPingOneIdTokenValidatorRequest) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 
+// GetValidatorName returns the ValidatorName field value
+func (o *AddPingOneIdTokenValidatorRequest) GetValidatorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ValidatorName
+}
+
+// GetValidatorNameOk returns a tuple with the ValidatorName field value
+// and a boolean to check if the value has been set.
+func (o *AddPingOneIdTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ValidatorName, true
+}
+
+// SetValidatorName sets field value
+func (o *AddPingOneIdTokenValidatorRequest) SetValidatorName(v string) {
+	o.ValidatorName = v
+}
+
 func (o AddPingOneIdTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -413,7 +413,6 @@ func (o AddPingOneIdTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPingOneIdTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["validatorName"] = o.ValidatorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["issuerURL"] = o.IssuerURL
 	if !IsNil(o.OpenIDConnectProvider) {
@@ -437,6 +436,7 @@ func (o AddPingOneIdTokenValidatorRequest) ToMap() (map[string]interface{}, erro
 		toSerialize["jwksCacheDuration"] = o.JwksCacheDuration
 	}
 	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	toSerialize["validatorName"] = o.ValidatorName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &UnboundidDeliveredOtpSaslMechanismHandlerResponse{}
 
 // UnboundidDeliveredOtpSaslMechanismHandlerResponse struct for UnboundidDeliveredOtpSaslMechanismHandlerResponse
 type UnboundidDeliveredOtpSaslMechanismHandlerResponse struct {
-	// Name of the SASL Mechanism Handler
-	Id      string                                                   `json:"id"`
 	Schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \"u:\"-style identities.
 	IdentityMapper string `json:"identityMapper"`
@@ -32,19 +30,21 @@ type UnboundidDeliveredOtpSaslMechanismHandlerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the SASL Mechanism Handler
+	Id string `json:"id"`
 }
 
 // NewUnboundidDeliveredOtpSaslMechanismHandlerResponse instantiates a new UnboundidDeliveredOtpSaslMechanismHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnboundidDeliveredOtpSaslMechanismHandlerResponse(id string, schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, otpValidityDuration string, enabled bool) *UnboundidDeliveredOtpSaslMechanismHandlerResponse {
+func NewUnboundidDeliveredOtpSaslMechanismHandlerResponse(schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, otpValidityDuration string, enabled bool, id string) *UnboundidDeliveredOtpSaslMechanismHandlerResponse {
 	this := UnboundidDeliveredOtpSaslMechanismHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.IdentityMapper = identityMapper
 	this.OtpValidityDuration = otpValidityDuration
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewUnboundidDeliveredOtpSaslMechanismHandlerResponse(id string, schemas []E
 func NewUnboundidDeliveredOtpSaslMechanismHandlerResponseWithDefaults() *UnboundidDeliveredOtpSaslMechanismHandlerResponse {
 	this := UnboundidDeliveredOtpSaslMechanismHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -272,6 +248,30 @@ func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) SetUrnpingidentitysc
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o UnboundidDeliveredOtpSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -282,7 +282,6 @@ func (o UnboundidDeliveredOtpSaslMechanismHandlerResponse) MarshalJSON() ([]byte
 
 func (o UnboundidDeliveredOtpSaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["identityMapper"] = o.IdentityMapper
 	toSerialize["otpValidityDuration"] = o.OtpValidityDuration
@@ -296,6 +295,7 @@ func (o UnboundidDeliveredOtpSaslMechanismHandlerResponse) ToMap() (map[string]i
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

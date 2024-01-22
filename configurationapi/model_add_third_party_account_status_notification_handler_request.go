@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyAccountStatusNotificationHandlerRequest{}
 
 // AddThirdPartyAccountStatusNotificationHandlerRequest struct for AddThirdPartyAccountStatusNotificationHandlerRequest
 type AddThirdPartyAccountStatusNotificationHandlerRequest struct {
-	// Name of the new Account Status Notification Handler
-	HandlerName string                                                    `json:"handlerName"`
-	Schemas     []EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Account Status Notification Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Account Status Notification Handler. Each configuration property should be given in the form 'name=value'.
@@ -40,18 +38,20 @@ type AddThirdPartyAccountStatusNotificationHandlerRequest struct {
 	AccountDeletionNotificationRequestCriteria *string `json:"accountDeletionNotificationRequestCriteria,omitempty"`
 	// A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler.
 	AccountUpdateNotificationRequestCriteria *string `json:"accountUpdateNotificationRequestCriteria,omitempty"`
+	// Name of the new Account Status Notification Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddThirdPartyAccountStatusNotificationHandlerRequest instantiates a new AddThirdPartyAccountStatusNotificationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyAccountStatusNotificationHandlerRequest(handlerName string, schemas []EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyAccountStatusNotificationHandlerRequest {
+func NewAddThirdPartyAccountStatusNotificationHandlerRequest(schemas []EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn, extensionClass string, enabled bool, handlerName string) *AddThirdPartyAccountStatusNotificationHandlerRequest {
 	this := AddThirdPartyAccountStatusNotificationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewAddThirdPartyAccountStatusNotificationHandlerRequest(handlerName string,
 func NewAddThirdPartyAccountStatusNotificationHandlerRequestWithDefaults() *AddThirdPartyAccountStatusNotificationHandlerRequest {
 	this := AddThirdPartyAccountStatusNotificationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -383,6 +359,30 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) SetAccountUpdateN
 	o.AccountUpdateNotificationRequestCriteria = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddThirdPartyAccountStatusNotificationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -393,7 +393,6 @@ func (o AddThirdPartyAccountStatusNotificationHandlerRequest) MarshalJSON() ([]b
 
 func (o AddThirdPartyAccountStatusNotificationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -418,6 +417,7 @@ func (o AddThirdPartyAccountStatusNotificationHandlerRequest) ToMap() (map[strin
 	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

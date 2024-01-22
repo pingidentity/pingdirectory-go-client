@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute Category. | 
 **Schemas** | Pointer to [**[]EnumdelegatedAdminAttributeCategorySchemaUrn**](EnumdelegatedAdminAttributeCategorySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute Category | [optional] 
+**DisplayName** | **string** | Name of the new Delegated Admin Attribute Category | 
 **DisplayOrderIndex** | **int64** | Delegated Admin Attribute Categories are ordered for display based on this index from least to greatest. | 
 
 ## Methods
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewAddDelegatedAdminAttributeCategoryRequestWithDefaults instantiates a new AddDelegatedAdminAttributeCategoryRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetDisplayName
-
-`func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayName() string`
-
-GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
-
-### GetDisplayNameOk
-
-`func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayNameOk() (*string, bool)`
-
-GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisplayName
-
-`func (o *AddDelegatedAdminAttributeCategoryRequest) SetDisplayName(v string)`
-
-SetDisplayName sets DisplayName field to given value.
-
 
 ### GetSchemas
 
@@ -97,6 +77,26 @@ SetDescription sets Description field to given value.
 `func (o *AddDelegatedAdminAttributeCategoryRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetDisplayName
+
+`func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayName() string`
+
+GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
+
+### GetDisplayNameOk
+
+`func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayNameOk() (*string, bool)`
+
+GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayName
+
+`func (o *AddDelegatedAdminAttributeCategoryRequest) SetDisplayName(v string)`
+
+SetDisplayName sets DisplayName field to given value.
+
 
 ### GetDisplayOrderIndex
 

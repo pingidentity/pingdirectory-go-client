@@ -19,11 +19,11 @@ var _ MappedNullable = &AddLocationRequest{}
 
 // AddLocationRequest struct for AddLocationRequest
 type AddLocationRequest struct {
-	// Name of the new Location
-	LocationName string                  `json:"locationName"`
-	Schemas      []EnumlocationSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumlocationSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Location
 	Description *string `json:"description,omitempty"`
+	// Name of the new Location
+	LocationName string `json:"locationName"`
 }
 
 // NewAddLocationRequest instantiates a new AddLocationRequest object
@@ -42,30 +42,6 @@ func NewAddLocationRequest(locationName string) *AddLocationRequest {
 func NewAddLocationRequestWithDefaults() *AddLocationRequest {
 	this := AddLocationRequest{}
 	return &this
-}
-
-// GetLocationName returns the LocationName field value
-func (o *AddLocationRequest) GetLocationName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.LocationName
-}
-
-// GetLocationNameOk returns a tuple with the LocationName field value
-// and a boolean to check if the value has been set.
-func (o *AddLocationRequest) GetLocationNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.LocationName, true
-}
-
-// SetLocationName sets field value
-func (o *AddLocationRequest) SetLocationName(v string) {
-	o.LocationName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -132,6 +108,30 @@ func (o *AddLocationRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetLocationName returns the LocationName field value
+func (o *AddLocationRequest) GetLocationName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.LocationName
+}
+
+// GetLocationNameOk returns a tuple with the LocationName field value
+// and a boolean to check if the value has been set.
+func (o *AddLocationRequest) GetLocationNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.LocationName, true
+}
+
+// SetLocationName sets field value
+func (o *AddLocationRequest) SetLocationName(v string) {
+	o.LocationName = v
+}
+
 func (o AddLocationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -142,13 +142,13 @@ func (o AddLocationRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLocationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["locationName"] = o.LocationName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["locationName"] = o.LocationName
 	return toSerialize, nil
 }
 

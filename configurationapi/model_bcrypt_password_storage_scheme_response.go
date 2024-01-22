@@ -19,8 +19,6 @@ var _ MappedNullable = &BcryptPasswordStorageSchemeResponse{}
 
 // BcryptPasswordStorageSchemeResponse struct for BcryptPasswordStorageSchemeResponse
 type BcryptPasswordStorageSchemeResponse struct {
-	// Name of the Password Storage Scheme
-	Id      string                                     `json:"id"`
 	Schemas []EnumbcryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive.
 	BcryptCostFactor *int64 `json:"bcryptCostFactor,omitempty"`
@@ -30,17 +28,19 @@ type BcryptPasswordStorageSchemeResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Storage Scheme
+	Id string `json:"id"`
 }
 
 // NewBcryptPasswordStorageSchemeResponse instantiates a new BcryptPasswordStorageSchemeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBcryptPasswordStorageSchemeResponse(id string, schemas []EnumbcryptPasswordStorageSchemeSchemaUrn, enabled bool) *BcryptPasswordStorageSchemeResponse {
+func NewBcryptPasswordStorageSchemeResponse(schemas []EnumbcryptPasswordStorageSchemeSchemaUrn, enabled bool, id string) *BcryptPasswordStorageSchemeResponse {
 	this := BcryptPasswordStorageSchemeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewBcryptPasswordStorageSchemeResponse(id string, schemas []EnumbcryptPassw
 func NewBcryptPasswordStorageSchemeResponseWithDefaults() *BcryptPasswordStorageSchemeResponse {
 	this := BcryptPasswordStorageSchemeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *BcryptPasswordStorageSchemeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *BcryptPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *BcryptPasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -252,6 +228,30 @@ func (o *BcryptPasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *BcryptPasswordStorageSchemeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *BcryptPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *BcryptPasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o BcryptPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -262,7 +262,6 @@ func (o BcryptPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 
 func (o BcryptPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.BcryptCostFactor) {
 		toSerialize["bcryptCostFactor"] = o.BcryptCostFactor
@@ -277,6 +276,7 @@ func (o BcryptPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

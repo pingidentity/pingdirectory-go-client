@@ -17,11 +17,19 @@ import (
 
 // AccessTokenValidatorListResponseResourcesInner - struct for AccessTokenValidatorListResponseResourcesInner
 type AccessTokenValidatorListResponseResourcesInner struct {
+	BindAccessTokenValidatorResponse               *BindAccessTokenValidatorResponse
 	ExternalApiGatewayAccessTokenValidatorResponse *ExternalApiGatewayAccessTokenValidatorResponse
 	JwtAccessTokenValidatorResponse                *JwtAccessTokenValidatorResponse
 	MockAccessTokenValidatorResponse               *MockAccessTokenValidatorResponse
 	PingFederateAccessTokenValidatorResponse       *PingFederateAccessTokenValidatorResponse
 	ThirdPartyAccessTokenValidatorResponse         *ThirdPartyAccessTokenValidatorResponse
+}
+
+// BindAccessTokenValidatorResponseAsAccessTokenValidatorListResponseResourcesInner is a convenience function that returns BindAccessTokenValidatorResponse wrapped in AccessTokenValidatorListResponseResourcesInner
+func BindAccessTokenValidatorResponseAsAccessTokenValidatorListResponseResourcesInner(v *BindAccessTokenValidatorResponse) AccessTokenValidatorListResponseResourcesInner {
+	return AccessTokenValidatorListResponseResourcesInner{
+		BindAccessTokenValidatorResponse: v,
+	}
 }
 
 // ExternalApiGatewayAccessTokenValidatorResponseAsAccessTokenValidatorListResponseResourcesInner is a convenience function that returns ExternalApiGatewayAccessTokenValidatorResponse wrapped in AccessTokenValidatorListResponseResourcesInner
@@ -63,6 +71,19 @@ func ThirdPartyAccessTokenValidatorResponseAsAccessTokenValidatorListResponseRes
 func (dst *AccessTokenValidatorListResponseResourcesInner) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into BindAccessTokenValidatorResponse
+	err = newStrictDecoder(data).Decode(&dst.BindAccessTokenValidatorResponse)
+	if err == nil {
+		jsonBindAccessTokenValidatorResponse, _ := json.Marshal(dst.BindAccessTokenValidatorResponse)
+		if string(jsonBindAccessTokenValidatorResponse) == "{}" { // empty struct
+			dst.BindAccessTokenValidatorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.BindAccessTokenValidatorResponse = nil
+	}
+
 	// try to unmarshal data into ExternalApiGatewayAccessTokenValidatorResponse
 	err = newStrictDecoder(data).Decode(&dst.ExternalApiGatewayAccessTokenValidatorResponse)
 	if err == nil {
@@ -130,6 +151,7 @@ func (dst *AccessTokenValidatorListResponseResourcesInner) UnmarshalJSON(data []
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.BindAccessTokenValidatorResponse = nil
 		dst.ExternalApiGatewayAccessTokenValidatorResponse = nil
 		dst.JwtAccessTokenValidatorResponse = nil
 		dst.MockAccessTokenValidatorResponse = nil
@@ -146,6 +168,10 @@ func (dst *AccessTokenValidatorListResponseResourcesInner) UnmarshalJSON(data []
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AccessTokenValidatorListResponseResourcesInner) MarshalJSON() ([]byte, error) {
+	if src.BindAccessTokenValidatorResponse != nil {
+		return json.Marshal(&src.BindAccessTokenValidatorResponse)
+	}
+
 	if src.ExternalApiGatewayAccessTokenValidatorResponse != nil {
 		return json.Marshal(&src.ExternalApiGatewayAccessTokenValidatorResponse)
 	}
@@ -174,6 +200,10 @@ func (obj *AccessTokenValidatorListResponseResourcesInner) GetActualInstance() i
 	if obj == nil {
 		return nil
 	}
+	if obj.BindAccessTokenValidatorResponse != nil {
+		return obj.BindAccessTokenValidatorResponse
+	}
+
 	if obj.ExternalApiGatewayAccessTokenValidatorResponse != nil {
 		return obj.ExternalApiGatewayAccessTokenValidatorResponse
 	}

@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnummodifiablePasswordPolicyStatePluginSchemaUrn**](EnummodifiablePasswordPolicyStatePluginSchemaUrn.md) |  | 
 **BaseDN** | Pointer to **[]string** | A base DN that may be used to identify entries that should support the ds-pwp-modifiable-state-json operational attribute. | [optional] 
 **Filter** | Pointer to **[]string** | A filter that may be used to identify entries that should support the ds-pwp-modifiable-state-json operational attribute. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddModifiablePasswordPolicyStatePluginRequest
 
-`func NewAddModifiablePasswordPolicyStatePluginRequest(pluginName string, schemas []EnummodifiablePasswordPolicyStatePluginSchemaUrn, enabled bool, ) *AddModifiablePasswordPolicyStatePluginRequest`
+`func NewAddModifiablePasswordPolicyStatePluginRequest(schemas []EnummodifiablePasswordPolicyStatePluginSchemaUrn, enabled bool, pluginName string, ) *AddModifiablePasswordPolicyStatePluginRequest`
 
 NewAddModifiablePasswordPolicyStatePluginRequest instantiates a new AddModifiablePasswordPolicyStatePluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddModifiablePasswordPolicyStatePluginRequestWithDefaults instantiates a new AddModifiablePasswordPolicyStatePluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddModifiablePasswordPolicyStatePluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddModifiablePasswordPolicyStatePluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddModifiablePasswordPolicyStatePluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -163,6 +143,26 @@ and a boolean to check if the value has been set.
 `func (o *AddModifiablePasswordPolicyStatePluginRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetPluginName
+
+`func (o *AddModifiablePasswordPolicyStatePluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddModifiablePasswordPolicyStatePluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddModifiablePasswordPolicyStatePluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
 
 
 

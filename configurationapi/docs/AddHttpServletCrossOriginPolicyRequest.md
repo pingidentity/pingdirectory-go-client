@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PolicyName** | **string** | Name of the new HTTP Servlet Cross Origin Policy | 
 **Schemas** | Pointer to [**[]EnumhttpServletCrossOriginPolicySchemaUrn**](EnumhttpServletCrossOriginPolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Cross Origin Policy | [optional] 
 **CorsAllowedMethods** | Pointer to **[]string** | A list of HTTP methods allowed for cross-origin access to resources. i.e. one or more of GET, POST, PUT, DELETE, etc. | [optional] 
@@ -13,6 +12,7 @@ Name | Type | Description | Notes
 **CorsAllowedHeaders** | Pointer to **[]string** | A list of HTTP headers that are supported by the resource and can be specified in a cross-origin request. | [optional] 
 **CorsPreflightMaxAge** | Pointer to **string** | The maximum amount of time that a preflight request can be cached by a client. | [optional] 
 **CorsAllowCredentials** | Pointer to **bool** | Indicates whether the servlet extension allows CORS requests with username/password credentials. | [optional] 
+**PolicyName** | **string** | Name of the new HTTP Servlet Cross Origin Policy | 
 
 ## Methods
 
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddHttpServletCrossOriginPolicyRequestWithDefaults instantiates a new AddHttpServletCrossOriginPolicyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPolicyName
-
-`func (o *AddHttpServletCrossOriginPolicyRequest) GetPolicyName() string`
-
-GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
-
-### GetPolicyNameOk
-
-`func (o *AddHttpServletCrossOriginPolicyRequest) GetPolicyNameOk() (*string, bool)`
-
-GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPolicyName
-
-`func (o *AddHttpServletCrossOriginPolicyRequest) SetPolicyName(v string)`
-
-SetPolicyName sets PolicyName field to given value.
-
 
 ### GetSchemas
 
@@ -252,6 +232,26 @@ SetCorsAllowCredentials sets CorsAllowCredentials field to given value.
 `func (o *AddHttpServletCrossOriginPolicyRequest) HasCorsAllowCredentials() bool`
 
 HasCorsAllowCredentials returns a boolean if a field has been set.
+
+### GetPolicyName
+
+`func (o *AddHttpServletCrossOriginPolicyRequest) GetPolicyName() string`
+
+GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
+
+### GetPolicyNameOk
+
+`func (o *AddHttpServletCrossOriginPolicyRequest) GetPolicyNameOk() (*string, bool)`
+
+GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyName
+
+`func (o *AddHttpServletCrossOriginPolicyRequest) SetPolicyName(v string)`
+
+SetPolicyName sets PolicyName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,8 +19,6 @@ var _ MappedNullable = &IsMemberOfVirtualAttributeResponse{}
 
 // IsMemberOfVirtualAttributeResponse struct for IsMemberOfVirtualAttributeResponse
 type IsMemberOfVirtualAttributeResponse struct {
-	// Name of the Virtual Attribute
-	Id               string                                    `json:"id"`
 	Schemas          []EnumisMemberOfVirtualAttributeSchemaUrn `json:"schemas"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
@@ -51,18 +49,20 @@ type IsMemberOfVirtualAttributeResponse struct {
 	AllowIndexConflicts                           *bool                                              `json:"allowIndexConflicts,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Virtual Attribute
+	Id string `json:"id"`
 }
 
 // NewIsMemberOfVirtualAttributeResponse instantiates a new IsMemberOfVirtualAttributeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIsMemberOfVirtualAttributeResponse(id string, schemas []EnumisMemberOfVirtualAttributeSchemaUrn, attributeType string, enabled bool) *IsMemberOfVirtualAttributeResponse {
+func NewIsMemberOfVirtualAttributeResponse(schemas []EnumisMemberOfVirtualAttributeSchemaUrn, attributeType string, enabled bool, id string) *IsMemberOfVirtualAttributeResponse {
 	this := IsMemberOfVirtualAttributeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AttributeType = attributeType
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -72,30 +72,6 @@ func NewIsMemberOfVirtualAttributeResponse(id string, schemas []EnumisMemberOfVi
 func NewIsMemberOfVirtualAttributeResponseWithDefaults() *IsMemberOfVirtualAttributeResponse {
 	this := IsMemberOfVirtualAttributeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *IsMemberOfVirtualAttributeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *IsMemberOfVirtualAttributeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *IsMemberOfVirtualAttributeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -650,6 +626,30 @@ func (o *IsMemberOfVirtualAttributeResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *IsMemberOfVirtualAttributeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *IsMemberOfVirtualAttributeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *IsMemberOfVirtualAttributeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o IsMemberOfVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -660,7 +660,6 @@ func (o IsMemberOfVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 
 func (o IsMemberOfVirtualAttributeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ConflictBehavior) {
 		toSerialize["conflictBehavior"] = o.ConflictBehavior
@@ -709,6 +708,7 @@ func (o IsMemberOfVirtualAttributeResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// HttpServletCrossOriginPolicyApiService HttpServletCrossOriginPolicyApi service
-type HttpServletCrossOriginPolicyApiService service
+// HttpServletCrossOriginPolicyAPIService HttpServletCrossOriginPolicyAPI service
+type HttpServletCrossOriginPolicyAPIService service
 
 type ApiAddHttpServletCrossOriginPolicyRequest struct {
 	ctx                                    context.Context
-	ApiService                             *HttpServletCrossOriginPolicyApiService
+	ApiService                             *HttpServletCrossOriginPolicyAPIService
 	addHttpServletCrossOriginPolicyRequest *AddHttpServletCrossOriginPolicyRequest
 }
 
@@ -44,7 +44,7 @@ AddHttpServletCrossOriginPolicy Add a new HTTP Servlet Cross Origin Policy to th
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddHttpServletCrossOriginPolicyRequest
 */
-func (a *HttpServletCrossOriginPolicyApiService) AddHttpServletCrossOriginPolicy(ctx context.Context) ApiAddHttpServletCrossOriginPolicyRequest {
+func (a *HttpServletCrossOriginPolicyAPIService) AddHttpServletCrossOriginPolicy(ctx context.Context) ApiAddHttpServletCrossOriginPolicyRequest {
 	return ApiAddHttpServletCrossOriginPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *HttpServletCrossOriginPolicyApiService) AddHttpServletCrossOriginPolicy
 // Execute executes the request
 //
 //	@return HttpServletCrossOriginPolicyResponse
-func (a *HttpServletCrossOriginPolicyApiService) AddHttpServletCrossOriginPolicyExecute(r ApiAddHttpServletCrossOriginPolicyRequest) (*HttpServletCrossOriginPolicyResponse, *http.Response, error) {
+func (a *HttpServletCrossOriginPolicyAPIService) AddHttpServletCrossOriginPolicyExecute(r ApiAddHttpServletCrossOriginPolicyRequest) (*HttpServletCrossOriginPolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *HttpServletCrossOriginPolicyApiService) AddHttpServletCrossOriginPolicy
 		localVarReturnValue *HttpServletCrossOriginPolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyApiService.AddHttpServletCrossOriginPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyAPIService.AddHttpServletCrossOriginPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *HttpServletCrossOriginPolicyApiService) AddHttpServletCrossOriginPolicy
 
 type ApiDeleteHttpServletCrossOriginPolicyRequest struct {
 	ctx                              context.Context
-	ApiService                       *HttpServletCrossOriginPolicyApiService
+	ApiService                       *HttpServletCrossOriginPolicyAPIService
 	httpServletCrossOriginPolicyName string
 }
 
@@ -149,7 +149,7 @@ DeleteHttpServletCrossOriginPolicy Delete a HTTP Servlet Cross Origin Policy
 	@param httpServletCrossOriginPolicyName Name of the HTTP Servlet Cross Origin Policy
 	@return ApiDeleteHttpServletCrossOriginPolicyRequest
 */
-func (a *HttpServletCrossOriginPolicyApiService) DeleteHttpServletCrossOriginPolicy(ctx context.Context, httpServletCrossOriginPolicyName string) ApiDeleteHttpServletCrossOriginPolicyRequest {
+func (a *HttpServletCrossOriginPolicyAPIService) DeleteHttpServletCrossOriginPolicy(ctx context.Context, httpServletCrossOriginPolicyName string) ApiDeleteHttpServletCrossOriginPolicyRequest {
 	return ApiDeleteHttpServletCrossOriginPolicyRequest{
 		ApiService:                       a,
 		ctx:                              ctx,
@@ -158,14 +158,14 @@ func (a *HttpServletCrossOriginPolicyApiService) DeleteHttpServletCrossOriginPol
 }
 
 // Execute executes the request
-func (a *HttpServletCrossOriginPolicyApiService) DeleteHttpServletCrossOriginPolicyExecute(r ApiDeleteHttpServletCrossOriginPolicyRequest) (*http.Response, error) {
+func (a *HttpServletCrossOriginPolicyAPIService) DeleteHttpServletCrossOriginPolicyExecute(r ApiDeleteHttpServletCrossOriginPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyApiService.DeleteHttpServletCrossOriginPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyAPIService.DeleteHttpServletCrossOriginPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *HttpServletCrossOriginPolicyApiService) DeleteHttpServletCrossOriginPol
 
 type ApiGetHttpServletCrossOriginPolicyRequest struct {
 	ctx                              context.Context
-	ApiService                       *HttpServletCrossOriginPolicyApiService
+	ApiService                       *HttpServletCrossOriginPolicyAPIService
 	httpServletCrossOriginPolicyName string
 }
 
@@ -239,7 +239,7 @@ GetHttpServletCrossOriginPolicy Returns a single HTTP Servlet Cross Origin Polic
 	@param httpServletCrossOriginPolicyName Name of the HTTP Servlet Cross Origin Policy
 	@return ApiGetHttpServletCrossOriginPolicyRequest
 */
-func (a *HttpServletCrossOriginPolicyApiService) GetHttpServletCrossOriginPolicy(ctx context.Context, httpServletCrossOriginPolicyName string) ApiGetHttpServletCrossOriginPolicyRequest {
+func (a *HttpServletCrossOriginPolicyAPIService) GetHttpServletCrossOriginPolicy(ctx context.Context, httpServletCrossOriginPolicyName string) ApiGetHttpServletCrossOriginPolicyRequest {
 	return ApiGetHttpServletCrossOriginPolicyRequest{
 		ApiService:                       a,
 		ctx:                              ctx,
@@ -250,7 +250,7 @@ func (a *HttpServletCrossOriginPolicyApiService) GetHttpServletCrossOriginPolicy
 // Execute executes the request
 //
 //	@return HttpServletCrossOriginPolicyResponse
-func (a *HttpServletCrossOriginPolicyApiService) GetHttpServletCrossOriginPolicyExecute(r ApiGetHttpServletCrossOriginPolicyRequest) (*HttpServletCrossOriginPolicyResponse, *http.Response, error) {
+func (a *HttpServletCrossOriginPolicyAPIService) GetHttpServletCrossOriginPolicyExecute(r ApiGetHttpServletCrossOriginPolicyRequest) (*HttpServletCrossOriginPolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *HttpServletCrossOriginPolicyApiService) GetHttpServletCrossOriginPolicy
 		localVarReturnValue *HttpServletCrossOriginPolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyApiService.GetHttpServletCrossOriginPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyAPIService.GetHttpServletCrossOriginPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *HttpServletCrossOriginPolicyApiService) GetHttpServletCrossOriginPolicy
 
 type ApiListHttpServletCrossOriginPoliciesRequest struct {
 	ctx        context.Context
-	ApiService *HttpServletCrossOriginPolicyApiService
+	ApiService *HttpServletCrossOriginPolicyAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListHttpServletCrossOriginPolicies Returns a list of all HTTP Servlet Cross Orig
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListHttpServletCrossOriginPoliciesRequest
 */
-func (a *HttpServletCrossOriginPolicyApiService) ListHttpServletCrossOriginPolicies(ctx context.Context) ApiListHttpServletCrossOriginPoliciesRequest {
+func (a *HttpServletCrossOriginPolicyAPIService) ListHttpServletCrossOriginPolicies(ctx context.Context) ApiListHttpServletCrossOriginPoliciesRequest {
 	return ApiListHttpServletCrossOriginPoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *HttpServletCrossOriginPolicyApiService) ListHttpServletCrossOriginPolic
 // Execute executes the request
 //
 //	@return HttpServletCrossOriginPolicyListResponse
-func (a *HttpServletCrossOriginPolicyApiService) ListHttpServletCrossOriginPoliciesExecute(r ApiListHttpServletCrossOriginPoliciesRequest) (*HttpServletCrossOriginPolicyListResponse, *http.Response, error) {
+func (a *HttpServletCrossOriginPolicyAPIService) ListHttpServletCrossOriginPoliciesExecute(r ApiListHttpServletCrossOriginPoliciesRequest) (*HttpServletCrossOriginPolicyListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *HttpServletCrossOriginPolicyApiService) ListHttpServletCrossOriginPolic
 		localVarReturnValue *HttpServletCrossOriginPolicyListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyApiService.ListHttpServletCrossOriginPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyAPIService.ListHttpServletCrossOriginPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *HttpServletCrossOriginPolicyApiService) ListHttpServletCrossOriginPolic
 
 type ApiUpdateHttpServletCrossOriginPolicyRequest struct {
 	ctx                              context.Context
-	ApiService                       *HttpServletCrossOriginPolicyApiService
+	ApiService                       *HttpServletCrossOriginPolicyAPIService
 	httpServletCrossOriginPolicyName string
 	updateRequest                    *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateHttpServletCrossOriginPolicy Update an existing HTTP Servlet Cross Origin 
 	@param httpServletCrossOriginPolicyName Name of the HTTP Servlet Cross Origin Policy
 	@return ApiUpdateHttpServletCrossOriginPolicyRequest
 */
-func (a *HttpServletCrossOriginPolicyApiService) UpdateHttpServletCrossOriginPolicy(ctx context.Context, httpServletCrossOriginPolicyName string) ApiUpdateHttpServletCrossOriginPolicyRequest {
+func (a *HttpServletCrossOriginPolicyAPIService) UpdateHttpServletCrossOriginPolicy(ctx context.Context, httpServletCrossOriginPolicyName string) ApiUpdateHttpServletCrossOriginPolicyRequest {
 	return ApiUpdateHttpServletCrossOriginPolicyRequest{
 		ApiService:                       a,
 		ctx:                              ctx,
@@ -467,7 +467,7 @@ func (a *HttpServletCrossOriginPolicyApiService) UpdateHttpServletCrossOriginPol
 // Execute executes the request
 //
 //	@return HttpServletCrossOriginPolicyResponse
-func (a *HttpServletCrossOriginPolicyApiService) UpdateHttpServletCrossOriginPolicyExecute(r ApiUpdateHttpServletCrossOriginPolicyRequest) (*HttpServletCrossOriginPolicyResponse, *http.Response, error) {
+func (a *HttpServletCrossOriginPolicyAPIService) UpdateHttpServletCrossOriginPolicyExecute(r ApiUpdateHttpServletCrossOriginPolicyRequest) (*HttpServletCrossOriginPolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *HttpServletCrossOriginPolicyApiService) UpdateHttpServletCrossOriginPol
 		localVarReturnValue *HttpServletCrossOriginPolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyApiService.UpdateHttpServletCrossOriginPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletCrossOriginPolicyAPIService.UpdateHttpServletCrossOriginPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

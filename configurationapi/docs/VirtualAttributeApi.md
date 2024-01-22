@@ -1,14 +1,14 @@
-# \VirtualAttributeApi
+# \VirtualAttributeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddVirtualAttribute**](VirtualAttributeApi.md#AddVirtualAttribute) | **Post** /virtual-attributes | Add a new Virtual Attribute to the config
-[**DeleteVirtualAttribute**](VirtualAttributeApi.md#DeleteVirtualAttribute) | **Delete** /virtual-attributes/{virtual-attribute-name} | Delete a Virtual Attribute
-[**GetVirtualAttribute**](VirtualAttributeApi.md#GetVirtualAttribute) | **Get** /virtual-attributes/{virtual-attribute-name} | Returns a single Virtual Attribute
-[**ListVirtualAttributes**](VirtualAttributeApi.md#ListVirtualAttributes) | **Get** /virtual-attributes | Returns a list of all Virtual Attribute objects
-[**UpdateVirtualAttribute**](VirtualAttributeApi.md#UpdateVirtualAttribute) | **Patch** /virtual-attributes/{virtual-attribute-name} | Update an existing Virtual Attribute by name
+[**AddVirtualAttribute**](VirtualAttributeAPI.md#AddVirtualAttribute) | **Post** /virtual-attributes | Add a new Virtual Attribute to the config
+[**DeleteVirtualAttribute**](VirtualAttributeAPI.md#DeleteVirtualAttribute) | **Delete** /virtual-attributes/{virtual-attribute-name} | Delete a Virtual Attribute
+[**GetVirtualAttribute**](VirtualAttributeAPI.md#GetVirtualAttribute) | **Get** /virtual-attributes/{virtual-attribute-name} | Returns a single Virtual Attribute
+[**ListVirtualAttributes**](VirtualAttributeAPI.md#ListVirtualAttributes) | **Get** /virtual-attributes | Returns a list of all Virtual Attribute objects
+[**UpdateVirtualAttribute**](VirtualAttributeAPI.md#UpdateVirtualAttribute) | **Patch** /virtual-attributes/{virtual-attribute-name} | Update an existing Virtual Attribute by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addVirtualAttributeRequest := openapiclient.add_virtual_attribute_request{AddConstructedVirtualAttributeRequest: openapiclient.NewAddConstructedVirtualAttributeRequest("Name_example", []openapiclient.EnumconstructedVirtualAttributeSchemaUrn{openapiclient.Enumconstructed-virtual-attributeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:virtual-attribute:constructed")}, []string{"ValuePattern_example"}, false, "AttributeType_example")} // AddVirtualAttributeRequest | Create a new Virtual Attribute in the config
+    addVirtualAttributeRequest := openapiclient.add_virtual_attribute_request{AddConstructedVirtualAttributeRequest: openapiclient.NewAddConstructedVirtualAttributeRequest([]openapiclient.EnumconstructedVirtualAttributeSchemaUrn{openapiclient.Enumconstructed-virtual-attributeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:virtual-attribute:constructed")}, []string{"ValuePattern_example"}, false, "AttributeType_example", "Name_example")} // AddVirtualAttributeRequest | Create a new Virtual Attribute in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualAttributeApi.AddVirtualAttribute(context.Background()).AddVirtualAttributeRequest(addVirtualAttributeRequest).Execute()
+    resp, r, err := apiClient.VirtualAttributeAPI.AddVirtualAttribute(context.Background()).AddVirtualAttributeRequest(addVirtualAttributeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeApi.AddVirtualAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeAPI.AddVirtualAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddVirtualAttribute`: AddVirtualAttribute200Response
-    fmt.Fprintf(os.Stdout, "Response from `VirtualAttributeApi.AddVirtualAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualAttributeAPI.AddVirtualAttribute`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VirtualAttributeApi.DeleteVirtualAttribute(context.Background(), virtualAttributeName).Execute()
+    r, err := apiClient.VirtualAttributeAPI.DeleteVirtualAttribute(context.Background(), virtualAttributeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeApi.DeleteVirtualAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeAPI.DeleteVirtualAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualAttributeApi.GetVirtualAttribute(context.Background(), virtualAttributeName).Execute()
+    resp, r, err := apiClient.VirtualAttributeAPI.GetVirtualAttribute(context.Background(), virtualAttributeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeApi.GetVirtualAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeAPI.GetVirtualAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetVirtualAttribute`: GetVirtualAttribute200Response
-    fmt.Fprintf(os.Stdout, "Response from `VirtualAttributeApi.GetVirtualAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualAttributeAPI.GetVirtualAttribute`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualAttributeApi.ListVirtualAttributes(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.VirtualAttributeAPI.ListVirtualAttributes(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeApi.ListVirtualAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeAPI.ListVirtualAttributes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListVirtualAttributes`: VirtualAttributeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `VirtualAttributeApi.ListVirtualAttributes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualAttributeAPI.ListVirtualAttributes`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VirtualAttributeApi.UpdateVirtualAttribute(context.Background(), virtualAttributeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.VirtualAttributeAPI.UpdateVirtualAttribute(context.Background(), virtualAttributeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeApi.UpdateVirtualAttribute``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeAPI.UpdateVirtualAttribute``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateVirtualAttribute`: GetVirtualAttribute200Response
-    fmt.Fprintf(os.Stdout, "Response from `VirtualAttributeApi.UpdateVirtualAttribute`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VirtualAttributeAPI.UpdateVirtualAttribute`: %v\n", resp)
 }
 ```
 

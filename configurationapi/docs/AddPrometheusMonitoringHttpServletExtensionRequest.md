@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 **Schemas** | [**[]EnumprometheusMonitoringHttpServletExtensionSchemaUrn**](EnumprometheusMonitoringHttpServletExtensionSchemaUrn.md) |  | 
 **BaseContextPath** | Pointer to **string** | Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path. | [optional] 
 **IncludeInstanceNameLabel** | Pointer to **bool** | Indicates whether generated metrics should include an \&quot;instance\&quot; label whose value is the instance name for this Directory Server instance. | [optional] 
@@ -18,12 +17,13 @@ Name | Type | Description | Notes
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
+**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 
 ## Methods
 
 ### NewAddPrometheusMonitoringHttpServletExtensionRequest
 
-`func NewAddPrometheusMonitoringHttpServletExtensionRequest(extensionName string, schemas []EnumprometheusMonitoringHttpServletExtensionSchemaUrn, ) *AddPrometheusMonitoringHttpServletExtensionRequest`
+`func NewAddPrometheusMonitoringHttpServletExtensionRequest(schemas []EnumprometheusMonitoringHttpServletExtensionSchemaUrn, extensionName string, ) *AddPrometheusMonitoringHttpServletExtensionRequest`
 
 NewAddPrometheusMonitoringHttpServletExtensionRequest instantiates a new AddPrometheusMonitoringHttpServletExtensionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,26 +37,6 @@ will change when the set of required properties is changed
 NewAddPrometheusMonitoringHttpServletExtensionRequestWithDefaults instantiates a new AddPrometheusMonitoringHttpServletExtensionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetExtensionName
-
-`func (o *AddPrometheusMonitoringHttpServletExtensionRequest) GetExtensionName() string`
-
-GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
-
-### GetExtensionNameOk
-
-`func (o *AddPrometheusMonitoringHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
-
-GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtensionName
-
-`func (o *AddPrometheusMonitoringHttpServletExtensionRequest) SetExtensionName(v string)`
-
-SetExtensionName sets ExtensionName field to given value.
-
 
 ### GetSchemas
 
@@ -377,6 +357,26 @@ SetCorrelationIDResponseHeader sets CorrelationIDResponseHeader field to given v
 `func (o *AddPrometheusMonitoringHttpServletExtensionRequest) HasCorrelationIDResponseHeader() bool`
 
 HasCorrelationIDResponseHeader returns a boolean if a field has been set.
+
+### GetExtensionName
+
+`func (o *AddPrometheusMonitoringHttpServletExtensionRequest) GetExtensionName() string`
+
+GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
+
+### GetExtensionNameOk
+
+`func (o *AddPrometheusMonitoringHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
+
+GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtensionName
+
+`func (o *AddPrometheusMonitoringHttpServletExtensionRequest) SetExtensionName(v string)`
+
+SetExtensionName sets ExtensionName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

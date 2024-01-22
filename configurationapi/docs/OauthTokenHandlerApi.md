@@ -1,14 +1,14 @@
-# \OauthTokenHandlerApi
+# \OauthTokenHandlerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddOauthTokenHandler**](OauthTokenHandlerApi.md#AddOauthTokenHandler) | **Post** /oauth-token-handlers | Add a new OAuth Token Handler to the config
-[**DeleteOauthTokenHandler**](OauthTokenHandlerApi.md#DeleteOauthTokenHandler) | **Delete** /oauth-token-handlers/{oauth-token-handler-name} | Delete a OAuth Token Handler
-[**GetOauthTokenHandler**](OauthTokenHandlerApi.md#GetOauthTokenHandler) | **Get** /oauth-token-handlers/{oauth-token-handler-name} | Returns a single OAuth Token Handler
-[**ListOauthTokenHandlers**](OauthTokenHandlerApi.md#ListOauthTokenHandlers) | **Get** /oauth-token-handlers | Returns a list of all OAuth Token Handler objects
-[**UpdateOauthTokenHandler**](OauthTokenHandlerApi.md#UpdateOauthTokenHandler) | **Patch** /oauth-token-handlers/{oauth-token-handler-name} | Update an existing OAuth Token Handler by name
+[**AddOauthTokenHandler**](OauthTokenHandlerAPI.md#AddOauthTokenHandler) | **Post** /oauth-token-handlers | Add a new OAuth Token Handler to the config
+[**DeleteOauthTokenHandler**](OauthTokenHandlerAPI.md#DeleteOauthTokenHandler) | **Delete** /oauth-token-handlers/{oauth-token-handler-name} | Delete a OAuth Token Handler
+[**GetOauthTokenHandler**](OauthTokenHandlerAPI.md#GetOauthTokenHandler) | **Get** /oauth-token-handlers/{oauth-token-handler-name} | Returns a single OAuth Token Handler
+[**ListOauthTokenHandlers**](OauthTokenHandlerAPI.md#ListOauthTokenHandlers) | **Get** /oauth-token-handlers | Returns a list of all OAuth Token Handler objects
+[**UpdateOauthTokenHandler**](OauthTokenHandlerAPI.md#UpdateOauthTokenHandler) | **Patch** /oauth-token-handlers/{oauth-token-handler-name} | Update an existing OAuth Token Handler by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addOauthTokenHandlerRequest := openapiclient.add_oauth_token_handler_request{AddGroovyScriptedOauthTokenHandlerRequest: openapiclient.NewAddGroovyScriptedOauthTokenHandlerRequest("HandlerName_example", []openapiclient.EnumgroovyScriptedOauthTokenHandlerSchemaUrn{openapiclient.Enumgroovy-scripted-oauth-token-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:oauth-token-handler:groovy-scripted")}, "ScriptClass_example")} // AddOauthTokenHandlerRequest | Create a new OAuth Token Handler in the config
+    addOauthTokenHandlerRequest := openapiclient.add_oauth_token_handler_request{AddGroovyScriptedOauthTokenHandlerRequest: openapiclient.NewAddGroovyScriptedOauthTokenHandlerRequest([]openapiclient.EnumgroovyScriptedOauthTokenHandlerSchemaUrn{openapiclient.Enumgroovy-scripted-oauth-token-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:oauth-token-handler:groovy-scripted")}, "ScriptClass_example", "HandlerName_example")} // AddOauthTokenHandlerRequest | Create a new OAuth Token Handler in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenHandlerApi.AddOauthTokenHandler(context.Background()).AddOauthTokenHandlerRequest(addOauthTokenHandlerRequest).Execute()
+    resp, r, err := apiClient.OauthTokenHandlerAPI.AddOauthTokenHandler(context.Background()).AddOauthTokenHandlerRequest(addOauthTokenHandlerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerApi.AddOauthTokenHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerAPI.AddOauthTokenHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddOauthTokenHandler`: AddOauthTokenHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenHandlerApi.AddOauthTokenHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenHandlerAPI.AddOauthTokenHandler`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OauthTokenHandlerApi.DeleteOauthTokenHandler(context.Background(), oauthTokenHandlerName).Execute()
+    r, err := apiClient.OauthTokenHandlerAPI.DeleteOauthTokenHandler(context.Background(), oauthTokenHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerApi.DeleteOauthTokenHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerAPI.DeleteOauthTokenHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenHandlerApi.GetOauthTokenHandler(context.Background(), oauthTokenHandlerName).Execute()
+    resp, r, err := apiClient.OauthTokenHandlerAPI.GetOauthTokenHandler(context.Background(), oauthTokenHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerApi.GetOauthTokenHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerAPI.GetOauthTokenHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOauthTokenHandler`: AddOauthTokenHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenHandlerApi.GetOauthTokenHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenHandlerAPI.GetOauthTokenHandler`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenHandlerApi.ListOauthTokenHandlers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.OauthTokenHandlerAPI.ListOauthTokenHandlers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerApi.ListOauthTokenHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerAPI.ListOauthTokenHandlers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListOauthTokenHandlers`: OauthTokenHandlerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenHandlerApi.ListOauthTokenHandlers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenHandlerAPI.ListOauthTokenHandlers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OauthTokenHandlerApi.UpdateOauthTokenHandler(context.Background(), oauthTokenHandlerName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.OauthTokenHandlerAPI.UpdateOauthTokenHandler(context.Background(), oauthTokenHandlerName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerApi.UpdateOauthTokenHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerAPI.UpdateOauthTokenHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOauthTokenHandler`: AddOauthTokenHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `OauthTokenHandlerApi.UpdateOauthTokenHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenHandlerAPI.UpdateOauthTokenHandler`: %v\n", resp)
 }
 ```
 

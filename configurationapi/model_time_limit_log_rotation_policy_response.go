@@ -19,8 +19,6 @@ var _ MappedNullable = &TimeLimitLogRotationPolicyResponse{}
 
 // TimeLimitLogRotationPolicyResponse struct for TimeLimitLogRotationPolicyResponse
 type TimeLimitLogRotationPolicyResponse struct {
-	// Name of the Log Rotation Policy
-	Id      string                                    `json:"id"`
 	Schemas []EnumtimeLimitLogRotationPolicySchemaUrn `json:"schemas"`
 	// Specifies the time interval between rotations.
 	RotationInterval string `json:"rotationInterval"`
@@ -28,17 +26,19 @@ type TimeLimitLogRotationPolicyResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Rotation Policy
+	Id string `json:"id"`
 }
 
 // NewTimeLimitLogRotationPolicyResponse instantiates a new TimeLimitLogRotationPolicyResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTimeLimitLogRotationPolicyResponse(id string, schemas []EnumtimeLimitLogRotationPolicySchemaUrn, rotationInterval string) *TimeLimitLogRotationPolicyResponse {
+func NewTimeLimitLogRotationPolicyResponse(schemas []EnumtimeLimitLogRotationPolicySchemaUrn, rotationInterval string, id string) *TimeLimitLogRotationPolicyResponse {
 	this := TimeLimitLogRotationPolicyResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.RotationInterval = rotationInterval
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewTimeLimitLogRotationPolicyResponse(id string, schemas []EnumtimeLimitLog
 func NewTimeLimitLogRotationPolicyResponseWithDefaults() *TimeLimitLogRotationPolicyResponse {
 	this := TimeLimitLogRotationPolicyResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *TimeLimitLogRotationPolicyResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *TimeLimitLogRotationPolicyResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *TimeLimitLogRotationPolicyResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *TimeLimitLogRotationPolicyResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *TimeLimitLogRotationPolicyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *TimeLimitLogRotationPolicyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *TimeLimitLogRotationPolicyResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o TimeLimitLogRotationPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o TimeLimitLogRotationPolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o TimeLimitLogRotationPolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["rotationInterval"] = o.RotationInterval
 	if !IsNil(o.Description) {
@@ -240,6 +239,7 @@ func (o TimeLimitLogRotationPolicyResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

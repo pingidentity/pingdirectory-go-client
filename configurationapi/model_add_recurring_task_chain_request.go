@@ -19,9 +19,7 @@ var _ MappedNullable = &AddRecurringTaskChainRequest{}
 
 // AddRecurringTaskChainRequest struct for AddRecurringTaskChainRequest
 type AddRecurringTaskChainRequest struct {
-	// Name of the new Recurring Task Chain
-	ChainName string                            `json:"chainName"`
-	Schemas   []EnumrecurringTaskChainSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumrecurringTaskChainSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Recurring Task Chain
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired.
@@ -38,18 +36,20 @@ type AddRecurringTaskChainRequest struct {
 	TimeZone                         *string                                                     `json:"timeZone,omitempty"`
 	InterruptedByShutdownBehavior    *EnumrecurringTaskChainInterruptedByShutdownBehaviorProp    `json:"interruptedByShutdownBehavior,omitempty"`
 	ServerOfflineAtStartTimeBehavior *EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp `json:"serverOfflineAtStartTimeBehavior,omitempty"`
+	// Name of the new Recurring Task Chain
+	ChainName string `json:"chainName"`
 }
 
 // NewAddRecurringTaskChainRequest instantiates a new AddRecurringTaskChainRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRecurringTaskChainRequest(chainName string, recurringTask []string, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string) *AddRecurringTaskChainRequest {
+func NewAddRecurringTaskChainRequest(recurringTask []string, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string, chainName string) *AddRecurringTaskChainRequest {
 	this := AddRecurringTaskChainRequest{}
-	this.ChainName = chainName
 	this.RecurringTask = recurringTask
 	this.ScheduledDateSelectionType = scheduledDateSelectionType
 	this.ScheduledTimeOfDay = scheduledTimeOfDay
+	this.ChainName = chainName
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewAddRecurringTaskChainRequest(chainName string, recurringTask []string, s
 func NewAddRecurringTaskChainRequestWithDefaults() *AddRecurringTaskChainRequest {
 	this := AddRecurringTaskChainRequest{}
 	return &this
-}
-
-// GetChainName returns the ChainName field value
-func (o *AddRecurringTaskChainRequest) GetChainName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ChainName
-}
-
-// GetChainNameOk returns a tuple with the ChainName field value
-// and a boolean to check if the value has been set.
-func (o *AddRecurringTaskChainRequest) GetChainNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ChainName, true
-}
-
-// SetChainName sets field value
-func (o *AddRecurringTaskChainRequest) SetChainName(v string) {
-	o.ChainName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -445,6 +421,30 @@ func (o *AddRecurringTaskChainRequest) SetServerOfflineAtStartTimeBehavior(v Enu
 	o.ServerOfflineAtStartTimeBehavior = &v
 }
 
+// GetChainName returns the ChainName field value
+func (o *AddRecurringTaskChainRequest) GetChainName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ChainName
+}
+
+// GetChainNameOk returns a tuple with the ChainName field value
+// and a boolean to check if the value has been set.
+func (o *AddRecurringTaskChainRequest) GetChainNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ChainName, true
+}
+
+// SetChainName sets field value
+func (o *AddRecurringTaskChainRequest) SetChainName(v string) {
+	o.ChainName = v
+}
+
 func (o AddRecurringTaskChainRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -455,7 +455,6 @@ func (o AddRecurringTaskChainRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddRecurringTaskChainRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["chainName"] = o.ChainName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -486,6 +485,7 @@ func (o AddRecurringTaskChainRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServerOfflineAtStartTimeBehavior) {
 		toSerialize["serverOfflineAtStartTimeBehavior"] = o.ServerOfflineAtStartTimeBehavior
 	}
+	toSerialize["chainName"] = o.ChainName
 	return toSerialize, nil
 }
 

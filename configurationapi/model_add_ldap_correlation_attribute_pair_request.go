@@ -19,24 +19,24 @@ var _ MappedNullable = &AddLdapCorrelationAttributePairRequest{}
 
 // AddLdapCorrelationAttributePairRequest struct for AddLdapCorrelationAttributePairRequest
 type AddLdapCorrelationAttributePairRequest struct {
-	// Name of the new LDAP Correlation Attribute Pair
-	PairName string                                      `json:"pairName"`
-	Schemas  []EnumldapCorrelationAttributePairSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumldapCorrelationAttributePairSchemaUrn `json:"schemas,omitempty"`
 	// The LDAP attribute from the base SCIM Resource Type whose value will be used to match objects in the Correlated LDAP Data View.
 	PrimaryCorrelationAttribute string `json:"primaryCorrelationAttribute"`
 	// The LDAP attribute from the Correlated LDAP Data View whose value will be matched.
 	SecondaryCorrelationAttribute string `json:"secondaryCorrelationAttribute"`
+	// Name of the new LDAP Correlation Attribute Pair
+	PairName string `json:"pairName"`
 }
 
 // NewAddLdapCorrelationAttributePairRequest instantiates a new AddLdapCorrelationAttributePairRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapCorrelationAttributePairRequest(pairName string, primaryCorrelationAttribute string, secondaryCorrelationAttribute string) *AddLdapCorrelationAttributePairRequest {
+func NewAddLdapCorrelationAttributePairRequest(primaryCorrelationAttribute string, secondaryCorrelationAttribute string, pairName string) *AddLdapCorrelationAttributePairRequest {
 	this := AddLdapCorrelationAttributePairRequest{}
-	this.PairName = pairName
 	this.PrimaryCorrelationAttribute = primaryCorrelationAttribute
 	this.SecondaryCorrelationAttribute = secondaryCorrelationAttribute
+	this.PairName = pairName
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewAddLdapCorrelationAttributePairRequest(pairName string, primaryCorrelati
 func NewAddLdapCorrelationAttributePairRequestWithDefaults() *AddLdapCorrelationAttributePairRequest {
 	this := AddLdapCorrelationAttributePairRequest{}
 	return &this
-}
-
-// GetPairName returns the PairName field value
-func (o *AddLdapCorrelationAttributePairRequest) GetPairName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PairName
-}
-
-// GetPairNameOk returns a tuple with the PairName field value
-// and a boolean to check if the value has been set.
-func (o *AddLdapCorrelationAttributePairRequest) GetPairNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PairName, true
-}
-
-// SetPairName sets field value
-func (o *AddLdapCorrelationAttributePairRequest) SetPairName(v string) {
-	o.PairName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -152,6 +128,30 @@ func (o *AddLdapCorrelationAttributePairRequest) SetSecondaryCorrelationAttribut
 	o.SecondaryCorrelationAttribute = v
 }
 
+// GetPairName returns the PairName field value
+func (o *AddLdapCorrelationAttributePairRequest) GetPairName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PairName
+}
+
+// GetPairNameOk returns a tuple with the PairName field value
+// and a boolean to check if the value has been set.
+func (o *AddLdapCorrelationAttributePairRequest) GetPairNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PairName, true
+}
+
+// SetPairName sets field value
+func (o *AddLdapCorrelationAttributePairRequest) SetPairName(v string) {
+	o.PairName = v
+}
+
 func (o AddLdapCorrelationAttributePairRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -162,12 +162,12 @@ func (o AddLdapCorrelationAttributePairRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLdapCorrelationAttributePairRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pairName"] = o.PairName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
 	toSerialize["primaryCorrelationAttribute"] = o.PrimaryCorrelationAttribute
 	toSerialize["secondaryCorrelationAttribute"] = o.SecondaryCorrelationAttribute
+	toSerialize["pairName"] = o.PairName
 	return toSerialize, nil
 }
 

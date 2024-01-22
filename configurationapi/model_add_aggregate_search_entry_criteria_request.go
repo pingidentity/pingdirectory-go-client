@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAggregateSearchEntryCriteriaRequest{}
 
 // AddAggregateSearchEntryCriteriaRequest struct for AddAggregateSearchEntryCriteriaRequest
 type AddAggregateSearchEntryCriteriaRequest struct {
-	// Name of the new Search Entry Criteria
-	CriteriaName string                                      `json:"criteriaName"`
-	Schemas      []EnumaggregateSearchEntryCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumaggregateSearchEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a search entry criteria object that must match the associated search result entry in order to match the aggregate search entry criteria. If one or more all-included search entry criteria objects are provided, then a search result entry must match all of them in order to match the aggregate search entry criteria.
 	AllIncludedSearchEntryCriteria []string `json:"allIncludedSearchEntryCriteria,omitempty"`
 	// Specifies a search entry criteria object that may match the associated search result entry in order to match the aggregate search entry criteria. If one or more any-included search entry criteria objects are provided, then a search result entry must match at least one of them in order to match the aggregate search entry criteria.
@@ -32,16 +30,18 @@ type AddAggregateSearchEntryCriteriaRequest struct {
 	NoneIncludedSearchEntryCriteria []string `json:"noneIncludedSearchEntryCriteria,omitempty"`
 	// A description for this Search Entry Criteria
 	Description *string `json:"description,omitempty"`
+	// Name of the new Search Entry Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddAggregateSearchEntryCriteriaRequest instantiates a new AddAggregateSearchEntryCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAggregateSearchEntryCriteriaRequest(criteriaName string, schemas []EnumaggregateSearchEntryCriteriaSchemaUrn) *AddAggregateSearchEntryCriteriaRequest {
+func NewAddAggregateSearchEntryCriteriaRequest(schemas []EnumaggregateSearchEntryCriteriaSchemaUrn, criteriaName string) *AddAggregateSearchEntryCriteriaRequest {
 	this := AddAggregateSearchEntryCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddAggregateSearchEntryCriteriaRequest(criteriaName string, schemas []En
 func NewAddAggregateSearchEntryCriteriaRequestWithDefaults() *AddAggregateSearchEntryCriteriaRequest {
 	this := AddAggregateSearchEntryCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddAggregateSearchEntryCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddAggregateSearchEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddAggregateSearchEntryCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -261,6 +237,30 @@ func (o *AddAggregateSearchEntryCriteriaRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddAggregateSearchEntryCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddAggregateSearchEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddAggregateSearchEntryCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddAggregateSearchEntryCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -271,7 +271,6 @@ func (o AddAggregateSearchEntryCriteriaRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddAggregateSearchEntryCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllIncludedSearchEntryCriteria) {
 		toSerialize["allIncludedSearchEntryCriteria"] = o.AllIncludedSearchEntryCriteria
@@ -288,6 +287,7 @@ func (o AddAggregateSearchEntryCriteriaRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

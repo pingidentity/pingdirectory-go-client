@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ServerGroupApiService ServerGroupApi service
-type ServerGroupApiService service
+// ServerGroupAPIService ServerGroupAPI service
+type ServerGroupAPIService service
 
 type ApiAddServerGroupRequest struct {
 	ctx                   context.Context
-	ApiService            *ServerGroupApiService
+	ApiService            *ServerGroupAPIService
 	addServerGroupRequest *AddServerGroupRequest
 }
 
@@ -44,7 +44,7 @@ AddServerGroup Add a new Server Group to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddServerGroupRequest
 */
-func (a *ServerGroupApiService) AddServerGroup(ctx context.Context) ApiAddServerGroupRequest {
+func (a *ServerGroupAPIService) AddServerGroup(ctx context.Context) ApiAddServerGroupRequest {
 	return ApiAddServerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ServerGroupApiService) AddServerGroup(ctx context.Context) ApiAddServer
 // Execute executes the request
 //
 //	@return ServerGroupResponse
-func (a *ServerGroupApiService) AddServerGroupExecute(r ApiAddServerGroupRequest) (*ServerGroupResponse, *http.Response, error) {
+func (a *ServerGroupAPIService) AddServerGroupExecute(r ApiAddServerGroupRequest) (*ServerGroupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ServerGroupApiService) AddServerGroupExecute(r ApiAddServerGroupRequest
 		localVarReturnValue *ServerGroupResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupApiService.AddServerGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupAPIService.AddServerGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ServerGroupApiService) AddServerGroupExecute(r ApiAddServerGroupRequest
 
 type ApiDeleteServerGroupRequest struct {
 	ctx             context.Context
-	ApiService      *ServerGroupApiService
+	ApiService      *ServerGroupAPIService
 	serverGroupName string
 }
 
@@ -149,7 +149,7 @@ DeleteServerGroup Delete a Server Group
 	@param serverGroupName Name of the Server Group
 	@return ApiDeleteServerGroupRequest
 */
-func (a *ServerGroupApiService) DeleteServerGroup(ctx context.Context, serverGroupName string) ApiDeleteServerGroupRequest {
+func (a *ServerGroupAPIService) DeleteServerGroup(ctx context.Context, serverGroupName string) ApiDeleteServerGroupRequest {
 	return ApiDeleteServerGroupRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -158,14 +158,14 @@ func (a *ServerGroupApiService) DeleteServerGroup(ctx context.Context, serverGro
 }
 
 // Execute executes the request
-func (a *ServerGroupApiService) DeleteServerGroupExecute(r ApiDeleteServerGroupRequest) (*http.Response, error) {
+func (a *ServerGroupAPIService) DeleteServerGroupExecute(r ApiDeleteServerGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupApiService.DeleteServerGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupAPIService.DeleteServerGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ServerGroupApiService) DeleteServerGroupExecute(r ApiDeleteServerGroupR
 
 type ApiGetServerGroupRequest struct {
 	ctx             context.Context
-	ApiService      *ServerGroupApiService
+	ApiService      *ServerGroupAPIService
 	serverGroupName string
 }
 
@@ -239,7 +239,7 @@ GetServerGroup Returns a single Server Group
 	@param serverGroupName Name of the Server Group
 	@return ApiGetServerGroupRequest
 */
-func (a *ServerGroupApiService) GetServerGroup(ctx context.Context, serverGroupName string) ApiGetServerGroupRequest {
+func (a *ServerGroupAPIService) GetServerGroup(ctx context.Context, serverGroupName string) ApiGetServerGroupRequest {
 	return ApiGetServerGroupRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -250,7 +250,7 @@ func (a *ServerGroupApiService) GetServerGroup(ctx context.Context, serverGroupN
 // Execute executes the request
 //
 //	@return ServerGroupResponse
-func (a *ServerGroupApiService) GetServerGroupExecute(r ApiGetServerGroupRequest) (*ServerGroupResponse, *http.Response, error) {
+func (a *ServerGroupAPIService) GetServerGroupExecute(r ApiGetServerGroupRequest) (*ServerGroupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ServerGroupApiService) GetServerGroupExecute(r ApiGetServerGroupRequest
 		localVarReturnValue *ServerGroupResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupApiService.GetServerGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupAPIService.GetServerGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ServerGroupApiService) GetServerGroupExecute(r ApiGetServerGroupRequest
 
 type ApiListServerGroupsRequest struct {
 	ctx        context.Context
-	ApiService *ServerGroupApiService
+	ApiService *ServerGroupAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListServerGroups Returns a list of all Server Group objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListServerGroupsRequest
 */
-func (a *ServerGroupApiService) ListServerGroups(ctx context.Context) ApiListServerGroupsRequest {
+func (a *ServerGroupAPIService) ListServerGroups(ctx context.Context) ApiListServerGroupsRequest {
 	return ApiListServerGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ServerGroupApiService) ListServerGroups(ctx context.Context) ApiListSer
 // Execute executes the request
 //
 //	@return ServerGroupListResponse
-func (a *ServerGroupApiService) ListServerGroupsExecute(r ApiListServerGroupsRequest) (*ServerGroupListResponse, *http.Response, error) {
+func (a *ServerGroupAPIService) ListServerGroupsExecute(r ApiListServerGroupsRequest) (*ServerGroupListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ServerGroupApiService) ListServerGroupsExecute(r ApiListServerGroupsReq
 		localVarReturnValue *ServerGroupListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupApiService.ListServerGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupAPIService.ListServerGroups")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ServerGroupApiService) ListServerGroupsExecute(r ApiListServerGroupsReq
 
 type ApiUpdateServerGroupRequest struct {
 	ctx             context.Context
-	ApiService      *ServerGroupApiService
+	ApiService      *ServerGroupAPIService
 	serverGroupName string
 	updateRequest   *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateServerGroup Update an existing Server Group by name
 	@param serverGroupName Name of the Server Group
 	@return ApiUpdateServerGroupRequest
 */
-func (a *ServerGroupApiService) UpdateServerGroup(ctx context.Context, serverGroupName string) ApiUpdateServerGroupRequest {
+func (a *ServerGroupAPIService) UpdateServerGroup(ctx context.Context, serverGroupName string) ApiUpdateServerGroupRequest {
 	return ApiUpdateServerGroupRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -467,7 +467,7 @@ func (a *ServerGroupApiService) UpdateServerGroup(ctx context.Context, serverGro
 // Execute executes the request
 //
 //	@return ServerGroupResponse
-func (a *ServerGroupApiService) UpdateServerGroupExecute(r ApiUpdateServerGroupRequest) (*ServerGroupResponse, *http.Response, error) {
+func (a *ServerGroupAPIService) UpdateServerGroupExecute(r ApiUpdateServerGroupRequest) (*ServerGroupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ServerGroupApiService) UpdateServerGroupExecute(r ApiUpdateServerGroupR
 		localVarReturnValue *ServerGroupResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupApiService.UpdateServerGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupAPIService.UpdateServerGroup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

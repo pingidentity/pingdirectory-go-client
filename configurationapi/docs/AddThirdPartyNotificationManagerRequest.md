@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ManagerName** | **string** | Name of the new Notification Manager | 
 **Schemas** | [**[]EnumthirdPartyNotificationManagerSchemaUrn**](EnumthirdPartyNotificationManagerSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Notification Manager. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Notification Manager. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **SubscriptionBaseDN** | **string** | Specifies the DN of the entry below which subscription data is stored for this Notification Manager. This needs to be in the backend that has the data to be notified on, and must not be the same entry as the backend base DN. The subscription base DN entry does not need to exist as it will be created by the server. | 
 **TransactionNotification** | Pointer to [**EnumnotificationManagerTransactionNotificationProp**](EnumnotificationManagerTransactionNotificationProp.md) |  | [optional] 
 **MonitorEntriesEnabled** | Pointer to **bool** | Enables monitor entries for this Notification Manager. | [optional] 
+**ManagerName** | **string** | Name of the new Notification Manager | 
 
 ## Methods
 
 ### NewAddThirdPartyNotificationManagerRequest
 
-`func NewAddThirdPartyNotificationManagerRequest(managerName string, schemas []EnumthirdPartyNotificationManagerSchemaUrn, extensionClass string, enabled bool, subscriptionBaseDN string, ) *AddThirdPartyNotificationManagerRequest`
+`func NewAddThirdPartyNotificationManagerRequest(schemas []EnumthirdPartyNotificationManagerSchemaUrn, extensionClass string, enabled bool, subscriptionBaseDN string, managerName string, ) *AddThirdPartyNotificationManagerRequest`
 
 NewAddThirdPartyNotificationManagerRequest instantiates a new AddThirdPartyNotificationManagerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyNotificationManagerRequestWithDefaults instantiates a new AddThirdPartyNotificationManagerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetManagerName
-
-`func (o *AddThirdPartyNotificationManagerRequest) GetManagerName() string`
-
-GetManagerName returns the ManagerName field if non-nil, zero value otherwise.
-
-### GetManagerNameOk
-
-`func (o *AddThirdPartyNotificationManagerRequest) GetManagerNameOk() (*string, bool)`
-
-GetManagerNameOk returns a tuple with the ManagerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetManagerName
-
-`func (o *AddThirdPartyNotificationManagerRequest) SetManagerName(v string)`
-
-SetManagerName sets ManagerName field to given value.
-
 
 ### GetSchemas
 
@@ -232,6 +212,26 @@ SetMonitorEntriesEnabled sets MonitorEntriesEnabled field to given value.
 `func (o *AddThirdPartyNotificationManagerRequest) HasMonitorEntriesEnabled() bool`
 
 HasMonitorEntriesEnabled returns a boolean if a field has been set.
+
+### GetManagerName
+
+`func (o *AddThirdPartyNotificationManagerRequest) GetManagerName() string`
+
+GetManagerName returns the ManagerName field if non-nil, zero value otherwise.
+
+### GetManagerNameOk
+
+`func (o *AddThirdPartyNotificationManagerRequest) GetManagerNameOk() (*string, bool)`
+
+GetManagerNameOk returns a tuple with the ManagerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManagerName
+
+`func (o *AddThirdPartyNotificationManagerRequest) SetManagerName(v string)`
+
+SetManagerName sets ManagerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

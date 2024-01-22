@@ -19,21 +19,21 @@ var _ MappedNullable = &AddNeverRotateLogRotationPolicyRequest{}
 
 // AddNeverRotateLogRotationPolicyRequest struct for AddNeverRotateLogRotationPolicyRequest
 type AddNeverRotateLogRotationPolicyRequest struct {
-	// Name of the new Log Rotation Policy
-	PolicyName string                                      `json:"policyName"`
-	Schemas    []EnumneverRotateLogRotationPolicySchemaUrn `json:"schemas"`
+	Schemas []EnumneverRotateLogRotationPolicySchemaUrn `json:"schemas"`
 	// A description for this Log Rotation Policy
 	Description *string `json:"description,omitempty"`
+	// Name of the new Log Rotation Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddNeverRotateLogRotationPolicyRequest instantiates a new AddNeverRotateLogRotationPolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddNeverRotateLogRotationPolicyRequest(policyName string, schemas []EnumneverRotateLogRotationPolicySchemaUrn) *AddNeverRotateLogRotationPolicyRequest {
+func NewAddNeverRotateLogRotationPolicyRequest(schemas []EnumneverRotateLogRotationPolicySchemaUrn, policyName string) *AddNeverRotateLogRotationPolicyRequest {
 	this := AddNeverRotateLogRotationPolicyRequest{}
-	this.PolicyName = policyName
 	this.Schemas = schemas
+	this.PolicyName = policyName
 	return &this
 }
 
@@ -43,30 +43,6 @@ func NewAddNeverRotateLogRotationPolicyRequest(policyName string, schemas []Enum
 func NewAddNeverRotateLogRotationPolicyRequestWithDefaults() *AddNeverRotateLogRotationPolicyRequest {
 	this := AddNeverRotateLogRotationPolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddNeverRotateLogRotationPolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddNeverRotateLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddNeverRotateLogRotationPolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -125,6 +101,30 @@ func (o *AddNeverRotateLogRotationPolicyRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddNeverRotateLogRotationPolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddNeverRotateLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddNeverRotateLogRotationPolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddNeverRotateLogRotationPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -135,11 +135,11 @@ func (o AddNeverRotateLogRotationPolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddNeverRotateLogRotationPolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

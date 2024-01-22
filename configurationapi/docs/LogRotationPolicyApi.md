@@ -1,14 +1,14 @@
-# \LogRotationPolicyApi
+# \LogRotationPolicyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLogRotationPolicy**](LogRotationPolicyApi.md#AddLogRotationPolicy) | **Post** /log-rotation-policies | Add a new Log Rotation Policy to the config
-[**DeleteLogRotationPolicy**](LogRotationPolicyApi.md#DeleteLogRotationPolicy) | **Delete** /log-rotation-policies/{log-rotation-policy-name} | Delete a Log Rotation Policy
-[**GetLogRotationPolicy**](LogRotationPolicyApi.md#GetLogRotationPolicy) | **Get** /log-rotation-policies/{log-rotation-policy-name} | Returns a single Log Rotation Policy
-[**ListLogRotationPolicies**](LogRotationPolicyApi.md#ListLogRotationPolicies) | **Get** /log-rotation-policies | Returns a list of all Log Rotation Policy objects
-[**UpdateLogRotationPolicy**](LogRotationPolicyApi.md#UpdateLogRotationPolicy) | **Patch** /log-rotation-policies/{log-rotation-policy-name} | Update an existing Log Rotation Policy by name
+[**AddLogRotationPolicy**](LogRotationPolicyAPI.md#AddLogRotationPolicy) | **Post** /log-rotation-policies | Add a new Log Rotation Policy to the config
+[**DeleteLogRotationPolicy**](LogRotationPolicyAPI.md#DeleteLogRotationPolicy) | **Delete** /log-rotation-policies/{log-rotation-policy-name} | Delete a Log Rotation Policy
+[**GetLogRotationPolicy**](LogRotationPolicyAPI.md#GetLogRotationPolicy) | **Get** /log-rotation-policies/{log-rotation-policy-name} | Returns a single Log Rotation Policy
+[**ListLogRotationPolicies**](LogRotationPolicyAPI.md#ListLogRotationPolicies) | **Get** /log-rotation-policies | Returns a list of all Log Rotation Policy objects
+[**UpdateLogRotationPolicy**](LogRotationPolicyAPI.md#UpdateLogRotationPolicy) | **Patch** /log-rotation-policies/{log-rotation-policy-name} | Update an existing Log Rotation Policy by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addLogRotationPolicyRequest := openapiclient.add_log_rotation_policy_request{AddFixedTimeLogRotationPolicyRequest: openapiclient.NewAddFixedTimeLogRotationPolicyRequest("PolicyName_example", []openapiclient.EnumfixedTimeLogRotationPolicySchemaUrn{openapiclient.Enumfixed-time-log-rotation-policySchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:fixed-time")}, []string{"TimeOfDay_example"})} // AddLogRotationPolicyRequest | Create a new Log Rotation Policy in the config
+    addLogRotationPolicyRequest := openapiclient.add_log_rotation_policy_request{AddFixedTimeLogRotationPolicyRequest: openapiclient.NewAddFixedTimeLogRotationPolicyRequest([]openapiclient.EnumfixedTimeLogRotationPolicySchemaUrn{openapiclient.Enumfixed-time-log-rotation-policySchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:fixed-time")}, []string{"TimeOfDay_example"}, "PolicyName_example")} // AddLogRotationPolicyRequest | Create a new Log Rotation Policy in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogRotationPolicyApi.AddLogRotationPolicy(context.Background()).AddLogRotationPolicyRequest(addLogRotationPolicyRequest).Execute()
+    resp, r, err := apiClient.LogRotationPolicyAPI.AddLogRotationPolicy(context.Background()).AddLogRotationPolicyRequest(addLogRotationPolicyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyApi.AddLogRotationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyAPI.AddLogRotationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLogRotationPolicy`: AddLogRotationPolicy200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogRotationPolicyApi.AddLogRotationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogRotationPolicyAPI.AddLogRotationPolicy`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LogRotationPolicyApi.DeleteLogRotationPolicy(context.Background(), logRotationPolicyName).Execute()
+    r, err := apiClient.LogRotationPolicyAPI.DeleteLogRotationPolicy(context.Background(), logRotationPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyApi.DeleteLogRotationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyAPI.DeleteLogRotationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogRotationPolicyApi.GetLogRotationPolicy(context.Background(), logRotationPolicyName).Execute()
+    resp, r, err := apiClient.LogRotationPolicyAPI.GetLogRotationPolicy(context.Background(), logRotationPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyApi.GetLogRotationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyAPI.GetLogRotationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLogRotationPolicy`: AddLogRotationPolicy200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogRotationPolicyApi.GetLogRotationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogRotationPolicyAPI.GetLogRotationPolicy`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogRotationPolicyApi.ListLogRotationPolicies(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.LogRotationPolicyAPI.ListLogRotationPolicies(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyApi.ListLogRotationPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyAPI.ListLogRotationPolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLogRotationPolicies`: LogRotationPolicyListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LogRotationPolicyApi.ListLogRotationPolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogRotationPolicyAPI.ListLogRotationPolicies`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogRotationPolicyApi.UpdateLogRotationPolicy(context.Background(), logRotationPolicyName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LogRotationPolicyAPI.UpdateLogRotationPolicy(context.Background(), logRotationPolicyName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyApi.UpdateLogRotationPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyAPI.UpdateLogRotationPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLogRotationPolicy`: AddLogRotationPolicy200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogRotationPolicyApi.UpdateLogRotationPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogRotationPolicyAPI.UpdateLogRotationPolicy`: %v\n", resp)
 }
 ```
 

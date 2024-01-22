@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumpingIdentityProxyServerExternalServerSchemaUrn**](EnumpingIdentityProxyServerExternalServerSchemaUrn.md) |  | 
 **VerifyCredentialsMethod** | Pointer to [**EnumexternalServerVerifyCredentialsMethodProp**](EnumexternalServerVerifyCredentialsMethodProp.md) |  | [optional] 
 **UseAdministrativeOperationControl** | Pointer to **bool** | Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients. | [optional] 
@@ -28,12 +27,13 @@ Name | Type | Description | Notes
 **DefunctConnectionResultCode** | Pointer to [**[]EnumexternalServerDefunctConnectionResultCodeProp**](EnumexternalServerDefunctConnectionResultCodeProp.md) |  | [optional] 
 **AbandonOnTimeout** | Pointer to **bool** | Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
+**ServerName** | **string** | Name of the new External Server | 
 
 ## Methods
 
 ### NewAddPingIdentityProxyServerExternalServerRequest
 
-`func NewAddPingIdentityProxyServerExternalServerRequest(serverName string, schemas []EnumpingIdentityProxyServerExternalServerSchemaUrn, serverHostName string, ) *AddPingIdentityProxyServerExternalServerRequest`
+`func NewAddPingIdentityProxyServerExternalServerRequest(schemas []EnumpingIdentityProxyServerExternalServerSchemaUrn, serverHostName string, serverName string, ) *AddPingIdentityProxyServerExternalServerRequest`
 
 NewAddPingIdentityProxyServerExternalServerRequest instantiates a new AddPingIdentityProxyServerExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -47,26 +47,6 @@ will change when the set of required properties is changed
 NewAddPingIdentityProxyServerExternalServerRequestWithDefaults instantiates a new AddPingIdentityProxyServerExternalServerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetServerName
-
-`func (o *AddPingIdentityProxyServerExternalServerRequest) GetServerName() string`
-
-GetServerName returns the ServerName field if non-nil, zero value otherwise.
-
-### GetServerNameOk
-
-`func (o *AddPingIdentityProxyServerExternalServerRequest) GetServerNameOk() (*string, bool)`
-
-GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerName
-
-`func (o *AddPingIdentityProxyServerExternalServerRequest) SetServerName(v string)`
-
-SetServerName sets ServerName field to given value.
-
 
 ### GetSchemas
 
@@ -632,6 +612,26 @@ SetDescription sets Description field to given value.
 `func (o *AddPingIdentityProxyServerExternalServerRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetServerName
+
+`func (o *AddPingIdentityProxyServerExternalServerRequest) GetServerName() string`
+
+GetServerName returns the ServerName field if non-nil, zero value otherwise.
+
+### GetServerNameOk
+
+`func (o *AddPingIdentityProxyServerExternalServerRequest) GetServerNameOk() (*string, bool)`
+
+GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerName
+
+`func (o *AddPingIdentityProxyServerExternalServerRequest) SetServerName(v string)`
+
+SetServerName sets ServerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

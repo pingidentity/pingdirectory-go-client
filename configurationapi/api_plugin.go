@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// PluginApiService PluginApi service
-type PluginApiService service
+// PluginAPIService PluginAPI service
+type PluginAPIService service
 
 type ApiAddPluginRequest struct {
 	ctx              context.Context
-	ApiService       *PluginApiService
+	ApiService       *PluginAPIService
 	addPluginRequest *AddPluginRequest
 }
 
@@ -44,7 +44,7 @@ AddPlugin Add a new Plugin to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddPluginRequest
 */
-func (a *PluginApiService) AddPlugin(ctx context.Context) ApiAddPluginRequest {
+func (a *PluginAPIService) AddPlugin(ctx context.Context) ApiAddPluginRequest {
 	return ApiAddPluginRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *PluginApiService) AddPlugin(ctx context.Context) ApiAddPluginRequest {
 // Execute executes the request
 //
 //	@return AddPlugin200Response
-func (a *PluginApiService) AddPluginExecute(r ApiAddPluginRequest) (*AddPlugin200Response, *http.Response, error) {
+func (a *PluginAPIService) AddPluginExecute(r ApiAddPluginRequest) (*AddPlugin200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *PluginApiService) AddPluginExecute(r ApiAddPluginRequest) (*AddPlugin20
 		localVarReturnValue *AddPlugin200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginApiService.AddPlugin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginAPIService.AddPlugin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *PluginApiService) AddPluginExecute(r ApiAddPluginRequest) (*AddPlugin20
 
 type ApiDeletePluginRequest struct {
 	ctx        context.Context
-	ApiService *PluginApiService
+	ApiService *PluginAPIService
 	pluginName string
 }
 
@@ -149,7 +149,7 @@ DeletePlugin Delete a Plugin
 	@param pluginName Name of the Plugin
 	@return ApiDeletePluginRequest
 */
-func (a *PluginApiService) DeletePlugin(ctx context.Context, pluginName string) ApiDeletePluginRequest {
+func (a *PluginAPIService) DeletePlugin(ctx context.Context, pluginName string) ApiDeletePluginRequest {
 	return ApiDeletePluginRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -158,14 +158,14 @@ func (a *PluginApiService) DeletePlugin(ctx context.Context, pluginName string) 
 }
 
 // Execute executes the request
-func (a *PluginApiService) DeletePluginExecute(r ApiDeletePluginRequest) (*http.Response, error) {
+func (a *PluginAPIService) DeletePluginExecute(r ApiDeletePluginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginApiService.DeletePlugin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginAPIService.DeletePlugin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *PluginApiService) DeletePluginExecute(r ApiDeletePluginRequest) (*http.
 
 type ApiGetPluginRequest struct {
 	ctx        context.Context
-	ApiService *PluginApiService
+	ApiService *PluginAPIService
 	pluginName string
 }
 
@@ -239,7 +239,7 @@ GetPlugin Returns a single Plugin
 	@param pluginName Name of the Plugin
 	@return ApiGetPluginRequest
 */
-func (a *PluginApiService) GetPlugin(ctx context.Context, pluginName string) ApiGetPluginRequest {
+func (a *PluginAPIService) GetPlugin(ctx context.Context, pluginName string) ApiGetPluginRequest {
 	return ApiGetPluginRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -250,7 +250,7 @@ func (a *PluginApiService) GetPlugin(ctx context.Context, pluginName string) Api
 // Execute executes the request
 //
 //	@return GetPlugin200Response
-func (a *PluginApiService) GetPluginExecute(r ApiGetPluginRequest) (*GetPlugin200Response, *http.Response, error) {
+func (a *PluginAPIService) GetPluginExecute(r ApiGetPluginRequest) (*GetPlugin200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *PluginApiService) GetPluginExecute(r ApiGetPluginRequest) (*GetPlugin20
 		localVarReturnValue *GetPlugin200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginApiService.GetPlugin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginAPIService.GetPlugin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *PluginApiService) GetPluginExecute(r ApiGetPluginRequest) (*GetPlugin20
 
 type ApiListPluginsRequest struct {
 	ctx        context.Context
-	ApiService *PluginApiService
+	ApiService *PluginAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListPlugins Returns a list of all Plugin objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListPluginsRequest
 */
-func (a *PluginApiService) ListPlugins(ctx context.Context) ApiListPluginsRequest {
+func (a *PluginAPIService) ListPlugins(ctx context.Context) ApiListPluginsRequest {
 	return ApiListPluginsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *PluginApiService) ListPlugins(ctx context.Context) ApiListPluginsReques
 // Execute executes the request
 //
 //	@return PluginListResponse
-func (a *PluginApiService) ListPluginsExecute(r ApiListPluginsRequest) (*PluginListResponse, *http.Response, error) {
+func (a *PluginAPIService) ListPluginsExecute(r ApiListPluginsRequest) (*PluginListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *PluginApiService) ListPluginsExecute(r ApiListPluginsRequest) (*PluginL
 		localVarReturnValue *PluginListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginApiService.ListPlugins")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginAPIService.ListPlugins")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *PluginApiService) ListPluginsExecute(r ApiListPluginsRequest) (*PluginL
 
 type ApiUpdatePluginRequest struct {
 	ctx           context.Context
-	ApiService    *PluginApiService
+	ApiService    *PluginAPIService
 	pluginName    string
 	updateRequest *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdatePlugin Update an existing Plugin by name
 	@param pluginName Name of the Plugin
 	@return ApiUpdatePluginRequest
 */
-func (a *PluginApiService) UpdatePlugin(ctx context.Context, pluginName string) ApiUpdatePluginRequest {
+func (a *PluginAPIService) UpdatePlugin(ctx context.Context, pluginName string) ApiUpdatePluginRequest {
 	return ApiUpdatePluginRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -467,7 +467,7 @@ func (a *PluginApiService) UpdatePlugin(ctx context.Context, pluginName string) 
 // Execute executes the request
 //
 //	@return GetPlugin200Response
-func (a *PluginApiService) UpdatePluginExecute(r ApiUpdatePluginRequest) (*GetPlugin200Response, *http.Response, error) {
+func (a *PluginAPIService) UpdatePluginExecute(r ApiUpdatePluginRequest) (*GetPlugin200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *PluginApiService) UpdatePluginExecute(r ApiUpdatePluginRequest) (*GetPl
 		localVarReturnValue *GetPlugin200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginApiService.UpdatePlugin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginAPIService.UpdatePlugin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

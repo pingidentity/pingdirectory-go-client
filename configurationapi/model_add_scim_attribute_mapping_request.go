@@ -19,9 +19,7 @@ var _ MappedNullable = &AddScimAttributeMappingRequest{}
 
 // AddScimAttributeMappingRequest struct for AddScimAttributeMappingRequest
 type AddScimAttributeMappingRequest struct {
-	// Name of the new SCIM Attribute Mapping
-	MappingName string                              `json:"mappingName"`
-	Schemas     []EnumscimAttributeMappingSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumscimAttributeMappingSchemaUrn `json:"schemas,omitempty"`
 	// The Correlated LDAP Data View that persists the mapped SCIM Resource Type attribute(s).
 	CorrelatedLDAPDataView *string `json:"correlatedLDAPDataView,omitempty"`
 	// The attribute path of SCIM Resource Type attributes to be mapped.
@@ -36,17 +34,19 @@ type AddScimAttributeMappingRequest struct {
 	Searchable *bool `json:"searchable,omitempty"`
 	// Specifies that the mapping is authoritative over other mappings for the same SCIM Resource Type attribute (for read operations).
 	Authoritative *bool `json:"authoritative,omitempty"`
+	// Name of the new SCIM Attribute Mapping
+	MappingName string `json:"mappingName"`
 }
 
 // NewAddScimAttributeMappingRequest instantiates a new AddScimAttributeMappingRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddScimAttributeMappingRequest(mappingName string, scimResourceTypeAttribute string, ldapAttribute string) *AddScimAttributeMappingRequest {
+func NewAddScimAttributeMappingRequest(scimResourceTypeAttribute string, ldapAttribute string, mappingName string) *AddScimAttributeMappingRequest {
 	this := AddScimAttributeMappingRequest{}
-	this.MappingName = mappingName
 	this.ScimResourceTypeAttribute = scimResourceTypeAttribute
 	this.LdapAttribute = ldapAttribute
+	this.MappingName = mappingName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddScimAttributeMappingRequest(mappingName string, scimResourceTypeAttri
 func NewAddScimAttributeMappingRequestWithDefaults() *AddScimAttributeMappingRequest {
 	this := AddScimAttributeMappingRequest{}
 	return &this
-}
-
-// GetMappingName returns the MappingName field value
-func (o *AddScimAttributeMappingRequest) GetMappingName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MappingName
-}
-
-// GetMappingNameOk returns a tuple with the MappingName field value
-// and a boolean to check if the value has been set.
-func (o *AddScimAttributeMappingRequest) GetMappingNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MappingName, true
-}
-
-// SetMappingName sets field value
-func (o *AddScimAttributeMappingRequest) SetMappingName(v string) {
-	o.MappingName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -322,6 +298,30 @@ func (o *AddScimAttributeMappingRequest) SetAuthoritative(v bool) {
 	o.Authoritative = &v
 }
 
+// GetMappingName returns the MappingName field value
+func (o *AddScimAttributeMappingRequest) GetMappingName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MappingName
+}
+
+// GetMappingNameOk returns a tuple with the MappingName field value
+// and a boolean to check if the value has been set.
+func (o *AddScimAttributeMappingRequest) GetMappingNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MappingName, true
+}
+
+// SetMappingName sets field value
+func (o *AddScimAttributeMappingRequest) SetMappingName(v string) {
+	o.MappingName = v
+}
+
 func (o AddScimAttributeMappingRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -332,7 +332,6 @@ func (o AddScimAttributeMappingRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddScimAttributeMappingRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mappingName"] = o.MappingName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -353,6 +352,7 @@ func (o AddScimAttributeMappingRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Authoritative) {
 		toSerialize["authoritative"] = o.Authoritative
 	}
+	toSerialize["mappingName"] = o.MappingName
 	return toSerialize, nil
 }
 

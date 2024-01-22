@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSearchShutdownPluginRequest{}
 
 // AddSearchShutdownPluginRequest struct for AddSearchShutdownPluginRequest
 type AddSearchShutdownPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                              `json:"pluginName"`
-	Schemas    []EnumsearchShutdownPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumsearchShutdownPluginSchemaUrn `json:"schemas"`
 	// The base DN to use for the search.
 	BaseDN *string             `json:"baseDN,omitempty"`
 	Scope  EnumpluginScopeProp `json:"scope"`
@@ -37,20 +35,22 @@ type AddSearchShutdownPluginRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddSearchShutdownPluginRequest instantiates a new AddSearchShutdownPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSearchShutdownPluginRequest(pluginName string, schemas []EnumsearchShutdownPluginSchemaUrn, scope EnumpluginScopeProp, filter string, outputFile string, enabled bool) *AddSearchShutdownPluginRequest {
+func NewAddSearchShutdownPluginRequest(schemas []EnumsearchShutdownPluginSchemaUrn, scope EnumpluginScopeProp, filter string, outputFile string, enabled bool, pluginName string) *AddSearchShutdownPluginRequest {
 	this := AddSearchShutdownPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.Scope = scope
 	this.Filter = filter
 	this.OutputFile = outputFile
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewAddSearchShutdownPluginRequest(pluginName string, schemas []EnumsearchSh
 func NewAddSearchShutdownPluginRequestWithDefaults() *AddSearchShutdownPluginRequest {
 	this := AddSearchShutdownPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddSearchShutdownPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddSearchShutdownPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddSearchShutdownPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -334,6 +310,30 @@ func (o *AddSearchShutdownPluginRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddSearchShutdownPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddSearchShutdownPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddSearchShutdownPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddSearchShutdownPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -344,7 +344,6 @@ func (o AddSearchShutdownPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSearchShutdownPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.BaseDN) {
 		toSerialize["baseDN"] = o.BaseDN
@@ -362,6 +361,7 @@ func (o AddSearchShutdownPluginRequest) ToMap() (map[string]interface{}, error) 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

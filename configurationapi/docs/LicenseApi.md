@@ -1,11 +1,11 @@
-# \LicenseApi
+# \LicenseAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetLicense**](LicenseApi.md#GetLicense) | **Get** /license | Returns a single License
-[**UpdateLicense**](LicenseApi.md#UpdateLicense) | **Patch** /license | Update an existing License by name
+[**GetLicense**](LicenseAPI.md#GetLicense) | **Get** /license | Returns a single License
+[**UpdateLicense**](LicenseAPI.md#UpdateLicense) | **Patch** /license | Update an existing License by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseApi.GetLicense(context.Background()).Execute()
+    resp, r, err := apiClient.LicenseAPI.GetLicense(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseApi.GetLicense``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.GetLicense``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLicense`: LicenseResponse
-    fmt.Fprintf(os.Stdout, "Response from `LicenseApi.GetLicense`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.GetLicense`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseApi.UpdateLicense(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LicenseAPI.UpdateLicense(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseApi.UpdateLicense``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LicenseAPI.UpdateLicense``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLicense`: LicenseResponse
-    fmt.Fprintf(os.Stdout, "Response from `LicenseApi.UpdateLicense`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LicenseAPI.UpdateLicense`: %v\n", resp)
 }
 ```
 

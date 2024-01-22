@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LocalDbIndexApiService LocalDbIndexApi service
-type LocalDbIndexApiService service
+// LocalDbIndexAPIService LocalDbIndexAPI service
+type LocalDbIndexAPIService service
 
 type ApiAddLocalDbIndexRequest struct {
 	ctx                    context.Context
-	ApiService             *LocalDbIndexApiService
+	ApiService             *LocalDbIndexAPIService
 	backendName            string
 	addLocalDbIndexRequest *AddLocalDbIndexRequest
 }
@@ -46,7 +46,7 @@ AddLocalDbIndex Add a new Local DB Index to the config
 	@param backendName Name of the Backend
 	@return ApiAddLocalDbIndexRequest
 */
-func (a *LocalDbIndexApiService) AddLocalDbIndex(ctx context.Context, backendName string) ApiAddLocalDbIndexRequest {
+func (a *LocalDbIndexAPIService) AddLocalDbIndex(ctx context.Context, backendName string) ApiAddLocalDbIndexRequest {
 	return ApiAddLocalDbIndexRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -57,7 +57,7 @@ func (a *LocalDbIndexApiService) AddLocalDbIndex(ctx context.Context, backendNam
 // Execute executes the request
 //
 //	@return LocalDbIndexResponse
-func (a *LocalDbIndexApiService) AddLocalDbIndexExecute(r ApiAddLocalDbIndexRequest) (*LocalDbIndexResponse, *http.Response, error) {
+func (a *LocalDbIndexAPIService) AddLocalDbIndexExecute(r ApiAddLocalDbIndexRequest) (*LocalDbIndexResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *LocalDbIndexApiService) AddLocalDbIndexExecute(r ApiAddLocalDbIndexRequ
 		localVarReturnValue *LocalDbIndexResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexApiService.AddLocalDbIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexAPIService.AddLocalDbIndex")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *LocalDbIndexApiService) AddLocalDbIndexExecute(r ApiAddLocalDbIndexRequ
 
 type ApiDeleteLocalDbIndexRequest struct {
 	ctx              context.Context
-	ApiService       *LocalDbIndexApiService
+	ApiService       *LocalDbIndexAPIService
 	localDbIndexName string
 	backendName      string
 }
@@ -155,7 +155,7 @@ DeleteLocalDbIndex Delete a Local DB Index
 	@param backendName Name of the Backend
 	@return ApiDeleteLocalDbIndexRequest
 */
-func (a *LocalDbIndexApiService) DeleteLocalDbIndex(ctx context.Context, localDbIndexName string, backendName string) ApiDeleteLocalDbIndexRequest {
+func (a *LocalDbIndexAPIService) DeleteLocalDbIndex(ctx context.Context, localDbIndexName string, backendName string) ApiDeleteLocalDbIndexRequest {
 	return ApiDeleteLocalDbIndexRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -165,14 +165,14 @@ func (a *LocalDbIndexApiService) DeleteLocalDbIndex(ctx context.Context, localDb
 }
 
 // Execute executes the request
-func (a *LocalDbIndexApiService) DeleteLocalDbIndexExecute(r ApiDeleteLocalDbIndexRequest) (*http.Response, error) {
+func (a *LocalDbIndexAPIService) DeleteLocalDbIndexExecute(r ApiDeleteLocalDbIndexRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexApiService.DeleteLocalDbIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexAPIService.DeleteLocalDbIndex")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *LocalDbIndexApiService) DeleteLocalDbIndexExecute(r ApiDeleteLocalDbInd
 
 type ApiGetLocalDbIndexRequest struct {
 	ctx              context.Context
-	ApiService       *LocalDbIndexApiService
+	ApiService       *LocalDbIndexAPIService
 	localDbIndexName string
 	backendName      string
 }
@@ -249,7 +249,7 @@ GetLocalDbIndex Returns a single Local DB Index
 	@param backendName Name of the Backend
 	@return ApiGetLocalDbIndexRequest
 */
-func (a *LocalDbIndexApiService) GetLocalDbIndex(ctx context.Context, localDbIndexName string, backendName string) ApiGetLocalDbIndexRequest {
+func (a *LocalDbIndexAPIService) GetLocalDbIndex(ctx context.Context, localDbIndexName string, backendName string) ApiGetLocalDbIndexRequest {
 	return ApiGetLocalDbIndexRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -261,7 +261,7 @@ func (a *LocalDbIndexApiService) GetLocalDbIndex(ctx context.Context, localDbInd
 // Execute executes the request
 //
 //	@return LocalDbIndexResponse
-func (a *LocalDbIndexApiService) GetLocalDbIndexExecute(r ApiGetLocalDbIndexRequest) (*LocalDbIndexResponse, *http.Response, error) {
+func (a *LocalDbIndexAPIService) GetLocalDbIndexExecute(r ApiGetLocalDbIndexRequest) (*LocalDbIndexResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *LocalDbIndexApiService) GetLocalDbIndexExecute(r ApiGetLocalDbIndexRequ
 		localVarReturnValue *LocalDbIndexResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexApiService.GetLocalDbIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexAPIService.GetLocalDbIndex")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *LocalDbIndexApiService) GetLocalDbIndexExecute(r ApiGetLocalDbIndexRequ
 
 type ApiListLocalDbIndexesRequest struct {
 	ctx         context.Context
-	ApiService  *LocalDbIndexApiService
+	ApiService  *LocalDbIndexAPIService
 	backendName string
 	filter      *string
 }
@@ -360,7 +360,7 @@ ListLocalDbIndexes Returns a list of all Local DB Index objects
 	@param backendName Name of the Backend
 	@return ApiListLocalDbIndexesRequest
 */
-func (a *LocalDbIndexApiService) ListLocalDbIndexes(ctx context.Context, backendName string) ApiListLocalDbIndexesRequest {
+func (a *LocalDbIndexAPIService) ListLocalDbIndexes(ctx context.Context, backendName string) ApiListLocalDbIndexesRequest {
 	return ApiListLocalDbIndexesRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -371,7 +371,7 @@ func (a *LocalDbIndexApiService) ListLocalDbIndexes(ctx context.Context, backend
 // Execute executes the request
 //
 //	@return LocalDbIndexListResponse
-func (a *LocalDbIndexApiService) ListLocalDbIndexesExecute(r ApiListLocalDbIndexesRequest) (*LocalDbIndexListResponse, *http.Response, error) {
+func (a *LocalDbIndexAPIService) ListLocalDbIndexesExecute(r ApiListLocalDbIndexesRequest) (*LocalDbIndexListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *LocalDbIndexApiService) ListLocalDbIndexesExecute(r ApiListLocalDbIndex
 		localVarReturnValue *LocalDbIndexListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexApiService.ListLocalDbIndexes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexAPIService.ListLocalDbIndexes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *LocalDbIndexApiService) ListLocalDbIndexesExecute(r ApiListLocalDbIndex
 
 type ApiUpdateLocalDbIndexRequest struct {
 	ctx              context.Context
-	ApiService       *LocalDbIndexApiService
+	ApiService       *LocalDbIndexAPIService
 	localDbIndexName string
 	backendName      string
 	updateRequest    *UpdateRequest
@@ -474,7 +474,7 @@ UpdateLocalDbIndex Update an existing Local DB Index by name
 	@param backendName Name of the Backend
 	@return ApiUpdateLocalDbIndexRequest
 */
-func (a *LocalDbIndexApiService) UpdateLocalDbIndex(ctx context.Context, localDbIndexName string, backendName string) ApiUpdateLocalDbIndexRequest {
+func (a *LocalDbIndexAPIService) UpdateLocalDbIndex(ctx context.Context, localDbIndexName string, backendName string) ApiUpdateLocalDbIndexRequest {
 	return ApiUpdateLocalDbIndexRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -486,7 +486,7 @@ func (a *LocalDbIndexApiService) UpdateLocalDbIndex(ctx context.Context, localDb
 // Execute executes the request
 //
 //	@return LocalDbIndexResponse
-func (a *LocalDbIndexApiService) UpdateLocalDbIndexExecute(r ApiUpdateLocalDbIndexRequest) (*LocalDbIndexResponse, *http.Response, error) {
+func (a *LocalDbIndexAPIService) UpdateLocalDbIndexExecute(r ApiUpdateLocalDbIndexRequest) (*LocalDbIndexResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *LocalDbIndexApiService) UpdateLocalDbIndexExecute(r ApiUpdateLocalDbInd
 		localVarReturnValue *LocalDbIndexResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexApiService.UpdateLocalDbIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbIndexAPIService.UpdateLocalDbIndex")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

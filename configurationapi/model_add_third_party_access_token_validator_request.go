@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyAccessTokenValidatorRequest{}
 
 // AddThirdPartyAccessTokenValidatorRequest struct for AddThirdPartyAccessTokenValidatorRequest
 type AddThirdPartyAccessTokenValidatorRequest struct {
-	// Name of the new Access Token Validator
-	ValidatorName string                                        `json:"validatorName"`
-	Schemas       []EnumthirdPartyAccessTokenValidatorSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Access Token Validator.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Access Token Validator. Each configuration property should be given in the form 'name=value'.
@@ -36,19 +34,21 @@ type AddThirdPartyAccessTokenValidatorRequest struct {
 	Enabled bool `json:"enabled"`
 	// When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
 	EvaluationOrderIndex int64 `json:"evaluationOrderIndex"`
+	// Name of the new Access Token Validator
+	ValidatorName string `json:"validatorName"`
 }
 
 // NewAddThirdPartyAccessTokenValidatorRequest instantiates a new AddThirdPartyAccessTokenValidatorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyAccessTokenValidatorRequest(validatorName string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int64) *AddThirdPartyAccessTokenValidatorRequest {
+func NewAddThirdPartyAccessTokenValidatorRequest(schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int64, validatorName string) *AddThirdPartyAccessTokenValidatorRequest {
 	this := AddThirdPartyAccessTokenValidatorRequest{}
-	this.ValidatorName = validatorName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
 	this.EvaluationOrderIndex = evaluationOrderIndex
+	this.ValidatorName = validatorName
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewAddThirdPartyAccessTokenValidatorRequest(validatorName string, schemas [
 func NewAddThirdPartyAccessTokenValidatorRequestWithDefaults() *AddThirdPartyAccessTokenValidatorRequest {
 	this := AddThirdPartyAccessTokenValidatorRequest{}
 	return &this
-}
-
-// GetValidatorName returns the ValidatorName field value
-func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ValidatorName
-}
-
-// GetValidatorNameOk returns a tuple with the ValidatorName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ValidatorName, true
-}
-
-// SetValidatorName sets field value
-func (o *AddThirdPartyAccessTokenValidatorRequest) SetValidatorName(v string) {
-	o.ValidatorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -308,6 +284,30 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int
 	o.EvaluationOrderIndex = v
 }
 
+// GetValidatorName returns the ValidatorName field value
+func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ValidatorName
+}
+
+// GetValidatorNameOk returns a tuple with the ValidatorName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ValidatorName, true
+}
+
+// SetValidatorName sets field value
+func (o *AddThirdPartyAccessTokenValidatorRequest) SetValidatorName(v string) {
+	o.ValidatorName = v
+}
+
 func (o AddThirdPartyAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -318,7 +318,6 @@ func (o AddThirdPartyAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddThirdPartyAccessTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["validatorName"] = o.ValidatorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -335,6 +334,7 @@ func (o AddThirdPartyAccessTokenValidatorRequest) ToMap() (map[string]interface{
 	}
 	toSerialize["enabled"] = o.Enabled
 	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	toSerialize["validatorName"] = o.ValidatorName
 	return toSerialize, nil
 }
 

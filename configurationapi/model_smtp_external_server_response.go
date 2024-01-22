@@ -19,8 +19,6 @@ var _ MappedNullable = &SmtpExternalServerResponse{}
 
 // SmtpExternalServerResponse struct for SmtpExternalServerResponse
 type SmtpExternalServerResponse struct {
-	// Name of the External Server
-	Id      string                            `json:"id"`
 	Schemas []EnumsmtpExternalServerSchemaUrn `json:"schemas"`
 	// The host name of the smtp server.
 	ServerHostName string `json:"serverHostName"`
@@ -41,17 +39,19 @@ type SmtpExternalServerResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the External Server
+	Id string `json:"id"`
 }
 
 // NewSmtpExternalServerResponse instantiates a new SmtpExternalServerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSmtpExternalServerResponse(id string, schemas []EnumsmtpExternalServerSchemaUrn, serverHostName string) *SmtpExternalServerResponse {
+func NewSmtpExternalServerResponse(schemas []EnumsmtpExternalServerSchemaUrn, serverHostName string, id string) *SmtpExternalServerResponse {
 	this := SmtpExternalServerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
+	this.Id = id
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewSmtpExternalServerResponse(id string, schemas []EnumsmtpExternalServerSc
 func NewSmtpExternalServerResponseWithDefaults() *SmtpExternalServerResponse {
 	this := SmtpExternalServerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SmtpExternalServerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SmtpExternalServerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SmtpExternalServerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -455,6 +431,30 @@ func (o *SmtpExternalServerResponse) SetUrnpingidentityschemasconfigurationmessa
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SmtpExternalServerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SmtpExternalServerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SmtpExternalServerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SmtpExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -465,7 +465,6 @@ func (o SmtpExternalServerResponse) MarshalJSON() ([]byte, error) {
 
 func (o SmtpExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["serverHostName"] = o.ServerHostName
 	if !IsNil(o.ServerPort) {
@@ -498,6 +497,7 @@ func (o SmtpExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

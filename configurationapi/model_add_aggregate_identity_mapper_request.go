@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAggregateIdentityMapperRequest{}
 
 // AddAggregateIdentityMapperRequest struct for AddAggregateIdentityMapperRequest
 type AddAggregateIdentityMapperRequest struct {
-	// Name of the new Identity Mapper
-	MapperName string                                 `json:"mapperName"`
-	Schemas    []EnumaggregateIdentityMapperSchemaUrn `json:"schemas"`
+	Schemas []EnumaggregateIdentityMapperSchemaUrn `json:"schemas"`
 	// The set of identity mappers that must all match the target entry. Each identity mapper must uniquely match the same target entry. If any of the identity mappers match multiple entries, if any of them match zero entries, or if any of them match different entries, then the mapping will fail.
 	AllIncludedIdentityMapper []string `json:"allIncludedIdentityMapper,omitempty"`
 	// The set of identity mappers that will be used to identify the target entry. At least one identity mapper must uniquely match an entry. If multiple identity mappers match entries, then they must all uniquely match the same entry. If none of the identity mappers match any entries, if any of them match multiple entries, or if any of them match different entries, then the mapping will fail.
@@ -30,17 +28,19 @@ type AddAggregateIdentityMapperRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Identity Mapper is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Identity Mapper
+	MapperName string `json:"mapperName"`
 }
 
 // NewAddAggregateIdentityMapperRequest instantiates a new AddAggregateIdentityMapperRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAggregateIdentityMapperRequest(mapperName string, schemas []EnumaggregateIdentityMapperSchemaUrn, enabled bool) *AddAggregateIdentityMapperRequest {
+func NewAddAggregateIdentityMapperRequest(schemas []EnumaggregateIdentityMapperSchemaUrn, enabled bool, mapperName string) *AddAggregateIdentityMapperRequest {
 	this := AddAggregateIdentityMapperRequest{}
-	this.MapperName = mapperName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.MapperName = mapperName
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewAddAggregateIdentityMapperRequest(mapperName string, schemas []Enumaggre
 func NewAddAggregateIdentityMapperRequestWithDefaults() *AddAggregateIdentityMapperRequest {
 	this := AddAggregateIdentityMapperRequest{}
 	return &this
-}
-
-// GetMapperName returns the MapperName field value
-func (o *AddAggregateIdentityMapperRequest) GetMapperName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MapperName
-}
-
-// GetMapperNameOk returns a tuple with the MapperName field value
-// and a boolean to check if the value has been set.
-func (o *AddAggregateIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MapperName, true
-}
-
-// SetMapperName sets field value
-func (o *AddAggregateIdentityMapperRequest) SetMapperName(v string) {
-	o.MapperName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -220,6 +196,30 @@ func (o *AddAggregateIdentityMapperRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMapperName returns the MapperName field value
+func (o *AddAggregateIdentityMapperRequest) GetMapperName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MapperName
+}
+
+// GetMapperNameOk returns a tuple with the MapperName field value
+// and a boolean to check if the value has been set.
+func (o *AddAggregateIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MapperName, true
+}
+
+// SetMapperName sets field value
+func (o *AddAggregateIdentityMapperRequest) SetMapperName(v string) {
+	o.MapperName = v
+}
+
 func (o AddAggregateIdentityMapperRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -230,7 +230,6 @@ func (o AddAggregateIdentityMapperRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddAggregateIdentityMapperRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mapperName"] = o.MapperName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllIncludedIdentityMapper) {
 		toSerialize["allIncludedIdentityMapper"] = o.AllIncludedIdentityMapper
@@ -242,6 +241,7 @@ func (o AddAggregateIdentityMapperRequest) ToMap() (map[string]interface{}, erro
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["mapperName"] = o.MapperName
 	return toSerialize, nil
 }
 

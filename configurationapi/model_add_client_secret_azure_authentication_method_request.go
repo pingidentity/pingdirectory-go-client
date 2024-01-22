@@ -19,9 +19,7 @@ var _ MappedNullable = &AddClientSecretAzureAuthenticationMethodRequest{}
 
 // AddClientSecretAzureAuthenticationMethodRequest struct for AddClientSecretAzureAuthenticationMethodRequest
 type AddClientSecretAzureAuthenticationMethodRequest struct {
-	// Name of the new Azure Authentication Method
-	MethodName string                                               `json:"methodName"`
-	Schemas    []EnumclientSecretAzureAuthenticationMethodSchemaUrn `json:"schemas"`
+	Schemas []EnumclientSecretAzureAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The tenant ID to use to authenticate.
 	TenantID string `json:"tenantID"`
 	// The client ID to use to authenticate.
@@ -30,19 +28,21 @@ type AddClientSecretAzureAuthenticationMethodRequest struct {
 	ClientSecret string `json:"clientSecret"`
 	// A description for this Azure Authentication Method
 	Description *string `json:"description,omitempty"`
+	// Name of the new Azure Authentication Method
+	MethodName string `json:"methodName"`
 }
 
 // NewAddClientSecretAzureAuthenticationMethodRequest instantiates a new AddClientSecretAzureAuthenticationMethodRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddClientSecretAzureAuthenticationMethodRequest(methodName string, schemas []EnumclientSecretAzureAuthenticationMethodSchemaUrn, tenantID string, clientID string, clientSecret string) *AddClientSecretAzureAuthenticationMethodRequest {
+func NewAddClientSecretAzureAuthenticationMethodRequest(schemas []EnumclientSecretAzureAuthenticationMethodSchemaUrn, tenantID string, clientID string, clientSecret string, methodName string) *AddClientSecretAzureAuthenticationMethodRequest {
 	this := AddClientSecretAzureAuthenticationMethodRequest{}
-	this.MethodName = methodName
 	this.Schemas = schemas
 	this.TenantID = tenantID
 	this.ClientID = clientID
 	this.ClientSecret = clientSecret
+	this.MethodName = methodName
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewAddClientSecretAzureAuthenticationMethodRequest(methodName string, schem
 func NewAddClientSecretAzureAuthenticationMethodRequestWithDefaults() *AddClientSecretAzureAuthenticationMethodRequest {
 	this := AddClientSecretAzureAuthenticationMethodRequest{}
 	return &this
-}
-
-// GetMethodName returns the MethodName field value
-func (o *AddClientSecretAzureAuthenticationMethodRequest) GetMethodName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MethodName
-}
-
-// GetMethodNameOk returns a tuple with the MethodName field value
-// and a boolean to check if the value has been set.
-func (o *AddClientSecretAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MethodName, true
-}
-
-// SetMethodName sets field value
-func (o *AddClientSecretAzureAuthenticationMethodRequest) SetMethodName(v string) {
-	o.MethodName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -206,6 +182,30 @@ func (o *AddClientSecretAzureAuthenticationMethodRequest) SetDescription(v strin
 	o.Description = &v
 }
 
+// GetMethodName returns the MethodName field value
+func (o *AddClientSecretAzureAuthenticationMethodRequest) GetMethodName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MethodName
+}
+
+// GetMethodNameOk returns a tuple with the MethodName field value
+// and a boolean to check if the value has been set.
+func (o *AddClientSecretAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MethodName, true
+}
+
+// SetMethodName sets field value
+func (o *AddClientSecretAzureAuthenticationMethodRequest) SetMethodName(v string) {
+	o.MethodName = v
+}
+
 func (o AddClientSecretAzureAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -216,7 +216,6 @@ func (o AddClientSecretAzureAuthenticationMethodRequest) MarshalJSON() ([]byte, 
 
 func (o AddClientSecretAzureAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["methodName"] = o.MethodName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["tenantID"] = o.TenantID
 	toSerialize["clientID"] = o.ClientID
@@ -224,6 +223,7 @@ func (o AddClientSecretAzureAuthenticationMethodRequest) ToMap() (map[string]int
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["methodName"] = o.MethodName
 	return toSerialize, nil
 }
 

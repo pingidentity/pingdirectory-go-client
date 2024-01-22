@@ -19,8 +19,6 @@ var _ MappedNullable = &DnMapperPluginResponse{}
 
 // DnMapperPluginResponse struct for DnMapperPluginResponse
 type DnMapperPluginResponse struct {
-	// Name of the Plugin
-	Id         string                        `json:"id"`
 	Schemas    []EnumdnMapperPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp    `json:"pluginType"`
 	// Specifies the source DN that may appear in client requests which should be remapped to the target DN. Note that the source DN must not be equal to the target DN.
@@ -43,15 +41,16 @@ type DnMapperPluginResponse struct {
 	InvokeForInternalOperations                   *bool                                              `json:"invokeForInternalOperations,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewDnMapperPluginResponse instantiates a new DnMapperPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDnMapperPluginResponse(id string, schemas []EnumdnMapperPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, enabled bool) *DnMapperPluginResponse {
+func NewDnMapperPluginResponse(schemas []EnumdnMapperPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, enabled bool, id string) *DnMapperPluginResponse {
 	this := DnMapperPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PluginType = pluginType
 	this.SourceDN = sourceDN
@@ -60,6 +59,7 @@ func NewDnMapperPluginResponse(id string, schemas []EnumdnMapperPluginSchemaUrn,
 	this.EnableControlMapping = enableControlMapping
 	this.AlwaysMapResponses = alwaysMapResponses
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -69,30 +69,6 @@ func NewDnMapperPluginResponse(id string, schemas []EnumdnMapperPluginSchemaUrn,
 func NewDnMapperPluginResponseWithDefaults() *DnMapperPluginResponse {
 	this := DnMapperPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DnMapperPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DnMapperPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DnMapperPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -447,6 +423,30 @@ func (o *DnMapperPluginResponse) SetUrnpingidentityschemasconfigurationmessages2
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DnMapperPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DnMapperPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DnMapperPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DnMapperPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -457,7 +457,6 @@ func (o DnMapperPluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o DnMapperPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["pluginType"] = o.PluginType
 	toSerialize["sourceDN"] = o.SourceDN
@@ -481,6 +480,7 @@ func (o DnMapperPluginResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

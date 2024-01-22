@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyOtpDeliveryMechanismRequest{}
 
 // AddThirdPartyOtpDeliveryMechanismRequest struct for AddThirdPartyOtpDeliveryMechanismRequest
 type AddThirdPartyOtpDeliveryMechanismRequest struct {
-	// Name of the new OTP Delivery Mechanism
-	MechanismName string                                        `json:"mechanismName"`
-	Schemas       []EnumthirdPartyOtpDeliveryMechanismSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyOtpDeliveryMechanismSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party OTP Delivery Mechanism.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party OTP Delivery Mechanism. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddThirdPartyOtpDeliveryMechanismRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this OTP Delivery Mechanism is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new OTP Delivery Mechanism
+	MechanismName string `json:"mechanismName"`
 }
 
 // NewAddThirdPartyOtpDeliveryMechanismRequest instantiates a new AddThirdPartyOtpDeliveryMechanismRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumthirdPartyOtpDeliveryMechanismSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyOtpDeliveryMechanismRequest {
+func NewAddThirdPartyOtpDeliveryMechanismRequest(schemas []EnumthirdPartyOtpDeliveryMechanismSchemaUrn, extensionClass string, enabled bool, mechanismName string) *AddThirdPartyOtpDeliveryMechanismRequest {
 	this := AddThirdPartyOtpDeliveryMechanismRequest{}
-	this.MechanismName = mechanismName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.MechanismName = mechanismName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddThirdPartyOtpDeliveryMechanismRequest(mechanismName string, schemas [
 func NewAddThirdPartyOtpDeliveryMechanismRequestWithDefaults() *AddThirdPartyOtpDeliveryMechanismRequest {
 	this := AddThirdPartyOtpDeliveryMechanismRequest{}
 	return &this
-}
-
-// GetMechanismName returns the MechanismName field value
-func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetMechanismName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MechanismName
-}
-
-// GetMechanismNameOk returns a tuple with the MechanismName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetMechanismNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MechanismName, true
-}
-
-// SetMechanismName sets field value
-func (o *AddThirdPartyOtpDeliveryMechanismRequest) SetMechanismName(v string) {
-	o.MechanismName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMechanismName returns the MechanismName field value
+func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetMechanismName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MechanismName
+}
+
+// GetMechanismNameOk returns a tuple with the MechanismName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetMechanismNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MechanismName, true
+}
+
+// SetMechanismName sets field value
+func (o *AddThirdPartyOtpDeliveryMechanismRequest) SetMechanismName(v string) {
+	o.MechanismName = v
+}
+
 func (o AddThirdPartyOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddThirdPartyOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddThirdPartyOtpDeliveryMechanismRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mechanismName"] = o.MechanismName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -233,6 +232,7 @@ func (o AddThirdPartyOtpDeliveryMechanismRequest) ToMap() (map[string]interface{
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["mechanismName"] = o.MechanismName
 	return toSerialize, nil
 }
 

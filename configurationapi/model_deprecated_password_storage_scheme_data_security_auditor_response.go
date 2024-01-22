@@ -19,8 +19,6 @@ var _ MappedNullable = &DeprecatedPasswordStorageSchemeDataSecurityAuditorRespon
 
 // DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse struct for DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse
 type DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse struct {
-	// Name of the Data Security Auditor
-	Id      string                                                            `json:"id"`
 	Schemas []EnumdeprecatedPasswordStorageSchemeDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
@@ -33,18 +31,20 @@ type DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse struct {
 	AuditSeverity                                 *EnumdataSecurityAuditorAuditSeverityProp          `json:"auditSeverity,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Data Security Auditor
+	Id string `json:"id"`
 }
 
 // NewDeprecatedPasswordStorageSchemeDataSecurityAuditorResponse instantiates a new DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeprecatedPasswordStorageSchemeDataSecurityAuditorResponse(id string, schemas []EnumdeprecatedPasswordStorageSchemeDataSecurityAuditorSchemaUrn, reportFile string, enabled bool) *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse {
+func NewDeprecatedPasswordStorageSchemeDataSecurityAuditorResponse(schemas []EnumdeprecatedPasswordStorageSchemeDataSecurityAuditorSchemaUrn, reportFile string, enabled bool, id string) *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse {
 	this := DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ReportFile = reportFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewDeprecatedPasswordStorageSchemeDataSecurityAuditorResponse(id string, sc
 func NewDeprecatedPasswordStorageSchemeDataSecurityAuditorResponseWithDefaults() *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse {
 	this := DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -312,6 +288,30 @@ func (o *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) SetUrnpingi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -322,7 +322,6 @@ func (o DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) MarshalJSON(
 
 func (o DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["reportFile"] = o.ReportFile
 	toSerialize["enabled"] = o.Enabled
@@ -341,6 +340,7 @@ func (o DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) ToMap() (map
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

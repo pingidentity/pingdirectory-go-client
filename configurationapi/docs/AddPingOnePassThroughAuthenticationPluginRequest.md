@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumpingOnePassThroughAuthenticationPluginSchemaUrn**](EnumpingOnePassThroughAuthenticationPluginSchemaUrn.md) |  | 
 **ApiURL** | **string** | Specifies the API endpoint for the PingOne web service. | 
 **AuthURL** | **string** | Specifies the API endpoint for the PingOne authentication service. | 
@@ -28,12 +27,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddPingOnePassThroughAuthenticationPluginRequest
 
-`func NewAddPingOnePassThroughAuthenticationPluginRequest(pluginName string, schemas []EnumpingOnePassThroughAuthenticationPluginSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, enabled bool, ) *AddPingOnePassThroughAuthenticationPluginRequest`
+`func NewAddPingOnePassThroughAuthenticationPluginRequest(schemas []EnumpingOnePassThroughAuthenticationPluginSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, enabled bool, pluginName string, ) *AddPingOnePassThroughAuthenticationPluginRequest`
 
 NewAddPingOnePassThroughAuthenticationPluginRequest instantiates a new AddPingOnePassThroughAuthenticationPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -47,26 +47,6 @@ will change when the set of required properties is changed
 NewAddPingOnePassThroughAuthenticationPluginRequestWithDefaults instantiates a new AddPingOnePassThroughAuthenticationPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddPingOnePassThroughAuthenticationPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddPingOnePassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddPingOnePassThroughAuthenticationPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -602,6 +582,26 @@ SetInvokeForInternalOperations sets InvokeForInternalOperations field to given v
 `func (o *AddPingOnePassThroughAuthenticationPluginRequest) HasInvokeForInternalOperations() bool`
 
 HasInvokeForInternalOperations returns a boolean if a field has been set.
+
+### GetPluginName
+
+`func (o *AddPingOnePassThroughAuthenticationPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddPingOnePassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddPingOnePassThroughAuthenticationPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

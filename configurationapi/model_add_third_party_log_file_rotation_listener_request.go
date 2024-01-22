@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyLogFileRotationListenerRequest{}
 
 // AddThirdPartyLogFileRotationListenerRequest struct for AddThirdPartyLogFileRotationListenerRequest
 type AddThirdPartyLogFileRotationListenerRequest struct {
-	// Name of the new Log File Rotation Listener
-	ListenerName string                                           `json:"listenerName"`
-	Schemas      []EnumthirdPartyLogFileRotationListenerSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Log File Rotation Listener.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Log File Rotation Listener. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddThirdPartyLogFileRotationListenerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log File Rotation Listener is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Log File Rotation Listener
+	ListenerName string `json:"listenerName"`
 }
 
 // NewAddThirdPartyLogFileRotationListenerRequest instantiates a new AddThirdPartyLogFileRotationListenerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyLogFileRotationListenerRequest(listenerName string, schemas []EnumthirdPartyLogFileRotationListenerSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyLogFileRotationListenerRequest {
+func NewAddThirdPartyLogFileRotationListenerRequest(schemas []EnumthirdPartyLogFileRotationListenerSchemaUrn, extensionClass string, enabled bool, listenerName string) *AddThirdPartyLogFileRotationListenerRequest {
 	this := AddThirdPartyLogFileRotationListenerRequest{}
-	this.ListenerName = listenerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.ListenerName = listenerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddThirdPartyLogFileRotationListenerRequest(listenerName string, schemas
 func NewAddThirdPartyLogFileRotationListenerRequestWithDefaults() *AddThirdPartyLogFileRotationListenerRequest {
 	this := AddThirdPartyLogFileRotationListenerRequest{}
 	return &this
-}
-
-// GetListenerName returns the ListenerName field value
-func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ListenerName
-}
-
-// GetListenerNameOk returns a tuple with the ListenerName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ListenerName, true
-}
-
-// SetListenerName sets field value
-func (o *AddThirdPartyLogFileRotationListenerRequest) SetListenerName(v string) {
-	o.ListenerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddThirdPartyLogFileRotationListenerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetListenerName returns the ListenerName field value
+func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ListenerName
+}
+
+// GetListenerNameOk returns a tuple with the ListenerName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ListenerName, true
+}
+
+// SetListenerName sets field value
+func (o *AddThirdPartyLogFileRotationListenerRequest) SetListenerName(v string) {
+	o.ListenerName = v
+}
+
 func (o AddThirdPartyLogFileRotationListenerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddThirdPartyLogFileRotationListenerRequest) MarshalJSON() ([]byte, erro
 
 func (o AddThirdPartyLogFileRotationListenerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["listenerName"] = o.ListenerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -233,6 +232,7 @@ func (o AddThirdPartyLogFileRotationListenerRequest) ToMap() (map[string]interfa
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["listenerName"] = o.ListenerName
 	return toSerialize, nil
 }
 

@@ -1,14 +1,14 @@
-# \VelocityTemplateLoaderApi
+# \VelocityTemplateLoaderAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddVelocityTemplateLoader**](VelocityTemplateLoaderApi.md#AddVelocityTemplateLoader) | **Post** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders | Add a new Velocity Template Loader to the config
-[**DeleteVelocityTemplateLoader**](VelocityTemplateLoaderApi.md#DeleteVelocityTemplateLoader) | **Delete** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name} | Delete a Velocity Template Loader
-[**GetVelocityTemplateLoader**](VelocityTemplateLoaderApi.md#GetVelocityTemplateLoader) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name} | Returns a single Velocity Template Loader
-[**ListVelocityTemplateLoaders**](VelocityTemplateLoaderApi.md#ListVelocityTemplateLoaders) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders | Returns a list of all Velocity Template Loader objects
-[**UpdateVelocityTemplateLoader**](VelocityTemplateLoaderApi.md#UpdateVelocityTemplateLoader) | **Patch** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name} | Update an existing Velocity Template Loader by name
+[**AddVelocityTemplateLoader**](VelocityTemplateLoaderAPI.md#AddVelocityTemplateLoader) | **Post** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders | Add a new Velocity Template Loader to the config
+[**DeleteVelocityTemplateLoader**](VelocityTemplateLoaderAPI.md#DeleteVelocityTemplateLoader) | **Delete** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name} | Delete a Velocity Template Loader
+[**GetVelocityTemplateLoader**](VelocityTemplateLoaderAPI.md#GetVelocityTemplateLoader) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name} | Returns a single Velocity Template Loader
+[**ListVelocityTemplateLoaders**](VelocityTemplateLoaderAPI.md#ListVelocityTemplateLoaders) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders | Returns a list of all Velocity Template Loader objects
+[**UpdateVelocityTemplateLoader**](VelocityTemplateLoaderAPI.md#UpdateVelocityTemplateLoader) | **Patch** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name} | Update an existing Velocity Template Loader by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension
-    addVelocityTemplateLoaderRequest := *openapiclient.NewAddVelocityTemplateLoaderRequest("LoaderName_example", "MimeTypeMatcher_example") // AddVelocityTemplateLoaderRequest | Create a new Velocity Template Loader in the config
+    addVelocityTemplateLoaderRequest := *openapiclient.NewAddVelocityTemplateLoaderRequest("MimeTypeMatcher_example", "LoaderName_example") // AddVelocityTemplateLoaderRequest | Create a new Velocity Template Loader in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VelocityTemplateLoaderApi.AddVelocityTemplateLoader(context.Background(), httpServletExtensionName).AddVelocityTemplateLoaderRequest(addVelocityTemplateLoaderRequest).Execute()
+    resp, r, err := apiClient.VelocityTemplateLoaderAPI.AddVelocityTemplateLoader(context.Background(), httpServletExtensionName).AddVelocityTemplateLoaderRequest(addVelocityTemplateLoaderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderApi.AddVelocityTemplateLoader``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderAPI.AddVelocityTemplateLoader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddVelocityTemplateLoader`: VelocityTemplateLoaderResponse
-    fmt.Fprintf(os.Stdout, "Response from `VelocityTemplateLoaderApi.AddVelocityTemplateLoader`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VelocityTemplateLoaderAPI.AddVelocityTemplateLoader`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VelocityTemplateLoaderApi.DeleteVelocityTemplateLoader(context.Background(), velocityTemplateLoaderName, httpServletExtensionName).Execute()
+    r, err := apiClient.VelocityTemplateLoaderAPI.DeleteVelocityTemplateLoader(context.Background(), velocityTemplateLoaderName, httpServletExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderApi.DeleteVelocityTemplateLoader``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderAPI.DeleteVelocityTemplateLoader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VelocityTemplateLoaderApi.GetVelocityTemplateLoader(context.Background(), velocityTemplateLoaderName, httpServletExtensionName).Execute()
+    resp, r, err := apiClient.VelocityTemplateLoaderAPI.GetVelocityTemplateLoader(context.Background(), velocityTemplateLoaderName, httpServletExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderApi.GetVelocityTemplateLoader``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderAPI.GetVelocityTemplateLoader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetVelocityTemplateLoader`: VelocityTemplateLoaderResponse
-    fmt.Fprintf(os.Stdout, "Response from `VelocityTemplateLoaderApi.GetVelocityTemplateLoader`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VelocityTemplateLoaderAPI.GetVelocityTemplateLoader`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VelocityTemplateLoaderApi.ListVelocityTemplateLoaders(context.Background(), httpServletExtensionName).Filter(filter).Execute()
+    resp, r, err := apiClient.VelocityTemplateLoaderAPI.ListVelocityTemplateLoaders(context.Background(), httpServletExtensionName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderApi.ListVelocityTemplateLoaders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderAPI.ListVelocityTemplateLoaders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListVelocityTemplateLoaders`: VelocityTemplateLoaderListResponse
-    fmt.Fprintf(os.Stdout, "Response from `VelocityTemplateLoaderApi.ListVelocityTemplateLoaders`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VelocityTemplateLoaderAPI.ListVelocityTemplateLoaders`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VelocityTemplateLoaderApi.UpdateVelocityTemplateLoader(context.Background(), velocityTemplateLoaderName, httpServletExtensionName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.VelocityTemplateLoaderAPI.UpdateVelocityTemplateLoader(context.Background(), velocityTemplateLoaderName, httpServletExtensionName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderApi.UpdateVelocityTemplateLoader``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityTemplateLoaderAPI.UpdateVelocityTemplateLoader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateVelocityTemplateLoader`: VelocityTemplateLoaderResponse
-    fmt.Fprintf(os.Stdout, "Response from `VelocityTemplateLoaderApi.UpdateVelocityTemplateLoader`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VelocityTemplateLoaderAPI.UpdateVelocityTemplateLoader`: %v\n", resp)
 }
 ```
 

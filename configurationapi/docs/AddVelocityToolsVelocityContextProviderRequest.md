@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Velocity Context Provider | 
 **Schemas** | [**[]EnumvelocityToolsVelocityContextProviderSchemaUrn**](EnumvelocityToolsVelocityContextProviderSchemaUrn.md) |  | 
 **RequestTool** | Pointer to **[]string** | The fully-qualified name of a Velocity Tool class that will be initialized for each request. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root. | [optional] 
 **SessionTool** | Pointer to **[]string** | The fully-qualified name of a Velocity Tool class that will be initialized for each session. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **IncludedView** | Pointer to **[]string** | The name of a view for which this Velocity Context Provider will contribute content. | [optional] 
 **ExcludedView** | Pointer to **[]string** | The name of a view for which this Velocity Context Provider will not contribute content. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content. | [optional] 
+**ProviderName** | **string** | Name of the new Velocity Context Provider | 
 
 ## Methods
 
 ### NewAddVelocityToolsVelocityContextProviderRequest
 
-`func NewAddVelocityToolsVelocityContextProviderRequest(providerName string, schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn, ) *AddVelocityToolsVelocityContextProviderRequest`
+`func NewAddVelocityToolsVelocityContextProviderRequest(schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn, providerName string, ) *AddVelocityToolsVelocityContextProviderRequest`
 
 NewAddVelocityToolsVelocityContextProviderRequest instantiates a new AddVelocityToolsVelocityContextProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddVelocityToolsVelocityContextProviderRequestWithDefaults instantiates a new AddVelocityToolsVelocityContextProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddVelocityToolsVelocityContextProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddVelocityToolsVelocityContextProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddVelocityToolsVelocityContextProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -273,6 +253,26 @@ SetResponseHeader sets ResponseHeader field to given value.
 `func (o *AddVelocityToolsVelocityContextProviderRequest) HasResponseHeader() bool`
 
 HasResponseHeader returns a boolean if a field has been set.
+
+### GetProviderName
+
+`func (o *AddVelocityToolsVelocityContextProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddVelocityToolsVelocityContextProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddVelocityToolsVelocityContextProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

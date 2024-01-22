@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaskName** | **string** | Name of the new Recurring Task | 
 **Schemas** | [**[]EnumgenerateServerProfileRecurringTaskSchemaUrn**](EnumgenerateServerProfileRecurringTaskSchemaUrn.md) |  | 
 **ProfileDirectory** | **string** | The directory in which the generated server profiles will be placed. The files will be named with the pattern \&quot;server-profile-{timestamp}.zip\&quot;, where \&quot;{timestamp}\&quot; represents the time that the profile was generated. | 
 **IncludePath** | Pointer to **[]string** | An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root. | [optional] 
@@ -18,12 +17,13 @@ Name | Type | Description | Notes
 **AlertOnStart** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running. | [optional] 
 **AlertOnSuccess** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully. | [optional] 
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
+**TaskName** | **string** | Name of the new Recurring Task | 
 
 ## Methods
 
 ### NewAddGenerateServerProfileRecurringTaskRequest
 
-`func NewAddGenerateServerProfileRecurringTaskRequest(taskName string, schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn, profileDirectory string, ) *AddGenerateServerProfileRecurringTaskRequest`
+`func NewAddGenerateServerProfileRecurringTaskRequest(schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn, profileDirectory string, taskName string, ) *AddGenerateServerProfileRecurringTaskRequest`
 
 NewAddGenerateServerProfileRecurringTaskRequest instantiates a new AddGenerateServerProfileRecurringTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,26 +37,6 @@ will change when the set of required properties is changed
 NewAddGenerateServerProfileRecurringTaskRequestWithDefaults instantiates a new AddGenerateServerProfileRecurringTaskRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTaskName
-
-`func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskName() string`
-
-GetTaskName returns the TaskName field if non-nil, zero value otherwise.
-
-### GetTaskNameOk
-
-`func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
-
-GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaskName
-
-`func (o *AddGenerateServerProfileRecurringTaskRequest) SetTaskName(v string)`
-
-SetTaskName sets TaskName field to given value.
-
 
 ### GetSchemas
 
@@ -372,6 +352,26 @@ SetAlertOnFailure sets AlertOnFailure field to given value.
 `func (o *AddGenerateServerProfileRecurringTaskRequest) HasAlertOnFailure() bool`
 
 HasAlertOnFailure returns a boolean if a field has been set.
+
+### GetTaskName
+
+`func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskName() string`
+
+GetTaskName returns the TaskName field if non-nil, zero value otherwise.
+
+### GetTaskNameOk
+
+`func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
+
+GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskName
+
+`func (o *AddGenerateServerProfileRecurringTaskRequest) SetTaskName(v string)`
+
+SetTaskName sets TaskName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

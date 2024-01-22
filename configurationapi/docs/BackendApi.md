@@ -1,14 +1,14 @@
-# \BackendApi
+# \BackendAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddBackend**](BackendApi.md#AddBackend) | **Post** /backends | Add a new Backend to the config
-[**DeleteBackend**](BackendApi.md#DeleteBackend) | **Delete** /backends/{backend-name} | Delete a Backend
-[**GetBackend**](BackendApi.md#GetBackend) | **Get** /backends/{backend-name} | Returns a single Backend
-[**ListBackends**](BackendApi.md#ListBackends) | **Get** /backends | Returns a list of all Backend objects
-[**UpdateBackend**](BackendApi.md#UpdateBackend) | **Patch** /backends/{backend-name} | Update an existing Backend by name
+[**AddBackend**](BackendAPI.md#AddBackend) | **Post** /backends | Add a new Backend to the config
+[**DeleteBackend**](BackendAPI.md#DeleteBackend) | **Delete** /backends/{backend-name} | Delete a Backend
+[**GetBackend**](BackendAPI.md#GetBackend) | **Get** /backends/{backend-name} | Returns a single Backend
+[**ListBackends**](BackendAPI.md#ListBackends) | **Get** /backends | Returns a list of all Backend objects
+[**UpdateBackend**](BackendAPI.md#UpdateBackend) | **Patch** /backends/{backend-name} | Update an existing Backend by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addLocalDbBackendRequest := *openapiclient.NewAddLocalDbBackendRequest("BackendName_example", []openapiclient.EnumlocalDbBackendSchemaUrn{openapiclient.Enumlocal-db-backendSchemaUrn("urn:pingidentity:schemas:configuration:2.0:backend:local-db")}, "BackendID_example", false, []string{"BaseDN_example"}) // AddLocalDbBackendRequest | Create a new Backend in the config
+    addLocalDbBackendRequest := *openapiclient.NewAddLocalDbBackendRequest([]openapiclient.EnumlocalDbBackendSchemaUrn{openapiclient.Enumlocal-db-backendSchemaUrn("urn:pingidentity:schemas:configuration:2.0:backend:local-db")}, "BackendID_example", false, []string{"BaseDN_example"}, "BackendName_example") // AddLocalDbBackendRequest | Create a new Backend in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BackendApi.AddBackend(context.Background()).AddLocalDbBackendRequest(addLocalDbBackendRequest).Execute()
+    resp, r, err := apiClient.BackendAPI.AddBackend(context.Background()).AddLocalDbBackendRequest(addLocalDbBackendRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BackendApi.AddBackend``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BackendAPI.AddBackend``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddBackend`: AddBackend200Response
-    fmt.Fprintf(os.Stdout, "Response from `BackendApi.AddBackend`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `BackendAPI.AddBackend`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.BackendApi.DeleteBackend(context.Background(), backendName).Execute()
+    r, err := apiClient.BackendAPI.DeleteBackend(context.Background(), backendName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BackendApi.DeleteBackend``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BackendAPI.DeleteBackend``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BackendApi.GetBackend(context.Background(), backendName).Execute()
+    resp, r, err := apiClient.BackendAPI.GetBackend(context.Background(), backendName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BackendApi.GetBackend``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BackendAPI.GetBackend``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetBackend`: GetBackend200Response
-    fmt.Fprintf(os.Stdout, "Response from `BackendApi.GetBackend`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `BackendAPI.GetBackend`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BackendApi.ListBackends(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.BackendAPI.ListBackends(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BackendApi.ListBackends``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BackendAPI.ListBackends``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListBackends`: BackendListResponse
-    fmt.Fprintf(os.Stdout, "Response from `BackendApi.ListBackends`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `BackendAPI.ListBackends`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BackendApi.UpdateBackend(context.Background(), backendName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.BackendAPI.UpdateBackend(context.Background(), backendName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BackendApi.UpdateBackend``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BackendAPI.UpdateBackend``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateBackend`: GetBackend200Response
-    fmt.Fprintf(os.Stdout, "Response from `BackendApi.UpdateBackend`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `BackendAPI.UpdateBackend`: %v\n", resp)
 }
 ```
 

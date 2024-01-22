@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 **Schemas** | [**[]EnumldapMappedScimHttpServletExtensionSchemaUrn**](EnumldapMappedScimHttpServletExtensionSchemaUrn.md) |  | 
 **OAuthTokenHandler** | Pointer to **string** | Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request. | [optional] 
 **BasicAuthEnabled** | Pointer to **bool** | Enables HTTP Basic authentication, using a username and password. | [optional] 
@@ -30,12 +29,13 @@ Name | Type | Description | Notes
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
+**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 
 ## Methods
 
 ### NewAddLdapMappedScimHttpServletExtensionRequest
 
-`func NewAddLdapMappedScimHttpServletExtensionRequest(extensionName string, schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn, ) *AddLdapMappedScimHttpServletExtensionRequest`
+`func NewAddLdapMappedScimHttpServletExtensionRequest(schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn, extensionName string, ) *AddLdapMappedScimHttpServletExtensionRequest`
 
 NewAddLdapMappedScimHttpServletExtensionRequest instantiates a new AddLdapMappedScimHttpServletExtensionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -49,26 +49,6 @@ will change when the set of required properties is changed
 NewAddLdapMappedScimHttpServletExtensionRequestWithDefaults instantiates a new AddLdapMappedScimHttpServletExtensionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetExtensionName
-
-`func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionName() string`
-
-GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
-
-### GetExtensionNameOk
-
-`func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
-
-GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtensionName
-
-`func (o *AddLdapMappedScimHttpServletExtensionRequest) SetExtensionName(v string)`
-
-SetExtensionName sets ExtensionName field to given value.
-
 
 ### GetSchemas
 
@@ -689,6 +669,26 @@ SetCorrelationIDResponseHeader sets CorrelationIDResponseHeader field to given v
 `func (o *AddLdapMappedScimHttpServletExtensionRequest) HasCorrelationIDResponseHeader() bool`
 
 HasCorrelationIDResponseHeader returns a boolean if a field has been set.
+
+### GetExtensionName
+
+`func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionName() string`
+
+GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
+
+### GetExtensionNameOk
+
+`func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
+
+GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtensionName
+
+`func (o *AddLdapMappedScimHttpServletExtensionRequest) SetExtensionName(v string)`
+
+SetExtensionName sets ExtensionName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

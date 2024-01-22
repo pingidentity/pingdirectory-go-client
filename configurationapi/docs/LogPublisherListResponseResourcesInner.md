@@ -100,6 +100,7 @@ Name | Type | Description | Notes
 **LogTableName** | **string** | The table name to log entries to the database server. | 
 **OutputLocation** | Pointer to [**EnumlogPublisherOutputLocationProp**](EnumlogPublisherOutputLocationProp.md) |  | [optional] 
 **TimestampPrecision** | Pointer to [**EnumlogPublisherTimestampPrecisionProp**](EnumlogPublisherTimestampPrecisionProp.md) |  | [optional] 
+**IncludeQueryResponse** | Pointer to **bool** | Specifies whether Policy Query messages recorded by the log publisher will include full responses from the PDP. | [optional] 
 **DefaultDebugLevel** | [**EnumlogPublisherDefaultDebugLevelProp**](EnumlogPublisherDefaultDebugLevelProp.md) |  | 
 **DefaultDebugCategory** | Pointer to [**[]EnumlogPublisherDefaultDebugCategoryProp**](EnumlogPublisherDefaultDebugCategoryProp.md) |  | [optional] 
 **DefaultOmitMethodEntryArguments** | Pointer to **bool** | Indicates whether to include method arguments in debug messages logged by default. | [optional] 
@@ -2459,6 +2460,31 @@ SetTimestampPrecision sets TimestampPrecision field to given value.
 `func (o *LogPublisherListResponseResourcesInner) HasTimestampPrecision() bool`
 
 HasTimestampPrecision returns a boolean if a field has been set.
+
+### GetIncludeQueryResponse
+
+`func (o *LogPublisherListResponseResourcesInner) GetIncludeQueryResponse() bool`
+
+GetIncludeQueryResponse returns the IncludeQueryResponse field if non-nil, zero value otherwise.
+
+### GetIncludeQueryResponseOk
+
+`func (o *LogPublisherListResponseResourcesInner) GetIncludeQueryResponseOk() (*bool, bool)`
+
+GetIncludeQueryResponseOk returns a tuple with the IncludeQueryResponse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeQueryResponse
+
+`func (o *LogPublisherListResponseResourcesInner) SetIncludeQueryResponse(v bool)`
+
+SetIncludeQueryResponse sets IncludeQueryResponse field to given value.
+
+### HasIncludeQueryResponse
+
+`func (o *LogPublisherListResponseResourcesInner) HasIncludeQueryResponse() bool`
+
+HasIncludeQueryResponse returns a boolean if a field has been set.
 
 ### GetDefaultDebugLevel
 

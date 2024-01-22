@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn**](EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn.md) |  | 
 **ExpirationOffset** | **string** | Sessions whose last activity timestamp is older than this offset will be removed. | 
 **PollingInterval** | Pointer to **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **MaxUpdatesPerSecond** | Pointer to **int64** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | [optional] 
 **NumDeleteThreads** | Pointer to **int64** | The number of threads used to delete expired entries. | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequest
 
-`func NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequest(pluginName string, schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn, expirationOffset string, enabled bool, ) *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest`
+`func NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequest(schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn, expirationOffset string, enabled bool, pluginName string, ) *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest`
 
 NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequest instantiates a new AddCleanUpInactivePingfederatePersistentSessionsPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequestWithDefaults instantiates a new AddCleanUpInactivePingfederatePersistentSessionsPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -236,6 +216,26 @@ and a boolean to check if the value has been set.
 `func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetPluginName
+
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
 
 
 

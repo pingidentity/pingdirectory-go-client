@@ -19,8 +19,6 @@ var _ MappedNullable = &SnmpSubAgentAlertHandlerResponse{}
 
 // SnmpSubAgentAlertHandlerResponse struct for SnmpSubAgentAlertHandlerResponse
 type SnmpSubAgentAlertHandlerResponse struct {
-	// Name of the Alert Handler
-	Id      string                                  `json:"id"`
 	Schemas []EnumsnmpSubAgentAlertHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether the server should attempt to invoke this SNMP Sub Agent Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
@@ -33,17 +31,19 @@ type SnmpSubAgentAlertHandlerResponse struct {
 	DisabledAlertType                             []EnumalertHandlerDisabledAlertTypeProp            `json:"disabledAlertType,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Alert Handler
+	Id string `json:"id"`
 }
 
 // NewSnmpSubAgentAlertHandlerResponse instantiates a new SnmpSubAgentAlertHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSnmpSubAgentAlertHandlerResponse(id string, schemas []EnumsnmpSubAgentAlertHandlerSchemaUrn, enabled bool) *SnmpSubAgentAlertHandlerResponse {
+func NewSnmpSubAgentAlertHandlerResponse(schemas []EnumsnmpSubAgentAlertHandlerSchemaUrn, enabled bool, id string) *SnmpSubAgentAlertHandlerResponse {
 	this := SnmpSubAgentAlertHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewSnmpSubAgentAlertHandlerResponse(id string, schemas []EnumsnmpSubAgentAl
 func NewSnmpSubAgentAlertHandlerResponseWithDefaults() *SnmpSubAgentAlertHandlerResponse {
 	this := SnmpSubAgentAlertHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SnmpSubAgentAlertHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SnmpSubAgentAlertHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SnmpSubAgentAlertHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -351,6 +327,30 @@ func (o *SnmpSubAgentAlertHandlerResponse) SetUrnpingidentityschemasconfiguratio
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SnmpSubAgentAlertHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SnmpSubAgentAlertHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SnmpSubAgentAlertHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SnmpSubAgentAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -361,7 +361,6 @@ func (o SnmpSubAgentAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o SnmpSubAgentAlertHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
@@ -385,6 +384,7 @@ func (o SnmpSubAgentAlertHandlerResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LogFileRotationListenerApiService LogFileRotationListenerApi service
-type LogFileRotationListenerApiService service
+// LogFileRotationListenerAPIService LogFileRotationListenerAPI service
+type LogFileRotationListenerAPIService service
 
 type ApiAddLogFileRotationListenerRequest struct {
 	ctx                               context.Context
-	ApiService                        *LogFileRotationListenerApiService
+	ApiService                        *LogFileRotationListenerAPIService
 	addLogFileRotationListenerRequest *AddLogFileRotationListenerRequest
 }
 
@@ -44,7 +44,7 @@ AddLogFileRotationListener Add a new Log File Rotation Listener to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddLogFileRotationListenerRequest
 */
-func (a *LogFileRotationListenerApiService) AddLogFileRotationListener(ctx context.Context) ApiAddLogFileRotationListenerRequest {
+func (a *LogFileRotationListenerAPIService) AddLogFileRotationListener(ctx context.Context) ApiAddLogFileRotationListenerRequest {
 	return ApiAddLogFileRotationListenerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *LogFileRotationListenerApiService) AddLogFileRotationListener(ctx conte
 // Execute executes the request
 //
 //	@return AddLogFileRotationListener200Response
-func (a *LogFileRotationListenerApiService) AddLogFileRotationListenerExecute(r ApiAddLogFileRotationListenerRequest) (*AddLogFileRotationListener200Response, *http.Response, error) {
+func (a *LogFileRotationListenerAPIService) AddLogFileRotationListenerExecute(r ApiAddLogFileRotationListenerRequest) (*AddLogFileRotationListener200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *LogFileRotationListenerApiService) AddLogFileRotationListenerExecute(r 
 		localVarReturnValue *AddLogFileRotationListener200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerApiService.AddLogFileRotationListener")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerAPIService.AddLogFileRotationListener")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *LogFileRotationListenerApiService) AddLogFileRotationListenerExecute(r 
 
 type ApiDeleteLogFileRotationListenerRequest struct {
 	ctx                         context.Context
-	ApiService                  *LogFileRotationListenerApiService
+	ApiService                  *LogFileRotationListenerAPIService
 	logFileRotationListenerName string
 }
 
@@ -149,7 +149,7 @@ DeleteLogFileRotationListener Delete a Log File Rotation Listener
 	@param logFileRotationListenerName Name of the Log File Rotation Listener
 	@return ApiDeleteLogFileRotationListenerRequest
 */
-func (a *LogFileRotationListenerApiService) DeleteLogFileRotationListener(ctx context.Context, logFileRotationListenerName string) ApiDeleteLogFileRotationListenerRequest {
+func (a *LogFileRotationListenerAPIService) DeleteLogFileRotationListener(ctx context.Context, logFileRotationListenerName string) ApiDeleteLogFileRotationListenerRequest {
 	return ApiDeleteLogFileRotationListenerRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -158,14 +158,14 @@ func (a *LogFileRotationListenerApiService) DeleteLogFileRotationListener(ctx co
 }
 
 // Execute executes the request
-func (a *LogFileRotationListenerApiService) DeleteLogFileRotationListenerExecute(r ApiDeleteLogFileRotationListenerRequest) (*http.Response, error) {
+func (a *LogFileRotationListenerAPIService) DeleteLogFileRotationListenerExecute(r ApiDeleteLogFileRotationListenerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerApiService.DeleteLogFileRotationListener")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerAPIService.DeleteLogFileRotationListener")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *LogFileRotationListenerApiService) DeleteLogFileRotationListenerExecute
 
 type ApiGetLogFileRotationListenerRequest struct {
 	ctx                         context.Context
-	ApiService                  *LogFileRotationListenerApiService
+	ApiService                  *LogFileRotationListenerAPIService
 	logFileRotationListenerName string
 }
 
@@ -239,7 +239,7 @@ GetLogFileRotationListener Returns a single Log File Rotation Listener
 	@param logFileRotationListenerName Name of the Log File Rotation Listener
 	@return ApiGetLogFileRotationListenerRequest
 */
-func (a *LogFileRotationListenerApiService) GetLogFileRotationListener(ctx context.Context, logFileRotationListenerName string) ApiGetLogFileRotationListenerRequest {
+func (a *LogFileRotationListenerAPIService) GetLogFileRotationListener(ctx context.Context, logFileRotationListenerName string) ApiGetLogFileRotationListenerRequest {
 	return ApiGetLogFileRotationListenerRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -250,7 +250,7 @@ func (a *LogFileRotationListenerApiService) GetLogFileRotationListener(ctx conte
 // Execute executes the request
 //
 //	@return AddLogFileRotationListener200Response
-func (a *LogFileRotationListenerApiService) GetLogFileRotationListenerExecute(r ApiGetLogFileRotationListenerRequest) (*AddLogFileRotationListener200Response, *http.Response, error) {
+func (a *LogFileRotationListenerAPIService) GetLogFileRotationListenerExecute(r ApiGetLogFileRotationListenerRequest) (*AddLogFileRotationListener200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *LogFileRotationListenerApiService) GetLogFileRotationListenerExecute(r 
 		localVarReturnValue *AddLogFileRotationListener200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerApiService.GetLogFileRotationListener")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerAPIService.GetLogFileRotationListener")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *LogFileRotationListenerApiService) GetLogFileRotationListenerExecute(r 
 
 type ApiListLogFileRotationListenersRequest struct {
 	ctx        context.Context
-	ApiService *LogFileRotationListenerApiService
+	ApiService *LogFileRotationListenerAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListLogFileRotationListeners Returns a list of all Log File Rotation Listener ob
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListLogFileRotationListenersRequest
 */
-func (a *LogFileRotationListenerApiService) ListLogFileRotationListeners(ctx context.Context) ApiListLogFileRotationListenersRequest {
+func (a *LogFileRotationListenerAPIService) ListLogFileRotationListeners(ctx context.Context) ApiListLogFileRotationListenersRequest {
 	return ApiListLogFileRotationListenersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *LogFileRotationListenerApiService) ListLogFileRotationListeners(ctx con
 // Execute executes the request
 //
 //	@return LogFileRotationListenerListResponse
-func (a *LogFileRotationListenerApiService) ListLogFileRotationListenersExecute(r ApiListLogFileRotationListenersRequest) (*LogFileRotationListenerListResponse, *http.Response, error) {
+func (a *LogFileRotationListenerAPIService) ListLogFileRotationListenersExecute(r ApiListLogFileRotationListenersRequest) (*LogFileRotationListenerListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *LogFileRotationListenerApiService) ListLogFileRotationListenersExecute(
 		localVarReturnValue *LogFileRotationListenerListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerApiService.ListLogFileRotationListeners")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerAPIService.ListLogFileRotationListeners")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *LogFileRotationListenerApiService) ListLogFileRotationListenersExecute(
 
 type ApiUpdateLogFileRotationListenerRequest struct {
 	ctx                         context.Context
-	ApiService                  *LogFileRotationListenerApiService
+	ApiService                  *LogFileRotationListenerAPIService
 	logFileRotationListenerName string
 	updateRequest               *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateLogFileRotationListener Update an existing Log File Rotation Listener by n
 	@param logFileRotationListenerName Name of the Log File Rotation Listener
 	@return ApiUpdateLogFileRotationListenerRequest
 */
-func (a *LogFileRotationListenerApiService) UpdateLogFileRotationListener(ctx context.Context, logFileRotationListenerName string) ApiUpdateLogFileRotationListenerRequest {
+func (a *LogFileRotationListenerAPIService) UpdateLogFileRotationListener(ctx context.Context, logFileRotationListenerName string) ApiUpdateLogFileRotationListenerRequest {
 	return ApiUpdateLogFileRotationListenerRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -467,7 +467,7 @@ func (a *LogFileRotationListenerApiService) UpdateLogFileRotationListener(ctx co
 // Execute executes the request
 //
 //	@return AddLogFileRotationListener200Response
-func (a *LogFileRotationListenerApiService) UpdateLogFileRotationListenerExecute(r ApiUpdateLogFileRotationListenerRequest) (*AddLogFileRotationListener200Response, *http.Response, error) {
+func (a *LogFileRotationListenerAPIService) UpdateLogFileRotationListenerExecute(r ApiUpdateLogFileRotationListenerRequest) (*AddLogFileRotationListener200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *LogFileRotationListenerApiService) UpdateLogFileRotationListenerExecute
 		localVarReturnValue *AddLogFileRotationListener200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerApiService.UpdateLogFileRotationListener")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFileRotationListenerAPIService.UpdateLogFileRotationListener")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

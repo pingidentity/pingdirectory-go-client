@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// PasswordGeneratorApiService PasswordGeneratorApi service
-type PasswordGeneratorApiService service
+// PasswordGeneratorAPIService PasswordGeneratorAPI service
+type PasswordGeneratorAPIService service
 
 type ApiAddPasswordGeneratorRequest struct {
 	ctx                         context.Context
-	ApiService                  *PasswordGeneratorApiService
+	ApiService                  *PasswordGeneratorAPIService
 	addPasswordGeneratorRequest *AddPasswordGeneratorRequest
 }
 
@@ -44,7 +44,7 @@ AddPasswordGenerator Add a new Password Generator to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddPasswordGeneratorRequest
 */
-func (a *PasswordGeneratorApiService) AddPasswordGenerator(ctx context.Context) ApiAddPasswordGeneratorRequest {
+func (a *PasswordGeneratorAPIService) AddPasswordGenerator(ctx context.Context) ApiAddPasswordGeneratorRequest {
 	return ApiAddPasswordGeneratorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *PasswordGeneratorApiService) AddPasswordGenerator(ctx context.Context) 
 // Execute executes the request
 //
 //	@return AddPasswordGenerator200Response
-func (a *PasswordGeneratorApiService) AddPasswordGeneratorExecute(r ApiAddPasswordGeneratorRequest) (*AddPasswordGenerator200Response, *http.Response, error) {
+func (a *PasswordGeneratorAPIService) AddPasswordGeneratorExecute(r ApiAddPasswordGeneratorRequest) (*AddPasswordGenerator200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *PasswordGeneratorApiService) AddPasswordGeneratorExecute(r ApiAddPasswo
 		localVarReturnValue *AddPasswordGenerator200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorApiService.AddPasswordGenerator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorAPIService.AddPasswordGenerator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *PasswordGeneratorApiService) AddPasswordGeneratorExecute(r ApiAddPasswo
 
 type ApiDeletePasswordGeneratorRequest struct {
 	ctx                   context.Context
-	ApiService            *PasswordGeneratorApiService
+	ApiService            *PasswordGeneratorAPIService
 	passwordGeneratorName string
 }
 
@@ -149,7 +149,7 @@ DeletePasswordGenerator Delete a Password Generator
 	@param passwordGeneratorName Name of the Password Generator
 	@return ApiDeletePasswordGeneratorRequest
 */
-func (a *PasswordGeneratorApiService) DeletePasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiDeletePasswordGeneratorRequest {
+func (a *PasswordGeneratorAPIService) DeletePasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiDeletePasswordGeneratorRequest {
 	return ApiDeletePasswordGeneratorRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -158,14 +158,14 @@ func (a *PasswordGeneratorApiService) DeletePasswordGenerator(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *PasswordGeneratorApiService) DeletePasswordGeneratorExecute(r ApiDeletePasswordGeneratorRequest) (*http.Response, error) {
+func (a *PasswordGeneratorAPIService) DeletePasswordGeneratorExecute(r ApiDeletePasswordGeneratorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorApiService.DeletePasswordGenerator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorAPIService.DeletePasswordGenerator")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *PasswordGeneratorApiService) DeletePasswordGeneratorExecute(r ApiDelete
 
 type ApiGetPasswordGeneratorRequest struct {
 	ctx                   context.Context
-	ApiService            *PasswordGeneratorApiService
+	ApiService            *PasswordGeneratorAPIService
 	passwordGeneratorName string
 }
 
@@ -239,7 +239,7 @@ GetPasswordGenerator Returns a single Password Generator
 	@param passwordGeneratorName Name of the Password Generator
 	@return ApiGetPasswordGeneratorRequest
 */
-func (a *PasswordGeneratorApiService) GetPasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiGetPasswordGeneratorRequest {
+func (a *PasswordGeneratorAPIService) GetPasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiGetPasswordGeneratorRequest {
 	return ApiGetPasswordGeneratorRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -250,7 +250,7 @@ func (a *PasswordGeneratorApiService) GetPasswordGenerator(ctx context.Context, 
 // Execute executes the request
 //
 //	@return AddPasswordGenerator200Response
-func (a *PasswordGeneratorApiService) GetPasswordGeneratorExecute(r ApiGetPasswordGeneratorRequest) (*AddPasswordGenerator200Response, *http.Response, error) {
+func (a *PasswordGeneratorAPIService) GetPasswordGeneratorExecute(r ApiGetPasswordGeneratorRequest) (*AddPasswordGenerator200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *PasswordGeneratorApiService) GetPasswordGeneratorExecute(r ApiGetPasswo
 		localVarReturnValue *AddPasswordGenerator200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorApiService.GetPasswordGenerator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorAPIService.GetPasswordGenerator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *PasswordGeneratorApiService) GetPasswordGeneratorExecute(r ApiGetPasswo
 
 type ApiListPasswordGeneratorsRequest struct {
 	ctx        context.Context
-	ApiService *PasswordGeneratorApiService
+	ApiService *PasswordGeneratorAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListPasswordGenerators Returns a list of all Password Generator objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListPasswordGeneratorsRequest
 */
-func (a *PasswordGeneratorApiService) ListPasswordGenerators(ctx context.Context) ApiListPasswordGeneratorsRequest {
+func (a *PasswordGeneratorAPIService) ListPasswordGenerators(ctx context.Context) ApiListPasswordGeneratorsRequest {
 	return ApiListPasswordGeneratorsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *PasswordGeneratorApiService) ListPasswordGenerators(ctx context.Context
 // Execute executes the request
 //
 //	@return PasswordGeneratorListResponse
-func (a *PasswordGeneratorApiService) ListPasswordGeneratorsExecute(r ApiListPasswordGeneratorsRequest) (*PasswordGeneratorListResponse, *http.Response, error) {
+func (a *PasswordGeneratorAPIService) ListPasswordGeneratorsExecute(r ApiListPasswordGeneratorsRequest) (*PasswordGeneratorListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *PasswordGeneratorApiService) ListPasswordGeneratorsExecute(r ApiListPas
 		localVarReturnValue *PasswordGeneratorListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorApiService.ListPasswordGenerators")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorAPIService.ListPasswordGenerators")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *PasswordGeneratorApiService) ListPasswordGeneratorsExecute(r ApiListPas
 
 type ApiUpdatePasswordGeneratorRequest struct {
 	ctx                   context.Context
-	ApiService            *PasswordGeneratorApiService
+	ApiService            *PasswordGeneratorAPIService
 	passwordGeneratorName string
 	updateRequest         *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdatePasswordGenerator Update an existing Password Generator by name
 	@param passwordGeneratorName Name of the Password Generator
 	@return ApiUpdatePasswordGeneratorRequest
 */
-func (a *PasswordGeneratorApiService) UpdatePasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiUpdatePasswordGeneratorRequest {
+func (a *PasswordGeneratorAPIService) UpdatePasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiUpdatePasswordGeneratorRequest {
 	return ApiUpdatePasswordGeneratorRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -467,7 +467,7 @@ func (a *PasswordGeneratorApiService) UpdatePasswordGenerator(ctx context.Contex
 // Execute executes the request
 //
 //	@return AddPasswordGenerator200Response
-func (a *PasswordGeneratorApiService) UpdatePasswordGeneratorExecute(r ApiUpdatePasswordGeneratorRequest) (*AddPasswordGenerator200Response, *http.Response, error) {
+func (a *PasswordGeneratorAPIService) UpdatePasswordGeneratorExecute(r ApiUpdatePasswordGeneratorRequest) (*AddPasswordGenerator200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *PasswordGeneratorApiService) UpdatePasswordGeneratorExecute(r ApiUpdate
 		localVarReturnValue *AddPasswordGenerator200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorApiService.UpdatePasswordGenerator")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorAPIService.UpdatePasswordGenerator")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

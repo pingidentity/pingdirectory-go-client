@@ -19,8 +19,6 @@ var _ MappedNullable = &DeliverOtpExtendedOperationHandlerResponse{}
 
 // DeliverOtpExtendedOperationHandlerResponse struct for DeliverOtpExtendedOperationHandlerResponse
 type DeliverOtpExtendedOperationHandlerResponse struct {
-	// Name of the Extended Operation Handler
-	Id      string                                            `json:"id"`
 	Schemas []EnumdeliverOtpExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the user(s) targeted by the authentication identity contained in the extended request. This will only be used for \"u:\"-style authentication identities.
 	IdentityMapper string `json:"identityMapper"`
@@ -34,20 +32,22 @@ type DeliverOtpExtendedOperationHandlerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Extended Operation Handler
+	Id string `json:"id"`
 }
 
 // NewDeliverOtpExtendedOperationHandlerResponse instantiates a new DeliverOtpExtendedOperationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeliverOtpExtendedOperationHandlerResponse(id string, schemas []EnumdeliverOtpExtendedOperationHandlerSchemaUrn, identityMapper string, passwordGenerator string, defaultOTPDeliveryMechanism []string, enabled bool) *DeliverOtpExtendedOperationHandlerResponse {
+func NewDeliverOtpExtendedOperationHandlerResponse(schemas []EnumdeliverOtpExtendedOperationHandlerSchemaUrn, identityMapper string, passwordGenerator string, defaultOTPDeliveryMechanism []string, enabled bool, id string) *DeliverOtpExtendedOperationHandlerResponse {
 	this := DeliverOtpExtendedOperationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.IdentityMapper = identityMapper
 	this.PasswordGenerator = passwordGenerator
 	this.DefaultOTPDeliveryMechanism = defaultOTPDeliveryMechanism
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewDeliverOtpExtendedOperationHandlerResponse(id string, schemas []Enumdeli
 func NewDeliverOtpExtendedOperationHandlerResponseWithDefaults() *DeliverOtpExtendedOperationHandlerResponse {
 	this := DeliverOtpExtendedOperationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DeliverOtpExtendedOperationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DeliverOtpExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DeliverOtpExtendedOperationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -299,6 +275,30 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) SetUrnpingidentityschemasco
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DeliverOtpExtendedOperationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DeliverOtpExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DeliverOtpExtendedOperationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DeliverOtpExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -309,7 +309,6 @@ func (o DeliverOtpExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error
 
 func (o DeliverOtpExtendedOperationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["identityMapper"] = o.IdentityMapper
 	toSerialize["passwordGenerator"] = o.PasswordGenerator
@@ -324,6 +323,7 @@ func (o DeliverOtpExtendedOperationHandlerResponse) ToMap() (map[string]interfac
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

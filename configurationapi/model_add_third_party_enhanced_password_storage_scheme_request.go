@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyEnhancedPasswordStorageSchemeRequest{}
 
 // AddThirdPartyEnhancedPasswordStorageSchemeRequest struct for AddThirdPartyEnhancedPasswordStorageSchemeRequest
 type AddThirdPartyEnhancedPasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName string                                                 `json:"schemeName"`
-	Schemas    []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Enhanced Password Storage Scheme.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Enhanced Password Storage Scheme. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddThirdPartyEnhancedPasswordStorageSchemeRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddThirdPartyEnhancedPasswordStorageSchemeRequest instantiates a new AddThirdPartyEnhancedPasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyEnhancedPasswordStorageSchemeRequest(schemeName string, schemas []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyEnhancedPasswordStorageSchemeRequest {
+func NewAddThirdPartyEnhancedPasswordStorageSchemeRequest(schemas []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn, extensionClass string, enabled bool, schemeName string) *AddThirdPartyEnhancedPasswordStorageSchemeRequest {
 	this := AddThirdPartyEnhancedPasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddThirdPartyEnhancedPasswordStorageSchemeRequest(schemeName string, sch
 func NewAddThirdPartyEnhancedPasswordStorageSchemeRequestWithDefaults() *AddThirdPartyEnhancedPasswordStorageSchemeRequest {
 	this := AddThirdPartyEnhancedPasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddThirdPartyEnhancedPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddThirdPartyEnhancedPasswordStorageSchemeRequest) MarshalJSON() ([]byte
 
 func (o AddThirdPartyEnhancedPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -233,6 +232,7 @@ func (o AddThirdPartyEnhancedPasswordStorageSchemeRequest) ToMap() (map[string]i
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

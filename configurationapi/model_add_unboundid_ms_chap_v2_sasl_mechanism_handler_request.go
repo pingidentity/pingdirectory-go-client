@@ -19,27 +19,27 @@ var _ MappedNullable = &AddUnboundidMsChapV2SaslMechanismHandlerRequest{}
 
 // AddUnboundidMsChapV2SaslMechanismHandlerRequest struct for AddUnboundidMsChapV2SaslMechanismHandlerRequest
 type AddUnboundidMsChapV2SaslMechanismHandlerRequest struct {
-	// Name of the new SASL Mechanism Handler
-	HandlerName string                                               `json:"handlerName"`
-	Schemas     []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the entry associated with the username provided in the bind request.
 	IdentityMapper string `json:"identityMapper"`
 	// A description for this SASL Mechanism Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the SASL mechanism handler is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new SASL Mechanism Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddUnboundidMsChapV2SaslMechanismHandlerRequest instantiates a new AddUnboundidMsChapV2SaslMechanismHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddUnboundidMsChapV2SaslMechanismHandlerRequest(handlerName string, schemas []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool) *AddUnboundidMsChapV2SaslMechanismHandlerRequest {
+func NewAddUnboundidMsChapV2SaslMechanismHandlerRequest(schemas []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, handlerName string) *AddUnboundidMsChapV2SaslMechanismHandlerRequest {
 	this := AddUnboundidMsChapV2SaslMechanismHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.IdentityMapper = identityMapper
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -49,30 +49,6 @@ func NewAddUnboundidMsChapV2SaslMechanismHandlerRequest(handlerName string, sche
 func NewAddUnboundidMsChapV2SaslMechanismHandlerRequestWithDefaults() *AddUnboundidMsChapV2SaslMechanismHandlerRequest {
 	this := AddUnboundidMsChapV2SaslMechanismHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -179,6 +155,30 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddUnboundidMsChapV2SaslMechanismHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -189,13 +189,13 @@ func (o AddUnboundidMsChapV2SaslMechanismHandlerRequest) MarshalJSON() ([]byte, 
 
 func (o AddUnboundidMsChapV2SaslMechanismHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["identityMapper"] = o.IdentityMapper
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

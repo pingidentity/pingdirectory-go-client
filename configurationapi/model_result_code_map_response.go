@@ -19,8 +19,6 @@ var _ MappedNullable = &ResultCodeMapResponse{}
 
 // ResultCodeMapResponse struct for ResultCodeMapResponse
 type ResultCodeMapResponse struct {
-	// Name of the Result Code Map
-	Id      string                       `json:"id"`
 	Schemas []EnumresultCodeMapSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Result Code Map
 	Description *string `json:"description,omitempty"`
@@ -34,6 +32,8 @@ type ResultCodeMapResponse struct {
 	ServerErrorResultCode                         *int64                                             `json:"serverErrorResultCode,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Result Code Map
+	Id string `json:"id"`
 }
 
 // NewResultCodeMapResponse instantiates a new ResultCodeMapResponse object
@@ -52,30 +52,6 @@ func NewResultCodeMapResponse(id string) *ResultCodeMapResponse {
 func NewResultCodeMapResponseWithDefaults() *ResultCodeMapResponse {
 	this := ResultCodeMapResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ResultCodeMapResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ResultCodeMapResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ResultCodeMapResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -334,6 +310,30 @@ func (o *ResultCodeMapResponse) SetUrnpingidentityschemasconfigurationmessages20
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ResultCodeMapResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ResultCodeMapResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ResultCodeMapResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ResultCodeMapResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -344,7 +344,6 @@ func (o ResultCodeMapResponse) MarshalJSON() ([]byte, error) {
 
 func (o ResultCodeMapResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -369,6 +368,7 @@ func (o ResultCodeMapResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

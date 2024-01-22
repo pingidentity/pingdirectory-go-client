@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// RootDnApiService RootDnApi service
-type RootDnApiService service
+// RootDnAPIService RootDnAPI service
+type RootDnAPIService service
 
 type ApiGetRootDnRequest struct {
 	ctx        context.Context
-	ApiService *RootDnApiService
+	ApiService *RootDnAPIService
 }
 
 func (r ApiGetRootDnRequest) Execute() (*RootDnResponse, *http.Response, error) {
@@ -36,7 +36,7 @@ GetRootDn Returns a single Root DN
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetRootDnRequest
 */
-func (a *RootDnApiService) GetRootDn(ctx context.Context) ApiGetRootDnRequest {
+func (a *RootDnAPIService) GetRootDn(ctx context.Context) ApiGetRootDnRequest {
 	return ApiGetRootDnRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *RootDnApiService) GetRootDn(ctx context.Context) ApiGetRootDnRequest {
 // Execute executes the request
 //
 //	@return RootDnResponse
-func (a *RootDnApiService) GetRootDnExecute(r ApiGetRootDnRequest) (*RootDnResponse, *http.Response, error) {
+func (a *RootDnAPIService) GetRootDnExecute(r ApiGetRootDnRequest) (*RootDnResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *RootDnApiService) GetRootDnExecute(r ApiGetRootDnRequest) (*RootDnRespo
 		localVarReturnValue *RootDnResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDnApiService.GetRootDn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDnAPIService.GetRootDn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *RootDnApiService) GetRootDnExecute(r ApiGetRootDnRequest) (*RootDnRespo
 
 type ApiUpdateRootDnRequest struct {
 	ctx           context.Context
-	ApiService    *RootDnApiService
+	ApiService    *RootDnAPIService
 	updateRequest *UpdateRequest
 }
 
@@ -141,7 +141,7 @@ UpdateRootDn Update an existing Root DN by name
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateRootDnRequest
 */
-func (a *RootDnApiService) UpdateRootDn(ctx context.Context) ApiUpdateRootDnRequest {
+func (a *RootDnAPIService) UpdateRootDn(ctx context.Context) ApiUpdateRootDnRequest {
 	return ApiUpdateRootDnRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *RootDnApiService) UpdateRootDn(ctx context.Context) ApiUpdateRootDnRequ
 // Execute executes the request
 //
 //	@return RootDnResponse
-func (a *RootDnApiService) UpdateRootDnExecute(r ApiUpdateRootDnRequest) (*RootDnResponse, *http.Response, error) {
+func (a *RootDnAPIService) UpdateRootDnExecute(r ApiUpdateRootDnRequest) (*RootDnResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *RootDnApiService) UpdateRootDnExecute(r ApiUpdateRootDnRequest) (*RootD
 		localVarReturnValue *RootDnResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDnApiService.UpdateRootDn")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDnAPIService.UpdateRootDn")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

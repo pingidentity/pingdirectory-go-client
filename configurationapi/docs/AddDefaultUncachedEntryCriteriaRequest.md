@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Uncached Entry Criteria | 
 **Schemas** | [**[]EnumdefaultUncachedEntryCriteriaSchemaUrn**](EnumdefaultUncachedEntryCriteriaSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Uncached Entry Criteria | [optional] 
 **Enabled** | **bool** | Indicates whether this Uncached Entry Criteria is enabled for use in the server. | 
+**CriteriaName** | **string** | Name of the new Uncached Entry Criteria | 
 
 ## Methods
 
 ### NewAddDefaultUncachedEntryCriteriaRequest
 
-`func NewAddDefaultUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumdefaultUncachedEntryCriteriaSchemaUrn, enabled bool, ) *AddDefaultUncachedEntryCriteriaRequest`
+`func NewAddDefaultUncachedEntryCriteriaRequest(schemas []EnumdefaultUncachedEntryCriteriaSchemaUrn, enabled bool, criteriaName string, ) *AddDefaultUncachedEntryCriteriaRequest`
 
 NewAddDefaultUncachedEntryCriteriaRequest instantiates a new AddDefaultUncachedEntryCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewAddDefaultUncachedEntryCriteriaRequestWithDefaults instantiates a new AddDefaultUncachedEntryCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddDefaultUncachedEntryCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddDefaultUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddDefaultUncachedEntryCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -111,6 +91,26 @@ and a boolean to check if the value has been set.
 `func (o *AddDefaultUncachedEntryCriteriaRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetCriteriaName
+
+`func (o *AddDefaultUncachedEntryCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddDefaultUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddDefaultUncachedEntryCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
 
 
 

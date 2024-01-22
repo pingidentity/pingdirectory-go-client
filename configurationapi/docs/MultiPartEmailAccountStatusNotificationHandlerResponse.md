@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Account Status Notification Handler | 
 **Schemas** | [**[]EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn**](EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn.md) |  | 
 **AccountTemporarilyFailureLockedMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that an account becomes temporarily locked as a result of too many authentication failures. | [optional] 
 **AccountPermanentlyFailureLockedMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that an account becomes permanently locked as a result of too many authentication failures. | [optional] 
@@ -34,12 +33,13 @@ Name | Type | Description | Notes
 **AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Account Status Notification Handler | 
 
 ## Methods
 
 ### NewMultiPartEmailAccountStatusNotificationHandlerResponse
 
-`func NewMultiPartEmailAccountStatusNotificationHandlerResponse(id string, schemas []EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn, enabled bool, ) *MultiPartEmailAccountStatusNotificationHandlerResponse`
+`func NewMultiPartEmailAccountStatusNotificationHandlerResponse(schemas []EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn, enabled bool, id string, ) *MultiPartEmailAccountStatusNotificationHandlerResponse`
 
 NewMultiPartEmailAccountStatusNotificationHandlerResponse instantiates a new MultiPartEmailAccountStatusNotificationHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -53,26 +53,6 @@ will change when the set of required properties is changed
 NewMultiPartEmailAccountStatusNotificationHandlerResponseWithDefaults instantiates a new MultiPartEmailAccountStatusNotificationHandlerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -788,6 +768,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

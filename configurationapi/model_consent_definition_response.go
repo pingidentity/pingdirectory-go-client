@@ -19,8 +19,6 @@ var _ MappedNullable = &ConsentDefinitionResponse{}
 
 // ConsentDefinitionResponse struct for ConsentDefinitionResponse
 type ConsentDefinitionResponse struct {
-	// Name of the Consent Definition
-	Id      string                           `json:"id"`
 	Schemas []EnumconsentDefinitionSchemaUrn `json:"schemas,omitempty"`
 	// A version-independent unique identifier for this Consent Definition.
 	UniqueID string `json:"uniqueID"`
@@ -32,16 +30,18 @@ type ConsentDefinitionResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Consent Definition
+	Id string `json:"id"`
 }
 
 // NewConsentDefinitionResponse instantiates a new ConsentDefinitionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConsentDefinitionResponse(id string, uniqueID string) *ConsentDefinitionResponse {
+func NewConsentDefinitionResponse(uniqueID string, id string) *ConsentDefinitionResponse {
 	this := ConsentDefinitionResponse{}
-	this.Id = id
 	this.UniqueID = uniqueID
+	this.Id = id
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewConsentDefinitionResponse(id string, uniqueID string) *ConsentDefinition
 func NewConsentDefinitionResponseWithDefaults() *ConsentDefinitionResponse {
 	this := ConsentDefinitionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ConsentDefinitionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ConsentDefinitionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ConsentDefinitionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -293,6 +269,30 @@ func (o *ConsentDefinitionResponse) SetUrnpingidentityschemasconfigurationmessag
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ConsentDefinitionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ConsentDefinitionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ConsentDefinitionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ConsentDefinitionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -303,7 +303,6 @@ func (o ConsentDefinitionResponse) MarshalJSON() ([]byte, error) {
 
 func (o ConsentDefinitionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -323,6 +322,7 @@ func (o ConsentDefinitionResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

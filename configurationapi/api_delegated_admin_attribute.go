@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// DelegatedAdminAttributeApiService DelegatedAdminAttributeApi service
-type DelegatedAdminAttributeApiService service
+// DelegatedAdminAttributeAPIService DelegatedAdminAttributeAPI service
+type DelegatedAdminAttributeAPIService service
 
 type ApiAddDelegatedAdminAttributeRequest struct {
 	ctx                               context.Context
-	ApiService                        *DelegatedAdminAttributeApiService
+	ApiService                        *DelegatedAdminAttributeAPIService
 	restResourceTypeName              string
 	addDelegatedAdminAttributeRequest *AddDelegatedAdminAttributeRequest
 }
@@ -46,7 +46,7 @@ AddDelegatedAdminAttribute Add a new Delegated Admin Attribute to the config
 	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiAddDelegatedAdminAttributeRequest
 */
-func (a *DelegatedAdminAttributeApiService) AddDelegatedAdminAttribute(ctx context.Context, restResourceTypeName string) ApiAddDelegatedAdminAttributeRequest {
+func (a *DelegatedAdminAttributeAPIService) AddDelegatedAdminAttribute(ctx context.Context, restResourceTypeName string) ApiAddDelegatedAdminAttributeRequest {
 	return ApiAddDelegatedAdminAttributeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -57,7 +57,7 @@ func (a *DelegatedAdminAttributeApiService) AddDelegatedAdminAttribute(ctx conte
 // Execute executes the request
 //
 //	@return AddDelegatedAdminAttribute200Response
-func (a *DelegatedAdminAttributeApiService) AddDelegatedAdminAttributeExecute(r ApiAddDelegatedAdminAttributeRequest) (*AddDelegatedAdminAttribute200Response, *http.Response, error) {
+func (a *DelegatedAdminAttributeAPIService) AddDelegatedAdminAttributeExecute(r ApiAddDelegatedAdminAttributeRequest) (*AddDelegatedAdminAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *DelegatedAdminAttributeApiService) AddDelegatedAdminAttributeExecute(r 
 		localVarReturnValue *AddDelegatedAdminAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeApiService.AddDelegatedAdminAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeAPIService.AddDelegatedAdminAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *DelegatedAdminAttributeApiService) AddDelegatedAdminAttributeExecute(r 
 
 type ApiDeleteDelegatedAdminAttributeRequest struct {
 	ctx                         context.Context
-	ApiService                  *DelegatedAdminAttributeApiService
+	ApiService                  *DelegatedAdminAttributeAPIService
 	delegatedAdminAttributeName string
 	restResourceTypeName        string
 }
@@ -155,7 +155,7 @@ DeleteDelegatedAdminAttribute Delete a Delegated Admin Attribute
 	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiDeleteDelegatedAdminAttributeRequest
 */
-func (a *DelegatedAdminAttributeApiService) DeleteDelegatedAdminAttribute(ctx context.Context, delegatedAdminAttributeName string, restResourceTypeName string) ApiDeleteDelegatedAdminAttributeRequest {
+func (a *DelegatedAdminAttributeAPIService) DeleteDelegatedAdminAttribute(ctx context.Context, delegatedAdminAttributeName string, restResourceTypeName string) ApiDeleteDelegatedAdminAttributeRequest {
 	return ApiDeleteDelegatedAdminAttributeRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -165,14 +165,14 @@ func (a *DelegatedAdminAttributeApiService) DeleteDelegatedAdminAttribute(ctx co
 }
 
 // Execute executes the request
-func (a *DelegatedAdminAttributeApiService) DeleteDelegatedAdminAttributeExecute(r ApiDeleteDelegatedAdminAttributeRequest) (*http.Response, error) {
+func (a *DelegatedAdminAttributeAPIService) DeleteDelegatedAdminAttributeExecute(r ApiDeleteDelegatedAdminAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeApiService.DeleteDelegatedAdminAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeAPIService.DeleteDelegatedAdminAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *DelegatedAdminAttributeApiService) DeleteDelegatedAdminAttributeExecute
 
 type ApiGetDelegatedAdminAttributeRequest struct {
 	ctx                         context.Context
-	ApiService                  *DelegatedAdminAttributeApiService
+	ApiService                  *DelegatedAdminAttributeAPIService
 	delegatedAdminAttributeName string
 	restResourceTypeName        string
 }
@@ -249,7 +249,7 @@ GetDelegatedAdminAttribute Returns a single Delegated Admin Attribute
 	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiGetDelegatedAdminAttributeRequest
 */
-func (a *DelegatedAdminAttributeApiService) GetDelegatedAdminAttribute(ctx context.Context, delegatedAdminAttributeName string, restResourceTypeName string) ApiGetDelegatedAdminAttributeRequest {
+func (a *DelegatedAdminAttributeAPIService) GetDelegatedAdminAttribute(ctx context.Context, delegatedAdminAttributeName string, restResourceTypeName string) ApiGetDelegatedAdminAttributeRequest {
 	return ApiGetDelegatedAdminAttributeRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -261,7 +261,7 @@ func (a *DelegatedAdminAttributeApiService) GetDelegatedAdminAttribute(ctx conte
 // Execute executes the request
 //
 //	@return AddDelegatedAdminAttribute200Response
-func (a *DelegatedAdminAttributeApiService) GetDelegatedAdminAttributeExecute(r ApiGetDelegatedAdminAttributeRequest) (*AddDelegatedAdminAttribute200Response, *http.Response, error) {
+func (a *DelegatedAdminAttributeAPIService) GetDelegatedAdminAttributeExecute(r ApiGetDelegatedAdminAttributeRequest) (*AddDelegatedAdminAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *DelegatedAdminAttributeApiService) GetDelegatedAdminAttributeExecute(r 
 		localVarReturnValue *AddDelegatedAdminAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeApiService.GetDelegatedAdminAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeAPIService.GetDelegatedAdminAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *DelegatedAdminAttributeApiService) GetDelegatedAdminAttributeExecute(r 
 
 type ApiListDelegatedAdminAttributesRequest struct {
 	ctx                  context.Context
-	ApiService           *DelegatedAdminAttributeApiService
+	ApiService           *DelegatedAdminAttributeAPIService
 	restResourceTypeName string
 	filter               *string
 }
@@ -360,7 +360,7 @@ ListDelegatedAdminAttributes Returns a list of all Delegated Admin Attribute obj
 	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiListDelegatedAdminAttributesRequest
 */
-func (a *DelegatedAdminAttributeApiService) ListDelegatedAdminAttributes(ctx context.Context, restResourceTypeName string) ApiListDelegatedAdminAttributesRequest {
+func (a *DelegatedAdminAttributeAPIService) ListDelegatedAdminAttributes(ctx context.Context, restResourceTypeName string) ApiListDelegatedAdminAttributesRequest {
 	return ApiListDelegatedAdminAttributesRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -371,7 +371,7 @@ func (a *DelegatedAdminAttributeApiService) ListDelegatedAdminAttributes(ctx con
 // Execute executes the request
 //
 //	@return DelegatedAdminAttributeListResponse
-func (a *DelegatedAdminAttributeApiService) ListDelegatedAdminAttributesExecute(r ApiListDelegatedAdminAttributesRequest) (*DelegatedAdminAttributeListResponse, *http.Response, error) {
+func (a *DelegatedAdminAttributeAPIService) ListDelegatedAdminAttributesExecute(r ApiListDelegatedAdminAttributesRequest) (*DelegatedAdminAttributeListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *DelegatedAdminAttributeApiService) ListDelegatedAdminAttributesExecute(
 		localVarReturnValue *DelegatedAdminAttributeListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeApiService.ListDelegatedAdminAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeAPIService.ListDelegatedAdminAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *DelegatedAdminAttributeApiService) ListDelegatedAdminAttributesExecute(
 
 type ApiUpdateDelegatedAdminAttributeRequest struct {
 	ctx                         context.Context
-	ApiService                  *DelegatedAdminAttributeApiService
+	ApiService                  *DelegatedAdminAttributeAPIService
 	delegatedAdminAttributeName string
 	restResourceTypeName        string
 	updateRequest               *UpdateRequest
@@ -474,7 +474,7 @@ UpdateDelegatedAdminAttribute Update an existing Delegated Admin Attribute by na
 	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiUpdateDelegatedAdminAttributeRequest
 */
-func (a *DelegatedAdminAttributeApiService) UpdateDelegatedAdminAttribute(ctx context.Context, delegatedAdminAttributeName string, restResourceTypeName string) ApiUpdateDelegatedAdminAttributeRequest {
+func (a *DelegatedAdminAttributeAPIService) UpdateDelegatedAdminAttribute(ctx context.Context, delegatedAdminAttributeName string, restResourceTypeName string) ApiUpdateDelegatedAdminAttributeRequest {
 	return ApiUpdateDelegatedAdminAttributeRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -486,7 +486,7 @@ func (a *DelegatedAdminAttributeApiService) UpdateDelegatedAdminAttribute(ctx co
 // Execute executes the request
 //
 //	@return AddDelegatedAdminAttribute200Response
-func (a *DelegatedAdminAttributeApiService) UpdateDelegatedAdminAttributeExecute(r ApiUpdateDelegatedAdminAttributeRequest) (*AddDelegatedAdminAttribute200Response, *http.Response, error) {
+func (a *DelegatedAdminAttributeAPIService) UpdateDelegatedAdminAttributeExecute(r ApiUpdateDelegatedAdminAttributeRequest) (*AddDelegatedAdminAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *DelegatedAdminAttributeApiService) UpdateDelegatedAdminAttributeExecute
 		localVarReturnValue *AddDelegatedAdminAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeApiService.UpdateDelegatedAdminAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeAPIService.UpdateDelegatedAdminAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

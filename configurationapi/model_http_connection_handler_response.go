@@ -19,8 +19,6 @@ var _ MappedNullable = &HttpConnectionHandlerResponse{}
 
 // HttpConnectionHandlerResponse struct for HttpConnectionHandlerResponse
 type HttpConnectionHandlerResponse struct {
-	// Name of the Connection Handler
-	Id      string                               `json:"id"`
 	Schemas []EnumhttpConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the address on which to listen for connections from HTTP clients. If no value is defined, the server will listen on all addresses on all interfaces.
 	ListenAddress *string `json:"listenAddress,omitempty"`
@@ -73,24 +71,28 @@ type HttpConnectionHandlerResponse struct {
 	// Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDRequestHeader []string                                      `json:"correlationIDRequestHeader,omitempty"`
 	SslClientAuthPolicy        *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
+	// Requires SNI hostnames to match or else throw an Invalid SNI error.
+	EnableSniHostnameChecks *bool `json:"enableSniHostnameChecks,omitempty"`
 	// A description for this Connection Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Connection Handler
+	Id string `json:"id"`
 }
 
 // NewHttpConnectionHandlerResponse instantiates a new HttpConnectionHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHttpConnectionHandlerResponse(id string, schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int64, enabled bool) *HttpConnectionHandlerResponse {
+func NewHttpConnectionHandlerResponse(schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int64, enabled bool, id string) *HttpConnectionHandlerResponse {
 	this := HttpConnectionHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ListenPort = listenPort
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -100,30 +102,6 @@ func NewHttpConnectionHandlerResponse(id string, schemas []EnumhttpConnectionHan
 func NewHttpConnectionHandlerResponseWithDefaults() *HttpConnectionHandlerResponse {
 	this := HttpConnectionHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *HttpConnectionHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *HttpConnectionHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *HttpConnectionHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -974,6 +952,38 @@ func (o *HttpConnectionHandlerResponse) SetSslClientAuthPolicy(v EnumconnectionH
 	o.SslClientAuthPolicy = &v
 }
 
+// GetEnableSniHostnameChecks returns the EnableSniHostnameChecks field value if set, zero value otherwise.
+func (o *HttpConnectionHandlerResponse) GetEnableSniHostnameChecks() bool {
+	if o == nil || IsNil(o.EnableSniHostnameChecks) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableSniHostnameChecks
+}
+
+// GetEnableSniHostnameChecksOk returns a tuple with the EnableSniHostnameChecks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpConnectionHandlerResponse) GetEnableSniHostnameChecksOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableSniHostnameChecks) {
+		return nil, false
+	}
+	return o.EnableSniHostnameChecks, true
+}
+
+// HasEnableSniHostnameChecks returns a boolean if a field has been set.
+func (o *HttpConnectionHandlerResponse) HasEnableSniHostnameChecks() bool {
+	if o != nil && !IsNil(o.EnableSniHostnameChecks) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableSniHostnameChecks gets a reference to the given bool and assigns it to the EnableSniHostnameChecks field.
+func (o *HttpConnectionHandlerResponse) SetEnableSniHostnameChecks(v bool) {
+	o.EnableSniHostnameChecks = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -1094,6 +1104,30 @@ func (o *HttpConnectionHandlerResponse) SetUrnpingidentityschemasconfigurationme
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *HttpConnectionHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *HttpConnectionHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *HttpConnectionHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o HttpConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1104,7 +1138,6 @@ func (o HttpConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o HttpConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ListenAddress) {
 		toSerialize["listenAddress"] = o.ListenAddress
@@ -1182,6 +1215,9 @@ func (o HttpConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SslClientAuthPolicy) {
 		toSerialize["sslClientAuthPolicy"] = o.SslClientAuthPolicy
 	}
+	if !IsNil(o.EnableSniHostnameChecks) {
+		toSerialize["enableSniHostnameChecks"] = o.EnableSniHostnameChecks
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -1192,6 +1228,7 @@ func (o HttpConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

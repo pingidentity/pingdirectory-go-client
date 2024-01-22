@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ListenerName** | **string** | Name of the new Log File Rotation Listener | 
 **Schemas** | [**[]EnumsummarizeLogFileRotationListenerSchemaUrn**](EnumsummarizeLogFileRotationListenerSchemaUrn.md) |  | 
 **OutputDirectory** | Pointer to **string** | The path to the directory in which the summarize-access-log output should be written. If no value is provided, the output file will be written into the same directory as the rotated log file. | [optional] 
 **Description** | Pointer to **string** | A description for this Log File Rotation Listener | [optional] 
 **Enabled** | **bool** | Indicates whether the Log File Rotation Listener is enabled for use. | 
+**ListenerName** | **string** | Name of the new Log File Rotation Listener | 
 
 ## Methods
 
 ### NewAddSummarizeLogFileRotationListenerRequest
 
-`func NewAddSummarizeLogFileRotationListenerRequest(listenerName string, schemas []EnumsummarizeLogFileRotationListenerSchemaUrn, enabled bool, ) *AddSummarizeLogFileRotationListenerRequest`
+`func NewAddSummarizeLogFileRotationListenerRequest(schemas []EnumsummarizeLogFileRotationListenerSchemaUrn, enabled bool, listenerName string, ) *AddSummarizeLogFileRotationListenerRequest`
 
 NewAddSummarizeLogFileRotationListenerRequest instantiates a new AddSummarizeLogFileRotationListenerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddSummarizeLogFileRotationListenerRequestWithDefaults instantiates a new AddSummarizeLogFileRotationListenerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetListenerName
-
-`func (o *AddSummarizeLogFileRotationListenerRequest) GetListenerName() string`
-
-GetListenerName returns the ListenerName field if non-nil, zero value otherwise.
-
-### GetListenerNameOk
-
-`func (o *AddSummarizeLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool)`
-
-GetListenerNameOk returns a tuple with the ListenerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetListenerName
-
-`func (o *AddSummarizeLogFileRotationListenerRequest) SetListenerName(v string)`
-
-SetListenerName sets ListenerName field to given value.
-
 
 ### GetSchemas
 
@@ -137,6 +117,26 @@ and a boolean to check if the value has been set.
 `func (o *AddSummarizeLogFileRotationListenerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetListenerName
+
+`func (o *AddSummarizeLogFileRotationListenerRequest) GetListenerName() string`
+
+GetListenerName returns the ListenerName field if non-nil, zero value otherwise.
+
+### GetListenerNameOk
+
+`func (o *AddSummarizeLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool)`
+
+GetListenerNameOk returns a tuple with the ListenerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetListenerName
+
+`func (o *AddSummarizeLogFileRotationListenerRequest) SetListenerName(v string)`
+
+SetListenerName sets ListenerName field to given value.
 
 
 

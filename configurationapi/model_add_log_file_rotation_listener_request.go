@@ -20,6 +20,7 @@ type AddLogFileRotationListenerRequest struct {
 	AddCopyLogFileRotationListenerRequest       *AddCopyLogFileRotationListenerRequest
 	AddSummarizeLogFileRotationListenerRequest  *AddSummarizeLogFileRotationListenerRequest
 	AddThirdPartyLogFileRotationListenerRequest *AddThirdPartyLogFileRotationListenerRequest
+	AddUploadToS3LogFileRotationListenerRequest *AddUploadToS3LogFileRotationListenerRequest
 }
 
 // AddCopyLogFileRotationListenerRequestAsAddLogFileRotationListenerRequest is a convenience function that returns AddCopyLogFileRotationListenerRequest wrapped in AddLogFileRotationListenerRequest
@@ -40,6 +41,13 @@ func AddSummarizeLogFileRotationListenerRequestAsAddLogFileRotationListenerReque
 func AddThirdPartyLogFileRotationListenerRequestAsAddLogFileRotationListenerRequest(v *AddThirdPartyLogFileRotationListenerRequest) AddLogFileRotationListenerRequest {
 	return AddLogFileRotationListenerRequest{
 		AddThirdPartyLogFileRotationListenerRequest: v,
+	}
+}
+
+// AddUploadToS3LogFileRotationListenerRequestAsAddLogFileRotationListenerRequest is a convenience function that returns AddUploadToS3LogFileRotationListenerRequest wrapped in AddLogFileRotationListenerRequest
+func AddUploadToS3LogFileRotationListenerRequestAsAddLogFileRotationListenerRequest(v *AddUploadToS3LogFileRotationListenerRequest) AddLogFileRotationListenerRequest {
+	return AddLogFileRotationListenerRequest{
+		AddUploadToS3LogFileRotationListenerRequest: v,
 	}
 }
 
@@ -86,11 +94,25 @@ func (dst *AddLogFileRotationListenerRequest) UnmarshalJSON(data []byte) error {
 		dst.AddThirdPartyLogFileRotationListenerRequest = nil
 	}
 
+	// try to unmarshal data into AddUploadToS3LogFileRotationListenerRequest
+	err = newStrictDecoder(data).Decode(&dst.AddUploadToS3LogFileRotationListenerRequest)
+	if err == nil {
+		jsonAddUploadToS3LogFileRotationListenerRequest, _ := json.Marshal(dst.AddUploadToS3LogFileRotationListenerRequest)
+		if string(jsonAddUploadToS3LogFileRotationListenerRequest) == "{}" { // empty struct
+			dst.AddUploadToS3LogFileRotationListenerRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddUploadToS3LogFileRotationListenerRequest = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AddCopyLogFileRotationListenerRequest = nil
 		dst.AddSummarizeLogFileRotationListenerRequest = nil
 		dst.AddThirdPartyLogFileRotationListenerRequest = nil
+		dst.AddUploadToS3LogFileRotationListenerRequest = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddLogFileRotationListenerRequest)")
 	} else if match == 1 {
@@ -114,6 +136,10 @@ func (src AddLogFileRotationListenerRequest) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AddThirdPartyLogFileRotationListenerRequest)
 	}
 
+	if src.AddUploadToS3LogFileRotationListenerRequest != nil {
+		return json.Marshal(&src.AddUploadToS3LogFileRotationListenerRequest)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -132,6 +158,10 @@ func (obj *AddLogFileRotationListenerRequest) GetActualInstance() interface{} {
 
 	if obj.AddThirdPartyLogFileRotationListenerRequest != nil {
 		return obj.AddThirdPartyLogFileRotationListenerRequest
+	}
+
+	if obj.AddUploadToS3LogFileRotationListenerRequest != nil {
+		return obj.AddUploadToS3LogFileRotationListenerRequest
 	}
 
 	// all schemas are nil

@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **MaxCancelHandlers** | Pointer to **int64** | Specifies the maximum number of threads that are used to process cancel and abandon requests from clients. | [optional] 
 **NumAcceptHandlers** | Pointer to **int64** | Specifies the number of threads that are used to accept new client connections, and to perform any initial preparation on those connections that may be needed before the connection can be used to read requests and send responses. | [optional] 
 **NumRequestHandlers** | Pointer to **int64** | Specifies the number of threads that will be used for accepting connections and reading requests from clients. | [optional] 
+**RequestHandlerPerConnection** | Pointer to **bool** | Indicates whether a separate request handler thread should be created for each client connection, which can help avoid starvation of client connections for cases in which one or more clients send large numbers of concurrent asynchronous requests. This should only be used for cases in which a relatively small number of connections will be established at any given time, the connections established will generally be long-lived, and at least one client may send high volumes of asynchronous requests. This property can be used to alleviate possible blocking during long-running TLS negotiation on a single request handler which can result in it being unable to acknowledge further client requests until the TLS negotation completes or times out. | [optional] 
 **SslClientAuthPolicy** | Pointer to [**EnumconnectionHandlerSslClientAuthPolicyProp**](EnumconnectionHandlerSslClientAuthPolicyProp.md) |  | [optional] 
 **AcceptBacklog** | Pointer to **int64** | Specifies the number of concurrent outstanding connection attempts that the connection handler should allow. The default value should be acceptable in most cases, but it may need to be increased in environments that may attempt to establish large numbers of connections simultaneously. | [optional] 
 **SslProtocol** | Pointer to **[]string** | Specifies the names of the SSL protocols that are allowed for use in SSL communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry. | [optional] 
@@ -52,6 +53,7 @@ Name | Type | Description | Notes
 **UseCorrelationIDHeader** | Pointer to **bool** | If enabled, a correlation ID header will be added to outgoing HTTP responses. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **CorrelationIDRequestHeader** | Pointer to **[]string** | Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
+**EnableSniHostnameChecks** | Pointer to **bool** | Requires SNI hostnames to match or else throw an Invalid SNI error. | [optional] 
 
 ## Methods
 
@@ -626,6 +628,31 @@ SetNumRequestHandlers sets NumRequestHandlers field to given value.
 `func (o *AddConnectionHandler200Response) HasNumRequestHandlers() bool`
 
 HasNumRequestHandlers returns a boolean if a field has been set.
+
+### GetRequestHandlerPerConnection
+
+`func (o *AddConnectionHandler200Response) GetRequestHandlerPerConnection() bool`
+
+GetRequestHandlerPerConnection returns the RequestHandlerPerConnection field if non-nil, zero value otherwise.
+
+### GetRequestHandlerPerConnectionOk
+
+`func (o *AddConnectionHandler200Response) GetRequestHandlerPerConnectionOk() (*bool, bool)`
+
+GetRequestHandlerPerConnectionOk returns a tuple with the RequestHandlerPerConnection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestHandlerPerConnection
+
+`func (o *AddConnectionHandler200Response) SetRequestHandlerPerConnection(v bool)`
+
+SetRequestHandlerPerConnection sets RequestHandlerPerConnection field to given value.
+
+### HasRequestHandlerPerConnection
+
+`func (o *AddConnectionHandler200Response) HasRequestHandlerPerConnection() bool`
+
+HasRequestHandlerPerConnection returns a boolean if a field has been set.
 
 ### GetSslClientAuthPolicy
 
@@ -1241,6 +1268,31 @@ SetCorrelationIDRequestHeader sets CorrelationIDRequestHeader field to given val
 `func (o *AddConnectionHandler200Response) HasCorrelationIDRequestHeader() bool`
 
 HasCorrelationIDRequestHeader returns a boolean if a field has been set.
+
+### GetEnableSniHostnameChecks
+
+`func (o *AddConnectionHandler200Response) GetEnableSniHostnameChecks() bool`
+
+GetEnableSniHostnameChecks returns the EnableSniHostnameChecks field if non-nil, zero value otherwise.
+
+### GetEnableSniHostnameChecksOk
+
+`func (o *AddConnectionHandler200Response) GetEnableSniHostnameChecksOk() (*bool, bool)`
+
+GetEnableSniHostnameChecksOk returns a tuple with the EnableSniHostnameChecks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableSniHostnameChecks
+
+`func (o *AddConnectionHandler200Response) SetEnableSniHostnameChecks(v bool)`
+
+SetEnableSniHostnameChecks sets EnableSniHostnameChecks field to given value.
+
+### HasEnableSniHostnameChecks
+
+`func (o *AddConnectionHandler200Response) HasEnableSniHostnameChecks() bool`
+
+HasEnableSniHostnameChecks returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

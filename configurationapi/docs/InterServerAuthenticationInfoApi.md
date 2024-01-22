@@ -1,12 +1,12 @@
-# \InterServerAuthenticationInfoApi
+# \InterServerAuthenticationInfoAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetInterServerAuthenticationInfo**](InterServerAuthenticationInfoApi.md#GetInterServerAuthenticationInfo) | **Get** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name} | Returns a single Inter Server Authentication Info
-[**ListInterServerAuthenticationInfo**](InterServerAuthenticationInfoApi.md#ListInterServerAuthenticationInfo) | **Get** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info | Returns a list of all Inter Server Authentication Info objects
-[**UpdateInterServerAuthenticationInfo**](InterServerAuthenticationInfoApi.md#UpdateInterServerAuthenticationInfo) | **Patch** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name} | Update an existing Inter Server Authentication Info by name
+[**GetInterServerAuthenticationInfo**](InterServerAuthenticationInfoAPI.md#GetInterServerAuthenticationInfo) | **Get** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name} | Returns a single Inter Server Authentication Info
+[**ListInterServerAuthenticationInfo**](InterServerAuthenticationInfoAPI.md#ListInterServerAuthenticationInfo) | **Get** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info | Returns a list of all Inter Server Authentication Info objects
+[**UpdateInterServerAuthenticationInfo**](InterServerAuthenticationInfoAPI.md#UpdateInterServerAuthenticationInfo) | **Patch** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name} | Update an existing Inter Server Authentication Info by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InterServerAuthenticationInfoApi.GetInterServerAuthenticationInfo(context.Background(), interServerAuthenticationInfoName, serverInstanceListenerName, serverInstanceName).Execute()
+    resp, r, err := apiClient.InterServerAuthenticationInfoAPI.GetInterServerAuthenticationInfo(context.Background(), interServerAuthenticationInfoName, serverInstanceListenerName, serverInstanceName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InterServerAuthenticationInfoApi.GetInterServerAuthenticationInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InterServerAuthenticationInfoAPI.GetInterServerAuthenticationInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetInterServerAuthenticationInfo`: GetInterServerAuthenticationInfo200Response
-    fmt.Fprintf(os.Stdout, "Response from `InterServerAuthenticationInfoApi.GetInterServerAuthenticationInfo`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `InterServerAuthenticationInfoAPI.GetInterServerAuthenticationInfo`: %v\n", resp)
 }
 ```
 
@@ -109,13 +109,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InterServerAuthenticationInfoApi.ListInterServerAuthenticationInfo(context.Background(), serverInstanceListenerName, serverInstanceName).Filter(filter).Execute()
+    resp, r, err := apiClient.InterServerAuthenticationInfoAPI.ListInterServerAuthenticationInfo(context.Background(), serverInstanceListenerName, serverInstanceName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InterServerAuthenticationInfoApi.ListInterServerAuthenticationInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InterServerAuthenticationInfoAPI.ListInterServerAuthenticationInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListInterServerAuthenticationInfo`: InterServerAuthenticationInfoListResponse
-    fmt.Fprintf(os.Stdout, "Response from `InterServerAuthenticationInfoApi.ListInterServerAuthenticationInfo`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `InterServerAuthenticationInfoAPI.ListInterServerAuthenticationInfo`: %v\n", resp)
 }
 ```
 
@@ -183,13 +183,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InterServerAuthenticationInfoApi.UpdateInterServerAuthenticationInfo(context.Background(), interServerAuthenticationInfoName, serverInstanceListenerName, serverInstanceName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.InterServerAuthenticationInfoAPI.UpdateInterServerAuthenticationInfo(context.Background(), interServerAuthenticationInfoName, serverInstanceListenerName, serverInstanceName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `InterServerAuthenticationInfoApi.UpdateInterServerAuthenticationInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `InterServerAuthenticationInfoAPI.UpdateInterServerAuthenticationInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateInterServerAuthenticationInfo`: GetInterServerAuthenticationInfo200Response
-    fmt.Fprintf(os.Stdout, "Response from `InterServerAuthenticationInfoApi.UpdateInterServerAuthenticationInfo`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `InterServerAuthenticationInfoAPI.UpdateInterServerAuthenticationInfo`: %v\n", resp)
 }
 ```
 

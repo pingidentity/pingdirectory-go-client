@@ -3,6 +3,8 @@
 ## Enum
 
 
+* `ACCESS_LOG_FIELD` (value: `"access-log-field"`)
+
 * `ASSERTION` (value: `"assertion"`)
 
 * `ASSURED_REPLICATION` (value: `"assured-replication"`)
@@ -12,6 +14,12 @@
 * `GENERATE_PASSWORD` (value: `"generate-password"`)
 
 * `GET_EFFECTIVE_RIGHTS` (value: `"get-effective-rights"`)
+
+* `GET_PASSWORD_POLICY_STATE_ISSUES` (value: `"get-password-policy-state-issues"`)
+
+* `GET_RECENT_LOGIN_HISTORY` (value: `"get-recent-login-history"`)
+
+* `GET_USER_RESOURCE_LIMITS` (value: `"get-user-resource-limits"`)
 
 * `IGNORE_NO_USER_MODIFICATION` (value: `"ignore-no-user-modification"`)
 

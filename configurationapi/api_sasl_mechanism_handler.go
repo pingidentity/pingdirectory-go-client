@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SaslMechanismHandlerApiService SaslMechanismHandlerApi service
-type SaslMechanismHandlerApiService service
+// SaslMechanismHandlerAPIService SaslMechanismHandlerAPI service
+type SaslMechanismHandlerAPIService service
 
 type ApiAddSaslMechanismHandlerRequest struct {
 	ctx                            context.Context
-	ApiService                     *SaslMechanismHandlerApiService
+	ApiService                     *SaslMechanismHandlerAPIService
 	addSaslMechanismHandlerRequest *AddSaslMechanismHandlerRequest
 }
 
@@ -44,7 +44,7 @@ AddSaslMechanismHandler Add a new SASL Mechanism Handler to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddSaslMechanismHandlerRequest
 */
-func (a *SaslMechanismHandlerApiService) AddSaslMechanismHandler(ctx context.Context) ApiAddSaslMechanismHandlerRequest {
+func (a *SaslMechanismHandlerAPIService) AddSaslMechanismHandler(ctx context.Context) ApiAddSaslMechanismHandlerRequest {
 	return ApiAddSaslMechanismHandlerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *SaslMechanismHandlerApiService) AddSaslMechanismHandler(ctx context.Con
 // Execute executes the request
 //
 //	@return AddSaslMechanismHandler200Response
-func (a *SaslMechanismHandlerApiService) AddSaslMechanismHandlerExecute(r ApiAddSaslMechanismHandlerRequest) (*AddSaslMechanismHandler200Response, *http.Response, error) {
+func (a *SaslMechanismHandlerAPIService) AddSaslMechanismHandlerExecute(r ApiAddSaslMechanismHandlerRequest) (*AddSaslMechanismHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *SaslMechanismHandlerApiService) AddSaslMechanismHandlerExecute(r ApiAdd
 		localVarReturnValue *AddSaslMechanismHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerApiService.AddSaslMechanismHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerAPIService.AddSaslMechanismHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *SaslMechanismHandlerApiService) AddSaslMechanismHandlerExecute(r ApiAdd
 
 type ApiDeleteSaslMechanismHandlerRequest struct {
 	ctx                      context.Context
-	ApiService               *SaslMechanismHandlerApiService
+	ApiService               *SaslMechanismHandlerAPIService
 	saslMechanismHandlerName string
 }
 
@@ -149,7 +149,7 @@ DeleteSaslMechanismHandler Delete a SASL Mechanism Handler
 	@param saslMechanismHandlerName Name of the SASL Mechanism Handler
 	@return ApiDeleteSaslMechanismHandlerRequest
 */
-func (a *SaslMechanismHandlerApiService) DeleteSaslMechanismHandler(ctx context.Context, saslMechanismHandlerName string) ApiDeleteSaslMechanismHandlerRequest {
+func (a *SaslMechanismHandlerAPIService) DeleteSaslMechanismHandler(ctx context.Context, saslMechanismHandlerName string) ApiDeleteSaslMechanismHandlerRequest {
 	return ApiDeleteSaslMechanismHandlerRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -158,14 +158,14 @@ func (a *SaslMechanismHandlerApiService) DeleteSaslMechanismHandler(ctx context.
 }
 
 // Execute executes the request
-func (a *SaslMechanismHandlerApiService) DeleteSaslMechanismHandlerExecute(r ApiDeleteSaslMechanismHandlerRequest) (*http.Response, error) {
+func (a *SaslMechanismHandlerAPIService) DeleteSaslMechanismHandlerExecute(r ApiDeleteSaslMechanismHandlerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerApiService.DeleteSaslMechanismHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerAPIService.DeleteSaslMechanismHandler")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *SaslMechanismHandlerApiService) DeleteSaslMechanismHandlerExecute(r Api
 
 type ApiGetSaslMechanismHandlerRequest struct {
 	ctx                      context.Context
-	ApiService               *SaslMechanismHandlerApiService
+	ApiService               *SaslMechanismHandlerAPIService
 	saslMechanismHandlerName string
 }
 
@@ -239,7 +239,7 @@ GetSaslMechanismHandler Returns a single SASL Mechanism Handler
 	@param saslMechanismHandlerName Name of the SASL Mechanism Handler
 	@return ApiGetSaslMechanismHandlerRequest
 */
-func (a *SaslMechanismHandlerApiService) GetSaslMechanismHandler(ctx context.Context, saslMechanismHandlerName string) ApiGetSaslMechanismHandlerRequest {
+func (a *SaslMechanismHandlerAPIService) GetSaslMechanismHandler(ctx context.Context, saslMechanismHandlerName string) ApiGetSaslMechanismHandlerRequest {
 	return ApiGetSaslMechanismHandlerRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -250,7 +250,7 @@ func (a *SaslMechanismHandlerApiService) GetSaslMechanismHandler(ctx context.Con
 // Execute executes the request
 //
 //	@return GetSaslMechanismHandler200Response
-func (a *SaslMechanismHandlerApiService) GetSaslMechanismHandlerExecute(r ApiGetSaslMechanismHandlerRequest) (*GetSaslMechanismHandler200Response, *http.Response, error) {
+func (a *SaslMechanismHandlerAPIService) GetSaslMechanismHandlerExecute(r ApiGetSaslMechanismHandlerRequest) (*GetSaslMechanismHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *SaslMechanismHandlerApiService) GetSaslMechanismHandlerExecute(r ApiGet
 		localVarReturnValue *GetSaslMechanismHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerApiService.GetSaslMechanismHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerAPIService.GetSaslMechanismHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *SaslMechanismHandlerApiService) GetSaslMechanismHandlerExecute(r ApiGet
 
 type ApiListSaslMechanismHandlersRequest struct {
 	ctx        context.Context
-	ApiService *SaslMechanismHandlerApiService
+	ApiService *SaslMechanismHandlerAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListSaslMechanismHandlers Returns a list of all SASL Mechanism Handler objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListSaslMechanismHandlersRequest
 */
-func (a *SaslMechanismHandlerApiService) ListSaslMechanismHandlers(ctx context.Context) ApiListSaslMechanismHandlersRequest {
+func (a *SaslMechanismHandlerAPIService) ListSaslMechanismHandlers(ctx context.Context) ApiListSaslMechanismHandlersRequest {
 	return ApiListSaslMechanismHandlersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *SaslMechanismHandlerApiService) ListSaslMechanismHandlers(ctx context.C
 // Execute executes the request
 //
 //	@return SaslMechanismHandlerListResponse
-func (a *SaslMechanismHandlerApiService) ListSaslMechanismHandlersExecute(r ApiListSaslMechanismHandlersRequest) (*SaslMechanismHandlerListResponse, *http.Response, error) {
+func (a *SaslMechanismHandlerAPIService) ListSaslMechanismHandlersExecute(r ApiListSaslMechanismHandlersRequest) (*SaslMechanismHandlerListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *SaslMechanismHandlerApiService) ListSaslMechanismHandlersExecute(r ApiL
 		localVarReturnValue *SaslMechanismHandlerListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerApiService.ListSaslMechanismHandlers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerAPIService.ListSaslMechanismHandlers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *SaslMechanismHandlerApiService) ListSaslMechanismHandlersExecute(r ApiL
 
 type ApiUpdateSaslMechanismHandlerRequest struct {
 	ctx                      context.Context
-	ApiService               *SaslMechanismHandlerApiService
+	ApiService               *SaslMechanismHandlerAPIService
 	saslMechanismHandlerName string
 	updateRequest            *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateSaslMechanismHandler Update an existing SASL Mechanism Handler by name
 	@param saslMechanismHandlerName Name of the SASL Mechanism Handler
 	@return ApiUpdateSaslMechanismHandlerRequest
 */
-func (a *SaslMechanismHandlerApiService) UpdateSaslMechanismHandler(ctx context.Context, saslMechanismHandlerName string) ApiUpdateSaslMechanismHandlerRequest {
+func (a *SaslMechanismHandlerAPIService) UpdateSaslMechanismHandler(ctx context.Context, saslMechanismHandlerName string) ApiUpdateSaslMechanismHandlerRequest {
 	return ApiUpdateSaslMechanismHandlerRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -467,7 +467,7 @@ func (a *SaslMechanismHandlerApiService) UpdateSaslMechanismHandler(ctx context.
 // Execute executes the request
 //
 //	@return GetSaslMechanismHandler200Response
-func (a *SaslMechanismHandlerApiService) UpdateSaslMechanismHandlerExecute(r ApiUpdateSaslMechanismHandlerRequest) (*GetSaslMechanismHandler200Response, *http.Response, error) {
+func (a *SaslMechanismHandlerAPIService) UpdateSaslMechanismHandlerExecute(r ApiUpdateSaslMechanismHandlerRequest) (*GetSaslMechanismHandler200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *SaslMechanismHandlerApiService) UpdateSaslMechanismHandlerExecute(r Api
 		localVarReturnValue *GetSaslMechanismHandler200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerApiService.UpdateSaslMechanismHandler")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SaslMechanismHandlerAPIService.UpdateSaslMechanismHandler")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

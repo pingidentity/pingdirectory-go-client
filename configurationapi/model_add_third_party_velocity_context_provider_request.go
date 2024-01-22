@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyVelocityContextProviderRequest{}
 
 // AddThirdPartyVelocityContextProviderRequest struct for AddThirdPartyVelocityContextProviderRequest
 type AddThirdPartyVelocityContextProviderRequest struct {
-	// Name of the new Velocity Context Provider
-	ProviderName string                                           `json:"providerName"`
-	Schemas      []EnumthirdPartyVelocityContextProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyVelocityContextProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Velocity Context Provider.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Velocity Context Provider. Each configuration property should be given in the form 'name=value'.
@@ -37,17 +35,19 @@ type AddThirdPartyVelocityContextProviderRequest struct {
 	HttpMethod []string `json:"httpMethod,omitempty"`
 	// Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
+	// Name of the new Velocity Context Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddThirdPartyVelocityContextProviderRequest instantiates a new AddThirdPartyVelocityContextProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyVelocityContextProviderRequest(providerName string, schemas []EnumthirdPartyVelocityContextProviderSchemaUrn, extensionClass string) *AddThirdPartyVelocityContextProviderRequest {
+func NewAddThirdPartyVelocityContextProviderRequest(schemas []EnumthirdPartyVelocityContextProviderSchemaUrn, extensionClass string, providerName string) *AddThirdPartyVelocityContextProviderRequest {
 	this := AddThirdPartyVelocityContextProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewAddThirdPartyVelocityContextProviderRequest(providerName string, schemas
 func NewAddThirdPartyVelocityContextProviderRequestWithDefaults() *AddThirdPartyVelocityContextProviderRequest {
 	this := AddThirdPartyVelocityContextProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddThirdPartyVelocityContextProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyVelocityContextProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddThirdPartyVelocityContextProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -355,6 +331,30 @@ func (o *AddThirdPartyVelocityContextProviderRequest) SetResponseHeader(v []stri
 	o.ResponseHeader = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddThirdPartyVelocityContextProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyVelocityContextProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddThirdPartyVelocityContextProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddThirdPartyVelocityContextProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -365,7 +365,6 @@ func (o AddThirdPartyVelocityContextProviderRequest) MarshalJSON() ([]byte, erro
 
 func (o AddThirdPartyVelocityContextProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -389,6 +388,7 @@ func (o AddThirdPartyVelocityContextProviderRequest) ToMap() (map[string]interfa
 	if !IsNil(o.ResponseHeader) {
 		toSerialize["responseHeader"] = o.ResponseHeader
 	}
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

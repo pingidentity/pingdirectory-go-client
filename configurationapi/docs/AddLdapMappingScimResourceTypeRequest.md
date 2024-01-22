@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TypeName** | **string** | Name of the new SCIM Resource Type | 
 **Schemas** | [**[]EnumldapMappingScimResourceTypeSchemaUrn**](EnumldapMappingScimResourceTypeSchemaUrn.md) |  | 
 **CoreSchema** | **string** | The core schema enforced on core attributes at the top level of a SCIM resource representation exposed by thisMapping SCIM Resource Type. | 
 **RequiredSchemaExtension** | Pointer to **[]string** | Required additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type. | [optional] 
@@ -20,12 +19,13 @@ Name | Type | Description | Notes
 **IncludeFilter** | Pointer to **[]string** | The set of LDAP filters that define the LDAP entries that should be included in this SCIM Resource Type. | [optional] 
 **IncludeOperationalAttribute** | Pointer to **[]string** | Specifies the set of operational LDAP attributes to be provided by this SCIM Resource Type. | [optional] 
 **CreateDNPattern** | Pointer to **string** | Specifies the template to use for the DN when creating new entries. | [optional] 
+**TypeName** | **string** | Name of the new SCIM Resource Type | 
 
 ## Methods
 
 ### NewAddLdapMappingScimResourceTypeRequest
 
-`func NewAddLdapMappingScimResourceTypeRequest(typeName string, schemas []EnumldapMappingScimResourceTypeSchemaUrn, coreSchema string, enabled bool, endpoint string, ) *AddLdapMappingScimResourceTypeRequest`
+`func NewAddLdapMappingScimResourceTypeRequest(schemas []EnumldapMappingScimResourceTypeSchemaUrn, coreSchema string, enabled bool, endpoint string, typeName string, ) *AddLdapMappingScimResourceTypeRequest`
 
 NewAddLdapMappingScimResourceTypeRequest instantiates a new AddLdapMappingScimResourceTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -39,26 +39,6 @@ will change when the set of required properties is changed
 NewAddLdapMappingScimResourceTypeRequestWithDefaults instantiates a new AddLdapMappingScimResourceTypeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTypeName
-
-`func (o *AddLdapMappingScimResourceTypeRequest) GetTypeName() string`
-
-GetTypeName returns the TypeName field if non-nil, zero value otherwise.
-
-### GetTypeNameOk
-
-`func (o *AddLdapMappingScimResourceTypeRequest) GetTypeNameOk() (*string, bool)`
-
-GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTypeName
-
-`func (o *AddLdapMappingScimResourceTypeRequest) SetTypeName(v string)`
-
-SetTypeName sets TypeName field to given value.
-
 
 ### GetSchemas
 
@@ -414,6 +394,26 @@ SetCreateDNPattern sets CreateDNPattern field to given value.
 `func (o *AddLdapMappingScimResourceTypeRequest) HasCreateDNPattern() bool`
 
 HasCreateDNPattern returns a boolean if a field has been set.
+
+### GetTypeName
+
+`func (o *AddLdapMappingScimResourceTypeRequest) GetTypeName() string`
+
+GetTypeName returns the TypeName field if non-nil, zero value otherwise.
+
+### GetTypeNameOk
+
+`func (o *AddLdapMappingScimResourceTypeRequest) GetTypeNameOk() (*string, bool)`
+
+GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTypeName
+
+`func (o *AddLdapMappingScimResourceTypeRequest) SetTypeName(v string)`
+
+SetTypeName sets TypeName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

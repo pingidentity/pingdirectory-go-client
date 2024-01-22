@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PolicyName** | **string** | Name of the new Replication Assurance Policy | 
 **Schemas** | Pointer to [**[]EnumreplicationAssurancePolicySchemaUrn**](EnumreplicationAssurancePolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | Description of the Replication Assurance Policy. | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **Timeout** | **string** | Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client. | 
 **ConnectionCriteria** | Pointer to **string** | Specifies a connection criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a request criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned. | [optional] 
+**PolicyName** | **string** | Name of the new Replication Assurance Policy | 
 
 ## Methods
 
 ### NewAddReplicationAssurancePolicyRequest
 
-`func NewAddReplicationAssurancePolicyRequest(policyName string, evaluationOrderIndex int64, timeout string, ) *AddReplicationAssurancePolicyRequest`
+`func NewAddReplicationAssurancePolicyRequest(evaluationOrderIndex int64, timeout string, policyName string, ) *AddReplicationAssurancePolicyRequest`
 
 NewAddReplicationAssurancePolicyRequest instantiates a new AddReplicationAssurancePolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddReplicationAssurancePolicyRequestWithDefaults instantiates a new AddReplicationAssurancePolicyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPolicyName
-
-`func (o *AddReplicationAssurancePolicyRequest) GetPolicyName() string`
-
-GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
-
-### GetPolicyNameOk
-
-`func (o *AddReplicationAssurancePolicyRequest) GetPolicyNameOk() (*string, bool)`
-
-GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPolicyName
-
-`func (o *AddReplicationAssurancePolicyRequest) SetPolicyName(v string)`
-
-SetPolicyName sets PolicyName field to given value.
-
 
 ### GetSchemas
 
@@ -268,6 +248,26 @@ SetRequestCriteria sets RequestCriteria field to given value.
 `func (o *AddReplicationAssurancePolicyRequest) HasRequestCriteria() bool`
 
 HasRequestCriteria returns a boolean if a field has been set.
+
+### GetPolicyName
+
+`func (o *AddReplicationAssurancePolicyRequest) GetPolicyName() string`
+
+GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
+
+### GetPolicyNameOk
+
+`func (o *AddReplicationAssurancePolicyRequest) GetPolicyNameOk() (*string, bool)`
+
+GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyName
+
+`func (o *AddReplicationAssurancePolicyRequest) SetPolicyName(v string)`
+
+SetPolicyName sets PolicyName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

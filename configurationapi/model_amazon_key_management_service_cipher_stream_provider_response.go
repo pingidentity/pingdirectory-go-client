@@ -19,8 +19,6 @@ var _ MappedNullable = &AmazonKeyManagementServiceCipherStreamProviderResponse{}
 
 // AmazonKeyManagementServiceCipherStreamProviderResponse struct for AmazonKeyManagementServiceCipherStreamProviderResponse
 type AmazonKeyManagementServiceCipherStreamProviderResponse struct {
-	// Name of the Cipher Stream Provider
-	Id      string                                                        `json:"id"`
 	Schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The path to a file that will hold the encrypted passphrase used by this cipher stream provider.
 	EncryptedPassphraseFile string `json:"encryptedPassphraseFile"`
@@ -42,19 +40,21 @@ type AmazonKeyManagementServiceCipherStreamProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Cipher Stream Provider
+	Id string `json:"id"`
 }
 
 // NewAmazonKeyManagementServiceCipherStreamProviderResponse instantiates a new AmazonKeyManagementServiceCipherStreamProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAmazonKeyManagementServiceCipherStreamProviderResponse(id string, schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, encryptedPassphraseFile string, kmsEncryptionKeyArn string, enabled bool) *AmazonKeyManagementServiceCipherStreamProviderResponse {
+func NewAmazonKeyManagementServiceCipherStreamProviderResponse(schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, encryptedPassphraseFile string, kmsEncryptionKeyArn string, enabled bool, id string) *AmazonKeyManagementServiceCipherStreamProviderResponse {
 	this := AmazonKeyManagementServiceCipherStreamProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.EncryptedPassphraseFile = encryptedPassphraseFile
 	this.KmsEncryptionKeyArn = kmsEncryptionKeyArn
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -64,30 +64,6 @@ func NewAmazonKeyManagementServiceCipherStreamProviderResponse(id string, schema
 func NewAmazonKeyManagementServiceCipherStreamProviderResponseWithDefaults() *AmazonKeyManagementServiceCipherStreamProviderResponse {
 	this := AmazonKeyManagementServiceCipherStreamProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -442,6 +418,30 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) SetUrnpingident
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AmazonKeyManagementServiceCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -452,7 +452,6 @@ func (o AmazonKeyManagementServiceCipherStreamProviderResponse) MarshalJSON() ([
 
 func (o AmazonKeyManagementServiceCipherStreamProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["encryptedPassphraseFile"] = o.EncryptedPassphraseFile
 	if !IsNil(o.AwsExternalServer) {
@@ -481,6 +480,7 @@ func (o AmazonKeyManagementServiceCipherStreamProviderResponse) ToMap() (map[str
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

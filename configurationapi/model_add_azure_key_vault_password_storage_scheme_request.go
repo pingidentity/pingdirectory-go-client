@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAzureKeyVaultPasswordStorageSchemeRequest{}
 
 // AddAzureKeyVaultPasswordStorageSchemeRequest struct for AddAzureKeyVaultPasswordStorageSchemeRequest
 type AddAzureKeyVaultPasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName string                                            `json:"schemeName"`
-	Schemas    []EnumazureKeyVaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas []EnumazureKeyVaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The URI that identifies the Azure Key Vault from which the secret is to be retrieved.
 	KeyVaultURI string `json:"keyVaultURI"`
 	// The mechanism used to authenticate to the Azure service.
@@ -32,19 +30,21 @@ type AddAzureKeyVaultPasswordStorageSchemeRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddAzureKeyVaultPasswordStorageSchemeRequest instantiates a new AddAzureKeyVaultPasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAzureKeyVaultPasswordStorageSchemeRequest(schemeName string, schemas []EnumazureKeyVaultPasswordStorageSchemeSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, enabled bool) *AddAzureKeyVaultPasswordStorageSchemeRequest {
+func NewAddAzureKeyVaultPasswordStorageSchemeRequest(schemas []EnumazureKeyVaultPasswordStorageSchemeSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, enabled bool, schemeName string) *AddAzureKeyVaultPasswordStorageSchemeRequest {
 	this := AddAzureKeyVaultPasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.KeyVaultURI = keyVaultURI
 	this.AzureAuthenticationMethod = azureAuthenticationMethod
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddAzureKeyVaultPasswordStorageSchemeRequest(schemeName string, schemas 
 func NewAddAzureKeyVaultPasswordStorageSchemeRequestWithDefaults() *AddAzureKeyVaultPasswordStorageSchemeRequest {
 	this := AddAzureKeyVaultPasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -240,6 +216,30 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddAzureKeyVaultPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -250,7 +250,6 @@ func (o AddAzureKeyVaultPasswordStorageSchemeRequest) MarshalJSON() ([]byte, err
 
 func (o AddAzureKeyVaultPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["keyVaultURI"] = o.KeyVaultURI
 	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
@@ -261,6 +260,7 @@ func (o AddAzureKeyVaultPasswordStorageSchemeRequest) ToMap() (map[string]interf
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

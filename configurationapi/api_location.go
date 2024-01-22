@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LocationApiService LocationApi service
-type LocationApiService service
+// LocationAPIService LocationAPI service
+type LocationAPIService service
 
 type ApiAddLocationRequest struct {
 	ctx                context.Context
-	ApiService         *LocationApiService
+	ApiService         *LocationAPIService
 	addLocationRequest *AddLocationRequest
 }
 
@@ -44,7 +44,7 @@ AddLocation Add a new Location to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddLocationRequest
 */
-func (a *LocationApiService) AddLocation(ctx context.Context) ApiAddLocationRequest {
+func (a *LocationAPIService) AddLocation(ctx context.Context) ApiAddLocationRequest {
 	return ApiAddLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *LocationApiService) AddLocation(ctx context.Context) ApiAddLocationRequ
 // Execute executes the request
 //
 //	@return LocationResponse
-func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*LocationResponse, *http.Response, error) {
+func (a *LocationAPIService) AddLocationExecute(r ApiAddLocationRequest) (*LocationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*Locat
 		localVarReturnValue *LocationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.AddLocation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationAPIService.AddLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*Locat
 
 type ApiDeleteLocationRequest struct {
 	ctx          context.Context
-	ApiService   *LocationApiService
+	ApiService   *LocationAPIService
 	locationName string
 }
 
@@ -149,7 +149,7 @@ DeleteLocation Delete a Location
 	@param locationName Name of the Location
 	@return ApiDeleteLocationRequest
 */
-func (a *LocationApiService) DeleteLocation(ctx context.Context, locationName string) ApiDeleteLocationRequest {
+func (a *LocationAPIService) DeleteLocation(ctx context.Context, locationName string) ApiDeleteLocationRequest {
 	return ApiDeleteLocationRequest{
 		ApiService:   a,
 		ctx:          ctx,
@@ -158,14 +158,14 @@ func (a *LocationApiService) DeleteLocation(ctx context.Context, locationName st
 }
 
 // Execute executes the request
-func (a *LocationApiService) DeleteLocationExecute(r ApiDeleteLocationRequest) (*http.Response, error) {
+func (a *LocationAPIService) DeleteLocationExecute(r ApiDeleteLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.DeleteLocation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationAPIService.DeleteLocation")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *LocationApiService) DeleteLocationExecute(r ApiDeleteLocationRequest) (
 
 type ApiGetLocationRequest struct {
 	ctx          context.Context
-	ApiService   *LocationApiService
+	ApiService   *LocationAPIService
 	locationName string
 }
 
@@ -239,7 +239,7 @@ GetLocation Returns a single Location
 	@param locationName Name of the Location
 	@return ApiGetLocationRequest
 */
-func (a *LocationApiService) GetLocation(ctx context.Context, locationName string) ApiGetLocationRequest {
+func (a *LocationAPIService) GetLocation(ctx context.Context, locationName string) ApiGetLocationRequest {
 	return ApiGetLocationRequest{
 		ApiService:   a,
 		ctx:          ctx,
@@ -250,7 +250,7 @@ func (a *LocationApiService) GetLocation(ctx context.Context, locationName strin
 // Execute executes the request
 //
 //	@return LocationResponse
-func (a *LocationApiService) GetLocationExecute(r ApiGetLocationRequest) (*LocationResponse, *http.Response, error) {
+func (a *LocationAPIService) GetLocationExecute(r ApiGetLocationRequest) (*LocationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *LocationApiService) GetLocationExecute(r ApiGetLocationRequest) (*Locat
 		localVarReturnValue *LocationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.GetLocation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationAPIService.GetLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *LocationApiService) GetLocationExecute(r ApiGetLocationRequest) (*Locat
 
 type ApiListLocationsRequest struct {
 	ctx        context.Context
-	ApiService *LocationApiService
+	ApiService *LocationAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListLocations Returns a list of all Location objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListLocationsRequest
 */
-func (a *LocationApiService) ListLocations(ctx context.Context) ApiListLocationsRequest {
+func (a *LocationAPIService) ListLocations(ctx context.Context) ApiListLocationsRequest {
 	return ApiListLocationsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *LocationApiService) ListLocations(ctx context.Context) ApiListLocations
 // Execute executes the request
 //
 //	@return LocationListResponse
-func (a *LocationApiService) ListLocationsExecute(r ApiListLocationsRequest) (*LocationListResponse, *http.Response, error) {
+func (a *LocationAPIService) ListLocationsExecute(r ApiListLocationsRequest) (*LocationListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *LocationApiService) ListLocationsExecute(r ApiListLocationsRequest) (*L
 		localVarReturnValue *LocationListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.ListLocations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationAPIService.ListLocations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *LocationApiService) ListLocationsExecute(r ApiListLocationsRequest) (*L
 
 type ApiUpdateLocationRequest struct {
 	ctx           context.Context
-	ApiService    *LocationApiService
+	ApiService    *LocationAPIService
 	locationName  string
 	updateRequest *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateLocation Update an existing Location by name
 	@param locationName Name of the Location
 	@return ApiUpdateLocationRequest
 */
-func (a *LocationApiService) UpdateLocation(ctx context.Context, locationName string) ApiUpdateLocationRequest {
+func (a *LocationAPIService) UpdateLocation(ctx context.Context, locationName string) ApiUpdateLocationRequest {
 	return ApiUpdateLocationRequest{
 		ApiService:   a,
 		ctx:          ctx,
@@ -467,7 +467,7 @@ func (a *LocationApiService) UpdateLocation(ctx context.Context, locationName st
 // Execute executes the request
 //
 //	@return LocationResponse
-func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (*LocationResponse, *http.Response, error) {
+func (a *LocationAPIService) UpdateLocationExecute(r ApiUpdateLocationRequest) (*LocationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 		localVarReturnValue *LocationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.UpdateLocation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationAPIService.UpdateLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

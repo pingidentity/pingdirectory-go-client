@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Key Manager Provider | 
 **Schemas** | [**[]EnumthirdPartyKeyManagerProviderSchemaUrn**](EnumthirdPartyKeyManagerProviderSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Key Manager Provider. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Key Manager Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Key Manager Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Key Manager Provider is enabled for use. | 
+**ProviderName** | **string** | Name of the new Key Manager Provider | 
 
 ## Methods
 
 ### NewAddThirdPartyKeyManagerProviderRequest
 
-`func NewAddThirdPartyKeyManagerProviderRequest(providerName string, schemas []EnumthirdPartyKeyManagerProviderSchemaUrn, extensionClass string, enabled bool, ) *AddThirdPartyKeyManagerProviderRequest`
+`func NewAddThirdPartyKeyManagerProviderRequest(schemas []EnumthirdPartyKeyManagerProviderSchemaUrn, extensionClass string, enabled bool, providerName string, ) *AddThirdPartyKeyManagerProviderRequest`
 
 NewAddThirdPartyKeyManagerProviderRequest instantiates a new AddThirdPartyKeyManagerProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyKeyManagerProviderRequestWithDefaults instantiates a new AddThirdPartyKeyManagerProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddThirdPartyKeyManagerProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddThirdPartyKeyManagerProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddThirdPartyKeyManagerProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddThirdPartyKeyManagerProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddThirdPartyKeyManagerProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddThirdPartyKeyManagerProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddThirdPartyKeyManagerProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

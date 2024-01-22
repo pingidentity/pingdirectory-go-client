@@ -1,14 +1,14 @@
-# \PassphraseProviderApi
+# \PassphraseProviderAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPassphraseProvider**](PassphraseProviderApi.md#AddPassphraseProvider) | **Post** /passphrase-providers | Add a new Passphrase Provider to the config
-[**DeletePassphraseProvider**](PassphraseProviderApi.md#DeletePassphraseProvider) | **Delete** /passphrase-providers/{passphrase-provider-name} | Delete a Passphrase Provider
-[**GetPassphraseProvider**](PassphraseProviderApi.md#GetPassphraseProvider) | **Get** /passphrase-providers/{passphrase-provider-name} | Returns a single Passphrase Provider
-[**ListPassphraseProviders**](PassphraseProviderApi.md#ListPassphraseProviders) | **Get** /passphrase-providers | Returns a list of all Passphrase Provider objects
-[**UpdatePassphraseProvider**](PassphraseProviderApi.md#UpdatePassphraseProvider) | **Patch** /passphrase-providers/{passphrase-provider-name} | Update an existing Passphrase Provider by name
+[**AddPassphraseProvider**](PassphraseProviderAPI.md#AddPassphraseProvider) | **Post** /passphrase-providers | Add a new Passphrase Provider to the config
+[**DeletePassphraseProvider**](PassphraseProviderAPI.md#DeletePassphraseProvider) | **Delete** /passphrase-providers/{passphrase-provider-name} | Delete a Passphrase Provider
+[**GetPassphraseProvider**](PassphraseProviderAPI.md#GetPassphraseProvider) | **Get** /passphrase-providers/{passphrase-provider-name} | Returns a single Passphrase Provider
+[**ListPassphraseProviders**](PassphraseProviderAPI.md#ListPassphraseProviders) | **Get** /passphrase-providers | Returns a list of all Passphrase Provider objects
+[**UpdatePassphraseProvider**](PassphraseProviderAPI.md#UpdatePassphraseProvider) | **Patch** /passphrase-providers/{passphrase-provider-name} | Update an existing Passphrase Provider by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addPassphraseProviderRequest := openapiclient.add_passphrase_provider_request{AddAmazonSecretsManagerPassphraseProviderRequest: openapiclient.NewAddAmazonSecretsManagerPassphraseProviderRequest("ProviderName_example", []openapiclient.EnumamazonSecretsManagerPassphraseProviderSchemaUrn{openapiclient.Enumamazon-secrets-manager-passphrase-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:passphrase-provider:amazon-secrets-manager")}, "AwsExternalServer_example", "SecretID_example", "SecretFieldName_example", false)} // AddPassphraseProviderRequest | Create a new Passphrase Provider in the config
+    addPassphraseProviderRequest := openapiclient.add_passphrase_provider_request{AddAmazonSecretsManagerPassphraseProviderRequest: openapiclient.NewAddAmazonSecretsManagerPassphraseProviderRequest([]openapiclient.EnumamazonSecretsManagerPassphraseProviderSchemaUrn{openapiclient.Enumamazon-secrets-manager-passphrase-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:passphrase-provider:amazon-secrets-manager")}, "AwsExternalServer_example", "SecretID_example", "SecretFieldName_example", false, "ProviderName_example")} // AddPassphraseProviderRequest | Create a new Passphrase Provider in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PassphraseProviderApi.AddPassphraseProvider(context.Background()).AddPassphraseProviderRequest(addPassphraseProviderRequest).Execute()
+    resp, r, err := apiClient.PassphraseProviderAPI.AddPassphraseProvider(context.Background()).AddPassphraseProviderRequest(addPassphraseProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderApi.AddPassphraseProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderAPI.AddPassphraseProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddPassphraseProvider`: AddPassphraseProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `PassphraseProviderApi.AddPassphraseProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PassphraseProviderAPI.AddPassphraseProvider`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PassphraseProviderApi.DeletePassphraseProvider(context.Background(), passphraseProviderName).Execute()
+    r, err := apiClient.PassphraseProviderAPI.DeletePassphraseProvider(context.Background(), passphraseProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderApi.DeletePassphraseProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderAPI.DeletePassphraseProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PassphraseProviderApi.GetPassphraseProvider(context.Background(), passphraseProviderName).Execute()
+    resp, r, err := apiClient.PassphraseProviderAPI.GetPassphraseProvider(context.Background(), passphraseProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderApi.GetPassphraseProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderAPI.GetPassphraseProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPassphraseProvider`: AddPassphraseProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `PassphraseProviderApi.GetPassphraseProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PassphraseProviderAPI.GetPassphraseProvider`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PassphraseProviderApi.ListPassphraseProviders(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.PassphraseProviderAPI.ListPassphraseProviders(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderApi.ListPassphraseProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderAPI.ListPassphraseProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPassphraseProviders`: PassphraseProviderListResponse
-    fmt.Fprintf(os.Stdout, "Response from `PassphraseProviderApi.ListPassphraseProviders`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PassphraseProviderAPI.ListPassphraseProviders`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PassphraseProviderApi.UpdatePassphraseProvider(context.Background(), passphraseProviderName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.PassphraseProviderAPI.UpdatePassphraseProvider(context.Background(), passphraseProviderName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderApi.UpdatePassphraseProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderAPI.UpdatePassphraseProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePassphraseProvider`: AddPassphraseProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `PassphraseProviderApi.UpdatePassphraseProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PassphraseProviderAPI.UpdatePassphraseProvider`: %v\n", resp)
 }
 ```
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddArgon2PasswordStorageSchemeRequest{}
 
 // AddArgon2PasswordStorageSchemeRequest struct for AddArgon2PasswordStorageSchemeRequest
 type AddArgon2PasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName string                                     `json:"schemeName"`
-	Schemas    []Enumargon2PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas []Enumargon2PasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The number of rounds of cryptographic processing required in the course of encoding each password.
 	IterationCount int64 `json:"iterationCount"`
 	// The number of concurrent threads that will be used in the course of encoding each password.
@@ -36,15 +34,16 @@ type AddArgon2PasswordStorageSchemeRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddArgon2PasswordStorageSchemeRequest instantiates a new AddArgon2PasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddArgon2PasswordStorageSchemeRequest(schemeName string, schemas []Enumargon2PasswordStorageSchemeSchemaUrn, iterationCount int64, parallelismFactor int64, memoryUsageKb int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool) *AddArgon2PasswordStorageSchemeRequest {
+func NewAddArgon2PasswordStorageSchemeRequest(schemas []Enumargon2PasswordStorageSchemeSchemaUrn, iterationCount int64, parallelismFactor int64, memoryUsageKb int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool, schemeName string) *AddArgon2PasswordStorageSchemeRequest {
 	this := AddArgon2PasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.IterationCount = iterationCount
 	this.ParallelismFactor = parallelismFactor
@@ -52,6 +51,7 @@ func NewAddArgon2PasswordStorageSchemeRequest(schemeName string, schemas []Enuma
 	this.SaltLengthBytes = saltLengthBytes
 	this.DerivedKeyLengthBytes = derivedKeyLengthBytes
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewAddArgon2PasswordStorageSchemeRequest(schemeName string, schemas []Enuma
 func NewAddArgon2PasswordStorageSchemeRequestWithDefaults() *AddArgon2PasswordStorageSchemeRequest {
 	this := AddArgon2PasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddArgon2PasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddArgon2PasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddArgon2PasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -287,6 +263,30 @@ func (o *AddArgon2PasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddArgon2PasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddArgon2PasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddArgon2PasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddArgon2PasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -297,7 +297,6 @@ func (o AddArgon2PasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddArgon2PasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["iterationCount"] = o.IterationCount
 	toSerialize["parallelismFactor"] = o.ParallelismFactor
@@ -308,6 +307,7 @@ func (o AddArgon2PasswordStorageSchemeRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

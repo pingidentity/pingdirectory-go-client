@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSimpleUncachedAttributeCriteriaRequest{}
 
 // AddSimpleUncachedAttributeCriteriaRequest struct for AddSimpleUncachedAttributeCriteriaRequest
 type AddSimpleUncachedAttributeCriteriaRequest struct {
-	// Name of the new Uncached Attribute Criteria
-	CriteriaName string                                         `json:"criteriaName"`
-	Schemas      []EnumsimpleUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumsimpleUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the attribute types for attributes that may be written to the uncached-id2entry database.
 	AttributeType []string `json:"attributeType"`
 	// Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database.
@@ -32,18 +30,20 @@ type AddSimpleUncachedAttributeCriteriaRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Uncached Attribute Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddSimpleUncachedAttributeCriteriaRequest instantiates a new AddSimpleUncachedAttributeCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSimpleUncachedAttributeCriteriaRequest(criteriaName string, schemas []EnumsimpleUncachedAttributeCriteriaSchemaUrn, attributeType []string, enabled bool) *AddSimpleUncachedAttributeCriteriaRequest {
+func NewAddSimpleUncachedAttributeCriteriaRequest(schemas []EnumsimpleUncachedAttributeCriteriaSchemaUrn, attributeType []string, enabled bool, criteriaName string) *AddSimpleUncachedAttributeCriteriaRequest {
 	this := AddSimpleUncachedAttributeCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
 	this.AttributeType = attributeType
 	this.Enabled = enabled
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddSimpleUncachedAttributeCriteriaRequest(criteriaName string, schemas [
 func NewAddSimpleUncachedAttributeCriteriaRequestWithDefaults() *AddSimpleUncachedAttributeCriteriaRequest {
 	this := AddSimpleUncachedAttributeCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddSimpleUncachedAttributeCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddSimpleUncachedAttributeCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddSimpleUncachedAttributeCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -247,6 +223,30 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddSimpleUncachedAttributeCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddSimpleUncachedAttributeCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddSimpleUncachedAttributeCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddSimpleUncachedAttributeCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -257,7 +257,6 @@ func (o AddSimpleUncachedAttributeCriteriaRequest) MarshalJSON() ([]byte, error)
 
 func (o AddSimpleUncachedAttributeCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["attributeType"] = o.AttributeType
 	if !IsNil(o.MinValueCount) {
@@ -270,6 +269,7 @@ func (o AddSimpleUncachedAttributeCriteriaRequest) ToMap() (map[string]interface
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

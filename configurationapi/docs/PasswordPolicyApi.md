@@ -1,14 +1,14 @@
-# \PasswordPolicyApi
+# \PasswordPolicyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddPasswordPolicy**](PasswordPolicyApi.md#AddPasswordPolicy) | **Post** /password-policies | Add a new Password Policy to the config
-[**DeletePasswordPolicy**](PasswordPolicyApi.md#DeletePasswordPolicy) | **Delete** /password-policies/{password-policy-name} | Delete a Password Policy
-[**GetPasswordPolicy**](PasswordPolicyApi.md#GetPasswordPolicy) | **Get** /password-policies/{password-policy-name} | Returns a single Password Policy
-[**ListPasswordPolicies**](PasswordPolicyApi.md#ListPasswordPolicies) | **Get** /password-policies | Returns a list of all Password Policy objects
-[**UpdatePasswordPolicy**](PasswordPolicyApi.md#UpdatePasswordPolicy) | **Patch** /password-policies/{password-policy-name} | Update an existing Password Policy by name
+[**AddPasswordPolicy**](PasswordPolicyAPI.md#AddPasswordPolicy) | **Post** /password-policies | Add a new Password Policy to the config
+[**DeletePasswordPolicy**](PasswordPolicyAPI.md#DeletePasswordPolicy) | **Delete** /password-policies/{password-policy-name} | Delete a Password Policy
+[**GetPasswordPolicy**](PasswordPolicyAPI.md#GetPasswordPolicy) | **Get** /password-policies/{password-policy-name} | Returns a single Password Policy
+[**ListPasswordPolicies**](PasswordPolicyAPI.md#ListPasswordPolicies) | **Get** /password-policies | Returns a list of all Password Policy objects
+[**UpdatePasswordPolicy**](PasswordPolicyAPI.md#UpdatePasswordPolicy) | **Patch** /password-policies/{password-policy-name} | Update an existing Password Policy by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addPasswordPolicyRequest := *openapiclient.NewAddPasswordPolicyRequest("PolicyName_example", "PasswordAttribute_example", []string{"DefaultPasswordStorageScheme_example"}) // AddPasswordPolicyRequest | Create a new Password Policy in the config
+    addPasswordPolicyRequest := *openapiclient.NewAddPasswordPolicyRequest("PasswordAttribute_example", []string{"DefaultPasswordStorageScheme_example"}, "PolicyName_example") // AddPasswordPolicyRequest | Create a new Password Policy in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordPolicyApi.AddPasswordPolicy(context.Background()).AddPasswordPolicyRequest(addPasswordPolicyRequest).Execute()
+    resp, r, err := apiClient.PasswordPolicyAPI.AddPasswordPolicy(context.Background()).AddPasswordPolicyRequest(addPasswordPolicyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyApi.AddPasswordPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyAPI.AddPasswordPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddPasswordPolicy`: PasswordPolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `PasswordPolicyApi.AddPasswordPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordPolicyAPI.AddPasswordPolicy`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PasswordPolicyApi.DeletePasswordPolicy(context.Background(), passwordPolicyName).Execute()
+    r, err := apiClient.PasswordPolicyAPI.DeletePasswordPolicy(context.Background(), passwordPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyApi.DeletePasswordPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyAPI.DeletePasswordPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordPolicyApi.GetPasswordPolicy(context.Background(), passwordPolicyName).Execute()
+    resp, r, err := apiClient.PasswordPolicyAPI.GetPasswordPolicy(context.Background(), passwordPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyApi.GetPasswordPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyAPI.GetPasswordPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetPasswordPolicy`: PasswordPolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `PasswordPolicyApi.GetPasswordPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordPolicyAPI.GetPasswordPolicy`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordPolicyApi.ListPasswordPolicies(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.PasswordPolicyAPI.ListPasswordPolicies(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyApi.ListPasswordPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyAPI.ListPasswordPolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListPasswordPolicies`: PasswordPolicyListResponse
-    fmt.Fprintf(os.Stdout, "Response from `PasswordPolicyApi.ListPasswordPolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordPolicyAPI.ListPasswordPolicies`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PasswordPolicyApi.UpdatePasswordPolicy(context.Background(), passwordPolicyName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.PasswordPolicyAPI.UpdatePasswordPolicy(context.Background(), passwordPolicyName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyApi.UpdatePasswordPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyAPI.UpdatePasswordPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdatePasswordPolicy`: PasswordPolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `PasswordPolicyApi.UpdatePasswordPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `PasswordPolicyAPI.UpdatePasswordPolicy`: %v\n", resp)
 }
 ```
 

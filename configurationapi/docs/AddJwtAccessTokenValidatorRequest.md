@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ValidatorName** | **string** | Name of the new Access Token Validator | 
 **Schemas** | [**[]EnumjwtAccessTokenValidatorSchemaUrn**](EnumjwtAccessTokenValidatorSchemaUrn.md) |  | 
 **AllowedSigningAlgorithm** | Pointer to [**[]EnumaccessTokenValidatorAllowedSigningAlgorithmProp**](EnumaccessTokenValidatorAllowedSigningAlgorithmProp.md) |  | [optional] 
 **SigningCertificate** | Pointer to **[]string** | Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys. | [optional] 
@@ -21,12 +20,13 @@ Name | Type | Description | Notes
 **SubjectClaimName** | Pointer to **string** | The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server. | [optional] 
 **Description** | Pointer to **string** | A description for this Access Token Validator | [optional] 
 **Enabled** | **bool** | Indicates whether this Access Token Validator is enabled for use in Directory Server. | 
+**ValidatorName** | **string** | Name of the new Access Token Validator | 
 
 ## Methods
 
 ### NewAddJwtAccessTokenValidatorRequest
 
-`func NewAddJwtAccessTokenValidatorRequest(validatorName string, schemas []EnumjwtAccessTokenValidatorSchemaUrn, enabled bool, ) *AddJwtAccessTokenValidatorRequest`
+`func NewAddJwtAccessTokenValidatorRequest(schemas []EnumjwtAccessTokenValidatorSchemaUrn, enabled bool, validatorName string, ) *AddJwtAccessTokenValidatorRequest`
 
 NewAddJwtAccessTokenValidatorRequest instantiates a new AddJwtAccessTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -40,26 +40,6 @@ will change when the set of required properties is changed
 NewAddJwtAccessTokenValidatorRequestWithDefaults instantiates a new AddJwtAccessTokenValidatorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetValidatorName
-
-`func (o *AddJwtAccessTokenValidatorRequest) GetValidatorName() string`
-
-GetValidatorName returns the ValidatorName field if non-nil, zero value otherwise.
-
-### GetValidatorNameOk
-
-`func (o *AddJwtAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool)`
-
-GetValidatorNameOk returns a tuple with the ValidatorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValidatorName
-
-`func (o *AddJwtAccessTokenValidatorRequest) SetValidatorName(v string)`
-
-SetValidatorName sets ValidatorName field to given value.
-
 
 ### GetSchemas
 
@@ -449,6 +429,26 @@ and a boolean to check if the value has been set.
 `func (o *AddJwtAccessTokenValidatorRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetValidatorName
+
+`func (o *AddJwtAccessTokenValidatorRequest) GetValidatorName() string`
+
+GetValidatorName returns the ValidatorName field if non-nil, zero value otherwise.
+
+### GetValidatorNameOk
+
+`func (o *AddJwtAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool)`
+
+GetValidatorNameOk returns a tuple with the ValidatorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidatorName
+
+`func (o *AddJwtAccessTokenValidatorRequest) SetValidatorName(v string)`
+
+SetValidatorName sets ValidatorName field to given value.
 
 
 

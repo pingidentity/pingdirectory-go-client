@@ -1,11 +1,11 @@
-# \AlarmManagerApi
+# \AlarmManagerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAlarmManager**](AlarmManagerApi.md#GetAlarmManager) | **Get** /alarm-manager | Returns a single Alarm Manager
-[**UpdateAlarmManager**](AlarmManagerApi.md#UpdateAlarmManager) | **Patch** /alarm-manager | Update an existing Alarm Manager by name
+[**GetAlarmManager**](AlarmManagerAPI.md#GetAlarmManager) | **Get** /alarm-manager | Returns a single Alarm Manager
+[**UpdateAlarmManager**](AlarmManagerAPI.md#UpdateAlarmManager) | **Patch** /alarm-manager | Update an existing Alarm Manager by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlarmManagerApi.GetAlarmManager(context.Background()).Execute()
+    resp, r, err := apiClient.AlarmManagerAPI.GetAlarmManager(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlarmManagerApi.GetAlarmManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlarmManagerAPI.GetAlarmManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetAlarmManager`: AlarmManagerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AlarmManagerApi.GetAlarmManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AlarmManagerAPI.GetAlarmManager`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlarmManagerApi.UpdateAlarmManager(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.AlarmManagerAPI.UpdateAlarmManager(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlarmManagerApi.UpdateAlarmManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlarmManagerAPI.UpdateAlarmManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateAlarmManager`: AlarmManagerResponse
-    fmt.Fprintf(os.Stdout, "Response from `AlarmManagerApi.UpdateAlarmManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `AlarmManagerAPI.UpdateAlarmManager`: %v\n", resp)
 }
 ```
 

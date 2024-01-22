@@ -4,20 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumvaultExternalServerSchemaUrn**](EnumvaultExternalServerSchemaUrn.md) |  | 
 **VaultServerBaseURI** | **[]string** | The base URL needed to access the Vault server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://vault.example.com:8200/\&quot;. | 
 **VaultAuthenticationMethod** | **string** | The mechanism used to authenticate to the Vault server. | 
+**HttpConnectTimeout** | Pointer to **string** | The maximum length of time to wait to obtain an HTTP connection. | [optional] 
+**HttpResponseTimeout** | Pointer to **string** | The maximum length of time to wait for a response to an HTTP request. | [optional] 
 **TrustStoreFile** | Pointer to **string** | The path to a file containing the information needed to trust the certificate presented by the Vault servers. | [optional] 
 **TrustStorePin** | Pointer to **string** | The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents. | [optional] 
 **TrustStoreType** | Pointer to **string** | The store type for the specified trust store file. The value should likely be one of \&quot;JKS\&quot;, \&quot;PKCS12\&quot;, or \&quot;BCFKS\&quot;. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
+**ServerName** | **string** | Name of the new External Server | 
 
 ## Methods
 
 ### NewAddVaultExternalServerRequest
 
-`func NewAddVaultExternalServerRequest(serverName string, schemas []EnumvaultExternalServerSchemaUrn, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddVaultExternalServerRequest`
+`func NewAddVaultExternalServerRequest(schemas []EnumvaultExternalServerSchemaUrn, vaultServerBaseURI []string, vaultAuthenticationMethod string, serverName string, ) *AddVaultExternalServerRequest`
 
 NewAddVaultExternalServerRequest instantiates a new AddVaultExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +33,6 @@ will change when the set of required properties is changed
 NewAddVaultExternalServerRequestWithDefaults instantiates a new AddVaultExternalServerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetServerName
-
-`func (o *AddVaultExternalServerRequest) GetServerName() string`
-
-GetServerName returns the ServerName field if non-nil, zero value otherwise.
-
-### GetServerNameOk
-
-`func (o *AddVaultExternalServerRequest) GetServerNameOk() (*string, bool)`
-
-GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServerName
-
-`func (o *AddVaultExternalServerRequest) SetServerName(v string)`
-
-SetServerName sets ServerName field to given value.
-
 
 ### GetSchemas
 
@@ -111,6 +93,56 @@ and a boolean to check if the value has been set.
 
 SetVaultAuthenticationMethod sets VaultAuthenticationMethod field to given value.
 
+
+### GetHttpConnectTimeout
+
+`func (o *AddVaultExternalServerRequest) GetHttpConnectTimeout() string`
+
+GetHttpConnectTimeout returns the HttpConnectTimeout field if non-nil, zero value otherwise.
+
+### GetHttpConnectTimeoutOk
+
+`func (o *AddVaultExternalServerRequest) GetHttpConnectTimeoutOk() (*string, bool)`
+
+GetHttpConnectTimeoutOk returns a tuple with the HttpConnectTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpConnectTimeout
+
+`func (o *AddVaultExternalServerRequest) SetHttpConnectTimeout(v string)`
+
+SetHttpConnectTimeout sets HttpConnectTimeout field to given value.
+
+### HasHttpConnectTimeout
+
+`func (o *AddVaultExternalServerRequest) HasHttpConnectTimeout() bool`
+
+HasHttpConnectTimeout returns a boolean if a field has been set.
+
+### GetHttpResponseTimeout
+
+`func (o *AddVaultExternalServerRequest) GetHttpResponseTimeout() string`
+
+GetHttpResponseTimeout returns the HttpResponseTimeout field if non-nil, zero value otherwise.
+
+### GetHttpResponseTimeoutOk
+
+`func (o *AddVaultExternalServerRequest) GetHttpResponseTimeoutOk() (*string, bool)`
+
+GetHttpResponseTimeoutOk returns a tuple with the HttpResponseTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpResponseTimeout
+
+`func (o *AddVaultExternalServerRequest) SetHttpResponseTimeout(v string)`
+
+SetHttpResponseTimeout sets HttpResponseTimeout field to given value.
+
+### HasHttpResponseTimeout
+
+`func (o *AddVaultExternalServerRequest) HasHttpResponseTimeout() bool`
+
+HasHttpResponseTimeout returns a boolean if a field has been set.
 
 ### GetTrustStoreFile
 
@@ -211,6 +243,26 @@ SetDescription sets Description field to given value.
 `func (o *AddVaultExternalServerRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetServerName
+
+`func (o *AddVaultExternalServerRequest) GetServerName() string`
+
+GetServerName returns the ServerName field if non-nil, zero value otherwise.
+
+### GetServerNameOk
+
+`func (o *AddVaultExternalServerRequest) GetServerNameOk() (*string, bool)`
+
+GetServerNameOk returns a tuple with the ServerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerName
+
+`func (o *AddVaultExternalServerRequest) SetServerName(v string)`
+
+SetServerName sets ServerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

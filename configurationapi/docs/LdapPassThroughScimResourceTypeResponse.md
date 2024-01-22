@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the SCIM Resource Type | 
 **Schemas** | [**[]EnumldapPassThroughScimResourceTypeSchemaUrn**](EnumldapPassThroughScimResourceTypeSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this SCIM Resource Type | [optional] 
 **Enabled** | **bool** | Indicates whether the SCIM Resource Type is enabled. | 
@@ -19,12 +18,13 @@ Name | Type | Description | Notes
 **CreateDNPattern** | Pointer to **string** | Specifies the template to use for the DN when creating new entries. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the SCIM Resource Type | 
 
 ## Methods
 
 ### NewLdapPassThroughScimResourceTypeResponse
 
-`func NewLdapPassThroughScimResourceTypeResponse(id string, schemas []EnumldapPassThroughScimResourceTypeSchemaUrn, enabled bool, endpoint string, ) *LdapPassThroughScimResourceTypeResponse`
+`func NewLdapPassThroughScimResourceTypeResponse(schemas []EnumldapPassThroughScimResourceTypeSchemaUrn, enabled bool, endpoint string, id string, ) *LdapPassThroughScimResourceTypeResponse`
 
 NewLdapPassThroughScimResourceTypeResponse instantiates a new LdapPassThroughScimResourceTypeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -38,26 +38,6 @@ will change when the set of required properties is changed
 NewLdapPassThroughScimResourceTypeResponseWithDefaults instantiates a new LdapPassThroughScimResourceTypeResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *LdapPassThroughScimResourceTypeResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *LdapPassThroughScimResourceTypeResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *LdapPassThroughScimResourceTypeResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -393,6 +373,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *LdapPassThroughScimResourceTypeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *LdapPassThroughScimResourceTypeResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *LdapPassThroughScimResourceTypeResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *LdapPassThroughScimResourceTypeResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

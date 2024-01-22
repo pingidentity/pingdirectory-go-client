@@ -1,14 +1,14 @@
-# \ExtendedOperationHandlerApi
+# \ExtendedOperationHandlerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddExtendedOperationHandler**](ExtendedOperationHandlerApi.md#AddExtendedOperationHandler) | **Post** /extended-operation-handlers | Add a new Extended Operation Handler to the config
-[**DeleteExtendedOperationHandler**](ExtendedOperationHandlerApi.md#DeleteExtendedOperationHandler) | **Delete** /extended-operation-handlers/{extended-operation-handler-name} | Delete a Extended Operation Handler
-[**GetExtendedOperationHandler**](ExtendedOperationHandlerApi.md#GetExtendedOperationHandler) | **Get** /extended-operation-handlers/{extended-operation-handler-name} | Returns a single Extended Operation Handler
-[**ListExtendedOperationHandlers**](ExtendedOperationHandlerApi.md#ListExtendedOperationHandlers) | **Get** /extended-operation-handlers | Returns a list of all Extended Operation Handler objects
-[**UpdateExtendedOperationHandler**](ExtendedOperationHandlerApi.md#UpdateExtendedOperationHandler) | **Patch** /extended-operation-handlers/{extended-operation-handler-name} | Update an existing Extended Operation Handler by name
+[**AddExtendedOperationHandler**](ExtendedOperationHandlerAPI.md#AddExtendedOperationHandler) | **Post** /extended-operation-handlers | Add a new Extended Operation Handler to the config
+[**DeleteExtendedOperationHandler**](ExtendedOperationHandlerAPI.md#DeleteExtendedOperationHandler) | **Delete** /extended-operation-handlers/{extended-operation-handler-name} | Delete a Extended Operation Handler
+[**GetExtendedOperationHandler**](ExtendedOperationHandlerAPI.md#GetExtendedOperationHandler) | **Get** /extended-operation-handlers/{extended-operation-handler-name} | Returns a single Extended Operation Handler
+[**ListExtendedOperationHandlers**](ExtendedOperationHandlerAPI.md#ListExtendedOperationHandlers) | **Get** /extended-operation-handlers | Returns a list of all Extended Operation Handler objects
+[**UpdateExtendedOperationHandler**](ExtendedOperationHandlerAPI.md#UpdateExtendedOperationHandler) | **Patch** /extended-operation-handlers/{extended-operation-handler-name} | Update an existing Extended Operation Handler by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addExtendedOperationHandlerRequest := openapiclient.add_extended_operation_handler_request{AddCollectSupportDataExtendedOperationHandlerRequest: openapiclient.NewAddCollectSupportDataExtendedOperationHandlerRequest("HandlerName_example", []openapiclient.EnumcollectSupportDataExtendedOperationHandlerSchemaUrn{openapiclient.Enumcollect-support-data-extended-operation-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:collect-support-data")}, false)} // AddExtendedOperationHandlerRequest | Create a new Extended Operation Handler in the config
+    addExtendedOperationHandlerRequest := openapiclient.add_extended_operation_handler_request{AddCollectSupportDataExtendedOperationHandlerRequest: openapiclient.NewAddCollectSupportDataExtendedOperationHandlerRequest([]openapiclient.EnumcollectSupportDataExtendedOperationHandlerSchemaUrn{openapiclient.Enumcollect-support-data-extended-operation-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:collect-support-data")}, false, "HandlerName_example")} // AddExtendedOperationHandlerRequest | Create a new Extended Operation Handler in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtendedOperationHandlerApi.AddExtendedOperationHandler(context.Background()).AddExtendedOperationHandlerRequest(addExtendedOperationHandlerRequest).Execute()
+    resp, r, err := apiClient.ExtendedOperationHandlerAPI.AddExtendedOperationHandler(context.Background()).AddExtendedOperationHandlerRequest(addExtendedOperationHandlerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerApi.AddExtendedOperationHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerAPI.AddExtendedOperationHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddExtendedOperationHandler`: AddExtendedOperationHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `ExtendedOperationHandlerApi.AddExtendedOperationHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ExtendedOperationHandlerAPI.AddExtendedOperationHandler`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ExtendedOperationHandlerApi.DeleteExtendedOperationHandler(context.Background(), extendedOperationHandlerName).Execute()
+    r, err := apiClient.ExtendedOperationHandlerAPI.DeleteExtendedOperationHandler(context.Background(), extendedOperationHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerApi.DeleteExtendedOperationHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerAPI.DeleteExtendedOperationHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtendedOperationHandlerApi.GetExtendedOperationHandler(context.Background(), extendedOperationHandlerName).Execute()
+    resp, r, err := apiClient.ExtendedOperationHandlerAPI.GetExtendedOperationHandler(context.Background(), extendedOperationHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerApi.GetExtendedOperationHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerAPI.GetExtendedOperationHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetExtendedOperationHandler`: GetExtendedOperationHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `ExtendedOperationHandlerApi.GetExtendedOperationHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ExtendedOperationHandlerAPI.GetExtendedOperationHandler`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtendedOperationHandlerApi.ListExtendedOperationHandlers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ExtendedOperationHandlerAPI.ListExtendedOperationHandlers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerApi.ListExtendedOperationHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerAPI.ListExtendedOperationHandlers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListExtendedOperationHandlers`: ExtendedOperationHandlerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExtendedOperationHandlerApi.ListExtendedOperationHandlers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ExtendedOperationHandlerAPI.ListExtendedOperationHandlers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtendedOperationHandlerApi.UpdateExtendedOperationHandler(context.Background(), extendedOperationHandlerName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ExtendedOperationHandlerAPI.UpdateExtendedOperationHandler(context.Background(), extendedOperationHandlerName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerApi.UpdateExtendedOperationHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerAPI.UpdateExtendedOperationHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateExtendedOperationHandler`: GetExtendedOperationHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `ExtendedOperationHandlerApi.UpdateExtendedOperationHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ExtendedOperationHandlerAPI.UpdateExtendedOperationHandler`: %v\n", resp)
 }
 ```
 

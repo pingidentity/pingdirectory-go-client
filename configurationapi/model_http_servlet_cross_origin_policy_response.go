@@ -19,8 +19,6 @@ var _ MappedNullable = &HttpServletCrossOriginPolicyResponse{}
 
 // HttpServletCrossOriginPolicyResponse struct for HttpServletCrossOriginPolicyResponse
 type HttpServletCrossOriginPolicyResponse struct {
-	// Name of the HTTP Servlet Cross Origin Policy
-	Id      string                                      `json:"id"`
 	Schemas []EnumhttpServletCrossOriginPolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this HTTP Servlet Cross Origin Policy
 	Description *string `json:"description,omitempty"`
@@ -38,6 +36,8 @@ type HttpServletCrossOriginPolicyResponse struct {
 	CorsAllowCredentials                          *bool                                              `json:"corsAllowCredentials,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the HTTP Servlet Cross Origin Policy
+	Id string `json:"id"`
 }
 
 // NewHttpServletCrossOriginPolicyResponse instantiates a new HttpServletCrossOriginPolicyResponse object
@@ -56,30 +56,6 @@ func NewHttpServletCrossOriginPolicyResponse(id string) *HttpServletCrossOriginP
 func NewHttpServletCrossOriginPolicyResponseWithDefaults() *HttpServletCrossOriginPolicyResponse {
 	this := HttpServletCrossOriginPolicyResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *HttpServletCrossOriginPolicyResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *HttpServletCrossOriginPolicyResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *HttpServletCrossOriginPolicyResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -402,6 +378,30 @@ func (o *HttpServletCrossOriginPolicyResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *HttpServletCrossOriginPolicyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *HttpServletCrossOriginPolicyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *HttpServletCrossOriginPolicyResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o HttpServletCrossOriginPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -412,7 +412,6 @@ func (o HttpServletCrossOriginPolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o HttpServletCrossOriginPolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -443,6 +442,7 @@ func (o HttpServletCrossOriginPolicyResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

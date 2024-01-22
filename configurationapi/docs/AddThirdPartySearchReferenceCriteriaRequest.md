@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Search Reference Criteria | 
 **Schemas** | [**[]EnumthirdPartySearchReferenceCriteriaSchemaUrn**](EnumthirdPartySearchReferenceCriteriaSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Search Reference Criteria. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Search Reference Criteria. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Search Reference Criteria | [optional] 
+**CriteriaName** | **string** | Name of the new Search Reference Criteria | 
 
 ## Methods
 
 ### NewAddThirdPartySearchReferenceCriteriaRequest
 
-`func NewAddThirdPartySearchReferenceCriteriaRequest(criteriaName string, schemas []EnumthirdPartySearchReferenceCriteriaSchemaUrn, extensionClass string, ) *AddThirdPartySearchReferenceCriteriaRequest`
+`func NewAddThirdPartySearchReferenceCriteriaRequest(schemas []EnumthirdPartySearchReferenceCriteriaSchemaUrn, extensionClass string, criteriaName string, ) *AddThirdPartySearchReferenceCriteriaRequest`
 
 NewAddThirdPartySearchReferenceCriteriaRequest instantiates a new AddThirdPartySearchReferenceCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddThirdPartySearchReferenceCriteriaRequestWithDefaults instantiates a new AddThirdPartySearchReferenceCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddThirdPartySearchReferenceCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddThirdPartySearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddThirdPartySearchReferenceCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -138,6 +118,26 @@ SetDescription sets Description field to given value.
 `func (o *AddThirdPartySearchReferenceCriteriaRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetCriteriaName
+
+`func (o *AddThirdPartySearchReferenceCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddThirdPartySearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddThirdPartySearchReferenceCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

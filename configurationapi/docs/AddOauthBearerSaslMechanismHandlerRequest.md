@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new SASL Mechanism Handler | 
 **Schemas** | [**[]EnumoauthBearerSaslMechanismHandlerSchemaUrn**](EnumoauthBearerSaslMechanismHandlerSchemaUrn.md) |  | 
 **AccessTokenValidator** | Pointer to **[]string** | An access token validator that will ensure that each presented OAuth access token is authentic and trustworthy. It must be configured with an identity mapper that will be used to map the access token to a local entry. | [optional] 
 **IdTokenValidator** | Pointer to **[]string** | An ID token validator that will ensure that each presented OpenID Connect ID token is authentic and trustworthy, and that will map the token to a local entry. | [optional] 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **ServerFqdn** | Pointer to **string** | The fully-qualified name that clients are expected to use when communicating with the server. | [optional] 
 **Description** | Pointer to **string** | A description for this SASL Mechanism Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the SASL mechanism handler is enabled for use. | 
+**HandlerName** | **string** | Name of the new SASL Mechanism Handler | 
 
 ## Methods
 
 ### NewAddOauthBearerSaslMechanismHandlerRequest
 
-`func NewAddOauthBearerSaslMechanismHandlerRequest(handlerName string, schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn, enabled bool, ) *AddOauthBearerSaslMechanismHandlerRequest`
+`func NewAddOauthBearerSaslMechanismHandlerRequest(schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn, enabled bool, handlerName string, ) *AddOauthBearerSaslMechanismHandlerRequest`
 
 NewAddOauthBearerSaslMechanismHandlerRequest instantiates a new AddOauthBearerSaslMechanismHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewAddOauthBearerSaslMechanismHandlerRequestWithDefaults instantiates a new AddOauthBearerSaslMechanismHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddOauthBearerSaslMechanismHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddOauthBearerSaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddOauthBearerSaslMechanismHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -319,6 +299,26 @@ and a boolean to check if the value has been set.
 `func (o *AddOauthBearerSaslMechanismHandlerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetHandlerName
+
+`func (o *AddOauthBearerSaslMechanismHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddOauthBearerSaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddOauthBearerSaslMechanismHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
 
 
 

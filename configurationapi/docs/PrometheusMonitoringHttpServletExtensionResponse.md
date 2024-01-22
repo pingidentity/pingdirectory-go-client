@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the HTTP Servlet Extension | 
 **Schemas** | [**[]EnumprometheusMonitoringHttpServletExtensionSchemaUrn**](EnumprometheusMonitoringHttpServletExtensionSchemaUrn.md) |  | 
 **BaseContextPath** | **string** | Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path. | 
 **IncludeInstanceNameLabel** | Pointer to **bool** | Indicates whether generated metrics should include an \&quot;instance\&quot; label whose value is the instance name for this Directory Server instance. | [optional] 
@@ -20,12 +19,13 @@ Name | Type | Description | Notes
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the HTTP Servlet Extension | 
 
 ## Methods
 
 ### NewPrometheusMonitoringHttpServletExtensionResponse
 
-`func NewPrometheusMonitoringHttpServletExtensionResponse(id string, schemas []EnumprometheusMonitoringHttpServletExtensionSchemaUrn, baseContextPath string, ) *PrometheusMonitoringHttpServletExtensionResponse`
+`func NewPrometheusMonitoringHttpServletExtensionResponse(schemas []EnumprometheusMonitoringHttpServletExtensionSchemaUrn, baseContextPath string, id string, ) *PrometheusMonitoringHttpServletExtensionResponse`
 
 NewPrometheusMonitoringHttpServletExtensionResponse instantiates a new PrometheusMonitoringHttpServletExtensionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -39,26 +39,6 @@ will change when the set of required properties is changed
 NewPrometheusMonitoringHttpServletExtensionResponseWithDefaults instantiates a new PrometheusMonitoringHttpServletExtensionResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *PrometheusMonitoringHttpServletExtensionResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *PrometheusMonitoringHttpServletExtensionResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *PrometheusMonitoringHttpServletExtensionResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -424,6 +404,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *PrometheusMonitoringHttpServletExtensionResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *PrometheusMonitoringHttpServletExtensionResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PrometheusMonitoringHttpServletExtensionResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PrometheusMonitoringHttpServletExtensionResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

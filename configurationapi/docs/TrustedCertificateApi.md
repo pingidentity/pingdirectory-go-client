@@ -1,14 +1,14 @@
-# \TrustedCertificateApi
+# \TrustedCertificateAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddTrustedCertificate**](TrustedCertificateApi.md#AddTrustedCertificate) | **Post** /trusted-certificates | Add a new Trusted Certificate to the config
-[**DeleteTrustedCertificate**](TrustedCertificateApi.md#DeleteTrustedCertificate) | **Delete** /trusted-certificates/{trusted-certificate-name} | Delete a Trusted Certificate
-[**GetTrustedCertificate**](TrustedCertificateApi.md#GetTrustedCertificate) | **Get** /trusted-certificates/{trusted-certificate-name} | Returns a single Trusted Certificate
-[**ListTrustedCertificates**](TrustedCertificateApi.md#ListTrustedCertificates) | **Get** /trusted-certificates | Returns a list of all Trusted Certificate objects
-[**UpdateTrustedCertificate**](TrustedCertificateApi.md#UpdateTrustedCertificate) | **Patch** /trusted-certificates/{trusted-certificate-name} | Update an existing Trusted Certificate by name
+[**AddTrustedCertificate**](TrustedCertificateAPI.md#AddTrustedCertificate) | **Post** /trusted-certificates | Add a new Trusted Certificate to the config
+[**DeleteTrustedCertificate**](TrustedCertificateAPI.md#DeleteTrustedCertificate) | **Delete** /trusted-certificates/{trusted-certificate-name} | Delete a Trusted Certificate
+[**GetTrustedCertificate**](TrustedCertificateAPI.md#GetTrustedCertificate) | **Get** /trusted-certificates/{trusted-certificate-name} | Returns a single Trusted Certificate
+[**ListTrustedCertificates**](TrustedCertificateAPI.md#ListTrustedCertificates) | **Get** /trusted-certificates | Returns a list of all Trusted Certificate objects
+[**UpdateTrustedCertificate**](TrustedCertificateAPI.md#UpdateTrustedCertificate) | **Patch** /trusted-certificates/{trusted-certificate-name} | Update an existing Trusted Certificate by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addTrustedCertificateRequest := *openapiclient.NewAddTrustedCertificateRequest("CertificateName_example", "Certificate_example") // AddTrustedCertificateRequest | Create a new Trusted Certificate in the config
+    addTrustedCertificateRequest := *openapiclient.NewAddTrustedCertificateRequest("Certificate_example", "CertificateName_example") // AddTrustedCertificateRequest | Create a new Trusted Certificate in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrustedCertificateApi.AddTrustedCertificate(context.Background()).AddTrustedCertificateRequest(addTrustedCertificateRequest).Execute()
+    resp, r, err := apiClient.TrustedCertificateAPI.AddTrustedCertificate(context.Background()).AddTrustedCertificateRequest(addTrustedCertificateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateApi.AddTrustedCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateAPI.AddTrustedCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddTrustedCertificate`: TrustedCertificateResponse
-    fmt.Fprintf(os.Stdout, "Response from `TrustedCertificateApi.AddTrustedCertificate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TrustedCertificateAPI.AddTrustedCertificate`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TrustedCertificateApi.DeleteTrustedCertificate(context.Background(), trustedCertificateName).Execute()
+    r, err := apiClient.TrustedCertificateAPI.DeleteTrustedCertificate(context.Background(), trustedCertificateName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateApi.DeleteTrustedCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateAPI.DeleteTrustedCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrustedCertificateApi.GetTrustedCertificate(context.Background(), trustedCertificateName).Execute()
+    resp, r, err := apiClient.TrustedCertificateAPI.GetTrustedCertificate(context.Background(), trustedCertificateName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateApi.GetTrustedCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateAPI.GetTrustedCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetTrustedCertificate`: TrustedCertificateResponse
-    fmt.Fprintf(os.Stdout, "Response from `TrustedCertificateApi.GetTrustedCertificate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TrustedCertificateAPI.GetTrustedCertificate`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrustedCertificateApi.ListTrustedCertificates(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.TrustedCertificateAPI.ListTrustedCertificates(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateApi.ListTrustedCertificates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateAPI.ListTrustedCertificates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListTrustedCertificates`: TrustedCertificateListResponse
-    fmt.Fprintf(os.Stdout, "Response from `TrustedCertificateApi.ListTrustedCertificates`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TrustedCertificateAPI.ListTrustedCertificates`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrustedCertificateApi.UpdateTrustedCertificate(context.Background(), trustedCertificateName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.TrustedCertificateAPI.UpdateTrustedCertificate(context.Background(), trustedCertificateName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateApi.UpdateTrustedCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateAPI.UpdateTrustedCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateTrustedCertificate`: TrustedCertificateResponse
-    fmt.Fprintf(os.Stdout, "Response from `TrustedCertificateApi.UpdateTrustedCertificate`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `TrustedCertificateAPI.UpdateTrustedCertificate`: %v\n", resp)
 }
 ```
 

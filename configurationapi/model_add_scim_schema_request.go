@@ -19,25 +19,25 @@ var _ MappedNullable = &AddScimSchemaRequest{}
 
 // AddScimSchemaRequest struct for AddScimSchemaRequest
 type AddScimSchemaRequest struct {
-	// Name of the new SCIM Schema
-	SchemaName string                    `json:"schemaName"`
-	Schemas    []EnumscimSchemaSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumscimSchemaSchemaUrn `json:"schemas,omitempty"`
 	// A description for this SCIM Schema
 	Description *string `json:"description,omitempty"`
 	// The URN which identifies this SCIM Schema.
 	SchemaURN string `json:"schemaURN"`
 	// The human readable name for this SCIM Schema.
 	DisplayName *string `json:"displayName,omitempty"`
+	// Name of the new SCIM Schema
+	SchemaName string `json:"schemaName"`
 }
 
 // NewAddScimSchemaRequest instantiates a new AddScimSchemaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddScimSchemaRequest(schemaName string, schemaURN string) *AddScimSchemaRequest {
+func NewAddScimSchemaRequest(schemaURN string, schemaName string) *AddScimSchemaRequest {
 	this := AddScimSchemaRequest{}
-	this.SchemaName = schemaName
 	this.SchemaURN = schemaURN
+	this.SchemaName = schemaName
 	return &this
 }
 
@@ -47,30 +47,6 @@ func NewAddScimSchemaRequest(schemaName string, schemaURN string) *AddScimSchema
 func NewAddScimSchemaRequestWithDefaults() *AddScimSchemaRequest {
 	this := AddScimSchemaRequest{}
 	return &this
-}
-
-// GetSchemaName returns the SchemaName field value
-func (o *AddScimSchemaRequest) GetSchemaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemaName
-}
-
-// GetSchemaNameOk returns a tuple with the SchemaName field value
-// and a boolean to check if the value has been set.
-func (o *AddScimSchemaRequest) GetSchemaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemaName, true
-}
-
-// SetSchemaName sets field value
-func (o *AddScimSchemaRequest) SetSchemaName(v string) {
-	o.SchemaName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -193,6 +169,30 @@ func (o *AddScimSchemaRequest) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
+// GetSchemaName returns the SchemaName field value
+func (o *AddScimSchemaRequest) GetSchemaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemaName
+}
+
+// GetSchemaNameOk returns a tuple with the SchemaName field value
+// and a boolean to check if the value has been set.
+func (o *AddScimSchemaRequest) GetSchemaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemaName, true
+}
+
+// SetSchemaName sets field value
+func (o *AddScimSchemaRequest) SetSchemaName(v string) {
+	o.SchemaName = v
+}
+
 func (o AddScimSchemaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -203,7 +203,6 @@ func (o AddScimSchemaRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddScimSchemaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemaName"] = o.SchemaName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -214,6 +213,7 @@ func (o AddScimSchemaRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
+	toSerialize["schemaName"] = o.SchemaName
 	return toSerialize, nil
 }
 

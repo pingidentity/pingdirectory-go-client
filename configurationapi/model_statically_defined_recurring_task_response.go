@@ -19,8 +19,6 @@ var _ MappedNullable = &StaticallyDefinedRecurringTaskResponse{}
 
 // StaticallyDefinedRecurringTaskResponse struct for StaticallyDefinedRecurringTaskResponse
 type StaticallyDefinedRecurringTaskResponse struct {
-	// Name of the Recurring Task
-	Id      string                                        `json:"id"`
 	Schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class that provides the logic for the task to be invoked.
 	TaskJavaClass string `json:"taskJavaClass"`
@@ -46,18 +44,20 @@ type StaticallyDefinedRecurringTaskResponse struct {
 	AlertOnFailure                                *bool                                              `json:"alertOnFailure,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Recurring Task
+	Id string `json:"id"`
 }
 
 // NewStaticallyDefinedRecurringTaskResponse instantiates a new StaticallyDefinedRecurringTaskResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStaticallyDefinedRecurringTaskResponse(id string, schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn, taskJavaClass string, taskObjectClass []string) *StaticallyDefinedRecurringTaskResponse {
+func NewStaticallyDefinedRecurringTaskResponse(schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn, taskJavaClass string, taskObjectClass []string, id string) *StaticallyDefinedRecurringTaskResponse {
 	this := StaticallyDefinedRecurringTaskResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.TaskJavaClass = taskJavaClass
 	this.TaskObjectClass = taskObjectClass
+	this.Id = id
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewStaticallyDefinedRecurringTaskResponse(id string, schemas []Enumstatical
 func NewStaticallyDefinedRecurringTaskResponseWithDefaults() *StaticallyDefinedRecurringTaskResponse {
 	this := StaticallyDefinedRecurringTaskResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *StaticallyDefinedRecurringTaskResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *StaticallyDefinedRecurringTaskResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *StaticallyDefinedRecurringTaskResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -517,6 +493,30 @@ func (o *StaticallyDefinedRecurringTaskResponse) SetUrnpingidentityschemasconfig
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *StaticallyDefinedRecurringTaskResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *StaticallyDefinedRecurringTaskResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *StaticallyDefinedRecurringTaskResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o StaticallyDefinedRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -527,7 +527,6 @@ func (o StaticallyDefinedRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 
 func (o StaticallyDefinedRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["taskJavaClass"] = o.TaskJavaClass
 	toSerialize["taskObjectClass"] = o.TaskObjectClass
@@ -564,6 +563,7 @@ func (o StaticallyDefinedRecurringTaskResponse) ToMap() (map[string]interface{},
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

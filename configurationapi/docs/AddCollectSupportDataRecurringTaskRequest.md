@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaskName** | **string** | Name of the new Recurring Task | 
 **Schemas** | [**[]EnumcollectSupportDataRecurringTaskSchemaUrn**](EnumcollectSupportDataRecurringTaskSchemaUrn.md) |  | 
 **OutputDirectory** | **string** | The directory in which the support data archive files will be placed. The path must be a directory, and that directory must already exist. Relative paths will be interpreted as relative to the server root. | 
 **EncryptionPassphraseFile** | Pointer to **string** | The path to a file that contains the passphrase to encrypt the contents of the support data archive. | [optional] 
@@ -31,12 +30,13 @@ Name | Type | Description | Notes
 **AlertOnStart** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running. | [optional] 
 **AlertOnSuccess** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully. | [optional] 
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
+**TaskName** | **string** | Name of the new Recurring Task | 
 
 ## Methods
 
 ### NewAddCollectSupportDataRecurringTaskRequest
 
-`func NewAddCollectSupportDataRecurringTaskRequest(taskName string, schemas []EnumcollectSupportDataRecurringTaskSchemaUrn, outputDirectory string, ) *AddCollectSupportDataRecurringTaskRequest`
+`func NewAddCollectSupportDataRecurringTaskRequest(schemas []EnumcollectSupportDataRecurringTaskSchemaUrn, outputDirectory string, taskName string, ) *AddCollectSupportDataRecurringTaskRequest`
 
 NewAddCollectSupportDataRecurringTaskRequest instantiates a new AddCollectSupportDataRecurringTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -50,26 +50,6 @@ will change when the set of required properties is changed
 NewAddCollectSupportDataRecurringTaskRequestWithDefaults instantiates a new AddCollectSupportDataRecurringTaskRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTaskName
-
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskName() string`
-
-GetTaskName returns the TaskName field if non-nil, zero value otherwise.
-
-### GetTaskNameOk
-
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
-
-GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaskName
-
-`func (o *AddCollectSupportDataRecurringTaskRequest) SetTaskName(v string)`
-
-SetTaskName sets TaskName field to given value.
-
 
 ### GetSchemas
 
@@ -710,6 +690,26 @@ SetAlertOnFailure sets AlertOnFailure field to given value.
 `func (o *AddCollectSupportDataRecurringTaskRequest) HasAlertOnFailure() bool`
 
 HasAlertOnFailure returns a boolean if a field has been set.
+
+### GetTaskName
+
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskName() string`
+
+GetTaskName returns the TaskName field if non-nil, zero value otherwise.
+
+### GetTaskNameOk
+
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskNameOk() (*string, bool)`
+
+GetTaskNameOk returns a tuple with the TaskName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskName
+
+`func (o *AddCollectSupportDataRecurringTaskRequest) SetTaskName(v string)`
+
+SetTaskName sets TaskName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

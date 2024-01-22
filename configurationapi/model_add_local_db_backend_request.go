@@ -19,8 +19,6 @@ var _ MappedNullable = &AddLocalDbBackendRequest{}
 
 // AddLocalDbBackendRequest struct for AddLocalDbBackendRequest
 type AddLocalDbBackendRequest struct {
-	// Name of the new Backend
-	BackendName               string                                    `json:"backendName"`
 	Schemas                   []EnumlocalDbBackendSchemaUrn             `json:"schemas"`
 	UncachedId2entryCacheMode *EnumbackendUncachedId2entryCacheModeProp `json:"uncachedId2entryCacheMode,omitempty"`
 	// The criteria that will be used to identify attributes that should be written into the uncached-id2entry database rather than the id2entry database. This will only be used for entries in which the associated uncached-entry-criteria does not indicate that the entire entry should be uncached.
@@ -125,19 +123,21 @@ type AddLocalDbBackendRequest struct {
 	ReturnUnavailableWhenDisabled *bool `json:"returnUnavailableWhenDisabled,omitempty"`
 	// Specifies a notification manager for changes resulting from operations processed through this Backend
 	NotificationManager *string `json:"notificationManager,omitempty"`
+	// Name of the new Backend
+	BackendName string `json:"backendName"`
 }
 
 // NewAddLocalDbBackendRequest instantiates a new AddLocalDbBackendRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLocalDbBackendRequest(backendName string, schemas []EnumlocalDbBackendSchemaUrn, backendID string, enabled bool, baseDN []string) *AddLocalDbBackendRequest {
+func NewAddLocalDbBackendRequest(schemas []EnumlocalDbBackendSchemaUrn, backendID string, enabled bool, baseDN []string, backendName string) *AddLocalDbBackendRequest {
 	this := AddLocalDbBackendRequest{}
-	this.BackendName = backendName
 	this.Schemas = schemas
 	this.BackendID = backendID
 	this.Enabled = enabled
 	this.BaseDN = baseDN
+	this.BackendName = backendName
 	return &this
 }
 
@@ -147,30 +147,6 @@ func NewAddLocalDbBackendRequest(backendName string, schemas []EnumlocalDbBacken
 func NewAddLocalDbBackendRequestWithDefaults() *AddLocalDbBackendRequest {
 	this := AddLocalDbBackendRequest{}
 	return &this
-}
-
-// GetBackendName returns the BackendName field value
-func (o *AddLocalDbBackendRequest) GetBackendName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.BackendName
-}
-
-// GetBackendNameOk returns a tuple with the BackendName field value
-// and a boolean to check if the value has been set.
-func (o *AddLocalDbBackendRequest) GetBackendNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.BackendName, true
-}
-
-// SetBackendName sets field value
-func (o *AddLocalDbBackendRequest) SetBackendName(v string) {
-	o.BackendName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -2029,6 +2005,30 @@ func (o *AddLocalDbBackendRequest) SetNotificationManager(v string) {
 	o.NotificationManager = &v
 }
 
+// GetBackendName returns the BackendName field value
+func (o *AddLocalDbBackendRequest) GetBackendName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.BackendName
+}
+
+// GetBackendNameOk returns a tuple with the BackendName field value
+// and a boolean to check if the value has been set.
+func (o *AddLocalDbBackendRequest) GetBackendNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.BackendName, true
+}
+
+// SetBackendName sets field value
+func (o *AddLocalDbBackendRequest) SetBackendName(v string) {
+	o.BackendName = v
+}
+
 func (o AddLocalDbBackendRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -2039,7 +2039,6 @@ func (o AddLocalDbBackendRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLocalDbBackendRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["backendName"] = o.BackendName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.UncachedId2entryCacheMode) {
 		toSerialize["uncachedId2entryCacheMode"] = o.UncachedId2entryCacheMode
@@ -2209,6 +2208,7 @@ func (o AddLocalDbBackendRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.NotificationManager) {
 		toSerialize["notificationManager"] = o.NotificationManager
 	}
+	toSerialize["backendName"] = o.BackendName
 	return toSerialize, nil
 }
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPkcs11CipherStreamProviderRequest{}
 
 // AddPkcs11CipherStreamProviderRequest struct for AddPkcs11CipherStreamProviderRequest
 type AddPkcs11CipherStreamProviderRequest struct {
-	// Name of the new Cipher Stream Provider
-	ProviderName string                                    `json:"providerName"`
-	Schemas      []Enumpkcs11CipherStreamProviderSchemaUrn `json:"schemas"`
+	Schemas []Enumpkcs11CipherStreamProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
 	Pkcs11ProviderClass *string `json:"pkcs11ProviderClass,omitempty"`
 	// The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens.
@@ -44,18 +42,20 @@ type AddPkcs11CipherStreamProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Cipher Stream Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddPkcs11CipherStreamProviderRequest instantiates a new AddPkcs11CipherStreamProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPkcs11CipherStreamProviderRequest(providerName string, schemas []Enumpkcs11CipherStreamProviderSchemaUrn, sslCertNickname string, enabled bool) *AddPkcs11CipherStreamProviderRequest {
+func NewAddPkcs11CipherStreamProviderRequest(schemas []Enumpkcs11CipherStreamProviderSchemaUrn, sslCertNickname string, enabled bool, providerName string) *AddPkcs11CipherStreamProviderRequest {
 	this := AddPkcs11CipherStreamProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.SslCertNickname = sslCertNickname
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -65,30 +65,6 @@ func NewAddPkcs11CipherStreamProviderRequest(providerName string, schemas []Enum
 func NewAddPkcs11CipherStreamProviderRequestWithDefaults() *AddPkcs11CipherStreamProviderRequest {
 	this := AddPkcs11CipherStreamProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddPkcs11CipherStreamProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddPkcs11CipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddPkcs11CipherStreamProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -451,6 +427,30 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddPkcs11CipherStreamProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddPkcs11CipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddPkcs11CipherStreamProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddPkcs11CipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -461,7 +461,6 @@ func (o AddPkcs11CipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPkcs11CipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Pkcs11ProviderClass) {
 		toSerialize["pkcs11ProviderClass"] = o.Pkcs11ProviderClass
@@ -492,6 +491,7 @@ func (o AddPkcs11CipherStreamProviderRequest) ToMap() (map[string]interface{}, e
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Recurring Task | 
 **Schemas** | [**[]EnumldifExportRecurringTaskSchemaUrn**](EnumldifExportRecurringTaskSchemaUrn.md) |  | 
 **LdifDirectory** | **string** | The directory in which LDIF export files will be placed. The directory must already exist. | 
 **BackendID** | Pointer to **[]string** | The backend ID for a backend to be exported. | [optional] 
@@ -16,6 +15,7 @@ Name | Type | Description | Notes
 **RetainPreviousLDIFExportCount** | Pointer to **int64** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **RetainPreviousLDIFExportAge** | Pointer to **string** | The minimum age of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **MaxMegabytesPerSecond** | Pointer to **int64** | The maximum rate, in megabytes per second, at which LDIF exports should be written. | [optional] 
+**PostLDIFExportTaskProcessor** | Pointer to **[]string** | An optional set of post-LDIF-export task processors that should be invoked for the resulting LDIF export files. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
 **CancelOnTaskDependencyFailure** | Pointer to **bool** | Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running). | [optional] 
 **EmailOnStart** | Pointer to **[]string** | The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration. | [optional] 
@@ -26,12 +26,13 @@ Name | Type | Description | Notes
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Recurring Task | 
 
 ## Methods
 
 ### NewLdifExportRecurringTaskResponse
 
-`func NewLdifExportRecurringTaskResponse(id string, schemas []EnumldifExportRecurringTaskSchemaUrn, ldifDirectory string, ) *LdifExportRecurringTaskResponse`
+`func NewLdifExportRecurringTaskResponse(schemas []EnumldifExportRecurringTaskSchemaUrn, ldifDirectory string, id string, ) *LdifExportRecurringTaskResponse`
 
 NewLdifExportRecurringTaskResponse instantiates a new LdifExportRecurringTaskResponse object
 This constructor will assign default values to properties that have it defined,
@@ -45,26 +46,6 @@ will change when the set of required properties is changed
 NewLdifExportRecurringTaskResponseWithDefaults instantiates a new LdifExportRecurringTaskResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *LdifExportRecurringTaskResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *LdifExportRecurringTaskResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *LdifExportRecurringTaskResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -331,6 +312,31 @@ SetMaxMegabytesPerSecond sets MaxMegabytesPerSecond field to given value.
 
 HasMaxMegabytesPerSecond returns a boolean if a field has been set.
 
+### GetPostLDIFExportTaskProcessor
+
+`func (o *LdifExportRecurringTaskResponse) GetPostLDIFExportTaskProcessor() []string`
+
+GetPostLDIFExportTaskProcessor returns the PostLDIFExportTaskProcessor field if non-nil, zero value otherwise.
+
+### GetPostLDIFExportTaskProcessorOk
+
+`func (o *LdifExportRecurringTaskResponse) GetPostLDIFExportTaskProcessorOk() (*[]string, bool)`
+
+GetPostLDIFExportTaskProcessorOk returns a tuple with the PostLDIFExportTaskProcessor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPostLDIFExportTaskProcessor
+
+`func (o *LdifExportRecurringTaskResponse) SetPostLDIFExportTaskProcessor(v []string)`
+
+SetPostLDIFExportTaskProcessor sets PostLDIFExportTaskProcessor field to given value.
+
+### HasPostLDIFExportTaskProcessor
+
+`func (o *LdifExportRecurringTaskResponse) HasPostLDIFExportTaskProcessor() bool`
+
+HasPostLDIFExportTaskProcessor returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *LdifExportRecurringTaskResponse) GetDescription() string`
@@ -580,6 +586,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *LdifExportRecurringTaskResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *LdifExportRecurringTaskResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *LdifExportRecurringTaskResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *LdifExportRecurringTaskResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

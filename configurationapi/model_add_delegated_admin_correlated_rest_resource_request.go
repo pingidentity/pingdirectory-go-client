@@ -19,9 +19,7 @@ var _ MappedNullable = &AddDelegatedAdminCorrelatedRestResourceRequest{}
 
 // AddDelegatedAdminCorrelatedRestResourceRequest struct for AddDelegatedAdminCorrelatedRestResourceRequest
 type AddDelegatedAdminCorrelatedRestResourceRequest struct {
-	// Name of the new Delegated Admin Correlated REST Resource
-	ResourceName string                                              `json:"resourceName"`
-	Schemas      []EnumdelegatedAdminCorrelatedRestResourceSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumdelegatedAdminCorrelatedRestResourceSchemaUrn `json:"schemas,omitempty"`
 	// A human readable display name for this Delegated Admin Correlated REST Resource.
 	DisplayName string `json:"displayName"`
 	// The REST Resource Type that will be linked to this REST Resource Type.
@@ -32,19 +30,21 @@ type AddDelegatedAdminCorrelatedRestResourceRequest struct {
 	SecondaryRESTResourceCorrelationAttribute string `json:"secondaryRESTResourceCorrelationAttribute"`
 	// Indicates whether links should be created using the secondary correlation attribute value.
 	UseSecondaryValueForLinking *bool `json:"useSecondaryValueForLinking,omitempty"`
+	// Name of the new Delegated Admin Correlated REST Resource
+	ResourceName string `json:"resourceName"`
 }
 
 // NewAddDelegatedAdminCorrelatedRestResourceRequest instantiates a new AddDelegatedAdminCorrelatedRestResourceRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDelegatedAdminCorrelatedRestResourceRequest(resourceName string, displayName string, correlatedRESTResource string, primaryRESTResourceCorrelationAttribute string, secondaryRESTResourceCorrelationAttribute string) *AddDelegatedAdminCorrelatedRestResourceRequest {
+func NewAddDelegatedAdminCorrelatedRestResourceRequest(displayName string, correlatedRESTResource string, primaryRESTResourceCorrelationAttribute string, secondaryRESTResourceCorrelationAttribute string, resourceName string) *AddDelegatedAdminCorrelatedRestResourceRequest {
 	this := AddDelegatedAdminCorrelatedRestResourceRequest{}
-	this.ResourceName = resourceName
 	this.DisplayName = displayName
 	this.CorrelatedRESTResource = correlatedRESTResource
 	this.PrimaryRESTResourceCorrelationAttribute = primaryRESTResourceCorrelationAttribute
 	this.SecondaryRESTResourceCorrelationAttribute = secondaryRESTResourceCorrelationAttribute
+	this.ResourceName = resourceName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddDelegatedAdminCorrelatedRestResourceRequest(resourceName string, disp
 func NewAddDelegatedAdminCorrelatedRestResourceRequestWithDefaults() *AddDelegatedAdminCorrelatedRestResourceRequest {
 	this := AddDelegatedAdminCorrelatedRestResourceRequest{}
 	return &this
-}
-
-// GetResourceName returns the ResourceName field value
-func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetResourceName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ResourceName
-}
-
-// GetResourceNameOk returns a tuple with the ResourceName field value
-// and a boolean to check if the value has been set.
-func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetResourceNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ResourceName, true
-}
-
-// SetResourceName sets field value
-func (o *AddDelegatedAdminCorrelatedRestResourceRequest) SetResourceName(v string) {
-	o.ResourceName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -240,6 +216,30 @@ func (o *AddDelegatedAdminCorrelatedRestResourceRequest) SetUseSecondaryValueFor
 	o.UseSecondaryValueForLinking = &v
 }
 
+// GetResourceName returns the ResourceName field value
+func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetResourceName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ResourceName
+}
+
+// GetResourceNameOk returns a tuple with the ResourceName field value
+// and a boolean to check if the value has been set.
+func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetResourceNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ResourceName, true
+}
+
+// SetResourceName sets field value
+func (o *AddDelegatedAdminCorrelatedRestResourceRequest) SetResourceName(v string) {
+	o.ResourceName = v
+}
+
 func (o AddDelegatedAdminCorrelatedRestResourceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -250,7 +250,6 @@ func (o AddDelegatedAdminCorrelatedRestResourceRequest) MarshalJSON() ([]byte, e
 
 func (o AddDelegatedAdminCorrelatedRestResourceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["resourceName"] = o.ResourceName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -261,6 +260,7 @@ func (o AddDelegatedAdminCorrelatedRestResourceRequest) ToMap() (map[string]inte
 	if !IsNil(o.UseSecondaryValueForLinking) {
 		toSerialize["useSecondaryValueForLinking"] = o.UseSecondaryValueForLinking
 	}
+	toSerialize["resourceName"] = o.ResourceName
 	return toSerialize, nil
 }
 

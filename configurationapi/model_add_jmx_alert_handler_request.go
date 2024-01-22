@@ -19,9 +19,7 @@ var _ MappedNullable = &AddJmxAlertHandlerRequest{}
 
 // AddJmxAlertHandlerRequest struct for AddJmxAlertHandlerRequest
 type AddJmxAlertHandlerRequest struct {
-	// Name of the new Alert Handler
-	HandlerName string                         `json:"handlerName"`
-	Schemas     []EnumjmxAlertHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumjmxAlertHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether the server should attempt to invoke this JMX Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
 	// A description for this Alert Handler
@@ -31,17 +29,19 @@ type AddJmxAlertHandlerRequest struct {
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
 	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
 	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
+	// Name of the new Alert Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddJmxAlertHandlerRequest instantiates a new AddJmxAlertHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddJmxAlertHandlerRequest(handlerName string, schemas []EnumjmxAlertHandlerSchemaUrn, enabled bool) *AddJmxAlertHandlerRequest {
+func NewAddJmxAlertHandlerRequest(schemas []EnumjmxAlertHandlerSchemaUrn, enabled bool, handlerName string) *AddJmxAlertHandlerRequest {
 	this := AddJmxAlertHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddJmxAlertHandlerRequest(handlerName string, schemas []EnumjmxAlertHand
 func NewAddJmxAlertHandlerRequestWithDefaults() *AddJmxAlertHandlerRequest {
 	this := AddJmxAlertHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddJmxAlertHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddJmxAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddJmxAlertHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -285,6 +261,30 @@ func (o *AddJmxAlertHandlerRequest) SetDisabledAlertType(v []EnumalertHandlerDis
 	o.DisabledAlertType = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddJmxAlertHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddJmxAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddJmxAlertHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddJmxAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -295,7 +295,6 @@ func (o AddJmxAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddJmxAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
@@ -313,6 +312,7 @@ func (o AddJmxAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DisabledAlertType) {
 		toSerialize["disabledAlertType"] = o.DisabledAlertType
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

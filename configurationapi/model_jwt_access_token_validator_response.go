@@ -19,8 +19,6 @@ var _ MappedNullable = &JwtAccessTokenValidatorResponse{}
 
 // JwtAccessTokenValidatorResponse struct for JwtAccessTokenValidatorResponse
 type JwtAccessTokenValidatorResponse struct {
-	// Name of the Access Token Validator
-	Id                      string                                                `json:"id"`
 	Schemas                 []EnumjwtAccessTokenValidatorSchemaUrn                `json:"schemas"`
 	AllowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
@@ -51,21 +49,23 @@ type JwtAccessTokenValidatorResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Access Token Validator
+	Id string `json:"id"`
 }
 
 // NewJwtAccessTokenValidatorResponse instantiates a new JwtAccessTokenValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJwtAccessTokenValidatorResponse(id string, schemas []EnumjwtAccessTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp, allowedKeyEncryptionAlgorithm []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp, allowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp, evaluationOrderIndex int64, enabled bool) *JwtAccessTokenValidatorResponse {
+func NewJwtAccessTokenValidatorResponse(schemas []EnumjwtAccessTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp, allowedKeyEncryptionAlgorithm []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp, allowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp, evaluationOrderIndex int64, enabled bool, id string) *JwtAccessTokenValidatorResponse {
 	this := JwtAccessTokenValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AllowedSigningAlgorithm = allowedSigningAlgorithm
 	this.AllowedKeyEncryptionAlgorithm = allowedKeyEncryptionAlgorithm
 	this.AllowedContentEncryptionAlgorithm = allowedContentEncryptionAlgorithm
 	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -75,30 +75,6 @@ func NewJwtAccessTokenValidatorResponse(id string, schemas []EnumjwtAccessTokenV
 func NewJwtAccessTokenValidatorResponseWithDefaults() *JwtAccessTokenValidatorResponse {
 	this := JwtAccessTokenValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *JwtAccessTokenValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *JwtAccessTokenValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *JwtAccessTokenValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -629,6 +605,30 @@ func (o *JwtAccessTokenValidatorResponse) SetUrnpingidentityschemasconfiguration
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *JwtAccessTokenValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *JwtAccessTokenValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *JwtAccessTokenValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o JwtAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -639,7 +639,6 @@ func (o JwtAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o JwtAccessTokenValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
 	if !IsNil(o.SigningCertificate) {
@@ -682,6 +681,7 @@ func (o JwtAccessTokenValidatorResponse) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

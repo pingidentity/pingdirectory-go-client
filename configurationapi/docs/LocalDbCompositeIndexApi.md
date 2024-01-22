@@ -1,14 +1,14 @@
-# \LocalDbCompositeIndexApi
+# \LocalDbCompositeIndexAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLocalDbCompositeIndex**](LocalDbCompositeIndexApi.md#AddLocalDbCompositeIndex) | **Post** /backends/{backend-name}/local-db-composite-indexes | Add a new Local DB Composite Index to the config
-[**DeleteLocalDbCompositeIndex**](LocalDbCompositeIndexApi.md#DeleteLocalDbCompositeIndex) | **Delete** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Delete a Local DB Composite Index
-[**GetLocalDbCompositeIndex**](LocalDbCompositeIndexApi.md#GetLocalDbCompositeIndex) | **Get** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Returns a single Local DB Composite Index
-[**ListLocalDbCompositeIndexes**](LocalDbCompositeIndexApi.md#ListLocalDbCompositeIndexes) | **Get** /backends/{backend-name}/local-db-composite-indexes | Returns a list of all Local DB Composite Index objects
-[**UpdateLocalDbCompositeIndex**](LocalDbCompositeIndexApi.md#UpdateLocalDbCompositeIndex) | **Patch** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Update an existing Local DB Composite Index by name
+[**AddLocalDbCompositeIndex**](LocalDbCompositeIndexAPI.md#AddLocalDbCompositeIndex) | **Post** /backends/{backend-name}/local-db-composite-indexes | Add a new Local DB Composite Index to the config
+[**DeleteLocalDbCompositeIndex**](LocalDbCompositeIndexAPI.md#DeleteLocalDbCompositeIndex) | **Delete** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Delete a Local DB Composite Index
+[**GetLocalDbCompositeIndex**](LocalDbCompositeIndexAPI.md#GetLocalDbCompositeIndex) | **Get** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Returns a single Local DB Composite Index
+[**ListLocalDbCompositeIndexes**](LocalDbCompositeIndexAPI.md#ListLocalDbCompositeIndexes) | **Get** /backends/{backend-name}/local-db-composite-indexes | Returns a list of all Local DB Composite Index objects
+[**UpdateLocalDbCompositeIndex**](LocalDbCompositeIndexAPI.md#UpdateLocalDbCompositeIndex) | **Patch** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Update an existing Local DB Composite Index by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     backendName := "backendName_example" // string | Name of the Backend
-    addLocalDbCompositeIndexRequest := *openapiclient.NewAddLocalDbCompositeIndexRequest("IndexName_example", "IndexFilterPattern_example") // AddLocalDbCompositeIndexRequest | Create a new Local DB Composite Index in the config
+    addLocalDbCompositeIndexRequest := *openapiclient.NewAddLocalDbCompositeIndexRequest("IndexFilterPattern_example", "IndexName_example") // AddLocalDbCompositeIndexRequest | Create a new Local DB Composite Index in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbCompositeIndexApi.AddLocalDbCompositeIndex(context.Background(), backendName).AddLocalDbCompositeIndexRequest(addLocalDbCompositeIndexRequest).Execute()
+    resp, r, err := apiClient.LocalDbCompositeIndexAPI.AddLocalDbCompositeIndex(context.Background(), backendName).AddLocalDbCompositeIndexRequest(addLocalDbCompositeIndexRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexApi.AddLocalDbCompositeIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexAPI.AddLocalDbCompositeIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLocalDbCompositeIndex`: LocalDbCompositeIndexResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbCompositeIndexApi.AddLocalDbCompositeIndex`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbCompositeIndexAPI.AddLocalDbCompositeIndex`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LocalDbCompositeIndexApi.DeleteLocalDbCompositeIndex(context.Background(), localDbCompositeIndexName, backendName).Execute()
+    r, err := apiClient.LocalDbCompositeIndexAPI.DeleteLocalDbCompositeIndex(context.Background(), localDbCompositeIndexName, backendName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexApi.DeleteLocalDbCompositeIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexAPI.DeleteLocalDbCompositeIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbCompositeIndexApi.GetLocalDbCompositeIndex(context.Background(), localDbCompositeIndexName, backendName).Execute()
+    resp, r, err := apiClient.LocalDbCompositeIndexAPI.GetLocalDbCompositeIndex(context.Background(), localDbCompositeIndexName, backendName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexApi.GetLocalDbCompositeIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexAPI.GetLocalDbCompositeIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLocalDbCompositeIndex`: LocalDbCompositeIndexResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbCompositeIndexApi.GetLocalDbCompositeIndex`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbCompositeIndexAPI.GetLocalDbCompositeIndex`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbCompositeIndexApi.ListLocalDbCompositeIndexes(context.Background(), backendName).Filter(filter).Execute()
+    resp, r, err := apiClient.LocalDbCompositeIndexAPI.ListLocalDbCompositeIndexes(context.Background(), backendName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexApi.ListLocalDbCompositeIndexes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexAPI.ListLocalDbCompositeIndexes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLocalDbCompositeIndexes`: LocalDbCompositeIndexListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbCompositeIndexApi.ListLocalDbCompositeIndexes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbCompositeIndexAPI.ListLocalDbCompositeIndexes`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbCompositeIndexApi.UpdateLocalDbCompositeIndex(context.Background(), localDbCompositeIndexName, backendName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LocalDbCompositeIndexAPI.UpdateLocalDbCompositeIndex(context.Background(), localDbCompositeIndexName, backendName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexApi.UpdateLocalDbCompositeIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexAPI.UpdateLocalDbCompositeIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLocalDbCompositeIndex`: LocalDbCompositeIndexResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbCompositeIndexApi.UpdateLocalDbCompositeIndex`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbCompositeIndexAPI.UpdateLocalDbCompositeIndex`: %v\n", resp)
 }
 ```
 

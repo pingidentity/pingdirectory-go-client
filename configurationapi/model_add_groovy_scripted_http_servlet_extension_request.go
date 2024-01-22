@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedHttpServletExtensionRequest{}
 
 // AddGroovyScriptedHttpServletExtensionRequest struct for AddGroovyScriptedHttpServletExtensionRequest
 type AddGroovyScriptedHttpServletExtensionRequest struct {
-	// Name of the new HTTP Servlet Extension
-	ExtensionName string                                            `json:"extensionName"`
-	Schemas       []EnumgroovyScriptedHttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedHttpServletExtensionSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted HTTP Servlet Extension. Each configuration property should be given in the form 'name=value'.
@@ -34,17 +32,19 @@ type AddGroovyScriptedHttpServletExtensionRequest struct {
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`
+	// Name of the new HTTP Servlet Extension
+	ExtensionName string `json:"extensionName"`
 }
 
 // NewAddGroovyScriptedHttpServletExtensionRequest instantiates a new AddGroovyScriptedHttpServletExtensionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedHttpServletExtensionRequest(extensionName string, schemas []EnumgroovyScriptedHttpServletExtensionSchemaUrn, scriptClass string) *AddGroovyScriptedHttpServletExtensionRequest {
+func NewAddGroovyScriptedHttpServletExtensionRequest(schemas []EnumgroovyScriptedHttpServletExtensionSchemaUrn, scriptClass string, extensionName string) *AddGroovyScriptedHttpServletExtensionRequest {
 	this := AddGroovyScriptedHttpServletExtensionRequest{}
-	this.ExtensionName = extensionName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
+	this.ExtensionName = extensionName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddGroovyScriptedHttpServletExtensionRequest(extensionName string, schem
 func NewAddGroovyScriptedHttpServletExtensionRequestWithDefaults() *AddGroovyScriptedHttpServletExtensionRequest {
 	this := AddGroovyScriptedHttpServletExtensionRequest{}
 	return &this
-}
-
-// GetExtensionName returns the ExtensionName field value
-func (o *AddGroovyScriptedHttpServletExtensionRequest) GetExtensionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ExtensionName
-}
-
-// GetExtensionNameOk returns a tuple with the ExtensionName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ExtensionName, true
-}
-
-// SetExtensionName sets field value
-func (o *AddGroovyScriptedHttpServletExtensionRequest) SetExtensionName(v string) {
-	o.ExtensionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -288,6 +264,30 @@ func (o *AddGroovyScriptedHttpServletExtensionRequest) SetCorrelationIDResponseH
 	o.CorrelationIDResponseHeader = &v
 }
 
+// GetExtensionName returns the ExtensionName field value
+func (o *AddGroovyScriptedHttpServletExtensionRequest) GetExtensionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ExtensionName
+}
+
+// GetExtensionNameOk returns a tuple with the ExtensionName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ExtensionName, true
+}
+
+// SetExtensionName sets field value
+func (o *AddGroovyScriptedHttpServletExtensionRequest) SetExtensionName(v string) {
+	o.ExtensionName = v
+}
+
 func (o AddGroovyScriptedHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -298,7 +298,6 @@ func (o AddGroovyScriptedHttpServletExtensionRequest) MarshalJSON() ([]byte, err
 
 func (o AddGroovyScriptedHttpServletExtensionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["extensionName"] = o.ExtensionName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -316,6 +315,7 @@ func (o AddGroovyScriptedHttpServletExtensionRequest) ToMap() (map[string]interf
 	if !IsNil(o.CorrelationIDResponseHeader) {
 		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
 	}
+	toSerialize["extensionName"] = o.ExtensionName
 	return toSerialize, nil
 }
 

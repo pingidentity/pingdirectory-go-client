@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Log Publisher | 
 **Schemas** | [**[]EnumjdbcBasedErrorLogPublisherSchemaUrn**](EnumjdbcBasedErrorLogPublisherSchemaUrn.md) |  | 
 **Server** | **string** | The JDBC-based Database Server to use for a connection. | 
 **LogFieldMapping** | **string** | The log field mapping associates loggable fields to database column names. The table name is not part of this mapping. | 
@@ -17,12 +16,13 @@ Name | Type | Description | Notes
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Log Publisher | 
 
 ## Methods
 
 ### NewJdbcBasedErrorLogPublisherResponse
 
-`func NewJdbcBasedErrorLogPublisherResponse(id string, schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn, server string, logFieldMapping string, logTableName string, enabled bool, ) *JdbcBasedErrorLogPublisherResponse`
+`func NewJdbcBasedErrorLogPublisherResponse(schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn, server string, logFieldMapping string, logTableName string, enabled bool, id string, ) *JdbcBasedErrorLogPublisherResponse`
 
 NewJdbcBasedErrorLogPublisherResponse instantiates a new JdbcBasedErrorLogPublisherResponse object
 This constructor will assign default values to properties that have it defined,
@@ -36,26 +36,6 @@ will change when the set of required properties is changed
 NewJdbcBasedErrorLogPublisherResponseWithDefaults instantiates a new JdbcBasedErrorLogPublisherResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *JdbcBasedErrorLogPublisherResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *JdbcBasedErrorLogPublisherResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *JdbcBasedErrorLogPublisherResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -331,6 +311,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *JdbcBasedErrorLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *JdbcBasedErrorLogPublisherResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *JdbcBasedErrorLogPublisherResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *JdbcBasedErrorLogPublisherResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

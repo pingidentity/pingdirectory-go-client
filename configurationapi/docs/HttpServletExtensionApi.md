@@ -1,14 +1,14 @@
-# \HttpServletExtensionApi
+# \HttpServletExtensionAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddHttpServletExtension**](HttpServletExtensionApi.md#AddHttpServletExtension) | **Post** /http-servlet-extensions | Add a new HTTP Servlet Extension to the config
-[**DeleteHttpServletExtension**](HttpServletExtensionApi.md#DeleteHttpServletExtension) | **Delete** /http-servlet-extensions/{http-servlet-extension-name} | Delete a HTTP Servlet Extension
-[**GetHttpServletExtension**](HttpServletExtensionApi.md#GetHttpServletExtension) | **Get** /http-servlet-extensions/{http-servlet-extension-name} | Returns a single HTTP Servlet Extension
-[**ListHttpServletExtensions**](HttpServletExtensionApi.md#ListHttpServletExtensions) | **Get** /http-servlet-extensions | Returns a list of all HTTP Servlet Extension objects
-[**UpdateHttpServletExtension**](HttpServletExtensionApi.md#UpdateHttpServletExtension) | **Patch** /http-servlet-extensions/{http-servlet-extension-name} | Update an existing HTTP Servlet Extension by name
+[**AddHttpServletExtension**](HttpServletExtensionAPI.md#AddHttpServletExtension) | **Post** /http-servlet-extensions | Add a new HTTP Servlet Extension to the config
+[**DeleteHttpServletExtension**](HttpServletExtensionAPI.md#DeleteHttpServletExtension) | **Delete** /http-servlet-extensions/{http-servlet-extension-name} | Delete a HTTP Servlet Extension
+[**GetHttpServletExtension**](HttpServletExtensionAPI.md#GetHttpServletExtension) | **Get** /http-servlet-extensions/{http-servlet-extension-name} | Returns a single HTTP Servlet Extension
+[**ListHttpServletExtensions**](HttpServletExtensionAPI.md#ListHttpServletExtensions) | **Get** /http-servlet-extensions | Returns a list of all HTTP Servlet Extension objects
+[**UpdateHttpServletExtension**](HttpServletExtensionAPI.md#UpdateHttpServletExtension) | **Patch** /http-servlet-extensions/{http-servlet-extension-name} | Update an existing HTTP Servlet Extension by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addHttpServletExtensionRequest := openapiclient.add_http_servlet_extension_request{AddAvailabilityStateHttpServletExtensionRequest: openapiclient.NewAddAvailabilityStateHttpServletExtensionRequest("ExtensionName_example", []openapiclient.EnumavailabilityStateHttpServletExtensionSchemaUrn{openapiclient.Enumavailability-state-http-servlet-extensionSchemaUrn("urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:availability-state")}, "BaseContextPath_example", int64(123), int64(123), int64(123))} // AddHttpServletExtensionRequest | Create a new HTTP Servlet Extension in the config
+    addHttpServletExtensionRequest := openapiclient.add_http_servlet_extension_request{AddAvailabilityStateHttpServletExtensionRequest: openapiclient.NewAddAvailabilityStateHttpServletExtensionRequest([]openapiclient.EnumavailabilityStateHttpServletExtensionSchemaUrn{openapiclient.Enumavailability-state-http-servlet-extensionSchemaUrn("urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:availability-state")}, "BaseContextPath_example", int64(123), int64(123), int64(123), "ExtensionName_example")} // AddHttpServletExtensionRequest | Create a new HTTP Servlet Extension in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpServletExtensionApi.AddHttpServletExtension(context.Background()).AddHttpServletExtensionRequest(addHttpServletExtensionRequest).Execute()
+    resp, r, err := apiClient.HttpServletExtensionAPI.AddHttpServletExtension(context.Background()).AddHttpServletExtensionRequest(addHttpServletExtensionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionApi.AddHttpServletExtension``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionAPI.AddHttpServletExtension``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddHttpServletExtension`: AddHttpServletExtension200Response
-    fmt.Fprintf(os.Stdout, "Response from `HttpServletExtensionApi.AddHttpServletExtension`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpServletExtensionAPI.AddHttpServletExtension`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HttpServletExtensionApi.DeleteHttpServletExtension(context.Background(), httpServletExtensionName).Execute()
+    r, err := apiClient.HttpServletExtensionAPI.DeleteHttpServletExtension(context.Background(), httpServletExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionApi.DeleteHttpServletExtension``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionAPI.DeleteHttpServletExtension``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpServletExtensionApi.GetHttpServletExtension(context.Background(), httpServletExtensionName).Execute()
+    resp, r, err := apiClient.HttpServletExtensionAPI.GetHttpServletExtension(context.Background(), httpServletExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionApi.GetHttpServletExtension``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionAPI.GetHttpServletExtension``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetHttpServletExtension`: GetHttpServletExtension200Response
-    fmt.Fprintf(os.Stdout, "Response from `HttpServletExtensionApi.GetHttpServletExtension`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpServletExtensionAPI.GetHttpServletExtension`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpServletExtensionApi.ListHttpServletExtensions(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.HttpServletExtensionAPI.ListHttpServletExtensions(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionApi.ListHttpServletExtensions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionAPI.ListHttpServletExtensions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListHttpServletExtensions`: HttpServletExtensionListResponse
-    fmt.Fprintf(os.Stdout, "Response from `HttpServletExtensionApi.ListHttpServletExtensions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpServletExtensionAPI.ListHttpServletExtensions`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpServletExtensionApi.UpdateHttpServletExtension(context.Background(), httpServletExtensionName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.HttpServletExtensionAPI.UpdateHttpServletExtension(context.Background(), httpServletExtensionName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionApi.UpdateHttpServletExtension``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionAPI.UpdateHttpServletExtension``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateHttpServletExtension`: GetHttpServletExtension200Response
-    fmt.Fprintf(os.Stdout, "Response from `HttpServletExtensionApi.UpdateHttpServletExtension`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpServletExtensionAPI.UpdateHttpServletExtension`: %v\n", resp)
 }
 ```
 

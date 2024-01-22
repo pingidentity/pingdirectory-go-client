@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Log Publisher | 
 **Schemas** | [**[]EnumadminAlertAccessLogPublisherSchemaUrn**](EnumadminAlertAccessLogPublisherSchemaUrn.md) |  | 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
@@ -53,12 +52,13 @@ Name | Type | Description | Notes
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Log Publisher | 
 
 ## Methods
 
 ### NewAdminAlertAccessLogPublisherResponse
 
-`func NewAdminAlertAccessLogPublisherResponse(id string, schemas []EnumadminAlertAccessLogPublisherSchemaUrn, asynchronous bool, enabled bool, ) *AdminAlertAccessLogPublisherResponse`
+`func NewAdminAlertAccessLogPublisherResponse(schemas []EnumadminAlertAccessLogPublisherSchemaUrn, asynchronous bool, enabled bool, id string, ) *AdminAlertAccessLogPublisherResponse`
 
 NewAdminAlertAccessLogPublisherResponse instantiates a new AdminAlertAccessLogPublisherResponse object
 This constructor will assign default values to properties that have it defined,
@@ -72,26 +72,6 @@ will change when the set of required properties is changed
 NewAdminAlertAccessLogPublisherResponseWithDefaults instantiates a new AdminAlertAccessLogPublisherResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *AdminAlertAccessLogPublisherResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AdminAlertAccessLogPublisherResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AdminAlertAccessLogPublisherResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -1277,6 +1257,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *AdminAlertAccessLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *AdminAlertAccessLogPublisherResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *AdminAlertAccessLogPublisherResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *AdminAlertAccessLogPublisherResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

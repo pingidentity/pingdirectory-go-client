@@ -19,9 +19,7 @@ var _ MappedNullable = &AddConsoleJsonHttpOperationLogPublisherRequest{}
 
 // AddConsoleJsonHttpOperationLogPublisherRequest struct for AddConsoleJsonHttpOperationLogPublisherRequest
 type AddConsoleJsonHttpOperationLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName string                                              `json:"publisherName"`
-	Schemas       []EnumconsoleJsonHttpOperationLogPublisherSchemaUrn `json:"schemas"`
+	Schemas []EnumconsoleJsonHttpOperationLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether the Console JSON HTTP Operation Log Publisher is enabled for use.
 	Enabled        bool                                `json:"enabled"`
 	OutputLocation *EnumlogPublisherOutputLocationProp `json:"outputLocation,omitempty"`
@@ -63,17 +61,19 @@ type AddConsoleJsonHttpOperationLogPublisherRequest struct {
 	// A description for this Log Publisher
 	Description          *string                                   `json:"description,omitempty"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddConsoleJsonHttpOperationLogPublisherRequest instantiates a new AddConsoleJsonHttpOperationLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConsoleJsonHttpOperationLogPublisherRequest(publisherName string, schemas []EnumconsoleJsonHttpOperationLogPublisherSchemaUrn, enabled bool) *AddConsoleJsonHttpOperationLogPublisherRequest {
+func NewAddConsoleJsonHttpOperationLogPublisherRequest(schemas []EnumconsoleJsonHttpOperationLogPublisherSchemaUrn, enabled bool, publisherName string) *AddConsoleJsonHttpOperationLogPublisherRequest {
 	this := AddConsoleJsonHttpOperationLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -83,30 +83,6 @@ func NewAddConsoleJsonHttpOperationLogPublisherRequest(publisherName string, sch
 func NewAddConsoleJsonHttpOperationLogPublisherRequestWithDefaults() *AddConsoleJsonHttpOperationLogPublisherRequest {
 	this := AddConsoleJsonHttpOperationLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -861,6 +837,30 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLoggingErrorBehavior
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddConsoleJsonHttpOperationLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -871,7 +871,6 @@ func (o AddConsoleJsonHttpOperationLogPublisherRequest) MarshalJSON() ([]byte, e
 
 func (o AddConsoleJsonHttpOperationLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["enabled"] = o.Enabled
 	if !IsNil(o.OutputLocation) {
@@ -940,6 +939,7 @@ func (o AddConsoleJsonHttpOperationLogPublisherRequest) ToMap() (map[string]inte
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

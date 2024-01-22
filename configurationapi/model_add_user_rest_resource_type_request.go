@@ -19,9 +19,7 @@ var _ MappedNullable = &AddUserRestResourceTypeRequest{}
 
 // AddUserRestResourceTypeRequest struct for AddUserRestResourceTypeRequest
 type AddUserRestResourceTypeRequest struct {
-	// Name of the new REST Resource Type
-	TypeName string                              `json:"typeName"`
-	Schemas  []EnumuserRestResourceTypeSchemaUrn `json:"schemas"`
+	Schemas []EnumuserRestResourceTypeSchemaUrn `json:"schemas"`
 	// Specifies which attribute category the password belongs to.
 	PasswordAttributeCategory *string `json:"passwordAttributeCategory,omitempty"`
 	// This property determines the display order for the password within its attribute category. Attributes are ordered within their category based on this index from least to greatest.
@@ -66,20 +64,22 @@ type AddUserRestResourceTypeRequest struct {
 	MembersColumnName *string `json:"membersColumnName,omitempty"`
 	// Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI
 	NonmembersColumnName *string `json:"nonmembersColumnName,omitempty"`
+	// Name of the new REST Resource Type
+	TypeName string `json:"typeName"`
 }
 
 // NewAddUserRestResourceTypeRequest instantiates a new AddUserRestResourceTypeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddUserRestResourceTypeRequest(typeName string, schemas []EnumuserRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string) *AddUserRestResourceTypeRequest {
+func NewAddUserRestResourceTypeRequest(schemas []EnumuserRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, typeName string) *AddUserRestResourceTypeRequest {
 	this := AddUserRestResourceTypeRequest{}
-	this.TypeName = typeName
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.ResourceEndpoint = resourceEndpoint
 	this.StructuralLDAPObjectclass = structuralLDAPObjectclass
 	this.SearchBaseDN = searchBaseDN
+	this.TypeName = typeName
 	return &this
 }
 
@@ -89,30 +89,6 @@ func NewAddUserRestResourceTypeRequest(typeName string, schemas []EnumuserRestRe
 func NewAddUserRestResourceTypeRequestWithDefaults() *AddUserRestResourceTypeRequest {
 	this := AddUserRestResourceTypeRequest{}
 	return &this
-}
-
-// GetTypeName returns the TypeName field value
-func (o *AddUserRestResourceTypeRequest) GetTypeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TypeName
-}
-
-// GetTypeNameOk returns a tuple with the TypeName field value
-// and a boolean to check if the value has been set.
-func (o *AddUserRestResourceTypeRequest) GetTypeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TypeName, true
-}
-
-// SetTypeName sets field value
-func (o *AddUserRestResourceTypeRequest) SetTypeName(v string) {
-	o.TypeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -811,6 +787,30 @@ func (o *AddUserRestResourceTypeRequest) SetNonmembersColumnName(v string) {
 	o.NonmembersColumnName = &v
 }
 
+// GetTypeName returns the TypeName field value
+func (o *AddUserRestResourceTypeRequest) GetTypeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TypeName
+}
+
+// GetTypeNameOk returns a tuple with the TypeName field value
+// and a boolean to check if the value has been set.
+func (o *AddUserRestResourceTypeRequest) GetTypeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TypeName, true
+}
+
+// SetTypeName sets field value
+func (o *AddUserRestResourceTypeRequest) SetTypeName(v string) {
+	o.TypeName = v
+}
+
 func (o AddUserRestResourceTypeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -821,7 +821,6 @@ func (o AddUserRestResourceTypeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddUserRestResourceTypeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["typeName"] = o.TypeName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PasswordAttributeCategory) {
 		toSerialize["passwordAttributeCategory"] = o.PasswordAttributeCategory
@@ -881,6 +880,7 @@ func (o AddUserRestResourceTypeRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.NonmembersColumnName) {
 		toSerialize["nonmembersColumnName"] = o.NonmembersColumnName
 	}
+	toSerialize["typeName"] = o.TypeName
 	return toSerialize, nil
 }
 

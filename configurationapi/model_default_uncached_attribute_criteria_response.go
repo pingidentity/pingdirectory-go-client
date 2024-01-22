@@ -19,8 +19,6 @@ var _ MappedNullable = &DefaultUncachedAttributeCriteriaResponse{}
 
 // DefaultUncachedAttributeCriteriaResponse struct for DefaultUncachedAttributeCriteriaResponse
 type DefaultUncachedAttributeCriteriaResponse struct {
-	// Name of the Uncached Attribute Criteria
-	Id      string                                          `json:"id"`
 	Schemas []EnumdefaultUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// A description for this Uncached Attribute Criteria
 	Description *string `json:"description,omitempty"`
@@ -28,17 +26,19 @@ type DefaultUncachedAttributeCriteriaResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Uncached Attribute Criteria
+	Id string `json:"id"`
 }
 
 // NewDefaultUncachedAttributeCriteriaResponse instantiates a new DefaultUncachedAttributeCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDefaultUncachedAttributeCriteriaResponse(id string, schemas []EnumdefaultUncachedAttributeCriteriaSchemaUrn, enabled bool) *DefaultUncachedAttributeCriteriaResponse {
+func NewDefaultUncachedAttributeCriteriaResponse(schemas []EnumdefaultUncachedAttributeCriteriaSchemaUrn, enabled bool, id string) *DefaultUncachedAttributeCriteriaResponse {
 	this := DefaultUncachedAttributeCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewDefaultUncachedAttributeCriteriaResponse(id string, schemas []Enumdefaul
 func NewDefaultUncachedAttributeCriteriaResponseWithDefaults() *DefaultUncachedAttributeCriteriaResponse {
 	this := DefaultUncachedAttributeCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DefaultUncachedAttributeCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DefaultUncachedAttributeCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DefaultUncachedAttributeCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *DefaultUncachedAttributeCriteriaResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DefaultUncachedAttributeCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DefaultUncachedAttributeCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DefaultUncachedAttributeCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DefaultUncachedAttributeCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o DefaultUncachedAttributeCriteriaResponse) MarshalJSON() ([]byte, error) 
 
 func (o DefaultUncachedAttributeCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -240,6 +239,7 @@ func (o DefaultUncachedAttributeCriteriaResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

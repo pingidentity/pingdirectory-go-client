@@ -19,9 +19,7 @@ var _ MappedNullable = &AddHttpConnectionHandlerRequest{}
 
 // AddHttpConnectionHandlerRequest struct for AddHttpConnectionHandlerRequest
 type AddHttpConnectionHandlerRequest struct {
-	// Name of the new Connection Handler
-	HandlerName string                               `json:"handlerName"`
-	Schemas     []EnumhttpConnectionHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumhttpConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the address on which to listen for connections from HTTP clients. If no value is defined, the server will listen on all addresses on all interfaces.
 	ListenAddress *string `json:"listenAddress,omitempty"`
 	// Specifies the port number on which the HTTP Connection Handler will listen for connections from clients.
@@ -73,22 +71,26 @@ type AddHttpConnectionHandlerRequest struct {
 	// Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDRequestHeader []string                                      `json:"correlationIDRequestHeader,omitempty"`
 	SslClientAuthPolicy        *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
+	// Requires SNI hostnames to match or else throw an Invalid SNI error.
+	EnableSniHostnameChecks *bool `json:"enableSniHostnameChecks,omitempty"`
 	// A description for this Connection Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
 	Enabled bool `json:"enabled"`
+	// Name of the new Connection Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddHttpConnectionHandlerRequest instantiates a new AddHttpConnectionHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddHttpConnectionHandlerRequest(handlerName string, schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int64, enabled bool) *AddHttpConnectionHandlerRequest {
+func NewAddHttpConnectionHandlerRequest(schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int64, enabled bool, handlerName string) *AddHttpConnectionHandlerRequest {
 	this := AddHttpConnectionHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ListenPort = listenPort
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -98,30 +100,6 @@ func NewAddHttpConnectionHandlerRequest(handlerName string, schemas []EnumhttpCo
 func NewAddHttpConnectionHandlerRequestWithDefaults() *AddHttpConnectionHandlerRequest {
 	this := AddHttpConnectionHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddHttpConnectionHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddHttpConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddHttpConnectionHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -972,6 +950,38 @@ func (o *AddHttpConnectionHandlerRequest) SetSslClientAuthPolicy(v Enumconnectio
 	o.SslClientAuthPolicy = &v
 }
 
+// GetEnableSniHostnameChecks returns the EnableSniHostnameChecks field value if set, zero value otherwise.
+func (o *AddHttpConnectionHandlerRequest) GetEnableSniHostnameChecks() bool {
+	if o == nil || IsNil(o.EnableSniHostnameChecks) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableSniHostnameChecks
+}
+
+// GetEnableSniHostnameChecksOk returns a tuple with the EnableSniHostnameChecks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddHttpConnectionHandlerRequest) GetEnableSniHostnameChecksOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableSniHostnameChecks) {
+		return nil, false
+	}
+	return o.EnableSniHostnameChecks, true
+}
+
+// HasEnableSniHostnameChecks returns a boolean if a field has been set.
+func (o *AddHttpConnectionHandlerRequest) HasEnableSniHostnameChecks() bool {
+	if o != nil && !IsNil(o.EnableSniHostnameChecks) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableSniHostnameChecks gets a reference to the given bool and assigns it to the EnableSniHostnameChecks field.
+func (o *AddHttpConnectionHandlerRequest) SetEnableSniHostnameChecks(v bool) {
+	o.EnableSniHostnameChecks = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddHttpConnectionHandlerRequest) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -1028,6 +1038,30 @@ func (o *AddHttpConnectionHandlerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddHttpConnectionHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddHttpConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddHttpConnectionHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddHttpConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1038,7 +1072,6 @@ func (o AddHttpConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddHttpConnectionHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ListenAddress) {
 		toSerialize["listenAddress"] = o.ListenAddress
@@ -1116,10 +1149,14 @@ func (o AddHttpConnectionHandlerRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.SslClientAuthPolicy) {
 		toSerialize["sslClientAuthPolicy"] = o.SslClientAuthPolicy
 	}
+	if !IsNil(o.EnableSniHostnameChecks) {
+		toSerialize["enableSniHostnameChecks"] = o.EnableSniHostnameChecks
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

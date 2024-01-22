@@ -19,24 +19,24 @@ var _ MappedNullable = &AddExportReversiblePasswordsExtendedOperationHandlerRequ
 
 // AddExportReversiblePasswordsExtendedOperationHandlerRequest struct for AddExportReversiblePasswordsExtendedOperationHandlerRequest
 type AddExportReversiblePasswordsExtendedOperationHandlerRequest struct {
-	// Name of the new Extended Operation Handler
-	HandlerName string                                                           `json:"handlerName"`
-	Schemas     []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
 	Enabled bool `json:"enabled"`
+	// Name of the new Extended Operation Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddExportReversiblePasswordsExtendedOperationHandlerRequest instantiates a new AddExportReversiblePasswordsExtendedOperationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddExportReversiblePasswordsExtendedOperationHandlerRequest(handlerName string, schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, enabled bool) *AddExportReversiblePasswordsExtendedOperationHandlerRequest {
+func NewAddExportReversiblePasswordsExtendedOperationHandlerRequest(schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, enabled bool, handlerName string) *AddExportReversiblePasswordsExtendedOperationHandlerRequest {
 	this := AddExportReversiblePasswordsExtendedOperationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewAddExportReversiblePasswordsExtendedOperationHandlerRequest(handlerName 
 func NewAddExportReversiblePasswordsExtendedOperationHandlerRequestWithDefaults() *AddExportReversiblePasswordsExtendedOperationHandlerRequest {
 	this := AddExportReversiblePasswordsExtendedOperationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -152,6 +128,30 @@ func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) SetEnabled
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddExportReversiblePasswordsExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -162,12 +162,12 @@ func (o AddExportReversiblePasswordsExtendedOperationHandlerRequest) MarshalJSON
 
 func (o AddExportReversiblePasswordsExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

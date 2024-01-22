@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSoftDeletePolicyRequest{}
 
 // AddSoftDeletePolicyRequest struct for AddSoftDeletePolicyRequest
 type AddSoftDeletePolicyRequest struct {
-	// Name of the new Soft Delete Policy
-	PolicyName string                          `json:"policyName"`
-	Schemas    []EnumsoftDeletePolicySchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumsoftDeletePolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this Soft Delete Policy
 	Description *string `json:"description,omitempty"`
 	// Connection criteria used to automatically identify a delete operation for processing as a soft delete request.
@@ -32,6 +30,8 @@ type AddSoftDeletePolicyRequest struct {
 	SoftDeleteRetentionTime *string `json:"softDeleteRetentionTime,omitempty"`
 	// Specifies the number of soft deleted entries to retain before the oldest entries are purged.
 	SoftDeleteRetainNumberOfEntries *int64 `json:"softDeleteRetainNumberOfEntries,omitempty"`
+	// Name of the new Soft Delete Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddSoftDeletePolicyRequest instantiates a new AddSoftDeletePolicyRequest object
@@ -50,30 +50,6 @@ func NewAddSoftDeletePolicyRequest(policyName string) *AddSoftDeletePolicyReques
 func NewAddSoftDeletePolicyRequestWithDefaults() *AddSoftDeletePolicyRequest {
 	this := AddSoftDeletePolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddSoftDeletePolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddSoftDeletePolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddSoftDeletePolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -268,6 +244,30 @@ func (o *AddSoftDeletePolicyRequest) SetSoftDeleteRetainNumberOfEntries(v int64)
 	o.SoftDeleteRetainNumberOfEntries = &v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddSoftDeletePolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddSoftDeletePolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddSoftDeletePolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddSoftDeletePolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -278,7 +278,6 @@ func (o AddSoftDeletePolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSoftDeletePolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -297,6 +296,7 @@ func (o AddSoftDeletePolicyRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SoftDeleteRetainNumberOfEntries) {
 		toSerialize["softDeleteRetainNumberOfEntries"] = o.SoftDeleteRetainNumberOfEntries
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

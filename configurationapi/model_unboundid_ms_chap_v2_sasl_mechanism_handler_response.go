@@ -19,8 +19,6 @@ var _ MappedNullable = &UnboundidMsChapV2SaslMechanismHandlerResponse{}
 
 // UnboundidMsChapV2SaslMechanismHandlerResponse struct for UnboundidMsChapV2SaslMechanismHandlerResponse
 type UnboundidMsChapV2SaslMechanismHandlerResponse struct {
-	// Name of the SASL Mechanism Handler
-	Id      string                                               `json:"id"`
 	Schemas []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the entry associated with the username provided in the bind request.
 	IdentityMapper string `json:"identityMapper"`
@@ -30,18 +28,20 @@ type UnboundidMsChapV2SaslMechanismHandlerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the SASL Mechanism Handler
+	Id string `json:"id"`
 }
 
 // NewUnboundidMsChapV2SaslMechanismHandlerResponse instantiates a new UnboundidMsChapV2SaslMechanismHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnboundidMsChapV2SaslMechanismHandlerResponse(id string, schemas []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool) *UnboundidMsChapV2SaslMechanismHandlerResponse {
+func NewUnboundidMsChapV2SaslMechanismHandlerResponse(schemas []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, id string) *UnboundidMsChapV2SaslMechanismHandlerResponse {
 	this := UnboundidMsChapV2SaslMechanismHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.IdentityMapper = identityMapper
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewUnboundidMsChapV2SaslMechanismHandlerResponse(id string, schemas []Enumu
 func NewUnboundidMsChapV2SaslMechanismHandlerResponseWithDefaults() *UnboundidMsChapV2SaslMechanismHandlerResponse {
 	this := UnboundidMsChapV2SaslMechanismHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *UnboundidMsChapV2SaslMechanismHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UnboundidMsChapV2SaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UnboundidMsChapV2SaslMechanismHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -245,6 +221,30 @@ func (o *UnboundidMsChapV2SaslMechanismHandlerResponse) SetUrnpingidentityschema
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *UnboundidMsChapV2SaslMechanismHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *UnboundidMsChapV2SaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *UnboundidMsChapV2SaslMechanismHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o UnboundidMsChapV2SaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -255,7 +255,6 @@ func (o UnboundidMsChapV2SaslMechanismHandlerResponse) MarshalJSON() ([]byte, er
 
 func (o UnboundidMsChapV2SaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["identityMapper"] = o.IdentityMapper
 	if !IsNil(o.Description) {
@@ -268,6 +267,7 @@ func (o UnboundidMsChapV2SaslMechanismHandlerResponse) ToMap() (map[string]inter
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

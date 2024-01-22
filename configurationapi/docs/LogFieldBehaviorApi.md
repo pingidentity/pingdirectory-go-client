@@ -1,14 +1,14 @@
-# \LogFieldBehaviorApi
+# \LogFieldBehaviorAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLogFieldBehavior**](LogFieldBehaviorApi.md#AddLogFieldBehavior) | **Post** /log-field-behaviors | Add a new Log Field Behavior to the config
-[**DeleteLogFieldBehavior**](LogFieldBehaviorApi.md#DeleteLogFieldBehavior) | **Delete** /log-field-behaviors/{log-field-behavior-name} | Delete a Log Field Behavior
-[**GetLogFieldBehavior**](LogFieldBehaviorApi.md#GetLogFieldBehavior) | **Get** /log-field-behaviors/{log-field-behavior-name} | Returns a single Log Field Behavior
-[**ListLogFieldBehaviors**](LogFieldBehaviorApi.md#ListLogFieldBehaviors) | **Get** /log-field-behaviors | Returns a list of all Log Field Behavior objects
-[**UpdateLogFieldBehavior**](LogFieldBehaviorApi.md#UpdateLogFieldBehavior) | **Patch** /log-field-behaviors/{log-field-behavior-name} | Update an existing Log Field Behavior by name
+[**AddLogFieldBehavior**](LogFieldBehaviorAPI.md#AddLogFieldBehavior) | **Post** /log-field-behaviors | Add a new Log Field Behavior to the config
+[**DeleteLogFieldBehavior**](LogFieldBehaviorAPI.md#DeleteLogFieldBehavior) | **Delete** /log-field-behaviors/{log-field-behavior-name} | Delete a Log Field Behavior
+[**GetLogFieldBehavior**](LogFieldBehaviorAPI.md#GetLogFieldBehavior) | **Get** /log-field-behaviors/{log-field-behavior-name} | Returns a single Log Field Behavior
+[**ListLogFieldBehaviors**](LogFieldBehaviorAPI.md#ListLogFieldBehaviors) | **Get** /log-field-behaviors | Returns a list of all Log Field Behavior objects
+[**UpdateLogFieldBehavior**](LogFieldBehaviorAPI.md#UpdateLogFieldBehavior) | **Patch** /log-field-behaviors/{log-field-behavior-name} | Update an existing Log Field Behavior by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addLogFieldBehaviorRequest := openapiclient.add_log_field_behavior_request{AddJsonFormattedAccessLogFieldBehaviorRequest: openapiclient.NewAddJsonFormattedAccessLogFieldBehaviorRequest("BehaviorName_example", []openapiclient.EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn{openapiclient.Enumjson-formatted-access-log-field-behaviorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-field-behavior:json-formatted-access")})} // AddLogFieldBehaviorRequest | Create a new Log Field Behavior in the config
+    addLogFieldBehaviorRequest := openapiclient.add_log_field_behavior_request{AddJsonFormattedAccessLogFieldBehaviorRequest: openapiclient.NewAddJsonFormattedAccessLogFieldBehaviorRequest([]openapiclient.EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn{openapiclient.Enumjson-formatted-access-log-field-behaviorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-field-behavior:json-formatted-access")}, "BehaviorName_example")} // AddLogFieldBehaviorRequest | Create a new Log Field Behavior in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldBehaviorApi.AddLogFieldBehavior(context.Background()).AddLogFieldBehaviorRequest(addLogFieldBehaviorRequest).Execute()
+    resp, r, err := apiClient.LogFieldBehaviorAPI.AddLogFieldBehavior(context.Background()).AddLogFieldBehaviorRequest(addLogFieldBehaviorRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorApi.AddLogFieldBehavior``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorAPI.AddLogFieldBehavior``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLogFieldBehavior`: AddLogFieldBehavior200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldBehaviorApi.AddLogFieldBehavior`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldBehaviorAPI.AddLogFieldBehavior`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LogFieldBehaviorApi.DeleteLogFieldBehavior(context.Background(), logFieldBehaviorName).Execute()
+    r, err := apiClient.LogFieldBehaviorAPI.DeleteLogFieldBehavior(context.Background(), logFieldBehaviorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorApi.DeleteLogFieldBehavior``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorAPI.DeleteLogFieldBehavior``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldBehaviorApi.GetLogFieldBehavior(context.Background(), logFieldBehaviorName).Execute()
+    resp, r, err := apiClient.LogFieldBehaviorAPI.GetLogFieldBehavior(context.Background(), logFieldBehaviorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorApi.GetLogFieldBehavior``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorAPI.GetLogFieldBehavior``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLogFieldBehavior`: AddLogFieldBehavior200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldBehaviorApi.GetLogFieldBehavior`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldBehaviorAPI.GetLogFieldBehavior`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldBehaviorApi.ListLogFieldBehaviors(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.LogFieldBehaviorAPI.ListLogFieldBehaviors(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorApi.ListLogFieldBehaviors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorAPI.ListLogFieldBehaviors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLogFieldBehaviors`: LogFieldBehaviorListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldBehaviorApi.ListLogFieldBehaviors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldBehaviorAPI.ListLogFieldBehaviors`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldBehaviorApi.UpdateLogFieldBehavior(context.Background(), logFieldBehaviorName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LogFieldBehaviorAPI.UpdateLogFieldBehavior(context.Background(), logFieldBehaviorName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorApi.UpdateLogFieldBehavior``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorAPI.UpdateLogFieldBehavior``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLogFieldBehavior`: AddLogFieldBehavior200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldBehaviorApi.UpdateLogFieldBehavior`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldBehaviorAPI.UpdateLogFieldBehavior`: %v\n", resp)
 }
 ```
 

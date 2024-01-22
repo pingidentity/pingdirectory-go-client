@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ConsentDefinitionLocalizationApiService ConsentDefinitionLocalizationApi service
-type ConsentDefinitionLocalizationApiService service
+// ConsentDefinitionLocalizationAPIService ConsentDefinitionLocalizationAPI service
+type ConsentDefinitionLocalizationAPIService service
 
 type ApiAddConsentDefinitionLocalizationRequest struct {
 	ctx                                     context.Context
-	ApiService                              *ConsentDefinitionLocalizationApiService
+	ApiService                              *ConsentDefinitionLocalizationAPIService
 	consentDefinitionName                   string
 	addConsentDefinitionLocalizationRequest *AddConsentDefinitionLocalizationRequest
 }
@@ -46,7 +46,7 @@ AddConsentDefinitionLocalization Add a new Consent Definition Localization to th
 	@param consentDefinitionName Name of the Consent Definition
 	@return ApiAddConsentDefinitionLocalizationRequest
 */
-func (a *ConsentDefinitionLocalizationApiService) AddConsentDefinitionLocalization(ctx context.Context, consentDefinitionName string) ApiAddConsentDefinitionLocalizationRequest {
+func (a *ConsentDefinitionLocalizationAPIService) AddConsentDefinitionLocalization(ctx context.Context, consentDefinitionName string) ApiAddConsentDefinitionLocalizationRequest {
 	return ApiAddConsentDefinitionLocalizationRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -57,7 +57,7 @@ func (a *ConsentDefinitionLocalizationApiService) AddConsentDefinitionLocalizati
 // Execute executes the request
 //
 //	@return ConsentDefinitionLocalizationResponse
-func (a *ConsentDefinitionLocalizationApiService) AddConsentDefinitionLocalizationExecute(r ApiAddConsentDefinitionLocalizationRequest) (*ConsentDefinitionLocalizationResponse, *http.Response, error) {
+func (a *ConsentDefinitionLocalizationAPIService) AddConsentDefinitionLocalizationExecute(r ApiAddConsentDefinitionLocalizationRequest) (*ConsentDefinitionLocalizationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *ConsentDefinitionLocalizationApiService) AddConsentDefinitionLocalizati
 		localVarReturnValue *ConsentDefinitionLocalizationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationApiService.AddConsentDefinitionLocalization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationAPIService.AddConsentDefinitionLocalization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *ConsentDefinitionLocalizationApiService) AddConsentDefinitionLocalizati
 
 type ApiDeleteConsentDefinitionLocalizationRequest struct {
 	ctx                               context.Context
-	ApiService                        *ConsentDefinitionLocalizationApiService
+	ApiService                        *ConsentDefinitionLocalizationAPIService
 	consentDefinitionLocalizationName string
 	consentDefinitionName             string
 }
@@ -155,7 +155,7 @@ DeleteConsentDefinitionLocalization Delete a Consent Definition Localization
 	@param consentDefinitionName Name of the Consent Definition
 	@return ApiDeleteConsentDefinitionLocalizationRequest
 */
-func (a *ConsentDefinitionLocalizationApiService) DeleteConsentDefinitionLocalization(ctx context.Context, consentDefinitionLocalizationName string, consentDefinitionName string) ApiDeleteConsentDefinitionLocalizationRequest {
+func (a *ConsentDefinitionLocalizationAPIService) DeleteConsentDefinitionLocalization(ctx context.Context, consentDefinitionLocalizationName string, consentDefinitionName string) ApiDeleteConsentDefinitionLocalizationRequest {
 	return ApiDeleteConsentDefinitionLocalizationRequest{
 		ApiService:                        a,
 		ctx:                               ctx,
@@ -165,14 +165,14 @@ func (a *ConsentDefinitionLocalizationApiService) DeleteConsentDefinitionLocaliz
 }
 
 // Execute executes the request
-func (a *ConsentDefinitionLocalizationApiService) DeleteConsentDefinitionLocalizationExecute(r ApiDeleteConsentDefinitionLocalizationRequest) (*http.Response, error) {
+func (a *ConsentDefinitionLocalizationAPIService) DeleteConsentDefinitionLocalizationExecute(r ApiDeleteConsentDefinitionLocalizationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationApiService.DeleteConsentDefinitionLocalization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationAPIService.DeleteConsentDefinitionLocalization")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *ConsentDefinitionLocalizationApiService) DeleteConsentDefinitionLocaliz
 
 type ApiGetConsentDefinitionLocalizationRequest struct {
 	ctx                               context.Context
-	ApiService                        *ConsentDefinitionLocalizationApiService
+	ApiService                        *ConsentDefinitionLocalizationAPIService
 	consentDefinitionLocalizationName string
 	consentDefinitionName             string
 }
@@ -249,7 +249,7 @@ GetConsentDefinitionLocalization Returns a single Consent Definition Localizatio
 	@param consentDefinitionName Name of the Consent Definition
 	@return ApiGetConsentDefinitionLocalizationRequest
 */
-func (a *ConsentDefinitionLocalizationApiService) GetConsentDefinitionLocalization(ctx context.Context, consentDefinitionLocalizationName string, consentDefinitionName string) ApiGetConsentDefinitionLocalizationRequest {
+func (a *ConsentDefinitionLocalizationAPIService) GetConsentDefinitionLocalization(ctx context.Context, consentDefinitionLocalizationName string, consentDefinitionName string) ApiGetConsentDefinitionLocalizationRequest {
 	return ApiGetConsentDefinitionLocalizationRequest{
 		ApiService:                        a,
 		ctx:                               ctx,
@@ -261,7 +261,7 @@ func (a *ConsentDefinitionLocalizationApiService) GetConsentDefinitionLocalizati
 // Execute executes the request
 //
 //	@return ConsentDefinitionLocalizationResponse
-func (a *ConsentDefinitionLocalizationApiService) GetConsentDefinitionLocalizationExecute(r ApiGetConsentDefinitionLocalizationRequest) (*ConsentDefinitionLocalizationResponse, *http.Response, error) {
+func (a *ConsentDefinitionLocalizationAPIService) GetConsentDefinitionLocalizationExecute(r ApiGetConsentDefinitionLocalizationRequest) (*ConsentDefinitionLocalizationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *ConsentDefinitionLocalizationApiService) GetConsentDefinitionLocalizati
 		localVarReturnValue *ConsentDefinitionLocalizationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationApiService.GetConsentDefinitionLocalization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationAPIService.GetConsentDefinitionLocalization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *ConsentDefinitionLocalizationApiService) GetConsentDefinitionLocalizati
 
 type ApiListConsentDefinitionLocalizationsRequest struct {
 	ctx                   context.Context
-	ApiService            *ConsentDefinitionLocalizationApiService
+	ApiService            *ConsentDefinitionLocalizationAPIService
 	consentDefinitionName string
 	filter                *string
 }
@@ -360,7 +360,7 @@ ListConsentDefinitionLocalizations Returns a list of all Consent Definition Loca
 	@param consentDefinitionName Name of the Consent Definition
 	@return ApiListConsentDefinitionLocalizationsRequest
 */
-func (a *ConsentDefinitionLocalizationApiService) ListConsentDefinitionLocalizations(ctx context.Context, consentDefinitionName string) ApiListConsentDefinitionLocalizationsRequest {
+func (a *ConsentDefinitionLocalizationAPIService) ListConsentDefinitionLocalizations(ctx context.Context, consentDefinitionName string) ApiListConsentDefinitionLocalizationsRequest {
 	return ApiListConsentDefinitionLocalizationsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -371,7 +371,7 @@ func (a *ConsentDefinitionLocalizationApiService) ListConsentDefinitionLocalizat
 // Execute executes the request
 //
 //	@return ConsentDefinitionLocalizationListResponse
-func (a *ConsentDefinitionLocalizationApiService) ListConsentDefinitionLocalizationsExecute(r ApiListConsentDefinitionLocalizationsRequest) (*ConsentDefinitionLocalizationListResponse, *http.Response, error) {
+func (a *ConsentDefinitionLocalizationAPIService) ListConsentDefinitionLocalizationsExecute(r ApiListConsentDefinitionLocalizationsRequest) (*ConsentDefinitionLocalizationListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *ConsentDefinitionLocalizationApiService) ListConsentDefinitionLocalizat
 		localVarReturnValue *ConsentDefinitionLocalizationListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationApiService.ListConsentDefinitionLocalizations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationAPIService.ListConsentDefinitionLocalizations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *ConsentDefinitionLocalizationApiService) ListConsentDefinitionLocalizat
 
 type ApiUpdateConsentDefinitionLocalizationRequest struct {
 	ctx                               context.Context
-	ApiService                        *ConsentDefinitionLocalizationApiService
+	ApiService                        *ConsentDefinitionLocalizationAPIService
 	consentDefinitionLocalizationName string
 	consentDefinitionName             string
 	updateRequest                     *UpdateRequest
@@ -474,7 +474,7 @@ UpdateConsentDefinitionLocalization Update an existing Consent Definition Locali
 	@param consentDefinitionName Name of the Consent Definition
 	@return ApiUpdateConsentDefinitionLocalizationRequest
 */
-func (a *ConsentDefinitionLocalizationApiService) UpdateConsentDefinitionLocalization(ctx context.Context, consentDefinitionLocalizationName string, consentDefinitionName string) ApiUpdateConsentDefinitionLocalizationRequest {
+func (a *ConsentDefinitionLocalizationAPIService) UpdateConsentDefinitionLocalization(ctx context.Context, consentDefinitionLocalizationName string, consentDefinitionName string) ApiUpdateConsentDefinitionLocalizationRequest {
 	return ApiUpdateConsentDefinitionLocalizationRequest{
 		ApiService:                        a,
 		ctx:                               ctx,
@@ -486,7 +486,7 @@ func (a *ConsentDefinitionLocalizationApiService) UpdateConsentDefinitionLocaliz
 // Execute executes the request
 //
 //	@return ConsentDefinitionLocalizationResponse
-func (a *ConsentDefinitionLocalizationApiService) UpdateConsentDefinitionLocalizationExecute(r ApiUpdateConsentDefinitionLocalizationRequest) (*ConsentDefinitionLocalizationResponse, *http.Response, error) {
+func (a *ConsentDefinitionLocalizationAPIService) UpdateConsentDefinitionLocalizationExecute(r ApiUpdateConsentDefinitionLocalizationRequest) (*ConsentDefinitionLocalizationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *ConsentDefinitionLocalizationApiService) UpdateConsentDefinitionLocaliz
 		localVarReturnValue *ConsentDefinitionLocalizationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationApiService.UpdateConsentDefinitionLocalization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionLocalizationAPIService.UpdateConsentDefinitionLocalization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

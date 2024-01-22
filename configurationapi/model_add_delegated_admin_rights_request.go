@@ -19,9 +19,7 @@ var _ MappedNullable = &AddDelegatedAdminRightsRequest{}
 
 // AddDelegatedAdminRightsRequest struct for AddDelegatedAdminRightsRequest
 type AddDelegatedAdminRightsRequest struct {
-	// Name of the new Delegated Admin Rights
-	RightsName string                              `json:"rightsName"`
-	Schemas    []EnumdelegatedAdminRightsSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumdelegatedAdminRightsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Rights
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Delegated Admin Rights is enabled.
@@ -30,16 +28,18 @@ type AddDelegatedAdminRightsRequest struct {
 	AdminUserDN *string `json:"adminUserDN,omitempty"`
 	// Specifies the DN of a group of administrative users who have authority to manage resources. Either admin-user-dn or admin-group-dn must be specified, but not both.
 	AdminGroupDN *string `json:"adminGroupDN,omitempty"`
+	// Name of the new Delegated Admin Rights
+	RightsName string `json:"rightsName"`
 }
 
 // NewAddDelegatedAdminRightsRequest instantiates a new AddDelegatedAdminRightsRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDelegatedAdminRightsRequest(rightsName string, enabled bool) *AddDelegatedAdminRightsRequest {
+func NewAddDelegatedAdminRightsRequest(enabled bool, rightsName string) *AddDelegatedAdminRightsRequest {
 	this := AddDelegatedAdminRightsRequest{}
-	this.RightsName = rightsName
 	this.Enabled = enabled
+	this.RightsName = rightsName
 	return &this
 }
 
@@ -49,30 +49,6 @@ func NewAddDelegatedAdminRightsRequest(rightsName string, enabled bool) *AddDele
 func NewAddDelegatedAdminRightsRequestWithDefaults() *AddDelegatedAdminRightsRequest {
 	this := AddDelegatedAdminRightsRequest{}
 	return &this
-}
-
-// GetRightsName returns the RightsName field value
-func (o *AddDelegatedAdminRightsRequest) GetRightsName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.RightsName
-}
-
-// GetRightsNameOk returns a tuple with the RightsName field value
-// and a boolean to check if the value has been set.
-func (o *AddDelegatedAdminRightsRequest) GetRightsNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.RightsName, true
-}
-
-// SetRightsName sets field value
-func (o *AddDelegatedAdminRightsRequest) SetRightsName(v string) {
-	o.RightsName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -227,6 +203,30 @@ func (o *AddDelegatedAdminRightsRequest) SetAdminGroupDN(v string) {
 	o.AdminGroupDN = &v
 }
 
+// GetRightsName returns the RightsName field value
+func (o *AddDelegatedAdminRightsRequest) GetRightsName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.RightsName
+}
+
+// GetRightsNameOk returns a tuple with the RightsName field value
+// and a boolean to check if the value has been set.
+func (o *AddDelegatedAdminRightsRequest) GetRightsNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.RightsName, true
+}
+
+// SetRightsName sets field value
+func (o *AddDelegatedAdminRightsRequest) SetRightsName(v string) {
+	o.RightsName = v
+}
+
 func (o AddDelegatedAdminRightsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -237,7 +237,6 @@ func (o AddDelegatedAdminRightsRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddDelegatedAdminRightsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["rightsName"] = o.RightsName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -251,6 +250,7 @@ func (o AddDelegatedAdminRightsRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.AdminGroupDN) {
 		toSerialize["adminGroupDN"] = o.AdminGroupDN
 	}
+	toSerialize["rightsName"] = o.RightsName
 	return toSerialize, nil
 }
 

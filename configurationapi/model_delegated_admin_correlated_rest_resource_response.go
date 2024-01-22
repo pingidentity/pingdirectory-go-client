@@ -19,8 +19,6 @@ var _ MappedNullable = &DelegatedAdminCorrelatedRestResourceResponse{}
 
 // DelegatedAdminCorrelatedRestResourceResponse struct for DelegatedAdminCorrelatedRestResourceResponse
 type DelegatedAdminCorrelatedRestResourceResponse struct {
-	// Name of the Delegated Admin Correlated REST Resource
-	Id      string                                              `json:"id"`
 	Schemas []EnumdelegatedAdminCorrelatedRestResourceSchemaUrn `json:"schemas,omitempty"`
 	// A human readable display name for this Delegated Admin Correlated REST Resource.
 	DisplayName string `json:"displayName"`
@@ -34,19 +32,21 @@ type DelegatedAdminCorrelatedRestResourceResponse struct {
 	UseSecondaryValueForLinking                   *bool                                              `json:"useSecondaryValueForLinking,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Delegated Admin Correlated REST Resource
+	Id string `json:"id"`
 }
 
 // NewDelegatedAdminCorrelatedRestResourceResponse instantiates a new DelegatedAdminCorrelatedRestResourceResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelegatedAdminCorrelatedRestResourceResponse(id string, displayName string, correlatedRESTResource string, primaryRESTResourceCorrelationAttribute string, secondaryRESTResourceCorrelationAttribute string) *DelegatedAdminCorrelatedRestResourceResponse {
+func NewDelegatedAdminCorrelatedRestResourceResponse(displayName string, correlatedRESTResource string, primaryRESTResourceCorrelationAttribute string, secondaryRESTResourceCorrelationAttribute string, id string) *DelegatedAdminCorrelatedRestResourceResponse {
 	this := DelegatedAdminCorrelatedRestResourceResponse{}
-	this.Id = id
 	this.DisplayName = displayName
 	this.CorrelatedRESTResource = correlatedRESTResource
 	this.PrimaryRESTResourceCorrelationAttribute = primaryRESTResourceCorrelationAttribute
 	this.SecondaryRESTResourceCorrelationAttribute = secondaryRESTResourceCorrelationAttribute
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewDelegatedAdminCorrelatedRestResourceResponse(id string, displayName stri
 func NewDelegatedAdminCorrelatedRestResourceResponseWithDefaults() *DelegatedAdminCorrelatedRestResourceResponse {
 	this := DelegatedAdminCorrelatedRestResourceResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DelegatedAdminCorrelatedRestResourceResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DelegatedAdminCorrelatedRestResourceResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DelegatedAdminCorrelatedRestResourceResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -306,6 +282,30 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) SetUrnpingidentityschemas
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DelegatedAdminCorrelatedRestResourceResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DelegatedAdminCorrelatedRestResourceResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DelegatedAdminCorrelatedRestResourceResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DelegatedAdminCorrelatedRestResourceResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -316,7 +316,6 @@ func (o DelegatedAdminCorrelatedRestResourceResponse) MarshalJSON() ([]byte, err
 
 func (o DelegatedAdminCorrelatedRestResourceResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -333,6 +332,7 @@ func (o DelegatedAdminCorrelatedRestResourceResponse) ToMap() (map[string]interf
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

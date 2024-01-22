@@ -19,8 +19,6 @@ var _ MappedNullable = &AmazonSecretsManagerCipherStreamProviderResponse{}
 
 // AmazonSecretsManagerCipherStreamProviderResponse struct for AmazonSecretsManagerCipherStreamProviderResponse
 type AmazonSecretsManagerCipherStreamProviderResponse struct {
-	// Name of the Cipher Stream Provider
-	Id      string                                                  `json:"id"`
 	Schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The external server with information to use when interacting with the AWS Secrets Manager.
 	AwsExternalServer string `json:"awsExternalServer"`
@@ -42,21 +40,23 @@ type AmazonSecretsManagerCipherStreamProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Cipher Stream Provider
+	Id string `json:"id"`
 }
 
 // NewAmazonSecretsManagerCipherStreamProviderResponse instantiates a new AmazonSecretsManagerCipherStreamProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAmazonSecretsManagerCipherStreamProviderResponse(id string, schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, encryptionMetadataFile string, enabled bool) *AmazonSecretsManagerCipherStreamProviderResponse {
+func NewAmazonSecretsManagerCipherStreamProviderResponse(schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, encryptionMetadataFile string, enabled bool, id string) *AmazonSecretsManagerCipherStreamProviderResponse {
 	this := AmazonSecretsManagerCipherStreamProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AwsExternalServer = awsExternalServer
 	this.SecretID = secretID
 	this.SecretFieldName = secretFieldName
 	this.EncryptionMetadataFile = encryptionMetadataFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -66,30 +66,6 @@ func NewAmazonSecretsManagerCipherStreamProviderResponse(id string, schemas []En
 func NewAmazonSecretsManagerCipherStreamProviderResponseWithDefaults() *AmazonSecretsManagerCipherStreamProviderResponse {
 	this := AmazonSecretsManagerCipherStreamProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AmazonSecretsManagerCipherStreamProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -428,6 +404,30 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) SetUrnpingidentitysch
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AmazonSecretsManagerCipherStreamProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AmazonSecretsManagerCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -438,7 +438,6 @@ func (o AmazonSecretsManagerCipherStreamProviderResponse) MarshalJSON() ([]byte,
 
 func (o AmazonSecretsManagerCipherStreamProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["awsExternalServer"] = o.AwsExternalServer
 	toSerialize["secretID"] = o.SecretID
@@ -463,6 +462,7 @@ func (o AmazonSecretsManagerCipherStreamProviderResponse) ToMap() (map[string]in
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

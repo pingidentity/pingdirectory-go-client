@@ -1,0 +1,388 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Post LDIF Export Task Processor config object
+  title: PingData Post LDIF Export Task Processor Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
+tags:
+- description: Access post-ldif-export-task-processors
+  name: post-ldif-export-task-processor
+paths:
+  /post-ldif-export-task-processors:
+    get:
+      summary: Returns a list of all Post LDIF Export Task Processor objects
+      operationId: list-post-ldif-export-task-processors
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/post-ldif-export-task-processorListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
+    post:
+      summary: Add a new Post LDIF Export Task Processor to the config
+      operationId: add-post-ldif-export-task-processor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-upload-to-s3-post-ldif-export-task-processor-request'
+              - $ref: '#/components/schemas/add-third-party-post-ldif-export-task-processor-request'
+        description: Create a new Post LDIF Export Task Processor in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-response'
+                - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Post LDIF Export Task Processor already exists
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
+  /post-ldif-export-task-processors/{post-ldif-export-task-processor-name}:
+    delete:
+      summary: Delete a Post LDIF Export Task Processor
+      operationId: delete-post-ldif-export-task-processor
+      parameters:
+      - description: Name of the Post LDIF Export Task Processor
+        explode: false
+        in: path
+        name: post-ldif-export-task-processor-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Post LDIF Export Task Processor does not exist
+        "409":
+          description: The Post LDIF Export Task Processor cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
+    get:
+      summary: Returns a single Post LDIF Export Task Processor
+      operationId: get-post-ldif-export-task-processor
+      parameters:
+      - description: Name of the Post LDIF Export Task Processor
+        explode: false
+        in: path
+        name: post-ldif-export-task-processor-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-response'
+                - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Post LDIF Export Task Processor does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
+    patch:
+      summary: Update an existing Post LDIF Export Task Processor by name
+      operationId: update-post-ldif-export-task-processor
+      parameters:
+      - description: Name of the Post LDIF Export Task Processor
+        explode: false
+        in: path
+        name: post-ldif-export-task-processor-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Post LDIF Export Task Processor
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-response'
+                - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Post LDIF Export Task Processor does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - post-ldif-export-task-processor
+components:
+  schemas:
+    add-upload-to-s3-post-ldif-export-task-processor-request:
+      allOf:
+      - type: object
+        properties:
+          processorName:
+            type: string
+            description: >-
+                Name of the new Post LDIF Export Task Processor
+      - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-shared'
+      required:
+      - processorName
+    upload-to-s3-post-ldif-export-task-processor-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Post LDIF Export Task Processor
+      - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    upload-to-s3-post-ldif-export-task-processor-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumupload-to-s3-post-ldif-export-task-processorSchemaUrn'
+        awsExternalServer:
+          type: string
+          description: >-
+              The external server with information to use when interacting with the AWS S3 service.
+        s3BucketName:
+          type: string
+          description: >-
+              The name of the S3 bucket into which LDIF files should be copied.
+        targetThroughputInMegabitsPerSecond:
+          type: integer
+          description: >-
+              The target throughput to attempt to achieve for data transfers to or from S3, in megabits per second.
+        maximumConcurrentTransferConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections that may be used when transferring data to or from S3.
+        maximumFileCountToRetain:
+          type: integer
+          description: >-
+              The maximum number of existing files matching the file retention pattern that should be retained in the S3 bucket after successfully uploading a newly exported file.
+        maximumFileAgeToRetain:
+          type: string
+          description: >-
+              The maximum length of time to retain files matching the file retention pattern that should be retained in the S3 bucket after successfully uploading a newly exported file.
+        fileRetentionPattern:
+          type: string
+          description: >-
+              A regular expression pattern that will be used to identify which files are candidates for automatic removal based on the maximum-file-count-to-retain and maximum-file-age-to-retain properties. By default, all files in the bucket will be eligible for removal by retention processing.
+        description:
+          type: string
+          description: >-
+              A description for this Post LDIF Export Task Processor
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Post LDIF Export Task Processor is enabled for use.
+      required:
+      - schemas
+      - awsExternalServer
+      - s3BucketName
+      - enabled
+    Enumupload-to-s3-post-ldif-export-task-processorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:post-ldif-export-task-processor:upload-to-s3"
+    add-third-party-post-ldif-export-task-processor-request:
+      allOf:
+      - type: object
+        properties:
+          processorName:
+            type: string
+            description: >-
+                Name of the new Post LDIF Export Task Processor
+      - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-shared'
+      required:
+      - processorName
+    third-party-post-ldif-export-task-processor-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Post LDIF Export Task Processor
+      - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    third-party-post-ldif-export-task-processor-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-post-ldif-export-task-processorSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Post LDIF Export Task Processor.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Post LDIF Export Task Processor. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Post LDIF Export Task Processor
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Post LDIF Export Task Processor is enabled for use.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-party-post-ldif-export-task-processorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:post-ldif-export-task-processor:third-party"
+    post-ldif-export-task-processorListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/upload-to-s3-post-ldif-export-task-processor-response'
+            - $ref: '#/components/schemas/third-party-post-ldif-export-task-processor-response'
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

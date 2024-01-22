@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ValidationName** | **string** | Name of the new Token Claim Validation | 
 **Schemas** | [**[]EnumstringTokenClaimValidationSchemaUrn**](EnumstringTokenClaimValidationSchemaUrn.md) |  | 
 **AnyRequiredValue** | **[]string** | The set of values that the claim may have to be considered valid. | 
 **Description** | Pointer to **string** | A description for this Token Claim Validation | [optional] 
 **ClaimName** | **string** | The name of the claim to be validated. | 
+**ValidationName** | **string** | Name of the new Token Claim Validation | 
 
 ## Methods
 
 ### NewAddStringTokenClaimValidationRequest
 
-`func NewAddStringTokenClaimValidationRequest(validationName string, schemas []EnumstringTokenClaimValidationSchemaUrn, anyRequiredValue []string, claimName string, ) *AddStringTokenClaimValidationRequest`
+`func NewAddStringTokenClaimValidationRequest(schemas []EnumstringTokenClaimValidationSchemaUrn, anyRequiredValue []string, claimName string, validationName string, ) *AddStringTokenClaimValidationRequest`
 
 NewAddStringTokenClaimValidationRequest instantiates a new AddStringTokenClaimValidationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddStringTokenClaimValidationRequestWithDefaults instantiates a new AddStringTokenClaimValidationRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetValidationName
-
-`func (o *AddStringTokenClaimValidationRequest) GetValidationName() string`
-
-GetValidationName returns the ValidationName field if non-nil, zero value otherwise.
-
-### GetValidationNameOk
-
-`func (o *AddStringTokenClaimValidationRequest) GetValidationNameOk() (*string, bool)`
-
-GetValidationNameOk returns a tuple with the ValidationName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValidationName
-
-`func (o *AddStringTokenClaimValidationRequest) SetValidationName(v string)`
-
-SetValidationName sets ValidationName field to given value.
-
 
 ### GetSchemas
 
@@ -132,6 +112,26 @@ and a boolean to check if the value has been set.
 `func (o *AddStringTokenClaimValidationRequest) SetClaimName(v string)`
 
 SetClaimName sets ClaimName field to given value.
+
+
+### GetValidationName
+
+`func (o *AddStringTokenClaimValidationRequest) GetValidationName() string`
+
+GetValidationName returns the ValidationName field if non-nil, zero value otherwise.
+
+### GetValidationNameOk
+
+`func (o *AddStringTokenClaimValidationRequest) GetValidationNameOk() (*string, bool)`
+
+GetValidationNameOk returns a tuple with the ValidationName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidationName
+
+`func (o *AddStringTokenClaimValidationRequest) SetValidationName(v string)`
+
+SetValidationName sets ValidationName field to given value.
 
 
 

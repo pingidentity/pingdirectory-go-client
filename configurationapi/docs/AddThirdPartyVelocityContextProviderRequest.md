@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Velocity Context Provider | 
 **Schemas** | [**[]EnumthirdPartyVelocityContextProviderSchemaUrn**](EnumthirdPartyVelocityContextProviderSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Velocity Context Provider. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Velocity Context Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **ExcludedView** | Pointer to **[]string** | The name of a view for which this Velocity Context Provider will not contribute content. | [optional] 
 **HttpMethod** | Pointer to **[]string** | Specifies the set of HTTP methods handled by this Velocity Context Provider, which will perform actions necessary to fulfill the request before updating the context for the response. The values of this property are not case-sensitive. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content. | [optional] 
+**ProviderName** | **string** | Name of the new Velocity Context Provider | 
 
 ## Methods
 
 ### NewAddThirdPartyVelocityContextProviderRequest
 
-`func NewAddThirdPartyVelocityContextProviderRequest(providerName string, schemas []EnumthirdPartyVelocityContextProviderSchemaUrn, extensionClass string, ) *AddThirdPartyVelocityContextProviderRequest`
+`func NewAddThirdPartyVelocityContextProviderRequest(schemas []EnumthirdPartyVelocityContextProviderSchemaUrn, extensionClass string, providerName string, ) *AddThirdPartyVelocityContextProviderRequest`
 
 NewAddThirdPartyVelocityContextProviderRequest instantiates a new AddThirdPartyVelocityContextProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyVelocityContextProviderRequestWithDefaults instantiates a new AddThirdPartyVelocityContextProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddThirdPartyVelocityContextProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddThirdPartyVelocityContextProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddThirdPartyVelocityContextProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -268,6 +248,26 @@ SetResponseHeader sets ResponseHeader field to given value.
 `func (o *AddThirdPartyVelocityContextProviderRequest) HasResponseHeader() bool`
 
 HasResponseHeader returns a boolean if a field has been set.
+
+### GetProviderName
+
+`func (o *AddThirdPartyVelocityContextProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddThirdPartyVelocityContextProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddThirdPartyVelocityContextProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

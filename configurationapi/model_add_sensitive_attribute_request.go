@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSensitiveAttributeRequest{}
 
 // AddSensitiveAttributeRequest struct for AddSensitiveAttributeRequest
 type AddSensitiveAttributeRequest struct {
-	// Name of the new Sensitive Attribute
-	AttributeName string                            `json:"attributeName"`
-	Schemas       []EnumsensitiveAttributeSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumsensitiveAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Sensitive Attribute
 	Description *string `json:"description,omitempty"`
 	// The name(s) or OID(s) of the attribute types for attributes whose values may be considered sensitive.
@@ -33,16 +31,18 @@ type AddSensitiveAttributeRequest struct {
 	AllowInAdd                                   *EnumsensitiveAttributeAllowInAddProp             `json:"allowInAdd,omitempty"`
 	AllowInCompare                               *EnumsensitiveAttributeAllowInCompareProp         `json:"allowInCompare,omitempty"`
 	AllowInModify                                *EnumsensitiveAttributeAllowInModifyProp          `json:"allowInModify,omitempty"`
+	// Name of the new Sensitive Attribute
+	AttributeName string `json:"attributeName"`
 }
 
 // NewAddSensitiveAttributeRequest instantiates a new AddSensitiveAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSensitiveAttributeRequest(attributeName string, attributeType []string) *AddSensitiveAttributeRequest {
+func NewAddSensitiveAttributeRequest(attributeType []string, attributeName string) *AddSensitiveAttributeRequest {
 	this := AddSensitiveAttributeRequest{}
-	this.AttributeName = attributeName
 	this.AttributeType = attributeType
+	this.AttributeName = attributeName
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewAddSensitiveAttributeRequest(attributeName string, attributeType []strin
 func NewAddSensitiveAttributeRequestWithDefaults() *AddSensitiveAttributeRequest {
 	this := AddSensitiveAttributeRequest{}
 	return &this
-}
-
-// GetAttributeName returns the AttributeName field value
-func (o *AddSensitiveAttributeRequest) GetAttributeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AttributeName
-}
-
-// GetAttributeNameOk returns a tuple with the AttributeName field value
-// and a boolean to check if the value has been set.
-func (o *AddSensitiveAttributeRequest) GetAttributeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeName, true
-}
-
-// SetAttributeName sets field value
-func (o *AddSensitiveAttributeRequest) SetAttributeName(v string) {
-	o.AttributeName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -358,6 +334,30 @@ func (o *AddSensitiveAttributeRequest) SetAllowInModify(v EnumsensitiveAttribute
 	o.AllowInModify = &v
 }
 
+// GetAttributeName returns the AttributeName field value
+func (o *AddSensitiveAttributeRequest) GetAttributeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AttributeName
+}
+
+// GetAttributeNameOk returns a tuple with the AttributeName field value
+// and a boolean to check if the value has been set.
+func (o *AddSensitiveAttributeRequest) GetAttributeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeName, true
+}
+
+// SetAttributeName sets field value
+func (o *AddSensitiveAttributeRequest) SetAttributeName(v string) {
+	o.AttributeName = v
+}
+
 func (o AddSensitiveAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -368,7 +368,6 @@ func (o AddSensitiveAttributeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSensitiveAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["attributeName"] = o.AttributeName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -394,6 +393,7 @@ func (o AddSensitiveAttributeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AllowInModify) {
 		toSerialize["allowInModify"] = o.AllowInModify
 	}
+	toSerialize["attributeName"] = o.AttributeName
 	return toSerialize, nil
 }
 

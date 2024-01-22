@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LocalDbVlvIndexApiService LocalDbVlvIndexApi service
-type LocalDbVlvIndexApiService service
+// LocalDbVlvIndexAPIService LocalDbVlvIndexAPI service
+type LocalDbVlvIndexAPIService service
 
 type ApiAddLocalDbVlvIndexRequest struct {
 	ctx                       context.Context
-	ApiService                *LocalDbVlvIndexApiService
+	ApiService                *LocalDbVlvIndexAPIService
 	backendName               string
 	addLocalDbVlvIndexRequest *AddLocalDbVlvIndexRequest
 }
@@ -46,7 +46,7 @@ AddLocalDbVlvIndex Add a new Local DB VLV Index to the config
 	@param backendName Name of the Backend
 	@return ApiAddLocalDbVlvIndexRequest
 */
-func (a *LocalDbVlvIndexApiService) AddLocalDbVlvIndex(ctx context.Context, backendName string) ApiAddLocalDbVlvIndexRequest {
+func (a *LocalDbVlvIndexAPIService) AddLocalDbVlvIndex(ctx context.Context, backendName string) ApiAddLocalDbVlvIndexRequest {
 	return ApiAddLocalDbVlvIndexRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -57,7 +57,7 @@ func (a *LocalDbVlvIndexApiService) AddLocalDbVlvIndex(ctx context.Context, back
 // Execute executes the request
 //
 //	@return LocalDbVlvIndexResponse
-func (a *LocalDbVlvIndexApiService) AddLocalDbVlvIndexExecute(r ApiAddLocalDbVlvIndexRequest) (*LocalDbVlvIndexResponse, *http.Response, error) {
+func (a *LocalDbVlvIndexAPIService) AddLocalDbVlvIndexExecute(r ApiAddLocalDbVlvIndexRequest) (*LocalDbVlvIndexResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *LocalDbVlvIndexApiService) AddLocalDbVlvIndexExecute(r ApiAddLocalDbVlv
 		localVarReturnValue *LocalDbVlvIndexResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexApiService.AddLocalDbVlvIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexAPIService.AddLocalDbVlvIndex")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *LocalDbVlvIndexApiService) AddLocalDbVlvIndexExecute(r ApiAddLocalDbVlv
 
 type ApiDeleteLocalDbVlvIndexRequest struct {
 	ctx                 context.Context
-	ApiService          *LocalDbVlvIndexApiService
+	ApiService          *LocalDbVlvIndexAPIService
 	localDbVlvIndexName string
 	backendName         string
 }
@@ -155,7 +155,7 @@ DeleteLocalDbVlvIndex Delete a Local DB VLV Index
 	@param backendName Name of the Backend
 	@return ApiDeleteLocalDbVlvIndexRequest
 */
-func (a *LocalDbVlvIndexApiService) DeleteLocalDbVlvIndex(ctx context.Context, localDbVlvIndexName string, backendName string) ApiDeleteLocalDbVlvIndexRequest {
+func (a *LocalDbVlvIndexAPIService) DeleteLocalDbVlvIndex(ctx context.Context, localDbVlvIndexName string, backendName string) ApiDeleteLocalDbVlvIndexRequest {
 	return ApiDeleteLocalDbVlvIndexRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -165,14 +165,14 @@ func (a *LocalDbVlvIndexApiService) DeleteLocalDbVlvIndex(ctx context.Context, l
 }
 
 // Execute executes the request
-func (a *LocalDbVlvIndexApiService) DeleteLocalDbVlvIndexExecute(r ApiDeleteLocalDbVlvIndexRequest) (*http.Response, error) {
+func (a *LocalDbVlvIndexAPIService) DeleteLocalDbVlvIndexExecute(r ApiDeleteLocalDbVlvIndexRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexApiService.DeleteLocalDbVlvIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexAPIService.DeleteLocalDbVlvIndex")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *LocalDbVlvIndexApiService) DeleteLocalDbVlvIndexExecute(r ApiDeleteLoca
 
 type ApiGetLocalDbVlvIndexRequest struct {
 	ctx                 context.Context
-	ApiService          *LocalDbVlvIndexApiService
+	ApiService          *LocalDbVlvIndexAPIService
 	localDbVlvIndexName string
 	backendName         string
 }
@@ -249,7 +249,7 @@ GetLocalDbVlvIndex Returns a single Local DB VLV Index
 	@param backendName Name of the Backend
 	@return ApiGetLocalDbVlvIndexRequest
 */
-func (a *LocalDbVlvIndexApiService) GetLocalDbVlvIndex(ctx context.Context, localDbVlvIndexName string, backendName string) ApiGetLocalDbVlvIndexRequest {
+func (a *LocalDbVlvIndexAPIService) GetLocalDbVlvIndex(ctx context.Context, localDbVlvIndexName string, backendName string) ApiGetLocalDbVlvIndexRequest {
 	return ApiGetLocalDbVlvIndexRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -261,7 +261,7 @@ func (a *LocalDbVlvIndexApiService) GetLocalDbVlvIndex(ctx context.Context, loca
 // Execute executes the request
 //
 //	@return LocalDbVlvIndexResponse
-func (a *LocalDbVlvIndexApiService) GetLocalDbVlvIndexExecute(r ApiGetLocalDbVlvIndexRequest) (*LocalDbVlvIndexResponse, *http.Response, error) {
+func (a *LocalDbVlvIndexAPIService) GetLocalDbVlvIndexExecute(r ApiGetLocalDbVlvIndexRequest) (*LocalDbVlvIndexResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *LocalDbVlvIndexApiService) GetLocalDbVlvIndexExecute(r ApiGetLocalDbVlv
 		localVarReturnValue *LocalDbVlvIndexResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexApiService.GetLocalDbVlvIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexAPIService.GetLocalDbVlvIndex")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *LocalDbVlvIndexApiService) GetLocalDbVlvIndexExecute(r ApiGetLocalDbVlv
 
 type ApiListLocalDbVlvIndexesRequest struct {
 	ctx         context.Context
-	ApiService  *LocalDbVlvIndexApiService
+	ApiService  *LocalDbVlvIndexAPIService
 	backendName string
 	filter      *string
 }
@@ -360,7 +360,7 @@ ListLocalDbVlvIndexes Returns a list of all Local DB VLV Index objects
 	@param backendName Name of the Backend
 	@return ApiListLocalDbVlvIndexesRequest
 */
-func (a *LocalDbVlvIndexApiService) ListLocalDbVlvIndexes(ctx context.Context, backendName string) ApiListLocalDbVlvIndexesRequest {
+func (a *LocalDbVlvIndexAPIService) ListLocalDbVlvIndexes(ctx context.Context, backendName string) ApiListLocalDbVlvIndexesRequest {
 	return ApiListLocalDbVlvIndexesRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -371,7 +371,7 @@ func (a *LocalDbVlvIndexApiService) ListLocalDbVlvIndexes(ctx context.Context, b
 // Execute executes the request
 //
 //	@return LocalDbVlvIndexListResponse
-func (a *LocalDbVlvIndexApiService) ListLocalDbVlvIndexesExecute(r ApiListLocalDbVlvIndexesRequest) (*LocalDbVlvIndexListResponse, *http.Response, error) {
+func (a *LocalDbVlvIndexAPIService) ListLocalDbVlvIndexesExecute(r ApiListLocalDbVlvIndexesRequest) (*LocalDbVlvIndexListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *LocalDbVlvIndexApiService) ListLocalDbVlvIndexesExecute(r ApiListLocalD
 		localVarReturnValue *LocalDbVlvIndexListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexApiService.ListLocalDbVlvIndexes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexAPIService.ListLocalDbVlvIndexes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *LocalDbVlvIndexApiService) ListLocalDbVlvIndexesExecute(r ApiListLocalD
 
 type ApiUpdateLocalDbVlvIndexRequest struct {
 	ctx                 context.Context
-	ApiService          *LocalDbVlvIndexApiService
+	ApiService          *LocalDbVlvIndexAPIService
 	localDbVlvIndexName string
 	backendName         string
 	updateRequest       *UpdateRequest
@@ -474,7 +474,7 @@ UpdateLocalDbVlvIndex Update an existing Local DB VLV Index by name
 	@param backendName Name of the Backend
 	@return ApiUpdateLocalDbVlvIndexRequest
 */
-func (a *LocalDbVlvIndexApiService) UpdateLocalDbVlvIndex(ctx context.Context, localDbVlvIndexName string, backendName string) ApiUpdateLocalDbVlvIndexRequest {
+func (a *LocalDbVlvIndexAPIService) UpdateLocalDbVlvIndex(ctx context.Context, localDbVlvIndexName string, backendName string) ApiUpdateLocalDbVlvIndexRequest {
 	return ApiUpdateLocalDbVlvIndexRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -486,7 +486,7 @@ func (a *LocalDbVlvIndexApiService) UpdateLocalDbVlvIndex(ctx context.Context, l
 // Execute executes the request
 //
 //	@return LocalDbVlvIndexResponse
-func (a *LocalDbVlvIndexApiService) UpdateLocalDbVlvIndexExecute(r ApiUpdateLocalDbVlvIndexRequest) (*LocalDbVlvIndexResponse, *http.Response, error) {
+func (a *LocalDbVlvIndexAPIService) UpdateLocalDbVlvIndexExecute(r ApiUpdateLocalDbVlvIndexRequest) (*LocalDbVlvIndexResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *LocalDbVlvIndexApiService) UpdateLocalDbVlvIndexExecute(r ApiUpdateLoca
 		localVarReturnValue *LocalDbVlvIndexResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexApiService.UpdateLocalDbVlvIndex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbVlvIndexAPIService.UpdateLocalDbVlvIndex")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

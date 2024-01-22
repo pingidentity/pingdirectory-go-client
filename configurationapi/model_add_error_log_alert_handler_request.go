@@ -19,9 +19,7 @@ var _ MappedNullable = &AddErrorLogAlertHandlerRequest{}
 
 // AddErrorLogAlertHandlerRequest struct for AddErrorLogAlertHandlerRequest
 type AddErrorLogAlertHandlerRequest struct {
-	// Name of the new Alert Handler
-	HandlerName string                              `json:"handlerName"`
-	Schemas     []EnumerrorLogAlertHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumerrorLogAlertHandlerSchemaUrn `json:"schemas"`
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Alert Handler is enabled.
@@ -31,17 +29,19 @@ type AddErrorLogAlertHandlerRequest struct {
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
 	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
 	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
+	// Name of the new Alert Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddErrorLogAlertHandlerRequest instantiates a new AddErrorLogAlertHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddErrorLogAlertHandlerRequest(handlerName string, schemas []EnumerrorLogAlertHandlerSchemaUrn, enabled bool) *AddErrorLogAlertHandlerRequest {
+func NewAddErrorLogAlertHandlerRequest(schemas []EnumerrorLogAlertHandlerSchemaUrn, enabled bool, handlerName string) *AddErrorLogAlertHandlerRequest {
 	this := AddErrorLogAlertHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddErrorLogAlertHandlerRequest(handlerName string, schemas []EnumerrorLo
 func NewAddErrorLogAlertHandlerRequestWithDefaults() *AddErrorLogAlertHandlerRequest {
 	this := AddErrorLogAlertHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddErrorLogAlertHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddErrorLogAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddErrorLogAlertHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -285,6 +261,30 @@ func (o *AddErrorLogAlertHandlerRequest) SetDisabledAlertType(v []EnumalertHandl
 	o.DisabledAlertType = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddErrorLogAlertHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddErrorLogAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddErrorLogAlertHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddErrorLogAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -295,7 +295,6 @@ func (o AddErrorLogAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddErrorLogAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -313,6 +312,7 @@ func (o AddErrorLogAlertHandlerRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.DisabledAlertType) {
 		toSerialize["disabledAlertType"] = o.DisabledAlertType
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

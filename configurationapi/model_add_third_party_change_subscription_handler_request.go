@@ -19,9 +19,7 @@ var _ MappedNullable = &AddThirdPartyChangeSubscriptionHandlerRequest{}
 
 // AddThirdPartyChangeSubscriptionHandlerRequest struct for AddThirdPartyChangeSubscriptionHandlerRequest
 type AddThirdPartyChangeSubscriptionHandlerRequest struct {
-	// Name of the new Change Subscription Handler
-	HandlerName string                                             `json:"handlerName"`
-	Schemas     []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Change Subscription Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
@@ -32,18 +30,20 @@ type AddThirdPartyChangeSubscriptionHandlerRequest struct {
 	Enabled bool `json:"enabled"`
 	// The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
 	ChangeSubscription []string `json:"changeSubscription,omitempty"`
+	// Name of the new Change Subscription Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddThirdPartyChangeSubscriptionHandlerRequest instantiates a new AddThirdPartyChangeSubscriptionHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn, extensionClass string, enabled bool) *AddThirdPartyChangeSubscriptionHandlerRequest {
+func NewAddThirdPartyChangeSubscriptionHandlerRequest(schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn, extensionClass string, enabled bool, handlerName string) *AddThirdPartyChangeSubscriptionHandlerRequest {
 	this := AddThirdPartyChangeSubscriptionHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddThirdPartyChangeSubscriptionHandlerRequest(handlerName string, schema
 func NewAddThirdPartyChangeSubscriptionHandlerRequestWithDefaults() *AddThirdPartyChangeSubscriptionHandlerRequest {
 	this := AddThirdPartyChangeSubscriptionHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddThirdPartyChangeSubscriptionHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -247,6 +223,30 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) SetChangeSubscription(v 
 	o.ChangeSubscription = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddThirdPartyChangeSubscriptionHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddThirdPartyChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -257,7 +257,6 @@ func (o AddThirdPartyChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte, er
 
 func (o AddThirdPartyChangeSubscriptionHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -270,6 +269,7 @@ func (o AddThirdPartyChangeSubscriptionHandlerRequest) ToMap() (map[string]inter
 	if !IsNil(o.ChangeSubscription) {
 		toSerialize["changeSubscription"] = o.ChangeSubscription
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

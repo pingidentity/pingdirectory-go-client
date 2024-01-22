@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Velocity Context Provider | 
 **Schemas** | [**[]EnumvelocityToolsVelocityContextProviderSchemaUrn**](EnumvelocityToolsVelocityContextProviderSchemaUrn.md) |  | 
 **RequestTool** | Pointer to **[]string** | The fully-qualified name of a Velocity Tool class that will be initialized for each request. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root. | [optional] 
 **SessionTool** | Pointer to **[]string** | The fully-qualified name of a Velocity Tool class that will be initialized for each session. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root. | [optional] 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Velocity Context Provider | 
 
 ## Methods
 
 ### NewVelocityToolsVelocityContextProviderResponse
 
-`func NewVelocityToolsVelocityContextProviderResponse(id string, schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn, ) *VelocityToolsVelocityContextProviderResponse`
+`func NewVelocityToolsVelocityContextProviderResponse(schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn, id string, ) *VelocityToolsVelocityContextProviderResponse`
 
 NewVelocityToolsVelocityContextProviderResponse instantiates a new VelocityToolsVelocityContextProviderResponse object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewVelocityToolsVelocityContextProviderResponseWithDefaults instantiates a new VelocityToolsVelocityContextProviderResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *VelocityToolsVelocityContextProviderResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *VelocityToolsVelocityContextProviderResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *VelocityToolsVelocityContextProviderResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -325,6 +305,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *VelocityToolsVelocityContextProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *VelocityToolsVelocityContextProviderResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *VelocityToolsVelocityContextProviderResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *VelocityToolsVelocityContextProviderResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

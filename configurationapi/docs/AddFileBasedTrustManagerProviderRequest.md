@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Trust Manager Provider | 
 **Schemas** | [**[]EnumfileBasedTrustManagerProviderSchemaUrn**](EnumfileBasedTrustManagerProviderSchemaUrn.md) |  | 
 **TrustStoreFile** | **string** | Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root. | 
 **TrustStoreType** | Pointer to **string** | Specifies the format for the data in the trust store file. | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **TrustStorePinPassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Trust Manager Provider. | [optional] 
 **Enabled** | **bool** | Indicate whether the Trust Manager Provider is enabled for use. | 
 **IncludeJVMDefaultIssuers** | Pointer to **bool** | Indicates whether certificates issued by an authority included in the JVM&#39;s set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider. | [optional] 
+**ProviderName** | **string** | Name of the new Trust Manager Provider | 
 
 ## Methods
 
 ### NewAddFileBasedTrustManagerProviderRequest
 
-`func NewAddFileBasedTrustManagerProviderRequest(providerName string, schemas []EnumfileBasedTrustManagerProviderSchemaUrn, trustStoreFile string, enabled bool, ) *AddFileBasedTrustManagerProviderRequest`
+`func NewAddFileBasedTrustManagerProviderRequest(schemas []EnumfileBasedTrustManagerProviderSchemaUrn, trustStoreFile string, enabled bool, providerName string, ) *AddFileBasedTrustManagerProviderRequest`
 
 NewAddFileBasedTrustManagerProviderRequest instantiates a new AddFileBasedTrustManagerProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddFileBasedTrustManagerProviderRequestWithDefaults instantiates a new AddFileBasedTrustManagerProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddFileBasedTrustManagerProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddFileBasedTrustManagerProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddFileBasedTrustManagerProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -237,6 +217,26 @@ SetIncludeJVMDefaultIssuers sets IncludeJVMDefaultIssuers field to given value.
 `func (o *AddFileBasedTrustManagerProviderRequest) HasIncludeJVMDefaultIssuers() bool`
 
 HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
+
+### GetProviderName
+
+`func (o *AddFileBasedTrustManagerProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddFileBasedTrustManagerProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddFileBasedTrustManagerProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -17,32 +17,34 @@ import (
 
 // AddPluginRequest - struct for AddPluginRequest
 type AddPluginRequest struct {
-	AddAttributeMapperPluginRequest                                  *AddAttributeMapperPluginRequest
-	AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest
-	AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest     *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest
-	AddCleanUpInactivePingfederatePersistentSessionsPluginRequest    *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest
-	AddCoalesceModificationsPluginRequest                            *AddCoalesceModificationsPluginRequest
-	AddComposedAttributePluginRequest                                *AddComposedAttributePluginRequest
-	AddDelayPluginRequest                                            *AddDelayPluginRequest
-	AddDnMapperPluginRequest                                         *AddDnMapperPluginRequest
-	AddGroovyScriptedPluginRequest                                   *AddGroovyScriptedPluginRequest
-	AddInternalSearchRatePluginRequest                               *AddInternalSearchRatePluginRequest
-	AddModifiablePasswordPolicyStatePluginRequest                    *AddModifiablePasswordPolicyStatePluginRequest
-	AddPassThroughAuthenticationPluginRequest                        *AddPassThroughAuthenticationPluginRequest
-	AddPeriodicGcPluginRequest                                       *AddPeriodicGcPluginRequest
-	AddPeriodicStatsLoggerPluginRequest                              *AddPeriodicStatsLoggerPluginRequest
-	AddPingOnePassThroughAuthenticationPluginRequest                 *AddPingOnePassThroughAuthenticationPluginRequest
-	AddPluggablePassThroughAuthenticationPluginRequest               *AddPluggablePassThroughAuthenticationPluginRequest
-	AddPurgeExpiredDataPluginRequest                                 *AddPurgeExpiredDataPluginRequest
-	AddReferentialIntegrityPluginRequest                             *AddReferentialIntegrityPluginRequest
-	AddReferralOnUpdatePluginRequest                                 *AddReferralOnUpdatePluginRequest
-	AddSearchShutdownPluginRequest                                   *AddSearchShutdownPluginRequest
-	AddSevenBitCleanPluginRequest                                    *AddSevenBitCleanPluginRequest
-	AddSimpleToExternalBindPluginRequest                             *AddSimpleToExternalBindPluginRequest
-	AddSnmpSubagentPluginRequest                                     *AddSnmpSubagentPluginRequest
-	AddSubOperationTimingPluginRequest                               *AddSubOperationTimingPluginRequest
-	AddThirdPartyPluginRequest                                       *AddThirdPartyPluginRequest
-	AddUniqueAttributePluginRequest                                  *AddUniqueAttributePluginRequest
+	AddAttributeMapperPluginRequest                                      *AddAttributeMapperPluginRequest
+	AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest     *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest
+	AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest         *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest
+	AddCleanUpInactivePingfederatePersistentSessionsPluginRequest        *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest
+	AddCoalesceModificationsPluginRequest                                *AddCoalesceModificationsPluginRequest
+	AddComposedAttributePluginRequest                                    *AddComposedAttributePluginRequest
+	AddDelayPluginRequest                                                *AddDelayPluginRequest
+	AddDnMapperPluginRequest                                             *AddDnMapperPluginRequest
+	AddGroovyScriptedPluginRequest                                       *AddGroovyScriptedPluginRequest
+	AddInternalSearchRatePluginRequest                                   *AddInternalSearchRatePluginRequest
+	AddInvertedStaticGroupReferentialIntegrityPluginRequest              *AddInvertedStaticGroupReferentialIntegrityPluginRequest
+	AddModifiablePasswordPolicyStatePluginRequest                        *AddModifiablePasswordPolicyStatePluginRequest
+	AddPassThroughAuthenticationPluginRequest                            *AddPassThroughAuthenticationPluginRequest
+	AddPeriodicGcPluginRequest                                           *AddPeriodicGcPluginRequest
+	AddPeriodicStatsLoggerPluginRequest                                  *AddPeriodicStatsLoggerPluginRequest
+	AddPingOnePassThroughAuthenticationPluginRequest                     *AddPingOnePassThroughAuthenticationPluginRequest
+	AddPluggablePassThroughAuthenticationPluginRequest                   *AddPluggablePassThroughAuthenticationPluginRequest
+	AddPurgeExpiredDataPluginRequest                                     *AddPurgeExpiredDataPluginRequest
+	AddReferentialIntegrityPluginRequest                                 *AddReferentialIntegrityPluginRequest
+	AddReferralOnUpdatePluginRequest                                     *AddReferralOnUpdatePluginRequest
+	AddSearchShutdownPluginRequest                                       *AddSearchShutdownPluginRequest
+	AddSevenBitCleanPluginRequest                                        *AddSevenBitCleanPluginRequest
+	AddSimpleToExternalBindPluginRequest                                 *AddSimpleToExternalBindPluginRequest
+	AddSnmpSubagentPluginRequest                                         *AddSnmpSubagentPluginRequest
+	AddSubOperationTimingPluginRequest                                   *AddSubOperationTimingPluginRequest
+	AddThirdPartyPluginRequest                                           *AddThirdPartyPluginRequest
+	AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest *AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest
+	AddUniqueAttributePluginRequest                                      *AddUniqueAttributePluginRequest
 }
 
 // AddAttributeMapperPluginRequestAsAddPluginRequest is a convenience function that returns AddAttributeMapperPluginRequest wrapped in AddPluginRequest
@@ -112,6 +114,13 @@ func AddGroovyScriptedPluginRequestAsAddPluginRequest(v *AddGroovyScriptedPlugin
 func AddInternalSearchRatePluginRequestAsAddPluginRequest(v *AddInternalSearchRatePluginRequest) AddPluginRequest {
 	return AddPluginRequest{
 		AddInternalSearchRatePluginRequest: v,
+	}
+}
+
+// AddInvertedStaticGroupReferentialIntegrityPluginRequestAsAddPluginRequest is a convenience function that returns AddInvertedStaticGroupReferentialIntegrityPluginRequest wrapped in AddPluginRequest
+func AddInvertedStaticGroupReferentialIntegrityPluginRequestAsAddPluginRequest(v *AddInvertedStaticGroupReferentialIntegrityPluginRequest) AddPluginRequest {
+	return AddPluginRequest{
+		AddInvertedStaticGroupReferentialIntegrityPluginRequest: v,
 	}
 }
 
@@ -217,6 +226,13 @@ func AddSubOperationTimingPluginRequestAsAddPluginRequest(v *AddSubOperationTimi
 func AddThirdPartyPluginRequestAsAddPluginRequest(v *AddThirdPartyPluginRequest) AddPluginRequest {
 	return AddPluginRequest{
 		AddThirdPartyPluginRequest: v,
+	}
+}
+
+// AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequestAsAddPluginRequest is a convenience function that returns AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest wrapped in AddPluginRequest
+func AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequestAsAddPluginRequest(v *AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest) AddPluginRequest {
+	return AddPluginRequest{
+		AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest: v,
 	}
 }
 
@@ -359,6 +375,19 @@ func (dst *AddPluginRequest) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddInternalSearchRatePluginRequest = nil
+	}
+
+	// try to unmarshal data into AddInvertedStaticGroupReferentialIntegrityPluginRequest
+	err = newStrictDecoder(data).Decode(&dst.AddInvertedStaticGroupReferentialIntegrityPluginRequest)
+	if err == nil {
+		jsonAddInvertedStaticGroupReferentialIntegrityPluginRequest, _ := json.Marshal(dst.AddInvertedStaticGroupReferentialIntegrityPluginRequest)
+		if string(jsonAddInvertedStaticGroupReferentialIntegrityPluginRequest) == "{}" { // empty struct
+			dst.AddInvertedStaticGroupReferentialIntegrityPluginRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddInvertedStaticGroupReferentialIntegrityPluginRequest = nil
 	}
 
 	// try to unmarshal data into AddModifiablePasswordPolicyStatePluginRequest
@@ -556,6 +585,19 @@ func (dst *AddPluginRequest) UnmarshalJSON(data []byte) error {
 		dst.AddThirdPartyPluginRequest = nil
 	}
 
+	// try to unmarshal data into AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest
+	err = newStrictDecoder(data).Decode(&dst.AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest)
+	if err == nil {
+		jsonAddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest, _ := json.Marshal(dst.AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest)
+		if string(jsonAddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest) == "{}" { // empty struct
+			dst.AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest = nil
+	}
+
 	// try to unmarshal data into AddUniqueAttributePluginRequest
 	err = newStrictDecoder(data).Decode(&dst.AddUniqueAttributePluginRequest)
 	if err == nil {
@@ -581,6 +623,7 @@ func (dst *AddPluginRequest) UnmarshalJSON(data []byte) error {
 		dst.AddDnMapperPluginRequest = nil
 		dst.AddGroovyScriptedPluginRequest = nil
 		dst.AddInternalSearchRatePluginRequest = nil
+		dst.AddInvertedStaticGroupReferentialIntegrityPluginRequest = nil
 		dst.AddModifiablePasswordPolicyStatePluginRequest = nil
 		dst.AddPassThroughAuthenticationPluginRequest = nil
 		dst.AddPeriodicGcPluginRequest = nil
@@ -596,6 +639,7 @@ func (dst *AddPluginRequest) UnmarshalJSON(data []byte) error {
 		dst.AddSnmpSubagentPluginRequest = nil
 		dst.AddSubOperationTimingPluginRequest = nil
 		dst.AddThirdPartyPluginRequest = nil
+		dst.AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest = nil
 		dst.AddUniqueAttributePluginRequest = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddPluginRequest)")
@@ -646,6 +690,10 @@ func (src AddPluginRequest) MarshalJSON() ([]byte, error) {
 
 	if src.AddInternalSearchRatePluginRequest != nil {
 		return json.Marshal(&src.AddInternalSearchRatePluginRequest)
+	}
+
+	if src.AddInvertedStaticGroupReferentialIntegrityPluginRequest != nil {
+		return json.Marshal(&src.AddInvertedStaticGroupReferentialIntegrityPluginRequest)
 	}
 
 	if src.AddModifiablePasswordPolicyStatePluginRequest != nil {
@@ -708,6 +756,10 @@ func (src AddPluginRequest) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AddThirdPartyPluginRequest)
 	}
 
+	if src.AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest != nil {
+		return json.Marshal(&src.AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest)
+	}
+
 	if src.AddUniqueAttributePluginRequest != nil {
 		return json.Marshal(&src.AddUniqueAttributePluginRequest)
 	}
@@ -758,6 +810,10 @@ func (obj *AddPluginRequest) GetActualInstance() interface{} {
 
 	if obj.AddInternalSearchRatePluginRequest != nil {
 		return obj.AddInternalSearchRatePluginRequest
+	}
+
+	if obj.AddInvertedStaticGroupReferentialIntegrityPluginRequest != nil {
+		return obj.AddInvertedStaticGroupReferentialIntegrityPluginRequest
 	}
 
 	if obj.AddModifiablePasswordPolicyStatePluginRequest != nil {
@@ -818,6 +874,10 @@ func (obj *AddPluginRequest) GetActualInstance() interface{} {
 
 	if obj.AddThirdPartyPluginRequest != nil {
 		return obj.AddThirdPartyPluginRequest
+	}
+
+	if obj.AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest != nil {
+		return obj.AddTraditionalStaticGroupSupportForInvertedStaticGroupsPluginRequest
 	}
 
 	if obj.AddUniqueAttributePluginRequest != nil {

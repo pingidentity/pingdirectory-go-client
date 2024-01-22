@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Topology Admin User | 
 **Schemas** | Pointer to [**[]EnumtopologyAdminUserSchemaUrn**](EnumtopologyAdminUserSchemaUrn.md) |  | [optional] 
 **AlternateBindDN** | Pointer to **[]string** | Specifies one or more alternate DNs that can be used to bind to the server as this User. | [optional] 
 **Description** | Pointer to **string** | A description for this User. | [optional] 
@@ -41,12 +40,13 @@ Name | Type | Description | Notes
 **MayProxyAsURL** | Pointer to **[]string** | This restricts the set of accounts that this User can proxy as to entries that are matched by the specified LDAP URL. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Topology Admin User | 
 
 ## Methods
 
 ### NewTopologyAdminUserResponse
 
-`func NewTopologyAdminUserResponse(id string, inheritDefaultRootPrivileges bool, searchResultEntryLimit int64, timeLimitSeconds int64, lookThroughEntryLimit int64, idleTimeLimitSeconds int64, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool, ) *TopologyAdminUserResponse`
+`func NewTopologyAdminUserResponse(inheritDefaultRootPrivileges bool, searchResultEntryLimit int64, timeLimitSeconds int64, lookThroughEntryLimit int64, idleTimeLimitSeconds int64, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool, id string, ) *TopologyAdminUserResponse`
 
 NewTopologyAdminUserResponse instantiates a new TopologyAdminUserResponse object
 This constructor will assign default values to properties that have it defined,
@@ -60,26 +60,6 @@ will change when the set of required properties is changed
 NewTopologyAdminUserResponseWithDefaults instantiates a new TopologyAdminUserResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *TopologyAdminUserResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *TopologyAdminUserResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *TopologyAdminUserResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -940,6 +920,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *TopologyAdminUserResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *TopologyAdminUserResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *TopologyAdminUserResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *TopologyAdminUserResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

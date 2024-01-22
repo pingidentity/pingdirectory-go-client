@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Delegated Admin Resource Rights | 
 **Schemas** | Pointer to [**[]EnumdelegatedAdminResourceRightsSchemaUrn**](EnumdelegatedAdminResourceRightsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Resource Rights | [optional] 
 **Enabled** | **bool** | Indicates whether these Delegated Admin Resource Rights are enabled. | 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **ResourcesInGroup** | Pointer to **[]string** | Specifies groups whose members can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-groups. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Delegated Admin Resource Rights | 
 
 ## Methods
 
 ### NewDelegatedAdminResourceRightsResponse
 
-`func NewDelegatedAdminResourceRightsResponse(id string, enabled bool, restResourceType string, ) *DelegatedAdminResourceRightsResponse`
+`func NewDelegatedAdminResourceRightsResponse(enabled bool, restResourceType string, id string, ) *DelegatedAdminResourceRightsResponse`
 
 NewDelegatedAdminResourceRightsResponse instantiates a new DelegatedAdminResourceRightsResponse object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewDelegatedAdminResourceRightsResponseWithDefaults instantiates a new DelegatedAdminResourceRightsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *DelegatedAdminResourceRightsResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *DelegatedAdminResourceRightsResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *DelegatedAdminResourceRightsResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -294,6 +274,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *DelegatedAdminResourceRightsResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *DelegatedAdminResourceRightsResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *DelegatedAdminResourceRightsResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *DelegatedAdminResourceRightsResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

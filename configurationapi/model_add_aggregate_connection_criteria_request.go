@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAggregateConnectionCriteriaRequest{}
 
 // AddAggregateConnectionCriteriaRequest struct for AddAggregateConnectionCriteriaRequest
 type AddAggregateConnectionCriteriaRequest struct {
-	// Name of the new Connection Criteria
-	CriteriaName string                                     `json:"criteriaName"`
-	Schemas      []EnumaggregateConnectionCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumaggregateConnectionCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a connection criteria object that must match the associated client connection in order to match the aggregate connection criteria. If one or more all-included connection criteria objects are provided, then a client connection must match all of them in order to match the aggregate connection criteria.
 	AllIncludedConnectionCriteria []string `json:"allIncludedConnectionCriteria,omitempty"`
 	// Specifies a connection criteria object that may match the associated client connection in order to match the aggregate connection criteria. If one or more any-included connection criteria objects are provided, then a client connection must match at least one of them in order to match the aggregate connection criteria.
@@ -32,16 +30,18 @@ type AddAggregateConnectionCriteriaRequest struct {
 	NoneIncludedConnectionCriteria []string `json:"noneIncludedConnectionCriteria,omitempty"`
 	// A description for this Connection Criteria
 	Description *string `json:"description,omitempty"`
+	// Name of the new Connection Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddAggregateConnectionCriteriaRequest instantiates a new AddAggregateConnectionCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAggregateConnectionCriteriaRequest(criteriaName string, schemas []EnumaggregateConnectionCriteriaSchemaUrn) *AddAggregateConnectionCriteriaRequest {
+func NewAddAggregateConnectionCriteriaRequest(schemas []EnumaggregateConnectionCriteriaSchemaUrn, criteriaName string) *AddAggregateConnectionCriteriaRequest {
 	this := AddAggregateConnectionCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddAggregateConnectionCriteriaRequest(criteriaName string, schemas []Enu
 func NewAddAggregateConnectionCriteriaRequestWithDefaults() *AddAggregateConnectionCriteriaRequest {
 	this := AddAggregateConnectionCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddAggregateConnectionCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddAggregateConnectionCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddAggregateConnectionCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -261,6 +237,30 @@ func (o *AddAggregateConnectionCriteriaRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddAggregateConnectionCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddAggregateConnectionCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddAggregateConnectionCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddAggregateConnectionCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -271,7 +271,6 @@ func (o AddAggregateConnectionCriteriaRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddAggregateConnectionCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllIncludedConnectionCriteria) {
 		toSerialize["allIncludedConnectionCriteria"] = o.AllIncludedConnectionCriteria
@@ -288,6 +287,7 @@ func (o AddAggregateConnectionCriteriaRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

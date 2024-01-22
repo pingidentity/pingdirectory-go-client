@@ -19,9 +19,7 @@ var _ MappedNullable = &AddCollectSupportDataRecurringTaskRequest{}
 
 // AddCollectSupportDataRecurringTaskRequest struct for AddCollectSupportDataRecurringTaskRequest
 type AddCollectSupportDataRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                                         `json:"taskName"`
-	Schemas  []EnumcollectSupportDataRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumcollectSupportDataRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which the support data archive files will be placed. The path must be a directory, and that directory must already exist. Relative paths will be interpreted as relative to the server root.
 	OutputDirectory string `json:"outputDirectory"`
 	// The path to a file that contains the passphrase to encrypt the contents of the support data archive.
@@ -71,17 +69,19 @@ type AddCollectSupportDataRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddCollectSupportDataRecurringTaskRequest instantiates a new AddCollectSupportDataRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCollectSupportDataRecurringTaskRequest(taskName string, schemas []EnumcollectSupportDataRecurringTaskSchemaUrn, outputDirectory string) *AddCollectSupportDataRecurringTaskRequest {
+func NewAddCollectSupportDataRecurringTaskRequest(schemas []EnumcollectSupportDataRecurringTaskSchemaUrn, outputDirectory string, taskName string) *AddCollectSupportDataRecurringTaskRequest {
 	this := AddCollectSupportDataRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
 	this.OutputDirectory = outputDirectory
+	this.TaskName = taskName
 	return &this
 }
 
@@ -91,30 +91,6 @@ func NewAddCollectSupportDataRecurringTaskRequest(taskName string, schemas []Enu
 func NewAddCollectSupportDataRecurringTaskRequestWithDefaults() *AddCollectSupportDataRecurringTaskRequest {
 	this := AddCollectSupportDataRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddCollectSupportDataRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -933,6 +909,30 @@ func (o *AddCollectSupportDataRecurringTaskRequest) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddCollectSupportDataRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddCollectSupportDataRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -943,7 +943,6 @@ func (o AddCollectSupportDataRecurringTaskRequest) MarshalJSON() ([]byte, error)
 
 func (o AddCollectSupportDataRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["outputDirectory"] = o.OutputDirectory
 	if !IsNil(o.EncryptionPassphraseFile) {
@@ -1018,6 +1017,7 @@ func (o AddCollectSupportDataRecurringTaskRequest) ToMap() (map[string]interface
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ListenerName** | **string** | Name of the new Log File Rotation Listener | 
 **Schemas** | [**[]EnumcopyLogFileRotationListenerSchemaUrn**](EnumcopyLogFileRotationListenerSchemaUrn.md) |  | 
 **CopyToDirectory** | **string** | The path to the directory to which log files should be copied. It must be different from the directory to which the log file is originally written, and administrators should ensure that the filesystem has sufficient space to hold files as they are copied. | 
 **CompressOnCopy** | Pointer to **bool** | Indicates whether the file should be gzip-compressed as it is copied into the destination directory. | [optional] 
 **Description** | Pointer to **string** | A description for this Log File Rotation Listener | [optional] 
 **Enabled** | **bool** | Indicates whether the Log File Rotation Listener is enabled for use. | 
+**ListenerName** | **string** | Name of the new Log File Rotation Listener | 
 
 ## Methods
 
 ### NewAddCopyLogFileRotationListenerRequest
 
-`func NewAddCopyLogFileRotationListenerRequest(listenerName string, schemas []EnumcopyLogFileRotationListenerSchemaUrn, copyToDirectory string, enabled bool, ) *AddCopyLogFileRotationListenerRequest`
+`func NewAddCopyLogFileRotationListenerRequest(schemas []EnumcopyLogFileRotationListenerSchemaUrn, copyToDirectory string, enabled bool, listenerName string, ) *AddCopyLogFileRotationListenerRequest`
 
 NewAddCopyLogFileRotationListenerRequest instantiates a new AddCopyLogFileRotationListenerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddCopyLogFileRotationListenerRequestWithDefaults instantiates a new AddCopyLogFileRotationListenerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetListenerName
-
-`func (o *AddCopyLogFileRotationListenerRequest) GetListenerName() string`
-
-GetListenerName returns the ListenerName field if non-nil, zero value otherwise.
-
-### GetListenerNameOk
-
-`func (o *AddCopyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool)`
-
-GetListenerNameOk returns a tuple with the ListenerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetListenerName
-
-`func (o *AddCopyLogFileRotationListenerRequest) SetListenerName(v string)`
-
-SetListenerName sets ListenerName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddCopyLogFileRotationListenerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetListenerName
+
+`func (o *AddCopyLogFileRotationListenerRequest) GetListenerName() string`
+
+GetListenerName returns the ListenerName field if non-nil, zero value otherwise.
+
+### GetListenerNameOk
+
+`func (o *AddCopyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool)`
+
+GetListenerNameOk returns a tuple with the ListenerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetListenerName
+
+`func (o *AddCopyLogFileRotationListenerRequest) SetListenerName(v string)`
+
+SetListenerName sets ListenerName field to given value.
 
 
 

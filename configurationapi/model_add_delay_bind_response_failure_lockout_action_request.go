@@ -19,9 +19,7 @@ var _ MappedNullable = &AddDelayBindResponseFailureLockoutActionRequest{}
 
 // AddDelayBindResponseFailureLockoutActionRequest struct for AddDelayBindResponseFailureLockoutActionRequest
 type AddDelayBindResponseFailureLockoutActionRequest struct {
-	// Name of the new Failure Lockout Action
-	ActionName string                                               `json:"actionName"`
-	Schemas    []EnumdelayBindResponseFailureLockoutActionSchemaUrn `json:"schemas"`
+	Schemas []EnumdelayBindResponseFailureLockoutActionSchemaUrn `json:"schemas"`
 	// The length of time to delay the bind response for accounts with too many failed authentication attempts.
 	Delay string `json:"delay"`
 	// Indicates whether to delay the response for authentication attempts even if that delay may block the thread being used to process the attempt.
@@ -30,17 +28,19 @@ type AddDelayBindResponseFailureLockoutActionRequest struct {
 	GenerateAccountStatusNotification *bool `json:"generateAccountStatusNotification,omitempty"`
 	// A description for this Failure Lockout Action
 	Description *string `json:"description,omitempty"`
+	// Name of the new Failure Lockout Action
+	ActionName string `json:"actionName"`
 }
 
 // NewAddDelayBindResponseFailureLockoutActionRequest instantiates a new AddDelayBindResponseFailureLockoutActionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDelayBindResponseFailureLockoutActionRequest(actionName string, schemas []EnumdelayBindResponseFailureLockoutActionSchemaUrn, delay string) *AddDelayBindResponseFailureLockoutActionRequest {
+func NewAddDelayBindResponseFailureLockoutActionRequest(schemas []EnumdelayBindResponseFailureLockoutActionSchemaUrn, delay string, actionName string) *AddDelayBindResponseFailureLockoutActionRequest {
 	this := AddDelayBindResponseFailureLockoutActionRequest{}
-	this.ActionName = actionName
 	this.Schemas = schemas
 	this.Delay = delay
+	this.ActionName = actionName
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewAddDelayBindResponseFailureLockoutActionRequest(actionName string, schem
 func NewAddDelayBindResponseFailureLockoutActionRequestWithDefaults() *AddDelayBindResponseFailureLockoutActionRequest {
 	this := AddDelayBindResponseFailureLockoutActionRequest{}
 	return &this
-}
-
-// GetActionName returns the ActionName field value
-func (o *AddDelayBindResponseFailureLockoutActionRequest) GetActionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ActionName
-}
-
-// GetActionNameOk returns a tuple with the ActionName field value
-// and a boolean to check if the value has been set.
-func (o *AddDelayBindResponseFailureLockoutActionRequest) GetActionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ActionName, true
-}
-
-// SetActionName sets field value
-func (o *AddDelayBindResponseFailureLockoutActionRequest) SetActionName(v string) {
-	o.ActionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -220,6 +196,30 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) SetDescription(v strin
 	o.Description = &v
 }
 
+// GetActionName returns the ActionName field value
+func (o *AddDelayBindResponseFailureLockoutActionRequest) GetActionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ActionName
+}
+
+// GetActionNameOk returns a tuple with the ActionName field value
+// and a boolean to check if the value has been set.
+func (o *AddDelayBindResponseFailureLockoutActionRequest) GetActionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ActionName, true
+}
+
+// SetActionName sets field value
+func (o *AddDelayBindResponseFailureLockoutActionRequest) SetActionName(v string) {
+	o.ActionName = v
+}
+
 func (o AddDelayBindResponseFailureLockoutActionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -230,7 +230,6 @@ func (o AddDelayBindResponseFailureLockoutActionRequest) MarshalJSON() ([]byte, 
 
 func (o AddDelayBindResponseFailureLockoutActionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["actionName"] = o.ActionName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["delay"] = o.Delay
 	if !IsNil(o.AllowBlockingDelay) {
@@ -242,6 +241,7 @@ func (o AddDelayBindResponseFailureLockoutActionRequest) ToMap() (map[string]int
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["actionName"] = o.ActionName
 	return toSerialize, nil
 }
 

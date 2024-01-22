@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 **Schemas** | [**[]EnumfileBasedCipherStreamProviderSchemaUrn**](EnumfileBasedCipherStreamProviderSchemaUrn.md) |  | 
 **PasswordFile** | **string** | The path to the file containing the password to use when generating ciphers. | 
 **WaitForPasswordFile** | Pointer to **bool** | Indicates whether the server should wait for the password file to become available if it does not exist. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **IterationCount** | Pointer to **int64** | The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
+**ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 
 ## Methods
 
 ### NewAddFileBasedCipherStreamProviderRequest
 
-`func NewAddFileBasedCipherStreamProviderRequest(providerName string, schemas []EnumfileBasedCipherStreamProviderSchemaUrn, passwordFile string, enabled bool, ) *AddFileBasedCipherStreamProviderRequest`
+`func NewAddFileBasedCipherStreamProviderRequest(schemas []EnumfileBasedCipherStreamProviderSchemaUrn, passwordFile string, enabled bool, providerName string, ) *AddFileBasedCipherStreamProviderRequest`
 
 NewAddFileBasedCipherStreamProviderRequest instantiates a new AddFileBasedCipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddFileBasedCipherStreamProviderRequestWithDefaults instantiates a new AddFileBasedCipherStreamProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddFileBasedCipherStreamProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddFileBasedCipherStreamProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddFileBasedCipherStreamProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -210,6 +190,26 @@ and a boolean to check if the value has been set.
 `func (o *AddFileBasedCipherStreamProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddFileBasedCipherStreamProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddFileBasedCipherStreamProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddFileBasedCipherStreamProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

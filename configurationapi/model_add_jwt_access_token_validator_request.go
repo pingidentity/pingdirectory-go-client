@@ -19,8 +19,6 @@ var _ MappedNullable = &AddJwtAccessTokenValidatorRequest{}
 
 // AddJwtAccessTokenValidatorRequest struct for AddJwtAccessTokenValidatorRequest
 type AddJwtAccessTokenValidatorRequest struct {
-	// Name of the new Access Token Validator
-	ValidatorName           string                                                `json:"validatorName"`
 	Schemas                 []EnumjwtAccessTokenValidatorSchemaUrn                `json:"schemas"`
 	AllowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm,omitempty"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
@@ -49,17 +47,19 @@ type AddJwtAccessTokenValidatorRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Access Token Validator is enabled for use in Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Access Token Validator
+	ValidatorName string `json:"validatorName"`
 }
 
 // NewAddJwtAccessTokenValidatorRequest instantiates a new AddJwtAccessTokenValidatorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddJwtAccessTokenValidatorRequest(validatorName string, schemas []EnumjwtAccessTokenValidatorSchemaUrn, enabled bool) *AddJwtAccessTokenValidatorRequest {
+func NewAddJwtAccessTokenValidatorRequest(schemas []EnumjwtAccessTokenValidatorSchemaUrn, enabled bool, validatorName string) *AddJwtAccessTokenValidatorRequest {
 	this := AddJwtAccessTokenValidatorRequest{}
-	this.ValidatorName = validatorName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.ValidatorName = validatorName
 	return &this
 }
 
@@ -69,30 +69,6 @@ func NewAddJwtAccessTokenValidatorRequest(validatorName string, schemas []Enumjw
 func NewAddJwtAccessTokenValidatorRequestWithDefaults() *AddJwtAccessTokenValidatorRequest {
 	this := AddJwtAccessTokenValidatorRequest{}
 	return &this
-}
-
-// GetValidatorName returns the ValidatorName field value
-func (o *AddJwtAccessTokenValidatorRequest) GetValidatorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ValidatorName
-}
-
-// GetValidatorNameOk returns a tuple with the ValidatorName field value
-// and a boolean to check if the value has been set.
-func (o *AddJwtAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ValidatorName, true
-}
-
-// SetValidatorName sets field value
-func (o *AddJwtAccessTokenValidatorRequest) SetValidatorName(v string) {
-	o.ValidatorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -591,6 +567,30 @@ func (o *AddJwtAccessTokenValidatorRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetValidatorName returns the ValidatorName field value
+func (o *AddJwtAccessTokenValidatorRequest) GetValidatorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ValidatorName
+}
+
+// GetValidatorNameOk returns a tuple with the ValidatorName field value
+// and a boolean to check if the value has been set.
+func (o *AddJwtAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ValidatorName, true
+}
+
+// SetValidatorName sets field value
+func (o *AddJwtAccessTokenValidatorRequest) SetValidatorName(v string) {
+	o.ValidatorName = v
+}
+
 func (o AddJwtAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -601,7 +601,6 @@ func (o AddJwtAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddJwtAccessTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["validatorName"] = o.ValidatorName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllowedSigningAlgorithm) {
 		toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
@@ -646,6 +645,7 @@ func (o AddJwtAccessTokenValidatorRequest) ToMap() (map[string]interface{}, erro
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["validatorName"] = o.ValidatorName
 	return toSerialize, nil
 }
 

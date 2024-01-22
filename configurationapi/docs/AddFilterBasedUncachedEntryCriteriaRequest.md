@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Uncached Entry Criteria | 
 **Schemas** | [**[]EnumfilterBasedUncachedEntryCriteriaSchemaUrn**](EnumfilterBasedUncachedEntryCriteriaSchemaUrn.md) |  | 
 **Filter** | **string** | Specifies the search filter that should be used to differentiate entries into cached and uncached sets. | 
 **FilterIdentifiesUncachedEntries** | Pointer to **bool** | Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false). | [optional] 
 **Description** | Pointer to **string** | A description for this Uncached Entry Criteria | [optional] 
 **Enabled** | **bool** | Indicates whether this Uncached Entry Criteria is enabled for use in the server. | 
+**CriteriaName** | **string** | Name of the new Uncached Entry Criteria | 
 
 ## Methods
 
 ### NewAddFilterBasedUncachedEntryCriteriaRequest
 
-`func NewAddFilterBasedUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, enabled bool, ) *AddFilterBasedUncachedEntryCriteriaRequest`
+`func NewAddFilterBasedUncachedEntryCriteriaRequest(schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, enabled bool, criteriaName string, ) *AddFilterBasedUncachedEntryCriteriaRequest`
 
 NewAddFilterBasedUncachedEntryCriteriaRequest instantiates a new AddFilterBasedUncachedEntryCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddFilterBasedUncachedEntryCriteriaRequestWithDefaults instantiates a new AddFilterBasedUncachedEntryCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetCriteriaName
+
+`func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
 
 
 

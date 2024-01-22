@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **CorrelationIDRequestHeader** | Pointer to **[]string** | Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **SslClientAuthPolicy** | Pointer to [**EnumconnectionHandlerSslClientAuthPolicyProp**](EnumconnectionHandlerSslClientAuthPolicyProp.md) |  | [optional] 
+**EnableSniHostnameChecks** | Pointer to **bool** | Requires SNI hostnames to match or else throw an Invalid SNI error. | [optional] 
 **Description** | Pointer to **string** | A description for this Connection Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Connection Handler is enabled. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -46,6 +47,7 @@ Name | Type | Description | Notes
 **MaxRequestSize** | Pointer to **string** | Specifies the size of the largest LDAP request message that will be allowed by this LDAP Connection handler. | [optional] 
 **MaxCancelHandlers** | Pointer to **int64** | Specifies the maximum number of threads that are used to process cancel and abandon requests from clients. | [optional] 
 **NumAcceptHandlers** | Pointer to **int64** | Specifies the number of threads that are used to accept new client connections, and to perform any initial preparation on those connections that may be needed before the connection can be used to read requests and send responses. | [optional] 
+**RequestHandlerPerConnection** | Pointer to **bool** | Indicates whether a separate request handler thread should be created for each client connection, which can help avoid starvation of client connections for cases in which one or more clients send large numbers of concurrent asynchronous requests. This should only be used for cases in which a relatively small number of connections will be established at any given time, the connections established will generally be long-lived, and at least one client may send high volumes of asynchronous requests. This property can be used to alleviate possible blocking during long-running TLS negotiation on a single request handler which can result in it being unable to acknowledge further client requests until the TLS negotation completes or times out. | [optional] 
 **MaxBlockedWriteTimeLimit** | Pointer to **string** | Specifies the maximum length of time that attempts to write data to LDAP clients should be allowed to block. | [optional] 
 **AutoAuthenticateUsingClientCertificate** | Pointer to **bool** | Indicates whether to attempt to automatically authenticate a client connection that has established a secure communication channel (using either SSL or StartTLS) and presented its own client certificate. Generally, clients should use the SASL EXTERNAL mechanism to authenticate using a client certificate, but some clients may not support that capability and/or may expect automatic authentication. | [optional] 
 **CloseConnectionsWhenUnavailable** | Pointer to **bool** | Indicates whether all connections associated with this LDAP Connection Handler should be closed and no new connections accepted when the server has determined that it is \&quot;unavailable.\&quot; This allows clients (or a network load balancer) to route requests to another server. | [optional] 
@@ -757,6 +759,31 @@ SetSslClientAuthPolicy sets SslClientAuthPolicy field to given value.
 
 HasSslClientAuthPolicy returns a boolean if a field has been set.
 
+### GetEnableSniHostnameChecks
+
+`func (o *ConnectionHandlerListResponseResourcesInner) GetEnableSniHostnameChecks() bool`
+
+GetEnableSniHostnameChecks returns the EnableSniHostnameChecks field if non-nil, zero value otherwise.
+
+### GetEnableSniHostnameChecksOk
+
+`func (o *ConnectionHandlerListResponseResourcesInner) GetEnableSniHostnameChecksOk() (*bool, bool)`
+
+GetEnableSniHostnameChecksOk returns a tuple with the EnableSniHostnameChecks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableSniHostnameChecks
+
+`func (o *ConnectionHandlerListResponseResourcesInner) SetEnableSniHostnameChecks(v bool)`
+
+SetEnableSniHostnameChecks sets EnableSniHostnameChecks field to given value.
+
+### HasEnableSniHostnameChecks
+
+`func (o *ConnectionHandlerListResponseResourcesInner) HasEnableSniHostnameChecks() bool`
+
+HasEnableSniHostnameChecks returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *ConnectionHandlerListResponseResourcesInner) GetDescription() string`
@@ -1101,6 +1128,31 @@ SetNumAcceptHandlers sets NumAcceptHandlers field to given value.
 `func (o *ConnectionHandlerListResponseResourcesInner) HasNumAcceptHandlers() bool`
 
 HasNumAcceptHandlers returns a boolean if a field has been set.
+
+### GetRequestHandlerPerConnection
+
+`func (o *ConnectionHandlerListResponseResourcesInner) GetRequestHandlerPerConnection() bool`
+
+GetRequestHandlerPerConnection returns the RequestHandlerPerConnection field if non-nil, zero value otherwise.
+
+### GetRequestHandlerPerConnectionOk
+
+`func (o *ConnectionHandlerListResponseResourcesInner) GetRequestHandlerPerConnectionOk() (*bool, bool)`
+
+GetRequestHandlerPerConnectionOk returns a tuple with the RequestHandlerPerConnection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestHandlerPerConnection
+
+`func (o *ConnectionHandlerListResponseResourcesInner) SetRequestHandlerPerConnection(v bool)`
+
+SetRequestHandlerPerConnection sets RequestHandlerPerConnection field to given value.
+
+### HasRequestHandlerPerConnection
+
+`func (o *ConnectionHandlerListResponseResourcesInner) HasRequestHandlerPerConnection() bool`
+
+HasRequestHandlerPerConnection returns a boolean if a field has been set.
 
 ### GetMaxBlockedWriteTimeLimit
 

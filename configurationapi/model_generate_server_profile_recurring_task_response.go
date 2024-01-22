@@ -19,8 +19,6 @@ var _ MappedNullable = &GenerateServerProfileRecurringTaskResponse{}
 
 // GenerateServerProfileRecurringTaskResponse struct for GenerateServerProfileRecurringTaskResponse
 type GenerateServerProfileRecurringTaskResponse struct {
-	// Name of the Recurring Task
-	Id      string                                            `json:"id"`
 	Schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which the generated server profiles will be placed. The files will be named with the pattern \"server-profile-{timestamp}.zip\", where \"{timestamp}\" represents the time that the profile was generated.
 	ProfileDirectory string `json:"profileDirectory"`
@@ -48,17 +46,19 @@ type GenerateServerProfileRecurringTaskResponse struct {
 	AlertOnFailure                                *bool                                              `json:"alertOnFailure,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Recurring Task
+	Id string `json:"id"`
 }
 
 // NewGenerateServerProfileRecurringTaskResponse instantiates a new GenerateServerProfileRecurringTaskResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenerateServerProfileRecurringTaskResponse(id string, schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn, profileDirectory string) *GenerateServerProfileRecurringTaskResponse {
+func NewGenerateServerProfileRecurringTaskResponse(schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn, profileDirectory string, id string) *GenerateServerProfileRecurringTaskResponse {
 	this := GenerateServerProfileRecurringTaskResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ProfileDirectory = profileDirectory
+	this.Id = id
 	return &this
 }
 
@@ -68,30 +68,6 @@ func NewGenerateServerProfileRecurringTaskResponse(id string, schemas []Enumgene
 func NewGenerateServerProfileRecurringTaskResponseWithDefaults() *GenerateServerProfileRecurringTaskResponse {
 	this := GenerateServerProfileRecurringTaskResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *GenerateServerProfileRecurringTaskResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *GenerateServerProfileRecurringTaskResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *GenerateServerProfileRecurringTaskResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -558,6 +534,30 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetUrnpingidentityschemasco
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *GenerateServerProfileRecurringTaskResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *GenerateServerProfileRecurringTaskResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *GenerateServerProfileRecurringTaskResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o GenerateServerProfileRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -568,7 +568,6 @@ func (o GenerateServerProfileRecurringTaskResponse) MarshalJSON() ([]byte, error
 
 func (o GenerateServerProfileRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["profileDirectory"] = o.ProfileDirectory
 	if !IsNil(o.IncludePath) {
@@ -610,6 +609,7 @@ func (o GenerateServerProfileRecurringTaskResponse) ToMap() (map[string]interfac
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

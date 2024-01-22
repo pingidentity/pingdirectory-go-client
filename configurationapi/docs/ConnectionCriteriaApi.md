@@ -1,14 +1,14 @@
-# \ConnectionCriteriaApi
+# \ConnectionCriteriaAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddConnectionCriteria**](ConnectionCriteriaApi.md#AddConnectionCriteria) | **Post** /connection-criteria | Add a new Connection Criteria to the config
-[**DeleteConnectionCriteria**](ConnectionCriteriaApi.md#DeleteConnectionCriteria) | **Delete** /connection-criteria/{connection-criteria-name} | Delete a Connection Criteria
-[**GetConnectionCriteria**](ConnectionCriteriaApi.md#GetConnectionCriteria) | **Get** /connection-criteria/{connection-criteria-name} | Returns a single Connection Criteria
-[**ListConnectionCriteria**](ConnectionCriteriaApi.md#ListConnectionCriteria) | **Get** /connection-criteria | Returns a list of all Connection Criteria objects
-[**UpdateConnectionCriteria**](ConnectionCriteriaApi.md#UpdateConnectionCriteria) | **Patch** /connection-criteria/{connection-criteria-name} | Update an existing Connection Criteria by name
+[**AddConnectionCriteria**](ConnectionCriteriaAPI.md#AddConnectionCriteria) | **Post** /connection-criteria | Add a new Connection Criteria to the config
+[**DeleteConnectionCriteria**](ConnectionCriteriaAPI.md#DeleteConnectionCriteria) | **Delete** /connection-criteria/{connection-criteria-name} | Delete a Connection Criteria
+[**GetConnectionCriteria**](ConnectionCriteriaAPI.md#GetConnectionCriteria) | **Get** /connection-criteria/{connection-criteria-name} | Returns a single Connection Criteria
+[**ListConnectionCriteria**](ConnectionCriteriaAPI.md#ListConnectionCriteria) | **Get** /connection-criteria | Returns a list of all Connection Criteria objects
+[**UpdateConnectionCriteria**](ConnectionCriteriaAPI.md#UpdateConnectionCriteria) | **Patch** /connection-criteria/{connection-criteria-name} | Update an existing Connection Criteria by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addConnectionCriteriaRequest := openapiclient.add_connection_criteria_request{AddAggregateConnectionCriteriaRequest: openapiclient.NewAddAggregateConnectionCriteriaRequest("CriteriaName_example", []openapiclient.EnumaggregateConnectionCriteriaSchemaUrn{openapiclient.Enumaggregate-connection-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:connection-criteria:aggregate")})} // AddConnectionCriteriaRequest | Create a new Connection Criteria in the config
+    addConnectionCriteriaRequest := openapiclient.add_connection_criteria_request{AddAggregateConnectionCriteriaRequest: openapiclient.NewAddAggregateConnectionCriteriaRequest([]openapiclient.EnumaggregateConnectionCriteriaSchemaUrn{openapiclient.Enumaggregate-connection-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:connection-criteria:aggregate")}, "CriteriaName_example")} // AddConnectionCriteriaRequest | Create a new Connection Criteria in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionCriteriaApi.AddConnectionCriteria(context.Background()).AddConnectionCriteriaRequest(addConnectionCriteriaRequest).Execute()
+    resp, r, err := apiClient.ConnectionCriteriaAPI.AddConnectionCriteria(context.Background()).AddConnectionCriteriaRequest(addConnectionCriteriaRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaApi.AddConnectionCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaAPI.AddConnectionCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddConnectionCriteria`: AddConnectionCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionCriteriaApi.AddConnectionCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionCriteriaAPI.AddConnectionCriteria`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConnectionCriteriaApi.DeleteConnectionCriteria(context.Background(), connectionCriteriaName).Execute()
+    r, err := apiClient.ConnectionCriteriaAPI.DeleteConnectionCriteria(context.Background(), connectionCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaApi.DeleteConnectionCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaAPI.DeleteConnectionCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionCriteriaApi.GetConnectionCriteria(context.Background(), connectionCriteriaName).Execute()
+    resp, r, err := apiClient.ConnectionCriteriaAPI.GetConnectionCriteria(context.Background(), connectionCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaApi.GetConnectionCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaAPI.GetConnectionCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetConnectionCriteria`: AddConnectionCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionCriteriaApi.GetConnectionCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionCriteriaAPI.GetConnectionCriteria`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionCriteriaApi.ListConnectionCriteria(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ConnectionCriteriaAPI.ListConnectionCriteria(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaApi.ListConnectionCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaAPI.ListConnectionCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListConnectionCriteria`: ConnectionCriteriaListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionCriteriaApi.ListConnectionCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionCriteriaAPI.ListConnectionCriteria`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionCriteriaApi.UpdateConnectionCriteria(context.Background(), connectionCriteriaName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ConnectionCriteriaAPI.UpdateConnectionCriteria(context.Background(), connectionCriteriaName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaApi.UpdateConnectionCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaAPI.UpdateConnectionCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateConnectionCriteria`: AddConnectionCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionCriteriaApi.UpdateConnectionCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionCriteriaAPI.UpdateConnectionCriteria`: %v\n", resp)
 }
 ```
 

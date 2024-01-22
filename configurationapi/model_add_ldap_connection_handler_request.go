@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLdapConnectionHandlerRequest{}
 
 // AddLdapConnectionHandlerRequest struct for AddLdapConnectionHandlerRequest
 type AddLdapConnectionHandlerRequest struct {
-	// Name of the new Connection Handler
-	HandlerName string                               `json:"handlerName"`
-	Schemas     []EnumldapConnectionHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumldapConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients.
 	ListenAddress []string `json:"listenAddress,omitempty"`
 	// Specifies the port number on which the LDAP Connection Handler will listen for connections from clients.
@@ -51,8 +49,10 @@ type AddLdapConnectionHandlerRequest struct {
 	// Specifies the number of threads that are used to accept new client connections, and to perform any initial preparation on those connections that may be needed before the connection can be used to read requests and send responses.
 	NumAcceptHandlers *int64 `json:"numAcceptHandlers,omitempty"`
 	// Specifies the number of request handlers that are used to read requests from clients.
-	NumRequestHandlers  *int64                                        `json:"numRequestHandlers,omitempty"`
-	SslClientAuthPolicy *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
+	NumRequestHandlers *int64 `json:"numRequestHandlers,omitempty"`
+	// Indicates whether a separate request handler thread should be created for each client connection, which can help avoid starvation of client connections for cases in which one or more clients send large numbers of concurrent asynchronous requests. This should only be used for cases in which a relatively small number of connections will be established at any given time, the connections established will generally be long-lived, and at least one client may send high volumes of asynchronous requests. This property can be used to alleviate possible blocking during long-running TLS negotiation on a single request handler which can result in it being unable to acknowledge further client requests until the TLS negotation completes or times out.
+	RequestHandlerPerConnection *bool                                         `json:"requestHandlerPerConnection,omitempty"`
+	SslClientAuthPolicy         *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts.
 	AcceptBacklog *int64 `json:"acceptBacklog,omitempty"`
 	// Specifies the names of the TLS protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
@@ -75,18 +75,20 @@ type AddLdapConnectionHandlerRequest struct {
 	AllowedClient []string `json:"allowedClient,omitempty"`
 	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
 	DeniedClient []string `json:"deniedClient,omitempty"`
+	// Name of the new Connection Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddLdapConnectionHandlerRequest instantiates a new AddLdapConnectionHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapConnectionHandlerRequest(handlerName string, schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int64, enabled bool) *AddLdapConnectionHandlerRequest {
+func NewAddLdapConnectionHandlerRequest(schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int64, enabled bool, handlerName string) *AddLdapConnectionHandlerRequest {
 	this := AddLdapConnectionHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ListenPort = listenPort
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -96,30 +98,6 @@ func NewAddLdapConnectionHandlerRequest(handlerName string, schemas []EnumldapCo
 func NewAddLdapConnectionHandlerRequestWithDefaults() *AddLdapConnectionHandlerRequest {
 	this := AddLdapConnectionHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddLdapConnectionHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddLdapConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddLdapConnectionHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -618,6 +596,38 @@ func (o *AddLdapConnectionHandlerRequest) SetNumRequestHandlers(v int64) {
 	o.NumRequestHandlers = &v
 }
 
+// GetRequestHandlerPerConnection returns the RequestHandlerPerConnection field value if set, zero value otherwise.
+func (o *AddLdapConnectionHandlerRequest) GetRequestHandlerPerConnection() bool {
+	if o == nil || IsNil(o.RequestHandlerPerConnection) {
+		var ret bool
+		return ret
+	}
+	return *o.RequestHandlerPerConnection
+}
+
+// GetRequestHandlerPerConnectionOk returns a tuple with the RequestHandlerPerConnection field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddLdapConnectionHandlerRequest) GetRequestHandlerPerConnectionOk() (*bool, bool) {
+	if o == nil || IsNil(o.RequestHandlerPerConnection) {
+		return nil, false
+	}
+	return o.RequestHandlerPerConnection, true
+}
+
+// HasRequestHandlerPerConnection returns a boolean if a field has been set.
+func (o *AddLdapConnectionHandlerRequest) HasRequestHandlerPerConnection() bool {
+	if o != nil && !IsNil(o.RequestHandlerPerConnection) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestHandlerPerConnection gets a reference to the given bool and assigns it to the RequestHandlerPerConnection field.
+func (o *AddLdapConnectionHandlerRequest) SetRequestHandlerPerConnection(v bool) {
+	o.RequestHandlerPerConnection = &v
+}
+
 // GetSslClientAuthPolicy returns the SslClientAuthPolicy field value if set, zero value otherwise.
 func (o *AddLdapConnectionHandlerRequest) GetSslClientAuthPolicy() EnumconnectionHandlerSslClientAuthPolicyProp {
 	if o == nil || IsNil(o.SslClientAuthPolicy) {
@@ -994,6 +1004,30 @@ func (o *AddLdapConnectionHandlerRequest) SetDeniedClient(v []string) {
 	o.DeniedClient = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddLdapConnectionHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddLdapConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddLdapConnectionHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddLdapConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1004,7 +1038,6 @@ func (o AddLdapConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLdapConnectionHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ListenAddress) {
 		toSerialize["listenAddress"] = o.ListenAddress
@@ -1049,6 +1082,9 @@ func (o AddLdapConnectionHandlerRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.NumRequestHandlers) {
 		toSerialize["numRequestHandlers"] = o.NumRequestHandlers
 	}
+	if !IsNil(o.RequestHandlerPerConnection) {
+		toSerialize["requestHandlerPerConnection"] = o.RequestHandlerPerConnection
+	}
 	if !IsNil(o.SslClientAuthPolicy) {
 		toSerialize["sslClientAuthPolicy"] = o.SslClientAuthPolicy
 	}
@@ -1083,6 +1119,7 @@ func (o AddLdapConnectionHandlerRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.DeniedClient) {
 		toSerialize["deniedClient"] = o.DeniedClient
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSyslogJsonAuditLogPublisherRequest{}
 
 // AddSyslogJsonAuditLogPublisherRequest struct for AddSyslogJsonAuditLogPublisherRequest
 type AddSyslogJsonAuditLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName string                                     `json:"publisherName"`
-	Schemas       []EnumsyslogJsonAuditLogPublisherSchemaUrn `json:"schemas"`
+	Schemas []EnumsyslogJsonAuditLogPublisherSchemaUrn `json:"schemas"`
 	// The syslog server to which messages should be sent.
 	SyslogExternalServer []string                            `json:"syslogExternalServer"`
 	SyslogFacility       *EnumlogPublisherSyslogFacilityProp `json:"syslogFacility,omitempty"`
@@ -80,18 +78,20 @@ type AddSyslogJsonAuditLogPublisherRequest struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddSyslogJsonAuditLogPublisherRequest instantiates a new AddSyslogJsonAuditLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSyslogJsonAuditLogPublisherRequest(publisherName string, schemas []EnumsyslogJsonAuditLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool) *AddSyslogJsonAuditLogPublisherRequest {
+func NewAddSyslogJsonAuditLogPublisherRequest(schemas []EnumsyslogJsonAuditLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, publisherName string) *AddSyslogJsonAuditLogPublisherRequest {
 	this := AddSyslogJsonAuditLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.SyslogExternalServer = syslogExternalServer
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -101,30 +101,6 @@ func NewAddSyslogJsonAuditLogPublisherRequest(publisherName string, schemas []En
 func NewAddSyslogJsonAuditLogPublisherRequestWithDefaults() *AddSyslogJsonAuditLogPublisherRequest {
 	this := AddSyslogJsonAuditLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddSyslogJsonAuditLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddSyslogJsonAuditLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddSyslogJsonAuditLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1127,6 +1103,30 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetLoggingErrorBehavior(v Enumlo
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddSyslogJsonAuditLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddSyslogJsonAuditLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddSyslogJsonAuditLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddSyslogJsonAuditLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1137,7 +1137,6 @@ func (o AddSyslogJsonAuditLogPublisherRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSyslogJsonAuditLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["syslogExternalServer"] = o.SyslogExternalServer
 	if !IsNil(o.SyslogFacility) {
@@ -1228,6 +1227,7 @@ func (o AddSyslogJsonAuditLogPublisherRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ValidatorName** | **string** | Name of the new ID Token Validator | 
 **Schemas** | [**[]EnumopenidConnectIdTokenValidatorSchemaUrn**](EnumopenidConnectIdTokenValidatorSchemaUrn.md) |  | 
 **AllowedSigningAlgorithm** | [**[]EnumidTokenValidatorAllowedSigningAlgorithmProp**](EnumidTokenValidatorAllowedSigningAlgorithmProp.md) |  | 
 **SigningCertificate** | Pointer to **[]string** | Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys. | [optional] 
@@ -18,12 +17,13 @@ Name | Type | Description | Notes
 **ClockSkewGracePeriod** | Pointer to **string** | Specifies the amount of clock skew that is tolerated by the ID Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token&#39;s not-before (nbf) time and added to the token&#39;s expiration (exp) time, if present, to allow for any time difference between the local server&#39;s clock and the token issuer&#39;s clock. | [optional] 
 **JwksCacheDuration** | Pointer to **string** | How often the ID Token Validator should refresh its cache of JWKS token signing keys. | [optional] 
 **EvaluationOrderIndex** | **int64** | When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token. | 
+**ValidatorName** | **string** | Name of the new ID Token Validator | 
 
 ## Methods
 
 ### NewAddOpenidConnectIdTokenValidatorRequest
 
-`func NewAddOpenidConnectIdTokenValidatorRequest(validatorName string, schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, enabled bool, identityMapper string, issuerURL string, evaluationOrderIndex int64, ) *AddOpenidConnectIdTokenValidatorRequest`
+`func NewAddOpenidConnectIdTokenValidatorRequest(schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, enabled bool, identityMapper string, issuerURL string, evaluationOrderIndex int64, validatorName string, ) *AddOpenidConnectIdTokenValidatorRequest`
 
 NewAddOpenidConnectIdTokenValidatorRequest instantiates a new AddOpenidConnectIdTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,26 +37,6 @@ will change when the set of required properties is changed
 NewAddOpenidConnectIdTokenValidatorRequestWithDefaults instantiates a new AddOpenidConnectIdTokenValidatorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetValidatorName
-
-`func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorName() string`
-
-GetValidatorName returns the ValidatorName field if non-nil, zero value otherwise.
-
-### GetValidatorNameOk
-
-`func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorNameOk() (*string, bool)`
-
-GetValidatorNameOk returns a tuple with the ValidatorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValidatorName
-
-`func (o *AddOpenidConnectIdTokenValidatorRequest) SetValidatorName(v string)`
-
-SetValidatorName sets ValidatorName field to given value.
-
 
 ### GetSchemas
 
@@ -351,6 +331,26 @@ and a boolean to check if the value has been set.
 `func (o *AddOpenidConnectIdTokenValidatorRequest) SetEvaluationOrderIndex(v int64)`
 
 SetEvaluationOrderIndex sets EvaluationOrderIndex field to given value.
+
+
+### GetValidatorName
+
+`func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorName() string`
+
+GetValidatorName returns the ValidatorName field if non-nil, zero value otherwise.
+
+### GetValidatorNameOk
+
+`func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorNameOk() (*string, bool)`
+
+GetValidatorNameOk returns a tuple with the ValidatorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidatorName
+
+`func (o *AddOpenidConnectIdTokenValidatorRequest) SetValidatorName(v string)`
+
+SetValidatorName sets ValidatorName field to given value.
 
 
 

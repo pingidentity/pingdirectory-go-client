@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
 tags:
 - description: Access access-token-validators
   name: access-token-validator
@@ -122,6 +122,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/bind-access-token-validator-response'
                 - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
                 - $ref: '#/components/schemas/jwt-access-token-validator-response'
                 - $ref: '#/components/schemas/mock-access-token-validator-response'
@@ -162,6 +163,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/bind-access-token-validator-response'
                 - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
                 - $ref: '#/components/schemas/jwt-access-token-validator-response'
                 - $ref: '#/components/schemas/mock-access-token-validator-response'
@@ -288,6 +290,85 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:mock"
+    Enumaccess-token-validator-allowedAuthenticationTypeProp:
+      type: string
+      enum:
+      - "simple"
+      - "sasl"
+      description: >-
+          Specifies the authentication types for bind operations that may be used to generate access tokens, and for which generated access tokens will be accepted.
+    bind-access-token-validator-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumbind-access-token-validatorSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Access Token Validator
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether this Bind Access Token Validator is enabled for use in Directory Server.
+          persistAccessTokens:
+            type: boolean
+            description: >-
+                Indicates whether access tokens should be persisted in user entries.
+          maximumTokenLifetime:
+            type: string
+            description: >-
+                Specifies the maximum length of time that a generated token should be considered valid. If this is not specified, then generated access tokens will not expire.
+          allowedAuthenticationType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumaccess-token-validator-allowedAuthenticationTypeProp'
+          allowedSASLMechanism:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of the SASL mechanisms for which access tokens may be generated, and for which generated access tokens will be accepted.
+          generateTokenResultCriteria:
+            type: string
+            description: >-
+                A reference to a request criteria object that may be used to identify the types of bind operations for which access tokens may be generated. If no criteria is specified, then access tokens may be generated for any bind operations that satisfy the other requirements configured in this validator.
+          includedScope:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of any scopes that should be granted to a client that authenticates with a bind access token. By default, no scopes will be granted.
+          identityMapper:
+            type: string
+            description: >-
+                Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
+          subjectClaimName:
+            type: string
+            description: >-
+                The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
+          description:
+            type: string
+            description: >-
+                A description for this Access Token Validator
+          evaluationOrderIndex:
+            type: integer
+            description: >-
+                When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+      - evaluationOrderIndex
+    Enumbind-access-token-validatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:bind"
     add-ping-federate-access-token-validator-request:
       allOf:
       - type: object
@@ -600,6 +681,7 @@ components:
             oneOf:
             - $ref: '#/components/schemas/external-api-gateway-access-token-validator-response'
             - $ref: '#/components/schemas/mock-access-token-validator-response'
+            - $ref: '#/components/schemas/bind-access-token-validator-response'
             - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
             - $ref: '#/components/schemas/jwt-access-token-validator-response'
             - $ref: '#/components/schemas/third-party-access-token-validator-response'

@@ -19,8 +19,6 @@ var _ MappedNullable = &SubjectAttributeToUserAttributeCertificateMapperResponse
 
 // SubjectAttributeToUserAttributeCertificateMapperResponse struct for SubjectAttributeToUserAttributeCertificateMapperResponse
 type SubjectAttributeToUserAttributeCertificateMapperResponse struct {
-	// Name of the Certificate Mapper
-	Id      string                                                          `json:"id"`
 	Schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies a mapping between certificate attributes and user attributes.
 	SubjectAttributeMapping []string `json:"subjectAttributeMapping"`
@@ -32,18 +30,20 @@ type SubjectAttributeToUserAttributeCertificateMapperResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Certificate Mapper
+	Id string `json:"id"`
 }
 
 // NewSubjectAttributeToUserAttributeCertificateMapperResponse instantiates a new SubjectAttributeToUserAttributeCertificateMapperResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSubjectAttributeToUserAttributeCertificateMapperResponse(id string, schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn, subjectAttributeMapping []string, enabled bool) *SubjectAttributeToUserAttributeCertificateMapperResponse {
+func NewSubjectAttributeToUserAttributeCertificateMapperResponse(schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn, subjectAttributeMapping []string, enabled bool, id string) *SubjectAttributeToUserAttributeCertificateMapperResponse {
 	this := SubjectAttributeToUserAttributeCertificateMapperResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.SubjectAttributeMapping = subjectAttributeMapping
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewSubjectAttributeToUserAttributeCertificateMapperResponse(id string, sche
 func NewSubjectAttributeToUserAttributeCertificateMapperResponseWithDefaults() *SubjectAttributeToUserAttributeCertificateMapperResponse {
 	this := SubjectAttributeToUserAttributeCertificateMapperResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -279,6 +255,30 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) SetUrnpingide
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SubjectAttributeToUserAttributeCertificateMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -289,7 +289,6 @@ func (o SubjectAttributeToUserAttributeCertificateMapperResponse) MarshalJSON() 
 
 func (o SubjectAttributeToUserAttributeCertificateMapperResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["subjectAttributeMapping"] = o.SubjectAttributeMapping
 	if !IsNil(o.UserBaseDN) {
@@ -305,6 +304,7 @@ func (o SubjectAttributeToUserAttributeCertificateMapperResponse) ToMap() (map[s
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

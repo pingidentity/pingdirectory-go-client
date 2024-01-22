@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
 tags:
 - description: Access recurring-tasks
   name: recurring-task
@@ -1049,6 +1049,12 @@ components:
           type: integer
           description: >-
               The maximum rate, in megabytes per second, at which LDIF exports should be written.
+        postLDIFExportTaskProcessor:
+          type: array
+          items:
+            type: string
+          description: >-
+              An optional set of post-LDIF-export task processors that should be invoked for the resulting LDIF export files.
         description:
           type: string
           description: >-

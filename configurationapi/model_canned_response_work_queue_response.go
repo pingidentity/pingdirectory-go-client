@@ -19,9 +19,9 @@ var _ MappedNullable = &CannedResponseWorkQueueResponse{}
 
 // CannedResponseWorkQueueResponse struct for CannedResponseWorkQueueResponse
 type CannedResponseWorkQueueResponse struct {
-	Schemas                                       []EnumcannedResponseWorkQueueSchemaUrn             `json:"schemas"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumcannedResponseWorkQueueSchemaUrn             `json:"schemas"`
 }
 
 // NewCannedResponseWorkQueueResponse instantiates a new CannedResponseWorkQueueResponse object
@@ -40,30 +40,6 @@ func NewCannedResponseWorkQueueResponse(schemas []EnumcannedResponseWorkQueueSch
 func NewCannedResponseWorkQueueResponseWithDefaults() *CannedResponseWorkQueueResponse {
 	this := CannedResponseWorkQueueResponse{}
 	return &this
-}
-
-// GetSchemas returns the Schemas field value
-func (o *CannedResponseWorkQueueResponse) GetSchemas() []EnumcannedResponseWorkQueueSchemaUrn {
-	if o == nil {
-		var ret []EnumcannedResponseWorkQueueSchemaUrn
-		return ret
-	}
-
-	return o.Schemas
-}
-
-// GetSchemasOk returns a tuple with the Schemas field value
-// and a boolean to check if the value has been set.
-func (o *CannedResponseWorkQueueResponse) GetSchemasOk() ([]EnumcannedResponseWorkQueueSchemaUrn, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Schemas, true
-}
-
-// SetSchemas sets field value
-func (o *CannedResponseWorkQueueResponse) SetSchemas(v []EnumcannedResponseWorkQueueSchemaUrn) {
-	o.Schemas = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
@@ -130,6 +106,30 @@ func (o *CannedResponseWorkQueueResponse) SetUrnpingidentityschemasconfiguration
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetSchemas returns the Schemas field value
+func (o *CannedResponseWorkQueueResponse) GetSchemas() []EnumcannedResponseWorkQueueSchemaUrn {
+	if o == nil {
+		var ret []EnumcannedResponseWorkQueueSchemaUrn
+		return ret
+	}
+
+	return o.Schemas
+}
+
+// GetSchemasOk returns a tuple with the Schemas field value
+// and a boolean to check if the value has been set.
+func (o *CannedResponseWorkQueueResponse) GetSchemasOk() ([]EnumcannedResponseWorkQueueSchemaUrn, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Schemas, true
+}
+
+// SetSchemas sets field value
+func (o *CannedResponseWorkQueueResponse) SetSchemas(v []EnumcannedResponseWorkQueueSchemaUrn) {
+	o.Schemas = v
+}
+
 func (o CannedResponseWorkQueueResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -140,13 +140,13 @@ func (o CannedResponseWorkQueueResponse) MarshalJSON() ([]byte, error) {
 
 func (o CannedResponseWorkQueueResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["schemas"] = o.Schemas
 	return toSerialize, nil
 }
 

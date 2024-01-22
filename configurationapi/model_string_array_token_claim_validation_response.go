@@ -19,8 +19,6 @@ var _ MappedNullable = &StringArrayTokenClaimValidationResponse{}
 
 // StringArrayTokenClaimValidationResponse struct for StringArrayTokenClaimValidationResponse
 type StringArrayTokenClaimValidationResponse struct {
-	// Name of the Token Claim Validation
-	Id      string                                         `json:"id"`
 	Schemas []EnumstringArrayTokenClaimValidationSchemaUrn `json:"schemas"`
 	// The set of all values that the claim must have to be considered valid.
 	AllRequiredValue []string `json:"allRequiredValue,omitempty"`
@@ -32,17 +30,19 @@ type StringArrayTokenClaimValidationResponse struct {
 	ClaimName                                     string                                             `json:"claimName"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Token Claim Validation
+	Id string `json:"id"`
 }
 
 // NewStringArrayTokenClaimValidationResponse instantiates a new StringArrayTokenClaimValidationResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStringArrayTokenClaimValidationResponse(id string, schemas []EnumstringArrayTokenClaimValidationSchemaUrn, claimName string) *StringArrayTokenClaimValidationResponse {
+func NewStringArrayTokenClaimValidationResponse(schemas []EnumstringArrayTokenClaimValidationSchemaUrn, claimName string, id string) *StringArrayTokenClaimValidationResponse {
 	this := StringArrayTokenClaimValidationResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ClaimName = claimName
+	this.Id = id
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewStringArrayTokenClaimValidationResponse(id string, schemas []EnumstringA
 func NewStringArrayTokenClaimValidationResponseWithDefaults() *StringArrayTokenClaimValidationResponse {
 	this := StringArrayTokenClaimValidationResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *StringArrayTokenClaimValidationResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *StringArrayTokenClaimValidationResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *StringArrayTokenClaimValidationResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -286,6 +262,30 @@ func (o *StringArrayTokenClaimValidationResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *StringArrayTokenClaimValidationResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *StringArrayTokenClaimValidationResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *StringArrayTokenClaimValidationResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o StringArrayTokenClaimValidationResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -296,7 +296,6 @@ func (o StringArrayTokenClaimValidationResponse) MarshalJSON() ([]byte, error) {
 
 func (o StringArrayTokenClaimValidationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllRequiredValue) {
 		toSerialize["allRequiredValue"] = o.AllRequiredValue
@@ -314,6 +313,7 @@ func (o StringArrayTokenClaimValidationResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

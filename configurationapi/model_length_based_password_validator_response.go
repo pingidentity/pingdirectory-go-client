@@ -19,8 +19,6 @@ var _ MappedNullable = &LengthBasedPasswordValidatorResponse{}
 
 // LengthBasedPasswordValidatorResponse struct for LengthBasedPasswordValidatorResponse
 type LengthBasedPasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                      `json:"id"`
 	Schemas []EnumlengthBasedPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the maximum number of characters that can be included in a proposed password.
 	MaxPasswordLength *int64 `json:"maxPasswordLength,omitempty"`
@@ -36,17 +34,19 @@ type LengthBasedPasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewLengthBasedPasswordValidatorResponse instantiates a new LengthBasedPasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLengthBasedPasswordValidatorResponse(id string, schemas []EnumlengthBasedPasswordValidatorSchemaUrn, enabled bool) *LengthBasedPasswordValidatorResponse {
+func NewLengthBasedPasswordValidatorResponse(schemas []EnumlengthBasedPasswordValidatorSchemaUrn, enabled bool, id string) *LengthBasedPasswordValidatorResponse {
 	this := LengthBasedPasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewLengthBasedPasswordValidatorResponse(id string, schemas []EnumlengthBase
 func NewLengthBasedPasswordValidatorResponseWithDefaults() *LengthBasedPasswordValidatorResponse {
 	this := LengthBasedPasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LengthBasedPasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LengthBasedPasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LengthBasedPasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -354,6 +330,30 @@ func (o *LengthBasedPasswordValidatorResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LengthBasedPasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LengthBasedPasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LengthBasedPasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LengthBasedPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -364,7 +364,6 @@ func (o LengthBasedPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o LengthBasedPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.MaxPasswordLength) {
 		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
@@ -388,6 +387,7 @@ func (o LengthBasedPasswordValidatorResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

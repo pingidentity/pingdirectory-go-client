@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// CertificateMapperApiService CertificateMapperApi service
-type CertificateMapperApiService service
+// CertificateMapperAPIService CertificateMapperAPI service
+type CertificateMapperAPIService service
 
 type ApiAddCertificateMapperRequest struct {
 	ctx                         context.Context
-	ApiService                  *CertificateMapperApiService
+	ApiService                  *CertificateMapperAPIService
 	addCertificateMapperRequest *AddCertificateMapperRequest
 }
 
@@ -44,7 +44,7 @@ AddCertificateMapper Add a new Certificate Mapper to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddCertificateMapperRequest
 */
-func (a *CertificateMapperApiService) AddCertificateMapper(ctx context.Context) ApiAddCertificateMapperRequest {
+func (a *CertificateMapperAPIService) AddCertificateMapper(ctx context.Context) ApiAddCertificateMapperRequest {
 	return ApiAddCertificateMapperRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *CertificateMapperApiService) AddCertificateMapper(ctx context.Context) 
 // Execute executes the request
 //
 //	@return AddCertificateMapper200Response
-func (a *CertificateMapperApiService) AddCertificateMapperExecute(r ApiAddCertificateMapperRequest) (*AddCertificateMapper200Response, *http.Response, error) {
+func (a *CertificateMapperAPIService) AddCertificateMapperExecute(r ApiAddCertificateMapperRequest) (*AddCertificateMapper200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *CertificateMapperApiService) AddCertificateMapperExecute(r ApiAddCertif
 		localVarReturnValue *AddCertificateMapper200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperApiService.AddCertificateMapper")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperAPIService.AddCertificateMapper")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *CertificateMapperApiService) AddCertificateMapperExecute(r ApiAddCertif
 
 type ApiDeleteCertificateMapperRequest struct {
 	ctx                   context.Context
-	ApiService            *CertificateMapperApiService
+	ApiService            *CertificateMapperAPIService
 	certificateMapperName string
 }
 
@@ -149,7 +149,7 @@ DeleteCertificateMapper Delete a Certificate Mapper
 	@param certificateMapperName Name of the Certificate Mapper
 	@return ApiDeleteCertificateMapperRequest
 */
-func (a *CertificateMapperApiService) DeleteCertificateMapper(ctx context.Context, certificateMapperName string) ApiDeleteCertificateMapperRequest {
+func (a *CertificateMapperAPIService) DeleteCertificateMapper(ctx context.Context, certificateMapperName string) ApiDeleteCertificateMapperRequest {
 	return ApiDeleteCertificateMapperRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -158,14 +158,14 @@ func (a *CertificateMapperApiService) DeleteCertificateMapper(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *CertificateMapperApiService) DeleteCertificateMapperExecute(r ApiDeleteCertificateMapperRequest) (*http.Response, error) {
+func (a *CertificateMapperAPIService) DeleteCertificateMapperExecute(r ApiDeleteCertificateMapperRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperApiService.DeleteCertificateMapper")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperAPIService.DeleteCertificateMapper")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *CertificateMapperApiService) DeleteCertificateMapperExecute(r ApiDelete
 
 type ApiGetCertificateMapperRequest struct {
 	ctx                   context.Context
-	ApiService            *CertificateMapperApiService
+	ApiService            *CertificateMapperAPIService
 	certificateMapperName string
 }
 
@@ -239,7 +239,7 @@ GetCertificateMapper Returns a single Certificate Mapper
 	@param certificateMapperName Name of the Certificate Mapper
 	@return ApiGetCertificateMapperRequest
 */
-func (a *CertificateMapperApiService) GetCertificateMapper(ctx context.Context, certificateMapperName string) ApiGetCertificateMapperRequest {
+func (a *CertificateMapperAPIService) GetCertificateMapper(ctx context.Context, certificateMapperName string) ApiGetCertificateMapperRequest {
 	return ApiGetCertificateMapperRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -250,7 +250,7 @@ func (a *CertificateMapperApiService) GetCertificateMapper(ctx context.Context, 
 // Execute executes the request
 //
 //	@return AddCertificateMapper200Response
-func (a *CertificateMapperApiService) GetCertificateMapperExecute(r ApiGetCertificateMapperRequest) (*AddCertificateMapper200Response, *http.Response, error) {
+func (a *CertificateMapperAPIService) GetCertificateMapperExecute(r ApiGetCertificateMapperRequest) (*AddCertificateMapper200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *CertificateMapperApiService) GetCertificateMapperExecute(r ApiGetCertif
 		localVarReturnValue *AddCertificateMapper200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperApiService.GetCertificateMapper")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperAPIService.GetCertificateMapper")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *CertificateMapperApiService) GetCertificateMapperExecute(r ApiGetCertif
 
 type ApiListCertificateMappersRequest struct {
 	ctx        context.Context
-	ApiService *CertificateMapperApiService
+	ApiService *CertificateMapperAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListCertificateMappers Returns a list of all Certificate Mapper objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListCertificateMappersRequest
 */
-func (a *CertificateMapperApiService) ListCertificateMappers(ctx context.Context) ApiListCertificateMappersRequest {
+func (a *CertificateMapperAPIService) ListCertificateMappers(ctx context.Context) ApiListCertificateMappersRequest {
 	return ApiListCertificateMappersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *CertificateMapperApiService) ListCertificateMappers(ctx context.Context
 // Execute executes the request
 //
 //	@return CertificateMapperListResponse
-func (a *CertificateMapperApiService) ListCertificateMappersExecute(r ApiListCertificateMappersRequest) (*CertificateMapperListResponse, *http.Response, error) {
+func (a *CertificateMapperAPIService) ListCertificateMappersExecute(r ApiListCertificateMappersRequest) (*CertificateMapperListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *CertificateMapperApiService) ListCertificateMappersExecute(r ApiListCer
 		localVarReturnValue *CertificateMapperListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperApiService.ListCertificateMappers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperAPIService.ListCertificateMappers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *CertificateMapperApiService) ListCertificateMappersExecute(r ApiListCer
 
 type ApiUpdateCertificateMapperRequest struct {
 	ctx                   context.Context
-	ApiService            *CertificateMapperApiService
+	ApiService            *CertificateMapperAPIService
 	certificateMapperName string
 	updateRequest         *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateCertificateMapper Update an existing Certificate Mapper by name
 	@param certificateMapperName Name of the Certificate Mapper
 	@return ApiUpdateCertificateMapperRequest
 */
-func (a *CertificateMapperApiService) UpdateCertificateMapper(ctx context.Context, certificateMapperName string) ApiUpdateCertificateMapperRequest {
+func (a *CertificateMapperAPIService) UpdateCertificateMapper(ctx context.Context, certificateMapperName string) ApiUpdateCertificateMapperRequest {
 	return ApiUpdateCertificateMapperRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -467,7 +467,7 @@ func (a *CertificateMapperApiService) UpdateCertificateMapper(ctx context.Contex
 // Execute executes the request
 //
 //	@return AddCertificateMapper200Response
-func (a *CertificateMapperApiService) UpdateCertificateMapperExecute(r ApiUpdateCertificateMapperRequest) (*AddCertificateMapper200Response, *http.Response, error) {
+func (a *CertificateMapperAPIService) UpdateCertificateMapperExecute(r ApiUpdateCertificateMapperRequest) (*AddCertificateMapper200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *CertificateMapperApiService) UpdateCertificateMapperExecute(r ApiUpdate
 		localVarReturnValue *AddCertificateMapper200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperApiService.UpdateCertificateMapper")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CertificateMapperAPIService.UpdateCertificateMapper")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

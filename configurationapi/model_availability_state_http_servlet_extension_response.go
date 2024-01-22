@@ -19,8 +19,6 @@ var _ MappedNullable = &AvailabilityStateHttpServletExtensionResponse{}
 
 // AvailabilityStateHttpServletExtensionResponse struct for AvailabilityStateHttpServletExtensionResponse
 type AvailabilityStateHttpServletExtensionResponse struct {
-	// Name of the HTTP Servlet Extension
-	Id      string                                               `json:"id"`
 	Schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
@@ -46,20 +44,22 @@ type AvailabilityStateHttpServletExtensionResponse struct {
 	CorrelationIDResponseHeader                   *string                                            `json:"correlationIDResponseHeader,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the HTTP Servlet Extension
+	Id string `json:"id"`
 }
 
 // NewAvailabilityStateHttpServletExtensionResponse instantiates a new AvailabilityStateHttpServletExtensionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAvailabilityStateHttpServletExtensionResponse(id string, schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn, baseContextPath string, availableStatusCode int64, degradedStatusCode int64, unavailableStatusCode int64) *AvailabilityStateHttpServletExtensionResponse {
+func NewAvailabilityStateHttpServletExtensionResponse(schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn, baseContextPath string, availableStatusCode int64, degradedStatusCode int64, unavailableStatusCode int64, id string) *AvailabilityStateHttpServletExtensionResponse {
 	this := AvailabilityStateHttpServletExtensionResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.BaseContextPath = baseContextPath
 	this.AvailableStatusCode = availableStatusCode
 	this.DegradedStatusCode = degradedStatusCode
 	this.UnavailableStatusCode = unavailableStatusCode
+	this.Id = id
 	return &this
 }
 
@@ -69,30 +69,6 @@ func NewAvailabilityStateHttpServletExtensionResponse(id string, schemas []Enuma
 func NewAvailabilityStateHttpServletExtensionResponseWithDefaults() *AvailabilityStateHttpServletExtensionResponse {
 	this := AvailabilityStateHttpServletExtensionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AvailabilityStateHttpServletExtensionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AvailabilityStateHttpServletExtensionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AvailabilityStateHttpServletExtensionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -503,6 +479,30 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetUrnpingidentityschema
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AvailabilityStateHttpServletExtensionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AvailabilityStateHttpServletExtensionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AvailabilityStateHttpServletExtensionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AvailabilityStateHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -513,7 +513,6 @@ func (o AvailabilityStateHttpServletExtensionResponse) MarshalJSON() ([]byte, er
 
 func (o AvailabilityStateHttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["baseContextPath"] = o.BaseContextPath
 	toSerialize["availableStatusCode"] = o.AvailableStatusCode
@@ -546,6 +545,7 @@ func (o AvailabilityStateHttpServletExtensionResponse) ToMap() (map[string]inter
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

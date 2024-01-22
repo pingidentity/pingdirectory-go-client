@@ -19,8 +19,6 @@ var _ MappedNullable = &VaultPassphraseProviderResponse{}
 
 // VaultPassphraseProviderResponse struct for VaultPassphraseProviderResponse
 type VaultPassphraseProviderResponse struct {
-	// Name of the Passphrase Provider
-	Id      string                                 `json:"id"`
 	Schemas []EnumvaultPassphraseProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase.
 	VaultExternalServer string `json:"vaultExternalServer"`
@@ -36,20 +34,22 @@ type VaultPassphraseProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Passphrase Provider
+	Id string `json:"id"`
 }
 
 // NewVaultPassphraseProviderResponse instantiates a new VaultPassphraseProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVaultPassphraseProviderResponse(id string, schemas []EnumvaultPassphraseProviderSchemaUrn, vaultExternalServer string, vaultSecretPath string, vaultSecretFieldName string, enabled bool) *VaultPassphraseProviderResponse {
+func NewVaultPassphraseProviderResponse(schemas []EnumvaultPassphraseProviderSchemaUrn, vaultExternalServer string, vaultSecretPath string, vaultSecretFieldName string, enabled bool, id string) *VaultPassphraseProviderResponse {
 	this := VaultPassphraseProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.VaultExternalServer = vaultExternalServer
 	this.VaultSecretPath = vaultSecretPath
 	this.VaultSecretFieldName = vaultSecretFieldName
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewVaultPassphraseProviderResponse(id string, schemas []EnumvaultPassphrase
 func NewVaultPassphraseProviderResponseWithDefaults() *VaultPassphraseProviderResponse {
 	this := VaultPassphraseProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *VaultPassphraseProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *VaultPassphraseProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *VaultPassphraseProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -333,6 +309,30 @@ func (o *VaultPassphraseProviderResponse) SetUrnpingidentityschemasconfiguration
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *VaultPassphraseProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *VaultPassphraseProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *VaultPassphraseProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o VaultPassphraseProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -343,7 +343,6 @@ func (o VaultPassphraseProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o VaultPassphraseProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["vaultExternalServer"] = o.VaultExternalServer
 	toSerialize["vaultSecretPath"] = o.VaultSecretPath
@@ -361,6 +360,7 @@ func (o VaultPassphraseProviderResponse) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

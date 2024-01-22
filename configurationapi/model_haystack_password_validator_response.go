@@ -19,8 +19,6 @@ var _ MappedNullable = &HaystackPasswordValidatorResponse{}
 
 // HaystackPasswordValidatorResponse struct for HaystackPasswordValidatorResponse
 type HaystackPasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                   `json:"id"`
 	Schemas []EnumhaystackPasswordValidatorSchemaUrn `json:"schemas"`
 	// The number of password guesses per second that a potential attacker may be expected to make.
 	AssumedPasswordGuessesPerSecond string `json:"assumedPasswordGuessesPerSecond"`
@@ -36,19 +34,21 @@ type HaystackPasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewHaystackPasswordValidatorResponse instantiates a new HaystackPasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHaystackPasswordValidatorResponse(id string, schemas []EnumhaystackPasswordValidatorSchemaUrn, assumedPasswordGuessesPerSecond string, minimumAcceptableTimeToExhaustSearchSpace string, enabled bool) *HaystackPasswordValidatorResponse {
+func NewHaystackPasswordValidatorResponse(schemas []EnumhaystackPasswordValidatorSchemaUrn, assumedPasswordGuessesPerSecond string, minimumAcceptableTimeToExhaustSearchSpace string, enabled bool, id string) *HaystackPasswordValidatorResponse {
 	this := HaystackPasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AssumedPasswordGuessesPerSecond = assumedPasswordGuessesPerSecond
 	this.MinimumAcceptableTimeToExhaustSearchSpace = minimumAcceptableTimeToExhaustSearchSpace
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewHaystackPasswordValidatorResponse(id string, schemas []EnumhaystackPassw
 func NewHaystackPasswordValidatorResponseWithDefaults() *HaystackPasswordValidatorResponse {
 	this := HaystackPasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *HaystackPasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *HaystackPasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *HaystackPasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -340,6 +316,30 @@ func (o *HaystackPasswordValidatorResponse) SetUrnpingidentityschemasconfigurati
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *HaystackPasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *HaystackPasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *HaystackPasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o HaystackPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -350,7 +350,6 @@ func (o HaystackPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o HaystackPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["assumedPasswordGuessesPerSecond"] = o.AssumedPasswordGuessesPerSecond
 	toSerialize["minimumAcceptableTimeToExhaustSearchSpace"] = o.MinimumAcceptableTimeToExhaustSearchSpace
@@ -370,6 +369,7 @@ func (o HaystackPasswordValidatorResponse) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

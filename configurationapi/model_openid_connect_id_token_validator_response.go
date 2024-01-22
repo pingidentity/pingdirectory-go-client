@@ -19,8 +19,6 @@ var _ MappedNullable = &OpenidConnectIdTokenValidatorResponse{}
 
 // OpenidConnectIdTokenValidatorResponse struct for OpenidConnectIdTokenValidatorResponse
 type OpenidConnectIdTokenValidatorResponse struct {
-	// Name of the ID Token Validator
-	Id                      string                                            `json:"id"`
 	Schemas                 []EnumopenidConnectIdTokenValidatorSchemaUrn      `json:"schemas"`
 	AllowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys.
@@ -47,21 +45,23 @@ type OpenidConnectIdTokenValidatorResponse struct {
 	EvaluationOrderIndex                          int64                                              `json:"evaluationOrderIndex"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the ID Token Validator
+	Id string `json:"id"`
 }
 
 // NewOpenidConnectIdTokenValidatorResponse instantiates a new OpenidConnectIdTokenValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOpenidConnectIdTokenValidatorResponse(id string, schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, enabled bool, identityMapper string, issuerURL string, evaluationOrderIndex int64) *OpenidConnectIdTokenValidatorResponse {
+func NewOpenidConnectIdTokenValidatorResponse(schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, enabled bool, identityMapper string, issuerURL string, evaluationOrderIndex int64, id string) *OpenidConnectIdTokenValidatorResponse {
 	this := OpenidConnectIdTokenValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AllowedSigningAlgorithm = allowedSigningAlgorithm
 	this.Enabled = enabled
 	this.IdentityMapper = identityMapper
 	this.IssuerURL = issuerURL
 	this.EvaluationOrderIndex = evaluationOrderIndex
+	this.Id = id
 	return &this
 }
 
@@ -71,30 +71,6 @@ func NewOpenidConnectIdTokenValidatorResponse(id string, schemas []EnumopenidCon
 func NewOpenidConnectIdTokenValidatorResponseWithDefaults() *OpenidConnectIdTokenValidatorResponse {
 	this := OpenidConnectIdTokenValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *OpenidConnectIdTokenValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *OpenidConnectIdTokenValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *OpenidConnectIdTokenValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -529,6 +505,30 @@ func (o *OpenidConnectIdTokenValidatorResponse) SetUrnpingidentityschemasconfigu
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *OpenidConnectIdTokenValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *OpenidConnectIdTokenValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *OpenidConnectIdTokenValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o OpenidConnectIdTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -539,7 +539,6 @@ func (o OpenidConnectIdTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o OpenidConnectIdTokenValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
 	if !IsNil(o.SigningCertificate) {
@@ -573,6 +572,7 @@ func (o OpenidConnectIdTokenValidatorResponse) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

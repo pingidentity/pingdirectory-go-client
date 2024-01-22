@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGenericRestResourceTypeRequest{}
 
 // AddGenericRestResourceTypeRequest struct for AddGenericRestResourceTypeRequest
 type AddGenericRestResourceTypeRequest struct {
-	// Name of the new REST Resource Type
-	TypeName string                                 `json:"typeName"`
-	Schemas  []EnumgenericRestResourceTypeSchemaUrn `json:"schemas"`
+	Schemas []EnumgenericRestResourceTypeSchemaUrn `json:"schemas"`
 	// A description for this REST Resource Type
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the REST Resource Type is enabled.
@@ -62,20 +60,22 @@ type AddGenericRestResourceTypeRequest struct {
 	MembersColumnName *string `json:"membersColumnName,omitempty"`
 	// Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI
 	NonmembersColumnName *string `json:"nonmembersColumnName,omitempty"`
+	// Name of the new REST Resource Type
+	TypeName string `json:"typeName"`
 }
 
 // NewAddGenericRestResourceTypeRequest instantiates a new AddGenericRestResourceTypeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGenericRestResourceTypeRequest(typeName string, schemas []EnumgenericRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string) *AddGenericRestResourceTypeRequest {
+func NewAddGenericRestResourceTypeRequest(schemas []EnumgenericRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, typeName string) *AddGenericRestResourceTypeRequest {
 	this := AddGenericRestResourceTypeRequest{}
-	this.TypeName = typeName
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.ResourceEndpoint = resourceEndpoint
 	this.StructuralLDAPObjectclass = structuralLDAPObjectclass
 	this.SearchBaseDN = searchBaseDN
+	this.TypeName = typeName
 	return &this
 }
 
@@ -85,30 +85,6 @@ func NewAddGenericRestResourceTypeRequest(typeName string, schemas []Enumgeneric
 func NewAddGenericRestResourceTypeRequestWithDefaults() *AddGenericRestResourceTypeRequest {
 	this := AddGenericRestResourceTypeRequest{}
 	return &this
-}
-
-// GetTypeName returns the TypeName field value
-func (o *AddGenericRestResourceTypeRequest) GetTypeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TypeName
-}
-
-// GetTypeNameOk returns a tuple with the TypeName field value
-// and a boolean to check if the value has been set.
-func (o *AddGenericRestResourceTypeRequest) GetTypeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TypeName, true
-}
-
-// SetTypeName sets field value
-func (o *AddGenericRestResourceTypeRequest) SetTypeName(v string) {
-	o.TypeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -743,6 +719,30 @@ func (o *AddGenericRestResourceTypeRequest) SetNonmembersColumnName(v string) {
 	o.NonmembersColumnName = &v
 }
 
+// GetTypeName returns the TypeName field value
+func (o *AddGenericRestResourceTypeRequest) GetTypeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TypeName
+}
+
+// GetTypeNameOk returns a tuple with the TypeName field value
+// and a boolean to check if the value has been set.
+func (o *AddGenericRestResourceTypeRequest) GetTypeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TypeName, true
+}
+
+// SetTypeName sets field value
+func (o *AddGenericRestResourceTypeRequest) SetTypeName(v string) {
+	o.TypeName = v
+}
+
 func (o AddGenericRestResourceTypeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -753,7 +753,6 @@ func (o AddGenericRestResourceTypeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddGenericRestResourceTypeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["typeName"] = o.TypeName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -807,6 +806,7 @@ func (o AddGenericRestResourceTypeRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.NonmembersColumnName) {
 		toSerialize["nonmembersColumnName"] = o.NonmembersColumnName
 	}
+	toSerialize["typeName"] = o.TypeName
 	return toSerialize, nil
 }
 

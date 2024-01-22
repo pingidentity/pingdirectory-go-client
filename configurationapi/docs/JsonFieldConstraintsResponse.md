@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the JSON Field Constraints | 
 **Schemas** | Pointer to [**[]EnumjsonFieldConstraintsSchemaUrn**](EnumjsonFieldConstraintsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this JSON Field Constraints | [optional] 
 **JsonField** | **string** | The full name of the JSON field to which these constraints apply. | 
@@ -28,12 +27,13 @@ Name | Type | Description | Notes
 **MaximumValueCount** | Pointer to **int64** | Specifies the largest number of elements that may be present in an array of values for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is an array with more than this number of elements. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the JSON Field Constraints | 
 
 ## Methods
 
 ### NewJsonFieldConstraintsResponse
 
-`func NewJsonFieldConstraintsResponse(id string, jsonField string, valueType EnumjsonFieldConstraintsValueTypeProp, ) *JsonFieldConstraintsResponse`
+`func NewJsonFieldConstraintsResponse(jsonField string, valueType EnumjsonFieldConstraintsValueTypeProp, id string, ) *JsonFieldConstraintsResponse`
 
 NewJsonFieldConstraintsResponse instantiates a new JsonFieldConstraintsResponse object
 This constructor will assign default values to properties that have it defined,
@@ -47,26 +47,6 @@ will change when the set of required properties is changed
 NewJsonFieldConstraintsResponseWithDefaults instantiates a new JsonFieldConstraintsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *JsonFieldConstraintsResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *JsonFieldConstraintsResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *JsonFieldConstraintsResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -632,6 +612,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *JsonFieldConstraintsResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *JsonFieldConstraintsResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *JsonFieldConstraintsResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *JsonFieldConstraintsResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

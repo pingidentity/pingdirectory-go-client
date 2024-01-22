@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AzureAuthenticationMethodApiService AzureAuthenticationMethodApi service
-type AzureAuthenticationMethodApiService service
+// AzureAuthenticationMethodAPIService AzureAuthenticationMethodAPI service
+type AzureAuthenticationMethodAPIService service
 
 type ApiAddAzureAuthenticationMethodRequest struct {
 	ctx                                 context.Context
-	ApiService                          *AzureAuthenticationMethodApiService
+	ApiService                          *AzureAuthenticationMethodAPIService
 	addAzureAuthenticationMethodRequest *AddAzureAuthenticationMethodRequest
 }
 
@@ -44,7 +44,7 @@ AddAzureAuthenticationMethod Add a new Azure Authentication Method to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddAzureAuthenticationMethodRequest
 */
-func (a *AzureAuthenticationMethodApiService) AddAzureAuthenticationMethod(ctx context.Context) ApiAddAzureAuthenticationMethodRequest {
+func (a *AzureAuthenticationMethodAPIService) AddAzureAuthenticationMethod(ctx context.Context) ApiAddAzureAuthenticationMethodRequest {
 	return ApiAddAzureAuthenticationMethodRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *AzureAuthenticationMethodApiService) AddAzureAuthenticationMethod(ctx c
 // Execute executes the request
 //
 //	@return AddAzureAuthenticationMethod200Response
-func (a *AzureAuthenticationMethodApiService) AddAzureAuthenticationMethodExecute(r ApiAddAzureAuthenticationMethodRequest) (*AddAzureAuthenticationMethod200Response, *http.Response, error) {
+func (a *AzureAuthenticationMethodAPIService) AddAzureAuthenticationMethodExecute(r ApiAddAzureAuthenticationMethodRequest) (*AddAzureAuthenticationMethod200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *AzureAuthenticationMethodApiService) AddAzureAuthenticationMethodExecut
 		localVarReturnValue *AddAzureAuthenticationMethod200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodApiService.AddAzureAuthenticationMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodAPIService.AddAzureAuthenticationMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *AzureAuthenticationMethodApiService) AddAzureAuthenticationMethodExecut
 
 type ApiDeleteAzureAuthenticationMethodRequest struct {
 	ctx                           context.Context
-	ApiService                    *AzureAuthenticationMethodApiService
+	ApiService                    *AzureAuthenticationMethodAPIService
 	azureAuthenticationMethodName string
 }
 
@@ -149,7 +149,7 @@ DeleteAzureAuthenticationMethod Delete a Azure Authentication Method
 	@param azureAuthenticationMethodName Name of the Azure Authentication Method
 	@return ApiDeleteAzureAuthenticationMethodRequest
 */
-func (a *AzureAuthenticationMethodApiService) DeleteAzureAuthenticationMethod(ctx context.Context, azureAuthenticationMethodName string) ApiDeleteAzureAuthenticationMethodRequest {
+func (a *AzureAuthenticationMethodAPIService) DeleteAzureAuthenticationMethod(ctx context.Context, azureAuthenticationMethodName string) ApiDeleteAzureAuthenticationMethodRequest {
 	return ApiDeleteAzureAuthenticationMethodRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -158,14 +158,14 @@ func (a *AzureAuthenticationMethodApiService) DeleteAzureAuthenticationMethod(ct
 }
 
 // Execute executes the request
-func (a *AzureAuthenticationMethodApiService) DeleteAzureAuthenticationMethodExecute(r ApiDeleteAzureAuthenticationMethodRequest) (*http.Response, error) {
+func (a *AzureAuthenticationMethodAPIService) DeleteAzureAuthenticationMethodExecute(r ApiDeleteAzureAuthenticationMethodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodApiService.DeleteAzureAuthenticationMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodAPIService.DeleteAzureAuthenticationMethod")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *AzureAuthenticationMethodApiService) DeleteAzureAuthenticationMethodExe
 
 type ApiGetAzureAuthenticationMethodRequest struct {
 	ctx                           context.Context
-	ApiService                    *AzureAuthenticationMethodApiService
+	ApiService                    *AzureAuthenticationMethodAPIService
 	azureAuthenticationMethodName string
 }
 
@@ -239,7 +239,7 @@ GetAzureAuthenticationMethod Returns a single Azure Authentication Method
 	@param azureAuthenticationMethodName Name of the Azure Authentication Method
 	@return ApiGetAzureAuthenticationMethodRequest
 */
-func (a *AzureAuthenticationMethodApiService) GetAzureAuthenticationMethod(ctx context.Context, azureAuthenticationMethodName string) ApiGetAzureAuthenticationMethodRequest {
+func (a *AzureAuthenticationMethodAPIService) GetAzureAuthenticationMethod(ctx context.Context, azureAuthenticationMethodName string) ApiGetAzureAuthenticationMethodRequest {
 	return ApiGetAzureAuthenticationMethodRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -250,7 +250,7 @@ func (a *AzureAuthenticationMethodApiService) GetAzureAuthenticationMethod(ctx c
 // Execute executes the request
 //
 //	@return AddAzureAuthenticationMethod200Response
-func (a *AzureAuthenticationMethodApiService) GetAzureAuthenticationMethodExecute(r ApiGetAzureAuthenticationMethodRequest) (*AddAzureAuthenticationMethod200Response, *http.Response, error) {
+func (a *AzureAuthenticationMethodAPIService) GetAzureAuthenticationMethodExecute(r ApiGetAzureAuthenticationMethodRequest) (*AddAzureAuthenticationMethod200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *AzureAuthenticationMethodApiService) GetAzureAuthenticationMethodExecut
 		localVarReturnValue *AddAzureAuthenticationMethod200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodApiService.GetAzureAuthenticationMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodAPIService.GetAzureAuthenticationMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *AzureAuthenticationMethodApiService) GetAzureAuthenticationMethodExecut
 
 type ApiListAzureAuthenticationMethodsRequest struct {
 	ctx        context.Context
-	ApiService *AzureAuthenticationMethodApiService
+	ApiService *AzureAuthenticationMethodAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListAzureAuthenticationMethods Returns a list of all Azure Authentication Method
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListAzureAuthenticationMethodsRequest
 */
-func (a *AzureAuthenticationMethodApiService) ListAzureAuthenticationMethods(ctx context.Context) ApiListAzureAuthenticationMethodsRequest {
+func (a *AzureAuthenticationMethodAPIService) ListAzureAuthenticationMethods(ctx context.Context) ApiListAzureAuthenticationMethodsRequest {
 	return ApiListAzureAuthenticationMethodsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *AzureAuthenticationMethodApiService) ListAzureAuthenticationMethods(ctx
 // Execute executes the request
 //
 //	@return AzureAuthenticationMethodListResponse
-func (a *AzureAuthenticationMethodApiService) ListAzureAuthenticationMethodsExecute(r ApiListAzureAuthenticationMethodsRequest) (*AzureAuthenticationMethodListResponse, *http.Response, error) {
+func (a *AzureAuthenticationMethodAPIService) ListAzureAuthenticationMethodsExecute(r ApiListAzureAuthenticationMethodsRequest) (*AzureAuthenticationMethodListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *AzureAuthenticationMethodApiService) ListAzureAuthenticationMethodsExec
 		localVarReturnValue *AzureAuthenticationMethodListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodApiService.ListAzureAuthenticationMethods")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodAPIService.ListAzureAuthenticationMethods")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *AzureAuthenticationMethodApiService) ListAzureAuthenticationMethodsExec
 
 type ApiUpdateAzureAuthenticationMethodRequest struct {
 	ctx                           context.Context
-	ApiService                    *AzureAuthenticationMethodApiService
+	ApiService                    *AzureAuthenticationMethodAPIService
 	azureAuthenticationMethodName string
 	updateRequest                 *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateAzureAuthenticationMethod Update an existing Azure Authentication Method b
 	@param azureAuthenticationMethodName Name of the Azure Authentication Method
 	@return ApiUpdateAzureAuthenticationMethodRequest
 */
-func (a *AzureAuthenticationMethodApiService) UpdateAzureAuthenticationMethod(ctx context.Context, azureAuthenticationMethodName string) ApiUpdateAzureAuthenticationMethodRequest {
+func (a *AzureAuthenticationMethodAPIService) UpdateAzureAuthenticationMethod(ctx context.Context, azureAuthenticationMethodName string) ApiUpdateAzureAuthenticationMethodRequest {
 	return ApiUpdateAzureAuthenticationMethodRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -467,7 +467,7 @@ func (a *AzureAuthenticationMethodApiService) UpdateAzureAuthenticationMethod(ct
 // Execute executes the request
 //
 //	@return AddAzureAuthenticationMethod200Response
-func (a *AzureAuthenticationMethodApiService) UpdateAzureAuthenticationMethodExecute(r ApiUpdateAzureAuthenticationMethodRequest) (*AddAzureAuthenticationMethod200Response, *http.Response, error) {
+func (a *AzureAuthenticationMethodAPIService) UpdateAzureAuthenticationMethodExecute(r ApiUpdateAzureAuthenticationMethodRequest) (*AddAzureAuthenticationMethod200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *AzureAuthenticationMethodApiService) UpdateAzureAuthenticationMethodExe
 		localVarReturnValue *AddAzureAuthenticationMethod200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodApiService.UpdateAzureAuthenticationMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AzureAuthenticationMethodAPIService.UpdateAzureAuthenticationMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

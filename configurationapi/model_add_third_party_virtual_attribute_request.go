@@ -19,8 +19,6 @@ var _ MappedNullable = &AddThirdPartyVirtualAttributeRequest{}
 
 // AddThirdPartyVirtualAttributeRequest struct for AddThirdPartyVirtualAttributeRequest
 type AddThirdPartyVirtualAttributeRequest struct {
-	// Name of the new Virtual Attribute
-	Name    string                                    `json:"name"`
 	Schemas []EnumthirdPartyVirtualAttributeSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Virtual Attribute.
 	ExtensionClass string `json:"extensionClass"`
@@ -48,19 +46,21 @@ type AddThirdPartyVirtualAttributeRequest struct {
 	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
+	// Name of the new Virtual Attribute
+	Name string `json:"name"`
 }
 
 // NewAddThirdPartyVirtualAttributeRequest instantiates a new AddThirdPartyVirtualAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyVirtualAttributeRequest(name string, schemas []EnumthirdPartyVirtualAttributeSchemaUrn, extensionClass string, enabled bool, attributeType string) *AddThirdPartyVirtualAttributeRequest {
+func NewAddThirdPartyVirtualAttributeRequest(schemas []EnumthirdPartyVirtualAttributeSchemaUrn, extensionClass string, enabled bool, attributeType string, name string) *AddThirdPartyVirtualAttributeRequest {
 	this := AddThirdPartyVirtualAttributeRequest{}
-	this.Name = name
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
 	this.AttributeType = attributeType
+	this.Name = name
 	return &this
 }
 
@@ -70,30 +70,6 @@ func NewAddThirdPartyVirtualAttributeRequest(name string, schemas []EnumthirdPar
 func NewAddThirdPartyVirtualAttributeRequestWithDefaults() *AddThirdPartyVirtualAttributeRequest {
 	this := AddThirdPartyVirtualAttributeRequest{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddThirdPartyVirtualAttributeRequest) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyVirtualAttributeRequest) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddThirdPartyVirtualAttributeRequest) SetName(v string) {
-	o.Name = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -544,6 +520,30 @@ func (o *AddThirdPartyVirtualAttributeRequest) SetAllowIndexConflicts(v bool) {
 	o.AllowIndexConflicts = &v
 }
 
+// GetName returns the Name field value
+func (o *AddThirdPartyVirtualAttributeRequest) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyVirtualAttributeRequest) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *AddThirdPartyVirtualAttributeRequest) SetName(v string) {
+	o.Name = v
+}
+
 func (o AddThirdPartyVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -554,7 +554,6 @@ func (o AddThirdPartyVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyVirtualAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -592,6 +591,7 @@ func (o AddThirdPartyVirtualAttributeRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.AllowIndexConflicts) {
 		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
 	}
+	toSerialize["name"] = o.Name
 	return toSerialize, nil
 }
 

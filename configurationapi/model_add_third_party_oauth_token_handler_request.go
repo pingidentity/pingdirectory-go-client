@@ -19,26 +19,26 @@ var _ MappedNullable = &AddThirdPartyOauthTokenHandlerRequest{}
 
 // AddThirdPartyOauthTokenHandlerRequest struct for AddThirdPartyOauthTokenHandlerRequest
 type AddThirdPartyOauthTokenHandlerRequest struct {
-	// Name of the new OAuth Token Handler
-	HandlerName string                                     `json:"handlerName"`
-	Schemas     []EnumthirdPartyOauthTokenHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyOauthTokenHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party OAuth Token Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party OAuth Token Handler. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this OAuth Token Handler
 	Description *string `json:"description,omitempty"`
+	// Name of the new OAuth Token Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddThirdPartyOauthTokenHandlerRequest instantiates a new AddThirdPartyOauthTokenHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyOauthTokenHandlerRequest(handlerName string, schemas []EnumthirdPartyOauthTokenHandlerSchemaUrn, extensionClass string) *AddThirdPartyOauthTokenHandlerRequest {
+func NewAddThirdPartyOauthTokenHandlerRequest(schemas []EnumthirdPartyOauthTokenHandlerSchemaUrn, extensionClass string, handlerName string) *AddThirdPartyOauthTokenHandlerRequest {
 	this := AddThirdPartyOauthTokenHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewAddThirdPartyOauthTokenHandlerRequest(handlerName string, schemas []Enum
 func NewAddThirdPartyOauthTokenHandlerRequestWithDefaults() *AddThirdPartyOauthTokenHandlerRequest {
 	this := AddThirdPartyOauthTokenHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddThirdPartyOauthTokenHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -186,6 +162,30 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddThirdPartyOauthTokenHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddThirdPartyOauthTokenHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -196,7 +196,6 @@ func (o AddThirdPartyOauthTokenHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyOauthTokenHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -205,6 +204,7 @@ func (o AddThirdPartyOauthTokenHandlerRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

@@ -1,14 +1,14 @@
-# \SaslMechanismHandlerApi
+# \SaslMechanismHandlerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddSaslMechanismHandler**](SaslMechanismHandlerApi.md#AddSaslMechanismHandler) | **Post** /sasl-mechanism-handlers | Add a new SASL Mechanism Handler to the config
-[**DeleteSaslMechanismHandler**](SaslMechanismHandlerApi.md#DeleteSaslMechanismHandler) | **Delete** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Delete a SASL Mechanism Handler
-[**GetSaslMechanismHandler**](SaslMechanismHandlerApi.md#GetSaslMechanismHandler) | **Get** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Returns a single SASL Mechanism Handler
-[**ListSaslMechanismHandlers**](SaslMechanismHandlerApi.md#ListSaslMechanismHandlers) | **Get** /sasl-mechanism-handlers | Returns a list of all SASL Mechanism Handler objects
-[**UpdateSaslMechanismHandler**](SaslMechanismHandlerApi.md#UpdateSaslMechanismHandler) | **Patch** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Update an existing SASL Mechanism Handler by name
+[**AddSaslMechanismHandler**](SaslMechanismHandlerAPI.md#AddSaslMechanismHandler) | **Post** /sasl-mechanism-handlers | Add a new SASL Mechanism Handler to the config
+[**DeleteSaslMechanismHandler**](SaslMechanismHandlerAPI.md#DeleteSaslMechanismHandler) | **Delete** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Delete a SASL Mechanism Handler
+[**GetSaslMechanismHandler**](SaslMechanismHandlerAPI.md#GetSaslMechanismHandler) | **Get** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Returns a single SASL Mechanism Handler
+[**ListSaslMechanismHandlers**](SaslMechanismHandlerAPI.md#ListSaslMechanismHandlers) | **Get** /sasl-mechanism-handlers | Returns a list of all SASL Mechanism Handler objects
+[**UpdateSaslMechanismHandler**](SaslMechanismHandlerAPI.md#UpdateSaslMechanismHandler) | **Patch** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Update an existing SASL Mechanism Handler by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addSaslMechanismHandlerRequest := openapiclient.add_sasl_mechanism_handler_request{AddOauthBearerSaslMechanismHandlerRequest: openapiclient.NewAddOauthBearerSaslMechanismHandlerRequest("HandlerName_example", []openapiclient.EnumoauthBearerSaslMechanismHandlerSchemaUrn{openapiclient.Enumoauth-bearer-sasl-mechanism-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:oauth-bearer")}, false)} // AddSaslMechanismHandlerRequest | Create a new SASL Mechanism Handler in the config
+    addSaslMechanismHandlerRequest := openapiclient.add_sasl_mechanism_handler_request{AddOauthBearerSaslMechanismHandlerRequest: openapiclient.NewAddOauthBearerSaslMechanismHandlerRequest([]openapiclient.EnumoauthBearerSaslMechanismHandlerSchemaUrn{openapiclient.Enumoauth-bearer-sasl-mechanism-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:oauth-bearer")}, false, "HandlerName_example")} // AddSaslMechanismHandlerRequest | Create a new SASL Mechanism Handler in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SaslMechanismHandlerApi.AddSaslMechanismHandler(context.Background()).AddSaslMechanismHandlerRequest(addSaslMechanismHandlerRequest).Execute()
+    resp, r, err := apiClient.SaslMechanismHandlerAPI.AddSaslMechanismHandler(context.Background()).AddSaslMechanismHandlerRequest(addSaslMechanismHandlerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerApi.AddSaslMechanismHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerAPI.AddSaslMechanismHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddSaslMechanismHandler`: AddSaslMechanismHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `SaslMechanismHandlerApi.AddSaslMechanismHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SaslMechanismHandlerAPI.AddSaslMechanismHandler`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SaslMechanismHandlerApi.DeleteSaslMechanismHandler(context.Background(), saslMechanismHandlerName).Execute()
+    r, err := apiClient.SaslMechanismHandlerAPI.DeleteSaslMechanismHandler(context.Background(), saslMechanismHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerApi.DeleteSaslMechanismHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerAPI.DeleteSaslMechanismHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SaslMechanismHandlerApi.GetSaslMechanismHandler(context.Background(), saslMechanismHandlerName).Execute()
+    resp, r, err := apiClient.SaslMechanismHandlerAPI.GetSaslMechanismHandler(context.Background(), saslMechanismHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerApi.GetSaslMechanismHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerAPI.GetSaslMechanismHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSaslMechanismHandler`: GetSaslMechanismHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `SaslMechanismHandlerApi.GetSaslMechanismHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SaslMechanismHandlerAPI.GetSaslMechanismHandler`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SaslMechanismHandlerApi.ListSaslMechanismHandlers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.SaslMechanismHandlerAPI.ListSaslMechanismHandlers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerApi.ListSaslMechanismHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerAPI.ListSaslMechanismHandlers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListSaslMechanismHandlers`: SaslMechanismHandlerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `SaslMechanismHandlerApi.ListSaslMechanismHandlers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SaslMechanismHandlerAPI.ListSaslMechanismHandlers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SaslMechanismHandlerApi.UpdateSaslMechanismHandler(context.Background(), saslMechanismHandlerName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.SaslMechanismHandlerAPI.UpdateSaslMechanismHandler(context.Background(), saslMechanismHandlerName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerApi.UpdateSaslMechanismHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerAPI.UpdateSaslMechanismHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSaslMechanismHandler`: GetSaslMechanismHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `SaslMechanismHandlerApi.UpdateSaslMechanismHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SaslMechanismHandlerAPI.UpdateSaslMechanismHandler`: %v\n", resp)
 }
 ```
 

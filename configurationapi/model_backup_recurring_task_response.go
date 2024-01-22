@@ -19,8 +19,6 @@ var _ MappedNullable = &BackupRecurringTaskResponse{}
 
 // BackupRecurringTaskResponse struct for BackupRecurringTaskResponse
 type BackupRecurringTaskResponse struct {
-	// Name of the Recurring Task
-	Id      string                             `json:"id"`
 	Schemas []EnumbackupRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID.
 	BackupDirectory string `json:"backupDirectory"`
@@ -60,17 +58,19 @@ type BackupRecurringTaskResponse struct {
 	AlertOnFailure                                *bool                                              `json:"alertOnFailure,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Recurring Task
+	Id string `json:"id"`
 }
 
 // NewBackupRecurringTaskResponse instantiates a new BackupRecurringTaskResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBackupRecurringTaskResponse(id string, schemas []EnumbackupRecurringTaskSchemaUrn, backupDirectory string) *BackupRecurringTaskResponse {
+func NewBackupRecurringTaskResponse(schemas []EnumbackupRecurringTaskSchemaUrn, backupDirectory string, id string) *BackupRecurringTaskResponse {
 	this := BackupRecurringTaskResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.BackupDirectory = backupDirectory
+	this.Id = id
 	return &this
 }
 
@@ -80,30 +80,6 @@ func NewBackupRecurringTaskResponse(id string, schemas []EnumbackupRecurringTask
 func NewBackupRecurringTaskResponseWithDefaults() *BackupRecurringTaskResponse {
 	this := BackupRecurringTaskResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *BackupRecurringTaskResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *BackupRecurringTaskResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *BackupRecurringTaskResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -762,6 +738,30 @@ func (o *BackupRecurringTaskResponse) SetUrnpingidentityschemasconfigurationmess
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *BackupRecurringTaskResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *BackupRecurringTaskResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *BackupRecurringTaskResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o BackupRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -772,7 +772,6 @@ func (o BackupRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 
 func (o BackupRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["backupDirectory"] = o.BackupDirectory
 	if !IsNil(o.IncludedBackendID) {
@@ -832,6 +831,7 @@ func (o BackupRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

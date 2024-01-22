@@ -19,8 +19,6 @@ var _ MappedNullable = &SubjectEqualsDnCertificateMapperResponse{}
 
 // SubjectEqualsDnCertificateMapperResponse struct for SubjectEqualsDnCertificateMapperResponse
 type SubjectEqualsDnCertificateMapperResponse struct {
-	// Name of the Certificate Mapper
-	Id      string                                          `json:"id"`
 	Schemas []EnumsubjectEqualsDnCertificateMapperSchemaUrn `json:"schemas"`
 	// A description for this Certificate Mapper
 	Description *string `json:"description,omitempty"`
@@ -28,17 +26,19 @@ type SubjectEqualsDnCertificateMapperResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Certificate Mapper
+	Id string `json:"id"`
 }
 
 // NewSubjectEqualsDnCertificateMapperResponse instantiates a new SubjectEqualsDnCertificateMapperResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSubjectEqualsDnCertificateMapperResponse(id string, schemas []EnumsubjectEqualsDnCertificateMapperSchemaUrn, enabled bool) *SubjectEqualsDnCertificateMapperResponse {
+func NewSubjectEqualsDnCertificateMapperResponse(schemas []EnumsubjectEqualsDnCertificateMapperSchemaUrn, enabled bool, id string) *SubjectEqualsDnCertificateMapperResponse {
 	this := SubjectEqualsDnCertificateMapperResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewSubjectEqualsDnCertificateMapperResponse(id string, schemas []Enumsubjec
 func NewSubjectEqualsDnCertificateMapperResponseWithDefaults() *SubjectEqualsDnCertificateMapperResponse {
 	this := SubjectEqualsDnCertificateMapperResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SubjectEqualsDnCertificateMapperResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SubjectEqualsDnCertificateMapperResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SubjectEqualsDnCertificateMapperResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *SubjectEqualsDnCertificateMapperResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SubjectEqualsDnCertificateMapperResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SubjectEqualsDnCertificateMapperResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SubjectEqualsDnCertificateMapperResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SubjectEqualsDnCertificateMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o SubjectEqualsDnCertificateMapperResponse) MarshalJSON() ([]byte, error) 
 
 func (o SubjectEqualsDnCertificateMapperResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -240,6 +239,7 @@ func (o SubjectEqualsDnCertificateMapperResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

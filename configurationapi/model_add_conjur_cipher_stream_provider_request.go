@@ -19,9 +19,7 @@ var _ MappedNullable = &AddConjurCipherStreamProviderRequest{}
 
 // AddConjurCipherStreamProviderRequest struct for AddConjurCipherStreamProviderRequest
 type AddConjurCipherStreamProviderRequest struct {
-	// Name of the new Cipher Stream Provider
-	ProviderName string                                    `json:"providerName"`
-	Schemas      []EnumconjurCipherStreamProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumconjurCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur server.
 	ConjurExternalServer string `json:"conjurExternalServer"`
 	// The portion of the path that follows the account name in the URI needed to obtain the secret passphrase to use to generate the encryption key. Any special characters in the path must be URL-encoded.
@@ -34,19 +32,21 @@ type AddConjurCipherStreamProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Cipher Stream Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddConjurCipherStreamProviderRequest instantiates a new AddConjurCipherStreamProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConjurCipherStreamProviderRequest(providerName string, schemas []EnumconjurCipherStreamProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, enabled bool) *AddConjurCipherStreamProviderRequest {
+func NewAddConjurCipherStreamProviderRequest(schemas []EnumconjurCipherStreamProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, enabled bool, providerName string) *AddConjurCipherStreamProviderRequest {
 	this := AddConjurCipherStreamProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.ConjurExternalServer = conjurExternalServer
 	this.ConjurSecretRelativePath = conjurSecretRelativePath
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddConjurCipherStreamProviderRequest(providerName string, schemas []Enum
 func NewAddConjurCipherStreamProviderRequestWithDefaults() *AddConjurCipherStreamProviderRequest {
 	this := AddConjurCipherStreamProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddConjurCipherStreamProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddConjurCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddConjurCipherStreamProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -274,6 +250,30 @@ func (o *AddConjurCipherStreamProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddConjurCipherStreamProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddConjurCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddConjurCipherStreamProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddConjurCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -284,7 +284,6 @@ func (o AddConjurCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddConjurCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["conjurExternalServer"] = o.ConjurExternalServer
 	toSerialize["conjurSecretRelativePath"] = o.ConjurSecretRelativePath
@@ -298,6 +297,7 @@ func (o AddConjurCipherStreamProviderRequest) ToMap() (map[string]interface{}, e
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

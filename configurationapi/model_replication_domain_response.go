@@ -19,7 +19,9 @@ var _ MappedNullable = &ReplicationDomainResponse{}
 
 // ReplicationDomainResponse struct for ReplicationDomainResponse
 type ReplicationDomainResponse struct {
-	Schemas []EnumreplicationDomainSchemaUrn `json:"schemas,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumreplicationDomainSchemaUrn                   `json:"schemas,omitempty"`
 	// Name of the Replication Domain
 	Id string `json:"id"`
 	// Specifies a unique identifier for the Directory Server within the Replication Domain.
@@ -37,9 +39,8 @@ type ReplicationDomainResponse struct {
 	// Defines the maximum time to retry a failed operation. An operation will be retried only if it appears that the failure might be dependent on an earlier operation from a different server that hasn't replicated yet. The frequency of the retry is determined by the dependent-ops-replay-failure-wait-time property.
 	OnReplayFailureWaitForDependentOpsTimeout *string `json:"onReplayFailureWaitForDependentOpsTimeout,omitempty"`
 	// Defines how long to wait before retrying certain operations, specifically operations that might have failed because they depend on an operation from a different server that has not yet replicated to this instance.
-	DependentOpsReplayFailureWaitTime             *string                                            `json:"dependentOpsReplayFailureWaitTime,omitempty"`
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	DependentOpsReplayFailureWaitTime *string                                        `json:"dependentOpsReplayFailureWaitTime,omitempty"`
+	MissingChangesPolicy              *EnumreplicationDomainMissingChangesPolicyProp `json:"missingChangesPolicy,omitempty"`
 }
 
 // NewReplicationDomainResponse instantiates a new ReplicationDomainResponse object
@@ -60,6 +61,70 @@ func NewReplicationDomainResponse(id string, serverID int64, baseDN string) *Rep
 func NewReplicationDomainResponseWithDefaults() *ReplicationDomainResponse {
 	this := ReplicationDomainResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ReplicationDomainResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReplicationDomainResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ReplicationDomainResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ReplicationDomainResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *ReplicationDomainResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReplicationDomainResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *ReplicationDomainResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *ReplicationDomainResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -358,68 +423,36 @@ func (o *ReplicationDomainResponse) SetDependentOpsReplayFailureWaitTime(v strin
 	o.DependentOpsReplayFailureWaitTime = &v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ReplicationDomainResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
+// GetMissingChangesPolicy returns the MissingChangesPolicy field value if set, zero value otherwise.
+func (o *ReplicationDomainResponse) GetMissingChangesPolicy() EnumreplicationDomainMissingChangesPolicyProp {
+	if o == nil || IsNil(o.MissingChangesPolicy) {
+		var ret EnumreplicationDomainMissingChangesPolicyProp
 		return ret
 	}
-	return *o.Meta
+	return *o.MissingChangesPolicy
 }
 
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// GetMissingChangesPolicyOk returns a tuple with the MissingChangesPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReplicationDomainResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
+func (o *ReplicationDomainResponse) GetMissingChangesPolicyOk() (*EnumreplicationDomainMissingChangesPolicyProp, bool) {
+	if o == nil || IsNil(o.MissingChangesPolicy) {
 		return nil, false
 	}
-	return o.Meta, true
+	return o.MissingChangesPolicy, true
 }
 
-// HasMeta returns a boolean if a field has been set.
-func (o *ReplicationDomainResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
+// HasMissingChangesPolicy returns a boolean if a field has been set.
+func (o *ReplicationDomainResponse) HasMissingChangesPolicy() bool {
+	if o != nil && !IsNil(o.MissingChangesPolicy) {
 		return true
 	}
 
 	return false
 }
 
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *ReplicationDomainResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *ReplicationDomainResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ReplicationDomainResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *ReplicationDomainResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *ReplicationDomainResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
+// SetMissingChangesPolicy gets a reference to the given EnumreplicationDomainMissingChangesPolicyProp and assigns it to the MissingChangesPolicy field.
+func (o *ReplicationDomainResponse) SetMissingChangesPolicy(v EnumreplicationDomainMissingChangesPolicyProp) {
+	o.MissingChangesPolicy = &v
 }
 
 func (o ReplicationDomainResponse) MarshalJSON() ([]byte, error) {
@@ -432,6 +465,12 @@ func (o ReplicationDomainResponse) MarshalJSON() ([]byte, error) {
 
 func (o ReplicationDomainResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -456,11 +495,8 @@ func (o ReplicationDomainResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DependentOpsReplayFailureWaitTime) {
 		toSerialize["dependentOpsReplayFailureWaitTime"] = o.DependentOpsReplayFailureWaitTime
 	}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	if !IsNil(o.MissingChangesPolicy) {
+		toSerialize["missingChangesPolicy"] = o.MissingChangesPolicy
 	}
 	return toSerialize, nil
 }

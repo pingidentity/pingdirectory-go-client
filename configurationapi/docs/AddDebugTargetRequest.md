@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TargetName** | **string** | Name of the new Debug Target | 
 **Schemas** | Pointer to [**[]EnumdebugTargetSchemaUrn**](EnumdebugTargetSchemaUrn.md) |  | [optional] 
 **DebugScope** | **string** | Specifies the fully-qualified Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, com.unboundid.directory.server.core.DirectoryServer#startUp). | 
 **DebugLevel** | [**EnumdebugTargetDebugLevelProp**](EnumdebugTargetDebugLevelProp.md) |  | 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **IncludeThrowableCause** | Pointer to **bool** | Specifies the property to indicate whether to include the cause of exceptions in exception thrown and caught messages. | [optional] 
 **ThrowableStackFrames** | Pointer to **int64** | Specifies the property to indicate the number of stack frames to include in the stack trace for method entry and exception thrown messages. | [optional] 
 **Description** | Pointer to **string** | A description for this Debug Target | [optional] 
+**TargetName** | **string** | Name of the new Debug Target | 
 
 ## Methods
 
 ### NewAddDebugTargetRequest
 
-`func NewAddDebugTargetRequest(targetName string, debugScope string, debugLevel EnumdebugTargetDebugLevelProp, ) *AddDebugTargetRequest`
+`func NewAddDebugTargetRequest(debugScope string, debugLevel EnumdebugTargetDebugLevelProp, targetName string, ) *AddDebugTargetRequest`
 
 NewAddDebugTargetRequest instantiates a new AddDebugTargetRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddDebugTargetRequestWithDefaults instantiates a new AddDebugTargetRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTargetName
-
-`func (o *AddDebugTargetRequest) GetTargetName() string`
-
-GetTargetName returns the TargetName field if non-nil, zero value otherwise.
-
-### GetTargetNameOk
-
-`func (o *AddDebugTargetRequest) GetTargetNameOk() (*string, bool)`
-
-GetTargetNameOk returns a tuple with the TargetName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTargetName
-
-`func (o *AddDebugTargetRequest) SetTargetName(v string)`
-
-SetTargetName sets TargetName field to given value.
-
 
 ### GetSchemas
 
@@ -268,6 +248,26 @@ SetDescription sets Description field to given value.
 `func (o *AddDebugTargetRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetTargetName
+
+`func (o *AddDebugTargetRequest) GetTargetName() string`
+
+GetTargetName returns the TargetName field if non-nil, zero value otherwise.
+
+### GetTargetNameOk
+
+`func (o *AddDebugTargetRequest) GetTargetNameOk() (*string, bool)`
+
+GetTargetNameOk returns a tuple with the TargetName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetName
+
+`func (o *AddDebugTargetRequest) SetTargetName(v string)`
+
+SetTargetName sets TargetName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

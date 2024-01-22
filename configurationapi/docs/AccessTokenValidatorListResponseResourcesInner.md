@@ -15,6 +15,12 @@ Name | Type | Description | Notes
 **ClientIDClaimName** | Pointer to **string** | The name of the token claim that contains the OAuth2 client Id. | [optional] 
 **ScopeClaimName** | Pointer to **string** | The name of the token claim that contains the scopes granted by the token. | [optional] 
 **SubjectClaimName** | Pointer to **string** | The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server. | [optional] 
+**PersistAccessTokens** | Pointer to **bool** | Indicates whether access tokens should be persisted in user entries. | [optional] 
+**MaximumTokenLifetime** | Pointer to **string** | Specifies the maximum length of time that a generated token should be considered valid. If this is not specified, then generated access tokens will not expire. | [optional] 
+**AllowedAuthenticationType** | Pointer to [**[]EnumaccessTokenValidatorAllowedAuthenticationTypeProp**](EnumaccessTokenValidatorAllowedAuthenticationTypeProp.md) |  | [optional] 
+**AllowedSASLMechanism** | Pointer to **[]string** | Specifies the names of the SASL mechanisms for which access tokens may be generated, and for which generated access tokens will be accepted. | [optional] 
+**GenerateTokenResultCriteria** | Pointer to **string** | A reference to a request criteria object that may be used to identify the types of bind operations for which access tokens may be generated. If no criteria is specified, then access tokens may be generated for any bind operations that satisfy the other requirements configured in this validator. | [optional] 
+**IncludedScope** | Pointer to **[]string** | Specifies the names of any scopes that should be granted to a client that authenticates with a bind access token. By default, no scopes will be granted. | [optional] 
 **ClientID** | **string** | The client identifier to use when authenticating to the PingFederate authorization server. | 
 **ClientSecret** | Pointer to **string** | The client secret to use when authenticating to the PingFederate authorization server. | [optional] 
 **ClientSecretPassphraseProvider** | Pointer to **string** | The passphrase provider for obtaining the client secret to use when authenticating to the PingFederate authorization server. | [optional] 
@@ -305,6 +311,156 @@ SetSubjectClaimName sets SubjectClaimName field to given value.
 `func (o *AccessTokenValidatorListResponseResourcesInner) HasSubjectClaimName() bool`
 
 HasSubjectClaimName returns a boolean if a field has been set.
+
+### GetPersistAccessTokens
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetPersistAccessTokens() bool`
+
+GetPersistAccessTokens returns the PersistAccessTokens field if non-nil, zero value otherwise.
+
+### GetPersistAccessTokensOk
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetPersistAccessTokensOk() (*bool, bool)`
+
+GetPersistAccessTokensOk returns a tuple with the PersistAccessTokens field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPersistAccessTokens
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) SetPersistAccessTokens(v bool)`
+
+SetPersistAccessTokens sets PersistAccessTokens field to given value.
+
+### HasPersistAccessTokens
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) HasPersistAccessTokens() bool`
+
+HasPersistAccessTokens returns a boolean if a field has been set.
+
+### GetMaximumTokenLifetime
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetMaximumTokenLifetime() string`
+
+GetMaximumTokenLifetime returns the MaximumTokenLifetime field if non-nil, zero value otherwise.
+
+### GetMaximumTokenLifetimeOk
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetMaximumTokenLifetimeOk() (*string, bool)`
+
+GetMaximumTokenLifetimeOk returns a tuple with the MaximumTokenLifetime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumTokenLifetime
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) SetMaximumTokenLifetime(v string)`
+
+SetMaximumTokenLifetime sets MaximumTokenLifetime field to given value.
+
+### HasMaximumTokenLifetime
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) HasMaximumTokenLifetime() bool`
+
+HasMaximumTokenLifetime returns a boolean if a field has been set.
+
+### GetAllowedAuthenticationType
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetAllowedAuthenticationType() []EnumaccessTokenValidatorAllowedAuthenticationTypeProp`
+
+GetAllowedAuthenticationType returns the AllowedAuthenticationType field if non-nil, zero value otherwise.
+
+### GetAllowedAuthenticationTypeOk
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetAllowedAuthenticationTypeOk() (*[]EnumaccessTokenValidatorAllowedAuthenticationTypeProp, bool)`
+
+GetAllowedAuthenticationTypeOk returns a tuple with the AllowedAuthenticationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedAuthenticationType
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) SetAllowedAuthenticationType(v []EnumaccessTokenValidatorAllowedAuthenticationTypeProp)`
+
+SetAllowedAuthenticationType sets AllowedAuthenticationType field to given value.
+
+### HasAllowedAuthenticationType
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) HasAllowedAuthenticationType() bool`
+
+HasAllowedAuthenticationType returns a boolean if a field has been set.
+
+### GetAllowedSASLMechanism
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetAllowedSASLMechanism() []string`
+
+GetAllowedSASLMechanism returns the AllowedSASLMechanism field if non-nil, zero value otherwise.
+
+### GetAllowedSASLMechanismOk
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetAllowedSASLMechanismOk() (*[]string, bool)`
+
+GetAllowedSASLMechanismOk returns a tuple with the AllowedSASLMechanism field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedSASLMechanism
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) SetAllowedSASLMechanism(v []string)`
+
+SetAllowedSASLMechanism sets AllowedSASLMechanism field to given value.
+
+### HasAllowedSASLMechanism
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) HasAllowedSASLMechanism() bool`
+
+HasAllowedSASLMechanism returns a boolean if a field has been set.
+
+### GetGenerateTokenResultCriteria
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetGenerateTokenResultCriteria() string`
+
+GetGenerateTokenResultCriteria returns the GenerateTokenResultCriteria field if non-nil, zero value otherwise.
+
+### GetGenerateTokenResultCriteriaOk
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetGenerateTokenResultCriteriaOk() (*string, bool)`
+
+GetGenerateTokenResultCriteriaOk returns a tuple with the GenerateTokenResultCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGenerateTokenResultCriteria
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) SetGenerateTokenResultCriteria(v string)`
+
+SetGenerateTokenResultCriteria sets GenerateTokenResultCriteria field to given value.
+
+### HasGenerateTokenResultCriteria
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) HasGenerateTokenResultCriteria() bool`
+
+HasGenerateTokenResultCriteria returns a boolean if a field has been set.
+
+### GetIncludedScope
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetIncludedScope() []string`
+
+GetIncludedScope returns the IncludedScope field if non-nil, zero value otherwise.
+
+### GetIncludedScopeOk
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) GetIncludedScopeOk() (*[]string, bool)`
+
+GetIncludedScopeOk returns a tuple with the IncludedScope field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludedScope
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) SetIncludedScope(v []string)`
+
+SetIncludedScope sets IncludedScope field to given value.
+
+### HasIncludedScope
+
+`func (o *AccessTokenValidatorListResponseResourcesInner) HasIncludedScope() bool`
+
+HasIncludedScope returns a boolean if a field has been set.
 
 ### GetClientID
 

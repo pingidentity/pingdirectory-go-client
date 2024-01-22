@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Name of the new Virtual Attribute | 
 **Schemas** | [**[]EnumconstructedVirtualAttributeSchemaUrn**](EnumconstructedVirtualAttributeSchemaUrn.md) |  | 
 **ValuePattern** | **[]string** | Specifies a pattern for constructing the virtual attribute value using fixed text and attribute values from the entry. | 
 **Description** | Pointer to **string** | A description for this Virtual Attribute | [optional] 
@@ -19,12 +18,13 @@ Name | Type | Description | Notes
 **MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int64** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
 **MultipleVirtualAttributeMergeBehavior** | Pointer to [**EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp**](EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp.md) |  | [optional] 
 **AllowIndexConflicts** | Pointer to **bool** | Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server. | [optional] 
+**Name** | **string** | Name of the new Virtual Attribute | 
 
 ## Methods
 
 ### NewAddConstructedVirtualAttributeRequest
 
-`func NewAddConstructedVirtualAttributeRequest(name string, schemas []EnumconstructedVirtualAttributeSchemaUrn, valuePattern []string, enabled bool, attributeType string, ) *AddConstructedVirtualAttributeRequest`
+`func NewAddConstructedVirtualAttributeRequest(schemas []EnumconstructedVirtualAttributeSchemaUrn, valuePattern []string, enabled bool, attributeType string, name string, ) *AddConstructedVirtualAttributeRequest`
 
 NewAddConstructedVirtualAttributeRequest instantiates a new AddConstructedVirtualAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,26 +38,6 @@ will change when the set of required properties is changed
 NewAddConstructedVirtualAttributeRequestWithDefaults instantiates a new AddConstructedVirtualAttributeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *AddConstructedVirtualAttributeRequest) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddConstructedVirtualAttributeRequest) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddConstructedVirtualAttributeRequest) SetName(v string)`
-
-SetName sets Name field to given value.
-
 
 ### GetSchemas
 
@@ -388,6 +368,26 @@ SetAllowIndexConflicts sets AllowIndexConflicts field to given value.
 `func (o *AddConstructedVirtualAttributeRequest) HasAllowIndexConflicts() bool`
 
 HasAllowIndexConflicts returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *AddConstructedVirtualAttributeRequest) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *AddConstructedVirtualAttributeRequest) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *AddConstructedVirtualAttributeRequest) SetName(v string)`
+
+SetName sets Name field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

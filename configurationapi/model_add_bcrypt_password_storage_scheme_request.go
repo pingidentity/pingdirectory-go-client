@@ -19,26 +19,26 @@ var _ MappedNullable = &AddBcryptPasswordStorageSchemeRequest{}
 
 // AddBcryptPasswordStorageSchemeRequest struct for AddBcryptPasswordStorageSchemeRequest
 type AddBcryptPasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName string                                     `json:"schemeName"`
-	Schemas    []EnumbcryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas []EnumbcryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive.
 	BcryptCostFactor *int64 `json:"bcryptCostFactor,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddBcryptPasswordStorageSchemeRequest instantiates a new AddBcryptPasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddBcryptPasswordStorageSchemeRequest(schemeName string, schemas []EnumbcryptPasswordStorageSchemeSchemaUrn, enabled bool) *AddBcryptPasswordStorageSchemeRequest {
+func NewAddBcryptPasswordStorageSchemeRequest(schemas []EnumbcryptPasswordStorageSchemeSchemaUrn, enabled bool, schemeName string) *AddBcryptPasswordStorageSchemeRequest {
 	this := AddBcryptPasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewAddBcryptPasswordStorageSchemeRequest(schemeName string, schemas []Enumb
 func NewAddBcryptPasswordStorageSchemeRequestWithDefaults() *AddBcryptPasswordStorageSchemeRequest {
 	this := AddBcryptPasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddBcryptPasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddBcryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddBcryptPasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -186,6 +162,30 @@ func (o *AddBcryptPasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddBcryptPasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddBcryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddBcryptPasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddBcryptPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -196,7 +196,6 @@ func (o AddBcryptPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddBcryptPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.BcryptCostFactor) {
 		toSerialize["bcryptCostFactor"] = o.BcryptCostFactor
@@ -205,6 +204,7 @@ func (o AddBcryptPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

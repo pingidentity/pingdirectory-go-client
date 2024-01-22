@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSmtpAccountStatusNotificationHandlerRequest{}
 
 // AddSmtpAccountStatusNotificationHandlerRequest struct for AddSmtpAccountStatusNotificationHandlerRequest
 type AddSmtpAccountStatusNotificationHandlerRequest struct {
-	// Name of the new Account Status Notification Handler
-	HandlerName string                                              `json:"handlerName"`
-	Schemas     []EnumsmtpAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// Specifies which attribute in the user's entries may be used to obtain the email address when notifying the end user.
 	EmailAddressAttributeType []string `json:"emailAddressAttributeType,omitempty"`
 	// The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string.
@@ -52,20 +50,22 @@ type AddSmtpAccountStatusNotificationHandlerRequest struct {
 	AccountDeletionNotificationRequestCriteria *string `json:"accountDeletionNotificationRequestCriteria,omitempty"`
 	// A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler.
 	AccountUpdateNotificationRequestCriteria *string `json:"accountUpdateNotificationRequestCriteria,omitempty"`
+	// Name of the new Account Status Notification Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddSmtpAccountStatusNotificationHandlerRequest instantiates a new AddSmtpAccountStatusNotificationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSmtpAccountStatusNotificationHandlerRequest(handlerName string, schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn, senderAddress string, messageSubject []string, messageTemplateFile []string, enabled bool) *AddSmtpAccountStatusNotificationHandlerRequest {
+func NewAddSmtpAccountStatusNotificationHandlerRequest(schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn, senderAddress string, messageSubject []string, messageTemplateFile []string, enabled bool, handlerName string) *AddSmtpAccountStatusNotificationHandlerRequest {
 	this := AddSmtpAccountStatusNotificationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.SenderAddress = senderAddress
 	this.MessageSubject = messageSubject
 	this.MessageTemplateFile = messageTemplateFile
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -75,30 +75,6 @@ func NewAddSmtpAccountStatusNotificationHandlerRequest(handlerName string, schem
 func NewAddSmtpAccountStatusNotificationHandlerRequestWithDefaults() *AddSmtpAccountStatusNotificationHandlerRequest {
 	this := AddSmtpAccountStatusNotificationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -573,6 +549,30 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetAccountUpdateNotific
 	o.AccountUpdateNotificationRequestCriteria = &v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddSmtpAccountStatusNotificationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -583,7 +583,6 @@ func (o AddSmtpAccountStatusNotificationHandlerRequest) MarshalJSON() ([]byte, e
 
 func (o AddSmtpAccountStatusNotificationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.EmailAddressAttributeType) {
 		toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
@@ -622,6 +621,7 @@ func (o AddSmtpAccountStatusNotificationHandlerRequest) ToMap() (map[string]inte
 	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

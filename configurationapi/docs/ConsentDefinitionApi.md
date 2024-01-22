@@ -1,14 +1,14 @@
-# \ConsentDefinitionApi
+# \ConsentDefinitionAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddConsentDefinition**](ConsentDefinitionApi.md#AddConsentDefinition) | **Post** /consent-definitions | Add a new Consent Definition to the config
-[**DeleteConsentDefinition**](ConsentDefinitionApi.md#DeleteConsentDefinition) | **Delete** /consent-definitions/{consent-definition-name} | Delete a Consent Definition
-[**GetConsentDefinition**](ConsentDefinitionApi.md#GetConsentDefinition) | **Get** /consent-definitions/{consent-definition-name} | Returns a single Consent Definition
-[**ListConsentDefinitions**](ConsentDefinitionApi.md#ListConsentDefinitions) | **Get** /consent-definitions | Returns a list of all Consent Definition objects
-[**UpdateConsentDefinition**](ConsentDefinitionApi.md#UpdateConsentDefinition) | **Patch** /consent-definitions/{consent-definition-name} | Update an existing Consent Definition by name
+[**AddConsentDefinition**](ConsentDefinitionAPI.md#AddConsentDefinition) | **Post** /consent-definitions | Add a new Consent Definition to the config
+[**DeleteConsentDefinition**](ConsentDefinitionAPI.md#DeleteConsentDefinition) | **Delete** /consent-definitions/{consent-definition-name} | Delete a Consent Definition
+[**GetConsentDefinition**](ConsentDefinitionAPI.md#GetConsentDefinition) | **Get** /consent-definitions/{consent-definition-name} | Returns a single Consent Definition
+[**ListConsentDefinitions**](ConsentDefinitionAPI.md#ListConsentDefinitions) | **Get** /consent-definitions | Returns a list of all Consent Definition objects
+[**UpdateConsentDefinition**](ConsentDefinitionAPI.md#UpdateConsentDefinition) | **Patch** /consent-definitions/{consent-definition-name} | Update an existing Consent Definition by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addConsentDefinitionRequest := *openapiclient.NewAddConsentDefinitionRequest("DefinitionName_example", "UniqueID_example") // AddConsentDefinitionRequest | Create a new Consent Definition in the config
+    addConsentDefinitionRequest := *openapiclient.NewAddConsentDefinitionRequest("UniqueID_example", "DefinitionName_example") // AddConsentDefinitionRequest | Create a new Consent Definition in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentDefinitionApi.AddConsentDefinition(context.Background()).AddConsentDefinitionRequest(addConsentDefinitionRequest).Execute()
+    resp, r, err := apiClient.ConsentDefinitionAPI.AddConsentDefinition(context.Background()).AddConsentDefinitionRequest(addConsentDefinitionRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionApi.AddConsentDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionAPI.AddConsentDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddConsentDefinition`: ConsentDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionApi.AddConsentDefinition`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionAPI.AddConsentDefinition`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConsentDefinitionApi.DeleteConsentDefinition(context.Background(), consentDefinitionName).Execute()
+    r, err := apiClient.ConsentDefinitionAPI.DeleteConsentDefinition(context.Background(), consentDefinitionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionApi.DeleteConsentDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionAPI.DeleteConsentDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentDefinitionApi.GetConsentDefinition(context.Background(), consentDefinitionName).Execute()
+    resp, r, err := apiClient.ConsentDefinitionAPI.GetConsentDefinition(context.Background(), consentDefinitionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionApi.GetConsentDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionAPI.GetConsentDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetConsentDefinition`: ConsentDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionApi.GetConsentDefinition`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionAPI.GetConsentDefinition`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentDefinitionApi.ListConsentDefinitions(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ConsentDefinitionAPI.ListConsentDefinitions(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionApi.ListConsentDefinitions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionAPI.ListConsentDefinitions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListConsentDefinitions`: ConsentDefinitionListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionApi.ListConsentDefinitions`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionAPI.ListConsentDefinitions`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentDefinitionApi.UpdateConsentDefinition(context.Background(), consentDefinitionName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ConsentDefinitionAPI.UpdateConsentDefinition(context.Background(), consentDefinitionName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionApi.UpdateConsentDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionAPI.UpdateConsentDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateConsentDefinition`: ConsentDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionApi.UpdateConsentDefinition`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionAPI.UpdateConsentDefinition`: %v\n", resp)
 }
 ```
 

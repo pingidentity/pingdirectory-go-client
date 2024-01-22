@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ReplicationAssurancePolicyApiService ReplicationAssurancePolicyApi service
-type ReplicationAssurancePolicyApiService service
+// ReplicationAssurancePolicyAPIService ReplicationAssurancePolicyAPI service
+type ReplicationAssurancePolicyAPIService service
 
 type ApiAddReplicationAssurancePolicyRequest struct {
 	ctx                                  context.Context
-	ApiService                           *ReplicationAssurancePolicyApiService
+	ApiService                           *ReplicationAssurancePolicyAPIService
 	addReplicationAssurancePolicyRequest *AddReplicationAssurancePolicyRequest
 }
 
@@ -44,7 +44,7 @@ AddReplicationAssurancePolicy Add a new Replication Assurance Policy to the conf
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddReplicationAssurancePolicyRequest
 */
-func (a *ReplicationAssurancePolicyApiService) AddReplicationAssurancePolicy(ctx context.Context) ApiAddReplicationAssurancePolicyRequest {
+func (a *ReplicationAssurancePolicyAPIService) AddReplicationAssurancePolicy(ctx context.Context) ApiAddReplicationAssurancePolicyRequest {
 	return ApiAddReplicationAssurancePolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ReplicationAssurancePolicyApiService) AddReplicationAssurancePolicy(ctx
 // Execute executes the request
 //
 //	@return ReplicationAssurancePolicyResponse
-func (a *ReplicationAssurancePolicyApiService) AddReplicationAssurancePolicyExecute(r ApiAddReplicationAssurancePolicyRequest) (*ReplicationAssurancePolicyResponse, *http.Response, error) {
+func (a *ReplicationAssurancePolicyAPIService) AddReplicationAssurancePolicyExecute(r ApiAddReplicationAssurancePolicyRequest) (*ReplicationAssurancePolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ReplicationAssurancePolicyApiService) AddReplicationAssurancePolicyExec
 		localVarReturnValue *ReplicationAssurancePolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyApiService.AddReplicationAssurancePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyAPIService.AddReplicationAssurancePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ReplicationAssurancePolicyApiService) AddReplicationAssurancePolicyExec
 
 type ApiDeleteReplicationAssurancePolicyRequest struct {
 	ctx                            context.Context
-	ApiService                     *ReplicationAssurancePolicyApiService
+	ApiService                     *ReplicationAssurancePolicyAPIService
 	replicationAssurancePolicyName string
 }
 
@@ -149,7 +149,7 @@ DeleteReplicationAssurancePolicy Delete a Replication Assurance Policy
 	@param replicationAssurancePolicyName Name of the Replication Assurance Policy
 	@return ApiDeleteReplicationAssurancePolicyRequest
 */
-func (a *ReplicationAssurancePolicyApiService) DeleteReplicationAssurancePolicy(ctx context.Context, replicationAssurancePolicyName string) ApiDeleteReplicationAssurancePolicyRequest {
+func (a *ReplicationAssurancePolicyAPIService) DeleteReplicationAssurancePolicy(ctx context.Context, replicationAssurancePolicyName string) ApiDeleteReplicationAssurancePolicyRequest {
 	return ApiDeleteReplicationAssurancePolicyRequest{
 		ApiService:                     a,
 		ctx:                            ctx,
@@ -158,14 +158,14 @@ func (a *ReplicationAssurancePolicyApiService) DeleteReplicationAssurancePolicy(
 }
 
 // Execute executes the request
-func (a *ReplicationAssurancePolicyApiService) DeleteReplicationAssurancePolicyExecute(r ApiDeleteReplicationAssurancePolicyRequest) (*http.Response, error) {
+func (a *ReplicationAssurancePolicyAPIService) DeleteReplicationAssurancePolicyExecute(r ApiDeleteReplicationAssurancePolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyApiService.DeleteReplicationAssurancePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyAPIService.DeleteReplicationAssurancePolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ReplicationAssurancePolicyApiService) DeleteReplicationAssurancePolicyE
 
 type ApiGetReplicationAssurancePolicyRequest struct {
 	ctx                            context.Context
-	ApiService                     *ReplicationAssurancePolicyApiService
+	ApiService                     *ReplicationAssurancePolicyAPIService
 	replicationAssurancePolicyName string
 }
 
@@ -239,7 +239,7 @@ GetReplicationAssurancePolicy Returns a single Replication Assurance Policy
 	@param replicationAssurancePolicyName Name of the Replication Assurance Policy
 	@return ApiGetReplicationAssurancePolicyRequest
 */
-func (a *ReplicationAssurancePolicyApiService) GetReplicationAssurancePolicy(ctx context.Context, replicationAssurancePolicyName string) ApiGetReplicationAssurancePolicyRequest {
+func (a *ReplicationAssurancePolicyAPIService) GetReplicationAssurancePolicy(ctx context.Context, replicationAssurancePolicyName string) ApiGetReplicationAssurancePolicyRequest {
 	return ApiGetReplicationAssurancePolicyRequest{
 		ApiService:                     a,
 		ctx:                            ctx,
@@ -250,7 +250,7 @@ func (a *ReplicationAssurancePolicyApiService) GetReplicationAssurancePolicy(ctx
 // Execute executes the request
 //
 //	@return ReplicationAssurancePolicyResponse
-func (a *ReplicationAssurancePolicyApiService) GetReplicationAssurancePolicyExecute(r ApiGetReplicationAssurancePolicyRequest) (*ReplicationAssurancePolicyResponse, *http.Response, error) {
+func (a *ReplicationAssurancePolicyAPIService) GetReplicationAssurancePolicyExecute(r ApiGetReplicationAssurancePolicyRequest) (*ReplicationAssurancePolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ReplicationAssurancePolicyApiService) GetReplicationAssurancePolicyExec
 		localVarReturnValue *ReplicationAssurancePolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyApiService.GetReplicationAssurancePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyAPIService.GetReplicationAssurancePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ReplicationAssurancePolicyApiService) GetReplicationAssurancePolicyExec
 
 type ApiListReplicationAssurancePoliciesRequest struct {
 	ctx        context.Context
-	ApiService *ReplicationAssurancePolicyApiService
+	ApiService *ReplicationAssurancePolicyAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListReplicationAssurancePolicies Returns a list of all Replication Assurance Pol
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListReplicationAssurancePoliciesRequest
 */
-func (a *ReplicationAssurancePolicyApiService) ListReplicationAssurancePolicies(ctx context.Context) ApiListReplicationAssurancePoliciesRequest {
+func (a *ReplicationAssurancePolicyAPIService) ListReplicationAssurancePolicies(ctx context.Context) ApiListReplicationAssurancePoliciesRequest {
 	return ApiListReplicationAssurancePoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ReplicationAssurancePolicyApiService) ListReplicationAssurancePolicies(
 // Execute executes the request
 //
 //	@return ReplicationAssurancePolicyListResponse
-func (a *ReplicationAssurancePolicyApiService) ListReplicationAssurancePoliciesExecute(r ApiListReplicationAssurancePoliciesRequest) (*ReplicationAssurancePolicyListResponse, *http.Response, error) {
+func (a *ReplicationAssurancePolicyAPIService) ListReplicationAssurancePoliciesExecute(r ApiListReplicationAssurancePoliciesRequest) (*ReplicationAssurancePolicyListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ReplicationAssurancePolicyApiService) ListReplicationAssurancePoliciesE
 		localVarReturnValue *ReplicationAssurancePolicyListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyApiService.ListReplicationAssurancePolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyAPIService.ListReplicationAssurancePolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ReplicationAssurancePolicyApiService) ListReplicationAssurancePoliciesE
 
 type ApiUpdateReplicationAssurancePolicyRequest struct {
 	ctx                            context.Context
-	ApiService                     *ReplicationAssurancePolicyApiService
+	ApiService                     *ReplicationAssurancePolicyAPIService
 	replicationAssurancePolicyName string
 	updateRequest                  *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateReplicationAssurancePolicy Update an existing Replication Assurance Policy
 	@param replicationAssurancePolicyName Name of the Replication Assurance Policy
 	@return ApiUpdateReplicationAssurancePolicyRequest
 */
-func (a *ReplicationAssurancePolicyApiService) UpdateReplicationAssurancePolicy(ctx context.Context, replicationAssurancePolicyName string) ApiUpdateReplicationAssurancePolicyRequest {
+func (a *ReplicationAssurancePolicyAPIService) UpdateReplicationAssurancePolicy(ctx context.Context, replicationAssurancePolicyName string) ApiUpdateReplicationAssurancePolicyRequest {
 	return ApiUpdateReplicationAssurancePolicyRequest{
 		ApiService:                     a,
 		ctx:                            ctx,
@@ -467,7 +467,7 @@ func (a *ReplicationAssurancePolicyApiService) UpdateReplicationAssurancePolicy(
 // Execute executes the request
 //
 //	@return ReplicationAssurancePolicyResponse
-func (a *ReplicationAssurancePolicyApiService) UpdateReplicationAssurancePolicyExecute(r ApiUpdateReplicationAssurancePolicyRequest) (*ReplicationAssurancePolicyResponse, *http.Response, error) {
+func (a *ReplicationAssurancePolicyAPIService) UpdateReplicationAssurancePolicyExecute(r ApiUpdateReplicationAssurancePolicyRequest) (*ReplicationAssurancePolicyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ReplicationAssurancePolicyApiService) UpdateReplicationAssurancePolicyE
 		localVarReturnValue *ReplicationAssurancePolicyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyApiService.UpdateReplicationAssurancePolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationAssurancePolicyAPIService.UpdateReplicationAssurancePolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

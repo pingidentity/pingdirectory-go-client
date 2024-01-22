@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SchemaName** | **string** | Name of the new SCIM Schema | 
 **Schemas** | Pointer to [**[]EnumscimSchemaSchemaUrn**](EnumscimSchemaSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this SCIM Schema | [optional] 
 **SchemaURN** | **string** | The URN which identifies this SCIM Schema. | 
 **DisplayName** | Pointer to **string** | The human readable name for this SCIM Schema. | [optional] 
+**SchemaName** | **string** | Name of the new SCIM Schema | 
 
 ## Methods
 
 ### NewAddScimSchemaRequest
 
-`func NewAddScimSchemaRequest(schemaName string, schemaURN string, ) *AddScimSchemaRequest`
+`func NewAddScimSchemaRequest(schemaURN string, schemaName string, ) *AddScimSchemaRequest`
 
 NewAddScimSchemaRequest instantiates a new AddScimSchemaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddScimSchemaRequestWithDefaults instantiates a new AddScimSchemaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetSchemaName
-
-`func (o *AddScimSchemaRequest) GetSchemaName() string`
-
-GetSchemaName returns the SchemaName field if non-nil, zero value otherwise.
-
-### GetSchemaNameOk
-
-`func (o *AddScimSchemaRequest) GetSchemaNameOk() (*string, bool)`
-
-GetSchemaNameOk returns a tuple with the SchemaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchemaName
-
-`func (o *AddScimSchemaRequest) SetSchemaName(v string)`
-
-SetSchemaName sets SchemaName field to given value.
-
 
 ### GetSchemas
 
@@ -143,6 +123,26 @@ SetDisplayName sets DisplayName field to given value.
 `func (o *AddScimSchemaRequest) HasDisplayName() bool`
 
 HasDisplayName returns a boolean if a field has been set.
+
+### GetSchemaName
+
+`func (o *AddScimSchemaRequest) GetSchemaName() string`
+
+GetSchemaName returns the SchemaName field if non-nil, zero value otherwise.
+
+### GetSchemaNameOk
+
+`func (o *AddScimSchemaRequest) GetSchemaNameOk() (*string, bool)`
+
+GetSchemaNameOk returns a tuple with the SchemaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemaName
+
+`func (o *AddScimSchemaRequest) SetSchemaName(v string)`
+
+SetSchemaName sets SchemaName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

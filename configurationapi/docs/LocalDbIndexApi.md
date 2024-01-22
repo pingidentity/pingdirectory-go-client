@@ -1,14 +1,14 @@
-# \LocalDbIndexApi
+# \LocalDbIndexAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLocalDbIndex**](LocalDbIndexApi.md#AddLocalDbIndex) | **Post** /backends/{backend-name}/local-db-indexes | Add a new Local DB Index to the config
-[**DeleteLocalDbIndex**](LocalDbIndexApi.md#DeleteLocalDbIndex) | **Delete** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Delete a Local DB Index
-[**GetLocalDbIndex**](LocalDbIndexApi.md#GetLocalDbIndex) | **Get** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Returns a single Local DB Index
-[**ListLocalDbIndexes**](LocalDbIndexApi.md#ListLocalDbIndexes) | **Get** /backends/{backend-name}/local-db-indexes | Returns a list of all Local DB Index objects
-[**UpdateLocalDbIndex**](LocalDbIndexApi.md#UpdateLocalDbIndex) | **Patch** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Update an existing Local DB Index by name
+[**AddLocalDbIndex**](LocalDbIndexAPI.md#AddLocalDbIndex) | **Post** /backends/{backend-name}/local-db-indexes | Add a new Local DB Index to the config
+[**DeleteLocalDbIndex**](LocalDbIndexAPI.md#DeleteLocalDbIndex) | **Delete** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Delete a Local DB Index
+[**GetLocalDbIndex**](LocalDbIndexAPI.md#GetLocalDbIndex) | **Get** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Returns a single Local DB Index
+[**ListLocalDbIndexes**](LocalDbIndexAPI.md#ListLocalDbIndexes) | **Get** /backends/{backend-name}/local-db-indexes | Returns a list of all Local DB Index objects
+[**UpdateLocalDbIndex**](LocalDbIndexAPI.md#UpdateLocalDbIndex) | **Patch** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Update an existing Local DB Index by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     backendName := "backendName_example" // string | Name of the Backend
-    addLocalDbIndexRequest := *openapiclient.NewAddLocalDbIndexRequest("IndexName_example", "Attribute_example", []openapiclient.EnumlocalDbIndexIndexTypeProp{openapiclient.Enumlocal-db-index-indexTypeProp("equality")}) // AddLocalDbIndexRequest | Create a new Local DB Index in the config
+    addLocalDbIndexRequest := *openapiclient.NewAddLocalDbIndexRequest("Attribute_example", []openapiclient.EnumlocalDbIndexIndexTypeProp{openapiclient.Enumlocal-db-index-indexTypeProp("equality")}, "IndexName_example") // AddLocalDbIndexRequest | Create a new Local DB Index in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbIndexApi.AddLocalDbIndex(context.Background(), backendName).AddLocalDbIndexRequest(addLocalDbIndexRequest).Execute()
+    resp, r, err := apiClient.LocalDbIndexAPI.AddLocalDbIndex(context.Background(), backendName).AddLocalDbIndexRequest(addLocalDbIndexRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexApi.AddLocalDbIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexAPI.AddLocalDbIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLocalDbIndex`: LocalDbIndexResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbIndexApi.AddLocalDbIndex`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbIndexAPI.AddLocalDbIndex`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LocalDbIndexApi.DeleteLocalDbIndex(context.Background(), localDbIndexName, backendName).Execute()
+    r, err := apiClient.LocalDbIndexAPI.DeleteLocalDbIndex(context.Background(), localDbIndexName, backendName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexApi.DeleteLocalDbIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexAPI.DeleteLocalDbIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbIndexApi.GetLocalDbIndex(context.Background(), localDbIndexName, backendName).Execute()
+    resp, r, err := apiClient.LocalDbIndexAPI.GetLocalDbIndex(context.Background(), localDbIndexName, backendName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexApi.GetLocalDbIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexAPI.GetLocalDbIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLocalDbIndex`: LocalDbIndexResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbIndexApi.GetLocalDbIndex`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbIndexAPI.GetLocalDbIndex`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbIndexApi.ListLocalDbIndexes(context.Background(), backendName).Filter(filter).Execute()
+    resp, r, err := apiClient.LocalDbIndexAPI.ListLocalDbIndexes(context.Background(), backendName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexApi.ListLocalDbIndexes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexAPI.ListLocalDbIndexes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLocalDbIndexes`: LocalDbIndexListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbIndexApi.ListLocalDbIndexes`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbIndexAPI.ListLocalDbIndexes`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalDbIndexApi.UpdateLocalDbIndex(context.Background(), localDbIndexName, backendName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LocalDbIndexAPI.UpdateLocalDbIndex(context.Background(), localDbIndexName, backendName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexApi.UpdateLocalDbIndex``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexAPI.UpdateLocalDbIndex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLocalDbIndex`: LocalDbIndexResponse
-    fmt.Fprintf(os.Stdout, "Response from `LocalDbIndexApi.UpdateLocalDbIndex`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbIndexAPI.UpdateLocalDbIndex`: %v\n", resp)
 }
 ```
 

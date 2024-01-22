@@ -19,23 +19,23 @@ var _ MappedNullable = &AddNoOperationFailureLockoutActionRequest{}
 
 // AddNoOperationFailureLockoutActionRequest struct for AddNoOperationFailureLockoutActionRequest
 type AddNoOperationFailureLockoutActionRequest struct {
-	// Name of the new Failure Lockout Action
-	ActionName string                                         `json:"actionName"`
-	Schemas    []EnumnoOperationFailureLockoutActionSchemaUrn `json:"schemas"`
+	Schemas []EnumnoOperationFailureLockoutActionSchemaUrn `json:"schemas"`
 	// Indicates whether to generate an account status notification for cases in which this failure lockout action is invoked for a bind attempt with too many outstanding authentication failures.
 	GenerateAccountStatusNotification *bool `json:"generateAccountStatusNotification,omitempty"`
 	// A description for this Failure Lockout Action
 	Description *string `json:"description,omitempty"`
+	// Name of the new Failure Lockout Action
+	ActionName string `json:"actionName"`
 }
 
 // NewAddNoOperationFailureLockoutActionRequest instantiates a new AddNoOperationFailureLockoutActionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddNoOperationFailureLockoutActionRequest(actionName string, schemas []EnumnoOperationFailureLockoutActionSchemaUrn) *AddNoOperationFailureLockoutActionRequest {
+func NewAddNoOperationFailureLockoutActionRequest(schemas []EnumnoOperationFailureLockoutActionSchemaUrn, actionName string) *AddNoOperationFailureLockoutActionRequest {
 	this := AddNoOperationFailureLockoutActionRequest{}
-	this.ActionName = actionName
 	this.Schemas = schemas
+	this.ActionName = actionName
 	return &this
 }
 
@@ -45,30 +45,6 @@ func NewAddNoOperationFailureLockoutActionRequest(actionName string, schemas []E
 func NewAddNoOperationFailureLockoutActionRequestWithDefaults() *AddNoOperationFailureLockoutActionRequest {
 	this := AddNoOperationFailureLockoutActionRequest{}
 	return &this
-}
-
-// GetActionName returns the ActionName field value
-func (o *AddNoOperationFailureLockoutActionRequest) GetActionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ActionName
-}
-
-// GetActionNameOk returns a tuple with the ActionName field value
-// and a boolean to check if the value has been set.
-func (o *AddNoOperationFailureLockoutActionRequest) GetActionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ActionName, true
-}
-
-// SetActionName sets field value
-func (o *AddNoOperationFailureLockoutActionRequest) SetActionName(v string) {
-	o.ActionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -159,6 +135,30 @@ func (o *AddNoOperationFailureLockoutActionRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetActionName returns the ActionName field value
+func (o *AddNoOperationFailureLockoutActionRequest) GetActionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ActionName
+}
+
+// GetActionNameOk returns a tuple with the ActionName field value
+// and a boolean to check if the value has been set.
+func (o *AddNoOperationFailureLockoutActionRequest) GetActionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ActionName, true
+}
+
+// SetActionName sets field value
+func (o *AddNoOperationFailureLockoutActionRequest) SetActionName(v string) {
+	o.ActionName = v
+}
+
 func (o AddNoOperationFailureLockoutActionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -169,7 +169,6 @@ func (o AddNoOperationFailureLockoutActionRequest) MarshalJSON() ([]byte, error)
 
 func (o AddNoOperationFailureLockoutActionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["actionName"] = o.ActionName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.GenerateAccountStatusNotification) {
 		toSerialize["generateAccountStatusNotification"] = o.GenerateAccountStatusNotification
@@ -177,6 +176,7 @@ func (o AddNoOperationFailureLockoutActionRequest) ToMap() (map[string]interface
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["actionName"] = o.ActionName
 	return toSerialize, nil
 }
 

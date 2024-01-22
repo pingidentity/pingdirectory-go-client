@@ -19,26 +19,26 @@ var _ MappedNullable = &AddThirdPartyResultCriteriaRequest{}
 
 // AddThirdPartyResultCriteriaRequest struct for AddThirdPartyResultCriteriaRequest
 type AddThirdPartyResultCriteriaRequest struct {
-	// Name of the new Result Criteria
-	CriteriaName string                                  `json:"criteriaName"`
-	Schemas      []EnumthirdPartyResultCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumthirdPartyResultCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Result Criteria.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Result Criteria. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Result Criteria
 	Description *string `json:"description,omitempty"`
+	// Name of the new Result Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddThirdPartyResultCriteriaRequest instantiates a new AddThirdPartyResultCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyResultCriteriaRequest(criteriaName string, schemas []EnumthirdPartyResultCriteriaSchemaUrn, extensionClass string) *AddThirdPartyResultCriteriaRequest {
+func NewAddThirdPartyResultCriteriaRequest(schemas []EnumthirdPartyResultCriteriaSchemaUrn, extensionClass string, criteriaName string) *AddThirdPartyResultCriteriaRequest {
 	this := AddThirdPartyResultCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewAddThirdPartyResultCriteriaRequest(criteriaName string, schemas []Enumth
 func NewAddThirdPartyResultCriteriaRequestWithDefaults() *AddThirdPartyResultCriteriaRequest {
 	this := AddThirdPartyResultCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddThirdPartyResultCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddThirdPartyResultCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddThirdPartyResultCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -186,6 +162,30 @@ func (o *AddThirdPartyResultCriteriaRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddThirdPartyResultCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyResultCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddThirdPartyResultCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddThirdPartyResultCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -196,7 +196,6 @@ func (o AddThirdPartyResultCriteriaRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddThirdPartyResultCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -205,6 +204,7 @@ func (o AddThirdPartyResultCriteriaRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

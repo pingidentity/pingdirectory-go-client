@@ -36,6 +36,7 @@ type LogPublisherListResponseResourcesInner struct {
 	FileBasedJsonSyncFailedOpsLogPublisherResponse    *FileBasedJsonSyncFailedOpsLogPublisherResponse
 	FileBasedJsonSyncLogPublisherResponse             *FileBasedJsonSyncLogPublisherResponse
 	FileBasedPolicyDecisionLogPublisherResponse       *FileBasedPolicyDecisionLogPublisherResponse
+	FileBasedPolicyQueryLogPublisherResponse          *FileBasedPolicyQueryLogPublisherResponse
 	FileBasedSyncLogPublisherResponse                 *FileBasedSyncLogPublisherResponse
 	FileBasedTraceLogPublisherResponse                *FileBasedTraceLogPublisherResponse
 	GroovyScriptedAccessLogPublisherResponse          *GroovyScriptedAccessLogPublisherResponse
@@ -196,6 +197,13 @@ func FileBasedJsonSyncLogPublisherResponseAsLogPublisherListResponseResourcesInn
 func FileBasedPolicyDecisionLogPublisherResponseAsLogPublisherListResponseResourcesInner(v *FileBasedPolicyDecisionLogPublisherResponse) LogPublisherListResponseResourcesInner {
 	return LogPublisherListResponseResourcesInner{
 		FileBasedPolicyDecisionLogPublisherResponse: v,
+	}
+}
+
+// FileBasedPolicyQueryLogPublisherResponseAsLogPublisherListResponseResourcesInner is a convenience function that returns FileBasedPolicyQueryLogPublisherResponse wrapped in LogPublisherListResponseResourcesInner
+func FileBasedPolicyQueryLogPublisherResponseAsLogPublisherListResponseResourcesInner(v *FileBasedPolicyQueryLogPublisherResponse) LogPublisherListResponseResourcesInner {
+	return LogPublisherListResponseResourcesInner{
+		FileBasedPolicyQueryLogPublisherResponse: v,
 	}
 }
 
@@ -646,6 +654,19 @@ func (dst *LogPublisherListResponseResourcesInner) UnmarshalJSON(data []byte) er
 		dst.FileBasedPolicyDecisionLogPublisherResponse = nil
 	}
 
+	// try to unmarshal data into FileBasedPolicyQueryLogPublisherResponse
+	err = newStrictDecoder(data).Decode(&dst.FileBasedPolicyQueryLogPublisherResponse)
+	if err == nil {
+		jsonFileBasedPolicyQueryLogPublisherResponse, _ := json.Marshal(dst.FileBasedPolicyQueryLogPublisherResponse)
+		if string(jsonFileBasedPolicyQueryLogPublisherResponse) == "{}" { // empty struct
+			dst.FileBasedPolicyQueryLogPublisherResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.FileBasedPolicyQueryLogPublisherResponse = nil
+	}
+
 	// try to unmarshal data into FileBasedSyncLogPublisherResponse
 	err = newStrictDecoder(data).Decode(&dst.FileBasedSyncLogPublisherResponse)
 	if err == nil {
@@ -1031,6 +1052,7 @@ func (dst *LogPublisherListResponseResourcesInner) UnmarshalJSON(data []byte) er
 		dst.FileBasedJsonSyncFailedOpsLogPublisherResponse = nil
 		dst.FileBasedJsonSyncLogPublisherResponse = nil
 		dst.FileBasedPolicyDecisionLogPublisherResponse = nil
+		dst.FileBasedPolicyQueryLogPublisherResponse = nil
 		dst.FileBasedSyncLogPublisherResponse = nil
 		dst.FileBasedTraceLogPublisherResponse = nil
 		dst.GroovyScriptedAccessLogPublisherResponse = nil
@@ -1144,6 +1166,10 @@ func (src LogPublisherListResponseResourcesInner) MarshalJSON() ([]byte, error) 
 
 	if src.FileBasedPolicyDecisionLogPublisherResponse != nil {
 		return json.Marshal(&src.FileBasedPolicyDecisionLogPublisherResponse)
+	}
+
+	if src.FileBasedPolicyQueryLogPublisherResponse != nil {
+		return json.Marshal(&src.FileBasedPolicyQueryLogPublisherResponse)
 	}
 
 	if src.FileBasedSyncLogPublisherResponse != nil {
@@ -1340,6 +1366,10 @@ func (obj *LogPublisherListResponseResourcesInner) GetActualInstance() interface
 
 	if obj.FileBasedPolicyDecisionLogPublisherResponse != nil {
 		return obj.FileBasedPolicyDecisionLogPublisherResponse
+	}
+
+	if obj.FileBasedPolicyQueryLogPublisherResponse != nil {
+		return obj.FileBasedPolicyQueryLogPublisherResponse
 	}
 
 	if obj.FileBasedSyncLogPublisherResponse != nil {

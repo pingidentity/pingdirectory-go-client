@@ -1,14 +1,14 @@
-# \RootDnUserApi
+# \RootDnUserAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddRootDnUser**](RootDnUserApi.md#AddRootDnUser) | **Post** /root-dn/root-dn-users | Add a new Root DN User to the config
-[**DeleteRootDnUser**](RootDnUserApi.md#DeleteRootDnUser) | **Delete** /root-dn/root-dn-users/{root-dn-user-name} | Delete a Root DN User
-[**GetRootDnUser**](RootDnUserApi.md#GetRootDnUser) | **Get** /root-dn/root-dn-users/{root-dn-user-name} | Returns a single Root DN User
-[**ListRootDnUsers**](RootDnUserApi.md#ListRootDnUsers) | **Get** /root-dn/root-dn-users | Returns a list of all Root DN User objects
-[**UpdateRootDnUser**](RootDnUserApi.md#UpdateRootDnUser) | **Patch** /root-dn/root-dn-users/{root-dn-user-name} | Update an existing Root DN User by name
+[**AddRootDnUser**](RootDnUserAPI.md#AddRootDnUser) | **Post** /root-dn/root-dn-users | Add a new Root DN User to the config
+[**DeleteRootDnUser**](RootDnUserAPI.md#DeleteRootDnUser) | **Delete** /root-dn/root-dn-users/{root-dn-user-name} | Delete a Root DN User
+[**GetRootDnUser**](RootDnUserAPI.md#GetRootDnUser) | **Get** /root-dn/root-dn-users/{root-dn-user-name} | Returns a single Root DN User
+[**ListRootDnUsers**](RootDnUserAPI.md#ListRootDnUsers) | **Get** /root-dn/root-dn-users | Returns a list of all Root DN User objects
+[**UpdateRootDnUser**](RootDnUserAPI.md#UpdateRootDnUser) | **Patch** /root-dn/root-dn-users/{root-dn-user-name} | Update an existing Root DN User by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootDnUserApi.AddRootDnUser(context.Background()).AddRootDnUserRequest(addRootDnUserRequest).Execute()
+    resp, r, err := apiClient.RootDnUserAPI.AddRootDnUser(context.Background()).AddRootDnUserRequest(addRootDnUserRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserApi.AddRootDnUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserAPI.AddRootDnUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddRootDnUser`: RootDnUserResponse
-    fmt.Fprintf(os.Stdout, "Response from `RootDnUserApi.AddRootDnUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RootDnUserAPI.AddRootDnUser`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.RootDnUserApi.DeleteRootDnUser(context.Background(), rootDnUserName).Execute()
+    r, err := apiClient.RootDnUserAPI.DeleteRootDnUser(context.Background(), rootDnUserName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserApi.DeleteRootDnUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserAPI.DeleteRootDnUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootDnUserApi.GetRootDnUser(context.Background(), rootDnUserName).Execute()
+    resp, r, err := apiClient.RootDnUserAPI.GetRootDnUser(context.Background(), rootDnUserName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserApi.GetRootDnUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserAPI.GetRootDnUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRootDnUser`: RootDnUserResponse
-    fmt.Fprintf(os.Stdout, "Response from `RootDnUserApi.GetRootDnUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RootDnUserAPI.GetRootDnUser`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootDnUserApi.ListRootDnUsers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.RootDnUserAPI.ListRootDnUsers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserApi.ListRootDnUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserAPI.ListRootDnUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListRootDnUsers`: RootDnUserListResponse
-    fmt.Fprintf(os.Stdout, "Response from `RootDnUserApi.ListRootDnUsers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RootDnUserAPI.ListRootDnUsers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootDnUserApi.UpdateRootDnUser(context.Background(), rootDnUserName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.RootDnUserAPI.UpdateRootDnUser(context.Background(), rootDnUserName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserApi.UpdateRootDnUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootDnUserAPI.UpdateRootDnUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRootDnUser`: RootDnUserResponse
-    fmt.Fprintf(os.Stdout, "Response from `RootDnUserApi.UpdateRootDnUser`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RootDnUserAPI.UpdateRootDnUser`: %v\n", resp)
 }
 ```
 

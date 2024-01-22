@@ -19,21 +19,21 @@ var _ MappedNullable = &AddLockAccountFailureLockoutActionRequest{}
 
 // AddLockAccountFailureLockoutActionRequest struct for AddLockAccountFailureLockoutActionRequest
 type AddLockAccountFailureLockoutActionRequest struct {
-	// Name of the new Failure Lockout Action
-	ActionName string                                         `json:"actionName"`
-	Schemas    []EnumlockAccountFailureLockoutActionSchemaUrn `json:"schemas"`
+	Schemas []EnumlockAccountFailureLockoutActionSchemaUrn `json:"schemas"`
 	// A description for this Failure Lockout Action
 	Description *string `json:"description,omitempty"`
+	// Name of the new Failure Lockout Action
+	ActionName string `json:"actionName"`
 }
 
 // NewAddLockAccountFailureLockoutActionRequest instantiates a new AddLockAccountFailureLockoutActionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLockAccountFailureLockoutActionRequest(actionName string, schemas []EnumlockAccountFailureLockoutActionSchemaUrn) *AddLockAccountFailureLockoutActionRequest {
+func NewAddLockAccountFailureLockoutActionRequest(schemas []EnumlockAccountFailureLockoutActionSchemaUrn, actionName string) *AddLockAccountFailureLockoutActionRequest {
 	this := AddLockAccountFailureLockoutActionRequest{}
-	this.ActionName = actionName
 	this.Schemas = schemas
+	this.ActionName = actionName
 	return &this
 }
 
@@ -43,30 +43,6 @@ func NewAddLockAccountFailureLockoutActionRequest(actionName string, schemas []E
 func NewAddLockAccountFailureLockoutActionRequestWithDefaults() *AddLockAccountFailureLockoutActionRequest {
 	this := AddLockAccountFailureLockoutActionRequest{}
 	return &this
-}
-
-// GetActionName returns the ActionName field value
-func (o *AddLockAccountFailureLockoutActionRequest) GetActionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ActionName
-}
-
-// GetActionNameOk returns a tuple with the ActionName field value
-// and a boolean to check if the value has been set.
-func (o *AddLockAccountFailureLockoutActionRequest) GetActionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ActionName, true
-}
-
-// SetActionName sets field value
-func (o *AddLockAccountFailureLockoutActionRequest) SetActionName(v string) {
-	o.ActionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -125,6 +101,30 @@ func (o *AddLockAccountFailureLockoutActionRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetActionName returns the ActionName field value
+func (o *AddLockAccountFailureLockoutActionRequest) GetActionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ActionName
+}
+
+// GetActionNameOk returns a tuple with the ActionName field value
+// and a boolean to check if the value has been set.
+func (o *AddLockAccountFailureLockoutActionRequest) GetActionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ActionName, true
+}
+
+// SetActionName sets field value
+func (o *AddLockAccountFailureLockoutActionRequest) SetActionName(v string) {
+	o.ActionName = v
+}
+
 func (o AddLockAccountFailureLockoutActionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -135,11 +135,11 @@ func (o AddLockAccountFailureLockoutActionRequest) MarshalJSON() ([]byte, error)
 
 func (o AddLockAccountFailureLockoutActionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["actionName"] = o.ActionName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["actionName"] = o.ActionName
 	return toSerialize, nil
 }
 

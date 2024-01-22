@@ -1,11 +1,11 @@
-# \ConsentServiceApi
+# \ConsentServiceAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetConsentService**](ConsentServiceApi.md#GetConsentService) | **Get** /consent-service | Returns a single Consent Service
-[**UpdateConsentService**](ConsentServiceApi.md#UpdateConsentService) | **Patch** /consent-service | Update an existing Consent Service by name
+[**GetConsentService**](ConsentServiceAPI.md#GetConsentService) | **Get** /consent-service | Returns a single Consent Service
+[**UpdateConsentService**](ConsentServiceAPI.md#UpdateConsentService) | **Patch** /consent-service | Update an existing Consent Service by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentServiceApi.GetConsentService(context.Background()).Execute()
+    resp, r, err := apiClient.ConsentServiceAPI.GetConsentService(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentServiceApi.GetConsentService``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentServiceAPI.GetConsentService``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetConsentService`: ConsentServiceResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentServiceApi.GetConsentService`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentServiceAPI.GetConsentService`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConsentServiceApi.UpdateConsentService(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ConsentServiceAPI.UpdateConsentService(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConsentServiceApi.UpdateConsentService``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentServiceAPI.UpdateConsentService``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateConsentService`: ConsentServiceResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConsentServiceApi.UpdateConsentService`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConsentServiceAPI.UpdateConsentService`: %v\n", resp)
 }
 ```
 

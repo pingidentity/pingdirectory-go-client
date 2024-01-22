@@ -19,8 +19,6 @@ var _ MappedNullable = &VaultPasswordStorageSchemeResponse{}
 
 // VaultPasswordStorageSchemeResponse struct for VaultPasswordStorageSchemeResponse
 type VaultPasswordStorageSchemeResponse struct {
-	// Name of the Password Storage Scheme
-	Id      string                                    `json:"id"`
 	Schemas []EnumvaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase.
 	VaultExternalServer string `json:"vaultExternalServer"`
@@ -32,18 +30,20 @@ type VaultPasswordStorageSchemeResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Storage Scheme
+	Id string `json:"id"`
 }
 
 // NewVaultPasswordStorageSchemeResponse instantiates a new VaultPasswordStorageSchemeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVaultPasswordStorageSchemeResponse(id string, schemas []EnumvaultPasswordStorageSchemeSchemaUrn, vaultExternalServer string, enabled bool) *VaultPasswordStorageSchemeResponse {
+func NewVaultPasswordStorageSchemeResponse(schemas []EnumvaultPasswordStorageSchemeSchemaUrn, vaultExternalServer string, enabled bool, id string) *VaultPasswordStorageSchemeResponse {
 	this := VaultPasswordStorageSchemeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.VaultExternalServer = vaultExternalServer
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewVaultPasswordStorageSchemeResponse(id string, schemas []EnumvaultPasswor
 func NewVaultPasswordStorageSchemeResponseWithDefaults() *VaultPasswordStorageSchemeResponse {
 	this := VaultPasswordStorageSchemeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *VaultPasswordStorageSchemeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *VaultPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *VaultPasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -279,6 +255,30 @@ func (o *VaultPasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *VaultPasswordStorageSchemeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *VaultPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *VaultPasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o VaultPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -289,7 +289,6 @@ func (o VaultPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 
 func (o VaultPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["vaultExternalServer"] = o.VaultExternalServer
 	if !IsNil(o.DefaultField) {
@@ -305,6 +304,7 @@ func (o VaultPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

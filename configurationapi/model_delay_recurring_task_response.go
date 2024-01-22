@@ -19,8 +19,6 @@ var _ MappedNullable = &DelayRecurringTaskResponse{}
 
 // DelayRecurringTaskResponse struct for DelayRecurringTaskResponse
 type DelayRecurringTaskResponse struct {
-	// Name of the Recurring Task
-	Id      string                            `json:"id"`
 	Schemas []EnumdelayRecurringTaskSchemaUrn `json:"schemas"`
 	// The length of time to sleep before the task completes.
 	SleepDuration *string `json:"sleepDuration,omitempty"`
@@ -53,16 +51,18 @@ type DelayRecurringTaskResponse struct {
 	AlertOnFailure                                *bool                                              `json:"alertOnFailure,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Recurring Task
+	Id string `json:"id"`
 }
 
 // NewDelayRecurringTaskResponse instantiates a new DelayRecurringTaskResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelayRecurringTaskResponse(id string, schemas []EnumdelayRecurringTaskSchemaUrn) *DelayRecurringTaskResponse {
+func NewDelayRecurringTaskResponse(schemas []EnumdelayRecurringTaskSchemaUrn, id string) *DelayRecurringTaskResponse {
 	this := DelayRecurringTaskResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -72,30 +72,6 @@ func NewDelayRecurringTaskResponse(id string, schemas []EnumdelayRecurringTaskSc
 func NewDelayRecurringTaskResponseWithDefaults() *DelayRecurringTaskResponse {
 	this := DelayRecurringTaskResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *DelayRecurringTaskResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DelayRecurringTaskResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DelayRecurringTaskResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -666,6 +642,30 @@ func (o *DelayRecurringTaskResponse) SetUrnpingidentityschemasconfigurationmessa
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *DelayRecurringTaskResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *DelayRecurringTaskResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *DelayRecurringTaskResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o DelayRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -676,7 +676,6 @@ func (o DelayRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 
 func (o DelayRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.SleepDuration) {
 		toSerialize["sleepDuration"] = o.SleepDuration
@@ -729,6 +728,7 @@ func (o DelayRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

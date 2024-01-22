@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Certificate Mapper | 
 **Schemas** | [**[]EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn**](EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn.md) |  | 
 **SubjectAttributeMapping** | **[]string** | Specifies a mapping between certificate attributes and user attributes. | 
 **UserBaseDN** | Pointer to **[]string** | Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Certificate Mapper | 
 
 ## Methods
 
 ### NewSubjectAttributeToUserAttributeCertificateMapperResponse
 
-`func NewSubjectAttributeToUserAttributeCertificateMapperResponse(id string, schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn, subjectAttributeMapping []string, enabled bool, ) *SubjectAttributeToUserAttributeCertificateMapperResponse`
+`func NewSubjectAttributeToUserAttributeCertificateMapperResponse(schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn, subjectAttributeMapping []string, enabled bool, id string, ) *SubjectAttributeToUserAttributeCertificateMapperResponse`
 
 NewSubjectAttributeToUserAttributeCertificateMapperResponse instantiates a new SubjectAttributeToUserAttributeCertificateMapperResponse object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewSubjectAttributeToUserAttributeCertificateMapperResponseWithDefaults instantiates a new SubjectAttributeToUserAttributeCertificateMapperResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -211,6 +191,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

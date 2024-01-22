@@ -1,11 +1,11 @@
-# \ReplicationServerApi
+# \ReplicationServerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetReplicationServer**](ReplicationServerApi.md#GetReplicationServer) | **Get** /synchronization-providers/{synchronization-provider-name}/replication-server | Returns a single Replication Server
-[**UpdateReplicationServer**](ReplicationServerApi.md#UpdateReplicationServer) | **Patch** /synchronization-providers/{synchronization-provider-name}/replication-server | Update an existing Replication Server by name
+[**GetReplicationServer**](ReplicationServerAPI.md#GetReplicationServer) | **Get** /synchronization-providers/{synchronization-provider-name}/replication-server | Returns a single Replication Server
+[**UpdateReplicationServer**](ReplicationServerAPI.md#UpdateReplicationServer) | **Patch** /synchronization-providers/{synchronization-provider-name}/replication-server | Update an existing Replication Server by name
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReplicationServerApi.GetReplicationServer(context.Background(), synchronizationProviderName).Execute()
+    resp, r, err := apiClient.ReplicationServerAPI.GetReplicationServer(context.Background(), synchronizationProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationServerApi.GetReplicationServer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationServerAPI.GetReplicationServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetReplicationServer`: ReplicationServerResponse
-    fmt.Fprintf(os.Stdout, "Response from `ReplicationServerApi.GetReplicationServer`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationServerAPI.GetReplicationServer`: %v\n", resp)
 }
 ```
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReplicationServerApi.UpdateReplicationServer(context.Background(), synchronizationProviderName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ReplicationServerAPI.UpdateReplicationServer(context.Background(), synchronizationProviderName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationServerApi.UpdateReplicationServer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationServerAPI.UpdateReplicationServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateReplicationServer`: ReplicationServerResponse
-    fmt.Fprintf(os.Stdout, "Response from `ReplicationServerApi.UpdateReplicationServer`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationServerAPI.UpdateReplicationServer`: %v\n", resp)
 }
 ```
 

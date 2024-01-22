@@ -19,9 +19,7 @@ var _ MappedNullable = &AddApiKeyConjurAuthenticationMethodRequest{}
 
 // AddApiKeyConjurAuthenticationMethodRequest struct for AddApiKeyConjurAuthenticationMethodRequest
 type AddApiKeyConjurAuthenticationMethodRequest struct {
-	// Name of the new Conjur Authentication Method
-	MethodName string                                          `json:"methodName"`
-	Schemas    []EnumapiKeyConjurAuthenticationMethodSchemaUrn `json:"schemas"`
+	Schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The username for the user to authenticate.
 	Username string `json:"username"`
 	// The password for the user to authenticate. This will be used to obtain an API key for the target user.
@@ -30,17 +28,19 @@ type AddApiKeyConjurAuthenticationMethodRequest struct {
 	ApiKey *string `json:"apiKey,omitempty"`
 	// A description for this Conjur Authentication Method
 	Description *string `json:"description,omitempty"`
+	// Name of the new Conjur Authentication Method
+	MethodName string `json:"methodName"`
 }
 
 // NewAddApiKeyConjurAuthenticationMethodRequest instantiates a new AddApiKeyConjurAuthenticationMethodRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddApiKeyConjurAuthenticationMethodRequest(methodName string, schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn, username string) *AddApiKeyConjurAuthenticationMethodRequest {
+func NewAddApiKeyConjurAuthenticationMethodRequest(schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn, username string, methodName string) *AddApiKeyConjurAuthenticationMethodRequest {
 	this := AddApiKeyConjurAuthenticationMethodRequest{}
-	this.MethodName = methodName
 	this.Schemas = schemas
 	this.Username = username
+	this.MethodName = methodName
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewAddApiKeyConjurAuthenticationMethodRequest(methodName string, schemas []
 func NewAddApiKeyConjurAuthenticationMethodRequestWithDefaults() *AddApiKeyConjurAuthenticationMethodRequest {
 	this := AddApiKeyConjurAuthenticationMethodRequest{}
 	return &this
-}
-
-// GetMethodName returns the MethodName field value
-func (o *AddApiKeyConjurAuthenticationMethodRequest) GetMethodName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MethodName
-}
-
-// GetMethodNameOk returns a tuple with the MethodName field value
-// and a boolean to check if the value has been set.
-func (o *AddApiKeyConjurAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MethodName, true
-}
-
-// SetMethodName sets field value
-func (o *AddApiKeyConjurAuthenticationMethodRequest) SetMethodName(v string) {
-	o.MethodName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -220,6 +196,30 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMethodName returns the MethodName field value
+func (o *AddApiKeyConjurAuthenticationMethodRequest) GetMethodName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MethodName
+}
+
+// GetMethodNameOk returns a tuple with the MethodName field value
+// and a boolean to check if the value has been set.
+func (o *AddApiKeyConjurAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MethodName, true
+}
+
+// SetMethodName sets field value
+func (o *AddApiKeyConjurAuthenticationMethodRequest) SetMethodName(v string) {
+	o.MethodName = v
+}
+
 func (o AddApiKeyConjurAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -230,7 +230,6 @@ func (o AddApiKeyConjurAuthenticationMethodRequest) MarshalJSON() ([]byte, error
 
 func (o AddApiKeyConjurAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["methodName"] = o.MethodName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["username"] = o.Username
 	if !IsNil(o.Password) {
@@ -242,6 +241,7 @@ func (o AddApiKeyConjurAuthenticationMethodRequest) ToMap() (map[string]interfac
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["methodName"] = o.MethodName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &AddPbkdf2PasswordStorageSchemeRequest{}
 
 // AddPbkdf2PasswordStorageSchemeRequest struct for AddPbkdf2PasswordStorageSchemeRequest
 type AddPbkdf2PasswordStorageSchemeRequest struct {
-	// Name of the new Password Storage Scheme
-	SchemeName      string                                        `json:"schemeName"`
 	Schemas         []Enumpbkdf2PasswordStorageSchemeSchemaUrn    `json:"schemas"`
 	DigestAlgorithm *EnumpasswordStorageSchemeDigestAlgorithmProp `json:"digestAlgorithm,omitempty"`
 	// Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000.
@@ -35,17 +33,19 @@ type AddPbkdf2PasswordStorageSchemeRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Storage Scheme
+	SchemeName string `json:"schemeName"`
 }
 
 // NewAddPbkdf2PasswordStorageSchemeRequest instantiates a new AddPbkdf2PasswordStorageSchemeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPbkdf2PasswordStorageSchemeRequest(schemeName string, schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, enabled bool) *AddPbkdf2PasswordStorageSchemeRequest {
+func NewAddPbkdf2PasswordStorageSchemeRequest(schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, enabled bool, schemeName string) *AddPbkdf2PasswordStorageSchemeRequest {
 	this := AddPbkdf2PasswordStorageSchemeRequest{}
-	this.SchemeName = schemeName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.SchemeName = schemeName
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewAddPbkdf2PasswordStorageSchemeRequest(schemeName string, schemas []Enump
 func NewAddPbkdf2PasswordStorageSchemeRequestWithDefaults() *AddPbkdf2PasswordStorageSchemeRequest {
 	this := AddPbkdf2PasswordStorageSchemeRequest{}
 	return &this
-}
-
-// GetSchemeName returns the SchemeName field value
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSchemeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.SchemeName
-}
-
-// GetSchemeNameOk returns a tuple with the SchemeName field value
-// and a boolean to check if the value has been set.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.SchemeName, true
-}
-
-// SetSchemeName sets field value
-func (o *AddPbkdf2PasswordStorageSchemeRequest) SetSchemeName(v string) {
-	o.SchemeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -321,6 +297,30 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetSchemeName returns the SchemeName field value
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSchemeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.SchemeName
+}
+
+// GetSchemeNameOk returns a tuple with the SchemeName field value
+// and a boolean to check if the value has been set.
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SchemeName, true
+}
+
+// SetSchemeName sets field value
+func (o *AddPbkdf2PasswordStorageSchemeRequest) SetSchemeName(v string) {
+	o.SchemeName = v
+}
+
 func (o AddPbkdf2PasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -331,7 +331,6 @@ func (o AddPbkdf2PasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPbkdf2PasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemeName"] = o.SchemeName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.DigestAlgorithm) {
 		toSerialize["digestAlgorithm"] = o.DigestAlgorithm
@@ -352,6 +351,7 @@ func (o AddPbkdf2PasswordStorageSchemeRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["schemeName"] = o.SchemeName
 	return toSerialize, nil
 }
 

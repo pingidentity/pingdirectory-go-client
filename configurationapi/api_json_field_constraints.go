@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// JsonFieldConstraintsApiService JsonFieldConstraintsApi service
-type JsonFieldConstraintsApiService service
+// JsonFieldConstraintsAPIService JsonFieldConstraintsAPI service
+type JsonFieldConstraintsAPIService service
 
 type ApiAddJsonFieldConstraintsRequest struct {
 	ctx                            context.Context
-	ApiService                     *JsonFieldConstraintsApiService
+	ApiService                     *JsonFieldConstraintsAPIService
 	jsonAttributeConstraintsName   string
 	addJsonFieldConstraintsRequest *AddJsonFieldConstraintsRequest
 }
@@ -46,7 +46,7 @@ AddJsonFieldConstraints Add a new JSON Field Constraints to the config
 	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints
 	@return ApiAddJsonFieldConstraintsRequest
 */
-func (a *JsonFieldConstraintsApiService) AddJsonFieldConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiAddJsonFieldConstraintsRequest {
+func (a *JsonFieldConstraintsAPIService) AddJsonFieldConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiAddJsonFieldConstraintsRequest {
 	return ApiAddJsonFieldConstraintsRequest{
 		ApiService:                   a,
 		ctx:                          ctx,
@@ -57,7 +57,7 @@ func (a *JsonFieldConstraintsApiService) AddJsonFieldConstraints(ctx context.Con
 // Execute executes the request
 //
 //	@return JsonFieldConstraintsResponse
-func (a *JsonFieldConstraintsApiService) AddJsonFieldConstraintsExecute(r ApiAddJsonFieldConstraintsRequest) (*JsonFieldConstraintsResponse, *http.Response, error) {
+func (a *JsonFieldConstraintsAPIService) AddJsonFieldConstraintsExecute(r ApiAddJsonFieldConstraintsRequest) (*JsonFieldConstraintsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *JsonFieldConstraintsApiService) AddJsonFieldConstraintsExecute(r ApiAdd
 		localVarReturnValue *JsonFieldConstraintsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsApiService.AddJsonFieldConstraints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsAPIService.AddJsonFieldConstraints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *JsonFieldConstraintsApiService) AddJsonFieldConstraintsExecute(r ApiAdd
 
 type ApiDeleteJsonFieldConstraintsRequest struct {
 	ctx                          context.Context
-	ApiService                   *JsonFieldConstraintsApiService
+	ApiService                   *JsonFieldConstraintsAPIService
 	jsonFieldConstraintsName     string
 	jsonAttributeConstraintsName string
 }
@@ -155,7 +155,7 @@ DeleteJsonFieldConstraints Delete a JSON Field Constraints
 	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints
 	@return ApiDeleteJsonFieldConstraintsRequest
 */
-func (a *JsonFieldConstraintsApiService) DeleteJsonFieldConstraints(ctx context.Context, jsonFieldConstraintsName string, jsonAttributeConstraintsName string) ApiDeleteJsonFieldConstraintsRequest {
+func (a *JsonFieldConstraintsAPIService) DeleteJsonFieldConstraints(ctx context.Context, jsonFieldConstraintsName string, jsonAttributeConstraintsName string) ApiDeleteJsonFieldConstraintsRequest {
 	return ApiDeleteJsonFieldConstraintsRequest{
 		ApiService:                   a,
 		ctx:                          ctx,
@@ -165,14 +165,14 @@ func (a *JsonFieldConstraintsApiService) DeleteJsonFieldConstraints(ctx context.
 }
 
 // Execute executes the request
-func (a *JsonFieldConstraintsApiService) DeleteJsonFieldConstraintsExecute(r ApiDeleteJsonFieldConstraintsRequest) (*http.Response, error) {
+func (a *JsonFieldConstraintsAPIService) DeleteJsonFieldConstraintsExecute(r ApiDeleteJsonFieldConstraintsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsApiService.DeleteJsonFieldConstraints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsAPIService.DeleteJsonFieldConstraints")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *JsonFieldConstraintsApiService) DeleteJsonFieldConstraintsExecute(r Api
 
 type ApiGetJsonFieldConstraintsRequest struct {
 	ctx                          context.Context
-	ApiService                   *JsonFieldConstraintsApiService
+	ApiService                   *JsonFieldConstraintsAPIService
 	jsonFieldConstraintsName     string
 	jsonAttributeConstraintsName string
 }
@@ -249,7 +249,7 @@ GetJsonFieldConstraints Returns a single JSON Field Constraints
 	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints
 	@return ApiGetJsonFieldConstraintsRequest
 */
-func (a *JsonFieldConstraintsApiService) GetJsonFieldConstraints(ctx context.Context, jsonFieldConstraintsName string, jsonAttributeConstraintsName string) ApiGetJsonFieldConstraintsRequest {
+func (a *JsonFieldConstraintsAPIService) GetJsonFieldConstraints(ctx context.Context, jsonFieldConstraintsName string, jsonAttributeConstraintsName string) ApiGetJsonFieldConstraintsRequest {
 	return ApiGetJsonFieldConstraintsRequest{
 		ApiService:                   a,
 		ctx:                          ctx,
@@ -261,7 +261,7 @@ func (a *JsonFieldConstraintsApiService) GetJsonFieldConstraints(ctx context.Con
 // Execute executes the request
 //
 //	@return JsonFieldConstraintsResponse
-func (a *JsonFieldConstraintsApiService) GetJsonFieldConstraintsExecute(r ApiGetJsonFieldConstraintsRequest) (*JsonFieldConstraintsResponse, *http.Response, error) {
+func (a *JsonFieldConstraintsAPIService) GetJsonFieldConstraintsExecute(r ApiGetJsonFieldConstraintsRequest) (*JsonFieldConstraintsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *JsonFieldConstraintsApiService) GetJsonFieldConstraintsExecute(r ApiGet
 		localVarReturnValue *JsonFieldConstraintsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsApiService.GetJsonFieldConstraints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsAPIService.GetJsonFieldConstraints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *JsonFieldConstraintsApiService) GetJsonFieldConstraintsExecute(r ApiGet
 
 type ApiListJsonFieldConstraintsRequest struct {
 	ctx                          context.Context
-	ApiService                   *JsonFieldConstraintsApiService
+	ApiService                   *JsonFieldConstraintsAPIService
 	jsonAttributeConstraintsName string
 	filter                       *string
 }
@@ -360,7 +360,7 @@ ListJsonFieldConstraints Returns a list of all JSON Field Constraints objects
 	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints
 	@return ApiListJsonFieldConstraintsRequest
 */
-func (a *JsonFieldConstraintsApiService) ListJsonFieldConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiListJsonFieldConstraintsRequest {
+func (a *JsonFieldConstraintsAPIService) ListJsonFieldConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiListJsonFieldConstraintsRequest {
 	return ApiListJsonFieldConstraintsRequest{
 		ApiService:                   a,
 		ctx:                          ctx,
@@ -371,7 +371,7 @@ func (a *JsonFieldConstraintsApiService) ListJsonFieldConstraints(ctx context.Co
 // Execute executes the request
 //
 //	@return JsonFieldConstraintsListResponse
-func (a *JsonFieldConstraintsApiService) ListJsonFieldConstraintsExecute(r ApiListJsonFieldConstraintsRequest) (*JsonFieldConstraintsListResponse, *http.Response, error) {
+func (a *JsonFieldConstraintsAPIService) ListJsonFieldConstraintsExecute(r ApiListJsonFieldConstraintsRequest) (*JsonFieldConstraintsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *JsonFieldConstraintsApiService) ListJsonFieldConstraintsExecute(r ApiLi
 		localVarReturnValue *JsonFieldConstraintsListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsApiService.ListJsonFieldConstraints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsAPIService.ListJsonFieldConstraints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *JsonFieldConstraintsApiService) ListJsonFieldConstraintsExecute(r ApiLi
 
 type ApiUpdateJsonFieldConstraintsRequest struct {
 	ctx                          context.Context
-	ApiService                   *JsonFieldConstraintsApiService
+	ApiService                   *JsonFieldConstraintsAPIService
 	jsonFieldConstraintsName     string
 	jsonAttributeConstraintsName string
 	updateRequest                *UpdateRequest
@@ -474,7 +474,7 @@ UpdateJsonFieldConstraints Update an existing JSON Field Constraints by name
 	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints
 	@return ApiUpdateJsonFieldConstraintsRequest
 */
-func (a *JsonFieldConstraintsApiService) UpdateJsonFieldConstraints(ctx context.Context, jsonFieldConstraintsName string, jsonAttributeConstraintsName string) ApiUpdateJsonFieldConstraintsRequest {
+func (a *JsonFieldConstraintsAPIService) UpdateJsonFieldConstraints(ctx context.Context, jsonFieldConstraintsName string, jsonAttributeConstraintsName string) ApiUpdateJsonFieldConstraintsRequest {
 	return ApiUpdateJsonFieldConstraintsRequest{
 		ApiService:                   a,
 		ctx:                          ctx,
@@ -486,7 +486,7 @@ func (a *JsonFieldConstraintsApiService) UpdateJsonFieldConstraints(ctx context.
 // Execute executes the request
 //
 //	@return JsonFieldConstraintsResponse
-func (a *JsonFieldConstraintsApiService) UpdateJsonFieldConstraintsExecute(r ApiUpdateJsonFieldConstraintsRequest) (*JsonFieldConstraintsResponse, *http.Response, error) {
+func (a *JsonFieldConstraintsAPIService) UpdateJsonFieldConstraintsExecute(r ApiUpdateJsonFieldConstraintsRequest) (*JsonFieldConstraintsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *JsonFieldConstraintsApiService) UpdateJsonFieldConstraintsExecute(r Api
 		localVarReturnValue *JsonFieldConstraintsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsApiService.UpdateJsonFieldConstraints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonFieldConstraintsAPIService.UpdateJsonFieldConstraints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

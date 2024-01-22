@@ -1,14 +1,14 @@
-# \VelocityContextProviderApi
+# \VelocityContextProviderAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddVelocityContextProvider**](VelocityContextProviderApi.md#AddVelocityContextProvider) | **Post** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers | Add a new Velocity Context Provider to the config
-[**DeleteVelocityContextProvider**](VelocityContextProviderApi.md#DeleteVelocityContextProvider) | **Delete** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Delete a Velocity Context Provider
-[**GetVelocityContextProvider**](VelocityContextProviderApi.md#GetVelocityContextProvider) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Returns a single Velocity Context Provider
-[**ListVelocityContextProviders**](VelocityContextProviderApi.md#ListVelocityContextProviders) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers | Returns a list of all Velocity Context Provider objects
-[**UpdateVelocityContextProvider**](VelocityContextProviderApi.md#UpdateVelocityContextProvider) | **Patch** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Update an existing Velocity Context Provider by name
+[**AddVelocityContextProvider**](VelocityContextProviderAPI.md#AddVelocityContextProvider) | **Post** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers | Add a new Velocity Context Provider to the config
+[**DeleteVelocityContextProvider**](VelocityContextProviderAPI.md#DeleteVelocityContextProvider) | **Delete** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Delete a Velocity Context Provider
+[**GetVelocityContextProvider**](VelocityContextProviderAPI.md#GetVelocityContextProvider) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Returns a single Velocity Context Provider
+[**ListVelocityContextProviders**](VelocityContextProviderAPI.md#ListVelocityContextProviders) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers | Returns a list of all Velocity Context Provider objects
+[**UpdateVelocityContextProvider**](VelocityContextProviderAPI.md#UpdateVelocityContextProvider) | **Patch** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Update an existing Velocity Context Provider by name
 
 
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
     httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension
-    addVelocityContextProviderRequest := openapiclient.add_velocity_context_provider_request{AddThirdPartyVelocityContextProviderRequest: openapiclient.NewAddThirdPartyVelocityContextProviderRequest("ProviderName_example", []openapiclient.EnumthirdPartyVelocityContextProviderSchemaUrn{openapiclient.Enumthird-party-velocity-context-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:third-party")}, "ExtensionClass_example")} // AddVelocityContextProviderRequest | Create a new Velocity Context Provider in the config
+    addVelocityContextProviderRequest := openapiclient.add_velocity_context_provider_request{AddThirdPartyVelocityContextProviderRequest: openapiclient.NewAddThirdPartyVelocityContextProviderRequest([]openapiclient.EnumthirdPartyVelocityContextProviderSchemaUrn{openapiclient.Enumthird-party-velocity-context-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:third-party")}, "ExtensionClass_example", "ProviderName_example")} // AddVelocityContextProviderRequest | Create a new Velocity Context Provider in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VelocityContextProviderApi.AddVelocityContextProvider(context.Background(), httpServletExtensionName).AddVelocityContextProviderRequest(addVelocityContextProviderRequest).Execute()
+    resp, r, err := apiClient.VelocityContextProviderAPI.AddVelocityContextProvider(context.Background(), httpServletExtensionName).AddVelocityContextProviderRequest(addVelocityContextProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderApi.AddVelocityContextProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderAPI.AddVelocityContextProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddVelocityContextProvider`: AddVelocityContextProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderApi.AddVelocityContextProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderAPI.AddVelocityContextProvider`: %v\n", resp)
 }
 ```
 
@@ -106,9 +106,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VelocityContextProviderApi.DeleteVelocityContextProvider(context.Background(), velocityContextProviderName, httpServletExtensionName).Execute()
+    r, err := apiClient.VelocityContextProviderAPI.DeleteVelocityContextProvider(context.Background(), velocityContextProviderName, httpServletExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderApi.DeleteVelocityContextProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderAPI.DeleteVelocityContextProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,13 +175,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VelocityContextProviderApi.GetVelocityContextProvider(context.Background(), velocityContextProviderName, httpServletExtensionName).Execute()
+    resp, r, err := apiClient.VelocityContextProviderAPI.GetVelocityContextProvider(context.Background(), velocityContextProviderName, httpServletExtensionName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderApi.GetVelocityContextProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderAPI.GetVelocityContextProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetVelocityContextProvider`: GetVelocityContextProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderApi.GetVelocityContextProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderAPI.GetVelocityContextProvider`: %v\n", resp)
 }
 ```
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VelocityContextProviderApi.ListVelocityContextProviders(context.Background(), httpServletExtensionName).Filter(filter).Execute()
+    resp, r, err := apiClient.VelocityContextProviderAPI.ListVelocityContextProviders(context.Background(), httpServletExtensionName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderApi.ListVelocityContextProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderAPI.ListVelocityContextProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListVelocityContextProviders`: VelocityContextProviderListResponse
-    fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderApi.ListVelocityContextProviders`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderAPI.ListVelocityContextProviders`: %v\n", resp)
 }
 ```
 
@@ -317,13 +317,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VelocityContextProviderApi.UpdateVelocityContextProvider(context.Background(), velocityContextProviderName, httpServletExtensionName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.VelocityContextProviderAPI.UpdateVelocityContextProvider(context.Background(), velocityContextProviderName, httpServletExtensionName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderApi.UpdateVelocityContextProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderAPI.UpdateVelocityContextProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateVelocityContextProvider`: GetVelocityContextProvider200Response
-    fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderApi.UpdateVelocityContextProvider`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderAPI.UpdateVelocityContextProvider`: %v\n", resp)
 }
 ```
 

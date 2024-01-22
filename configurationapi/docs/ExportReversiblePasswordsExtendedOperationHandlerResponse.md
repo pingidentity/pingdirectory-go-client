@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Extended Operation Handler | 
 **Schemas** | [**[]EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn**](EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Extended Operation Handler | 
 
 ## Methods
 
 ### NewExportReversiblePasswordsExtendedOperationHandlerResponse
 
-`func NewExportReversiblePasswordsExtendedOperationHandlerResponse(id string, schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, enabled bool, ) *ExportReversiblePasswordsExtendedOperationHandlerResponse`
+`func NewExportReversiblePasswordsExtendedOperationHandlerResponse(schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, enabled bool, id string, ) *ExportReversiblePasswordsExtendedOperationHandlerResponse`
 
 NewExportReversiblePasswordsExtendedOperationHandlerResponse instantiates a new ExportReversiblePasswordsExtendedOperationHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewExportReversiblePasswordsExtendedOperationHandlerResponseWithDefaults instantiates a new ExportReversiblePasswordsExtendedOperationHandlerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -164,6 +144,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

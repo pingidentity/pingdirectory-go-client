@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumconsoleJsonHttpOperationLogPublisherSchemaUrn**](EnumconsoleJsonHttpOperationLogPublisherSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicates whether the Console JSON HTTP Operation Log Publisher is enabled for use. | 
 **OutputLocation** | Pointer to [**EnumlogPublisherOutputLocationProp**](EnumlogPublisherOutputLocationProp.md) |  | [optional] 
@@ -29,12 +28,13 @@ Name | Type | Description | Notes
 **WriteMultiLineMessages** | Pointer to **bool** | Indicates whether the JSON objects should use a multi-line representation (with each object field and array value on its own line) that may be easier for administrators to read, but each message will be larger (because of additional spaces and end-of-line markers), and it may be more difficult to consume and parse through some text-oriented tools. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
+**PublisherName** | **string** | Name of the new Log Publisher | 
 
 ## Methods
 
 ### NewAddConsoleJsonHttpOperationLogPublisherRequest
 
-`func NewAddConsoleJsonHttpOperationLogPublisherRequest(publisherName string, schemas []EnumconsoleJsonHttpOperationLogPublisherSchemaUrn, enabled bool, ) *AddConsoleJsonHttpOperationLogPublisherRequest`
+`func NewAddConsoleJsonHttpOperationLogPublisherRequest(schemas []EnumconsoleJsonHttpOperationLogPublisherSchemaUrn, enabled bool, publisherName string, ) *AddConsoleJsonHttpOperationLogPublisherRequest`
 
 NewAddConsoleJsonHttpOperationLogPublisherRequest instantiates a new AddConsoleJsonHttpOperationLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -48,26 +48,6 @@ will change when the set of required properties is changed
 NewAddConsoleJsonHttpOperationLogPublisherRequestWithDefaults instantiates a new AddConsoleJsonHttpOperationLogPublisherRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPublisherName
-
-`func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetPublisherName() string`
-
-GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
-
-### GetPublisherNameOk
-
-`func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
-
-GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublisherName
-
-`func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetPublisherName(v string)`
-
-SetPublisherName sets PublisherName field to given value.
-
 
 ### GetSchemas
 
@@ -658,6 +638,26 @@ SetLoggingErrorBehavior sets LoggingErrorBehavior field to given value.
 `func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLoggingErrorBehavior() bool`
 
 HasLoggingErrorBehavior returns a boolean if a field has been set.
+
+### GetPublisherName
+
+`func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetPublisherName() string`
+
+GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
+
+### GetPublisherNameOk
+
+`func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
+
+GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublisherName
+
+`func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetPublisherName(v string)`
+
+SetPublisherName sets PublisherName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

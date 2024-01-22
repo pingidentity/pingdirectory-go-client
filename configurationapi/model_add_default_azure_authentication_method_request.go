@@ -19,25 +19,25 @@ var _ MappedNullable = &AddDefaultAzureAuthenticationMethodRequest{}
 
 // AddDefaultAzureAuthenticationMethodRequest struct for AddDefaultAzureAuthenticationMethodRequest
 type AddDefaultAzureAuthenticationMethodRequest struct {
-	// Name of the new Azure Authentication Method
-	MethodName string                                          `json:"methodName"`
-	Schemas    []EnumdefaultAzureAuthenticationMethodSchemaUrn `json:"schemas"`
+	Schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The tenant ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_TENANT_ID environment variable.
 	TenantID *string `json:"tenantID,omitempty"`
 	// The client ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_CLIENT_ID
 	ClientID *string `json:"clientID,omitempty"`
 	// A description for this Azure Authentication Method
 	Description *string `json:"description,omitempty"`
+	// Name of the new Azure Authentication Method
+	MethodName string `json:"methodName"`
 }
 
 // NewAddDefaultAzureAuthenticationMethodRequest instantiates a new AddDefaultAzureAuthenticationMethodRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDefaultAzureAuthenticationMethodRequest(methodName string, schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn) *AddDefaultAzureAuthenticationMethodRequest {
+func NewAddDefaultAzureAuthenticationMethodRequest(schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn, methodName string) *AddDefaultAzureAuthenticationMethodRequest {
 	this := AddDefaultAzureAuthenticationMethodRequest{}
-	this.MethodName = methodName
 	this.Schemas = schemas
+	this.MethodName = methodName
 	return &this
 }
 
@@ -47,30 +47,6 @@ func NewAddDefaultAzureAuthenticationMethodRequest(methodName string, schemas []
 func NewAddDefaultAzureAuthenticationMethodRequestWithDefaults() *AddDefaultAzureAuthenticationMethodRequest {
 	this := AddDefaultAzureAuthenticationMethodRequest{}
 	return &this
-}
-
-// GetMethodName returns the MethodName field value
-func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MethodName
-}
-
-// GetMethodNameOk returns a tuple with the MethodName field value
-// and a boolean to check if the value has been set.
-func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MethodName, true
-}
-
-// SetMethodName sets field value
-func (o *AddDefaultAzureAuthenticationMethodRequest) SetMethodName(v string) {
-	o.MethodName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -193,6 +169,30 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMethodName returns the MethodName field value
+func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MethodName
+}
+
+// GetMethodNameOk returns a tuple with the MethodName field value
+// and a boolean to check if the value has been set.
+func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MethodName, true
+}
+
+// SetMethodName sets field value
+func (o *AddDefaultAzureAuthenticationMethodRequest) SetMethodName(v string) {
+	o.MethodName = v
+}
+
 func (o AddDefaultAzureAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -203,7 +203,6 @@ func (o AddDefaultAzureAuthenticationMethodRequest) MarshalJSON() ([]byte, error
 
 func (o AddDefaultAzureAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["methodName"] = o.MethodName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.TenantID) {
 		toSerialize["tenantID"] = o.TenantID
@@ -214,6 +213,7 @@ func (o AddDefaultAzureAuthenticationMethodRequest) ToMap() (map[string]interfac
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["methodName"] = o.MethodName
 	return toSerialize, nil
 }
 

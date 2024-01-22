@@ -1,14 +1,14 @@
-# \JsonAttributeConstraintsApi
+# \JsonAttributeConstraintsAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddJsonAttributeConstraints**](JsonAttributeConstraintsApi.md#AddJsonAttributeConstraints) | **Post** /json-attribute-constraints | Add a new JSON Attribute Constraints to the config
-[**DeleteJsonAttributeConstraints**](JsonAttributeConstraintsApi.md#DeleteJsonAttributeConstraints) | **Delete** /json-attribute-constraints/{json-attribute-constraints-name} | Delete a JSON Attribute Constraints
-[**GetJsonAttributeConstraints**](JsonAttributeConstraintsApi.md#GetJsonAttributeConstraints) | **Get** /json-attribute-constraints/{json-attribute-constraints-name} | Returns a single JSON Attribute Constraints
-[**ListJsonAttributeConstraints**](JsonAttributeConstraintsApi.md#ListJsonAttributeConstraints) | **Get** /json-attribute-constraints | Returns a list of all JSON Attribute Constraints objects
-[**UpdateJsonAttributeConstraints**](JsonAttributeConstraintsApi.md#UpdateJsonAttributeConstraints) | **Patch** /json-attribute-constraints/{json-attribute-constraints-name} | Update an existing JSON Attribute Constraints by name
+[**AddJsonAttributeConstraints**](JsonAttributeConstraintsAPI.md#AddJsonAttributeConstraints) | **Post** /json-attribute-constraints | Add a new JSON Attribute Constraints to the config
+[**DeleteJsonAttributeConstraints**](JsonAttributeConstraintsAPI.md#DeleteJsonAttributeConstraints) | **Delete** /json-attribute-constraints/{json-attribute-constraints-name} | Delete a JSON Attribute Constraints
+[**GetJsonAttributeConstraints**](JsonAttributeConstraintsAPI.md#GetJsonAttributeConstraints) | **Get** /json-attribute-constraints/{json-attribute-constraints-name} | Returns a single JSON Attribute Constraints
+[**ListJsonAttributeConstraints**](JsonAttributeConstraintsAPI.md#ListJsonAttributeConstraints) | **Get** /json-attribute-constraints | Returns a list of all JSON Attribute Constraints objects
+[**UpdateJsonAttributeConstraints**](JsonAttributeConstraintsAPI.md#UpdateJsonAttributeConstraints) | **Patch** /json-attribute-constraints/{json-attribute-constraints-name} | Update an existing JSON Attribute Constraints by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.JsonAttributeConstraintsApi.AddJsonAttributeConstraints(context.Background()).AddJsonAttributeConstraintsRequest(addJsonAttributeConstraintsRequest).Execute()
+    resp, r, err := apiClient.JsonAttributeConstraintsAPI.AddJsonAttributeConstraints(context.Background()).AddJsonAttributeConstraintsRequest(addJsonAttributeConstraintsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsApi.AddJsonAttributeConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsAPI.AddJsonAttributeConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddJsonAttributeConstraints`: JsonAttributeConstraintsResponse
-    fmt.Fprintf(os.Stdout, "Response from `JsonAttributeConstraintsApi.AddJsonAttributeConstraints`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `JsonAttributeConstraintsAPI.AddJsonAttributeConstraints`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.JsonAttributeConstraintsApi.DeleteJsonAttributeConstraints(context.Background(), jsonAttributeConstraintsName).Execute()
+    r, err := apiClient.JsonAttributeConstraintsAPI.DeleteJsonAttributeConstraints(context.Background(), jsonAttributeConstraintsName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsApi.DeleteJsonAttributeConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsAPI.DeleteJsonAttributeConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.JsonAttributeConstraintsApi.GetJsonAttributeConstraints(context.Background(), jsonAttributeConstraintsName).Execute()
+    resp, r, err := apiClient.JsonAttributeConstraintsAPI.GetJsonAttributeConstraints(context.Background(), jsonAttributeConstraintsName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsApi.GetJsonAttributeConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsAPI.GetJsonAttributeConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetJsonAttributeConstraints`: JsonAttributeConstraintsResponse
-    fmt.Fprintf(os.Stdout, "Response from `JsonAttributeConstraintsApi.GetJsonAttributeConstraints`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `JsonAttributeConstraintsAPI.GetJsonAttributeConstraints`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.JsonAttributeConstraintsApi.ListJsonAttributeConstraints(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.JsonAttributeConstraintsAPI.ListJsonAttributeConstraints(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsApi.ListJsonAttributeConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsAPI.ListJsonAttributeConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListJsonAttributeConstraints`: JsonAttributeConstraintsListResponse
-    fmt.Fprintf(os.Stdout, "Response from `JsonAttributeConstraintsApi.ListJsonAttributeConstraints`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `JsonAttributeConstraintsAPI.ListJsonAttributeConstraints`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.JsonAttributeConstraintsApi.UpdateJsonAttributeConstraints(context.Background(), jsonAttributeConstraintsName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.JsonAttributeConstraintsAPI.UpdateJsonAttributeConstraints(context.Background(), jsonAttributeConstraintsName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsApi.UpdateJsonAttributeConstraints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `JsonAttributeConstraintsAPI.UpdateJsonAttributeConstraints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateJsonAttributeConstraints`: JsonAttributeConstraintsResponse
-    fmt.Fprintf(os.Stdout, "Response from `JsonAttributeConstraintsApi.UpdateJsonAttributeConstraints`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `JsonAttributeConstraintsAPI.UpdateJsonAttributeConstraints`: %v\n", resp)
 }
 ```
 

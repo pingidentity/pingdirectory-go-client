@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GeneratorName** | **string** | Name of the new Password Generator | 
 **Schemas** | [**[]EnumthirdPartyPasswordGeneratorSchemaUrn**](EnumthirdPartyPasswordGeneratorSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Password Generator. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Password Generator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Generator | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Generator is enabled for use. | 
+**GeneratorName** | **string** | Name of the new Password Generator | 
 
 ## Methods
 
 ### NewAddThirdPartyPasswordGeneratorRequest
 
-`func NewAddThirdPartyPasswordGeneratorRequest(generatorName string, schemas []EnumthirdPartyPasswordGeneratorSchemaUrn, extensionClass string, enabled bool, ) *AddThirdPartyPasswordGeneratorRequest`
+`func NewAddThirdPartyPasswordGeneratorRequest(schemas []EnumthirdPartyPasswordGeneratorSchemaUrn, extensionClass string, enabled bool, generatorName string, ) *AddThirdPartyPasswordGeneratorRequest`
 
 NewAddThirdPartyPasswordGeneratorRequest instantiates a new AddThirdPartyPasswordGeneratorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyPasswordGeneratorRequestWithDefaults instantiates a new AddThirdPartyPasswordGeneratorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetGeneratorName
-
-`func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorName() string`
-
-GetGeneratorName returns the GeneratorName field if non-nil, zero value otherwise.
-
-### GetGeneratorNameOk
-
-`func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool)`
-
-GetGeneratorNameOk returns a tuple with the GeneratorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGeneratorName
-
-`func (o *AddThirdPartyPasswordGeneratorRequest) SetGeneratorName(v string)`
-
-SetGeneratorName sets GeneratorName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddThirdPartyPasswordGeneratorRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetGeneratorName
+
+`func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorName() string`
+
+GetGeneratorName returns the GeneratorName field if non-nil, zero value otherwise.
+
+### GetGeneratorNameOk
+
+`func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool)`
+
+GetGeneratorNameOk returns a tuple with the GeneratorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGeneratorName
+
+`func (o *AddThirdPartyPasswordGeneratorRequest) SetGeneratorName(v string)`
+
+SetGeneratorName sets GeneratorName field to given value.
 
 
 

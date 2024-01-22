@@ -1,12 +1,12 @@
-# \ReplicationDomainApi
+# \ReplicationDomainAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetReplicationDomain**](ReplicationDomainApi.md#GetReplicationDomain) | **Get** /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name} | Returns a single Replication Domain
-[**ListReplicationDomains**](ReplicationDomainApi.md#ListReplicationDomains) | **Get** /synchronization-providers/{synchronization-provider-name}/replication-domains | Returns a list of all Replication Domain objects
-[**UpdateReplicationDomain**](ReplicationDomainApi.md#UpdateReplicationDomain) | **Patch** /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name} | Update an existing Replication Domain by name
+[**GetReplicationDomain**](ReplicationDomainAPI.md#GetReplicationDomain) | **Get** /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name} | Returns a single Replication Domain
+[**ListReplicationDomains**](ReplicationDomainAPI.md#ListReplicationDomains) | **Get** /synchronization-providers/{synchronization-provider-name}/replication-domains | Returns a list of all Replication Domain objects
+[**UpdateReplicationDomain**](ReplicationDomainAPI.md#UpdateReplicationDomain) | **Patch** /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name} | Update an existing Replication Domain by name
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReplicationDomainApi.GetReplicationDomain(context.Background(), replicationDomainName, synchronizationProviderName).Execute()
+    resp, r, err := apiClient.ReplicationDomainAPI.GetReplicationDomain(context.Background(), replicationDomainName, synchronizationProviderName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationDomainApi.GetReplicationDomain``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationDomainAPI.GetReplicationDomain``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetReplicationDomain`: ReplicationDomainResponse
-    fmt.Fprintf(os.Stdout, "Response from `ReplicationDomainApi.GetReplicationDomain`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationDomainAPI.GetReplicationDomain`: %v\n", resp)
 }
 ```
 
@@ -105,13 +105,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReplicationDomainApi.ListReplicationDomains(context.Background(), synchronizationProviderName).Filter(filter).Execute()
+    resp, r, err := apiClient.ReplicationDomainAPI.ListReplicationDomains(context.Background(), synchronizationProviderName).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationDomainApi.ListReplicationDomains``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationDomainAPI.ListReplicationDomains``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListReplicationDomains`: ReplicationDomainListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ReplicationDomainApi.ListReplicationDomains`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationDomainAPI.ListReplicationDomains`: %v\n", resp)
 }
 ```
 
@@ -176,13 +176,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReplicationDomainApi.UpdateReplicationDomain(context.Background(), replicationDomainName, synchronizationProviderName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ReplicationDomainAPI.UpdateReplicationDomain(context.Background(), replicationDomainName, synchronizationProviderName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationDomainApi.UpdateReplicationDomain``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationDomainAPI.UpdateReplicationDomain``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateReplicationDomain`: ReplicationDomainResponse
-    fmt.Fprintf(os.Stdout, "Response from `ReplicationDomainApi.UpdateReplicationDomain`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationDomainAPI.UpdateReplicationDomain`: %v\n", resp)
 }
 ```
 

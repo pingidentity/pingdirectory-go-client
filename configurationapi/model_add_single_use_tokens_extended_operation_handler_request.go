@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSingleUseTokensExtendedOperationHandlerRequest{}
 
 // AddSingleUseTokensExtendedOperationHandlerRequest struct for AddSingleUseTokensExtendedOperationHandlerRequest
 type AddSingleUseTokensExtendedOperationHandlerRequest struct {
-	// Name of the new Extended Operation Handler
-	HandlerName string                                                 `json:"handlerName"`
-	Schemas     []EnumsingleUseTokensExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumsingleUseTokensExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The password generator that will be used to create the single-use token values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
 	// The set of delivery mechanisms that may be used to deliver single-use tokens to users in requests that do not specify one or more preferred delivery mechanisms.
@@ -32,19 +30,21 @@ type AddSingleUseTokensExtendedOperationHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
 	Enabled bool `json:"enabled"`
+	// Name of the new Extended Operation Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddSingleUseTokensExtendedOperationHandlerRequest instantiates a new AddSingleUseTokensExtendedOperationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSingleUseTokensExtendedOperationHandlerRequest(handlerName string, schemas []EnumsingleUseTokensExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultOTPDeliveryMechanism []string, enabled bool) *AddSingleUseTokensExtendedOperationHandlerRequest {
+func NewAddSingleUseTokensExtendedOperationHandlerRequest(schemas []EnumsingleUseTokensExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultOTPDeliveryMechanism []string, enabled bool, handlerName string) *AddSingleUseTokensExtendedOperationHandlerRequest {
 	this := AddSingleUseTokensExtendedOperationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.PasswordGenerator = passwordGenerator
 	this.DefaultOTPDeliveryMechanism = defaultOTPDeliveryMechanism
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddSingleUseTokensExtendedOperationHandlerRequest(handlerName string, sc
 func NewAddSingleUseTokensExtendedOperationHandlerRequestWithDefaults() *AddSingleUseTokensExtendedOperationHandlerRequest {
 	this := AddSingleUseTokensExtendedOperationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddSingleUseTokensExtendedOperationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -240,6 +216,30 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddSingleUseTokensExtendedOperationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddSingleUseTokensExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -250,7 +250,6 @@ func (o AddSingleUseTokensExtendedOperationHandlerRequest) MarshalJSON() ([]byte
 
 func (o AddSingleUseTokensExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["passwordGenerator"] = o.PasswordGenerator
 	toSerialize["defaultOTPDeliveryMechanism"] = o.DefaultOTPDeliveryMechanism
@@ -261,6 +260,7 @@ func (o AddSingleUseTokensExtendedOperationHandlerRequest) ToMap() (map[string]i
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

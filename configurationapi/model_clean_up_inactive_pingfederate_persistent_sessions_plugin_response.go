@@ -19,8 +19,6 @@ var _ MappedNullable = &CleanUpInactivePingfederatePersistentSessionsPluginRespo
 
 // CleanUpInactivePingfederatePersistentSessionsPluginResponse struct for CleanUpInactivePingfederatePersistentSessionsPluginResponse
 type CleanUpInactivePingfederatePersistentSessionsPluginResponse struct {
-	// Name of the Plugin
-	Id      string                                                             `json:"id"`
 	Schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn `json:"schemas"`
 	// Sessions whose last activity timestamp is older than this offset will be removed.
 	ExpirationOffset string `json:"expirationOffset"`
@@ -38,21 +36,23 @@ type CleanUpInactivePingfederatePersistentSessionsPluginResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewCleanUpInactivePingfederatePersistentSessionsPluginResponse instantiates a new CleanUpInactivePingfederatePersistentSessionsPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCleanUpInactivePingfederatePersistentSessionsPluginResponse(id string, schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn, expirationOffset string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, enabled bool) *CleanUpInactivePingfederatePersistentSessionsPluginResponse {
+func NewCleanUpInactivePingfederatePersistentSessionsPluginResponse(schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn, expirationOffset string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, enabled bool, id string) *CleanUpInactivePingfederatePersistentSessionsPluginResponse {
 	this := CleanUpInactivePingfederatePersistentSessionsPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExpirationOffset = expirationOffset
 	this.PollingInterval = pollingInterval
 	this.MaxUpdatesPerSecond = maxUpdatesPerSecond
 	this.NumDeleteThreads = numDeleteThreads
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -62,30 +62,6 @@ func NewCleanUpInactivePingfederatePersistentSessionsPluginResponse(id string, s
 func NewCleanUpInactivePingfederatePersistentSessionsPluginResponseWithDefaults() *CleanUpInactivePingfederatePersistentSessionsPluginResponse {
 	this := CleanUpInactivePingfederatePersistentSessionsPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -360,6 +336,30 @@ func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetUrnping
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o CleanUpInactivePingfederatePersistentSessionsPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -370,7 +370,6 @@ func (o CleanUpInactivePingfederatePersistentSessionsPluginResponse) MarshalJSON
 
 func (o CleanUpInactivePingfederatePersistentSessionsPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["expirationOffset"] = o.ExpirationOffset
 	toSerialize["pollingInterval"] = o.PollingInterval
@@ -389,6 +388,7 @@ func (o CleanUpInactivePingfederatePersistentSessionsPluginResponse) ToMap() (ma
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

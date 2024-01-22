@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IndexName** | **string** | Name of the new Local DB Composite Index | 
 **Schemas** | Pointer to [**[]EnumlocalDbCompositeIndexSchemaUrn**](EnumlocalDbCompositeIndexSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Local DB Composite Index | [optional] 
 **IndexFilterPattern** | **string** | A filter pattern that identifies which entries to include in the index. | 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **PrimeIndex** | Pointer to **bool** | Indicates whether the server should load the contents of this index into memory when the backend is being opened. | [optional] 
 **PrimeInternalNodesOnly** | Pointer to **bool** | Indicates whether to only prime the internal nodes of the index database, rather than priming both internal and leaf nodes. | [optional] 
 **CacheMode** | Pointer to [**EnumlocalDbCompositeIndexCacheModeProp**](EnumlocalDbCompositeIndexCacheModeProp.md) |  | [optional] 
+**IndexName** | **string** | Name of the new Local DB Composite Index | 
 
 ## Methods
 
 ### NewAddLocalDbCompositeIndexRequest
 
-`func NewAddLocalDbCompositeIndexRequest(indexName string, indexFilterPattern string, ) *AddLocalDbCompositeIndexRequest`
+`func NewAddLocalDbCompositeIndexRequest(indexFilterPattern string, indexName string, ) *AddLocalDbCompositeIndexRequest`
 
 NewAddLocalDbCompositeIndexRequest instantiates a new AddLocalDbCompositeIndexRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddLocalDbCompositeIndexRequestWithDefaults instantiates a new AddLocalDbCompositeIndexRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetIndexName
-
-`func (o *AddLocalDbCompositeIndexRequest) GetIndexName() string`
-
-GetIndexName returns the IndexName field if non-nil, zero value otherwise.
-
-### GetIndexNameOk
-
-`func (o *AddLocalDbCompositeIndexRequest) GetIndexNameOk() (*string, bool)`
-
-GetIndexNameOk returns a tuple with the IndexName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIndexName
-
-`func (o *AddLocalDbCompositeIndexRequest) SetIndexName(v string)`
-
-SetIndexName sets IndexName field to given value.
-
 
 ### GetSchemas
 
@@ -247,6 +227,26 @@ SetCacheMode sets CacheMode field to given value.
 `func (o *AddLocalDbCompositeIndexRequest) HasCacheMode() bool`
 
 HasCacheMode returns a boolean if a field has been set.
+
+### GetIndexName
+
+`func (o *AddLocalDbCompositeIndexRequest) GetIndexName() string`
+
+GetIndexName returns the IndexName field if non-nil, zero value otherwise.
+
+### GetIndexNameOk
+
+`func (o *AddLocalDbCompositeIndexRequest) GetIndexNameOk() (*string, bool)`
+
+GetIndexNameOk returns a tuple with the IndexName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexName
+
+`func (o *AddLocalDbCompositeIndexRequest) SetIndexName(v string)`
+
+SetIndexName sets IndexName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,8 +19,6 @@ var _ MappedNullable = &EnvironmentVariablePassphraseProviderResponse{}
 
 // EnvironmentVariablePassphraseProviderResponse struct for EnvironmentVariablePassphraseProviderResponse
 type EnvironmentVariablePassphraseProviderResponse struct {
-	// Name of the Passphrase Provider
-	Id      string                                               `json:"id"`
 	Schemas []EnumenvironmentVariablePassphraseProviderSchemaUrn `json:"schemas"`
 	// The name of the environment variable that is expected to hold the passphrase.
 	EnvironmentVariable string `json:"environmentVariable"`
@@ -30,18 +28,20 @@ type EnvironmentVariablePassphraseProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Passphrase Provider
+	Id string `json:"id"`
 }
 
 // NewEnvironmentVariablePassphraseProviderResponse instantiates a new EnvironmentVariablePassphraseProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEnvironmentVariablePassphraseProviderResponse(id string, schemas []EnumenvironmentVariablePassphraseProviderSchemaUrn, environmentVariable string, enabled bool) *EnvironmentVariablePassphraseProviderResponse {
+func NewEnvironmentVariablePassphraseProviderResponse(schemas []EnumenvironmentVariablePassphraseProviderSchemaUrn, environmentVariable string, enabled bool, id string) *EnvironmentVariablePassphraseProviderResponse {
 	this := EnvironmentVariablePassphraseProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.EnvironmentVariable = environmentVariable
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewEnvironmentVariablePassphraseProviderResponse(id string, schemas []Enume
 func NewEnvironmentVariablePassphraseProviderResponseWithDefaults() *EnvironmentVariablePassphraseProviderResponse {
 	this := EnvironmentVariablePassphraseProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *EnvironmentVariablePassphraseProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *EnvironmentVariablePassphraseProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *EnvironmentVariablePassphraseProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -245,6 +221,30 @@ func (o *EnvironmentVariablePassphraseProviderResponse) SetUrnpingidentityschema
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *EnvironmentVariablePassphraseProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *EnvironmentVariablePassphraseProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *EnvironmentVariablePassphraseProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o EnvironmentVariablePassphraseProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -255,7 +255,6 @@ func (o EnvironmentVariablePassphraseProviderResponse) MarshalJSON() ([]byte, er
 
 func (o EnvironmentVariablePassphraseProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["environmentVariable"] = o.EnvironmentVariable
 	if !IsNil(o.Description) {
@@ -268,6 +267,7 @@ func (o EnvironmentVariablePassphraseProviderResponse) ToMap() (map[string]inter
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -19,23 +19,23 @@ var _ MappedNullable = &NeverDeleteLogRetentionPolicyResponse{}
 
 // NeverDeleteLogRetentionPolicyResponse struct for NeverDeleteLogRetentionPolicyResponse
 type NeverDeleteLogRetentionPolicyResponse struct {
-	// Name of the Log Retention Policy
-	Id      string                                       `json:"id"`
 	Schemas []EnumneverDeleteLogRetentionPolicySchemaUrn `json:"schemas"`
 	// A description for this Log Retention Policy
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Retention Policy
+	Id string `json:"id"`
 }
 
 // NewNeverDeleteLogRetentionPolicyResponse instantiates a new NeverDeleteLogRetentionPolicyResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNeverDeleteLogRetentionPolicyResponse(id string, schemas []EnumneverDeleteLogRetentionPolicySchemaUrn) *NeverDeleteLogRetentionPolicyResponse {
+func NewNeverDeleteLogRetentionPolicyResponse(schemas []EnumneverDeleteLogRetentionPolicySchemaUrn, id string) *NeverDeleteLogRetentionPolicyResponse {
 	this := NeverDeleteLogRetentionPolicyResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -45,30 +45,6 @@ func NewNeverDeleteLogRetentionPolicyResponse(id string, schemas []EnumneverDele
 func NewNeverDeleteLogRetentionPolicyResponseWithDefaults() *NeverDeleteLogRetentionPolicyResponse {
 	this := NeverDeleteLogRetentionPolicyResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *NeverDeleteLogRetentionPolicyResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *NeverDeleteLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *NeverDeleteLogRetentionPolicyResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -191,6 +167,30 @@ func (o *NeverDeleteLogRetentionPolicyResponse) SetUrnpingidentityschemasconfigu
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *NeverDeleteLogRetentionPolicyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *NeverDeleteLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *NeverDeleteLogRetentionPolicyResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o NeverDeleteLogRetentionPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -201,7 +201,6 @@ func (o NeverDeleteLogRetentionPolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o NeverDeleteLogRetentionPolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -212,6 +211,7 @@ func (o NeverDeleteLogRetentionPolicyResponse) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

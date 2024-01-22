@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new OAuth Token Handler | 
 **Schemas** | [**[]EnumthirdPartyOauthTokenHandlerSchemaUrn**](EnumthirdPartyOauthTokenHandlerSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party OAuth Token Handler. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party OAuth Token Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this OAuth Token Handler | [optional] 
+**HandlerName** | **string** | Name of the new OAuth Token Handler | 
 
 ## Methods
 
 ### NewAddThirdPartyOauthTokenHandlerRequest
 
-`func NewAddThirdPartyOauthTokenHandlerRequest(handlerName string, schemas []EnumthirdPartyOauthTokenHandlerSchemaUrn, extensionClass string, ) *AddThirdPartyOauthTokenHandlerRequest`
+`func NewAddThirdPartyOauthTokenHandlerRequest(schemas []EnumthirdPartyOauthTokenHandlerSchemaUrn, extensionClass string, handlerName string, ) *AddThirdPartyOauthTokenHandlerRequest`
 
 NewAddThirdPartyOauthTokenHandlerRequest instantiates a new AddThirdPartyOauthTokenHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,26 +28,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyOauthTokenHandlerRequestWithDefaults instantiates a new AddThirdPartyOauthTokenHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddThirdPartyOauthTokenHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -138,6 +118,26 @@ SetDescription sets Description field to given value.
 `func (o *AddThirdPartyOauthTokenHandlerRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddThirdPartyOauthTokenHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

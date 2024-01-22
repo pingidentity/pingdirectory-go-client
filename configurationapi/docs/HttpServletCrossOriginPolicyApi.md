@@ -1,14 +1,14 @@
-# \HttpServletCrossOriginPolicyApi
+# \HttpServletCrossOriginPolicyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddHttpServletCrossOriginPolicy**](HttpServletCrossOriginPolicyApi.md#AddHttpServletCrossOriginPolicy) | **Post** /http-servlet-cross-origin-policies | Add a new HTTP Servlet Cross Origin Policy to the config
-[**DeleteHttpServletCrossOriginPolicy**](HttpServletCrossOriginPolicyApi.md#DeleteHttpServletCrossOriginPolicy) | **Delete** /http-servlet-cross-origin-policies/{http-servlet-cross-origin-policy-name} | Delete a HTTP Servlet Cross Origin Policy
-[**GetHttpServletCrossOriginPolicy**](HttpServletCrossOriginPolicyApi.md#GetHttpServletCrossOriginPolicy) | **Get** /http-servlet-cross-origin-policies/{http-servlet-cross-origin-policy-name} | Returns a single HTTP Servlet Cross Origin Policy
-[**ListHttpServletCrossOriginPolicies**](HttpServletCrossOriginPolicyApi.md#ListHttpServletCrossOriginPolicies) | **Get** /http-servlet-cross-origin-policies | Returns a list of all HTTP Servlet Cross Origin Policy objects
-[**UpdateHttpServletCrossOriginPolicy**](HttpServletCrossOriginPolicyApi.md#UpdateHttpServletCrossOriginPolicy) | **Patch** /http-servlet-cross-origin-policies/{http-servlet-cross-origin-policy-name} | Update an existing HTTP Servlet Cross Origin Policy by name
+[**AddHttpServletCrossOriginPolicy**](HttpServletCrossOriginPolicyAPI.md#AddHttpServletCrossOriginPolicy) | **Post** /http-servlet-cross-origin-policies | Add a new HTTP Servlet Cross Origin Policy to the config
+[**DeleteHttpServletCrossOriginPolicy**](HttpServletCrossOriginPolicyAPI.md#DeleteHttpServletCrossOriginPolicy) | **Delete** /http-servlet-cross-origin-policies/{http-servlet-cross-origin-policy-name} | Delete a HTTP Servlet Cross Origin Policy
+[**GetHttpServletCrossOriginPolicy**](HttpServletCrossOriginPolicyAPI.md#GetHttpServletCrossOriginPolicy) | **Get** /http-servlet-cross-origin-policies/{http-servlet-cross-origin-policy-name} | Returns a single HTTP Servlet Cross Origin Policy
+[**ListHttpServletCrossOriginPolicies**](HttpServletCrossOriginPolicyAPI.md#ListHttpServletCrossOriginPolicies) | **Get** /http-servlet-cross-origin-policies | Returns a list of all HTTP Servlet Cross Origin Policy objects
+[**UpdateHttpServletCrossOriginPolicy**](HttpServletCrossOriginPolicyAPI.md#UpdateHttpServletCrossOriginPolicy) | **Patch** /http-servlet-cross-origin-policies/{http-servlet-cross-origin-policy-name} | Update an existing HTTP Servlet Cross Origin Policy by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpServletCrossOriginPolicyApi.AddHttpServletCrossOriginPolicy(context.Background()).AddHttpServletCrossOriginPolicyRequest(addHttpServletCrossOriginPolicyRequest).Execute()
+    resp, r, err := apiClient.HttpServletCrossOriginPolicyAPI.AddHttpServletCrossOriginPolicy(context.Background()).AddHttpServletCrossOriginPolicyRequest(addHttpServletCrossOriginPolicyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyApi.AddHttpServletCrossOriginPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyAPI.AddHttpServletCrossOriginPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddHttpServletCrossOriginPolicy`: HttpServletCrossOriginPolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `HttpServletCrossOriginPolicyApi.AddHttpServletCrossOriginPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpServletCrossOriginPolicyAPI.AddHttpServletCrossOriginPolicy`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HttpServletCrossOriginPolicyApi.DeleteHttpServletCrossOriginPolicy(context.Background(), httpServletCrossOriginPolicyName).Execute()
+    r, err := apiClient.HttpServletCrossOriginPolicyAPI.DeleteHttpServletCrossOriginPolicy(context.Background(), httpServletCrossOriginPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyApi.DeleteHttpServletCrossOriginPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyAPI.DeleteHttpServletCrossOriginPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpServletCrossOriginPolicyApi.GetHttpServletCrossOriginPolicy(context.Background(), httpServletCrossOriginPolicyName).Execute()
+    resp, r, err := apiClient.HttpServletCrossOriginPolicyAPI.GetHttpServletCrossOriginPolicy(context.Background(), httpServletCrossOriginPolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyApi.GetHttpServletCrossOriginPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyAPI.GetHttpServletCrossOriginPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetHttpServletCrossOriginPolicy`: HttpServletCrossOriginPolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `HttpServletCrossOriginPolicyApi.GetHttpServletCrossOriginPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpServletCrossOriginPolicyAPI.GetHttpServletCrossOriginPolicy`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpServletCrossOriginPolicyApi.ListHttpServletCrossOriginPolicies(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.HttpServletCrossOriginPolicyAPI.ListHttpServletCrossOriginPolicies(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyApi.ListHttpServletCrossOriginPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyAPI.ListHttpServletCrossOriginPolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListHttpServletCrossOriginPolicies`: HttpServletCrossOriginPolicyListResponse
-    fmt.Fprintf(os.Stdout, "Response from `HttpServletCrossOriginPolicyApi.ListHttpServletCrossOriginPolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpServletCrossOriginPolicyAPI.ListHttpServletCrossOriginPolicies`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HttpServletCrossOriginPolicyApi.UpdateHttpServletCrossOriginPolicy(context.Background(), httpServletCrossOriginPolicyName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.HttpServletCrossOriginPolicyAPI.UpdateHttpServletCrossOriginPolicy(context.Background(), httpServletCrossOriginPolicyName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyApi.UpdateHttpServletCrossOriginPolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletCrossOriginPolicyAPI.UpdateHttpServletCrossOriginPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateHttpServletCrossOriginPolicy`: HttpServletCrossOriginPolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `HttpServletCrossOriginPolicyApi.UpdateHttpServletCrossOriginPolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `HttpServletCrossOriginPolicyAPI.UpdateHttpServletCrossOriginPolicy`: %v\n", resp)
 }
 ```
 

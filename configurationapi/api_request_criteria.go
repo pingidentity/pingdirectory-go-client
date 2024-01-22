@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// RequestCriteriaApiService RequestCriteriaApi service
-type RequestCriteriaApiService service
+// RequestCriteriaAPIService RequestCriteriaAPI service
+type RequestCriteriaAPIService service
 
 type ApiAddRequestCriteriaRequest struct {
 	ctx                       context.Context
-	ApiService                *RequestCriteriaApiService
+	ApiService                *RequestCriteriaAPIService
 	addRequestCriteriaRequest *AddRequestCriteriaRequest
 }
 
@@ -44,7 +44,7 @@ AddRequestCriteria Add a new Request Criteria to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddRequestCriteriaRequest
 */
-func (a *RequestCriteriaApiService) AddRequestCriteria(ctx context.Context) ApiAddRequestCriteriaRequest {
+func (a *RequestCriteriaAPIService) AddRequestCriteria(ctx context.Context) ApiAddRequestCriteriaRequest {
 	return ApiAddRequestCriteriaRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *RequestCriteriaApiService) AddRequestCriteria(ctx context.Context) ApiA
 // Execute executes the request
 //
 //	@return AddRequestCriteria200Response
-func (a *RequestCriteriaApiService) AddRequestCriteriaExecute(r ApiAddRequestCriteriaRequest) (*AddRequestCriteria200Response, *http.Response, error) {
+func (a *RequestCriteriaAPIService) AddRequestCriteriaExecute(r ApiAddRequestCriteriaRequest) (*AddRequestCriteria200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *RequestCriteriaApiService) AddRequestCriteriaExecute(r ApiAddRequestCri
 		localVarReturnValue *AddRequestCriteria200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaApiService.AddRequestCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaAPIService.AddRequestCriteria")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *RequestCriteriaApiService) AddRequestCriteriaExecute(r ApiAddRequestCri
 
 type ApiDeleteRequestCriteriaRequest struct {
 	ctx                 context.Context
-	ApiService          *RequestCriteriaApiService
+	ApiService          *RequestCriteriaAPIService
 	requestCriteriaName string
 }
 
@@ -149,7 +149,7 @@ DeleteRequestCriteria Delete a Request Criteria
 	@param requestCriteriaName Name of the Request Criteria
 	@return ApiDeleteRequestCriteriaRequest
 */
-func (a *RequestCriteriaApiService) DeleteRequestCriteria(ctx context.Context, requestCriteriaName string) ApiDeleteRequestCriteriaRequest {
+func (a *RequestCriteriaAPIService) DeleteRequestCriteria(ctx context.Context, requestCriteriaName string) ApiDeleteRequestCriteriaRequest {
 	return ApiDeleteRequestCriteriaRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -158,14 +158,14 @@ func (a *RequestCriteriaApiService) DeleteRequestCriteria(ctx context.Context, r
 }
 
 // Execute executes the request
-func (a *RequestCriteriaApiService) DeleteRequestCriteriaExecute(r ApiDeleteRequestCriteriaRequest) (*http.Response, error) {
+func (a *RequestCriteriaAPIService) DeleteRequestCriteriaExecute(r ApiDeleteRequestCriteriaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaApiService.DeleteRequestCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaAPIService.DeleteRequestCriteria")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *RequestCriteriaApiService) DeleteRequestCriteriaExecute(r ApiDeleteRequ
 
 type ApiGetRequestCriteriaRequest struct {
 	ctx                 context.Context
-	ApiService          *RequestCriteriaApiService
+	ApiService          *RequestCriteriaAPIService
 	requestCriteriaName string
 }
 
@@ -239,7 +239,7 @@ GetRequestCriteria Returns a single Request Criteria
 	@param requestCriteriaName Name of the Request Criteria
 	@return ApiGetRequestCriteriaRequest
 */
-func (a *RequestCriteriaApiService) GetRequestCriteria(ctx context.Context, requestCriteriaName string) ApiGetRequestCriteriaRequest {
+func (a *RequestCriteriaAPIService) GetRequestCriteria(ctx context.Context, requestCriteriaName string) ApiGetRequestCriteriaRequest {
 	return ApiGetRequestCriteriaRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -250,7 +250,7 @@ func (a *RequestCriteriaApiService) GetRequestCriteria(ctx context.Context, requ
 // Execute executes the request
 //
 //	@return AddRequestCriteria200Response
-func (a *RequestCriteriaApiService) GetRequestCriteriaExecute(r ApiGetRequestCriteriaRequest) (*AddRequestCriteria200Response, *http.Response, error) {
+func (a *RequestCriteriaAPIService) GetRequestCriteriaExecute(r ApiGetRequestCriteriaRequest) (*AddRequestCriteria200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *RequestCriteriaApiService) GetRequestCriteriaExecute(r ApiGetRequestCri
 		localVarReturnValue *AddRequestCriteria200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaApiService.GetRequestCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaAPIService.GetRequestCriteria")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *RequestCriteriaApiService) GetRequestCriteriaExecute(r ApiGetRequestCri
 
 type ApiListRequestCriteriaRequest struct {
 	ctx        context.Context
-	ApiService *RequestCriteriaApiService
+	ApiService *RequestCriteriaAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListRequestCriteria Returns a list of all Request Criteria objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListRequestCriteriaRequest
 */
-func (a *RequestCriteriaApiService) ListRequestCriteria(ctx context.Context) ApiListRequestCriteriaRequest {
+func (a *RequestCriteriaAPIService) ListRequestCriteria(ctx context.Context) ApiListRequestCriteriaRequest {
 	return ApiListRequestCriteriaRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *RequestCriteriaApiService) ListRequestCriteria(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return RequestCriteriaListResponse
-func (a *RequestCriteriaApiService) ListRequestCriteriaExecute(r ApiListRequestCriteriaRequest) (*RequestCriteriaListResponse, *http.Response, error) {
+func (a *RequestCriteriaAPIService) ListRequestCriteriaExecute(r ApiListRequestCriteriaRequest) (*RequestCriteriaListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *RequestCriteriaApiService) ListRequestCriteriaExecute(r ApiListRequestC
 		localVarReturnValue *RequestCriteriaListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaApiService.ListRequestCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaAPIService.ListRequestCriteria")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *RequestCriteriaApiService) ListRequestCriteriaExecute(r ApiListRequestC
 
 type ApiUpdateRequestCriteriaRequest struct {
 	ctx                 context.Context
-	ApiService          *RequestCriteriaApiService
+	ApiService          *RequestCriteriaAPIService
 	requestCriteriaName string
 	updateRequest       *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateRequestCriteria Update an existing Request Criteria by name
 	@param requestCriteriaName Name of the Request Criteria
 	@return ApiUpdateRequestCriteriaRequest
 */
-func (a *RequestCriteriaApiService) UpdateRequestCriteria(ctx context.Context, requestCriteriaName string) ApiUpdateRequestCriteriaRequest {
+func (a *RequestCriteriaAPIService) UpdateRequestCriteria(ctx context.Context, requestCriteriaName string) ApiUpdateRequestCriteriaRequest {
 	return ApiUpdateRequestCriteriaRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -467,7 +467,7 @@ func (a *RequestCriteriaApiService) UpdateRequestCriteria(ctx context.Context, r
 // Execute executes the request
 //
 //	@return AddRequestCriteria200Response
-func (a *RequestCriteriaApiService) UpdateRequestCriteriaExecute(r ApiUpdateRequestCriteriaRequest) (*AddRequestCriteria200Response, *http.Response, error) {
+func (a *RequestCriteriaAPIService) UpdateRequestCriteriaExecute(r ApiUpdateRequestCriteriaRequest) (*AddRequestCriteria200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *RequestCriteriaApiService) UpdateRequestCriteriaExecute(r ApiUpdateRequ
 		localVarReturnValue *AddRequestCriteria200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaApiService.UpdateRequestCriteria")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaAPIService.UpdateRequestCriteria")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

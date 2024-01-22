@@ -19,8 +19,6 @@ var _ MappedNullable = &CertificateDelegatedAdminAttributeResponse{}
 
 // CertificateDelegatedAdminAttributeResponse struct for CertificateDelegatedAdminAttributeResponse
 type CertificateDelegatedAdminAttributeResponse struct {
-	// Name of the Delegated Admin Attribute
-	Id              string                                                      `json:"id"`
 	Schemas         []EnumcertificateDelegatedAdminAttributeSchemaUrn           `json:"schemas"`
 	AllowedMIMEType []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`
 	// A description for this Delegated Admin Attribute
@@ -43,21 +41,23 @@ type CertificateDelegatedAdminAttributeResponse struct {
 	DateTimeFormat                                *string                                            `json:"dateTimeFormat,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Delegated Admin Attribute
+	Id string `json:"id"`
 }
 
 // NewCertificateDelegatedAdminAttributeResponse instantiates a new CertificateDelegatedAdminAttributeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCertificateDelegatedAdminAttributeResponse(id string, schemas []EnumcertificateDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int64) *CertificateDelegatedAdminAttributeResponse {
+func NewCertificateDelegatedAdminAttributeResponse(schemas []EnumcertificateDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int64, id string) *CertificateDelegatedAdminAttributeResponse {
 	this := CertificateDelegatedAdminAttributeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AttributeType = attributeType
 	this.DisplayName = displayName
 	this.Mutability = mutability
 	this.MultiValued = multiValued
 	this.DisplayOrderIndex = displayOrderIndex
+	this.Id = id
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewCertificateDelegatedAdminAttributeResponse(id string, schemas []Enumcert
 func NewCertificateDelegatedAdminAttributeResponseWithDefaults() *CertificateDelegatedAdminAttributeResponse {
 	this := CertificateDelegatedAdminAttributeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CertificateDelegatedAdminAttributeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CertificateDelegatedAdminAttributeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CertificateDelegatedAdminAttributeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -493,6 +469,30 @@ func (o *CertificateDelegatedAdminAttributeResponse) SetUrnpingidentityschemasco
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *CertificateDelegatedAdminAttributeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CertificateDelegatedAdminAttributeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CertificateDelegatedAdminAttributeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o CertificateDelegatedAdminAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -503,7 +503,6 @@ func (o CertificateDelegatedAdminAttributeResponse) MarshalJSON() ([]byte, error
 
 func (o CertificateDelegatedAdminAttributeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllowedMIMEType) {
 		toSerialize["allowedMIMEType"] = o.AllowedMIMEType
@@ -534,6 +533,7 @@ func (o CertificateDelegatedAdminAttributeResponse) ToMap() (map[string]interfac
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

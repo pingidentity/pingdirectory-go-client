@@ -19,8 +19,6 @@ var _ MappedNullable = &ComposedAttributePluginResponse{}
 
 // ComposedAttributePluginResponse struct for ComposedAttributePluginResponse
 type ComposedAttributePluginResponse struct {
-	// Name of the Plugin
-	Id         string                                 `json:"id"`
 	Schemas    []EnumcomposedAttributePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp             `json:"pluginType"`
 	// The name or OID of the attribute type for which values are to be generated.
@@ -51,20 +49,22 @@ type ComposedAttributePluginResponse struct {
 	InvokeForInternalOperations                   *bool                                              `json:"invokeForInternalOperations,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewComposedAttributePluginResponse instantiates a new ComposedAttributePluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComposedAttributePluginResponse(id string, schemas []EnumcomposedAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, attributeType string, valuePattern []string, enabled bool) *ComposedAttributePluginResponse {
+func NewComposedAttributePluginResponse(schemas []EnumcomposedAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, attributeType string, valuePattern []string, enabled bool, id string) *ComposedAttributePluginResponse {
 	this := ComposedAttributePluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.PluginType = pluginType
 	this.AttributeType = attributeType
 	this.ValuePattern = valuePattern
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -74,30 +74,6 @@ func NewComposedAttributePluginResponse(id string, schemas []EnumcomposedAttribu
 func NewComposedAttributePluginResponseWithDefaults() *ComposedAttributePluginResponse {
 	this := ComposedAttributePluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ComposedAttributePluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ComposedAttributePluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ComposedAttributePluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -732,6 +708,30 @@ func (o *ComposedAttributePluginResponse) SetUrnpingidentityschemasconfiguration
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ComposedAttributePluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ComposedAttributePluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ComposedAttributePluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ComposedAttributePluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -742,7 +742,6 @@ func (o ComposedAttributePluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o ComposedAttributePluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["pluginType"] = o.PluginType
 	toSerialize["attributeType"] = o.AttributeType
@@ -796,6 +795,7 @@ func (o ComposedAttributePluginResponse) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

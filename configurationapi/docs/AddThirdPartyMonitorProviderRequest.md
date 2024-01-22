@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Monitor Provider | 
 **Schemas** | [**[]EnumthirdPartyMonitorProviderSchemaUrn**](EnumthirdPartyMonitorProviderSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Monitor Provider. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Monitor Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Monitor Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Monitor Provider is enabled for use. | 
+**ProviderName** | **string** | Name of the new Monitor Provider | 
 
 ## Methods
 
 ### NewAddThirdPartyMonitorProviderRequest
 
-`func NewAddThirdPartyMonitorProviderRequest(providerName string, schemas []EnumthirdPartyMonitorProviderSchemaUrn, extensionClass string, enabled bool, ) *AddThirdPartyMonitorProviderRequest`
+`func NewAddThirdPartyMonitorProviderRequest(schemas []EnumthirdPartyMonitorProviderSchemaUrn, extensionClass string, enabled bool, providerName string, ) *AddThirdPartyMonitorProviderRequest`
 
 NewAddThirdPartyMonitorProviderRequest instantiates a new AddThirdPartyMonitorProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyMonitorProviderRequestWithDefaults instantiates a new AddThirdPartyMonitorProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddThirdPartyMonitorProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddThirdPartyMonitorProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddThirdPartyMonitorProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -158,6 +138,26 @@ and a boolean to check if the value has been set.
 `func (o *AddThirdPartyMonitorProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddThirdPartyMonitorProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddThirdPartyMonitorProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddThirdPartyMonitorProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

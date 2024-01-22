@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 **Schemas** | [**[]EnumfileServerHttpServletExtensionSchemaUrn**](EnumfileServerHttpServletExtensionSchemaUrn.md) |  | 
 **BaseContextPath** | **string** | Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and must represent a valid HTTP context path. | 
 **DocumentRootDirectory** | **string** | Specifies the path to the directory on the local filesystem containing the files to be served by this File Server HTTP Servlet Extension. The path must exist, and it must be a directory. | 
@@ -23,12 +22,13 @@ Name | Type | Description | Notes
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
+**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 
 ## Methods
 
 ### NewAddFileServerHttpServletExtensionRequest
 
-`func NewAddFileServerHttpServletExtensionRequest(extensionName string, schemas []EnumfileServerHttpServletExtensionSchemaUrn, baseContextPath string, documentRootDirectory string, ) *AddFileServerHttpServletExtensionRequest`
+`func NewAddFileServerHttpServletExtensionRequest(schemas []EnumfileServerHttpServletExtensionSchemaUrn, baseContextPath string, documentRootDirectory string, extensionName string, ) *AddFileServerHttpServletExtensionRequest`
 
 NewAddFileServerHttpServletExtensionRequest instantiates a new AddFileServerHttpServletExtensionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -42,26 +42,6 @@ will change when the set of required properties is changed
 NewAddFileServerHttpServletExtensionRequestWithDefaults instantiates a new AddFileServerHttpServletExtensionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetExtensionName
-
-`func (o *AddFileServerHttpServletExtensionRequest) GetExtensionName() string`
-
-GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
-
-### GetExtensionNameOk
-
-`func (o *AddFileServerHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
-
-GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtensionName
-
-`func (o *AddFileServerHttpServletExtensionRequest) SetExtensionName(v string)`
-
-SetExtensionName sets ExtensionName field to given value.
-
 
 ### GetSchemas
 
@@ -497,6 +477,26 @@ SetCorrelationIDResponseHeader sets CorrelationIDResponseHeader field to given v
 `func (o *AddFileServerHttpServletExtensionRequest) HasCorrelationIDResponseHeader() bool`
 
 HasCorrelationIDResponseHeader returns a boolean if a field has been set.
+
+### GetExtensionName
+
+`func (o *AddFileServerHttpServletExtensionRequest) GetExtensionName() string`
+
+GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
+
+### GetExtensionNameOk
+
+`func (o *AddFileServerHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
+
+GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtensionName
+
+`func (o *AddFileServerHttpServletExtensionRequest) SetExtensionName(v string)`
+
+SetExtensionName sets ExtensionName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

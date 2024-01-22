@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroupRestResourceTypeRequest{}
 
 // AddGroupRestResourceTypeRequest struct for AddGroupRestResourceTypeRequest
 type AddGroupRestResourceTypeRequest struct {
-	// Name of the new REST Resource Type
-	TypeName string                               `json:"typeName"`
-	Schemas  []EnumgroupRestResourceTypeSchemaUrn `json:"schemas"`
+	Schemas []EnumgroupRestResourceTypeSchemaUrn `json:"schemas"`
 	// Specifies the name of the group member column that will be displayed in the Delegated Admin UI
 	MembersColumnName *string `json:"membersColumnName,omitempty"`
 	// Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI
@@ -62,20 +60,22 @@ type AddGroupRestResourceTypeRequest struct {
 	DelegatedAdminSearchSizeLimit *int64 `json:"delegatedAdminSearchSizeLimit,omitempty"`
 	// The maximum number of resources that may be included in a report.
 	DelegatedAdminReportSizeLimit *int64 `json:"delegatedAdminReportSizeLimit,omitempty"`
+	// Name of the new REST Resource Type
+	TypeName string `json:"typeName"`
 }
 
 // NewAddGroupRestResourceTypeRequest instantiates a new AddGroupRestResourceTypeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroupRestResourceTypeRequest(typeName string, schemas []EnumgroupRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string) *AddGroupRestResourceTypeRequest {
+func NewAddGroupRestResourceTypeRequest(schemas []EnumgroupRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, typeName string) *AddGroupRestResourceTypeRequest {
 	this := AddGroupRestResourceTypeRequest{}
-	this.TypeName = typeName
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.ResourceEndpoint = resourceEndpoint
 	this.StructuralLDAPObjectclass = structuralLDAPObjectclass
 	this.SearchBaseDN = searchBaseDN
+	this.TypeName = typeName
 	return &this
 }
 
@@ -85,30 +85,6 @@ func NewAddGroupRestResourceTypeRequest(typeName string, schemas []EnumgroupRest
 func NewAddGroupRestResourceTypeRequestWithDefaults() *AddGroupRestResourceTypeRequest {
 	this := AddGroupRestResourceTypeRequest{}
 	return &this
-}
-
-// GetTypeName returns the TypeName field value
-func (o *AddGroupRestResourceTypeRequest) GetTypeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TypeName
-}
-
-// GetTypeNameOk returns a tuple with the TypeName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroupRestResourceTypeRequest) GetTypeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TypeName, true
-}
-
-// SetTypeName sets field value
-func (o *AddGroupRestResourceTypeRequest) SetTypeName(v string) {
-	o.TypeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -743,6 +719,30 @@ func (o *AddGroupRestResourceTypeRequest) SetDelegatedAdminReportSizeLimit(v int
 	o.DelegatedAdminReportSizeLimit = &v
 }
 
+// GetTypeName returns the TypeName field value
+func (o *AddGroupRestResourceTypeRequest) GetTypeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TypeName
+}
+
+// GetTypeNameOk returns a tuple with the TypeName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroupRestResourceTypeRequest) GetTypeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TypeName, true
+}
+
+// SetTypeName sets field value
+func (o *AddGroupRestResourceTypeRequest) SetTypeName(v string) {
+	o.TypeName = v
+}
+
 func (o AddGroupRestResourceTypeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -753,7 +753,6 @@ func (o AddGroupRestResourceTypeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddGroupRestResourceTypeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["typeName"] = o.TypeName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.MembersColumnName) {
 		toSerialize["membersColumnName"] = o.MembersColumnName
@@ -807,6 +806,7 @@ func (o AddGroupRestResourceTypeRequest) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.DelegatedAdminReportSizeLimit) {
 		toSerialize["delegatedAdminReportSizeLimit"] = o.DelegatedAdminReportSizeLimit
 	}
+	toSerialize["typeName"] = o.TypeName
 	return toSerialize, nil
 }
 

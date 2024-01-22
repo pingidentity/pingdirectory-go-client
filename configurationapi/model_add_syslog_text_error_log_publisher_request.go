@@ -19,8 +19,6 @@ var _ MappedNullable = &AddSyslogTextErrorLogPublisherRequest{}
 
 // AddSyslogTextErrorLogPublisherRequest struct for AddSyslogTextErrorLogPublisherRequest
 type AddSyslogTextErrorLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName   string                                     `json:"publisherName"`
 	Schemas         []EnumsyslogTextErrorLogPublisherSchemaUrn `json:"schemas"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp      `json:"defaultSeverity,omitempty"`
 	// The syslog server to which messages should be sent.
@@ -51,18 +49,20 @@ type AddSyslogTextErrorLogPublisherRequest struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddSyslogTextErrorLogPublisherRequest instantiates a new AddSyslogTextErrorLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSyslogTextErrorLogPublisherRequest(publisherName string, schemas []EnumsyslogTextErrorLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool) *AddSyslogTextErrorLogPublisherRequest {
+func NewAddSyslogTextErrorLogPublisherRequest(schemas []EnumsyslogTextErrorLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, publisherName string) *AddSyslogTextErrorLogPublisherRequest {
 	this := AddSyslogTextErrorLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.SyslogExternalServer = syslogExternalServer
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -72,30 +72,6 @@ func NewAddSyslogTextErrorLogPublisherRequest(publisherName string, schemas []En
 func NewAddSyslogTextErrorLogPublisherRequestWithDefaults() *AddSyslogTextErrorLogPublisherRequest {
 	this := AddSyslogTextErrorLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddSyslogTextErrorLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddSyslogTextErrorLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddSyslogTextErrorLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -650,6 +626,30 @@ func (o *AddSyslogTextErrorLogPublisherRequest) SetLoggingErrorBehavior(v Enumlo
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddSyslogTextErrorLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddSyslogTextErrorLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddSyslogTextErrorLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddSyslogTextErrorLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -660,7 +660,6 @@ func (o AddSyslogTextErrorLogPublisherRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSyslogTextErrorLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.DefaultSeverity) {
 		toSerialize["defaultSeverity"] = o.DefaultSeverity
@@ -709,6 +708,7 @@ func (o AddSyslogTextErrorLogPublisherRequest) ToMap() (map[string]interface{}, 
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

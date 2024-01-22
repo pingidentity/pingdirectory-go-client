@@ -19,9 +19,7 @@ var _ MappedNullable = &AddConsentDefinitionLocalizationRequest{}
 
 // AddConsentDefinitionLocalizationRequest struct for AddConsentDefinitionLocalizationRequest
 type AddConsentDefinitionLocalizationRequest struct {
-	// Name of the new Consent Definition Localization
-	LocalizationName string                                       `json:"localizationName"`
-	Schemas          []EnumconsentDefinitionLocalizationSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumconsentDefinitionLocalizationSchemaUrn `json:"schemas,omitempty"`
 	// The locale of this Consent Definition Localization.
 	Locale string `json:"locale"`
 	// The version of this Consent Definition Localization, using the format MAJOR.MINOR.
@@ -32,19 +30,21 @@ type AddConsentDefinitionLocalizationRequest struct {
 	DataText string `json:"dataText"`
 	// Localized text describing how the data is to be used.
 	PurposeText string `json:"purposeText"`
+	// Name of the new Consent Definition Localization
+	LocalizationName string `json:"localizationName"`
 }
 
 // NewAddConsentDefinitionLocalizationRequest instantiates a new AddConsentDefinitionLocalizationRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConsentDefinitionLocalizationRequest(localizationName string, locale string, version string, dataText string, purposeText string) *AddConsentDefinitionLocalizationRequest {
+func NewAddConsentDefinitionLocalizationRequest(locale string, version string, dataText string, purposeText string, localizationName string) *AddConsentDefinitionLocalizationRequest {
 	this := AddConsentDefinitionLocalizationRequest{}
-	this.LocalizationName = localizationName
 	this.Locale = locale
 	this.Version = version
 	this.DataText = dataText
 	this.PurposeText = purposeText
+	this.LocalizationName = localizationName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddConsentDefinitionLocalizationRequest(localizationName string, locale 
 func NewAddConsentDefinitionLocalizationRequestWithDefaults() *AddConsentDefinitionLocalizationRequest {
 	this := AddConsentDefinitionLocalizationRequest{}
 	return &this
-}
-
-// GetLocalizationName returns the LocalizationName field value
-func (o *AddConsentDefinitionLocalizationRequest) GetLocalizationName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.LocalizationName
-}
-
-// GetLocalizationNameOk returns a tuple with the LocalizationName field value
-// and a boolean to check if the value has been set.
-func (o *AddConsentDefinitionLocalizationRequest) GetLocalizationNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.LocalizationName, true
-}
-
-// SetLocalizationName sets field value
-func (o *AddConsentDefinitionLocalizationRequest) SetLocalizationName(v string) {
-	o.LocalizationName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -240,6 +216,30 @@ func (o *AddConsentDefinitionLocalizationRequest) SetPurposeText(v string) {
 	o.PurposeText = v
 }
 
+// GetLocalizationName returns the LocalizationName field value
+func (o *AddConsentDefinitionLocalizationRequest) GetLocalizationName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.LocalizationName
+}
+
+// GetLocalizationNameOk returns a tuple with the LocalizationName field value
+// and a boolean to check if the value has been set.
+func (o *AddConsentDefinitionLocalizationRequest) GetLocalizationNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.LocalizationName, true
+}
+
+// SetLocalizationName sets field value
+func (o *AddConsentDefinitionLocalizationRequest) SetLocalizationName(v string) {
+	o.LocalizationName = v
+}
+
 func (o AddConsentDefinitionLocalizationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -250,7 +250,6 @@ func (o AddConsentDefinitionLocalizationRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddConsentDefinitionLocalizationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["localizationName"] = o.LocalizationName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -261,6 +260,7 @@ func (o AddConsentDefinitionLocalizationRequest) ToMap() (map[string]interface{}
 	}
 	toSerialize["dataText"] = o.DataText
 	toSerialize["purposeText"] = o.PurposeText
+	toSerialize["localizationName"] = o.LocalizationName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &SyslogTextErrorLogPublisherResponse{}
 
 // SyslogTextErrorLogPublisherResponse struct for SyslogTextErrorLogPublisherResponse
 type SyslogTextErrorLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id              string                                     `json:"id"`
 	Schemas         []EnumsyslogTextErrorLogPublisherSchemaUrn `json:"schemas"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp      `json:"defaultSeverity,omitempty"`
 	// The syslog server to which messages should be sent.
@@ -53,19 +51,21 @@ type SyslogTextErrorLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewSyslogTextErrorLogPublisherResponse instantiates a new SyslogTextErrorLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSyslogTextErrorLogPublisherResponse(id string, schemas []EnumsyslogTextErrorLogPublisherSchemaUrn, syslogExternalServer []string, syslogFacility EnumlogPublisherSyslogFacilityProp, enabled bool) *SyslogTextErrorLogPublisherResponse {
+func NewSyslogTextErrorLogPublisherResponse(schemas []EnumsyslogTextErrorLogPublisherSchemaUrn, syslogExternalServer []string, syslogFacility EnumlogPublisherSyslogFacilityProp, enabled bool, id string) *SyslogTextErrorLogPublisherResponse {
 	this := SyslogTextErrorLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.SyslogExternalServer = syslogExternalServer
 	this.SyslogFacility = syslogFacility
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -75,30 +75,6 @@ func NewSyslogTextErrorLogPublisherResponse(id string, schemas []EnumsyslogTextE
 func NewSyslogTextErrorLogPublisherResponseWithDefaults() *SyslogTextErrorLogPublisherResponse {
 	this := SyslogTextErrorLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SyslogTextErrorLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SyslogTextErrorLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SyslogTextErrorLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -709,6 +685,30 @@ func (o *SyslogTextErrorLogPublisherResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SyslogTextErrorLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SyslogTextErrorLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SyslogTextErrorLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SyslogTextErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -719,7 +719,6 @@ func (o SyslogTextErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 
 func (o SyslogTextErrorLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.DefaultSeverity) {
 		toSerialize["defaultSeverity"] = o.DefaultSeverity
@@ -772,6 +771,7 @@ func (o SyslogTextErrorLogPublisherResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

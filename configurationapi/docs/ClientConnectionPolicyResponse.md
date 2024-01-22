@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Client Connection Policy | 
 **Schemas** | Pointer to [**[]EnumclientConnectionPolicySchemaUrn**](EnumclientConnectionPolicySchemaUrn.md) |  | [optional] 
 **PolicyID** | **string** | Specifies a name which uniquely identifies this Client Connection Policy in the server. | 
 **Description** | Pointer to **string** | A description for this Client Connection Policy | [optional] 
@@ -49,12 +48,13 @@ Name | Type | Description | Notes
 **MaximumSortSizeLimitWithoutVLVIndex** | Pointer to **int64** | Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Client Connection Policy | 
 
 ## Methods
 
 ### NewClientConnectionPolicyResponse
 
-`func NewClientConnectionPolicyResponse(id string, policyID string, enabled bool, evaluationOrderIndex int64, allowedOperation []EnumclientConnectionPolicyAllowedOperationProp, allowedAuthType []EnumclientConnectionPolicyAllowedAuthTypeProp, ) *ClientConnectionPolicyResponse`
+`func NewClientConnectionPolicyResponse(policyID string, enabled bool, evaluationOrderIndex int64, allowedOperation []EnumclientConnectionPolicyAllowedOperationProp, allowedAuthType []EnumclientConnectionPolicyAllowedAuthTypeProp, id string, ) *ClientConnectionPolicyResponse`
 
 NewClientConnectionPolicyResponse instantiates a new ClientConnectionPolicyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -68,26 +68,6 @@ will change when the set of required properties is changed
 NewClientConnectionPolicyResponseWithDefaults instantiates a new ClientConnectionPolicyResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *ClientConnectionPolicyResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ClientConnectionPolicyResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ClientConnectionPolicyResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -1163,6 +1143,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *ClientConnectionPolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ClientConnectionPolicyResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ClientConnectionPolicyResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ClientConnectionPolicyResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,14 +1,14 @@
-# \ConnectionHandlerApi
+# \ConnectionHandlerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddConnectionHandler**](ConnectionHandlerApi.md#AddConnectionHandler) | **Post** /connection-handlers | Add a new Connection Handler to the config
-[**DeleteConnectionHandler**](ConnectionHandlerApi.md#DeleteConnectionHandler) | **Delete** /connection-handlers/{connection-handler-name} | Delete a Connection Handler
-[**GetConnectionHandler**](ConnectionHandlerApi.md#GetConnectionHandler) | **Get** /connection-handlers/{connection-handler-name} | Returns a single Connection Handler
-[**ListConnectionHandlers**](ConnectionHandlerApi.md#ListConnectionHandlers) | **Get** /connection-handlers | Returns a list of all Connection Handler objects
-[**UpdateConnectionHandler**](ConnectionHandlerApi.md#UpdateConnectionHandler) | **Patch** /connection-handlers/{connection-handler-name} | Update an existing Connection Handler by name
+[**AddConnectionHandler**](ConnectionHandlerAPI.md#AddConnectionHandler) | **Post** /connection-handlers | Add a new Connection Handler to the config
+[**DeleteConnectionHandler**](ConnectionHandlerAPI.md#DeleteConnectionHandler) | **Delete** /connection-handlers/{connection-handler-name} | Delete a Connection Handler
+[**GetConnectionHandler**](ConnectionHandlerAPI.md#GetConnectionHandler) | **Get** /connection-handlers/{connection-handler-name} | Returns a single Connection Handler
+[**ListConnectionHandlers**](ConnectionHandlerAPI.md#ListConnectionHandlers) | **Get** /connection-handlers | Returns a list of all Connection Handler objects
+[**UpdateConnectionHandler**](ConnectionHandlerAPI.md#UpdateConnectionHandler) | **Patch** /connection-handlers/{connection-handler-name} | Update an existing Connection Handler by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addConnectionHandlerRequest := openapiclient.add_connection_handler_request{AddHttpConnectionHandlerRequest: openapiclient.NewAddHttpConnectionHandlerRequest("HandlerName_example", []openapiclient.EnumhttpConnectionHandlerSchemaUrn{openapiclient.Enumhttp-connection-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:connection-handler:http")}, int64(123), false)} // AddConnectionHandlerRequest | Create a new Connection Handler in the config
+    addConnectionHandlerRequest := openapiclient.add_connection_handler_request{AddHttpConnectionHandlerRequest: openapiclient.NewAddHttpConnectionHandlerRequest([]openapiclient.EnumhttpConnectionHandlerSchemaUrn{openapiclient.Enumhttp-connection-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:connection-handler:http")}, int64(123), false, "HandlerName_example")} // AddConnectionHandlerRequest | Create a new Connection Handler in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionHandlerApi.AddConnectionHandler(context.Background()).AddConnectionHandlerRequest(addConnectionHandlerRequest).Execute()
+    resp, r, err := apiClient.ConnectionHandlerAPI.AddConnectionHandler(context.Background()).AddConnectionHandlerRequest(addConnectionHandlerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerApi.AddConnectionHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerAPI.AddConnectionHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddConnectionHandler`: AddConnectionHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionHandlerApi.AddConnectionHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionHandlerAPI.AddConnectionHandler`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ConnectionHandlerApi.DeleteConnectionHandler(context.Background(), connectionHandlerName).Execute()
+    r, err := apiClient.ConnectionHandlerAPI.DeleteConnectionHandler(context.Background(), connectionHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerApi.DeleteConnectionHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerAPI.DeleteConnectionHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionHandlerApi.GetConnectionHandler(context.Background(), connectionHandlerName).Execute()
+    resp, r, err := apiClient.ConnectionHandlerAPI.GetConnectionHandler(context.Background(), connectionHandlerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerApi.GetConnectionHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerAPI.GetConnectionHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetConnectionHandler`: AddConnectionHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionHandlerApi.GetConnectionHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionHandlerAPI.GetConnectionHandler`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionHandlerApi.ListConnectionHandlers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ConnectionHandlerAPI.ListConnectionHandlers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerApi.ListConnectionHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerAPI.ListConnectionHandlers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListConnectionHandlers`: ConnectionHandlerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionHandlerApi.ListConnectionHandlers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionHandlerAPI.ListConnectionHandlers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ConnectionHandlerApi.UpdateConnectionHandler(context.Background(), connectionHandlerName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ConnectionHandlerAPI.UpdateConnectionHandler(context.Background(), connectionHandlerName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerApi.UpdateConnectionHandler``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerAPI.UpdateConnectionHandler``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateConnectionHandler`: AddConnectionHandler200Response
-    fmt.Fprintf(os.Stdout, "Response from `ConnectionHandlerApi.UpdateConnectionHandler`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionHandlerAPI.UpdateConnectionHandler`: %v\n", resp)
 }
 ```
 

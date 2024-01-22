@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 **Schemas** | [**[]EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn**](EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn.md) |  | 
 **EncryptedPassphraseFile** | Pointer to **string** | The path to a file that will hold the encrypted passphrase used by this cipher stream provider. | [optional] 
 **AwsExternalServer** | Pointer to **string** | The external server with information to use when interacting with the Amazon Key Management Service. | [optional] 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **IterationCount** | Pointer to **int64** | The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
+**ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 
 ## Methods
 
 ### NewAddAmazonKeyManagementServiceCipherStreamProviderRequest
 
-`func NewAddAmazonKeyManagementServiceCipherStreamProviderRequest(providerName string, schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, kmsEncryptionKeyArn string, enabled bool, ) *AddAmazonKeyManagementServiceCipherStreamProviderRequest`
+`func NewAddAmazonKeyManagementServiceCipherStreamProviderRequest(schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, kmsEncryptionKeyArn string, enabled bool, providerName string, ) *AddAmazonKeyManagementServiceCipherStreamProviderRequest`
 
 NewAddAmazonKeyManagementServiceCipherStreamProviderRequest instantiates a new AddAmazonKeyManagementServiceCipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewAddAmazonKeyManagementServiceCipherStreamProviderRequestWithDefaults instantiates a new AddAmazonKeyManagementServiceCipherStreamProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -288,6 +268,26 @@ and a boolean to check if the value has been set.
 `func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

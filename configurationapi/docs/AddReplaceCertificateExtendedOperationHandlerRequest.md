@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 **Schemas** | [**[]EnumreplaceCertificateExtendedOperationHandlerSchemaUrn**](EnumreplaceCertificateExtendedOperationHandlerSchemaUrn.md) |  | 
 **AllowRemotelyProvidedCertificates** | Pointer to **bool** | Indicates whether clients should be allowed to directly provide a new listener or inter-server certificate chain in the extended request. | [optional] 
 **AllowedOperation** | Pointer to [**[]EnumextendedOperationHandlerAllowedOperationProp**](EnumextendedOperationHandlerAllowedOperationProp.md) |  | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **RequestCriteria** | Pointer to **string** | A set of criteria that the extended requests must satisfy before they will be processed by the server. | [optional] 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
+**HandlerName** | **string** | Name of the new Extended Operation Handler | 
 
 ## Methods
 
 ### NewAddReplaceCertificateExtendedOperationHandlerRequest
 
-`func NewAddReplaceCertificateExtendedOperationHandlerRequest(handlerName string, schemas []EnumreplaceCertificateExtendedOperationHandlerSchemaUrn, enabled bool, ) *AddReplaceCertificateExtendedOperationHandlerRequest`
+`func NewAddReplaceCertificateExtendedOperationHandlerRequest(schemas []EnumreplaceCertificateExtendedOperationHandlerSchemaUrn, enabled bool, handlerName string, ) *AddReplaceCertificateExtendedOperationHandlerRequest`
 
 NewAddReplaceCertificateExtendedOperationHandlerRequest instantiates a new AddReplaceCertificateExtendedOperationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddReplaceCertificateExtendedOperationHandlerRequestWithDefaults instantiates a new AddReplaceCertificateExtendedOperationHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddReplaceCertificateExtendedOperationHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -215,6 +195,26 @@ and a boolean to check if the value has been set.
 `func (o *AddReplaceCertificateExtendedOperationHandlerRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetHandlerName
+
+`func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddReplaceCertificateExtendedOperationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
 
 
 

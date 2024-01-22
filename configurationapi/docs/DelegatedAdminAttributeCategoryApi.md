@@ -1,14 +1,14 @@
-# \DelegatedAdminAttributeCategoryApi
+# \DelegatedAdminAttributeCategoryAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryApi.md#AddDelegatedAdminAttributeCategory) | **Post** /delegated-admin-attribute-categories | Add a new Delegated Admin Attribute Category to the config
-[**DeleteDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryApi.md#DeleteDelegatedAdminAttributeCategory) | **Delete** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Delete a Delegated Admin Attribute Category
-[**GetDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryApi.md#GetDelegatedAdminAttributeCategory) | **Get** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Returns a single Delegated Admin Attribute Category
-[**ListDelegatedAdminAttributeCategories**](DelegatedAdminAttributeCategoryApi.md#ListDelegatedAdminAttributeCategories) | **Get** /delegated-admin-attribute-categories | Returns a list of all Delegated Admin Attribute Category objects
-[**UpdateDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryApi.md#UpdateDelegatedAdminAttributeCategory) | **Patch** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Update an existing Delegated Admin Attribute Category by name
+[**AddDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryAPI.md#AddDelegatedAdminAttributeCategory) | **Post** /delegated-admin-attribute-categories | Add a new Delegated Admin Attribute Category to the config
+[**DeleteDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryAPI.md#DeleteDelegatedAdminAttributeCategory) | **Delete** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Delete a Delegated Admin Attribute Category
+[**GetDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryAPI.md#GetDelegatedAdminAttributeCategory) | **Get** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Returns a single Delegated Admin Attribute Category
+[**ListDelegatedAdminAttributeCategories**](DelegatedAdminAttributeCategoryAPI.md#ListDelegatedAdminAttributeCategories) | **Get** /delegated-admin-attribute-categories | Returns a list of all Delegated Admin Attribute Category objects
+[**UpdateDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryAPI.md#UpdateDelegatedAdminAttributeCategory) | **Patch** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Update an existing Delegated Admin Attribute Category by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminAttributeCategoryApi.AddDelegatedAdminAttributeCategory(context.Background()).AddDelegatedAdminAttributeCategoryRequest(addDelegatedAdminAttributeCategoryRequest).Execute()
+    resp, r, err := apiClient.DelegatedAdminAttributeCategoryAPI.AddDelegatedAdminAttributeCategory(context.Background()).AddDelegatedAdminAttributeCategoryRequest(addDelegatedAdminAttributeCategoryRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryApi.AddDelegatedAdminAttributeCategory``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryAPI.AddDelegatedAdminAttributeCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddDelegatedAdminAttributeCategory`: DelegatedAdminAttributeCategoryResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeCategoryApi.AddDelegatedAdminAttributeCategory`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeCategoryAPI.AddDelegatedAdminAttributeCategory`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DelegatedAdminAttributeCategoryApi.DeleteDelegatedAdminAttributeCategory(context.Background(), delegatedAdminAttributeCategoryName).Execute()
+    r, err := apiClient.DelegatedAdminAttributeCategoryAPI.DeleteDelegatedAdminAttributeCategory(context.Background(), delegatedAdminAttributeCategoryName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryApi.DeleteDelegatedAdminAttributeCategory``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryAPI.DeleteDelegatedAdminAttributeCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminAttributeCategoryApi.GetDelegatedAdminAttributeCategory(context.Background(), delegatedAdminAttributeCategoryName).Execute()
+    resp, r, err := apiClient.DelegatedAdminAttributeCategoryAPI.GetDelegatedAdminAttributeCategory(context.Background(), delegatedAdminAttributeCategoryName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryApi.GetDelegatedAdminAttributeCategory``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryAPI.GetDelegatedAdminAttributeCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDelegatedAdminAttributeCategory`: DelegatedAdminAttributeCategoryResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeCategoryApi.GetDelegatedAdminAttributeCategory`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeCategoryAPI.GetDelegatedAdminAttributeCategory`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminAttributeCategoryApi.ListDelegatedAdminAttributeCategories(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.DelegatedAdminAttributeCategoryAPI.ListDelegatedAdminAttributeCategories(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryApi.ListDelegatedAdminAttributeCategories``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryAPI.ListDelegatedAdminAttributeCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListDelegatedAdminAttributeCategories`: DelegatedAdminAttributeCategoryListResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeCategoryApi.ListDelegatedAdminAttributeCategories`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeCategoryAPI.ListDelegatedAdminAttributeCategories`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelegatedAdminAttributeCategoryApi.UpdateDelegatedAdminAttributeCategory(context.Background(), delegatedAdminAttributeCategoryName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.DelegatedAdminAttributeCategoryAPI.UpdateDelegatedAdminAttributeCategory(context.Background(), delegatedAdminAttributeCategoryName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryApi.UpdateDelegatedAdminAttributeCategory``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryAPI.UpdateDelegatedAdminAttributeCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDelegatedAdminAttributeCategory`: DelegatedAdminAttributeCategoryResponse
-    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeCategoryApi.UpdateDelegatedAdminAttributeCategory`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeCategoryAPI.UpdateDelegatedAdminAttributeCategory`: %v\n", resp)
 }
 ```
 

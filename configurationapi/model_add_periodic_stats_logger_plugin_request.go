@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPeriodicStatsLoggerPluginRequest{}
 
 // AddPeriodicStatsLoggerPluginRequest struct for AddPeriodicStatsLoggerPluginRequest
 type AddPeriodicStatsLoggerPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                   `json:"pluginName"`
-	Schemas    []EnumperiodicStatsLoggerPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumperiodicStatsLoggerPluginSchemaUrn `json:"schemas"`
 	// The duration between statistics collection and logging. A new line is logged to the output for each interval. Setting this value too small can have an impact on performance.
 	LogInterval *string `json:"logInterval,omitempty"`
 	// Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered. It should be a multiple of the log-interval.
@@ -66,18 +64,20 @@ type AddPeriodicStatsLoggerPluginRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddPeriodicStatsLoggerPluginRequest instantiates a new AddPeriodicStatsLoggerPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPeriodicStatsLoggerPluginRequest(pluginName string, schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logFile string, enabled bool) *AddPeriodicStatsLoggerPluginRequest {
+func NewAddPeriodicStatsLoggerPluginRequest(schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logFile string, enabled bool, pluginName string) *AddPeriodicStatsLoggerPluginRequest {
 	this := AddPeriodicStatsLoggerPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.LogFile = logFile
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -87,30 +87,6 @@ func NewAddPeriodicStatsLoggerPluginRequest(pluginName string, schemas []Enumper
 func NewAddPeriodicStatsLoggerPluginRequestWithDefaults() *AddPeriodicStatsLoggerPluginRequest {
 	this := AddPeriodicStatsLoggerPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddPeriodicStatsLoggerPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddPeriodicStatsLoggerPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddPeriodicStatsLoggerPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1049,6 +1025,30 @@ func (o *AddPeriodicStatsLoggerPluginRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddPeriodicStatsLoggerPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddPeriodicStatsLoggerPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddPeriodicStatsLoggerPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddPeriodicStatsLoggerPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1059,7 +1059,6 @@ func (o AddPeriodicStatsLoggerPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPeriodicStatsLoggerPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.LogInterval) {
 		toSerialize["logInterval"] = o.LogInterval
@@ -1144,6 +1143,7 @@ func (o AddPeriodicStatsLoggerPluginRequest) ToMap() (map[string]interface{}, er
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

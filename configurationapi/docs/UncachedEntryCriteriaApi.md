@@ -1,14 +1,14 @@
-# \UncachedEntryCriteriaApi
+# \UncachedEntryCriteriaAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#AddUncachedEntryCriteria) | **Post** /uncached-entry-criteria | Add a new Uncached Entry Criteria to the config
-[**DeleteUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#DeleteUncachedEntryCriteria) | **Delete** /uncached-entry-criteria/{uncached-entry-criteria-name} | Delete a Uncached Entry Criteria
-[**GetUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#GetUncachedEntryCriteria) | **Get** /uncached-entry-criteria/{uncached-entry-criteria-name} | Returns a single Uncached Entry Criteria
-[**ListUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#ListUncachedEntryCriteria) | **Get** /uncached-entry-criteria | Returns a list of all Uncached Entry Criteria objects
-[**UpdateUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#UpdateUncachedEntryCriteria) | **Patch** /uncached-entry-criteria/{uncached-entry-criteria-name} | Update an existing Uncached Entry Criteria by name
+[**AddUncachedEntryCriteria**](UncachedEntryCriteriaAPI.md#AddUncachedEntryCriteria) | **Post** /uncached-entry-criteria | Add a new Uncached Entry Criteria to the config
+[**DeleteUncachedEntryCriteria**](UncachedEntryCriteriaAPI.md#DeleteUncachedEntryCriteria) | **Delete** /uncached-entry-criteria/{uncached-entry-criteria-name} | Delete a Uncached Entry Criteria
+[**GetUncachedEntryCriteria**](UncachedEntryCriteriaAPI.md#GetUncachedEntryCriteria) | **Get** /uncached-entry-criteria/{uncached-entry-criteria-name} | Returns a single Uncached Entry Criteria
+[**ListUncachedEntryCriteria**](UncachedEntryCriteriaAPI.md#ListUncachedEntryCriteria) | **Get** /uncached-entry-criteria | Returns a list of all Uncached Entry Criteria objects
+[**UpdateUncachedEntryCriteria**](UncachedEntryCriteriaAPI.md#UpdateUncachedEntryCriteria) | **Patch** /uncached-entry-criteria/{uncached-entry-criteria-name} | Update an existing Uncached Entry Criteria by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addUncachedEntryCriteriaRequest := openapiclient.add_uncached_entry_criteria_request{AddDefaultUncachedEntryCriteriaRequest: openapiclient.NewAddDefaultUncachedEntryCriteriaRequest("CriteriaName_example", []openapiclient.EnumdefaultUncachedEntryCriteriaSchemaUrn{openapiclient.Enumdefault-uncached-entry-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:default")}, false)} // AddUncachedEntryCriteriaRequest | Create a new Uncached Entry Criteria in the config
+    addUncachedEntryCriteriaRequest := openapiclient.add_uncached_entry_criteria_request{AddDefaultUncachedEntryCriteriaRequest: openapiclient.NewAddDefaultUncachedEntryCriteriaRequest([]openapiclient.EnumdefaultUncachedEntryCriteriaSchemaUrn{openapiclient.Enumdefault-uncached-entry-criteriaSchemaUrn("urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:default")}, false, "CriteriaName_example")} // AddUncachedEntryCriteriaRequest | Create a new Uncached Entry Criteria in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UncachedEntryCriteriaApi.AddUncachedEntryCriteria(context.Background()).AddUncachedEntryCriteriaRequest(addUncachedEntryCriteriaRequest).Execute()
+    resp, r, err := apiClient.UncachedEntryCriteriaAPI.AddUncachedEntryCriteria(context.Background()).AddUncachedEntryCriteriaRequest(addUncachedEntryCriteriaRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaApi.AddUncachedEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaAPI.AddUncachedEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddUncachedEntryCriteria`: AddUncachedEntryCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `UncachedEntryCriteriaApi.AddUncachedEntryCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UncachedEntryCriteriaAPI.AddUncachedEntryCriteria`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.UncachedEntryCriteriaApi.DeleteUncachedEntryCriteria(context.Background(), uncachedEntryCriteriaName).Execute()
+    r, err := apiClient.UncachedEntryCriteriaAPI.DeleteUncachedEntryCriteria(context.Background(), uncachedEntryCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaApi.DeleteUncachedEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaAPI.DeleteUncachedEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UncachedEntryCriteriaApi.GetUncachedEntryCriteria(context.Background(), uncachedEntryCriteriaName).Execute()
+    resp, r, err := apiClient.UncachedEntryCriteriaAPI.GetUncachedEntryCriteria(context.Background(), uncachedEntryCriteriaName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaApi.GetUncachedEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaAPI.GetUncachedEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetUncachedEntryCriteria`: AddUncachedEntryCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `UncachedEntryCriteriaApi.GetUncachedEntryCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UncachedEntryCriteriaAPI.GetUncachedEntryCriteria`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UncachedEntryCriteriaApi.ListUncachedEntryCriteria(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.UncachedEntryCriteriaAPI.ListUncachedEntryCriteria(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaApi.ListUncachedEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaAPI.ListUncachedEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListUncachedEntryCriteria`: UncachedEntryCriteriaListResponse
-    fmt.Fprintf(os.Stdout, "Response from `UncachedEntryCriteriaApi.ListUncachedEntryCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UncachedEntryCriteriaAPI.ListUncachedEntryCriteria`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UncachedEntryCriteriaApi.UpdateUncachedEntryCriteria(context.Background(), uncachedEntryCriteriaName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.UncachedEntryCriteriaAPI.UpdateUncachedEntryCriteria(context.Background(), uncachedEntryCriteriaName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaApi.UpdateUncachedEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaAPI.UpdateUncachedEntryCriteria``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateUncachedEntryCriteria`: AddUncachedEntryCriteria200Response
-    fmt.Fprintf(os.Stdout, "Response from `UncachedEntryCriteriaApi.UpdateUncachedEntryCriteria`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UncachedEntryCriteriaAPI.UpdateUncachedEntryCriteria`: %v\n", resp)
 }
 ```
 

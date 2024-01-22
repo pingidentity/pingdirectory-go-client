@@ -19,9 +19,7 @@ var _ MappedNullable = &AddConsoleJsonAuditLogPublisherRequest{}
 
 // AddConsoleJsonAuditLogPublisherRequest struct for AddConsoleJsonAuditLogPublisherRequest
 type AddConsoleJsonAuditLogPublisherRequest struct {
-	// Name of the new Log Publisher
-	PublisherName string                                      `json:"publisherName"`
-	Schemas       []EnumconsoleJsonAuditLogPublisherSchemaUrn `json:"schemas"`
+	Schemas []EnumconsoleJsonAuditLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether the Console JSON Audit Log Publisher is enabled for use.
 	Enabled        bool                                `json:"enabled"`
 	OutputLocation *EnumlogPublisherOutputLocationProp `json:"outputLocation,omitempty"`
@@ -71,17 +69,19 @@ type AddConsoleJsonAuditLogPublisherRequest struct {
 	// A description for this Log Publisher
 	Description          *string                                   `json:"description,omitempty"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	// Name of the new Log Publisher
+	PublisherName string `json:"publisherName"`
 }
 
 // NewAddConsoleJsonAuditLogPublisherRequest instantiates a new AddConsoleJsonAuditLogPublisherRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConsoleJsonAuditLogPublisherRequest(publisherName string, schemas []EnumconsoleJsonAuditLogPublisherSchemaUrn, enabled bool) *AddConsoleJsonAuditLogPublisherRequest {
+func NewAddConsoleJsonAuditLogPublisherRequest(schemas []EnumconsoleJsonAuditLogPublisherSchemaUrn, enabled bool, publisherName string) *AddConsoleJsonAuditLogPublisherRequest {
 	this := AddConsoleJsonAuditLogPublisherRequest{}
-	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.PublisherName = publisherName
 	return &this
 }
 
@@ -91,30 +91,6 @@ func NewAddConsoleJsonAuditLogPublisherRequest(publisherName string, schemas []E
 func NewAddConsoleJsonAuditLogPublisherRequestWithDefaults() *AddConsoleJsonAuditLogPublisherRequest {
 	this := AddConsoleJsonAuditLogPublisherRequest{}
 	return &this
-}
-
-// GetPublisherName returns the PublisherName field value
-func (o *AddConsoleJsonAuditLogPublisherRequest) GetPublisherName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PublisherName
-}
-
-// GetPublisherNameOk returns a tuple with the PublisherName field value
-// and a boolean to check if the value has been set.
-func (o *AddConsoleJsonAuditLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PublisherName, true
-}
-
-// SetPublisherName sets field value
-func (o *AddConsoleJsonAuditLogPublisherRequest) SetPublisherName(v string) {
-	o.PublisherName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -965,6 +941,30 @@ func (o *AddConsoleJsonAuditLogPublisherRequest) SetLoggingErrorBehavior(v Enuml
 	o.LoggingErrorBehavior = &v
 }
 
+// GetPublisherName returns the PublisherName field value
+func (o *AddConsoleJsonAuditLogPublisherRequest) GetPublisherName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PublisherName
+}
+
+// GetPublisherNameOk returns a tuple with the PublisherName field value
+// and a boolean to check if the value has been set.
+func (o *AddConsoleJsonAuditLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PublisherName, true
+}
+
+// SetPublisherName sets field value
+func (o *AddConsoleJsonAuditLogPublisherRequest) SetPublisherName(v string) {
+	o.PublisherName = v
+}
+
 func (o AddConsoleJsonAuditLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -975,7 +975,6 @@ func (o AddConsoleJsonAuditLogPublisherRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddConsoleJsonAuditLogPublisherRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["publisherName"] = o.PublisherName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["enabled"] = o.Enabled
 	if !IsNil(o.OutputLocation) {
@@ -1053,6 +1052,7 @@ func (o AddConsoleJsonAuditLogPublisherRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
 	}
+	toSerialize["publisherName"] = o.PublisherName
 	return toSerialize, nil
 }
 

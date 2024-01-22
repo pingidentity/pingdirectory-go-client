@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BehaviorName** | **string** | Name of the new Log Field Behavior | 
 **Schemas** | [**[]EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn**](EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn.md) |  | 
 **PreserveField** | Pointer to [**[]EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp**](EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp.md) |  | [optional] 
 **PreserveFieldName** | Pointer to **[]string** | The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
@@ -20,12 +19,13 @@ Name | Type | Description | Notes
 **TokenizeValueComponentsFieldName** | Pointer to **[]string** | The names of any custom fields for which to tokenize components within the value. This should generally only be used for fields that are not available through the tokenize-value-components-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
 **Description** | Pointer to **string** | A description for this Log Field Behavior | [optional] 
 **DefaultBehavior** | Pointer to [**EnumlogFieldBehaviorDefaultBehaviorProp**](EnumlogFieldBehaviorDefaultBehaviorProp.md) |  | [optional] 
+**BehaviorName** | **string** | Name of the new Log Field Behavior | 
 
 ## Methods
 
 ### NewAddJsonFormattedAccessLogFieldBehaviorRequest
 
-`func NewAddJsonFormattedAccessLogFieldBehaviorRequest(behaviorName string, schemas []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn, ) *AddJsonFormattedAccessLogFieldBehaviorRequest`
+`func NewAddJsonFormattedAccessLogFieldBehaviorRequest(schemas []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn, behaviorName string, ) *AddJsonFormattedAccessLogFieldBehaviorRequest`
 
 NewAddJsonFormattedAccessLogFieldBehaviorRequest instantiates a new AddJsonFormattedAccessLogFieldBehaviorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -39,26 +39,6 @@ will change when the set of required properties is changed
 NewAddJsonFormattedAccessLogFieldBehaviorRequestWithDefaults instantiates a new AddJsonFormattedAccessLogFieldBehaviorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBehaviorName
-
-`func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) GetBehaviorName() string`
-
-GetBehaviorName returns the BehaviorName field if non-nil, zero value otherwise.
-
-### GetBehaviorNameOk
-
-`func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) GetBehaviorNameOk() (*string, bool)`
-
-GetBehaviorNameOk returns a tuple with the BehaviorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBehaviorName
-
-`func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) SetBehaviorName(v string)`
-
-SetBehaviorName sets BehaviorName field to given value.
-
 
 ### GetSchemas
 
@@ -429,6 +409,26 @@ SetDefaultBehavior sets DefaultBehavior field to given value.
 `func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) HasDefaultBehavior() bool`
 
 HasDefaultBehavior returns a boolean if a field has been set.
+
+### GetBehaviorName
+
+`func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) GetBehaviorName() string`
+
+GetBehaviorName returns the BehaviorName field if non-nil, zero value otherwise.
+
+### GetBehaviorNameOk
+
+`func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) GetBehaviorNameOk() (*string, bool)`
+
+GetBehaviorNameOk returns a tuple with the BehaviorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBehaviorName
+
+`func (o *AddJsonFormattedAccessLogFieldBehaviorRequest) SetBehaviorName(v string)`
+
+SetBehaviorName sets BehaviorName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

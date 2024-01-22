@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// WebApplicationExtensionApiService WebApplicationExtensionApi service
-type WebApplicationExtensionApiService service
+// WebApplicationExtensionAPIService WebApplicationExtensionAPI service
+type WebApplicationExtensionAPIService service
 
 type ApiAddWebApplicationExtensionRequest struct {
 	ctx                                      context.Context
-	ApiService                               *WebApplicationExtensionApiService
+	ApiService                               *WebApplicationExtensionAPIService
 	addGenericWebApplicationExtensionRequest *AddGenericWebApplicationExtensionRequest
 }
 
@@ -44,7 +44,7 @@ AddWebApplicationExtension Add a new Web Application Extension to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddWebApplicationExtensionRequest
 */
-func (a *WebApplicationExtensionApiService) AddWebApplicationExtension(ctx context.Context) ApiAddWebApplicationExtensionRequest {
+func (a *WebApplicationExtensionAPIService) AddWebApplicationExtension(ctx context.Context) ApiAddWebApplicationExtensionRequest {
 	return ApiAddWebApplicationExtensionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *WebApplicationExtensionApiService) AddWebApplicationExtension(ctx conte
 // Execute executes the request
 //
 //	@return AddWebApplicationExtension200Response
-func (a *WebApplicationExtensionApiService) AddWebApplicationExtensionExecute(r ApiAddWebApplicationExtensionRequest) (*AddWebApplicationExtension200Response, *http.Response, error) {
+func (a *WebApplicationExtensionAPIService) AddWebApplicationExtensionExecute(r ApiAddWebApplicationExtensionRequest) (*AddWebApplicationExtension200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *WebApplicationExtensionApiService) AddWebApplicationExtensionExecute(r 
 		localVarReturnValue *AddWebApplicationExtension200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionApiService.AddWebApplicationExtension")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionAPIService.AddWebApplicationExtension")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *WebApplicationExtensionApiService) AddWebApplicationExtensionExecute(r 
 
 type ApiDeleteWebApplicationExtensionRequest struct {
 	ctx                         context.Context
-	ApiService                  *WebApplicationExtensionApiService
+	ApiService                  *WebApplicationExtensionAPIService
 	webApplicationExtensionName string
 }
 
@@ -149,7 +149,7 @@ DeleteWebApplicationExtension Delete a Web Application Extension
 	@param webApplicationExtensionName Name of the Web Application Extension
 	@return ApiDeleteWebApplicationExtensionRequest
 */
-func (a *WebApplicationExtensionApiService) DeleteWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiDeleteWebApplicationExtensionRequest {
+func (a *WebApplicationExtensionAPIService) DeleteWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiDeleteWebApplicationExtensionRequest {
 	return ApiDeleteWebApplicationExtensionRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -158,14 +158,14 @@ func (a *WebApplicationExtensionApiService) DeleteWebApplicationExtension(ctx co
 }
 
 // Execute executes the request
-func (a *WebApplicationExtensionApiService) DeleteWebApplicationExtensionExecute(r ApiDeleteWebApplicationExtensionRequest) (*http.Response, error) {
+func (a *WebApplicationExtensionAPIService) DeleteWebApplicationExtensionExecute(r ApiDeleteWebApplicationExtensionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionApiService.DeleteWebApplicationExtension")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionAPIService.DeleteWebApplicationExtension")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *WebApplicationExtensionApiService) DeleteWebApplicationExtensionExecute
 
 type ApiGetWebApplicationExtensionRequest struct {
 	ctx                         context.Context
-	ApiService                  *WebApplicationExtensionApiService
+	ApiService                  *WebApplicationExtensionAPIService
 	webApplicationExtensionName string
 }
 
@@ -239,7 +239,7 @@ GetWebApplicationExtension Returns a single Web Application Extension
 	@param webApplicationExtensionName Name of the Web Application Extension
 	@return ApiGetWebApplicationExtensionRequest
 */
-func (a *WebApplicationExtensionApiService) GetWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiGetWebApplicationExtensionRequest {
+func (a *WebApplicationExtensionAPIService) GetWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiGetWebApplicationExtensionRequest {
 	return ApiGetWebApplicationExtensionRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -250,7 +250,7 @@ func (a *WebApplicationExtensionApiService) GetWebApplicationExtension(ctx conte
 // Execute executes the request
 //
 //	@return GetWebApplicationExtension200Response
-func (a *WebApplicationExtensionApiService) GetWebApplicationExtensionExecute(r ApiGetWebApplicationExtensionRequest) (*GetWebApplicationExtension200Response, *http.Response, error) {
+func (a *WebApplicationExtensionAPIService) GetWebApplicationExtensionExecute(r ApiGetWebApplicationExtensionRequest) (*GetWebApplicationExtension200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *WebApplicationExtensionApiService) GetWebApplicationExtensionExecute(r 
 		localVarReturnValue *GetWebApplicationExtension200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionApiService.GetWebApplicationExtension")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionAPIService.GetWebApplicationExtension")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *WebApplicationExtensionApiService) GetWebApplicationExtensionExecute(r 
 
 type ApiListWebApplicationExtensionsRequest struct {
 	ctx        context.Context
-	ApiService *WebApplicationExtensionApiService
+	ApiService *WebApplicationExtensionAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListWebApplicationExtensions Returns a list of all Web Application Extension obj
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListWebApplicationExtensionsRequest
 */
-func (a *WebApplicationExtensionApiService) ListWebApplicationExtensions(ctx context.Context) ApiListWebApplicationExtensionsRequest {
+func (a *WebApplicationExtensionAPIService) ListWebApplicationExtensions(ctx context.Context) ApiListWebApplicationExtensionsRequest {
 	return ApiListWebApplicationExtensionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *WebApplicationExtensionApiService) ListWebApplicationExtensions(ctx con
 // Execute executes the request
 //
 //	@return WebApplicationExtensionListResponse
-func (a *WebApplicationExtensionApiService) ListWebApplicationExtensionsExecute(r ApiListWebApplicationExtensionsRequest) (*WebApplicationExtensionListResponse, *http.Response, error) {
+func (a *WebApplicationExtensionAPIService) ListWebApplicationExtensionsExecute(r ApiListWebApplicationExtensionsRequest) (*WebApplicationExtensionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *WebApplicationExtensionApiService) ListWebApplicationExtensionsExecute(
 		localVarReturnValue *WebApplicationExtensionListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionApiService.ListWebApplicationExtensions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionAPIService.ListWebApplicationExtensions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *WebApplicationExtensionApiService) ListWebApplicationExtensionsExecute(
 
 type ApiUpdateWebApplicationExtensionRequest struct {
 	ctx                         context.Context
-	ApiService                  *WebApplicationExtensionApiService
+	ApiService                  *WebApplicationExtensionAPIService
 	webApplicationExtensionName string
 	updateRequest               *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateWebApplicationExtension Update an existing Web Application Extension by na
 	@param webApplicationExtensionName Name of the Web Application Extension
 	@return ApiUpdateWebApplicationExtensionRequest
 */
-func (a *WebApplicationExtensionApiService) UpdateWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiUpdateWebApplicationExtensionRequest {
+func (a *WebApplicationExtensionAPIService) UpdateWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiUpdateWebApplicationExtensionRequest {
 	return ApiUpdateWebApplicationExtensionRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -467,7 +467,7 @@ func (a *WebApplicationExtensionApiService) UpdateWebApplicationExtension(ctx co
 // Execute executes the request
 //
 //	@return GetWebApplicationExtension200Response
-func (a *WebApplicationExtensionApiService) UpdateWebApplicationExtensionExecute(r ApiUpdateWebApplicationExtensionRequest) (*GetWebApplicationExtension200Response, *http.Response, error) {
+func (a *WebApplicationExtensionAPIService) UpdateWebApplicationExtensionExecute(r ApiUpdateWebApplicationExtensionRequest) (*GetWebApplicationExtension200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *WebApplicationExtensionApiService) UpdateWebApplicationExtensionExecute
 		localVarReturnValue *GetWebApplicationExtension200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionApiService.UpdateWebApplicationExtension")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionAPIService.UpdateWebApplicationExtension")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ChangeSubscriptionApiService ChangeSubscriptionApi service
-type ChangeSubscriptionApiService service
+// ChangeSubscriptionAPIService ChangeSubscriptionAPI service
+type ChangeSubscriptionAPIService service
 
 type ApiAddChangeSubscriptionRequest struct {
 	ctx                          context.Context
-	ApiService                   *ChangeSubscriptionApiService
+	ApiService                   *ChangeSubscriptionAPIService
 	addChangeSubscriptionRequest *AddChangeSubscriptionRequest
 }
 
@@ -44,7 +44,7 @@ AddChangeSubscription Add a new Change Subscription to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddChangeSubscriptionRequest
 */
-func (a *ChangeSubscriptionApiService) AddChangeSubscription(ctx context.Context) ApiAddChangeSubscriptionRequest {
+func (a *ChangeSubscriptionAPIService) AddChangeSubscription(ctx context.Context) ApiAddChangeSubscriptionRequest {
 	return ApiAddChangeSubscriptionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ChangeSubscriptionApiService) AddChangeSubscription(ctx context.Context
 // Execute executes the request
 //
 //	@return ChangeSubscriptionResponse
-func (a *ChangeSubscriptionApiService) AddChangeSubscriptionExecute(r ApiAddChangeSubscriptionRequest) (*ChangeSubscriptionResponse, *http.Response, error) {
+func (a *ChangeSubscriptionAPIService) AddChangeSubscriptionExecute(r ApiAddChangeSubscriptionRequest) (*ChangeSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ChangeSubscriptionApiService) AddChangeSubscriptionExecute(r ApiAddChan
 		localVarReturnValue *ChangeSubscriptionResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionApiService.AddChangeSubscription")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionAPIService.AddChangeSubscription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ChangeSubscriptionApiService) AddChangeSubscriptionExecute(r ApiAddChan
 
 type ApiDeleteChangeSubscriptionRequest struct {
 	ctx                    context.Context
-	ApiService             *ChangeSubscriptionApiService
+	ApiService             *ChangeSubscriptionAPIService
 	changeSubscriptionName string
 }
 
@@ -149,7 +149,7 @@ DeleteChangeSubscription Delete a Change Subscription
 	@param changeSubscriptionName Name of the Change Subscription
 	@return ApiDeleteChangeSubscriptionRequest
 */
-func (a *ChangeSubscriptionApiService) DeleteChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiDeleteChangeSubscriptionRequest {
+func (a *ChangeSubscriptionAPIService) DeleteChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiDeleteChangeSubscriptionRequest {
 	return ApiDeleteChangeSubscriptionRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -158,14 +158,14 @@ func (a *ChangeSubscriptionApiService) DeleteChangeSubscription(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *ChangeSubscriptionApiService) DeleteChangeSubscriptionExecute(r ApiDeleteChangeSubscriptionRequest) (*http.Response, error) {
+func (a *ChangeSubscriptionAPIService) DeleteChangeSubscriptionExecute(r ApiDeleteChangeSubscriptionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionApiService.DeleteChangeSubscription")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionAPIService.DeleteChangeSubscription")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ChangeSubscriptionApiService) DeleteChangeSubscriptionExecute(r ApiDele
 
 type ApiGetChangeSubscriptionRequest struct {
 	ctx                    context.Context
-	ApiService             *ChangeSubscriptionApiService
+	ApiService             *ChangeSubscriptionAPIService
 	changeSubscriptionName string
 }
 
@@ -239,7 +239,7 @@ GetChangeSubscription Returns a single Change Subscription
 	@param changeSubscriptionName Name of the Change Subscription
 	@return ApiGetChangeSubscriptionRequest
 */
-func (a *ChangeSubscriptionApiService) GetChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiGetChangeSubscriptionRequest {
+func (a *ChangeSubscriptionAPIService) GetChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiGetChangeSubscriptionRequest {
 	return ApiGetChangeSubscriptionRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -250,7 +250,7 @@ func (a *ChangeSubscriptionApiService) GetChangeSubscription(ctx context.Context
 // Execute executes the request
 //
 //	@return ChangeSubscriptionResponse
-func (a *ChangeSubscriptionApiService) GetChangeSubscriptionExecute(r ApiGetChangeSubscriptionRequest) (*ChangeSubscriptionResponse, *http.Response, error) {
+func (a *ChangeSubscriptionAPIService) GetChangeSubscriptionExecute(r ApiGetChangeSubscriptionRequest) (*ChangeSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ChangeSubscriptionApiService) GetChangeSubscriptionExecute(r ApiGetChan
 		localVarReturnValue *ChangeSubscriptionResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionApiService.GetChangeSubscription")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionAPIService.GetChangeSubscription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ChangeSubscriptionApiService) GetChangeSubscriptionExecute(r ApiGetChan
 
 type ApiListChangeSubscriptionsRequest struct {
 	ctx        context.Context
-	ApiService *ChangeSubscriptionApiService
+	ApiService *ChangeSubscriptionAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListChangeSubscriptions Returns a list of all Change Subscription objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListChangeSubscriptionsRequest
 */
-func (a *ChangeSubscriptionApiService) ListChangeSubscriptions(ctx context.Context) ApiListChangeSubscriptionsRequest {
+func (a *ChangeSubscriptionAPIService) ListChangeSubscriptions(ctx context.Context) ApiListChangeSubscriptionsRequest {
 	return ApiListChangeSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ChangeSubscriptionApiService) ListChangeSubscriptions(ctx context.Conte
 // Execute executes the request
 //
 //	@return ChangeSubscriptionListResponse
-func (a *ChangeSubscriptionApiService) ListChangeSubscriptionsExecute(r ApiListChangeSubscriptionsRequest) (*ChangeSubscriptionListResponse, *http.Response, error) {
+func (a *ChangeSubscriptionAPIService) ListChangeSubscriptionsExecute(r ApiListChangeSubscriptionsRequest) (*ChangeSubscriptionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ChangeSubscriptionApiService) ListChangeSubscriptionsExecute(r ApiListC
 		localVarReturnValue *ChangeSubscriptionListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionApiService.ListChangeSubscriptions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionAPIService.ListChangeSubscriptions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ChangeSubscriptionApiService) ListChangeSubscriptionsExecute(r ApiListC
 
 type ApiUpdateChangeSubscriptionRequest struct {
 	ctx                    context.Context
-	ApiService             *ChangeSubscriptionApiService
+	ApiService             *ChangeSubscriptionAPIService
 	changeSubscriptionName string
 	updateRequest          *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateChangeSubscription Update an existing Change Subscription by name
 	@param changeSubscriptionName Name of the Change Subscription
 	@return ApiUpdateChangeSubscriptionRequest
 */
-func (a *ChangeSubscriptionApiService) UpdateChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiUpdateChangeSubscriptionRequest {
+func (a *ChangeSubscriptionAPIService) UpdateChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiUpdateChangeSubscriptionRequest {
 	return ApiUpdateChangeSubscriptionRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -467,7 +467,7 @@ func (a *ChangeSubscriptionApiService) UpdateChangeSubscription(ctx context.Cont
 // Execute executes the request
 //
 //	@return ChangeSubscriptionResponse
-func (a *ChangeSubscriptionApiService) UpdateChangeSubscriptionExecute(r ApiUpdateChangeSubscriptionRequest) (*ChangeSubscriptionResponse, *http.Response, error) {
+func (a *ChangeSubscriptionAPIService) UpdateChangeSubscriptionExecute(r ApiUpdateChangeSubscriptionRequest) (*ChangeSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ChangeSubscriptionApiService) UpdateChangeSubscriptionExecute(r ApiUpda
 		localVarReturnValue *ChangeSubscriptionResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionApiService.UpdateChangeSubscription")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionAPIService.UpdateChangeSubscription")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

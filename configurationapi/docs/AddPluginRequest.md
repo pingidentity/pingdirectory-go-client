@@ -5,7 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
-**Schemas** | [**[]EnumuniqueAttributePluginSchemaUrn**](EnumuniqueAttributePluginSchemaUrn.md) |  | 
+**Schemas** | [**[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn**](EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn.md) |  | 
+**TraditionalStaticGroupObjectClass** | Pointer to [**EnumpluginTraditionalStaticGroupObjectClassProp**](EnumpluginTraditionalStaticGroupObjectClassProp.md) |  | [optional] 
+**MaximumMembershipUpdatesPerModify** | Pointer to **int64** | An integer property that specifies the maximum number of membership changes that will be supported in a single modify operation. A value of zero indicates that modify operations targeting the group entry should not be permitted to alter the set of members for the group. | [optional] 
+**ReadOperationSupport** | Pointer to [**EnumpluginReadOperationSupportProp**](EnumpluginReadOperationSupportProp.md) |  | [optional] 
+**Description** | Pointer to **string** | A description for this Plugin | [optional] 
+**Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **NumThreads** | Pointer to **int64** | Specifies the number of concurrent threads that should be used to process the search operations. | [optional] 
 **BaseDN** | **[]string** | Specifies a base DN within which the attribute must be unique. | 
@@ -13,9 +19,6 @@ Name | Type | Description | Notes
 **UpperBound** | Pointer to **int64** | Specifies the upper bound for the numeric value which will be inserted into the search filter. | [optional] 
 **FilterPrefix** | **string** | Specifies a prefix which will be used in front of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should contain the entire filter string. | 
 **FilterSuffix** | Pointer to **string** | Specifies a suffix which will be used after of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should be omitted. | [optional] 
-**Description** | Pointer to **string** | A description for this Plugin | [optional] 
-**Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
-**InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Filter** | **string** | Specifies the search filter to apply to determine if attribute uniqueness is enforced for the matching entries. | 
 **AttributeType** | **[]string** | Specifies the attribute types for which referential integrity is to be maintained. | 
 **PollingInterval** | Pointer to **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | [optional] 
@@ -132,12 +135,15 @@ Name | Type | Description | Notes
 **Type** | **[]string** | Specifies the type of attributes to check for value uniqueness. | 
 **MultipleAttributeBehavior** | Pointer to [**EnumpluginUniqueAttributeMultipleAttributeBehaviorProp**](EnumpluginUniqueAttributeMultipleAttributeBehaviorProp.md) |  | [optional] 
 **PreventConflictsWithSoftDeletedEntries** | Pointer to **bool** | Indicates whether this Unique Attribute Plugin should reject a change that would result in one or more conflicts, even if those conflicts only exist in soft-deleted entries. | [optional] 
+**PreventAddingMembersToNonexistentGroups** | Pointer to **bool** | Indicates whether the server should prevent updates to user entries that attempt to add them as a member of an inverted static group that does not exist. | [optional] 
+**PreventAddingGroupsAsInvertedStaticGroupMembers** | Pointer to **bool** | Indicates whether the server should prevent attempts to add a group as a regular member of an inverted static group. If the members of another group should be considered members of an inverted static group, then the other group should be added as a nested group rather than a regular member. | [optional] 
+**PreventNestingNonexistentGroups** | Pointer to **bool** | Indicates whether the server should prevent updates to inverted static groups that add references to nested groups that don&#39;t exist. | [optional] 
 
 ## Methods
 
 ### NewAddPluginRequest
 
-`func NewAddPluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, baseDN []string, filterPrefix string, enabled bool, filter string, attributeType []string, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, requestCriteria string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logFile string, datetimeAttribute string, expirationOffset string, extensionClass string, server []string, sourceDN string, targetDN string, referralBaseURL []string, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPluginRequest`
+`func NewAddPluginRequest(pluginName string, schemas []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, enabled bool, pluginType []EnumpluginPluginTypeProp, baseDN []string, filterPrefix string, filter string, attributeType []string, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, requestCriteria string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logFile string, datetimeAttribute string, expirationOffset string, extensionClass string, server []string, sourceDN string, targetDN string, referralBaseURL []string, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPluginRequest`
 
 NewAddPluginRequest instantiates a new AddPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -174,23 +180,168 @@ SetPluginName sets PluginName field to given value.
 
 ### GetSchemas
 
-`func (o *AddPluginRequest) GetSchemas() []EnumuniqueAttributePluginSchemaUrn`
+`func (o *AddPluginRequest) GetSchemas() []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *AddPluginRequest) GetSchemasOk() (*[]EnumuniqueAttributePluginSchemaUrn, bool)`
+`func (o *AddPluginRequest) GetSchemasOk() (*[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *AddPluginRequest) SetSchemas(v []EnumuniqueAttributePluginSchemaUrn)`
+`func (o *AddPluginRequest) SetSchemas(v []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
 
+
+### GetTraditionalStaticGroupObjectClass
+
+`func (o *AddPluginRequest) GetTraditionalStaticGroupObjectClass() EnumpluginTraditionalStaticGroupObjectClassProp`
+
+GetTraditionalStaticGroupObjectClass returns the TraditionalStaticGroupObjectClass field if non-nil, zero value otherwise.
+
+### GetTraditionalStaticGroupObjectClassOk
+
+`func (o *AddPluginRequest) GetTraditionalStaticGroupObjectClassOk() (*EnumpluginTraditionalStaticGroupObjectClassProp, bool)`
+
+GetTraditionalStaticGroupObjectClassOk returns a tuple with the TraditionalStaticGroupObjectClass field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTraditionalStaticGroupObjectClass
+
+`func (o *AddPluginRequest) SetTraditionalStaticGroupObjectClass(v EnumpluginTraditionalStaticGroupObjectClassProp)`
+
+SetTraditionalStaticGroupObjectClass sets TraditionalStaticGroupObjectClass field to given value.
+
+### HasTraditionalStaticGroupObjectClass
+
+`func (o *AddPluginRequest) HasTraditionalStaticGroupObjectClass() bool`
+
+HasTraditionalStaticGroupObjectClass returns a boolean if a field has been set.
+
+### GetMaximumMembershipUpdatesPerModify
+
+`func (o *AddPluginRequest) GetMaximumMembershipUpdatesPerModify() int64`
+
+GetMaximumMembershipUpdatesPerModify returns the MaximumMembershipUpdatesPerModify field if non-nil, zero value otherwise.
+
+### GetMaximumMembershipUpdatesPerModifyOk
+
+`func (o *AddPluginRequest) GetMaximumMembershipUpdatesPerModifyOk() (*int64, bool)`
+
+GetMaximumMembershipUpdatesPerModifyOk returns a tuple with the MaximumMembershipUpdatesPerModify field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumMembershipUpdatesPerModify
+
+`func (o *AddPluginRequest) SetMaximumMembershipUpdatesPerModify(v int64)`
+
+SetMaximumMembershipUpdatesPerModify sets MaximumMembershipUpdatesPerModify field to given value.
+
+### HasMaximumMembershipUpdatesPerModify
+
+`func (o *AddPluginRequest) HasMaximumMembershipUpdatesPerModify() bool`
+
+HasMaximumMembershipUpdatesPerModify returns a boolean if a field has been set.
+
+### GetReadOperationSupport
+
+`func (o *AddPluginRequest) GetReadOperationSupport() EnumpluginReadOperationSupportProp`
+
+GetReadOperationSupport returns the ReadOperationSupport field if non-nil, zero value otherwise.
+
+### GetReadOperationSupportOk
+
+`func (o *AddPluginRequest) GetReadOperationSupportOk() (*EnumpluginReadOperationSupportProp, bool)`
+
+GetReadOperationSupportOk returns a tuple with the ReadOperationSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReadOperationSupport
+
+`func (o *AddPluginRequest) SetReadOperationSupport(v EnumpluginReadOperationSupportProp)`
+
+SetReadOperationSupport sets ReadOperationSupport field to given value.
+
+### HasReadOperationSupport
+
+`func (o *AddPluginRequest) HasReadOperationSupport() bool`
+
+HasReadOperationSupport returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *AddPluginRequest) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *AddPluginRequest) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *AddPluginRequest) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *AddPluginRequest) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetEnabled
+
+`func (o *AddPluginRequest) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *AddPluginRequest) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *AddPluginRequest) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+
+### GetInvokeForInternalOperations
+
+`func (o *AddPluginRequest) GetInvokeForInternalOperations() bool`
+
+GetInvokeForInternalOperations returns the InvokeForInternalOperations field if non-nil, zero value otherwise.
+
+### GetInvokeForInternalOperationsOk
+
+`func (o *AddPluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool)`
+
+GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvokeForInternalOperations
+
+`func (o *AddPluginRequest) SetInvokeForInternalOperations(v bool)`
+
+SetInvokeForInternalOperations sets InvokeForInternalOperations field to given value.
+
+### HasInvokeForInternalOperations
+
+`func (o *AddPluginRequest) HasInvokeForInternalOperations() bool`
+
+HasInvokeForInternalOperations returns a boolean if a field has been set.
 
 ### GetPluginType
 
@@ -351,76 +502,6 @@ SetFilterSuffix sets FilterSuffix field to given value.
 `func (o *AddPluginRequest) HasFilterSuffix() bool`
 
 HasFilterSuffix returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *AddPluginRequest) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *AddPluginRequest) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *AddPluginRequest) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *AddPluginRequest) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetEnabled
-
-`func (o *AddPluginRequest) GetEnabled() bool`
-
-GetEnabled returns the Enabled field if non-nil, zero value otherwise.
-
-### GetEnabledOk
-
-`func (o *AddPluginRequest) GetEnabledOk() (*bool, bool)`
-
-GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnabled
-
-`func (o *AddPluginRequest) SetEnabled(v bool)`
-
-SetEnabled sets Enabled field to given value.
-
-
-### GetInvokeForInternalOperations
-
-`func (o *AddPluginRequest) GetInvokeForInternalOperations() bool`
-
-GetInvokeForInternalOperations returns the InvokeForInternalOperations field if non-nil, zero value otherwise.
-
-### GetInvokeForInternalOperationsOk
-
-`func (o *AddPluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool)`
-
-GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvokeForInternalOperations
-
-`func (o *AddPluginRequest) SetInvokeForInternalOperations(v bool)`
-
-SetInvokeForInternalOperations sets InvokeForInternalOperations field to given value.
-
-### HasInvokeForInternalOperations
-
-`func (o *AddPluginRequest) HasInvokeForInternalOperations() bool`
-
-HasInvokeForInternalOperations returns a boolean if a field has been set.
 
 ### GetFilter
 
@@ -3186,6 +3267,81 @@ SetPreventConflictsWithSoftDeletedEntries sets PreventConflictsWithSoftDeletedEn
 `func (o *AddPluginRequest) HasPreventConflictsWithSoftDeletedEntries() bool`
 
 HasPreventConflictsWithSoftDeletedEntries returns a boolean if a field has been set.
+
+### GetPreventAddingMembersToNonexistentGroups
+
+`func (o *AddPluginRequest) GetPreventAddingMembersToNonexistentGroups() bool`
+
+GetPreventAddingMembersToNonexistentGroups returns the PreventAddingMembersToNonexistentGroups field if non-nil, zero value otherwise.
+
+### GetPreventAddingMembersToNonexistentGroupsOk
+
+`func (o *AddPluginRequest) GetPreventAddingMembersToNonexistentGroupsOk() (*bool, bool)`
+
+GetPreventAddingMembersToNonexistentGroupsOk returns a tuple with the PreventAddingMembersToNonexistentGroups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventAddingMembersToNonexistentGroups
+
+`func (o *AddPluginRequest) SetPreventAddingMembersToNonexistentGroups(v bool)`
+
+SetPreventAddingMembersToNonexistentGroups sets PreventAddingMembersToNonexistentGroups field to given value.
+
+### HasPreventAddingMembersToNonexistentGroups
+
+`func (o *AddPluginRequest) HasPreventAddingMembersToNonexistentGroups() bool`
+
+HasPreventAddingMembersToNonexistentGroups returns a boolean if a field has been set.
+
+### GetPreventAddingGroupsAsInvertedStaticGroupMembers
+
+`func (o *AddPluginRequest) GetPreventAddingGroupsAsInvertedStaticGroupMembers() bool`
+
+GetPreventAddingGroupsAsInvertedStaticGroupMembers returns the PreventAddingGroupsAsInvertedStaticGroupMembers field if non-nil, zero value otherwise.
+
+### GetPreventAddingGroupsAsInvertedStaticGroupMembersOk
+
+`func (o *AddPluginRequest) GetPreventAddingGroupsAsInvertedStaticGroupMembersOk() (*bool, bool)`
+
+GetPreventAddingGroupsAsInvertedStaticGroupMembersOk returns a tuple with the PreventAddingGroupsAsInvertedStaticGroupMembers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventAddingGroupsAsInvertedStaticGroupMembers
+
+`func (o *AddPluginRequest) SetPreventAddingGroupsAsInvertedStaticGroupMembers(v bool)`
+
+SetPreventAddingGroupsAsInvertedStaticGroupMembers sets PreventAddingGroupsAsInvertedStaticGroupMembers field to given value.
+
+### HasPreventAddingGroupsAsInvertedStaticGroupMembers
+
+`func (o *AddPluginRequest) HasPreventAddingGroupsAsInvertedStaticGroupMembers() bool`
+
+HasPreventAddingGroupsAsInvertedStaticGroupMembers returns a boolean if a field has been set.
+
+### GetPreventNestingNonexistentGroups
+
+`func (o *AddPluginRequest) GetPreventNestingNonexistentGroups() bool`
+
+GetPreventNestingNonexistentGroups returns the PreventNestingNonexistentGroups field if non-nil, zero value otherwise.
+
+### GetPreventNestingNonexistentGroupsOk
+
+`func (o *AddPluginRequest) GetPreventNestingNonexistentGroupsOk() (*bool, bool)`
+
+GetPreventNestingNonexistentGroupsOk returns a tuple with the PreventNestingNonexistentGroups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreventNestingNonexistentGroups
+
+`func (o *AddPluginRequest) SetPreventNestingNonexistentGroups(v bool)`
+
+SetPreventNestingNonexistentGroups sets PreventNestingNonexistentGroups field to given value.
+
+### HasPreventNestingNonexistentGroups
+
+`func (o *AddPluginRequest) HasPreventNestingNonexistentGroups() bool`
+
+HasPreventNestingNonexistentGroups returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Change Subscription Handler | 
 **Schemas** | [**[]EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn**](EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Change Subscription Handler. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Change Subscription Handler | [optional] 
 **Enabled** | **bool** | Indicates whether this change subscription handler is enabled within the server. | 
 **ChangeSubscription** | Pointer to **[]string** | The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server. | [optional] 
+**HandlerName** | **string** | Name of the new Change Subscription Handler | 
 
 ## Methods
 
 ### NewAddGroovyScriptedChangeSubscriptionHandlerRequest
 
-`func NewAddGroovyScriptedChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn, scriptClass string, enabled bool, ) *AddGroovyScriptedChangeSubscriptionHandlerRequest`
+`func NewAddGroovyScriptedChangeSubscriptionHandlerRequest(schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn, scriptClass string, enabled bool, handlerName string, ) *AddGroovyScriptedChangeSubscriptionHandlerRequest`
 
 NewAddGroovyScriptedChangeSubscriptionHandlerRequest instantiates a new AddGroovyScriptedChangeSubscriptionHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddGroovyScriptedChangeSubscriptionHandlerRequestWithDefaults instantiates a new AddGroovyScriptedChangeSubscriptionHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -185,6 +165,26 @@ SetChangeSubscription sets ChangeSubscription field to given value.
 `func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) HasChangeSubscription() bool`
 
 HasChangeSubscription returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

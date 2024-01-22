@@ -1,14 +1,14 @@
-# \OtpDeliveryMechanismApi
+# \OtpDeliveryMechanismAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddOtpDeliveryMechanism**](OtpDeliveryMechanismApi.md#AddOtpDeliveryMechanism) | **Post** /otp-delivery-mechanisms | Add a new OTP Delivery Mechanism to the config
-[**DeleteOtpDeliveryMechanism**](OtpDeliveryMechanismApi.md#DeleteOtpDeliveryMechanism) | **Delete** /otp-delivery-mechanisms/{otp-delivery-mechanism-name} | Delete a OTP Delivery Mechanism
-[**GetOtpDeliveryMechanism**](OtpDeliveryMechanismApi.md#GetOtpDeliveryMechanism) | **Get** /otp-delivery-mechanisms/{otp-delivery-mechanism-name} | Returns a single OTP Delivery Mechanism
-[**ListOtpDeliveryMechanisms**](OtpDeliveryMechanismApi.md#ListOtpDeliveryMechanisms) | **Get** /otp-delivery-mechanisms | Returns a list of all OTP Delivery Mechanism objects
-[**UpdateOtpDeliveryMechanism**](OtpDeliveryMechanismApi.md#UpdateOtpDeliveryMechanism) | **Patch** /otp-delivery-mechanisms/{otp-delivery-mechanism-name} | Update an existing OTP Delivery Mechanism by name
+[**AddOtpDeliveryMechanism**](OtpDeliveryMechanismAPI.md#AddOtpDeliveryMechanism) | **Post** /otp-delivery-mechanisms | Add a new OTP Delivery Mechanism to the config
+[**DeleteOtpDeliveryMechanism**](OtpDeliveryMechanismAPI.md#DeleteOtpDeliveryMechanism) | **Delete** /otp-delivery-mechanisms/{otp-delivery-mechanism-name} | Delete a OTP Delivery Mechanism
+[**GetOtpDeliveryMechanism**](OtpDeliveryMechanismAPI.md#GetOtpDeliveryMechanism) | **Get** /otp-delivery-mechanisms/{otp-delivery-mechanism-name} | Returns a single OTP Delivery Mechanism
+[**ListOtpDeliveryMechanisms**](OtpDeliveryMechanismAPI.md#ListOtpDeliveryMechanisms) | **Get** /otp-delivery-mechanisms | Returns a list of all OTP Delivery Mechanism objects
+[**UpdateOtpDeliveryMechanism**](OtpDeliveryMechanismAPI.md#UpdateOtpDeliveryMechanism) | **Patch** /otp-delivery-mechanisms/{otp-delivery-mechanism-name} | Update an existing OTP Delivery Mechanism by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addOtpDeliveryMechanismRequest := openapiclient.add_otp_delivery_mechanism_request{AddEmailOtpDeliveryMechanismRequest: openapiclient.NewAddEmailOtpDeliveryMechanismRequest("MechanismName_example", []openapiclient.EnumemailOtpDeliveryMechanismSchemaUrn{openapiclient.Enumemail-otp-delivery-mechanismSchemaUrn("urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:email")}, "SenderAddress_example", false)} // AddOtpDeliveryMechanismRequest | Create a new OTP Delivery Mechanism in the config
+    addOtpDeliveryMechanismRequest := openapiclient.add_otp_delivery_mechanism_request{AddEmailOtpDeliveryMechanismRequest: openapiclient.NewAddEmailOtpDeliveryMechanismRequest([]openapiclient.EnumemailOtpDeliveryMechanismSchemaUrn{openapiclient.Enumemail-otp-delivery-mechanismSchemaUrn("urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:email")}, "SenderAddress_example", false, "MechanismName_example")} // AddOtpDeliveryMechanismRequest | Create a new OTP Delivery Mechanism in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OtpDeliveryMechanismApi.AddOtpDeliveryMechanism(context.Background()).AddOtpDeliveryMechanismRequest(addOtpDeliveryMechanismRequest).Execute()
+    resp, r, err := apiClient.OtpDeliveryMechanismAPI.AddOtpDeliveryMechanism(context.Background()).AddOtpDeliveryMechanismRequest(addOtpDeliveryMechanismRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismApi.AddOtpDeliveryMechanism``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismAPI.AddOtpDeliveryMechanism``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddOtpDeliveryMechanism`: AddOtpDeliveryMechanism200Response
-    fmt.Fprintf(os.Stdout, "Response from `OtpDeliveryMechanismApi.AddOtpDeliveryMechanism`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OtpDeliveryMechanismAPI.AddOtpDeliveryMechanism`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OtpDeliveryMechanismApi.DeleteOtpDeliveryMechanism(context.Background(), otpDeliveryMechanismName).Execute()
+    r, err := apiClient.OtpDeliveryMechanismAPI.DeleteOtpDeliveryMechanism(context.Background(), otpDeliveryMechanismName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismApi.DeleteOtpDeliveryMechanism``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismAPI.DeleteOtpDeliveryMechanism``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OtpDeliveryMechanismApi.GetOtpDeliveryMechanism(context.Background(), otpDeliveryMechanismName).Execute()
+    resp, r, err := apiClient.OtpDeliveryMechanismAPI.GetOtpDeliveryMechanism(context.Background(), otpDeliveryMechanismName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismApi.GetOtpDeliveryMechanism``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismAPI.GetOtpDeliveryMechanism``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetOtpDeliveryMechanism`: AddOtpDeliveryMechanism200Response
-    fmt.Fprintf(os.Stdout, "Response from `OtpDeliveryMechanismApi.GetOtpDeliveryMechanism`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OtpDeliveryMechanismAPI.GetOtpDeliveryMechanism`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OtpDeliveryMechanismApi.ListOtpDeliveryMechanisms(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.OtpDeliveryMechanismAPI.ListOtpDeliveryMechanisms(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismApi.ListOtpDeliveryMechanisms``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismAPI.ListOtpDeliveryMechanisms``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListOtpDeliveryMechanisms`: OtpDeliveryMechanismListResponse
-    fmt.Fprintf(os.Stdout, "Response from `OtpDeliveryMechanismApi.ListOtpDeliveryMechanisms`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OtpDeliveryMechanismAPI.ListOtpDeliveryMechanisms`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OtpDeliveryMechanismApi.UpdateOtpDeliveryMechanism(context.Background(), otpDeliveryMechanismName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.OtpDeliveryMechanismAPI.UpdateOtpDeliveryMechanism(context.Background(), otpDeliveryMechanismName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismApi.UpdateOtpDeliveryMechanism``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismAPI.UpdateOtpDeliveryMechanism``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateOtpDeliveryMechanism`: AddOtpDeliveryMechanism200Response
-    fmt.Fprintf(os.Stdout, "Response from `OtpDeliveryMechanismApi.UpdateOtpDeliveryMechanism`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `OtpDeliveryMechanismAPI.UpdateOtpDeliveryMechanism`: %v\n", resp)
 }
 ```
 

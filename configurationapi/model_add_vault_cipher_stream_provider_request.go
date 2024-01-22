@@ -19,9 +19,7 @@ var _ MappedNullable = &AddVaultCipherStreamProviderRequest{}
 
 // AddVaultCipherStreamProviderRequest struct for AddVaultCipherStreamProviderRequest
 type AddVaultCipherStreamProviderRequest struct {
-	// Name of the new Cipher Stream Provider
-	ProviderName string                                   `json:"providerName"`
-	Schemas      []EnumvaultCipherStreamProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumvaultCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault server.
 	VaultExternalServer *string `json:"vaultExternalServer,omitempty"`
 	// The base URL needed to access the Vault server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://vault.example.com:8200/\".
@@ -46,19 +44,21 @@ type AddVaultCipherStreamProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Cipher Stream Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddVaultCipherStreamProviderRequest instantiates a new AddVaultCipherStreamProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddVaultCipherStreamProviderRequest(providerName string, schemas []EnumvaultCipherStreamProviderSchemaUrn, vaultSecretPath string, vaultSecretFieldName string, enabled bool) *AddVaultCipherStreamProviderRequest {
+func NewAddVaultCipherStreamProviderRequest(schemas []EnumvaultCipherStreamProviderSchemaUrn, vaultSecretPath string, vaultSecretFieldName string, enabled bool, providerName string) *AddVaultCipherStreamProviderRequest {
 	this := AddVaultCipherStreamProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.VaultSecretPath = vaultSecretPath
 	this.VaultSecretFieldName = vaultSecretFieldName
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -68,30 +68,6 @@ func NewAddVaultCipherStreamProviderRequest(providerName string, schemas []Enumv
 func NewAddVaultCipherStreamProviderRequestWithDefaults() *AddVaultCipherStreamProviderRequest {
 	this := AddVaultCipherStreamProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddVaultCipherStreamProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddVaultCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddVaultCipherStreamProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -478,6 +454,30 @@ func (o *AddVaultCipherStreamProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddVaultCipherStreamProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddVaultCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddVaultCipherStreamProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddVaultCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -488,7 +488,6 @@ func (o AddVaultCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddVaultCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.VaultExternalServer) {
 		toSerialize["vaultExternalServer"] = o.VaultExternalServer
@@ -520,6 +519,7 @@ func (o AddVaultCipherStreamProviderRequest) ToMap() (map[string]interface{}, er
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

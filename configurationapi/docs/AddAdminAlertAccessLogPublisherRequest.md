@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumadminAlertAccessLogPublisherSchemaUrn**](EnumadminAlertAccessLogPublisherSchemaUrn.md) |  | 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
@@ -51,12 +50,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
+**PublisherName** | **string** | Name of the new Log Publisher | 
 
 ## Methods
 
 ### NewAddAdminAlertAccessLogPublisherRequest
 
-`func NewAddAdminAlertAccessLogPublisherRequest(publisherName string, schemas []EnumadminAlertAccessLogPublisherSchemaUrn, enabled bool, ) *AddAdminAlertAccessLogPublisherRequest`
+`func NewAddAdminAlertAccessLogPublisherRequest(schemas []EnumadminAlertAccessLogPublisherSchemaUrn, enabled bool, publisherName string, ) *AddAdminAlertAccessLogPublisherRequest`
 
 NewAddAdminAlertAccessLogPublisherRequest instantiates a new AddAdminAlertAccessLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -70,26 +70,6 @@ will change when the set of required properties is changed
 NewAddAdminAlertAccessLogPublisherRequestWithDefaults instantiates a new AddAdminAlertAccessLogPublisherRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPublisherName
-
-`func (o *AddAdminAlertAccessLogPublisherRequest) GetPublisherName() string`
-
-GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
-
-### GetPublisherNameOk
-
-`func (o *AddAdminAlertAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
-
-GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublisherName
-
-`func (o *AddAdminAlertAccessLogPublisherRequest) SetPublisherName(v string)`
-
-SetPublisherName sets PublisherName field to given value.
-
 
 ### GetSchemas
 
@@ -1230,6 +1210,26 @@ SetLoggingErrorBehavior sets LoggingErrorBehavior field to given value.
 `func (o *AddAdminAlertAccessLogPublisherRequest) HasLoggingErrorBehavior() bool`
 
 HasLoggingErrorBehavior returns a boolean if a field has been set.
+
+### GetPublisherName
+
+`func (o *AddAdminAlertAccessLogPublisherRequest) GetPublisherName() string`
+
+GetPublisherName returns the PublisherName field if non-nil, zero value otherwise.
+
+### GetPublisherNameOk
+
+`func (o *AddAdminAlertAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool)`
+
+GetPublisherNameOk returns a tuple with the PublisherName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublisherName
+
+`func (o *AddAdminAlertAccessLogPublisherRequest) SetPublisherName(v string)`
+
+SetPublisherName sets PublisherName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

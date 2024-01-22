@@ -19,8 +19,6 @@ var _ MappedNullable = &Pkcs11KeyManagerProviderResponse{}
 
 // Pkcs11KeyManagerProviderResponse struct for Pkcs11KeyManagerProviderResponse
 type Pkcs11KeyManagerProviderResponse struct {
-	// Name of the Key Manager Provider
-	Id      string                                  `json:"id"`
 	Schemas []Enumpkcs11KeyManagerProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
 	Pkcs11ProviderClass *string `json:"pkcs11ProviderClass,omitempty"`
@@ -42,17 +40,19 @@ type Pkcs11KeyManagerProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Key Manager Provider
+	Id string `json:"id"`
 }
 
 // NewPkcs11KeyManagerProviderResponse instantiates a new Pkcs11KeyManagerProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPkcs11KeyManagerProviderResponse(id string, schemas []Enumpkcs11KeyManagerProviderSchemaUrn, enabled bool) *Pkcs11KeyManagerProviderResponse {
+func NewPkcs11KeyManagerProviderResponse(schemas []Enumpkcs11KeyManagerProviderSchemaUrn, enabled bool, id string) *Pkcs11KeyManagerProviderResponse {
 	this := Pkcs11KeyManagerProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -62,30 +62,6 @@ func NewPkcs11KeyManagerProviderResponse(id string, schemas []Enumpkcs11KeyManag
 func NewPkcs11KeyManagerProviderResponseWithDefaults() *Pkcs11KeyManagerProviderResponse {
 	this := Pkcs11KeyManagerProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *Pkcs11KeyManagerProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *Pkcs11KeyManagerProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *Pkcs11KeyManagerProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -456,6 +432,30 @@ func (o *Pkcs11KeyManagerProviderResponse) SetUrnpingidentityschemasconfiguratio
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *Pkcs11KeyManagerProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *Pkcs11KeyManagerProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *Pkcs11KeyManagerProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o Pkcs11KeyManagerProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -466,7 +466,6 @@ func (o Pkcs11KeyManagerProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o Pkcs11KeyManagerProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Pkcs11ProviderClass) {
 		toSerialize["pkcs11ProviderClass"] = o.Pkcs11ProviderClass
@@ -499,6 +498,7 @@ func (o Pkcs11KeyManagerProviderResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

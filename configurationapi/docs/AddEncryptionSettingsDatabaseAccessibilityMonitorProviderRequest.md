@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProviderName** | **string** | Name of the new Monitor Provider | 
 **Schemas** | [**[]EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn**](EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn.md) |  | 
 **CheckFrequency** | Pointer to **string** | The frequency with which this monitor provider should confirm the ability to access the server&#39;s encryption settings database. | [optional] 
 **ProlongedOutageDuration** | Pointer to **string** | The minimum length of time that an outage should persist before it is considered a prolonged outage. If an outage lasts at least as long as this duration, then the server will take the action indicated by the prolonged-outage-behavior property. | [optional] 
 **ProlongedOutageBehavior** | Pointer to [**EnummonitorProviderProlongedOutageBehaviorProp**](EnummonitorProviderProlongedOutageBehaviorProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Monitor Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Monitor Provider is enabled for use. | 
+**ProviderName** | **string** | Name of the new Monitor Provider | 
 
 ## Methods
 
 ### NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest
 
-`func NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest(providerName string, schemas []EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn, enabled bool, ) *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest`
+`func NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest(schemas []EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn, enabled bool, providerName string, ) *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest`
 
 NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest instantiates a new AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequestWithDefaults instantiates a new AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetProviderName
-
-`func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) GetProviderName() string`
-
-GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
-
-### GetProviderNameOk
-
-`func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) GetProviderNameOk() (*string, bool)`
-
-GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderName
-
-`func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) SetProviderName(v string)`
-
-SetProviderName sets ProviderName field to given value.
-
 
 ### GetSchemas
 
@@ -189,6 +169,26 @@ and a boolean to check if the value has been set.
 `func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetProviderName
+
+`func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) GetProviderName() string`
+
+GetProviderName returns the ProviderName field if non-nil, zero value otherwise.
+
+### GetProviderNameOk
+
+`func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) GetProviderNameOk() (*string, bool)`
+
+GetProviderNameOk returns a tuple with the ProviderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProviderName
+
+`func (o *AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest) SetProviderName(v string)`
+
+SetProviderName sets ProviderName field to given value.
 
 
 

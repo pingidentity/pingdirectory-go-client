@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Name of the new Virtual Attribute | 
 **Schemas** | [**[]EnumidentifyReferencesVirtualAttributeSchemaUrn**](EnumidentifyReferencesVirtualAttributeSchemaUrn.md) |  | 
 **ReferencedByAttribute** | **[]string** | The name or OID of an attribute type whose values will be searched for references to the target entry. The attribute type must be defined in the server schema, must have a syntax of either \&quot;distinguished name\&quot; or \&quot;name and optional UID\&quot;, and must be indexed for equality. | 
 **ReferenceSearchBaseDN** | Pointer to **[]string** | The base DN that will be used when searching for references to the target entry. If no reference search base DN is specified, the default behavior will be to search below all public naming contexts configured in the server. | [optional] 
@@ -20,12 +19,13 @@ Name | Type | Description | Notes
 **MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int64** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
 **MultipleVirtualAttributeMergeBehavior** | Pointer to [**EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp**](EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp.md) |  | [optional] 
 **AllowIndexConflicts** | Pointer to **bool** | Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server. | [optional] 
+**Name** | **string** | Name of the new Virtual Attribute | 
 
 ## Methods
 
 ### NewAddIdentifyReferencesVirtualAttributeRequest
 
-`func NewAddIdentifyReferencesVirtualAttributeRequest(name string, schemas []EnumidentifyReferencesVirtualAttributeSchemaUrn, referencedByAttribute []string, enabled bool, attributeType string, ) *AddIdentifyReferencesVirtualAttributeRequest`
+`func NewAddIdentifyReferencesVirtualAttributeRequest(schemas []EnumidentifyReferencesVirtualAttributeSchemaUrn, referencedByAttribute []string, enabled bool, attributeType string, name string, ) *AddIdentifyReferencesVirtualAttributeRequest`
 
 NewAddIdentifyReferencesVirtualAttributeRequest instantiates a new AddIdentifyReferencesVirtualAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -39,26 +39,6 @@ will change when the set of required properties is changed
 NewAddIdentifyReferencesVirtualAttributeRequestWithDefaults instantiates a new AddIdentifyReferencesVirtualAttributeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *AddIdentifyReferencesVirtualAttributeRequest) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AddIdentifyReferencesVirtualAttributeRequest) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AddIdentifyReferencesVirtualAttributeRequest) SetName(v string)`
-
-SetName sets Name field to given value.
-
 
 ### GetSchemas
 
@@ -414,6 +394,26 @@ SetAllowIndexConflicts sets AllowIndexConflicts field to given value.
 `func (o *AddIdentifyReferencesVirtualAttributeRequest) HasAllowIndexConflicts() bool`
 
 HasAllowIndexConflicts returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *AddIdentifyReferencesVirtualAttributeRequest) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *AddIdentifyReferencesVirtualAttributeRequest) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *AddIdentifyReferencesVirtualAttributeRequest) SetName(v string)`
+
+SetName sets Name field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

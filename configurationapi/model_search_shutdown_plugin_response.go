@@ -19,8 +19,6 @@ var _ MappedNullable = &SearchShutdownPluginResponse{}
 
 // SearchShutdownPluginResponse struct for SearchShutdownPluginResponse
 type SearchShutdownPluginResponse struct {
-	// Name of the Plugin
-	Id      string                              `json:"id"`
 	Schemas []EnumsearchShutdownPluginSchemaUrn `json:"schemas"`
 	// The base DN to use for the search.
 	BaseDN *string             `json:"baseDN,omitempty"`
@@ -39,20 +37,22 @@ type SearchShutdownPluginResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Plugin
+	Id string `json:"id"`
 }
 
 // NewSearchShutdownPluginResponse instantiates a new SearchShutdownPluginResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSearchShutdownPluginResponse(id string, schemas []EnumsearchShutdownPluginSchemaUrn, scope EnumpluginScopeProp, filter string, outputFile string, enabled bool) *SearchShutdownPluginResponse {
+func NewSearchShutdownPluginResponse(schemas []EnumsearchShutdownPluginSchemaUrn, scope EnumpluginScopeProp, filter string, outputFile string, enabled bool, id string) *SearchShutdownPluginResponse {
 	this := SearchShutdownPluginResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Scope = scope
 	this.Filter = filter
 	this.OutputFile = outputFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -62,30 +62,6 @@ func NewSearchShutdownPluginResponse(id string, schemas []EnumsearchShutdownPlug
 func NewSearchShutdownPluginResponseWithDefaults() *SearchShutdownPluginResponse {
 	this := SearchShutdownPluginResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SearchShutdownPluginResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SearchShutdownPluginResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SearchShutdownPluginResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -400,6 +376,30 @@ func (o *SearchShutdownPluginResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SearchShutdownPluginResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SearchShutdownPluginResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SearchShutdownPluginResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SearchShutdownPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -410,7 +410,6 @@ func (o SearchShutdownPluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o SearchShutdownPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.BaseDN) {
 		toSerialize["baseDN"] = o.BaseDN
@@ -434,6 +433,7 @@ func (o SearchShutdownPluginResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

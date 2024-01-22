@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// EntryCacheApiService EntryCacheApi service
-type EntryCacheApiService service
+// EntryCacheAPIService EntryCacheAPI service
+type EntryCacheAPIService service
 
 type ApiAddEntryCacheRequest struct {
 	ctx                      context.Context
-	ApiService               *EntryCacheApiService
+	ApiService               *EntryCacheAPIService
 	addFifoEntryCacheRequest *AddFifoEntryCacheRequest
 }
 
@@ -44,7 +44,7 @@ AddEntryCache Add a new Entry Cache to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddEntryCacheRequest
 */
-func (a *EntryCacheApiService) AddEntryCache(ctx context.Context) ApiAddEntryCacheRequest {
+func (a *EntryCacheAPIService) AddEntryCache(ctx context.Context) ApiAddEntryCacheRequest {
 	return ApiAddEntryCacheRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *EntryCacheApiService) AddEntryCache(ctx context.Context) ApiAddEntryCac
 // Execute executes the request
 //
 //	@return FifoEntryCacheResponse
-func (a *EntryCacheApiService) AddEntryCacheExecute(r ApiAddEntryCacheRequest) (*FifoEntryCacheResponse, *http.Response, error) {
+func (a *EntryCacheAPIService) AddEntryCacheExecute(r ApiAddEntryCacheRequest) (*FifoEntryCacheResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *EntryCacheApiService) AddEntryCacheExecute(r ApiAddEntryCacheRequest) (
 		localVarReturnValue *FifoEntryCacheResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheApiService.AddEntryCache")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheAPIService.AddEntryCache")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *EntryCacheApiService) AddEntryCacheExecute(r ApiAddEntryCacheRequest) (
 
 type ApiDeleteEntryCacheRequest struct {
 	ctx            context.Context
-	ApiService     *EntryCacheApiService
+	ApiService     *EntryCacheAPIService
 	entryCacheName string
 }
 
@@ -149,7 +149,7 @@ DeleteEntryCache Delete a Entry Cache
 	@param entryCacheName Name of the Entry Cache
 	@return ApiDeleteEntryCacheRequest
 */
-func (a *EntryCacheApiService) DeleteEntryCache(ctx context.Context, entryCacheName string) ApiDeleteEntryCacheRequest {
+func (a *EntryCacheAPIService) DeleteEntryCache(ctx context.Context, entryCacheName string) ApiDeleteEntryCacheRequest {
 	return ApiDeleteEntryCacheRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -158,14 +158,14 @@ func (a *EntryCacheApiService) DeleteEntryCache(ctx context.Context, entryCacheN
 }
 
 // Execute executes the request
-func (a *EntryCacheApiService) DeleteEntryCacheExecute(r ApiDeleteEntryCacheRequest) (*http.Response, error) {
+func (a *EntryCacheAPIService) DeleteEntryCacheExecute(r ApiDeleteEntryCacheRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheApiService.DeleteEntryCache")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheAPIService.DeleteEntryCache")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *EntryCacheApiService) DeleteEntryCacheExecute(r ApiDeleteEntryCacheRequ
 
 type ApiGetEntryCacheRequest struct {
 	ctx            context.Context
-	ApiService     *EntryCacheApiService
+	ApiService     *EntryCacheAPIService
 	entryCacheName string
 }
 
@@ -239,7 +239,7 @@ GetEntryCache Returns a single Entry Cache
 	@param entryCacheName Name of the Entry Cache
 	@return ApiGetEntryCacheRequest
 */
-func (a *EntryCacheApiService) GetEntryCache(ctx context.Context, entryCacheName string) ApiGetEntryCacheRequest {
+func (a *EntryCacheAPIService) GetEntryCache(ctx context.Context, entryCacheName string) ApiGetEntryCacheRequest {
 	return ApiGetEntryCacheRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -250,7 +250,7 @@ func (a *EntryCacheApiService) GetEntryCache(ctx context.Context, entryCacheName
 // Execute executes the request
 //
 //	@return FifoEntryCacheResponse
-func (a *EntryCacheApiService) GetEntryCacheExecute(r ApiGetEntryCacheRequest) (*FifoEntryCacheResponse, *http.Response, error) {
+func (a *EntryCacheAPIService) GetEntryCacheExecute(r ApiGetEntryCacheRequest) (*FifoEntryCacheResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *EntryCacheApiService) GetEntryCacheExecute(r ApiGetEntryCacheRequest) (
 		localVarReturnValue *FifoEntryCacheResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheApiService.GetEntryCache")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheAPIService.GetEntryCache")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *EntryCacheApiService) GetEntryCacheExecute(r ApiGetEntryCacheRequest) (
 
 type ApiListEntryCachesRequest struct {
 	ctx        context.Context
-	ApiService *EntryCacheApiService
+	ApiService *EntryCacheAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListEntryCaches Returns a list of all Entry Cache objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListEntryCachesRequest
 */
-func (a *EntryCacheApiService) ListEntryCaches(ctx context.Context) ApiListEntryCachesRequest {
+func (a *EntryCacheAPIService) ListEntryCaches(ctx context.Context) ApiListEntryCachesRequest {
 	return ApiListEntryCachesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *EntryCacheApiService) ListEntryCaches(ctx context.Context) ApiListEntry
 // Execute executes the request
 //
 //	@return EntryCacheListResponse
-func (a *EntryCacheApiService) ListEntryCachesExecute(r ApiListEntryCachesRequest) (*EntryCacheListResponse, *http.Response, error) {
+func (a *EntryCacheAPIService) ListEntryCachesExecute(r ApiListEntryCachesRequest) (*EntryCacheListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *EntryCacheApiService) ListEntryCachesExecute(r ApiListEntryCachesReques
 		localVarReturnValue *EntryCacheListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheApiService.ListEntryCaches")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheAPIService.ListEntryCaches")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *EntryCacheApiService) ListEntryCachesExecute(r ApiListEntryCachesReques
 
 type ApiUpdateEntryCacheRequest struct {
 	ctx            context.Context
-	ApiService     *EntryCacheApiService
+	ApiService     *EntryCacheAPIService
 	entryCacheName string
 	updateRequest  *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateEntryCache Update an existing Entry Cache by name
 	@param entryCacheName Name of the Entry Cache
 	@return ApiUpdateEntryCacheRequest
 */
-func (a *EntryCacheApiService) UpdateEntryCache(ctx context.Context, entryCacheName string) ApiUpdateEntryCacheRequest {
+func (a *EntryCacheAPIService) UpdateEntryCache(ctx context.Context, entryCacheName string) ApiUpdateEntryCacheRequest {
 	return ApiUpdateEntryCacheRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -467,7 +467,7 @@ func (a *EntryCacheApiService) UpdateEntryCache(ctx context.Context, entryCacheN
 // Execute executes the request
 //
 //	@return FifoEntryCacheResponse
-func (a *EntryCacheApiService) UpdateEntryCacheExecute(r ApiUpdateEntryCacheRequest) (*FifoEntryCacheResponse, *http.Response, error) {
+func (a *EntryCacheAPIService) UpdateEntryCacheExecute(r ApiUpdateEntryCacheRequest) (*FifoEntryCacheResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *EntryCacheApiService) UpdateEntryCacheExecute(r ApiUpdateEntryCacheRequ
 		localVarReturnValue *FifoEntryCacheResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheApiService.UpdateEntryCache")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheAPIService.UpdateEntryCache")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

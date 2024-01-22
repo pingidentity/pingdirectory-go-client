@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Vault Authentication Method | 
 **Schemas** | [**[]EnumappRoleVaultAuthenticationMethodSchemaUrn**](EnumappRoleVaultAuthenticationMethodSchemaUrn.md) |  | 
 **VaultRoleID** | **string** | The role ID for the AppRole to authenticate. | 
 **VaultSecretID** | **string** | The secret ID for the AppRole to authenticate. | 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Vault Authentication Method | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Vault Authentication Method | 
 
 ## Methods
 
 ### NewAppRoleVaultAuthenticationMethodResponse
 
-`func NewAppRoleVaultAuthenticationMethodResponse(id string, schemas []EnumappRoleVaultAuthenticationMethodSchemaUrn, vaultRoleID string, vaultSecretID string, ) *AppRoleVaultAuthenticationMethodResponse`
+`func NewAppRoleVaultAuthenticationMethodResponse(schemas []EnumappRoleVaultAuthenticationMethodSchemaUrn, vaultRoleID string, vaultSecretID string, id string, ) *AppRoleVaultAuthenticationMethodResponse`
 
 NewAppRoleVaultAuthenticationMethodResponse instantiates a new AppRoleVaultAuthenticationMethodResponse object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAppRoleVaultAuthenticationMethodResponseWithDefaults instantiates a new AppRoleVaultAuthenticationMethodResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *AppRoleVaultAuthenticationMethodResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AppRoleVaultAuthenticationMethodResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AppRoleVaultAuthenticationMethodResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -211,6 +191,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *AppRoleVaultAuthenticationMethodResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *AppRoleVaultAuthenticationMethodResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *AppRoleVaultAuthenticationMethodResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *AppRoleVaultAuthenticationMethodResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

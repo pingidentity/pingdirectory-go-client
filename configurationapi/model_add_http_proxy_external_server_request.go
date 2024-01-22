@@ -19,9 +19,7 @@ var _ MappedNullable = &AddHttpProxyExternalServerRequest{}
 
 // AddHttpProxyExternalServerRequest struct for AddHttpProxyExternalServerRequest
 type AddHttpProxyExternalServerRequest struct {
-	// Name of the new External Server
-	ServerName string                                 `json:"serverName"`
-	Schemas    []EnumhttpProxyExternalServerSchemaUrn `json:"schemas"`
+	Schemas []EnumhttpProxyExternalServerSchemaUrn `json:"schemas"`
 	// The host name or IP address of the HTTP Proxy External Server.
 	ServerHostName string `json:"serverHostName"`
 	// The port on which the HTTP Proxy External Server is listening for connections.
@@ -32,18 +30,20 @@ type AddHttpProxyExternalServerRequest struct {
 	BasicAuthenticationPassphraseProvider *string `json:"basicAuthenticationPassphraseProvider,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	// Name of the new External Server
+	ServerName string `json:"serverName"`
 }
 
 // NewAddHttpProxyExternalServerRequest instantiates a new AddHttpProxyExternalServerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddHttpProxyExternalServerRequest(serverName string, schemas []EnumhttpProxyExternalServerSchemaUrn, serverHostName string, serverPort int64) *AddHttpProxyExternalServerRequest {
+func NewAddHttpProxyExternalServerRequest(schemas []EnumhttpProxyExternalServerSchemaUrn, serverHostName string, serverPort int64, serverName string) *AddHttpProxyExternalServerRequest {
 	this := AddHttpProxyExternalServerRequest{}
-	this.ServerName = serverName
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
 	this.ServerPort = serverPort
+	this.ServerName = serverName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddHttpProxyExternalServerRequest(serverName string, schemas []EnumhttpP
 func NewAddHttpProxyExternalServerRequestWithDefaults() *AddHttpProxyExternalServerRequest {
 	this := AddHttpProxyExternalServerRequest{}
 	return &this
-}
-
-// GetServerName returns the ServerName field value
-func (o *AddHttpProxyExternalServerRequest) GetServerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerName
-}
-
-// GetServerNameOk returns a tuple with the ServerName field value
-// and a boolean to check if the value has been set.
-func (o *AddHttpProxyExternalServerRequest) GetServerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerName, true
-}
-
-// SetServerName sets field value
-func (o *AddHttpProxyExternalServerRequest) SetServerName(v string) {
-	o.ServerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -247,6 +223,30 @@ func (o *AddHttpProxyExternalServerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetServerName returns the ServerName field value
+func (o *AddHttpProxyExternalServerRequest) GetServerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ServerName
+}
+
+// GetServerNameOk returns a tuple with the ServerName field value
+// and a boolean to check if the value has been set.
+func (o *AddHttpProxyExternalServerRequest) GetServerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ServerName, true
+}
+
+// SetServerName sets field value
+func (o *AddHttpProxyExternalServerRequest) SetServerName(v string) {
+	o.ServerName = v
+}
+
 func (o AddHttpProxyExternalServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -257,7 +257,6 @@ func (o AddHttpProxyExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddHttpProxyExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["serverName"] = o.ServerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["serverHostName"] = o.ServerHostName
 	toSerialize["serverPort"] = o.ServerPort
@@ -270,6 +269,7 @@ func (o AddHttpProxyExternalServerRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["serverName"] = o.ServerName
 	return toSerialize, nil
 }
 

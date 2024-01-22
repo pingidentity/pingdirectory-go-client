@@ -19,21 +19,21 @@ var _ MappedNullable = &AddNeverDeleteLogRetentionPolicyRequest{}
 
 // AddNeverDeleteLogRetentionPolicyRequest struct for AddNeverDeleteLogRetentionPolicyRequest
 type AddNeverDeleteLogRetentionPolicyRequest struct {
-	// Name of the new Log Retention Policy
-	PolicyName string                                       `json:"policyName"`
-	Schemas    []EnumneverDeleteLogRetentionPolicySchemaUrn `json:"schemas"`
+	Schemas []EnumneverDeleteLogRetentionPolicySchemaUrn `json:"schemas"`
 	// A description for this Log Retention Policy
 	Description *string `json:"description,omitempty"`
+	// Name of the new Log Retention Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddNeverDeleteLogRetentionPolicyRequest instantiates a new AddNeverDeleteLogRetentionPolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddNeverDeleteLogRetentionPolicyRequest(policyName string, schemas []EnumneverDeleteLogRetentionPolicySchemaUrn) *AddNeverDeleteLogRetentionPolicyRequest {
+func NewAddNeverDeleteLogRetentionPolicyRequest(schemas []EnumneverDeleteLogRetentionPolicySchemaUrn, policyName string) *AddNeverDeleteLogRetentionPolicyRequest {
 	this := AddNeverDeleteLogRetentionPolicyRequest{}
-	this.PolicyName = policyName
 	this.Schemas = schemas
+	this.PolicyName = policyName
 	return &this
 }
 
@@ -43,30 +43,6 @@ func NewAddNeverDeleteLogRetentionPolicyRequest(policyName string, schemas []Enu
 func NewAddNeverDeleteLogRetentionPolicyRequestWithDefaults() *AddNeverDeleteLogRetentionPolicyRequest {
 	this := AddNeverDeleteLogRetentionPolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddNeverDeleteLogRetentionPolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddNeverDeleteLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddNeverDeleteLogRetentionPolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -125,6 +101,30 @@ func (o *AddNeverDeleteLogRetentionPolicyRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddNeverDeleteLogRetentionPolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddNeverDeleteLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddNeverDeleteLogRetentionPolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddNeverDeleteLogRetentionPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -135,11 +135,11 @@ func (o AddNeverDeleteLogRetentionPolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddNeverDeleteLogRetentionPolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

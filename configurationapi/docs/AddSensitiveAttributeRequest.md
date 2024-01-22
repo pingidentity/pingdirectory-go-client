@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeName** | **string** | Name of the new Sensitive Attribute | 
 **Schemas** | Pointer to [**[]EnumsensitiveAttributeSchemaUrn**](EnumsensitiveAttributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Sensitive Attribute | [optional] 
 **AttributeType** | **[]string** | The name(s) or OID(s) of the attribute types for attributes whose values may be considered sensitive. | 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **AllowInAdd** | Pointer to [**EnumsensitiveAttributeAllowInAddProp**](EnumsensitiveAttributeAllowInAddProp.md) |  | [optional] 
 **AllowInCompare** | Pointer to [**EnumsensitiveAttributeAllowInCompareProp**](EnumsensitiveAttributeAllowInCompareProp.md) |  | [optional] 
 **AllowInModify** | Pointer to [**EnumsensitiveAttributeAllowInModifyProp**](EnumsensitiveAttributeAllowInModifyProp.md) |  | [optional] 
+**AttributeName** | **string** | Name of the new Sensitive Attribute | 
 
 ## Methods
 
 ### NewAddSensitiveAttributeRequest
 
-`func NewAddSensitiveAttributeRequest(attributeName string, attributeType []string, ) *AddSensitiveAttributeRequest`
+`func NewAddSensitiveAttributeRequest(attributeType []string, attributeName string, ) *AddSensitiveAttributeRequest`
 
 NewAddSensitiveAttributeRequest instantiates a new AddSensitiveAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddSensitiveAttributeRequestWithDefaults instantiates a new AddSensitiveAttributeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAttributeName
-
-`func (o *AddSensitiveAttributeRequest) GetAttributeName() string`
-
-GetAttributeName returns the AttributeName field if non-nil, zero value otherwise.
-
-### GetAttributeNameOk
-
-`func (o *AddSensitiveAttributeRequest) GetAttributeNameOk() (*string, bool)`
-
-GetAttributeNameOk returns a tuple with the AttributeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeName
-
-`func (o *AddSensitiveAttributeRequest) SetAttributeName(v string)`
-
-SetAttributeName sets AttributeName field to given value.
-
 
 ### GetSchemas
 
@@ -273,6 +253,26 @@ SetAllowInModify sets AllowInModify field to given value.
 `func (o *AddSensitiveAttributeRequest) HasAllowInModify() bool`
 
 HasAllowInModify returns a boolean if a field has been set.
+
+### GetAttributeName
+
+`func (o *AddSensitiveAttributeRequest) GetAttributeName() string`
+
+GetAttributeName returns the AttributeName field if non-nil, zero value otherwise.
+
+### GetAttributeNameOk
+
+`func (o *AddSensitiveAttributeRequest) GetAttributeNameOk() (*string, bool)`
+
+GetAttributeNameOk returns a tuple with the AttributeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeName
+
+`func (o *AddSensitiveAttributeRequest) SetAttributeName(v string)`
+
+SetAttributeName sets AttributeName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

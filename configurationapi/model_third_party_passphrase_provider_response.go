@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyPassphraseProviderResponse{}
 
 // ThirdPartyPassphraseProviderResponse struct for ThirdPartyPassphraseProviderResponse
 type ThirdPartyPassphraseProviderResponse struct {
-	// Name of the Passphrase Provider
-	Id      string                                      `json:"id"`
 	Schemas []EnumthirdPartyPassphraseProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Passphrase Provider.
 	ExtensionClass string `json:"extensionClass"`
@@ -32,18 +30,20 @@ type ThirdPartyPassphraseProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Passphrase Provider
+	Id string `json:"id"`
 }
 
 // NewThirdPartyPassphraseProviderResponse instantiates a new ThirdPartyPassphraseProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyPassphraseProviderResponse(id string, schemas []EnumthirdPartyPassphraseProviderSchemaUrn, extensionClass string, enabled bool) *ThirdPartyPassphraseProviderResponse {
+func NewThirdPartyPassphraseProviderResponse(schemas []EnumthirdPartyPassphraseProviderSchemaUrn, extensionClass string, enabled bool, id string) *ThirdPartyPassphraseProviderResponse {
 	this := ThirdPartyPassphraseProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewThirdPartyPassphraseProviderResponse(id string, schemas []EnumthirdParty
 func NewThirdPartyPassphraseProviderResponseWithDefaults() *ThirdPartyPassphraseProviderResponse {
 	this := ThirdPartyPassphraseProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyPassphraseProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyPassphraseProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyPassphraseProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -279,6 +255,30 @@ func (o *ThirdPartyPassphraseProviderResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyPassphraseProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyPassphraseProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyPassphraseProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyPassphraseProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -289,7 +289,6 @@ func (o ThirdPartyPassphraseProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o ThirdPartyPassphraseProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -305,6 +304,7 @@ func (o ThirdPartyPassphraseProviderResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

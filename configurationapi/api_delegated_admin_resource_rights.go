@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// DelegatedAdminResourceRightsApiService DelegatedAdminResourceRightsApi service
-type DelegatedAdminResourceRightsApiService service
+// DelegatedAdminResourceRightsAPIService DelegatedAdminResourceRightsAPI service
+type DelegatedAdminResourceRightsAPIService service
 
 type ApiAddDelegatedAdminResourceRightsRequest struct {
 	ctx                                    context.Context
-	ApiService                             *DelegatedAdminResourceRightsApiService
+	ApiService                             *DelegatedAdminResourceRightsAPIService
 	delegatedAdminRightsName               string
 	addDelegatedAdminResourceRightsRequest *AddDelegatedAdminResourceRightsRequest
 }
@@ -46,7 +46,7 @@ AddDelegatedAdminResourceRights Add a new Delegated Admin Resource Rights to the
 	@param delegatedAdminRightsName Name of the Delegated Admin Rights
 	@return ApiAddDelegatedAdminResourceRightsRequest
 */
-func (a *DelegatedAdminResourceRightsApiService) AddDelegatedAdminResourceRights(ctx context.Context, delegatedAdminRightsName string) ApiAddDelegatedAdminResourceRightsRequest {
+func (a *DelegatedAdminResourceRightsAPIService) AddDelegatedAdminResourceRights(ctx context.Context, delegatedAdminRightsName string) ApiAddDelegatedAdminResourceRightsRequest {
 	return ApiAddDelegatedAdminResourceRightsRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -57,7 +57,7 @@ func (a *DelegatedAdminResourceRightsApiService) AddDelegatedAdminResourceRights
 // Execute executes the request
 //
 //	@return DelegatedAdminResourceRightsResponse
-func (a *DelegatedAdminResourceRightsApiService) AddDelegatedAdminResourceRightsExecute(r ApiAddDelegatedAdminResourceRightsRequest) (*DelegatedAdminResourceRightsResponse, *http.Response, error) {
+func (a *DelegatedAdminResourceRightsAPIService) AddDelegatedAdminResourceRightsExecute(r ApiAddDelegatedAdminResourceRightsRequest) (*DelegatedAdminResourceRightsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *DelegatedAdminResourceRightsApiService) AddDelegatedAdminResourceRights
 		localVarReturnValue *DelegatedAdminResourceRightsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsApiService.AddDelegatedAdminResourceRights")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsAPIService.AddDelegatedAdminResourceRights")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *DelegatedAdminResourceRightsApiService) AddDelegatedAdminResourceRights
 
 type ApiDeleteDelegatedAdminResourceRightsRequest struct {
 	ctx                              context.Context
-	ApiService                       *DelegatedAdminResourceRightsApiService
+	ApiService                       *DelegatedAdminResourceRightsAPIService
 	delegatedAdminResourceRightsName string
 	delegatedAdminRightsName         string
 }
@@ -155,7 +155,7 @@ DeleteDelegatedAdminResourceRights Delete a Delegated Admin Resource Rights
 	@param delegatedAdminRightsName Name of the Delegated Admin Rights
 	@return ApiDeleteDelegatedAdminResourceRightsRequest
 */
-func (a *DelegatedAdminResourceRightsApiService) DeleteDelegatedAdminResourceRights(ctx context.Context, delegatedAdminResourceRightsName string, delegatedAdminRightsName string) ApiDeleteDelegatedAdminResourceRightsRequest {
+func (a *DelegatedAdminResourceRightsAPIService) DeleteDelegatedAdminResourceRights(ctx context.Context, delegatedAdminResourceRightsName string, delegatedAdminRightsName string) ApiDeleteDelegatedAdminResourceRightsRequest {
 	return ApiDeleteDelegatedAdminResourceRightsRequest{
 		ApiService:                       a,
 		ctx:                              ctx,
@@ -165,14 +165,14 @@ func (a *DelegatedAdminResourceRightsApiService) DeleteDelegatedAdminResourceRig
 }
 
 // Execute executes the request
-func (a *DelegatedAdminResourceRightsApiService) DeleteDelegatedAdminResourceRightsExecute(r ApiDeleteDelegatedAdminResourceRightsRequest) (*http.Response, error) {
+func (a *DelegatedAdminResourceRightsAPIService) DeleteDelegatedAdminResourceRightsExecute(r ApiDeleteDelegatedAdminResourceRightsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsApiService.DeleteDelegatedAdminResourceRights")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsAPIService.DeleteDelegatedAdminResourceRights")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *DelegatedAdminResourceRightsApiService) DeleteDelegatedAdminResourceRig
 
 type ApiGetDelegatedAdminResourceRightsRequest struct {
 	ctx                              context.Context
-	ApiService                       *DelegatedAdminResourceRightsApiService
+	ApiService                       *DelegatedAdminResourceRightsAPIService
 	delegatedAdminResourceRightsName string
 	delegatedAdminRightsName         string
 }
@@ -249,7 +249,7 @@ GetDelegatedAdminResourceRights Returns a single Delegated Admin Resource Rights
 	@param delegatedAdminRightsName Name of the Delegated Admin Rights
 	@return ApiGetDelegatedAdminResourceRightsRequest
 */
-func (a *DelegatedAdminResourceRightsApiService) GetDelegatedAdminResourceRights(ctx context.Context, delegatedAdminResourceRightsName string, delegatedAdminRightsName string) ApiGetDelegatedAdminResourceRightsRequest {
+func (a *DelegatedAdminResourceRightsAPIService) GetDelegatedAdminResourceRights(ctx context.Context, delegatedAdminResourceRightsName string, delegatedAdminRightsName string) ApiGetDelegatedAdminResourceRightsRequest {
 	return ApiGetDelegatedAdminResourceRightsRequest{
 		ApiService:                       a,
 		ctx:                              ctx,
@@ -261,7 +261,7 @@ func (a *DelegatedAdminResourceRightsApiService) GetDelegatedAdminResourceRights
 // Execute executes the request
 //
 //	@return DelegatedAdminResourceRightsResponse
-func (a *DelegatedAdminResourceRightsApiService) GetDelegatedAdminResourceRightsExecute(r ApiGetDelegatedAdminResourceRightsRequest) (*DelegatedAdminResourceRightsResponse, *http.Response, error) {
+func (a *DelegatedAdminResourceRightsAPIService) GetDelegatedAdminResourceRightsExecute(r ApiGetDelegatedAdminResourceRightsRequest) (*DelegatedAdminResourceRightsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *DelegatedAdminResourceRightsApiService) GetDelegatedAdminResourceRights
 		localVarReturnValue *DelegatedAdminResourceRightsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsApiService.GetDelegatedAdminResourceRights")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsAPIService.GetDelegatedAdminResourceRights")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *DelegatedAdminResourceRightsApiService) GetDelegatedAdminResourceRights
 
 type ApiListDelegatedAdminResourceRightsRequest struct {
 	ctx                      context.Context
-	ApiService               *DelegatedAdminResourceRightsApiService
+	ApiService               *DelegatedAdminResourceRightsAPIService
 	delegatedAdminRightsName string
 	filter                   *string
 }
@@ -360,7 +360,7 @@ ListDelegatedAdminResourceRights Returns a list of all Delegated Admin Resource 
 	@param delegatedAdminRightsName Name of the Delegated Admin Rights
 	@return ApiListDelegatedAdminResourceRightsRequest
 */
-func (a *DelegatedAdminResourceRightsApiService) ListDelegatedAdminResourceRights(ctx context.Context, delegatedAdminRightsName string) ApiListDelegatedAdminResourceRightsRequest {
+func (a *DelegatedAdminResourceRightsAPIService) ListDelegatedAdminResourceRights(ctx context.Context, delegatedAdminRightsName string) ApiListDelegatedAdminResourceRightsRequest {
 	return ApiListDelegatedAdminResourceRightsRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -371,7 +371,7 @@ func (a *DelegatedAdminResourceRightsApiService) ListDelegatedAdminResourceRight
 // Execute executes the request
 //
 //	@return DelegatedAdminResourceRightsListResponse
-func (a *DelegatedAdminResourceRightsApiService) ListDelegatedAdminResourceRightsExecute(r ApiListDelegatedAdminResourceRightsRequest) (*DelegatedAdminResourceRightsListResponse, *http.Response, error) {
+func (a *DelegatedAdminResourceRightsAPIService) ListDelegatedAdminResourceRightsExecute(r ApiListDelegatedAdminResourceRightsRequest) (*DelegatedAdminResourceRightsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *DelegatedAdminResourceRightsApiService) ListDelegatedAdminResourceRight
 		localVarReturnValue *DelegatedAdminResourceRightsListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsApiService.ListDelegatedAdminResourceRights")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsAPIService.ListDelegatedAdminResourceRights")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *DelegatedAdminResourceRightsApiService) ListDelegatedAdminResourceRight
 
 type ApiUpdateDelegatedAdminResourceRightsRequest struct {
 	ctx                              context.Context
-	ApiService                       *DelegatedAdminResourceRightsApiService
+	ApiService                       *DelegatedAdminResourceRightsAPIService
 	delegatedAdminResourceRightsName string
 	delegatedAdminRightsName         string
 	updateRequest                    *UpdateRequest
@@ -474,7 +474,7 @@ UpdateDelegatedAdminResourceRights Update an existing Delegated Admin Resource R
 	@param delegatedAdminRightsName Name of the Delegated Admin Rights
 	@return ApiUpdateDelegatedAdminResourceRightsRequest
 */
-func (a *DelegatedAdminResourceRightsApiService) UpdateDelegatedAdminResourceRights(ctx context.Context, delegatedAdminResourceRightsName string, delegatedAdminRightsName string) ApiUpdateDelegatedAdminResourceRightsRequest {
+func (a *DelegatedAdminResourceRightsAPIService) UpdateDelegatedAdminResourceRights(ctx context.Context, delegatedAdminResourceRightsName string, delegatedAdminRightsName string) ApiUpdateDelegatedAdminResourceRightsRequest {
 	return ApiUpdateDelegatedAdminResourceRightsRequest{
 		ApiService:                       a,
 		ctx:                              ctx,
@@ -486,7 +486,7 @@ func (a *DelegatedAdminResourceRightsApiService) UpdateDelegatedAdminResourceRig
 // Execute executes the request
 //
 //	@return DelegatedAdminResourceRightsResponse
-func (a *DelegatedAdminResourceRightsApiService) UpdateDelegatedAdminResourceRightsExecute(r ApiUpdateDelegatedAdminResourceRightsRequest) (*DelegatedAdminResourceRightsResponse, *http.Response, error) {
+func (a *DelegatedAdminResourceRightsAPIService) UpdateDelegatedAdminResourceRightsExecute(r ApiUpdateDelegatedAdminResourceRightsRequest) (*DelegatedAdminResourceRightsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *DelegatedAdminResourceRightsApiService) UpdateDelegatedAdminResourceRig
 		localVarReturnValue *DelegatedAdminResourceRightsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsApiService.UpdateDelegatedAdminResourceRights")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminResourceRightsAPIService.UpdateDelegatedAdminResourceRights")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

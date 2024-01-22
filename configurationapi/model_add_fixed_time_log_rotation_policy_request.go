@@ -19,24 +19,24 @@ var _ MappedNullable = &AddFixedTimeLogRotationPolicyRequest{}
 
 // AddFixedTimeLogRotationPolicyRequest struct for AddFixedTimeLogRotationPolicyRequest
 type AddFixedTimeLogRotationPolicyRequest struct {
-	// Name of the new Log Rotation Policy
-	PolicyName string                                    `json:"policyName"`
-	Schemas    []EnumfixedTimeLogRotationPolicySchemaUrn `json:"schemas"`
+	Schemas []EnumfixedTimeLogRotationPolicySchemaUrn `json:"schemas"`
 	// Specifies the time of day at which log rotation should occur.
 	TimeOfDay []string `json:"timeOfDay"`
 	// A description for this Log Rotation Policy
 	Description *string `json:"description,omitempty"`
+	// Name of the new Log Rotation Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddFixedTimeLogRotationPolicyRequest instantiates a new AddFixedTimeLogRotationPolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFixedTimeLogRotationPolicyRequest(policyName string, schemas []EnumfixedTimeLogRotationPolicySchemaUrn, timeOfDay []string) *AddFixedTimeLogRotationPolicyRequest {
+func NewAddFixedTimeLogRotationPolicyRequest(schemas []EnumfixedTimeLogRotationPolicySchemaUrn, timeOfDay []string, policyName string) *AddFixedTimeLogRotationPolicyRequest {
 	this := AddFixedTimeLogRotationPolicyRequest{}
-	this.PolicyName = policyName
 	this.Schemas = schemas
 	this.TimeOfDay = timeOfDay
+	this.PolicyName = policyName
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewAddFixedTimeLogRotationPolicyRequest(policyName string, schemas []Enumfi
 func NewAddFixedTimeLogRotationPolicyRequestWithDefaults() *AddFixedTimeLogRotationPolicyRequest {
 	this := AddFixedTimeLogRotationPolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddFixedTimeLogRotationPolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddFixedTimeLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddFixedTimeLogRotationPolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -152,6 +128,30 @@ func (o *AddFixedTimeLogRotationPolicyRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddFixedTimeLogRotationPolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddFixedTimeLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddFixedTimeLogRotationPolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddFixedTimeLogRotationPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -162,12 +162,12 @@ func (o AddFixedTimeLogRotationPolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddFixedTimeLogRotationPolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["timeOfDay"] = o.TimeOfDay
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &FileBasedAuditLogPublisherResponse{}
 
 // FileBasedAuditLogPublisherResponse struct for FileBasedAuditLogPublisherResponse
 type FileBasedAuditLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id      string                                    `json:"id"`
 	Schemas []EnumfileBasedAuditLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users.
 	SuppressInternalOperations *bool `json:"suppressInternalOperations,omitempty"`
@@ -100,15 +98,16 @@ type FileBasedAuditLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewFileBasedAuditLogPublisherResponse instantiates a new FileBasedAuditLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFileBasedAuditLogPublisherResponse(id string, schemas []EnumfileBasedAuditLogPublisherSchemaUrn, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, asynchronous bool, enabled bool) *FileBasedAuditLogPublisherResponse {
+func NewFileBasedAuditLogPublisherResponse(schemas []EnumfileBasedAuditLogPublisherSchemaUrn, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, asynchronous bool, enabled bool, id string) *FileBasedAuditLogPublisherResponse {
 	this := FileBasedAuditLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.LogFile = logFile
 	this.LogFilePermissions = logFilePermissions
@@ -116,6 +115,7 @@ func NewFileBasedAuditLogPublisherResponse(id string, schemas []EnumfileBasedAud
 	this.RetentionPolicy = retentionPolicy
 	this.Asynchronous = asynchronous
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -125,30 +125,6 @@ func NewFileBasedAuditLogPublisherResponse(id string, schemas []EnumfileBasedAud
 func NewFileBasedAuditLogPublisherResponseWithDefaults() *FileBasedAuditLogPublisherResponse {
 	this := FileBasedAuditLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *FileBasedAuditLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *FileBasedAuditLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *FileBasedAuditLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1471,6 +1447,30 @@ func (o *FileBasedAuditLogPublisherResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *FileBasedAuditLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *FileBasedAuditLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *FileBasedAuditLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o FileBasedAuditLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1481,7 +1481,6 @@ func (o FileBasedAuditLogPublisherResponse) MarshalJSON() ([]byte, error) {
 
 func (o FileBasedAuditLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.SuppressInternalOperations) {
 		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
@@ -1597,6 +1596,7 @@ func (o FileBasedAuditLogPublisherResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

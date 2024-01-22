@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LocalizationName** | **string** | Name of the new Consent Definition Localization | 
 **Schemas** | Pointer to [**[]EnumconsentDefinitionLocalizationSchemaUrn**](EnumconsentDefinitionLocalizationSchemaUrn.md) |  | [optional] 
 **Locale** | **string** | The locale of this Consent Definition Localization. | 
 **Version** | **string** | The version of this Consent Definition Localization, using the format MAJOR.MINOR. | 
 **TitleText** | Pointer to **string** | Localized text that may be used to provide a title or summary for a consent request or a granted consent. | [optional] 
 **DataText** | **string** | Localized text describing the data to be shared. | 
 **PurposeText** | **string** | Localized text describing how the data is to be used. | 
+**LocalizationName** | **string** | Name of the new Consent Definition Localization | 
 
 ## Methods
 
 ### NewAddConsentDefinitionLocalizationRequest
 
-`func NewAddConsentDefinitionLocalizationRequest(localizationName string, locale string, version string, dataText string, purposeText string, ) *AddConsentDefinitionLocalizationRequest`
+`func NewAddConsentDefinitionLocalizationRequest(locale string, version string, dataText string, purposeText string, localizationName string, ) *AddConsentDefinitionLocalizationRequest`
 
 NewAddConsentDefinitionLocalizationRequest instantiates a new AddConsentDefinitionLocalizationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddConsentDefinitionLocalizationRequestWithDefaults instantiates a new AddConsentDefinitionLocalizationRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetLocalizationName
-
-`func (o *AddConsentDefinitionLocalizationRequest) GetLocalizationName() string`
-
-GetLocalizationName returns the LocalizationName field if non-nil, zero value otherwise.
-
-### GetLocalizationNameOk
-
-`func (o *AddConsentDefinitionLocalizationRequest) GetLocalizationNameOk() (*string, bool)`
-
-GetLocalizationNameOk returns a tuple with the LocalizationName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLocalizationName
-
-`func (o *AddConsentDefinitionLocalizationRequest) SetLocalizationName(v string)`
-
-SetLocalizationName sets LocalizationName field to given value.
-
 
 ### GetSchemas
 
@@ -179,6 +159,26 @@ and a boolean to check if the value has been set.
 `func (o *AddConsentDefinitionLocalizationRequest) SetPurposeText(v string)`
 
 SetPurposeText sets PurposeText field to given value.
+
+
+### GetLocalizationName
+
+`func (o *AddConsentDefinitionLocalizationRequest) GetLocalizationName() string`
+
+GetLocalizationName returns the LocalizationName field if non-nil, zero value otherwise.
+
+### GetLocalizationNameOk
+
+`func (o *AddConsentDefinitionLocalizationRequest) GetLocalizationNameOk() (*string, bool)`
+
+GetLocalizationNameOk returns a tuple with the LocalizationName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalizationName
+
+`func (o *AddConsentDefinitionLocalizationRequest) SetLocalizationName(v string)`
+
+SetLocalizationName sets LocalizationName field to given value.
 
 
 

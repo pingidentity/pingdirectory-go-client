@@ -19,8 +19,6 @@ var _ MappedNullable = &AggregateResultCriteriaResponse{}
 
 // AggregateResultCriteriaResponse struct for AggregateResultCriteriaResponse
 type AggregateResultCriteriaResponse struct {
-	// Name of the Result Criteria
-	Id      string                                 `json:"id"`
 	Schemas []EnumaggregateResultCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a result criteria object that must match the associated operation result in order to match the aggregate result criteria. If one or more all-included result criteria objects are provided, then an operation result must match all of them in order to match the aggregate result criteria.
 	AllIncludedResultCriteria []string `json:"allIncludedResultCriteria,omitempty"`
@@ -34,16 +32,18 @@ type AggregateResultCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Result Criteria
+	Id string `json:"id"`
 }
 
 // NewAggregateResultCriteriaResponse instantiates a new AggregateResultCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAggregateResultCriteriaResponse(id string, schemas []EnumaggregateResultCriteriaSchemaUrn) *AggregateResultCriteriaResponse {
+func NewAggregateResultCriteriaResponse(schemas []EnumaggregateResultCriteriaSchemaUrn, id string) *AggregateResultCriteriaResponse {
 	this := AggregateResultCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAggregateResultCriteriaResponse(id string, schemas []EnumaggregateResult
 func NewAggregateResultCriteriaResponseWithDefaults() *AggregateResultCriteriaResponse {
 	this := AggregateResultCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AggregateResultCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AggregateResultCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AggregateResultCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -327,6 +303,30 @@ func (o *AggregateResultCriteriaResponse) SetUrnpingidentityschemasconfiguration
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AggregateResultCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AggregateResultCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AggregateResultCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AggregateResultCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -337,7 +337,6 @@ func (o AggregateResultCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o AggregateResultCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllIncludedResultCriteria) {
 		toSerialize["allIncludedResultCriteria"] = o.AllIncludedResultCriteria
@@ -360,6 +359,7 @@ func (o AggregateResultCriteriaResponse) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

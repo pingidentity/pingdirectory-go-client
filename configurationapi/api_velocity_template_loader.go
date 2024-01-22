@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// VelocityTemplateLoaderApiService VelocityTemplateLoaderApi service
-type VelocityTemplateLoaderApiService service
+// VelocityTemplateLoaderAPIService VelocityTemplateLoaderAPI service
+type VelocityTemplateLoaderAPIService service
 
 type ApiAddVelocityTemplateLoaderRequest struct {
 	ctx                              context.Context
-	ApiService                       *VelocityTemplateLoaderApiService
+	ApiService                       *VelocityTemplateLoaderAPIService
 	httpServletExtensionName         string
 	addVelocityTemplateLoaderRequest *AddVelocityTemplateLoaderRequest
 }
@@ -46,7 +46,7 @@ AddVelocityTemplateLoader Add a new Velocity Template Loader to the config
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiAddVelocityTemplateLoaderRequest
 */
-func (a *VelocityTemplateLoaderApiService) AddVelocityTemplateLoader(ctx context.Context, httpServletExtensionName string) ApiAddVelocityTemplateLoaderRequest {
+func (a *VelocityTemplateLoaderAPIService) AddVelocityTemplateLoader(ctx context.Context, httpServletExtensionName string) ApiAddVelocityTemplateLoaderRequest {
 	return ApiAddVelocityTemplateLoaderRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -57,7 +57,7 @@ func (a *VelocityTemplateLoaderApiService) AddVelocityTemplateLoader(ctx context
 // Execute executes the request
 //
 //	@return VelocityTemplateLoaderResponse
-func (a *VelocityTemplateLoaderApiService) AddVelocityTemplateLoaderExecute(r ApiAddVelocityTemplateLoaderRequest) (*VelocityTemplateLoaderResponse, *http.Response, error) {
+func (a *VelocityTemplateLoaderAPIService) AddVelocityTemplateLoaderExecute(r ApiAddVelocityTemplateLoaderRequest) (*VelocityTemplateLoaderResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *VelocityTemplateLoaderApiService) AddVelocityTemplateLoaderExecute(r Ap
 		localVarReturnValue *VelocityTemplateLoaderResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderApiService.AddVelocityTemplateLoader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderAPIService.AddVelocityTemplateLoader")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *VelocityTemplateLoaderApiService) AddVelocityTemplateLoaderExecute(r Ap
 
 type ApiDeleteVelocityTemplateLoaderRequest struct {
 	ctx                        context.Context
-	ApiService                 *VelocityTemplateLoaderApiService
+	ApiService                 *VelocityTemplateLoaderAPIService
 	velocityTemplateLoaderName string
 	httpServletExtensionName   string
 }
@@ -155,7 +155,7 @@ DeleteVelocityTemplateLoader Delete a Velocity Template Loader
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiDeleteVelocityTemplateLoaderRequest
 */
-func (a *VelocityTemplateLoaderApiService) DeleteVelocityTemplateLoader(ctx context.Context, velocityTemplateLoaderName string, httpServletExtensionName string) ApiDeleteVelocityTemplateLoaderRequest {
+func (a *VelocityTemplateLoaderAPIService) DeleteVelocityTemplateLoader(ctx context.Context, velocityTemplateLoaderName string, httpServletExtensionName string) ApiDeleteVelocityTemplateLoaderRequest {
 	return ApiDeleteVelocityTemplateLoaderRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -165,14 +165,14 @@ func (a *VelocityTemplateLoaderApiService) DeleteVelocityTemplateLoader(ctx cont
 }
 
 // Execute executes the request
-func (a *VelocityTemplateLoaderApiService) DeleteVelocityTemplateLoaderExecute(r ApiDeleteVelocityTemplateLoaderRequest) (*http.Response, error) {
+func (a *VelocityTemplateLoaderAPIService) DeleteVelocityTemplateLoaderExecute(r ApiDeleteVelocityTemplateLoaderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderApiService.DeleteVelocityTemplateLoader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderAPIService.DeleteVelocityTemplateLoader")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *VelocityTemplateLoaderApiService) DeleteVelocityTemplateLoaderExecute(r
 
 type ApiGetVelocityTemplateLoaderRequest struct {
 	ctx                        context.Context
-	ApiService                 *VelocityTemplateLoaderApiService
+	ApiService                 *VelocityTemplateLoaderAPIService
 	velocityTemplateLoaderName string
 	httpServletExtensionName   string
 }
@@ -249,7 +249,7 @@ GetVelocityTemplateLoader Returns a single Velocity Template Loader
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiGetVelocityTemplateLoaderRequest
 */
-func (a *VelocityTemplateLoaderApiService) GetVelocityTemplateLoader(ctx context.Context, velocityTemplateLoaderName string, httpServletExtensionName string) ApiGetVelocityTemplateLoaderRequest {
+func (a *VelocityTemplateLoaderAPIService) GetVelocityTemplateLoader(ctx context.Context, velocityTemplateLoaderName string, httpServletExtensionName string) ApiGetVelocityTemplateLoaderRequest {
 	return ApiGetVelocityTemplateLoaderRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -261,7 +261,7 @@ func (a *VelocityTemplateLoaderApiService) GetVelocityTemplateLoader(ctx context
 // Execute executes the request
 //
 //	@return VelocityTemplateLoaderResponse
-func (a *VelocityTemplateLoaderApiService) GetVelocityTemplateLoaderExecute(r ApiGetVelocityTemplateLoaderRequest) (*VelocityTemplateLoaderResponse, *http.Response, error) {
+func (a *VelocityTemplateLoaderAPIService) GetVelocityTemplateLoaderExecute(r ApiGetVelocityTemplateLoaderRequest) (*VelocityTemplateLoaderResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *VelocityTemplateLoaderApiService) GetVelocityTemplateLoaderExecute(r Ap
 		localVarReturnValue *VelocityTemplateLoaderResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderApiService.GetVelocityTemplateLoader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderAPIService.GetVelocityTemplateLoader")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *VelocityTemplateLoaderApiService) GetVelocityTemplateLoaderExecute(r Ap
 
 type ApiListVelocityTemplateLoadersRequest struct {
 	ctx                      context.Context
-	ApiService               *VelocityTemplateLoaderApiService
+	ApiService               *VelocityTemplateLoaderAPIService
 	httpServletExtensionName string
 	filter                   *string
 }
@@ -360,7 +360,7 @@ ListVelocityTemplateLoaders Returns a list of all Velocity Template Loader objec
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiListVelocityTemplateLoadersRequest
 */
-func (a *VelocityTemplateLoaderApiService) ListVelocityTemplateLoaders(ctx context.Context, httpServletExtensionName string) ApiListVelocityTemplateLoadersRequest {
+func (a *VelocityTemplateLoaderAPIService) ListVelocityTemplateLoaders(ctx context.Context, httpServletExtensionName string) ApiListVelocityTemplateLoadersRequest {
 	return ApiListVelocityTemplateLoadersRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -371,7 +371,7 @@ func (a *VelocityTemplateLoaderApiService) ListVelocityTemplateLoaders(ctx conte
 // Execute executes the request
 //
 //	@return VelocityTemplateLoaderListResponse
-func (a *VelocityTemplateLoaderApiService) ListVelocityTemplateLoadersExecute(r ApiListVelocityTemplateLoadersRequest) (*VelocityTemplateLoaderListResponse, *http.Response, error) {
+func (a *VelocityTemplateLoaderAPIService) ListVelocityTemplateLoadersExecute(r ApiListVelocityTemplateLoadersRequest) (*VelocityTemplateLoaderListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *VelocityTemplateLoaderApiService) ListVelocityTemplateLoadersExecute(r 
 		localVarReturnValue *VelocityTemplateLoaderListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderApiService.ListVelocityTemplateLoaders")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderAPIService.ListVelocityTemplateLoaders")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *VelocityTemplateLoaderApiService) ListVelocityTemplateLoadersExecute(r 
 
 type ApiUpdateVelocityTemplateLoaderRequest struct {
 	ctx                        context.Context
-	ApiService                 *VelocityTemplateLoaderApiService
+	ApiService                 *VelocityTemplateLoaderAPIService
 	velocityTemplateLoaderName string
 	httpServletExtensionName   string
 	updateRequest              *UpdateRequest
@@ -474,7 +474,7 @@ UpdateVelocityTemplateLoader Update an existing Velocity Template Loader by name
 	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiUpdateVelocityTemplateLoaderRequest
 */
-func (a *VelocityTemplateLoaderApiService) UpdateVelocityTemplateLoader(ctx context.Context, velocityTemplateLoaderName string, httpServletExtensionName string) ApiUpdateVelocityTemplateLoaderRequest {
+func (a *VelocityTemplateLoaderAPIService) UpdateVelocityTemplateLoader(ctx context.Context, velocityTemplateLoaderName string, httpServletExtensionName string) ApiUpdateVelocityTemplateLoaderRequest {
 	return ApiUpdateVelocityTemplateLoaderRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -486,7 +486,7 @@ func (a *VelocityTemplateLoaderApiService) UpdateVelocityTemplateLoader(ctx cont
 // Execute executes the request
 //
 //	@return VelocityTemplateLoaderResponse
-func (a *VelocityTemplateLoaderApiService) UpdateVelocityTemplateLoaderExecute(r ApiUpdateVelocityTemplateLoaderRequest) (*VelocityTemplateLoaderResponse, *http.Response, error) {
+func (a *VelocityTemplateLoaderAPIService) UpdateVelocityTemplateLoaderExecute(r ApiUpdateVelocityTemplateLoaderRequest) (*VelocityTemplateLoaderResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *VelocityTemplateLoaderApiService) UpdateVelocityTemplateLoaderExecute(r
 		localVarReturnValue *VelocityTemplateLoaderResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderApiService.UpdateVelocityTemplateLoader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityTemplateLoaderAPIService.UpdateVelocityTemplateLoader")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,8 +19,6 @@ var _ MappedNullable = &AuditDataSecurityRecurringTaskResponse{}
 
 // AuditDataSecurityRecurringTaskResponse struct for AuditDataSecurityRecurringTaskResponse
 type AuditDataSecurityRecurringTaskResponse struct {
-	// Name of the Recurring Task
-	Id      string                                        `json:"id"`
 	Schemas []EnumauditDataSecurityRecurringTaskSchemaUrn `json:"schemas"`
 	// The base directory below which generated reports will be written. Each invocation of the audit-data-security task will create a new subdirectory below this base directory whose name is a timestamp indicating when the report was generated.
 	BaseOutputDirectory string `json:"baseOutputDirectory"`
@@ -52,17 +50,19 @@ type AuditDataSecurityRecurringTaskResponse struct {
 	AlertOnFailure                                *bool                                              `json:"alertOnFailure,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Recurring Task
+	Id string `json:"id"`
 }
 
 // NewAuditDataSecurityRecurringTaskResponse instantiates a new AuditDataSecurityRecurringTaskResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuditDataSecurityRecurringTaskResponse(id string, schemas []EnumauditDataSecurityRecurringTaskSchemaUrn, baseOutputDirectory string) *AuditDataSecurityRecurringTaskResponse {
+func NewAuditDataSecurityRecurringTaskResponse(schemas []EnumauditDataSecurityRecurringTaskSchemaUrn, baseOutputDirectory string, id string) *AuditDataSecurityRecurringTaskResponse {
 	this := AuditDataSecurityRecurringTaskResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.BaseOutputDirectory = baseOutputDirectory
+	this.Id = id
 	return &this
 }
 
@@ -72,30 +72,6 @@ func NewAuditDataSecurityRecurringTaskResponse(id string, schemas []EnumauditDat
 func NewAuditDataSecurityRecurringTaskResponseWithDefaults() *AuditDataSecurityRecurringTaskResponse {
 	this := AuditDataSecurityRecurringTaskResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AuditDataSecurityRecurringTaskResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AuditDataSecurityRecurringTaskResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AuditDataSecurityRecurringTaskResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -626,6 +602,30 @@ func (o *AuditDataSecurityRecurringTaskResponse) SetUrnpingidentityschemasconfig
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AuditDataSecurityRecurringTaskResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AuditDataSecurityRecurringTaskResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AuditDataSecurityRecurringTaskResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AuditDataSecurityRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -636,7 +636,6 @@ func (o AuditDataSecurityRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 
 func (o AuditDataSecurityRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["baseOutputDirectory"] = o.BaseOutputDirectory
 	if !IsNil(o.DataSecurityAuditor) {
@@ -684,6 +683,7 @@ func (o AuditDataSecurityRecurringTaskResponse) ToMap() (map[string]interface{},
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

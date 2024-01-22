@@ -6,9 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ListenerName** | **string** | Name of the new Log File Rotation Listener | 
 **Schemas** | [**[]EnumthirdPartyLogFileRotationListenerSchemaUrn**](EnumthirdPartyLogFileRotationListenerSchemaUrn.md) |  | 
-**OutputDirectory** | Pointer to **string** | The path to the directory in which the summarize-access-log output should be written. If no value is provided, the output file will be written into the same directory as the rotated log file. | [optional] 
+**AwsExternalServer** | **string** | The external server with information to use when interacting with the AWS S3 service. | 
+**S3BucketName** | **string** | The name of the S3 bucket into which rotated log files should be copied. | 
+**TargetThroughputInMegabitsPerSecond** | Pointer to **int64** | The target throughput to attempt to achieve for data transfers to or from S3, in megabits per second. | [optional] 
+**MaximumConcurrentTransferConnections** | Pointer to **int64** | The maximum number of concurrent connections that may be used when transferring data to or from S3. | [optional] 
+**MaximumFileCountToRetain** | Pointer to **int64** | The maximum number of existing files matching the file retention pattern that should be retained in the S3 bucket after successfully uploading a newly rotated file. | [optional] 
+**MaximumFileAgeToRetain** | Pointer to **string** | The maximum length of time to retain files matching the file retention pattern that should be retained in the S3 bucket after successfully uploading a newly rotated file. | [optional] 
+**FileRetentionPattern** | Pointer to **string** | A regular expression pattern that will be used to identify which files are candidates for automatic removal based on the maximum-file-count-to-retain and maximum-file-age-to-retain properties. By default, all files in the bucket will be eligible for removal by retention processing. | [optional] 
 **Description** | Pointer to **string** | A description for this Log File Rotation Listener | [optional] 
 **Enabled** | **bool** | Indicates whether the Log File Rotation Listener is enabled for use. | 
+**OutputDirectory** | Pointer to **string** | The path to the directory in which the summarize-access-log output should be written. If no value is provided, the output file will be written into the same directory as the rotated log file. | [optional] 
 **CopyToDirectory** | **string** | The path to the directory to which log files should be copied. It must be different from the directory to which the log file is originally written, and administrators should ensure that the filesystem has sufficient space to hold files as they are copied. | 
 **CompressOnCopy** | Pointer to **bool** | Indicates whether the file should be gzip-compressed as it is copied into the destination directory. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Log File Rotation Listener. | 
@@ -18,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewAddLogFileRotationListenerRequest
 
-`func NewAddLogFileRotationListenerRequest(listenerName string, schemas []EnumthirdPartyLogFileRotationListenerSchemaUrn, enabled bool, copyToDirectory string, extensionClass string, ) *AddLogFileRotationListenerRequest`
+`func NewAddLogFileRotationListenerRequest(listenerName string, schemas []EnumthirdPartyLogFileRotationListenerSchemaUrn, awsExternalServer string, s3BucketName string, enabled bool, copyToDirectory string, extensionClass string, ) *AddLogFileRotationListenerRequest`
 
 NewAddLogFileRotationListenerRequest instantiates a new AddLogFileRotationListenerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -73,30 +80,170 @@ and a boolean to check if the value has been set.
 SetSchemas sets Schemas field to given value.
 
 
-### GetOutputDirectory
+### GetAwsExternalServer
 
-`func (o *AddLogFileRotationListenerRequest) GetOutputDirectory() string`
+`func (o *AddLogFileRotationListenerRequest) GetAwsExternalServer() string`
 
-GetOutputDirectory returns the OutputDirectory field if non-nil, zero value otherwise.
+GetAwsExternalServer returns the AwsExternalServer field if non-nil, zero value otherwise.
 
-### GetOutputDirectoryOk
+### GetAwsExternalServerOk
 
-`func (o *AddLogFileRotationListenerRequest) GetOutputDirectoryOk() (*string, bool)`
+`func (o *AddLogFileRotationListenerRequest) GetAwsExternalServerOk() (*string, bool)`
 
-GetOutputDirectoryOk returns a tuple with the OutputDirectory field if it's non-nil, zero value otherwise
+GetAwsExternalServerOk returns a tuple with the AwsExternalServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOutputDirectory
+### SetAwsExternalServer
 
-`func (o *AddLogFileRotationListenerRequest) SetOutputDirectory(v string)`
+`func (o *AddLogFileRotationListenerRequest) SetAwsExternalServer(v string)`
 
-SetOutputDirectory sets OutputDirectory field to given value.
+SetAwsExternalServer sets AwsExternalServer field to given value.
 
-### HasOutputDirectory
 
-`func (o *AddLogFileRotationListenerRequest) HasOutputDirectory() bool`
+### GetS3BucketName
 
-HasOutputDirectory returns a boolean if a field has been set.
+`func (o *AddLogFileRotationListenerRequest) GetS3BucketName() string`
+
+GetS3BucketName returns the S3BucketName field if non-nil, zero value otherwise.
+
+### GetS3BucketNameOk
+
+`func (o *AddLogFileRotationListenerRequest) GetS3BucketNameOk() (*string, bool)`
+
+GetS3BucketNameOk returns a tuple with the S3BucketName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetS3BucketName
+
+`func (o *AddLogFileRotationListenerRequest) SetS3BucketName(v string)`
+
+SetS3BucketName sets S3BucketName field to given value.
+
+
+### GetTargetThroughputInMegabitsPerSecond
+
+`func (o *AddLogFileRotationListenerRequest) GetTargetThroughputInMegabitsPerSecond() int64`
+
+GetTargetThroughputInMegabitsPerSecond returns the TargetThroughputInMegabitsPerSecond field if non-nil, zero value otherwise.
+
+### GetTargetThroughputInMegabitsPerSecondOk
+
+`func (o *AddLogFileRotationListenerRequest) GetTargetThroughputInMegabitsPerSecondOk() (*int64, bool)`
+
+GetTargetThroughputInMegabitsPerSecondOk returns a tuple with the TargetThroughputInMegabitsPerSecond field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetThroughputInMegabitsPerSecond
+
+`func (o *AddLogFileRotationListenerRequest) SetTargetThroughputInMegabitsPerSecond(v int64)`
+
+SetTargetThroughputInMegabitsPerSecond sets TargetThroughputInMegabitsPerSecond field to given value.
+
+### HasTargetThroughputInMegabitsPerSecond
+
+`func (o *AddLogFileRotationListenerRequest) HasTargetThroughputInMegabitsPerSecond() bool`
+
+HasTargetThroughputInMegabitsPerSecond returns a boolean if a field has been set.
+
+### GetMaximumConcurrentTransferConnections
+
+`func (o *AddLogFileRotationListenerRequest) GetMaximumConcurrentTransferConnections() int64`
+
+GetMaximumConcurrentTransferConnections returns the MaximumConcurrentTransferConnections field if non-nil, zero value otherwise.
+
+### GetMaximumConcurrentTransferConnectionsOk
+
+`func (o *AddLogFileRotationListenerRequest) GetMaximumConcurrentTransferConnectionsOk() (*int64, bool)`
+
+GetMaximumConcurrentTransferConnectionsOk returns a tuple with the MaximumConcurrentTransferConnections field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumConcurrentTransferConnections
+
+`func (o *AddLogFileRotationListenerRequest) SetMaximumConcurrentTransferConnections(v int64)`
+
+SetMaximumConcurrentTransferConnections sets MaximumConcurrentTransferConnections field to given value.
+
+### HasMaximumConcurrentTransferConnections
+
+`func (o *AddLogFileRotationListenerRequest) HasMaximumConcurrentTransferConnections() bool`
+
+HasMaximumConcurrentTransferConnections returns a boolean if a field has been set.
+
+### GetMaximumFileCountToRetain
+
+`func (o *AddLogFileRotationListenerRequest) GetMaximumFileCountToRetain() int64`
+
+GetMaximumFileCountToRetain returns the MaximumFileCountToRetain field if non-nil, zero value otherwise.
+
+### GetMaximumFileCountToRetainOk
+
+`func (o *AddLogFileRotationListenerRequest) GetMaximumFileCountToRetainOk() (*int64, bool)`
+
+GetMaximumFileCountToRetainOk returns a tuple with the MaximumFileCountToRetain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumFileCountToRetain
+
+`func (o *AddLogFileRotationListenerRequest) SetMaximumFileCountToRetain(v int64)`
+
+SetMaximumFileCountToRetain sets MaximumFileCountToRetain field to given value.
+
+### HasMaximumFileCountToRetain
+
+`func (o *AddLogFileRotationListenerRequest) HasMaximumFileCountToRetain() bool`
+
+HasMaximumFileCountToRetain returns a boolean if a field has been set.
+
+### GetMaximumFileAgeToRetain
+
+`func (o *AddLogFileRotationListenerRequest) GetMaximumFileAgeToRetain() string`
+
+GetMaximumFileAgeToRetain returns the MaximumFileAgeToRetain field if non-nil, zero value otherwise.
+
+### GetMaximumFileAgeToRetainOk
+
+`func (o *AddLogFileRotationListenerRequest) GetMaximumFileAgeToRetainOk() (*string, bool)`
+
+GetMaximumFileAgeToRetainOk returns a tuple with the MaximumFileAgeToRetain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumFileAgeToRetain
+
+`func (o *AddLogFileRotationListenerRequest) SetMaximumFileAgeToRetain(v string)`
+
+SetMaximumFileAgeToRetain sets MaximumFileAgeToRetain field to given value.
+
+### HasMaximumFileAgeToRetain
+
+`func (o *AddLogFileRotationListenerRequest) HasMaximumFileAgeToRetain() bool`
+
+HasMaximumFileAgeToRetain returns a boolean if a field has been set.
+
+### GetFileRetentionPattern
+
+`func (o *AddLogFileRotationListenerRequest) GetFileRetentionPattern() string`
+
+GetFileRetentionPattern returns the FileRetentionPattern field if non-nil, zero value otherwise.
+
+### GetFileRetentionPatternOk
+
+`func (o *AddLogFileRotationListenerRequest) GetFileRetentionPatternOk() (*string, bool)`
+
+GetFileRetentionPatternOk returns a tuple with the FileRetentionPattern field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFileRetentionPattern
+
+`func (o *AddLogFileRotationListenerRequest) SetFileRetentionPattern(v string)`
+
+SetFileRetentionPattern sets FileRetentionPattern field to given value.
+
+### HasFileRetentionPattern
+
+`func (o *AddLogFileRotationListenerRequest) HasFileRetentionPattern() bool`
+
+HasFileRetentionPattern returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -142,6 +289,31 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
+### GetOutputDirectory
+
+`func (o *AddLogFileRotationListenerRequest) GetOutputDirectory() string`
+
+GetOutputDirectory returns the OutputDirectory field if non-nil, zero value otherwise.
+
+### GetOutputDirectoryOk
+
+`func (o *AddLogFileRotationListenerRequest) GetOutputDirectoryOk() (*string, bool)`
+
+GetOutputDirectoryOk returns a tuple with the OutputDirectory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOutputDirectory
+
+`func (o *AddLogFileRotationListenerRequest) SetOutputDirectory(v string)`
+
+SetOutputDirectory sets OutputDirectory field to given value.
+
+### HasOutputDirectory
+
+`func (o *AddLogFileRotationListenerRequest) HasOutputDirectory() bool`
+
+HasOutputDirectory returns a boolean if a field has been set.
 
 ### GetCopyToDirectory
 

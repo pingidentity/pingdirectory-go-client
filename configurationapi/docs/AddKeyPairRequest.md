@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PairName** | **string** | Name of the new Key Pair | 
 **Schemas** | Pointer to [**[]EnumkeyPairSchemaUrn**](EnumkeyPairSchemaUrn.md) |  | [optional] 
 **KeyAlgorithm** | Pointer to [**EnumkeyPairKeyAlgorithmProp**](EnumkeyPairKeyAlgorithmProp.md) |  | [optional] 
 **SelfSignedCertificateValidity** | Pointer to **string** | The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens. | [optional] 
 **SubjectDN** | Pointer to **string** | The DN that should be used as the subject for the self-signed certificate and certificate signing request. This is not used when importing an existing key-pair. | [optional] 
 **CertificateChain** | Pointer to **string** | The PEM-encoded X.509 certificate chain. | [optional] 
 **PrivateKey** | Pointer to **string** | The base64-encoded private key that is encrypted using the preferred encryption settings definition. | [optional] 
+**PairName** | **string** | Name of the new Key Pair | 
 
 ## Methods
 
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddKeyPairRequestWithDefaults instantiates a new AddKeyPairRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPairName
-
-`func (o *AddKeyPairRequest) GetPairName() string`
-
-GetPairName returns the PairName field if non-nil, zero value otherwise.
-
-### GetPairNameOk
-
-`func (o *AddKeyPairRequest) GetPairNameOk() (*string, bool)`
-
-GetPairNameOk returns a tuple with the PairName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPairName
-
-`func (o *AddKeyPairRequest) SetPairName(v string)`
-
-SetPairName sets PairName field to given value.
-
 
 ### GetSchemas
 
@@ -200,6 +180,26 @@ SetPrivateKey sets PrivateKey field to given value.
 `func (o *AddKeyPairRequest) HasPrivateKey() bool`
 
 HasPrivateKey returns a boolean if a field has been set.
+
+### GetPairName
+
+`func (o *AddKeyPairRequest) GetPairName() string`
+
+GetPairName returns the PairName field if non-nil, zero value otherwise.
+
+### GetPairNameOk
+
+`func (o *AddKeyPairRequest) GetPairNameOk() (*string, bool)`
+
+GetPairNameOk returns a tuple with the PairName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPairName
+
+`func (o *AddKeyPairRequest) SetPairName(v string)`
+
+SetPairName sets PairName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

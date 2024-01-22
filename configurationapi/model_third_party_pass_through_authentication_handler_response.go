@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyPassThroughAuthenticationHandlerResponse{}
 
 // ThirdPartyPassThroughAuthenticationHandlerResponse struct for ThirdPartyPassThroughAuthenticationHandlerResponse
 type ThirdPartyPassThroughAuthenticationHandlerResponse struct {
-	// Name of the Pass Through Authentication Handler
-	Id      string                                                    `json:"id"`
 	Schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Pass Through Authentication Handler.
 	ExtensionClass string `json:"extensionClass"`
@@ -36,17 +34,19 @@ type ThirdPartyPassThroughAuthenticationHandlerResponse struct {
 	RequestCriteria                               *string                                            `json:"requestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Pass Through Authentication Handler
+	Id string `json:"id"`
 }
 
 // NewThirdPartyPassThroughAuthenticationHandlerResponse instantiates a new ThirdPartyPassThroughAuthenticationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyPassThroughAuthenticationHandlerResponse(id string, schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, extensionClass string) *ThirdPartyPassThroughAuthenticationHandlerResponse {
+func NewThirdPartyPassThroughAuthenticationHandlerResponse(schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, extensionClass string, id string) *ThirdPartyPassThroughAuthenticationHandlerResponse {
 	this := ThirdPartyPassThroughAuthenticationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewThirdPartyPassThroughAuthenticationHandlerResponse(id string, schemas []
 func NewThirdPartyPassThroughAuthenticationHandlerResponseWithDefaults() *ThirdPartyPassThroughAuthenticationHandlerResponse {
 	this := ThirdPartyPassThroughAuthenticationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -354,6 +330,30 @@ func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) SetUrnpingidentitys
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyPassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -364,7 +364,6 @@ func (o ThirdPartyPassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byt
 
 func (o ThirdPartyPassThroughAuthenticationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -388,6 +387,7 @@ func (o ThirdPartyPassThroughAuthenticationHandlerResponse) ToMap() (map[string]
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

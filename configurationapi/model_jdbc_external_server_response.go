@@ -19,8 +19,6 @@ var _ MappedNullable = &JdbcExternalServerResponse{}
 
 // JdbcExternalServerResponse struct for JdbcExternalServerResponse
 type JdbcExternalServerResponse struct {
-	// Name of the External Server
-	Id             string                               `json:"id"`
 	Schemas        []EnumjdbcExternalServerSchemaUrn    `json:"schemas"`
 	JdbcDriverType EnumexternalServerJdbcDriverTypeProp `json:"jdbcDriverType"`
 	// Specify the complete JDBC URL which will be used instead of the automatic URL format. You must select type 'other' for the jdbc-driver-type.
@@ -48,17 +46,19 @@ type JdbcExternalServerResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the External Server
+	Id string `json:"id"`
 }
 
 // NewJdbcExternalServerResponse instantiates a new JdbcExternalServerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJdbcExternalServerResponse(id string, schemas []EnumjdbcExternalServerSchemaUrn, jdbcDriverType EnumexternalServerJdbcDriverTypeProp) *JdbcExternalServerResponse {
+func NewJdbcExternalServerResponse(schemas []EnumjdbcExternalServerSchemaUrn, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, id string) *JdbcExternalServerResponse {
 	this := JdbcExternalServerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.JdbcDriverType = jdbcDriverType
+	this.Id = id
 	return &this
 }
 
@@ -68,30 +68,6 @@ func NewJdbcExternalServerResponse(id string, schemas []EnumjdbcExternalServerSc
 func NewJdbcExternalServerResponseWithDefaults() *JdbcExternalServerResponse {
 	this := JdbcExternalServerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *JdbcExternalServerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *JdbcExternalServerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *JdbcExternalServerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -590,6 +566,30 @@ func (o *JdbcExternalServerResponse) SetUrnpingidentityschemasconfigurationmessa
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *JdbcExternalServerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *JdbcExternalServerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *JdbcExternalServerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o JdbcExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -600,7 +600,6 @@ func (o JdbcExternalServerResponse) MarshalJSON() ([]byte, error) {
 
 func (o JdbcExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["jdbcDriverType"] = o.JdbcDriverType
 	if !IsNil(o.JdbcDriverURL) {
@@ -645,6 +644,7 @@ func (o JdbcExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

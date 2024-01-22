@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// SensitiveAttributeApiService SensitiveAttributeApi service
-type SensitiveAttributeApiService service
+// SensitiveAttributeAPIService SensitiveAttributeAPI service
+type SensitiveAttributeAPIService service
 
 type ApiAddSensitiveAttributeRequest struct {
 	ctx                          context.Context
-	ApiService                   *SensitiveAttributeApiService
+	ApiService                   *SensitiveAttributeAPIService
 	addSensitiveAttributeRequest *AddSensitiveAttributeRequest
 }
 
@@ -44,7 +44,7 @@ AddSensitiveAttribute Add a new Sensitive Attribute to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddSensitiveAttributeRequest
 */
-func (a *SensitiveAttributeApiService) AddSensitiveAttribute(ctx context.Context) ApiAddSensitiveAttributeRequest {
+func (a *SensitiveAttributeAPIService) AddSensitiveAttribute(ctx context.Context) ApiAddSensitiveAttributeRequest {
 	return ApiAddSensitiveAttributeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *SensitiveAttributeApiService) AddSensitiveAttribute(ctx context.Context
 // Execute executes the request
 //
 //	@return SensitiveAttributeResponse
-func (a *SensitiveAttributeApiService) AddSensitiveAttributeExecute(r ApiAddSensitiveAttributeRequest) (*SensitiveAttributeResponse, *http.Response, error) {
+func (a *SensitiveAttributeAPIService) AddSensitiveAttributeExecute(r ApiAddSensitiveAttributeRequest) (*SensitiveAttributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *SensitiveAttributeApiService) AddSensitiveAttributeExecute(r ApiAddSens
 		localVarReturnValue *SensitiveAttributeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeApiService.AddSensitiveAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeAPIService.AddSensitiveAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *SensitiveAttributeApiService) AddSensitiveAttributeExecute(r ApiAddSens
 
 type ApiDeleteSensitiveAttributeRequest struct {
 	ctx                    context.Context
-	ApiService             *SensitiveAttributeApiService
+	ApiService             *SensitiveAttributeAPIService
 	sensitiveAttributeName string
 }
 
@@ -149,7 +149,7 @@ DeleteSensitiveAttribute Delete a Sensitive Attribute
 	@param sensitiveAttributeName Name of the Sensitive Attribute
 	@return ApiDeleteSensitiveAttributeRequest
 */
-func (a *SensitiveAttributeApiService) DeleteSensitiveAttribute(ctx context.Context, sensitiveAttributeName string) ApiDeleteSensitiveAttributeRequest {
+func (a *SensitiveAttributeAPIService) DeleteSensitiveAttribute(ctx context.Context, sensitiveAttributeName string) ApiDeleteSensitiveAttributeRequest {
 	return ApiDeleteSensitiveAttributeRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -158,14 +158,14 @@ func (a *SensitiveAttributeApiService) DeleteSensitiveAttribute(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *SensitiveAttributeApiService) DeleteSensitiveAttributeExecute(r ApiDeleteSensitiveAttributeRequest) (*http.Response, error) {
+func (a *SensitiveAttributeAPIService) DeleteSensitiveAttributeExecute(r ApiDeleteSensitiveAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeApiService.DeleteSensitiveAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeAPIService.DeleteSensitiveAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *SensitiveAttributeApiService) DeleteSensitiveAttributeExecute(r ApiDele
 
 type ApiGetSensitiveAttributeRequest struct {
 	ctx                    context.Context
-	ApiService             *SensitiveAttributeApiService
+	ApiService             *SensitiveAttributeAPIService
 	sensitiveAttributeName string
 }
 
@@ -239,7 +239,7 @@ GetSensitiveAttribute Returns a single Sensitive Attribute
 	@param sensitiveAttributeName Name of the Sensitive Attribute
 	@return ApiGetSensitiveAttributeRequest
 */
-func (a *SensitiveAttributeApiService) GetSensitiveAttribute(ctx context.Context, sensitiveAttributeName string) ApiGetSensitiveAttributeRequest {
+func (a *SensitiveAttributeAPIService) GetSensitiveAttribute(ctx context.Context, sensitiveAttributeName string) ApiGetSensitiveAttributeRequest {
 	return ApiGetSensitiveAttributeRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -250,7 +250,7 @@ func (a *SensitiveAttributeApiService) GetSensitiveAttribute(ctx context.Context
 // Execute executes the request
 //
 //	@return SensitiveAttributeResponse
-func (a *SensitiveAttributeApiService) GetSensitiveAttributeExecute(r ApiGetSensitiveAttributeRequest) (*SensitiveAttributeResponse, *http.Response, error) {
+func (a *SensitiveAttributeAPIService) GetSensitiveAttributeExecute(r ApiGetSensitiveAttributeRequest) (*SensitiveAttributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *SensitiveAttributeApiService) GetSensitiveAttributeExecute(r ApiGetSens
 		localVarReturnValue *SensitiveAttributeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeApiService.GetSensitiveAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeAPIService.GetSensitiveAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *SensitiveAttributeApiService) GetSensitiveAttributeExecute(r ApiGetSens
 
 type ApiListSensitiveAttributesRequest struct {
 	ctx        context.Context
-	ApiService *SensitiveAttributeApiService
+	ApiService *SensitiveAttributeAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListSensitiveAttributes Returns a list of all Sensitive Attribute objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListSensitiveAttributesRequest
 */
-func (a *SensitiveAttributeApiService) ListSensitiveAttributes(ctx context.Context) ApiListSensitiveAttributesRequest {
+func (a *SensitiveAttributeAPIService) ListSensitiveAttributes(ctx context.Context) ApiListSensitiveAttributesRequest {
 	return ApiListSensitiveAttributesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *SensitiveAttributeApiService) ListSensitiveAttributes(ctx context.Conte
 // Execute executes the request
 //
 //	@return SensitiveAttributeListResponse
-func (a *SensitiveAttributeApiService) ListSensitiveAttributesExecute(r ApiListSensitiveAttributesRequest) (*SensitiveAttributeListResponse, *http.Response, error) {
+func (a *SensitiveAttributeAPIService) ListSensitiveAttributesExecute(r ApiListSensitiveAttributesRequest) (*SensitiveAttributeListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *SensitiveAttributeApiService) ListSensitiveAttributesExecute(r ApiListS
 		localVarReturnValue *SensitiveAttributeListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeApiService.ListSensitiveAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeAPIService.ListSensitiveAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *SensitiveAttributeApiService) ListSensitiveAttributesExecute(r ApiListS
 
 type ApiUpdateSensitiveAttributeRequest struct {
 	ctx                    context.Context
-	ApiService             *SensitiveAttributeApiService
+	ApiService             *SensitiveAttributeAPIService
 	sensitiveAttributeName string
 	updateRequest          *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateSensitiveAttribute Update an existing Sensitive Attribute by name
 	@param sensitiveAttributeName Name of the Sensitive Attribute
 	@return ApiUpdateSensitiveAttributeRequest
 */
-func (a *SensitiveAttributeApiService) UpdateSensitiveAttribute(ctx context.Context, sensitiveAttributeName string) ApiUpdateSensitiveAttributeRequest {
+func (a *SensitiveAttributeAPIService) UpdateSensitiveAttribute(ctx context.Context, sensitiveAttributeName string) ApiUpdateSensitiveAttributeRequest {
 	return ApiUpdateSensitiveAttributeRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -467,7 +467,7 @@ func (a *SensitiveAttributeApiService) UpdateSensitiveAttribute(ctx context.Cont
 // Execute executes the request
 //
 //	@return SensitiveAttributeResponse
-func (a *SensitiveAttributeApiService) UpdateSensitiveAttributeExecute(r ApiUpdateSensitiveAttributeRequest) (*SensitiveAttributeResponse, *http.Response, error) {
+func (a *SensitiveAttributeAPIService) UpdateSensitiveAttributeExecute(r ApiUpdateSensitiveAttributeRequest) (*SensitiveAttributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *SensitiveAttributeApiService) UpdateSensitiveAttributeExecute(r ApiUpda
 		localVarReturnValue *SensitiveAttributeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeApiService.UpdateSensitiveAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SensitiveAttributeAPIService.UpdateSensitiveAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

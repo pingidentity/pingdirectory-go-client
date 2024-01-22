@@ -1,14 +1,14 @@
-# \GaugeDataSourceApi
+# \GaugeDataSourceAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddGaugeDataSource**](GaugeDataSourceApi.md#AddGaugeDataSource) | **Post** /gauge-data-sources | Add a new Gauge Data Source to the config
-[**DeleteGaugeDataSource**](GaugeDataSourceApi.md#DeleteGaugeDataSource) | **Delete** /gauge-data-sources/{gauge-data-source-name} | Delete a Gauge Data Source
-[**GetGaugeDataSource**](GaugeDataSourceApi.md#GetGaugeDataSource) | **Get** /gauge-data-sources/{gauge-data-source-name} | Returns a single Gauge Data Source
-[**ListGaugeDataSources**](GaugeDataSourceApi.md#ListGaugeDataSources) | **Get** /gauge-data-sources | Returns a list of all Gauge Data Source objects
-[**UpdateGaugeDataSource**](GaugeDataSourceApi.md#UpdateGaugeDataSource) | **Patch** /gauge-data-sources/{gauge-data-source-name} | Update an existing Gauge Data Source by name
+[**AddGaugeDataSource**](GaugeDataSourceAPI.md#AddGaugeDataSource) | **Post** /gauge-data-sources | Add a new Gauge Data Source to the config
+[**DeleteGaugeDataSource**](GaugeDataSourceAPI.md#DeleteGaugeDataSource) | **Delete** /gauge-data-sources/{gauge-data-source-name} | Delete a Gauge Data Source
+[**GetGaugeDataSource**](GaugeDataSourceAPI.md#GetGaugeDataSource) | **Get** /gauge-data-sources/{gauge-data-source-name} | Returns a single Gauge Data Source
+[**ListGaugeDataSources**](GaugeDataSourceAPI.md#ListGaugeDataSources) | **Get** /gauge-data-sources | Returns a list of all Gauge Data Source objects
+[**UpdateGaugeDataSource**](GaugeDataSourceAPI.md#UpdateGaugeDataSource) | **Patch** /gauge-data-sources/{gauge-data-source-name} | Update an existing Gauge Data Source by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addGaugeDataSourceRequest := openapiclient.add_gauge_data_source_request{AddIndicatorGaugeDataSourceRequest: openapiclient.NewAddIndicatorGaugeDataSourceRequest("SourceName_example", []openapiclient.EnumindicatorGaugeDataSourceSchemaUrn{openapiclient.Enumindicator-gauge-data-sourceSchemaUrn("urn:pingidentity:schemas:configuration:2.0:gauge-data-source:indicator")}, "MonitorObjectclass_example", "MonitorAttribute_example")} // AddGaugeDataSourceRequest | Create a new Gauge Data Source in the config
+    addGaugeDataSourceRequest := openapiclient.add_gauge_data_source_request{AddIndicatorGaugeDataSourceRequest: openapiclient.NewAddIndicatorGaugeDataSourceRequest([]openapiclient.EnumindicatorGaugeDataSourceSchemaUrn{openapiclient.Enumindicator-gauge-data-sourceSchemaUrn("urn:pingidentity:schemas:configuration:2.0:gauge-data-source:indicator")}, "MonitorObjectclass_example", "MonitorAttribute_example", "SourceName_example")} // AddGaugeDataSourceRequest | Create a new Gauge Data Source in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GaugeDataSourceApi.AddGaugeDataSource(context.Background()).AddGaugeDataSourceRequest(addGaugeDataSourceRequest).Execute()
+    resp, r, err := apiClient.GaugeDataSourceAPI.AddGaugeDataSource(context.Background()).AddGaugeDataSourceRequest(addGaugeDataSourceRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceApi.AddGaugeDataSource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceAPI.AddGaugeDataSource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddGaugeDataSource`: AddGaugeDataSource200Response
-    fmt.Fprintf(os.Stdout, "Response from `GaugeDataSourceApi.AddGaugeDataSource`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GaugeDataSourceAPI.AddGaugeDataSource`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GaugeDataSourceApi.DeleteGaugeDataSource(context.Background(), gaugeDataSourceName).Execute()
+    r, err := apiClient.GaugeDataSourceAPI.DeleteGaugeDataSource(context.Background(), gaugeDataSourceName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceApi.DeleteGaugeDataSource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceAPI.DeleteGaugeDataSource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GaugeDataSourceApi.GetGaugeDataSource(context.Background(), gaugeDataSourceName).Execute()
+    resp, r, err := apiClient.GaugeDataSourceAPI.GetGaugeDataSource(context.Background(), gaugeDataSourceName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceApi.GetGaugeDataSource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceAPI.GetGaugeDataSource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetGaugeDataSource`: AddGaugeDataSource200Response
-    fmt.Fprintf(os.Stdout, "Response from `GaugeDataSourceApi.GetGaugeDataSource`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GaugeDataSourceAPI.GetGaugeDataSource`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GaugeDataSourceApi.ListGaugeDataSources(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.GaugeDataSourceAPI.ListGaugeDataSources(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceApi.ListGaugeDataSources``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceAPI.ListGaugeDataSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListGaugeDataSources`: GaugeDataSourceListResponse
-    fmt.Fprintf(os.Stdout, "Response from `GaugeDataSourceApi.ListGaugeDataSources`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GaugeDataSourceAPI.ListGaugeDataSources`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GaugeDataSourceApi.UpdateGaugeDataSource(context.Background(), gaugeDataSourceName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.GaugeDataSourceAPI.UpdateGaugeDataSource(context.Background(), gaugeDataSourceName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceApi.UpdateGaugeDataSource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceAPI.UpdateGaugeDataSource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateGaugeDataSource`: AddGaugeDataSource200Response
-    fmt.Fprintf(os.Stdout, "Response from `GaugeDataSourceApi.UpdateGaugeDataSource`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GaugeDataSourceAPI.UpdateGaugeDataSource`: %v\n", resp)
 }
 ```
 

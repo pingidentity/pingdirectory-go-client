@@ -19,8 +19,6 @@ var _ MappedNullable = &ApiKeyConjurAuthenticationMethodResponse{}
 
 // ApiKeyConjurAuthenticationMethodResponse struct for ApiKeyConjurAuthenticationMethodResponse
 type ApiKeyConjurAuthenticationMethodResponse struct {
-	// Name of the Conjur Authentication Method
-	Id      string                                          `json:"id"`
 	Schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The username for the user to authenticate.
 	Username string `json:"username"`
@@ -32,17 +30,19 @@ type ApiKeyConjurAuthenticationMethodResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Conjur Authentication Method
+	Id string `json:"id"`
 }
 
 // NewApiKeyConjurAuthenticationMethodResponse instantiates a new ApiKeyConjurAuthenticationMethodResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApiKeyConjurAuthenticationMethodResponse(id string, schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn, username string) *ApiKeyConjurAuthenticationMethodResponse {
+func NewApiKeyConjurAuthenticationMethodResponse(schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn, username string, id string) *ApiKeyConjurAuthenticationMethodResponse {
 	this := ApiKeyConjurAuthenticationMethodResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Username = username
+	this.Id = id
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewApiKeyConjurAuthenticationMethodResponse(id string, schemas []EnumapiKey
 func NewApiKeyConjurAuthenticationMethodResponseWithDefaults() *ApiKeyConjurAuthenticationMethodResponse {
 	this := ApiKeyConjurAuthenticationMethodResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ApiKeyConjurAuthenticationMethodResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ApiKeyConjurAuthenticationMethodResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ApiKeyConjurAuthenticationMethodResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -286,6 +262,30 @@ func (o *ApiKeyConjurAuthenticationMethodResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ApiKeyConjurAuthenticationMethodResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ApiKeyConjurAuthenticationMethodResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ApiKeyConjurAuthenticationMethodResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ApiKeyConjurAuthenticationMethodResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -296,7 +296,6 @@ func (o ApiKeyConjurAuthenticationMethodResponse) MarshalJSON() ([]byte, error) 
 
 func (o ApiKeyConjurAuthenticationMethodResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["username"] = o.Username
 	if !IsNil(o.Password) {
@@ -314,6 +313,7 @@ func (o ApiKeyConjurAuthenticationMethodResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

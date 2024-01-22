@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GeneratorName** | **string** | Name of the new Password Generator | 
 **Schemas** | [**[]EnumrandomPasswordGeneratorSchemaUrn**](EnumrandomPasswordGeneratorSchemaUrn.md) |  | 
 **PasswordCharacterSet** | **[]string** | Specifies one or more named character sets. | 
 **PasswordFormat** | **string** | Specifies the format to use for the generated password. | 
 **Description** | Pointer to **string** | A description for this Password Generator | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Generator is enabled for use. | 
+**GeneratorName** | **string** | Name of the new Password Generator | 
 
 ## Methods
 
 ### NewAddRandomPasswordGeneratorRequest
 
-`func NewAddRandomPasswordGeneratorRequest(generatorName string, schemas []EnumrandomPasswordGeneratorSchemaUrn, passwordCharacterSet []string, passwordFormat string, enabled bool, ) *AddRandomPasswordGeneratorRequest`
+`func NewAddRandomPasswordGeneratorRequest(schemas []EnumrandomPasswordGeneratorSchemaUrn, passwordCharacterSet []string, passwordFormat string, enabled bool, generatorName string, ) *AddRandomPasswordGeneratorRequest`
 
 NewAddRandomPasswordGeneratorRequest instantiates a new AddRandomPasswordGeneratorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,26 +29,6 @@ will change when the set of required properties is changed
 NewAddRandomPasswordGeneratorRequestWithDefaults instantiates a new AddRandomPasswordGeneratorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetGeneratorName
-
-`func (o *AddRandomPasswordGeneratorRequest) GetGeneratorName() string`
-
-GetGeneratorName returns the GeneratorName field if non-nil, zero value otherwise.
-
-### GetGeneratorNameOk
-
-`func (o *AddRandomPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool)`
-
-GetGeneratorNameOk returns a tuple with the GeneratorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGeneratorName
-
-`func (o *AddRandomPasswordGeneratorRequest) SetGeneratorName(v string)`
-
-SetGeneratorName sets GeneratorName field to given value.
-
 
 ### GetSchemas
 
@@ -153,6 +133,26 @@ and a boolean to check if the value has been set.
 `func (o *AddRandomPasswordGeneratorRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetGeneratorName
+
+`func (o *AddRandomPasswordGeneratorRequest) GetGeneratorName() string`
+
+GetGeneratorName returns the GeneratorName field if non-nil, zero value otherwise.
+
+### GetGeneratorNameOk
+
+`func (o *AddRandomPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool)`
+
+GetGeneratorNameOk returns a tuple with the GeneratorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGeneratorName
+
+`func (o *AddRandomPasswordGeneratorRequest) SetGeneratorName(v string)`
+
+SetGeneratorName sets GeneratorName field to given value.
 
 
 

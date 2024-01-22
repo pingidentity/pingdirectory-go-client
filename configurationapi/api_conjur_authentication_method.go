@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ConjurAuthenticationMethodApiService ConjurAuthenticationMethodApi service
-type ConjurAuthenticationMethodApiService service
+// ConjurAuthenticationMethodAPIService ConjurAuthenticationMethodAPI service
+type ConjurAuthenticationMethodAPIService service
 
 type ApiAddConjurAuthenticationMethodRequest struct {
 	ctx                                        context.Context
-	ApiService                                 *ConjurAuthenticationMethodApiService
+	ApiService                                 *ConjurAuthenticationMethodAPIService
 	addApiKeyConjurAuthenticationMethodRequest *AddApiKeyConjurAuthenticationMethodRequest
 }
 
@@ -44,7 +44,7 @@ AddConjurAuthenticationMethod Add a new Conjur Authentication Method to the conf
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddConjurAuthenticationMethodRequest
 */
-func (a *ConjurAuthenticationMethodApiService) AddConjurAuthenticationMethod(ctx context.Context) ApiAddConjurAuthenticationMethodRequest {
+func (a *ConjurAuthenticationMethodAPIService) AddConjurAuthenticationMethod(ctx context.Context) ApiAddConjurAuthenticationMethodRequest {
 	return ApiAddConjurAuthenticationMethodRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *ConjurAuthenticationMethodApiService) AddConjurAuthenticationMethod(ctx
 // Execute executes the request
 //
 //	@return ApiKeyConjurAuthenticationMethodResponse
-func (a *ConjurAuthenticationMethodApiService) AddConjurAuthenticationMethodExecute(r ApiAddConjurAuthenticationMethodRequest) (*ApiKeyConjurAuthenticationMethodResponse, *http.Response, error) {
+func (a *ConjurAuthenticationMethodAPIService) AddConjurAuthenticationMethodExecute(r ApiAddConjurAuthenticationMethodRequest) (*ApiKeyConjurAuthenticationMethodResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *ConjurAuthenticationMethodApiService) AddConjurAuthenticationMethodExec
 		localVarReturnValue *ApiKeyConjurAuthenticationMethodResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodApiService.AddConjurAuthenticationMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodAPIService.AddConjurAuthenticationMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *ConjurAuthenticationMethodApiService) AddConjurAuthenticationMethodExec
 
 type ApiDeleteConjurAuthenticationMethodRequest struct {
 	ctx                            context.Context
-	ApiService                     *ConjurAuthenticationMethodApiService
+	ApiService                     *ConjurAuthenticationMethodAPIService
 	conjurAuthenticationMethodName string
 }
 
@@ -149,7 +149,7 @@ DeleteConjurAuthenticationMethod Delete a Conjur Authentication Method
 	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method
 	@return ApiDeleteConjurAuthenticationMethodRequest
 */
-func (a *ConjurAuthenticationMethodApiService) DeleteConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiDeleteConjurAuthenticationMethodRequest {
+func (a *ConjurAuthenticationMethodAPIService) DeleteConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiDeleteConjurAuthenticationMethodRequest {
 	return ApiDeleteConjurAuthenticationMethodRequest{
 		ApiService:                     a,
 		ctx:                            ctx,
@@ -158,14 +158,14 @@ func (a *ConjurAuthenticationMethodApiService) DeleteConjurAuthenticationMethod(
 }
 
 // Execute executes the request
-func (a *ConjurAuthenticationMethodApiService) DeleteConjurAuthenticationMethodExecute(r ApiDeleteConjurAuthenticationMethodRequest) (*http.Response, error) {
+func (a *ConjurAuthenticationMethodAPIService) DeleteConjurAuthenticationMethodExecute(r ApiDeleteConjurAuthenticationMethodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodApiService.DeleteConjurAuthenticationMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodAPIService.DeleteConjurAuthenticationMethod")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *ConjurAuthenticationMethodApiService) DeleteConjurAuthenticationMethodE
 
 type ApiGetConjurAuthenticationMethodRequest struct {
 	ctx                            context.Context
-	ApiService                     *ConjurAuthenticationMethodApiService
+	ApiService                     *ConjurAuthenticationMethodAPIService
 	conjurAuthenticationMethodName string
 }
 
@@ -239,7 +239,7 @@ GetConjurAuthenticationMethod Returns a single Conjur Authentication Method
 	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method
 	@return ApiGetConjurAuthenticationMethodRequest
 */
-func (a *ConjurAuthenticationMethodApiService) GetConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiGetConjurAuthenticationMethodRequest {
+func (a *ConjurAuthenticationMethodAPIService) GetConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiGetConjurAuthenticationMethodRequest {
 	return ApiGetConjurAuthenticationMethodRequest{
 		ApiService:                     a,
 		ctx:                            ctx,
@@ -250,7 +250,7 @@ func (a *ConjurAuthenticationMethodApiService) GetConjurAuthenticationMethod(ctx
 // Execute executes the request
 //
 //	@return ApiKeyConjurAuthenticationMethodResponse
-func (a *ConjurAuthenticationMethodApiService) GetConjurAuthenticationMethodExecute(r ApiGetConjurAuthenticationMethodRequest) (*ApiKeyConjurAuthenticationMethodResponse, *http.Response, error) {
+func (a *ConjurAuthenticationMethodAPIService) GetConjurAuthenticationMethodExecute(r ApiGetConjurAuthenticationMethodRequest) (*ApiKeyConjurAuthenticationMethodResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *ConjurAuthenticationMethodApiService) GetConjurAuthenticationMethodExec
 		localVarReturnValue *ApiKeyConjurAuthenticationMethodResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodApiService.GetConjurAuthenticationMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodAPIService.GetConjurAuthenticationMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *ConjurAuthenticationMethodApiService) GetConjurAuthenticationMethodExec
 
 type ApiListConjurAuthenticationMethodsRequest struct {
 	ctx        context.Context
-	ApiService *ConjurAuthenticationMethodApiService
+	ApiService *ConjurAuthenticationMethodAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListConjurAuthenticationMethods Returns a list of all Conjur Authentication Meth
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListConjurAuthenticationMethodsRequest
 */
-func (a *ConjurAuthenticationMethodApiService) ListConjurAuthenticationMethods(ctx context.Context) ApiListConjurAuthenticationMethodsRequest {
+func (a *ConjurAuthenticationMethodAPIService) ListConjurAuthenticationMethods(ctx context.Context) ApiListConjurAuthenticationMethodsRequest {
 	return ApiListConjurAuthenticationMethodsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *ConjurAuthenticationMethodApiService) ListConjurAuthenticationMethods(c
 // Execute executes the request
 //
 //	@return ConjurAuthenticationMethodListResponse
-func (a *ConjurAuthenticationMethodApiService) ListConjurAuthenticationMethodsExecute(r ApiListConjurAuthenticationMethodsRequest) (*ConjurAuthenticationMethodListResponse, *http.Response, error) {
+func (a *ConjurAuthenticationMethodAPIService) ListConjurAuthenticationMethodsExecute(r ApiListConjurAuthenticationMethodsRequest) (*ConjurAuthenticationMethodListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *ConjurAuthenticationMethodApiService) ListConjurAuthenticationMethodsEx
 		localVarReturnValue *ConjurAuthenticationMethodListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodApiService.ListConjurAuthenticationMethods")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodAPIService.ListConjurAuthenticationMethods")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *ConjurAuthenticationMethodApiService) ListConjurAuthenticationMethodsEx
 
 type ApiUpdateConjurAuthenticationMethodRequest struct {
 	ctx                            context.Context
-	ApiService                     *ConjurAuthenticationMethodApiService
+	ApiService                     *ConjurAuthenticationMethodAPIService
 	conjurAuthenticationMethodName string
 	updateRequest                  *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateConjurAuthenticationMethod Update an existing Conjur Authentication Method
 	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method
 	@return ApiUpdateConjurAuthenticationMethodRequest
 */
-func (a *ConjurAuthenticationMethodApiService) UpdateConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiUpdateConjurAuthenticationMethodRequest {
+func (a *ConjurAuthenticationMethodAPIService) UpdateConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiUpdateConjurAuthenticationMethodRequest {
 	return ApiUpdateConjurAuthenticationMethodRequest{
 		ApiService:                     a,
 		ctx:                            ctx,
@@ -467,7 +467,7 @@ func (a *ConjurAuthenticationMethodApiService) UpdateConjurAuthenticationMethod(
 // Execute executes the request
 //
 //	@return ApiKeyConjurAuthenticationMethodResponse
-func (a *ConjurAuthenticationMethodApiService) UpdateConjurAuthenticationMethodExecute(r ApiUpdateConjurAuthenticationMethodRequest) (*ApiKeyConjurAuthenticationMethodResponse, *http.Response, error) {
+func (a *ConjurAuthenticationMethodAPIService) UpdateConjurAuthenticationMethodExecute(r ApiUpdateConjurAuthenticationMethodRequest) (*ApiKeyConjurAuthenticationMethodResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *ConjurAuthenticationMethodApiService) UpdateConjurAuthenticationMethodE
 		localVarReturnValue *ApiKeyConjurAuthenticationMethodResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodApiService.UpdateConjurAuthenticationMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodAPIService.UpdateConjurAuthenticationMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

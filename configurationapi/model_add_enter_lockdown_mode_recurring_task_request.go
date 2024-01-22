@@ -19,9 +19,7 @@ var _ MappedNullable = &AddEnterLockdownModeRecurringTaskRequest{}
 
 // AddEnterLockdownModeRecurringTaskRequest struct for AddEnterLockdownModeRecurringTaskRequest
 type AddEnterLockdownModeRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                                        `json:"taskName"`
-	Schemas  []EnumenterLockdownModeRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumenterLockdownModeRecurringTaskSchemaUrn `json:"schemas"`
 	// The reason that the server is being placed in lockdown mode.
 	Reason *string `json:"reason,omitempty"`
 	// A description for this Recurring Task
@@ -40,16 +38,18 @@ type AddEnterLockdownModeRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddEnterLockdownModeRecurringTaskRequest instantiates a new AddEnterLockdownModeRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddEnterLockdownModeRecurringTaskRequest(taskName string, schemas []EnumenterLockdownModeRecurringTaskSchemaUrn) *AddEnterLockdownModeRecurringTaskRequest {
+func NewAddEnterLockdownModeRecurringTaskRequest(schemas []EnumenterLockdownModeRecurringTaskSchemaUrn, taskName string) *AddEnterLockdownModeRecurringTaskRequest {
 	this := AddEnterLockdownModeRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
+	this.TaskName = taskName
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewAddEnterLockdownModeRecurringTaskRequest(taskName string, schemas []Enum
 func NewAddEnterLockdownModeRecurringTaskRequestWithDefaults() *AddEnterLockdownModeRecurringTaskRequest {
 	this := AddEnterLockdownModeRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddEnterLockdownModeRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddEnterLockdownModeRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddEnterLockdownModeRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -397,6 +373,30 @@ func (o *AddEnterLockdownModeRecurringTaskRequest) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddEnterLockdownModeRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddEnterLockdownModeRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddEnterLockdownModeRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddEnterLockdownModeRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -407,7 +407,6 @@ func (o AddEnterLockdownModeRecurringTaskRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddEnterLockdownModeRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
@@ -436,6 +435,7 @@ func (o AddEnterLockdownModeRecurringTaskRequest) ToMap() (map[string]interface{
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

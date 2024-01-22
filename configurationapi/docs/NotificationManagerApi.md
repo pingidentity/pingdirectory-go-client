@@ -1,14 +1,14 @@
-# \NotificationManagerApi
+# \NotificationManagerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddNotificationManager**](NotificationManagerApi.md#AddNotificationManager) | **Post** /notification-managers | Add a new Notification Manager to the config
-[**DeleteNotificationManager**](NotificationManagerApi.md#DeleteNotificationManager) | **Delete** /notification-managers/{notification-manager-name} | Delete a Notification Manager
-[**GetNotificationManager**](NotificationManagerApi.md#GetNotificationManager) | **Get** /notification-managers/{notification-manager-name} | Returns a single Notification Manager
-[**ListNotificationManagers**](NotificationManagerApi.md#ListNotificationManagers) | **Get** /notification-managers | Returns a list of all Notification Manager objects
-[**UpdateNotificationManager**](NotificationManagerApi.md#UpdateNotificationManager) | **Patch** /notification-managers/{notification-manager-name} | Update an existing Notification Manager by name
+[**AddNotificationManager**](NotificationManagerAPI.md#AddNotificationManager) | **Post** /notification-managers | Add a new Notification Manager to the config
+[**DeleteNotificationManager**](NotificationManagerAPI.md#DeleteNotificationManager) | **Delete** /notification-managers/{notification-manager-name} | Delete a Notification Manager
+[**GetNotificationManager**](NotificationManagerAPI.md#GetNotificationManager) | **Get** /notification-managers/{notification-manager-name} | Returns a single Notification Manager
+[**ListNotificationManagers**](NotificationManagerAPI.md#ListNotificationManagers) | **Get** /notification-managers | Returns a list of all Notification Manager objects
+[**UpdateNotificationManager**](NotificationManagerAPI.md#UpdateNotificationManager) | **Patch** /notification-managers/{notification-manager-name} | Update an existing Notification Manager by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addThirdPartyNotificationManagerRequest := *openapiclient.NewAddThirdPartyNotificationManagerRequest("ManagerName_example", []openapiclient.EnumthirdPartyNotificationManagerSchemaUrn{openapiclient.Enumthird-party-notification-managerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party")}, "ExtensionClass_example", false, "SubscriptionBaseDN_example") // AddThirdPartyNotificationManagerRequest | Create a new Notification Manager in the config
+    addThirdPartyNotificationManagerRequest := *openapiclient.NewAddThirdPartyNotificationManagerRequest([]openapiclient.EnumthirdPartyNotificationManagerSchemaUrn{openapiclient.Enumthird-party-notification-managerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party")}, "ExtensionClass_example", false, "SubscriptionBaseDN_example", "ManagerName_example") // AddThirdPartyNotificationManagerRequest | Create a new Notification Manager in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationManagerApi.AddNotificationManager(context.Background()).AddThirdPartyNotificationManagerRequest(addThirdPartyNotificationManagerRequest).Execute()
+    resp, r, err := apiClient.NotificationManagerAPI.AddNotificationManager(context.Background()).AddThirdPartyNotificationManagerRequest(addThirdPartyNotificationManagerRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerApi.AddNotificationManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerAPI.AddNotificationManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddNotificationManager`: ThirdPartyNotificationManagerResponse
-    fmt.Fprintf(os.Stdout, "Response from `NotificationManagerApi.AddNotificationManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationManagerAPI.AddNotificationManager`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.NotificationManagerApi.DeleteNotificationManager(context.Background(), notificationManagerName).Execute()
+    r, err := apiClient.NotificationManagerAPI.DeleteNotificationManager(context.Background(), notificationManagerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerApi.DeleteNotificationManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerAPI.DeleteNotificationManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationManagerApi.GetNotificationManager(context.Background(), notificationManagerName).Execute()
+    resp, r, err := apiClient.NotificationManagerAPI.GetNotificationManager(context.Background(), notificationManagerName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerApi.GetNotificationManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerAPI.GetNotificationManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetNotificationManager`: ThirdPartyNotificationManagerResponse
-    fmt.Fprintf(os.Stdout, "Response from `NotificationManagerApi.GetNotificationManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationManagerAPI.GetNotificationManager`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationManagerApi.ListNotificationManagers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.NotificationManagerAPI.ListNotificationManagers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerApi.ListNotificationManagers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerAPI.ListNotificationManagers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListNotificationManagers`: NotificationManagerListResponse
-    fmt.Fprintf(os.Stdout, "Response from `NotificationManagerApi.ListNotificationManagers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationManagerAPI.ListNotificationManagers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationManagerApi.UpdateNotificationManager(context.Background(), notificationManagerName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.NotificationManagerAPI.UpdateNotificationManager(context.Background(), notificationManagerName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerApi.UpdateNotificationManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerAPI.UpdateNotificationManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateNotificationManager`: ThirdPartyNotificationManagerResponse
-    fmt.Fprintf(os.Stdout, "Response from `NotificationManagerApi.UpdateNotificationManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `NotificationManagerAPI.UpdateNotificationManager`: %v\n", resp)
 }
 ```
 

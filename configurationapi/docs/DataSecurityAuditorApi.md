@@ -1,14 +1,14 @@
-# \DataSecurityAuditorApi
+# \DataSecurityAuditorAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddDataSecurityAuditor**](DataSecurityAuditorApi.md#AddDataSecurityAuditor) | **Post** /data-security-auditors | Add a new Data Security Auditor to the config
-[**DeleteDataSecurityAuditor**](DataSecurityAuditorApi.md#DeleteDataSecurityAuditor) | **Delete** /data-security-auditors/{data-security-auditor-name} | Delete a Data Security Auditor
-[**GetDataSecurityAuditor**](DataSecurityAuditorApi.md#GetDataSecurityAuditor) | **Get** /data-security-auditors/{data-security-auditor-name} | Returns a single Data Security Auditor
-[**ListDataSecurityAuditors**](DataSecurityAuditorApi.md#ListDataSecurityAuditors) | **Get** /data-security-auditors | Returns a list of all Data Security Auditor objects
-[**UpdateDataSecurityAuditor**](DataSecurityAuditorApi.md#UpdateDataSecurityAuditor) | **Patch** /data-security-auditors/{data-security-auditor-name} | Update an existing Data Security Auditor by name
+[**AddDataSecurityAuditor**](DataSecurityAuditorAPI.md#AddDataSecurityAuditor) | **Post** /data-security-auditors | Add a new Data Security Auditor to the config
+[**DeleteDataSecurityAuditor**](DataSecurityAuditorAPI.md#DeleteDataSecurityAuditor) | **Delete** /data-security-auditors/{data-security-auditor-name} | Delete a Data Security Auditor
+[**GetDataSecurityAuditor**](DataSecurityAuditorAPI.md#GetDataSecurityAuditor) | **Get** /data-security-auditors/{data-security-auditor-name} | Returns a single Data Security Auditor
+[**ListDataSecurityAuditors**](DataSecurityAuditorAPI.md#ListDataSecurityAuditors) | **Get** /data-security-auditors | Returns a list of all Data Security Auditor objects
+[**UpdateDataSecurityAuditor**](DataSecurityAuditorAPI.md#UpdateDataSecurityAuditor) | **Patch** /data-security-auditors/{data-security-auditor-name} | Update an existing Data Security Auditor by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addDataSecurityAuditorRequest := openapiclient.add_data_security_auditor_request{AddAccessControlDataSecurityAuditorRequest: openapiclient.NewAddAccessControlDataSecurityAuditorRequest("AuditorName_example", []openapiclient.EnumaccessControlDataSecurityAuditorSchemaUrn{openapiclient.Enumaccess-control-data-security-auditorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:data-security-auditor:access-control")})} // AddDataSecurityAuditorRequest | Create a new Data Security Auditor in the config
+    addDataSecurityAuditorRequest := openapiclient.add_data_security_auditor_request{AddAccessControlDataSecurityAuditorRequest: openapiclient.NewAddAccessControlDataSecurityAuditorRequest([]openapiclient.EnumaccessControlDataSecurityAuditorSchemaUrn{openapiclient.Enumaccess-control-data-security-auditorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:data-security-auditor:access-control")}, "AuditorName_example")} // AddDataSecurityAuditorRequest | Create a new Data Security Auditor in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataSecurityAuditorApi.AddDataSecurityAuditor(context.Background()).AddDataSecurityAuditorRequest(addDataSecurityAuditorRequest).Execute()
+    resp, r, err := apiClient.DataSecurityAuditorAPI.AddDataSecurityAuditor(context.Background()).AddDataSecurityAuditorRequest(addDataSecurityAuditorRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorApi.AddDataSecurityAuditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorAPI.AddDataSecurityAuditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddDataSecurityAuditor`: AddDataSecurityAuditor200Response
-    fmt.Fprintf(os.Stdout, "Response from `DataSecurityAuditorApi.AddDataSecurityAuditor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataSecurityAuditorAPI.AddDataSecurityAuditor`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DataSecurityAuditorApi.DeleteDataSecurityAuditor(context.Background(), dataSecurityAuditorName).Execute()
+    r, err := apiClient.DataSecurityAuditorAPI.DeleteDataSecurityAuditor(context.Background(), dataSecurityAuditorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorApi.DeleteDataSecurityAuditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorAPI.DeleteDataSecurityAuditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataSecurityAuditorApi.GetDataSecurityAuditor(context.Background(), dataSecurityAuditorName).Execute()
+    resp, r, err := apiClient.DataSecurityAuditorAPI.GetDataSecurityAuditor(context.Background(), dataSecurityAuditorName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorApi.GetDataSecurityAuditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorAPI.GetDataSecurityAuditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetDataSecurityAuditor`: AddDataSecurityAuditor200Response
-    fmt.Fprintf(os.Stdout, "Response from `DataSecurityAuditorApi.GetDataSecurityAuditor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataSecurityAuditorAPI.GetDataSecurityAuditor`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataSecurityAuditorApi.ListDataSecurityAuditors(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.DataSecurityAuditorAPI.ListDataSecurityAuditors(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorApi.ListDataSecurityAuditors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorAPI.ListDataSecurityAuditors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListDataSecurityAuditors`: DataSecurityAuditorListResponse
-    fmt.Fprintf(os.Stdout, "Response from `DataSecurityAuditorApi.ListDataSecurityAuditors`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataSecurityAuditorAPI.ListDataSecurityAuditors`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DataSecurityAuditorApi.UpdateDataSecurityAuditor(context.Background(), dataSecurityAuditorName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.DataSecurityAuditorAPI.UpdateDataSecurityAuditor(context.Background(), dataSecurityAuditorName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorApi.UpdateDataSecurityAuditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorAPI.UpdateDataSecurityAuditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateDataSecurityAuditor`: AddDataSecurityAuditor200Response
-    fmt.Fprintf(os.Stdout, "Response from `DataSecurityAuditorApi.UpdateDataSecurityAuditor`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `DataSecurityAuditorAPI.UpdateDataSecurityAuditor`: %v\n", resp)
 }
 ```
 

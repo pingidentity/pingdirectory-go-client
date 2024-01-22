@@ -19,8 +19,6 @@ var _ MappedNullable = &UniqueCharactersPasswordValidatorResponse{}
 
 // UniqueCharactersPasswordValidatorResponse struct for UniqueCharactersPasswordValidatorResponse
 type UniqueCharactersPasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                           `json:"id"`
 	Schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the minimum number of unique characters that a password will be allowed to contain.
 	MinUniqueCharacters int64 `json:"minUniqueCharacters"`
@@ -36,19 +34,21 @@ type UniqueCharactersPasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewUniqueCharactersPasswordValidatorResponse instantiates a new UniqueCharactersPasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUniqueCharactersPasswordValidatorResponse(id string, schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn, minUniqueCharacters int64, caseSensitiveValidation bool, enabled bool) *UniqueCharactersPasswordValidatorResponse {
+func NewUniqueCharactersPasswordValidatorResponse(schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn, minUniqueCharacters int64, caseSensitiveValidation bool, enabled bool, id string) *UniqueCharactersPasswordValidatorResponse {
 	this := UniqueCharactersPasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.MinUniqueCharacters = minUniqueCharacters
 	this.CaseSensitiveValidation = caseSensitiveValidation
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -58,30 +58,6 @@ func NewUniqueCharactersPasswordValidatorResponse(id string, schemas []Enumuniqu
 func NewUniqueCharactersPasswordValidatorResponseWithDefaults() *UniqueCharactersPasswordValidatorResponse {
 	this := UniqueCharactersPasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *UniqueCharactersPasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UniqueCharactersPasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UniqueCharactersPasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -340,6 +316,30 @@ func (o *UniqueCharactersPasswordValidatorResponse) SetUrnpingidentityschemascon
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *UniqueCharactersPasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *UniqueCharactersPasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *UniqueCharactersPasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o UniqueCharactersPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -350,7 +350,6 @@ func (o UniqueCharactersPasswordValidatorResponse) MarshalJSON() ([]byte, error)
 
 func (o UniqueCharactersPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["minUniqueCharacters"] = o.MinUniqueCharacters
 	toSerialize["caseSensitiveValidation"] = o.CaseSensitiveValidation
@@ -370,6 +369,7 @@ func (o UniqueCharactersPasswordValidatorResponse) ToMap() (map[string]interface
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

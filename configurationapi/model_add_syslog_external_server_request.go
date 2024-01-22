@@ -19,9 +19,7 @@ var _ MappedNullable = &AddSyslogExternalServerRequest{}
 
 // AddSyslogExternalServerRequest struct for AddSyslogExternalServerRequest
 type AddSyslogExternalServerRequest struct {
-	// Name of the new External Server
-	ServerName string                              `json:"serverName"`
-	Schemas    []EnumsyslogExternalServerSchemaUrn `json:"schemas"`
+	Schemas []EnumsyslogExternalServerSchemaUrn `json:"schemas"`
 	// The address of the syslog server.
 	ServerHostName string `json:"serverHostName"`
 	// The port on which the syslog server accepts connections.
@@ -35,18 +33,20 @@ type AddSyslogExternalServerRequest struct {
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	// Name of the new External Server
+	ServerName string `json:"serverName"`
 }
 
 // NewAddSyslogExternalServerRequest instantiates a new AddSyslogExternalServerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSyslogExternalServerRequest(serverName string, schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp) *AddSyslogExternalServerRequest {
+func NewAddSyslogExternalServerRequest(schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp, serverName string) *AddSyslogExternalServerRequest {
 	this := AddSyslogExternalServerRequest{}
-	this.ServerName = serverName
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
 	this.TransportMechanism = transportMechanism
+	this.ServerName = serverName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddSyslogExternalServerRequest(serverName string, schemas []EnumsyslogEx
 func NewAddSyslogExternalServerRequestWithDefaults() *AddSyslogExternalServerRequest {
 	this := AddSyslogExternalServerRequest{}
 	return &this
-}
-
-// GetServerName returns the ServerName field value
-func (o *AddSyslogExternalServerRequest) GetServerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerName
-}
-
-// GetServerNameOk returns a tuple with the ServerName field value
-// and a boolean to check if the value has been set.
-func (o *AddSyslogExternalServerRequest) GetServerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerName, true
-}
-
-// SetServerName sets field value
-func (o *AddSyslogExternalServerRequest) SetServerName(v string) {
-	o.ServerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -314,6 +290,30 @@ func (o *AddSyslogExternalServerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetServerName returns the ServerName field value
+func (o *AddSyslogExternalServerRequest) GetServerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ServerName
+}
+
+// GetServerNameOk returns a tuple with the ServerName field value
+// and a boolean to check if the value has been set.
+func (o *AddSyslogExternalServerRequest) GetServerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ServerName, true
+}
+
+// SetServerName sets field value
+func (o *AddSyslogExternalServerRequest) SetServerName(v string) {
+	o.ServerName = v
+}
+
 func (o AddSyslogExternalServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -324,7 +324,6 @@ func (o AddSyslogExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSyslogExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["serverName"] = o.ServerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["serverHostName"] = o.ServerHostName
 	if !IsNil(o.ServerPort) {
@@ -343,6 +342,7 @@ func (o AddSyslogExternalServerRequest) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["serverName"] = o.ServerName
 	return toSerialize, nil
 }
 

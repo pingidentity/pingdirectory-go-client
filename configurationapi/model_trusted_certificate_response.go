@@ -19,23 +19,23 @@ var _ MappedNullable = &TrustedCertificateResponse{}
 
 // TrustedCertificateResponse struct for TrustedCertificateResponse
 type TrustedCertificateResponse struct {
-	// Name of the Trusted Certificate
-	Id      string                            `json:"id"`
 	Schemas []EnumtrustedCertificateSchemaUrn `json:"schemas,omitempty"`
 	// The PEM-encoded X.509v3 certificate.
 	Certificate                                   string                                             `json:"certificate"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Trusted Certificate
+	Id string `json:"id"`
 }
 
 // NewTrustedCertificateResponse instantiates a new TrustedCertificateResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTrustedCertificateResponse(id string, certificate string) *TrustedCertificateResponse {
+func NewTrustedCertificateResponse(certificate string, id string) *TrustedCertificateResponse {
 	this := TrustedCertificateResponse{}
-	this.Id = id
 	this.Certificate = certificate
+	this.Id = id
 	return &this
 }
 
@@ -45,30 +45,6 @@ func NewTrustedCertificateResponse(id string, certificate string) *TrustedCertif
 func NewTrustedCertificateResponseWithDefaults() *TrustedCertificateResponse {
 	this := TrustedCertificateResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *TrustedCertificateResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *TrustedCertificateResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *TrustedCertificateResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -191,6 +167,30 @@ func (o *TrustedCertificateResponse) SetUrnpingidentityschemasconfigurationmessa
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *TrustedCertificateResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *TrustedCertificateResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *TrustedCertificateResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o TrustedCertificateResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -201,7 +201,6 @@ func (o TrustedCertificateResponse) MarshalJSON() ([]byte, error) {
 
 func (o TrustedCertificateResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -212,6 +211,7 @@ func (o TrustedCertificateResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

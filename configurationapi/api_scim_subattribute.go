@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ScimSubattributeApiService ScimSubattributeApi service
-type ScimSubattributeApiService service
+// ScimSubattributeAPIService ScimSubattributeAPI service
+type ScimSubattributeAPIService service
 
 type ApiAddScimSubattributeRequest struct {
 	ctx                        context.Context
-	ApiService                 *ScimSubattributeApiService
+	ApiService                 *ScimSubattributeAPIService
 	scimAttributeName          string
 	scimSchemaName             string
 	addScimSubattributeRequest *AddScimSubattributeRequest
@@ -48,7 +48,7 @@ AddScimSubattribute Add a new SCIM Subattribute to the config
 	@param scimSchemaName Name of the SCIM Schema
 	@return ApiAddScimSubattributeRequest
 */
-func (a *ScimSubattributeApiService) AddScimSubattribute(ctx context.Context, scimAttributeName string, scimSchemaName string) ApiAddScimSubattributeRequest {
+func (a *ScimSubattributeAPIService) AddScimSubattribute(ctx context.Context, scimAttributeName string, scimSchemaName string) ApiAddScimSubattributeRequest {
 	return ApiAddScimSubattributeRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -60,7 +60,7 @@ func (a *ScimSubattributeApiService) AddScimSubattribute(ctx context.Context, sc
 // Execute executes the request
 //
 //	@return ScimSubattributeResponse
-func (a *ScimSubattributeApiService) AddScimSubattributeExecute(r ApiAddScimSubattributeRequest) (*ScimSubattributeResponse, *http.Response, error) {
+func (a *ScimSubattributeAPIService) AddScimSubattributeExecute(r ApiAddScimSubattributeRequest) (*ScimSubattributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -68,7 +68,7 @@ func (a *ScimSubattributeApiService) AddScimSubattributeExecute(r ApiAddScimSuba
 		localVarReturnValue *ScimSubattributeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeApiService.AddScimSubattribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeAPIService.AddScimSubattribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -142,7 +142,7 @@ func (a *ScimSubattributeApiService) AddScimSubattributeExecute(r ApiAddScimSuba
 
 type ApiDeleteScimSubattributeRequest struct {
 	ctx                  context.Context
-	ApiService           *ScimSubattributeApiService
+	ApiService           *ScimSubattributeAPIService
 	scimSubattributeName string
 	scimAttributeName    string
 	scimSchemaName       string
@@ -161,7 +161,7 @@ DeleteScimSubattribute Delete a SCIM Subattribute
 	@param scimSchemaName Name of the SCIM Schema
 	@return ApiDeleteScimSubattributeRequest
 */
-func (a *ScimSubattributeApiService) DeleteScimSubattribute(ctx context.Context, scimSubattributeName string, scimAttributeName string, scimSchemaName string) ApiDeleteScimSubattributeRequest {
+func (a *ScimSubattributeAPIService) DeleteScimSubattribute(ctx context.Context, scimSubattributeName string, scimAttributeName string, scimSchemaName string) ApiDeleteScimSubattributeRequest {
 	return ApiDeleteScimSubattributeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -172,14 +172,14 @@ func (a *ScimSubattributeApiService) DeleteScimSubattribute(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *ScimSubattributeApiService) DeleteScimSubattributeExecute(r ApiDeleteScimSubattributeRequest) (*http.Response, error) {
+func (a *ScimSubattributeAPIService) DeleteScimSubattributeExecute(r ApiDeleteScimSubattributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeApiService.DeleteScimSubattribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeAPIService.DeleteScimSubattribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -240,7 +240,7 @@ func (a *ScimSubattributeApiService) DeleteScimSubattributeExecute(r ApiDeleteSc
 
 type ApiGetScimSubattributeRequest struct {
 	ctx                  context.Context
-	ApiService           *ScimSubattributeApiService
+	ApiService           *ScimSubattributeAPIService
 	scimSubattributeName string
 	scimAttributeName    string
 	scimSchemaName       string
@@ -259,7 +259,7 @@ GetScimSubattribute Returns a single SCIM Subattribute
 	@param scimSchemaName Name of the SCIM Schema
 	@return ApiGetScimSubattributeRequest
 */
-func (a *ScimSubattributeApiService) GetScimSubattribute(ctx context.Context, scimSubattributeName string, scimAttributeName string, scimSchemaName string) ApiGetScimSubattributeRequest {
+func (a *ScimSubattributeAPIService) GetScimSubattribute(ctx context.Context, scimSubattributeName string, scimAttributeName string, scimSchemaName string) ApiGetScimSubattributeRequest {
 	return ApiGetScimSubattributeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -272,7 +272,7 @@ func (a *ScimSubattributeApiService) GetScimSubattribute(ctx context.Context, sc
 // Execute executes the request
 //
 //	@return ScimSubattributeResponse
-func (a *ScimSubattributeApiService) GetScimSubattributeExecute(r ApiGetScimSubattributeRequest) (*ScimSubattributeResponse, *http.Response, error) {
+func (a *ScimSubattributeAPIService) GetScimSubattributeExecute(r ApiGetScimSubattributeRequest) (*ScimSubattributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -280,7 +280,7 @@ func (a *ScimSubattributeApiService) GetScimSubattributeExecute(r ApiGetScimSuba
 		localVarReturnValue *ScimSubattributeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeApiService.GetScimSubattribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeAPIService.GetScimSubattribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -350,7 +350,7 @@ func (a *ScimSubattributeApiService) GetScimSubattributeExecute(r ApiGetScimSuba
 
 type ApiListScimSubattributesRequest struct {
 	ctx               context.Context
-	ApiService        *ScimSubattributeApiService
+	ApiService        *ScimSubattributeAPIService
 	scimAttributeName string
 	scimSchemaName    string
 	filter            *string
@@ -374,7 +374,7 @@ ListScimSubattributes Returns a list of all SCIM Subattribute objects
 	@param scimSchemaName Name of the SCIM Schema
 	@return ApiListScimSubattributesRequest
 */
-func (a *ScimSubattributeApiService) ListScimSubattributes(ctx context.Context, scimAttributeName string, scimSchemaName string) ApiListScimSubattributesRequest {
+func (a *ScimSubattributeAPIService) ListScimSubattributes(ctx context.Context, scimAttributeName string, scimSchemaName string) ApiListScimSubattributesRequest {
 	return ApiListScimSubattributesRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -386,7 +386,7 @@ func (a *ScimSubattributeApiService) ListScimSubattributes(ctx context.Context, 
 // Execute executes the request
 //
 //	@return ScimSubattributeListResponse
-func (a *ScimSubattributeApiService) ListScimSubattributesExecute(r ApiListScimSubattributesRequest) (*ScimSubattributeListResponse, *http.Response, error) {
+func (a *ScimSubattributeAPIService) ListScimSubattributesExecute(r ApiListScimSubattributesRequest) (*ScimSubattributeListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -394,7 +394,7 @@ func (a *ScimSubattributeApiService) ListScimSubattributesExecute(r ApiListScimS
 		localVarReturnValue *ScimSubattributeListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeApiService.ListScimSubattributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeAPIService.ListScimSubattributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -466,7 +466,7 @@ func (a *ScimSubattributeApiService) ListScimSubattributesExecute(r ApiListScimS
 
 type ApiUpdateScimSubattributeRequest struct {
 	ctx                  context.Context
-	ApiService           *ScimSubattributeApiService
+	ApiService           *ScimSubattributeAPIService
 	scimSubattributeName string
 	scimAttributeName    string
 	scimSchemaName       string
@@ -492,7 +492,7 @@ UpdateScimSubattribute Update an existing SCIM Subattribute by name
 	@param scimSchemaName Name of the SCIM Schema
 	@return ApiUpdateScimSubattributeRequest
 */
-func (a *ScimSubattributeApiService) UpdateScimSubattribute(ctx context.Context, scimSubattributeName string, scimAttributeName string, scimSchemaName string) ApiUpdateScimSubattributeRequest {
+func (a *ScimSubattributeAPIService) UpdateScimSubattribute(ctx context.Context, scimSubattributeName string, scimAttributeName string, scimSchemaName string) ApiUpdateScimSubattributeRequest {
 	return ApiUpdateScimSubattributeRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -505,7 +505,7 @@ func (a *ScimSubattributeApiService) UpdateScimSubattribute(ctx context.Context,
 // Execute executes the request
 //
 //	@return ScimSubattributeResponse
-func (a *ScimSubattributeApiService) UpdateScimSubattributeExecute(r ApiUpdateScimSubattributeRequest) (*ScimSubattributeResponse, *http.Response, error) {
+func (a *ScimSubattributeAPIService) UpdateScimSubattributeExecute(r ApiUpdateScimSubattributeRequest) (*ScimSubattributeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -513,7 +513,7 @@ func (a *ScimSubattributeApiService) UpdateScimSubattributeExecute(r ApiUpdateSc
 		localVarReturnValue *ScimSubattributeResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeApiService.UpdateScimSubattribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeAPIService.UpdateScimSubattribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

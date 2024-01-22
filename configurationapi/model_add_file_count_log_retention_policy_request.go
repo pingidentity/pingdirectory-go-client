@@ -19,24 +19,24 @@ var _ MappedNullable = &AddFileCountLogRetentionPolicyRequest{}
 
 // AddFileCountLogRetentionPolicyRequest struct for AddFileCountLogRetentionPolicyRequest
 type AddFileCountLogRetentionPolicyRequest struct {
-	// Name of the new Log Retention Policy
-	PolicyName string                                     `json:"policyName"`
-	Schemas    []EnumfileCountLogRetentionPolicySchemaUrn `json:"schemas"`
+	Schemas []EnumfileCountLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the number of archived log files to retain before the oldest ones are cleaned.
 	NumberOfFiles int64 `json:"numberOfFiles"`
 	// A description for this Log Retention Policy
 	Description *string `json:"description,omitempty"`
+	// Name of the new Log Retention Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddFileCountLogRetentionPolicyRequest instantiates a new AddFileCountLogRetentionPolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFileCountLogRetentionPolicyRequest(policyName string, schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int64) *AddFileCountLogRetentionPolicyRequest {
+func NewAddFileCountLogRetentionPolicyRequest(schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int64, policyName string) *AddFileCountLogRetentionPolicyRequest {
 	this := AddFileCountLogRetentionPolicyRequest{}
-	this.PolicyName = policyName
 	this.Schemas = schemas
 	this.NumberOfFiles = numberOfFiles
+	this.PolicyName = policyName
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewAddFileCountLogRetentionPolicyRequest(policyName string, schemas []Enumf
 func NewAddFileCountLogRetentionPolicyRequestWithDefaults() *AddFileCountLogRetentionPolicyRequest {
 	this := AddFileCountLogRetentionPolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddFileCountLogRetentionPolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddFileCountLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddFileCountLogRetentionPolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -152,6 +128,30 @@ func (o *AddFileCountLogRetentionPolicyRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddFileCountLogRetentionPolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddFileCountLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddFileCountLogRetentionPolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddFileCountLogRetentionPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -162,12 +162,12 @@ func (o AddFileCountLogRetentionPolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddFileCountLogRetentionPolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["numberOfFiles"] = o.NumberOfFiles
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

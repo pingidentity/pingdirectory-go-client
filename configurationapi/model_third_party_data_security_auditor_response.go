@@ -19,8 +19,6 @@ var _ MappedNullable = &ThirdPartyDataSecurityAuditorResponse{}
 
 // ThirdPartyDataSecurityAuditorResponse struct for ThirdPartyDataSecurityAuditorResponse
 type ThirdPartyDataSecurityAuditorResponse struct {
-	// Name of the Data Security Auditor
-	Id      string                                       `json:"id"`
 	Schemas []EnumthirdPartyDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Data Security Auditor.
 	ExtensionClass string `json:"extensionClass"`
@@ -37,19 +35,21 @@ type ThirdPartyDataSecurityAuditorResponse struct {
 	AuditSeverity                                 *EnumdataSecurityAuditorAuditSeverityProp          `json:"auditSeverity,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Data Security Auditor
+	Id string `json:"id"`
 }
 
 // NewThirdPartyDataSecurityAuditorResponse instantiates a new ThirdPartyDataSecurityAuditorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyDataSecurityAuditorResponse(id string, schemas []EnumthirdPartyDataSecurityAuditorSchemaUrn, extensionClass string, enabled bool, reportFile string) *ThirdPartyDataSecurityAuditorResponse {
+func NewThirdPartyDataSecurityAuditorResponse(schemas []EnumthirdPartyDataSecurityAuditorSchemaUrn, extensionClass string, enabled bool, reportFile string, id string) *ThirdPartyDataSecurityAuditorResponse {
 	this := ThirdPartyDataSecurityAuditorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
 	this.ReportFile = reportFile
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewThirdPartyDataSecurityAuditorResponse(id string, schemas []EnumthirdPart
 func NewThirdPartyDataSecurityAuditorResponseWithDefaults() *ThirdPartyDataSecurityAuditorResponse {
 	this := ThirdPartyDataSecurityAuditorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ThirdPartyDataSecurityAuditorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ThirdPartyDataSecurityAuditorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -373,6 +349,30 @@ func (o *ThirdPartyDataSecurityAuditorResponse) SetUrnpingidentityschemasconfigu
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ThirdPartyDataSecurityAuditorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ThirdPartyDataSecurityAuditorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ThirdPartyDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -383,7 +383,6 @@ func (o ThirdPartyDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
 
 func (o ThirdPartyDataSecurityAuditorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
@@ -406,6 +405,7 @@ func (o ThirdPartyDataSecurityAuditorResponse) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

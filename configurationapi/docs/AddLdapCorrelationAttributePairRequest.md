@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PairName** | **string** | Name of the new LDAP Correlation Attribute Pair | 
 **Schemas** | Pointer to [**[]EnumldapCorrelationAttributePairSchemaUrn**](EnumldapCorrelationAttributePairSchemaUrn.md) |  | [optional] 
 **PrimaryCorrelationAttribute** | **string** | The LDAP attribute from the base SCIM Resource Type whose value will be used to match objects in the Correlated LDAP Data View. | 
 **SecondaryCorrelationAttribute** | **string** | The LDAP attribute from the Correlated LDAP Data View whose value will be matched. | 
+**PairName** | **string** | Name of the new LDAP Correlation Attribute Pair | 
 
 ## Methods
 
 ### NewAddLdapCorrelationAttributePairRequest
 
-`func NewAddLdapCorrelationAttributePairRequest(pairName string, primaryCorrelationAttribute string, secondaryCorrelationAttribute string, ) *AddLdapCorrelationAttributePairRequest`
+`func NewAddLdapCorrelationAttributePairRequest(primaryCorrelationAttribute string, secondaryCorrelationAttribute string, pairName string, ) *AddLdapCorrelationAttributePairRequest`
 
 NewAddLdapCorrelationAttributePairRequest instantiates a new AddLdapCorrelationAttributePairRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewAddLdapCorrelationAttributePairRequestWithDefaults instantiates a new AddLdapCorrelationAttributePairRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPairName
-
-`func (o *AddLdapCorrelationAttributePairRequest) GetPairName() string`
-
-GetPairName returns the PairName field if non-nil, zero value otherwise.
-
-### GetPairNameOk
-
-`func (o *AddLdapCorrelationAttributePairRequest) GetPairNameOk() (*string, bool)`
-
-GetPairNameOk returns a tuple with the PairName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPairName
-
-`func (o *AddLdapCorrelationAttributePairRequest) SetPairName(v string)`
-
-SetPairName sets PairName field to given value.
-
 
 ### GetSchemas
 
@@ -111,6 +91,26 @@ and a boolean to check if the value has been set.
 `func (o *AddLdapCorrelationAttributePairRequest) SetSecondaryCorrelationAttribute(v string)`
 
 SetSecondaryCorrelationAttribute sets SecondaryCorrelationAttribute field to given value.
+
+
+### GetPairName
+
+`func (o *AddLdapCorrelationAttributePairRequest) GetPairName() string`
+
+GetPairName returns the PairName field if non-nil, zero value otherwise.
+
+### GetPairNameOk
+
+`func (o *AddLdapCorrelationAttributePairRequest) GetPairNameOk() (*string, bool)`
+
+GetPairNameOk returns a tuple with the PairName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPairName
+
+`func (o *AddLdapCorrelationAttributePairRequest) SetPairName(v string)`
+
+SetPairName sets PairName field to given value.
 
 
 

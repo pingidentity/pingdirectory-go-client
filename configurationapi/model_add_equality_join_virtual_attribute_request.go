@@ -19,8 +19,6 @@ var _ MappedNullable = &AddEqualityJoinVirtualAttributeRequest{}
 
 // AddEqualityJoinVirtualAttributeRequest struct for AddEqualityJoinVirtualAttributeRequest
 type AddEqualityJoinVirtualAttributeRequest struct {
-	// Name of the new Virtual Attribute
-	Name    string                                      `json:"name"`
 	Schemas []EnumequalityJoinVirtualAttributeSchemaUrn `json:"schemas"`
 	// The attribute containing the value(s) in the source entry to use to identify related entries.
 	JoinSourceAttribute string `json:"joinSourceAttribute"`
@@ -60,21 +58,23 @@ type AddEqualityJoinVirtualAttributeRequest struct {
 	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
+	// Name of the new Virtual Attribute
+	Name string `json:"name"`
 }
 
 // NewAddEqualityJoinVirtualAttributeRequest instantiates a new AddEqualityJoinVirtualAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddEqualityJoinVirtualAttributeRequest(name string, schemas []EnumequalityJoinVirtualAttributeSchemaUrn, joinSourceAttribute string, joinTargetAttribute string, joinBaseDNType EnumvirtualAttributeJoinBaseDNTypeProp, enabled bool, attributeType string) *AddEqualityJoinVirtualAttributeRequest {
+func NewAddEqualityJoinVirtualAttributeRequest(schemas []EnumequalityJoinVirtualAttributeSchemaUrn, joinSourceAttribute string, joinTargetAttribute string, joinBaseDNType EnumvirtualAttributeJoinBaseDNTypeProp, enabled bool, attributeType string, name string) *AddEqualityJoinVirtualAttributeRequest {
 	this := AddEqualityJoinVirtualAttributeRequest{}
-	this.Name = name
 	this.Schemas = schemas
 	this.JoinSourceAttribute = joinSourceAttribute
 	this.JoinTargetAttribute = joinTargetAttribute
 	this.JoinBaseDNType = joinBaseDNType
 	this.Enabled = enabled
 	this.AttributeType = attributeType
+	this.Name = name
 	return &this
 }
 
@@ -84,30 +84,6 @@ func NewAddEqualityJoinVirtualAttributeRequest(name string, schemas []Enumequali
 func NewAddEqualityJoinVirtualAttributeRequestWithDefaults() *AddEqualityJoinVirtualAttributeRequest {
 	this := AddEqualityJoinVirtualAttributeRequest{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddEqualityJoinVirtualAttributeRequest) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddEqualityJoinVirtualAttributeRequest) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddEqualityJoinVirtualAttributeRequest) SetName(v string) {
-	o.Name = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -766,6 +742,30 @@ func (o *AddEqualityJoinVirtualAttributeRequest) SetAllowIndexConflicts(v bool) 
 	o.AllowIndexConflicts = &v
 }
 
+// GetName returns the Name field value
+func (o *AddEqualityJoinVirtualAttributeRequest) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *AddEqualityJoinVirtualAttributeRequest) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *AddEqualityJoinVirtualAttributeRequest) SetName(v string) {
+	o.Name = v
+}
+
 func (o AddEqualityJoinVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -776,7 +776,6 @@ func (o AddEqualityJoinVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddEqualityJoinVirtualAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["joinSourceAttribute"] = o.JoinSourceAttribute
 	toSerialize["joinTargetAttribute"] = o.JoinTargetAttribute
@@ -831,6 +830,7 @@ func (o AddEqualityJoinVirtualAttributeRequest) ToMap() (map[string]interface{},
 	if !IsNil(o.AllowIndexConflicts) {
 		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
 	}
+	toSerialize["name"] = o.Name
 	return toSerialize, nil
 }
 

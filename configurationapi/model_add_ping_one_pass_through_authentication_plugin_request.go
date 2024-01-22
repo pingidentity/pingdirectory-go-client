@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPingOnePassThroughAuthenticationPluginRequest{}
 
 // AddPingOnePassThroughAuthenticationPluginRequest struct for AddPingOnePassThroughAuthenticationPluginRequest
 type AddPingOnePassThroughAuthenticationPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                                `json:"pluginName"`
-	Schemas    []EnumpingOnePassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumpingOnePassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
 	// Specifies the API endpoint for the PingOne web service.
 	ApiURL string `json:"apiURL"`
 	// Specifies the API endpoint for the PingOne authentication service.
@@ -65,15 +63,16 @@ type AddPingOnePassThroughAuthenticationPluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddPingOnePassThroughAuthenticationPluginRequest instantiates a new AddPingOnePassThroughAuthenticationPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingOnePassThroughAuthenticationPluginRequest(pluginName string, schemas []EnumpingOnePassThroughAuthenticationPluginSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, enabled bool) *AddPingOnePassThroughAuthenticationPluginRequest {
+func NewAddPingOnePassThroughAuthenticationPluginRequest(schemas []EnumpingOnePassThroughAuthenticationPluginSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, enabled bool, pluginName string) *AddPingOnePassThroughAuthenticationPluginRequest {
 	this := AddPingOnePassThroughAuthenticationPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.ApiURL = apiURL
 	this.AuthURL = authURL
@@ -82,6 +81,7 @@ func NewAddPingOnePassThroughAuthenticationPluginRequest(pluginName string, sche
 	this.UserMappingLocalAttribute = userMappingLocalAttribute
 	this.UserMappingRemoteJSONField = userMappingRemoteJSONField
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -91,30 +91,6 @@ func NewAddPingOnePassThroughAuthenticationPluginRequest(pluginName string, sche
 func NewAddPingOnePassThroughAuthenticationPluginRequestWithDefaults() *AddPingOnePassThroughAuthenticationPluginRequest {
 	this := AddPingOnePassThroughAuthenticationPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddPingOnePassThroughAuthenticationPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddPingOnePassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddPingOnePassThroughAuthenticationPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -789,6 +765,30 @@ func (o *AddPingOnePassThroughAuthenticationPluginRequest) SetInvokeForInternalO
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddPingOnePassThroughAuthenticationPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddPingOnePassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddPingOnePassThroughAuthenticationPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddPingOnePassThroughAuthenticationPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -799,7 +799,6 @@ func (o AddPingOnePassThroughAuthenticationPluginRequest) MarshalJSON() ([]byte,
 
 func (o AddPingOnePassThroughAuthenticationPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["apiURL"] = o.ApiURL
 	toSerialize["authURL"] = o.AuthURL
@@ -853,6 +852,7 @@ func (o AddPingOnePassThroughAuthenticationPluginRequest) ToMap() (map[string]in
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

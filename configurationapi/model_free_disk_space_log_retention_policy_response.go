@@ -19,8 +19,6 @@ var _ MappedNullable = &FreeDiskSpaceLogRetentionPolicyResponse{}
 
 // FreeDiskSpaceLogRetentionPolicyResponse struct for FreeDiskSpaceLogRetentionPolicyResponse
 type FreeDiskSpaceLogRetentionPolicyResponse struct {
-	// Name of the Log Retention Policy
-	Id      string                                         `json:"id"`
 	Schemas []EnumfreeDiskSpaceLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the minimum amount of free disk space that should be available on the file system on which the archived log files are stored.
 	FreeDiskSpace string `json:"freeDiskSpace"`
@@ -28,17 +26,19 @@ type FreeDiskSpaceLogRetentionPolicyResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Retention Policy
+	Id string `json:"id"`
 }
 
 // NewFreeDiskSpaceLogRetentionPolicyResponse instantiates a new FreeDiskSpaceLogRetentionPolicyResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFreeDiskSpaceLogRetentionPolicyResponse(id string, schemas []EnumfreeDiskSpaceLogRetentionPolicySchemaUrn, freeDiskSpace string) *FreeDiskSpaceLogRetentionPolicyResponse {
+func NewFreeDiskSpaceLogRetentionPolicyResponse(schemas []EnumfreeDiskSpaceLogRetentionPolicySchemaUrn, freeDiskSpace string, id string) *FreeDiskSpaceLogRetentionPolicyResponse {
 	this := FreeDiskSpaceLogRetentionPolicyResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.FreeDiskSpace = freeDiskSpace
+	this.Id = id
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewFreeDiskSpaceLogRetentionPolicyResponse(id string, schemas []EnumfreeDis
 func NewFreeDiskSpaceLogRetentionPolicyResponseWithDefaults() *FreeDiskSpaceLogRetentionPolicyResponse {
 	this := FreeDiskSpaceLogRetentionPolicyResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *FreeDiskSpaceLogRetentionPolicyResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -218,6 +194,30 @@ func (o *FreeDiskSpaceLogRetentionPolicyResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *FreeDiskSpaceLogRetentionPolicyResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o FreeDiskSpaceLogRetentionPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,7 +228,6 @@ func (o FreeDiskSpaceLogRetentionPolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o FreeDiskSpaceLogRetentionPolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["freeDiskSpace"] = o.FreeDiskSpace
 	if !IsNil(o.Description) {
@@ -240,6 +239,7 @@ func (o FreeDiskSpaceLogRetentionPolicyResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

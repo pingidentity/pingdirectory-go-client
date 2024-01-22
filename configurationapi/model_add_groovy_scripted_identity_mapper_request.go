@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedIdentityMapperRequest{}
 
 // AddGroovyScriptedIdentityMapperRequest struct for AddGroovyScriptedIdentityMapperRequest
 type AddGroovyScriptedIdentityMapperRequest struct {
-	// Name of the new Identity Mapper
-	MapperName string                                      `json:"mapperName"`
-	Schemas    []EnumgroovyScriptedIdentityMapperSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedIdentityMapperSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Identity Mapper. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddGroovyScriptedIdentityMapperRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Identity Mapper is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Identity Mapper
+	MapperName string `json:"mapperName"`
 }
 
 // NewAddGroovyScriptedIdentityMapperRequest instantiates a new AddGroovyScriptedIdentityMapperRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedIdentityMapperRequest(mapperName string, schemas []EnumgroovyScriptedIdentityMapperSchemaUrn, scriptClass string, enabled bool) *AddGroovyScriptedIdentityMapperRequest {
+func NewAddGroovyScriptedIdentityMapperRequest(schemas []EnumgroovyScriptedIdentityMapperSchemaUrn, scriptClass string, enabled bool, mapperName string) *AddGroovyScriptedIdentityMapperRequest {
 	this := AddGroovyScriptedIdentityMapperRequest{}
-	this.MapperName = mapperName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.MapperName = mapperName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddGroovyScriptedIdentityMapperRequest(mapperName string, schemas []Enum
 func NewAddGroovyScriptedIdentityMapperRequestWithDefaults() *AddGroovyScriptedIdentityMapperRequest {
 	this := AddGroovyScriptedIdentityMapperRequest{}
 	return &this
-}
-
-// GetMapperName returns the MapperName field value
-func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MapperName
-}
-
-// GetMapperNameOk returns a tuple with the MapperName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MapperName, true
-}
-
-// SetMapperName sets field value
-func (o *AddGroovyScriptedIdentityMapperRequest) SetMapperName(v string) {
-	o.MapperName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddGroovyScriptedIdentityMapperRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMapperName returns the MapperName field value
+func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MapperName
+}
+
+// GetMapperNameOk returns a tuple with the MapperName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MapperName, true
+}
+
+// SetMapperName sets field value
+func (o *AddGroovyScriptedIdentityMapperRequest) SetMapperName(v string) {
+	o.MapperName = v
+}
+
 func (o AddGroovyScriptedIdentityMapperRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddGroovyScriptedIdentityMapperRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddGroovyScriptedIdentityMapperRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mapperName"] = o.MapperName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -233,6 +232,7 @@ func (o AddGroovyScriptedIdentityMapperRequest) ToMap() (map[string]interface{},
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["mapperName"] = o.MapperName
 	return toSerialize, nil
 }
 

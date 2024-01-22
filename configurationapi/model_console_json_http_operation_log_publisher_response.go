@@ -19,8 +19,6 @@ var _ MappedNullable = &ConsoleJsonHttpOperationLogPublisherResponse{}
 
 // ConsoleJsonHttpOperationLogPublisherResponse struct for ConsoleJsonHttpOperationLogPublisherResponse
 type ConsoleJsonHttpOperationLogPublisherResponse struct {
-	// Name of the Log Publisher
-	Id      string                                              `json:"id"`
 	Schemas []EnumconsoleJsonHttpOperationLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether the Console JSON HTTP Operation Log Publisher is enabled for use.
 	Enabled        bool                                `json:"enabled"`
@@ -65,17 +63,19 @@ type ConsoleJsonHttpOperationLogPublisherResponse struct {
 	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Publisher
+	Id string `json:"id"`
 }
 
 // NewConsoleJsonHttpOperationLogPublisherResponse instantiates a new ConsoleJsonHttpOperationLogPublisherResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConsoleJsonHttpOperationLogPublisherResponse(id string, schemas []EnumconsoleJsonHttpOperationLogPublisherSchemaUrn, enabled bool) *ConsoleJsonHttpOperationLogPublisherResponse {
+func NewConsoleJsonHttpOperationLogPublisherResponse(schemas []EnumconsoleJsonHttpOperationLogPublisherSchemaUrn, enabled bool, id string) *ConsoleJsonHttpOperationLogPublisherResponse {
 	this := ConsoleJsonHttpOperationLogPublisherResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -85,30 +85,6 @@ func NewConsoleJsonHttpOperationLogPublisherResponse(id string, schemas []Enumco
 func NewConsoleJsonHttpOperationLogPublisherResponseWithDefaults() *ConsoleJsonHttpOperationLogPublisherResponse {
 	this := ConsoleJsonHttpOperationLogPublisherResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ConsoleJsonHttpOperationLogPublisherResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ConsoleJsonHttpOperationLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ConsoleJsonHttpOperationLogPublisherResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -927,6 +903,30 @@ func (o *ConsoleJsonHttpOperationLogPublisherResponse) SetUrnpingidentityschemas
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ConsoleJsonHttpOperationLogPublisherResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ConsoleJsonHttpOperationLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ConsoleJsonHttpOperationLogPublisherResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ConsoleJsonHttpOperationLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -937,7 +937,6 @@ func (o ConsoleJsonHttpOperationLogPublisherResponse) MarshalJSON() ([]byte, err
 
 func (o ConsoleJsonHttpOperationLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["enabled"] = o.Enabled
 	if !IsNil(o.OutputLocation) {
@@ -1012,6 +1011,7 @@ func (o ConsoleJsonHttpOperationLogPublisherResponse) ToMap() (map[string]interf
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

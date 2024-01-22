@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAggregateResultCriteriaRequest{}
 
 // AddAggregateResultCriteriaRequest struct for AddAggregateResultCriteriaRequest
 type AddAggregateResultCriteriaRequest struct {
-	// Name of the new Result Criteria
-	CriteriaName string                                 `json:"criteriaName"`
-	Schemas      []EnumaggregateResultCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumaggregateResultCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a result criteria object that must match the associated operation result in order to match the aggregate result criteria. If one or more all-included result criteria objects are provided, then an operation result must match all of them in order to match the aggregate result criteria.
 	AllIncludedResultCriteria []string `json:"allIncludedResultCriteria,omitempty"`
 	// Specifies a result criteria object that may match the associated operation result in order to match the aggregate result criteria. If one or more any-included result criteria objects are provided, then an operation result must match at least one of them in order to match the aggregate result criteria.
@@ -32,16 +30,18 @@ type AddAggregateResultCriteriaRequest struct {
 	NoneIncludedResultCriteria []string `json:"noneIncludedResultCriteria,omitempty"`
 	// A description for this Result Criteria
 	Description *string `json:"description,omitempty"`
+	// Name of the new Result Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddAggregateResultCriteriaRequest instantiates a new AddAggregateResultCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAggregateResultCriteriaRequest(criteriaName string, schemas []EnumaggregateResultCriteriaSchemaUrn) *AddAggregateResultCriteriaRequest {
+func NewAddAggregateResultCriteriaRequest(schemas []EnumaggregateResultCriteriaSchemaUrn, criteriaName string) *AddAggregateResultCriteriaRequest {
 	this := AddAggregateResultCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddAggregateResultCriteriaRequest(criteriaName string, schemas []Enumagg
 func NewAddAggregateResultCriteriaRequestWithDefaults() *AddAggregateResultCriteriaRequest {
 	this := AddAggregateResultCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddAggregateResultCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddAggregateResultCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddAggregateResultCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -261,6 +237,30 @@ func (o *AddAggregateResultCriteriaRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddAggregateResultCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddAggregateResultCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddAggregateResultCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddAggregateResultCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -271,7 +271,6 @@ func (o AddAggregateResultCriteriaRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddAggregateResultCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllIncludedResultCriteria) {
 		toSerialize["allIncludedResultCriteria"] = o.AllIncludedResultCriteria
@@ -288,6 +287,7 @@ func (o AddAggregateResultCriteriaRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// TokenClaimValidationApiService TokenClaimValidationApi service
-type TokenClaimValidationApiService service
+// TokenClaimValidationAPIService TokenClaimValidationAPI service
+type TokenClaimValidationAPIService service
 
 type ApiAddTokenClaimValidationRequest struct {
 	ctx                            context.Context
-	ApiService                     *TokenClaimValidationApiService
+	ApiService                     *TokenClaimValidationAPIService
 	idTokenValidatorName           string
 	addTokenClaimValidationRequest *AddTokenClaimValidationRequest
 }
@@ -46,7 +46,7 @@ AddTokenClaimValidation Add a new Token Claim Validation to the config
 	@param idTokenValidatorName Name of the ID Token Validator
 	@return ApiAddTokenClaimValidationRequest
 */
-func (a *TokenClaimValidationApiService) AddTokenClaimValidation(ctx context.Context, idTokenValidatorName string) ApiAddTokenClaimValidationRequest {
+func (a *TokenClaimValidationAPIService) AddTokenClaimValidation(ctx context.Context, idTokenValidatorName string) ApiAddTokenClaimValidationRequest {
 	return ApiAddTokenClaimValidationRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -57,7 +57,7 @@ func (a *TokenClaimValidationApiService) AddTokenClaimValidation(ctx context.Con
 // Execute executes the request
 //
 //	@return AddTokenClaimValidation200Response
-func (a *TokenClaimValidationApiService) AddTokenClaimValidationExecute(r ApiAddTokenClaimValidationRequest) (*AddTokenClaimValidation200Response, *http.Response, error) {
+func (a *TokenClaimValidationAPIService) AddTokenClaimValidationExecute(r ApiAddTokenClaimValidationRequest) (*AddTokenClaimValidation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -65,7 +65,7 @@ func (a *TokenClaimValidationApiService) AddTokenClaimValidationExecute(r ApiAdd
 		localVarReturnValue *AddTokenClaimValidation200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationApiService.AddTokenClaimValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationAPIService.AddTokenClaimValidation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *TokenClaimValidationApiService) AddTokenClaimValidationExecute(r ApiAdd
 
 type ApiDeleteTokenClaimValidationRequest struct {
 	ctx                      context.Context
-	ApiService               *TokenClaimValidationApiService
+	ApiService               *TokenClaimValidationAPIService
 	tokenClaimValidationName string
 	idTokenValidatorName     string
 }
@@ -155,7 +155,7 @@ DeleteTokenClaimValidation Delete a Token Claim Validation
 	@param idTokenValidatorName Name of the ID Token Validator
 	@return ApiDeleteTokenClaimValidationRequest
 */
-func (a *TokenClaimValidationApiService) DeleteTokenClaimValidation(ctx context.Context, tokenClaimValidationName string, idTokenValidatorName string) ApiDeleteTokenClaimValidationRequest {
+func (a *TokenClaimValidationAPIService) DeleteTokenClaimValidation(ctx context.Context, tokenClaimValidationName string, idTokenValidatorName string) ApiDeleteTokenClaimValidationRequest {
 	return ApiDeleteTokenClaimValidationRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -165,14 +165,14 @@ func (a *TokenClaimValidationApiService) DeleteTokenClaimValidation(ctx context.
 }
 
 // Execute executes the request
-func (a *TokenClaimValidationApiService) DeleteTokenClaimValidationExecute(r ApiDeleteTokenClaimValidationRequest) (*http.Response, error) {
+func (a *TokenClaimValidationAPIService) DeleteTokenClaimValidationExecute(r ApiDeleteTokenClaimValidationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationApiService.DeleteTokenClaimValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationAPIService.DeleteTokenClaimValidation")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,7 +232,7 @@ func (a *TokenClaimValidationApiService) DeleteTokenClaimValidationExecute(r Api
 
 type ApiGetTokenClaimValidationRequest struct {
 	ctx                      context.Context
-	ApiService               *TokenClaimValidationApiService
+	ApiService               *TokenClaimValidationAPIService
 	tokenClaimValidationName string
 	idTokenValidatorName     string
 }
@@ -249,7 +249,7 @@ GetTokenClaimValidation Returns a single Token Claim Validation
 	@param idTokenValidatorName Name of the ID Token Validator
 	@return ApiGetTokenClaimValidationRequest
 */
-func (a *TokenClaimValidationApiService) GetTokenClaimValidation(ctx context.Context, tokenClaimValidationName string, idTokenValidatorName string) ApiGetTokenClaimValidationRequest {
+func (a *TokenClaimValidationAPIService) GetTokenClaimValidation(ctx context.Context, tokenClaimValidationName string, idTokenValidatorName string) ApiGetTokenClaimValidationRequest {
 	return ApiGetTokenClaimValidationRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -261,7 +261,7 @@ func (a *TokenClaimValidationApiService) GetTokenClaimValidation(ctx context.Con
 // Execute executes the request
 //
 //	@return AddTokenClaimValidation200Response
-func (a *TokenClaimValidationApiService) GetTokenClaimValidationExecute(r ApiGetTokenClaimValidationRequest) (*AddTokenClaimValidation200Response, *http.Response, error) {
+func (a *TokenClaimValidationAPIService) GetTokenClaimValidationExecute(r ApiGetTokenClaimValidationRequest) (*AddTokenClaimValidation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -269,7 +269,7 @@ func (a *TokenClaimValidationApiService) GetTokenClaimValidationExecute(r ApiGet
 		localVarReturnValue *AddTokenClaimValidation200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationApiService.GetTokenClaimValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationAPIService.GetTokenClaimValidation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *TokenClaimValidationApiService) GetTokenClaimValidationExecute(r ApiGet
 
 type ApiListTokenClaimValidationsRequest struct {
 	ctx                  context.Context
-	ApiService           *TokenClaimValidationApiService
+	ApiService           *TokenClaimValidationAPIService
 	idTokenValidatorName string
 	filter               *string
 }
@@ -360,7 +360,7 @@ ListTokenClaimValidations Returns a list of all Token Claim Validation objects
 	@param idTokenValidatorName Name of the ID Token Validator
 	@return ApiListTokenClaimValidationsRequest
 */
-func (a *TokenClaimValidationApiService) ListTokenClaimValidations(ctx context.Context, idTokenValidatorName string) ApiListTokenClaimValidationsRequest {
+func (a *TokenClaimValidationAPIService) ListTokenClaimValidations(ctx context.Context, idTokenValidatorName string) ApiListTokenClaimValidationsRequest {
 	return ApiListTokenClaimValidationsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -371,7 +371,7 @@ func (a *TokenClaimValidationApiService) ListTokenClaimValidations(ctx context.C
 // Execute executes the request
 //
 //	@return TokenClaimValidationListResponse
-func (a *TokenClaimValidationApiService) ListTokenClaimValidationsExecute(r ApiListTokenClaimValidationsRequest) (*TokenClaimValidationListResponse, *http.Response, error) {
+func (a *TokenClaimValidationAPIService) ListTokenClaimValidationsExecute(r ApiListTokenClaimValidationsRequest) (*TokenClaimValidationListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -379,7 +379,7 @@ func (a *TokenClaimValidationApiService) ListTokenClaimValidationsExecute(r ApiL
 		localVarReturnValue *TokenClaimValidationListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationApiService.ListTokenClaimValidations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationAPIService.ListTokenClaimValidations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,7 +450,7 @@ func (a *TokenClaimValidationApiService) ListTokenClaimValidationsExecute(r ApiL
 
 type ApiUpdateTokenClaimValidationRequest struct {
 	ctx                      context.Context
-	ApiService               *TokenClaimValidationApiService
+	ApiService               *TokenClaimValidationAPIService
 	tokenClaimValidationName string
 	idTokenValidatorName     string
 	updateRequest            *UpdateRequest
@@ -474,7 +474,7 @@ UpdateTokenClaimValidation Update an existing Token Claim Validation by name
 	@param idTokenValidatorName Name of the ID Token Validator
 	@return ApiUpdateTokenClaimValidationRequest
 */
-func (a *TokenClaimValidationApiService) UpdateTokenClaimValidation(ctx context.Context, tokenClaimValidationName string, idTokenValidatorName string) ApiUpdateTokenClaimValidationRequest {
+func (a *TokenClaimValidationAPIService) UpdateTokenClaimValidation(ctx context.Context, tokenClaimValidationName string, idTokenValidatorName string) ApiUpdateTokenClaimValidationRequest {
 	return ApiUpdateTokenClaimValidationRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -486,7 +486,7 @@ func (a *TokenClaimValidationApiService) UpdateTokenClaimValidation(ctx context.
 // Execute executes the request
 //
 //	@return AddTokenClaimValidation200Response
-func (a *TokenClaimValidationApiService) UpdateTokenClaimValidationExecute(r ApiUpdateTokenClaimValidationRequest) (*AddTokenClaimValidation200Response, *http.Response, error) {
+func (a *TokenClaimValidationAPIService) UpdateTokenClaimValidationExecute(r ApiUpdateTokenClaimValidationRequest) (*AddTokenClaimValidation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -494,7 +494,7 @@ func (a *TokenClaimValidationApiService) UpdateTokenClaimValidationExecute(r Api
 		localVarReturnValue *AddTokenClaimValidation200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationApiService.UpdateTokenClaimValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokenClaimValidationAPIService.UpdateTokenClaimValidation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

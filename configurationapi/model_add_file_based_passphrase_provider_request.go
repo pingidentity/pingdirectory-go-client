@@ -19,9 +19,7 @@ var _ MappedNullable = &AddFileBasedPassphraseProviderRequest{}
 
 // AddFileBasedPassphraseProviderRequest struct for AddFileBasedPassphraseProviderRequest
 type AddFileBasedPassphraseProviderRequest struct {
-	// Name of the new Passphrase Provider
-	ProviderName string                                     `json:"providerName"`
-	Schemas      []EnumfileBasedPassphraseProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumfileBasedPassphraseProviderSchemaUrn `json:"schemas"`
 	// The path to the file containing the passphrase.
 	PasswordFile string `json:"passwordFile"`
 	// The maximum length of time that the passphrase provider may cache the passphrase that has been read from the target file. A value of zero seconds indicates that the provider should always attempt to read the passphrase from the file.
@@ -30,18 +28,20 @@ type AddFileBasedPassphraseProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Passphrase Provider is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Passphrase Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddFileBasedPassphraseProviderRequest instantiates a new AddFileBasedPassphraseProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFileBasedPassphraseProviderRequest(providerName string, schemas []EnumfileBasedPassphraseProviderSchemaUrn, passwordFile string, enabled bool) *AddFileBasedPassphraseProviderRequest {
+func NewAddFileBasedPassphraseProviderRequest(schemas []EnumfileBasedPassphraseProviderSchemaUrn, passwordFile string, enabled bool, providerName string) *AddFileBasedPassphraseProviderRequest {
 	this := AddFileBasedPassphraseProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.PasswordFile = passwordFile
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddFileBasedPassphraseProviderRequest(providerName string, schemas []Enu
 func NewAddFileBasedPassphraseProviderRequestWithDefaults() *AddFileBasedPassphraseProviderRequest {
 	this := AddFileBasedPassphraseProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddFileBasedPassphraseProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddFileBasedPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddFileBasedPassphraseProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddFileBasedPassphraseProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddFileBasedPassphraseProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddFileBasedPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddFileBasedPassphraseProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddFileBasedPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddFileBasedPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddFileBasedPassphraseProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["passwordFile"] = o.PasswordFile
 	if !IsNil(o.MaxCacheDuration) {
@@ -233,6 +232,7 @@ func (o AddFileBasedPassphraseProviderRequest) ToMap() (map[string]interface{}, 
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

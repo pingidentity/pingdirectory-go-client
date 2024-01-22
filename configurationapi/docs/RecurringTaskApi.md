@@ -1,14 +1,14 @@
-# \RecurringTaskApi
+# \RecurringTaskAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddRecurringTask**](RecurringTaskApi.md#AddRecurringTask) | **Post** /recurring-tasks | Add a new Recurring Task to the config
-[**DeleteRecurringTask**](RecurringTaskApi.md#DeleteRecurringTask) | **Delete** /recurring-tasks/{recurring-task-name} | Delete a Recurring Task
-[**GetRecurringTask**](RecurringTaskApi.md#GetRecurringTask) | **Get** /recurring-tasks/{recurring-task-name} | Returns a single Recurring Task
-[**ListRecurringTasks**](RecurringTaskApi.md#ListRecurringTasks) | **Get** /recurring-tasks | Returns a list of all Recurring Task objects
-[**UpdateRecurringTask**](RecurringTaskApi.md#UpdateRecurringTask) | **Patch** /recurring-tasks/{recurring-task-name} | Update an existing Recurring Task by name
+[**AddRecurringTask**](RecurringTaskAPI.md#AddRecurringTask) | **Post** /recurring-tasks | Add a new Recurring Task to the config
+[**DeleteRecurringTask**](RecurringTaskAPI.md#DeleteRecurringTask) | **Delete** /recurring-tasks/{recurring-task-name} | Delete a Recurring Task
+[**GetRecurringTask**](RecurringTaskAPI.md#GetRecurringTask) | **Get** /recurring-tasks/{recurring-task-name} | Returns a single Recurring Task
+[**ListRecurringTasks**](RecurringTaskAPI.md#ListRecurringTasks) | **Get** /recurring-tasks | Returns a list of all Recurring Task objects
+[**UpdateRecurringTask**](RecurringTaskAPI.md#UpdateRecurringTask) | **Patch** /recurring-tasks/{recurring-task-name} | Update an existing Recurring Task by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addRecurringTaskRequest := openapiclient.add_recurring_task_request{AddAuditDataSecurityRecurringTaskRequest: openapiclient.NewAddAuditDataSecurityRecurringTaskRequest("TaskName_example", []openapiclient.EnumauditDataSecurityRecurringTaskSchemaUrn{openapiclient.Enumaudit-data-security-recurring-taskSchemaUrn("urn:pingidentity:schemas:configuration:2.0:recurring-task:audit-data-security")})} // AddRecurringTaskRequest | Create a new Recurring Task in the config
+    addRecurringTaskRequest := openapiclient.add_recurring_task_request{AddAuditDataSecurityRecurringTaskRequest: openapiclient.NewAddAuditDataSecurityRecurringTaskRequest([]openapiclient.EnumauditDataSecurityRecurringTaskSchemaUrn{openapiclient.Enumaudit-data-security-recurring-taskSchemaUrn("urn:pingidentity:schemas:configuration:2.0:recurring-task:audit-data-security")}, "TaskName_example")} // AddRecurringTaskRequest | Create a new Recurring Task in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringTaskApi.AddRecurringTask(context.Background()).AddRecurringTaskRequest(addRecurringTaskRequest).Execute()
+    resp, r, err := apiClient.RecurringTaskAPI.AddRecurringTask(context.Background()).AddRecurringTaskRequest(addRecurringTaskRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskApi.AddRecurringTask``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskAPI.AddRecurringTask``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddRecurringTask`: AddRecurringTask200Response
-    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskApi.AddRecurringTask`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskAPI.AddRecurringTask`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.RecurringTaskApi.DeleteRecurringTask(context.Background(), recurringTaskName).Execute()
+    r, err := apiClient.RecurringTaskAPI.DeleteRecurringTask(context.Background(), recurringTaskName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskApi.DeleteRecurringTask``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskAPI.DeleteRecurringTask``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringTaskApi.GetRecurringTask(context.Background(), recurringTaskName).Execute()
+    resp, r, err := apiClient.RecurringTaskAPI.GetRecurringTask(context.Background(), recurringTaskName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskApi.GetRecurringTask``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskAPI.GetRecurringTask``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRecurringTask`: AddRecurringTask200Response
-    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskApi.GetRecurringTask`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskAPI.GetRecurringTask`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringTaskApi.ListRecurringTasks(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.RecurringTaskAPI.ListRecurringTasks(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskApi.ListRecurringTasks``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskAPI.ListRecurringTasks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListRecurringTasks`: RecurringTaskListResponse
-    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskApi.ListRecurringTasks`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskAPI.ListRecurringTasks`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringTaskApi.UpdateRecurringTask(context.Background(), recurringTaskName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.RecurringTaskAPI.UpdateRecurringTask(context.Background(), recurringTaskName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskApi.UpdateRecurringTask``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskAPI.UpdateRecurringTask``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRecurringTask`: AddRecurringTask200Response
-    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskApi.UpdateRecurringTask`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskAPI.UpdateRecurringTask`: %v\n", resp)
 }
 ```
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedPasswordGeneratorRequest{}
 
 // AddGroovyScriptedPasswordGeneratorRequest struct for AddGroovyScriptedPasswordGeneratorRequest
 type AddGroovyScriptedPasswordGeneratorRequest struct {
-	// Name of the new Password Generator
-	GeneratorName string                                         `json:"generatorName"`
-	Schemas       []EnumgroovyScriptedPasswordGeneratorSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedPasswordGeneratorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Generator.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Password Generator. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddGroovyScriptedPasswordGeneratorRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Generator is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Password Generator
+	GeneratorName string `json:"generatorName"`
 }
 
 // NewAddGroovyScriptedPasswordGeneratorRequest instantiates a new AddGroovyScriptedPasswordGeneratorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedPasswordGeneratorRequest(generatorName string, schemas []EnumgroovyScriptedPasswordGeneratorSchemaUrn, scriptClass string, enabled bool) *AddGroovyScriptedPasswordGeneratorRequest {
+func NewAddGroovyScriptedPasswordGeneratorRequest(schemas []EnumgroovyScriptedPasswordGeneratorSchemaUrn, scriptClass string, enabled bool, generatorName string) *AddGroovyScriptedPasswordGeneratorRequest {
 	this := AddGroovyScriptedPasswordGeneratorRequest{}
-	this.GeneratorName = generatorName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.GeneratorName = generatorName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddGroovyScriptedPasswordGeneratorRequest(generatorName string, schemas 
 func NewAddGroovyScriptedPasswordGeneratorRequestWithDefaults() *AddGroovyScriptedPasswordGeneratorRequest {
 	this := AddGroovyScriptedPasswordGeneratorRequest{}
 	return &this
-}
-
-// GetGeneratorName returns the GeneratorName field value
-func (o *AddGroovyScriptedPasswordGeneratorRequest) GetGeneratorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.GeneratorName
-}
-
-// GetGeneratorNameOk returns a tuple with the GeneratorName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GeneratorName, true
-}
-
-// SetGeneratorName sets field value
-func (o *AddGroovyScriptedPasswordGeneratorRequest) SetGeneratorName(v string) {
-	o.GeneratorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddGroovyScriptedPasswordGeneratorRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetGeneratorName returns the GeneratorName field value
+func (o *AddGroovyScriptedPasswordGeneratorRequest) GetGeneratorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.GeneratorName
+}
+
+// GetGeneratorNameOk returns a tuple with the GeneratorName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GeneratorName, true
+}
+
+// SetGeneratorName sets field value
+func (o *AddGroovyScriptedPasswordGeneratorRequest) SetGeneratorName(v string) {
+	o.GeneratorName = v
+}
+
 func (o AddGroovyScriptedPasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddGroovyScriptedPasswordGeneratorRequest) MarshalJSON() ([]byte, error)
 
 func (o AddGroovyScriptedPasswordGeneratorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["generatorName"] = o.GeneratorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -233,6 +232,7 @@ func (o AddGroovyScriptedPasswordGeneratorRequest) ToMap() (map[string]interface
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["generatorName"] = o.GeneratorName
 	return toSerialize, nil
 }
 

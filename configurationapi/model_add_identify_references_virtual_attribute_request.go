@@ -19,8 +19,6 @@ var _ MappedNullable = &AddIdentifyReferencesVirtualAttributeRequest{}
 
 // AddIdentifyReferencesVirtualAttributeRequest struct for AddIdentifyReferencesVirtualAttributeRequest
 type AddIdentifyReferencesVirtualAttributeRequest struct {
-	// Name of the new Virtual Attribute
-	Name    string                                            `json:"name"`
 	Schemas []EnumidentifyReferencesVirtualAttributeSchemaUrn `json:"schemas"`
 	// The name or OID of an attribute type whose values will be searched for references to the target entry. The attribute type must be defined in the server schema, must have a syntax of either \"distinguished name\" or \"name and optional UID\", and must be indexed for equality.
 	ReferencedByAttribute []string `json:"referencedByAttribute"`
@@ -48,19 +46,21 @@ type AddIdentifyReferencesVirtualAttributeRequest struct {
 	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
+	// Name of the new Virtual Attribute
+	Name string `json:"name"`
 }
 
 // NewAddIdentifyReferencesVirtualAttributeRequest instantiates a new AddIdentifyReferencesVirtualAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddIdentifyReferencesVirtualAttributeRequest(name string, schemas []EnumidentifyReferencesVirtualAttributeSchemaUrn, referencedByAttribute []string, enabled bool, attributeType string) *AddIdentifyReferencesVirtualAttributeRequest {
+func NewAddIdentifyReferencesVirtualAttributeRequest(schemas []EnumidentifyReferencesVirtualAttributeSchemaUrn, referencedByAttribute []string, enabled bool, attributeType string, name string) *AddIdentifyReferencesVirtualAttributeRequest {
 	this := AddIdentifyReferencesVirtualAttributeRequest{}
-	this.Name = name
 	this.Schemas = schemas
 	this.ReferencedByAttribute = referencedByAttribute
 	this.Enabled = enabled
 	this.AttributeType = attributeType
+	this.Name = name
 	return &this
 }
 
@@ -70,30 +70,6 @@ func NewAddIdentifyReferencesVirtualAttributeRequest(name string, schemas []Enum
 func NewAddIdentifyReferencesVirtualAttributeRequestWithDefaults() *AddIdentifyReferencesVirtualAttributeRequest {
 	this := AddIdentifyReferencesVirtualAttributeRequest{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddIdentifyReferencesVirtualAttributeRequest) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddIdentifyReferencesVirtualAttributeRequest) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddIdentifyReferencesVirtualAttributeRequest) SetName(v string) {
-	o.Name = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -544,6 +520,30 @@ func (o *AddIdentifyReferencesVirtualAttributeRequest) SetAllowIndexConflicts(v 
 	o.AllowIndexConflicts = &v
 }
 
+// GetName returns the Name field value
+func (o *AddIdentifyReferencesVirtualAttributeRequest) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *AddIdentifyReferencesVirtualAttributeRequest) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *AddIdentifyReferencesVirtualAttributeRequest) SetName(v string) {
+	o.Name = v
+}
+
 func (o AddIdentifyReferencesVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -554,7 +554,6 @@ func (o AddIdentifyReferencesVirtualAttributeRequest) MarshalJSON() ([]byte, err
 
 func (o AddIdentifyReferencesVirtualAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["referencedByAttribute"] = o.ReferencedByAttribute
 	if !IsNil(o.ReferenceSearchBaseDN) {
@@ -592,6 +591,7 @@ func (o AddIdentifyReferencesVirtualAttributeRequest) ToMap() (map[string]interf
 	if !IsNil(o.AllowIndexConflicts) {
 		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
 	}
+	toSerialize["name"] = o.Name
 	return toSerialize, nil
 }
 

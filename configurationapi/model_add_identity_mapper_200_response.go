@@ -18,6 +18,7 @@ import (
 // AddIdentityMapper200Response - struct for AddIdentityMapper200Response
 type AddIdentityMapper200Response struct {
 	AggregateIdentityMapperResponse         *AggregateIdentityMapperResponse
+	DnIdentityMapperResponse                *DnIdentityMapperResponse
 	ExactMatchIdentityMapperResponse        *ExactMatchIdentityMapperResponse
 	GroovyScriptedIdentityMapperResponse    *GroovyScriptedIdentityMapperResponse
 	RegularExpressionIdentityMapperResponse *RegularExpressionIdentityMapperResponse
@@ -28,6 +29,13 @@ type AddIdentityMapper200Response struct {
 func AggregateIdentityMapperResponseAsAddIdentityMapper200Response(v *AggregateIdentityMapperResponse) AddIdentityMapper200Response {
 	return AddIdentityMapper200Response{
 		AggregateIdentityMapperResponse: v,
+	}
+}
+
+// DnIdentityMapperResponseAsAddIdentityMapper200Response is a convenience function that returns DnIdentityMapperResponse wrapped in AddIdentityMapper200Response
+func DnIdentityMapperResponseAsAddIdentityMapper200Response(v *DnIdentityMapperResponse) AddIdentityMapper200Response {
+	return AddIdentityMapper200Response{
+		DnIdentityMapperResponse: v,
 	}
 }
 
@@ -74,6 +82,19 @@ func (dst *AddIdentityMapper200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AggregateIdentityMapperResponse = nil
+	}
+
+	// try to unmarshal data into DnIdentityMapperResponse
+	err = newStrictDecoder(data).Decode(&dst.DnIdentityMapperResponse)
+	if err == nil {
+		jsonDnIdentityMapperResponse, _ := json.Marshal(dst.DnIdentityMapperResponse)
+		if string(jsonDnIdentityMapperResponse) == "{}" { // empty struct
+			dst.DnIdentityMapperResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.DnIdentityMapperResponse = nil
 	}
 
 	// try to unmarshal data into ExactMatchIdentityMapperResponse
@@ -131,6 +152,7 @@ func (dst *AddIdentityMapper200Response) UnmarshalJSON(data []byte) error {
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AggregateIdentityMapperResponse = nil
+		dst.DnIdentityMapperResponse = nil
 		dst.ExactMatchIdentityMapperResponse = nil
 		dst.GroovyScriptedIdentityMapperResponse = nil
 		dst.RegularExpressionIdentityMapperResponse = nil
@@ -148,6 +170,10 @@ func (dst *AddIdentityMapper200Response) UnmarshalJSON(data []byte) error {
 func (src AddIdentityMapper200Response) MarshalJSON() ([]byte, error) {
 	if src.AggregateIdentityMapperResponse != nil {
 		return json.Marshal(&src.AggregateIdentityMapperResponse)
+	}
+
+	if src.DnIdentityMapperResponse != nil {
+		return json.Marshal(&src.DnIdentityMapperResponse)
 	}
 
 	if src.ExactMatchIdentityMapperResponse != nil {
@@ -176,6 +202,10 @@ func (obj *AddIdentityMapper200Response) GetActualInstance() interface{} {
 	}
 	if obj.AggregateIdentityMapperResponse != nil {
 		return obj.AggregateIdentityMapperResponse
+	}
+
+	if obj.DnIdentityMapperResponse != nil {
+		return obj.DnIdentityMapperResponse
 	}
 
 	if obj.ExactMatchIdentityMapperResponse != nil {

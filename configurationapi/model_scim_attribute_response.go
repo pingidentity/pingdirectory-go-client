@@ -19,8 +19,6 @@ var _ MappedNullable = &ScimAttributeResponse{}
 
 // ScimAttributeResponse struct for ScimAttributeResponse
 type ScimAttributeResponse struct {
-	// Name of the SCIM Attribute
-	Id      string                       `json:"id"`
 	Schemas []EnumscimAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this SCIM Attribute
 	Description *string `json:"description,omitempty"`
@@ -41,15 +39,16 @@ type ScimAttributeResponse struct {
 	ReferenceType                                 []string                                           `json:"referenceType,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the SCIM Attribute
+	Id string `json:"id"`
 }
 
 // NewScimAttributeResponse instantiates a new ScimAttributeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewScimAttributeResponse(id string, name string, type_ EnumscimAttributeTypeProp, required bool, caseExact bool, multiValued bool, mutability EnumscimAttributeMutabilityProp, returned EnumscimAttributeReturnedProp) *ScimAttributeResponse {
+func NewScimAttributeResponse(name string, type_ EnumscimAttributeTypeProp, required bool, caseExact bool, multiValued bool, mutability EnumscimAttributeMutabilityProp, returned EnumscimAttributeReturnedProp, id string) *ScimAttributeResponse {
 	this := ScimAttributeResponse{}
-	this.Id = id
 	this.Name = name
 	this.Type = type_
 	this.Required = required
@@ -57,6 +56,7 @@ func NewScimAttributeResponse(id string, name string, type_ EnumscimAttributeTyp
 	this.MultiValued = multiValued
 	this.Mutability = mutability
 	this.Returned = returned
+	this.Id = id
 	return &this
 }
 
@@ -66,30 +66,6 @@ func NewScimAttributeResponse(id string, name string, type_ EnumscimAttributeTyp
 func NewScimAttributeResponseWithDefaults() *ScimAttributeResponse {
 	this := ScimAttributeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ScimAttributeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ScimAttributeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ScimAttributeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -452,6 +428,30 @@ func (o *ScimAttributeResponse) SetUrnpingidentityschemasconfigurationmessages20
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ScimAttributeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ScimAttributeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ScimAttributeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ScimAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -462,7 +462,6 @@ func (o ScimAttributeResponse) MarshalJSON() ([]byte, error) {
 
 func (o ScimAttributeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -488,6 +487,7 @@ func (o ScimAttributeResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

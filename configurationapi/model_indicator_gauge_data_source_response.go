@@ -19,8 +19,6 @@ var _ MappedNullable = &IndicatorGaugeDataSourceResponse{}
 
 // IndicatorGaugeDataSourceResponse struct for IndicatorGaugeDataSourceResponse
 type IndicatorGaugeDataSourceResponse struct {
-	// Name of the Gauge Data Source
-	Id      string                                  `json:"id"`
 	Schemas []EnumindicatorGaugeDataSourceSchemaUrn `json:"schemas"`
 	// A description for this Gauge Data Source
 	Description *string `json:"description,omitempty"`
@@ -40,18 +38,20 @@ type IndicatorGaugeDataSourceResponse struct {
 	MinimumUpdateInterval                         *string                                            `json:"minimumUpdateInterval,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Gauge Data Source
+	Id string `json:"id"`
 }
 
 // NewIndicatorGaugeDataSourceResponse instantiates a new IndicatorGaugeDataSourceResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIndicatorGaugeDataSourceResponse(id string, schemas []EnumindicatorGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string) *IndicatorGaugeDataSourceResponse {
+func NewIndicatorGaugeDataSourceResponse(schemas []EnumindicatorGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string, id string) *IndicatorGaugeDataSourceResponse {
 	this := IndicatorGaugeDataSourceResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.MonitorObjectclass = monitorObjectclass
 	this.MonitorAttribute = monitorAttribute
+	this.Id = id
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewIndicatorGaugeDataSourceResponse(id string, schemas []EnumindicatorGauge
 func NewIndicatorGaugeDataSourceResponseWithDefaults() *IndicatorGaugeDataSourceResponse {
 	this := IndicatorGaugeDataSourceResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *IndicatorGaugeDataSourceResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *IndicatorGaugeDataSourceResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *IndicatorGaugeDataSourceResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -415,6 +391,30 @@ func (o *IndicatorGaugeDataSourceResponse) SetUrnpingidentityschemasconfiguratio
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *IndicatorGaugeDataSourceResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *IndicatorGaugeDataSourceResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *IndicatorGaugeDataSourceResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o IndicatorGaugeDataSourceResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -425,7 +425,6 @@ func (o IndicatorGaugeDataSourceResponse) MarshalJSON() ([]byte, error) {
 
 func (o IndicatorGaugeDataSourceResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -453,6 +452,7 @@ func (o IndicatorGaugeDataSourceResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

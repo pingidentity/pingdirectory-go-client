@@ -19,24 +19,24 @@ var _ MappedNullable = &AddWaitForPassphraseCipherStreamProviderRequest{}
 
 // AddWaitForPassphraseCipherStreamProviderRequest struct for AddWaitForPassphraseCipherStreamProviderRequest
 type AddWaitForPassphraseCipherStreamProviderRequest struct {
-	// Name of the new Cipher Stream Provider
-	ProviderName string                                               `json:"providerName"`
-	Schemas      []EnumwaitForPassphraseCipherStreamProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumwaitForPassphraseCipherStreamProviderSchemaUrn `json:"schemas"`
 	// A description for this Cipher Stream Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Cipher Stream Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddWaitForPassphraseCipherStreamProviderRequest instantiates a new AddWaitForPassphraseCipherStreamProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddWaitForPassphraseCipherStreamProviderRequest(providerName string, schemas []EnumwaitForPassphraseCipherStreamProviderSchemaUrn, enabled bool) *AddWaitForPassphraseCipherStreamProviderRequest {
+func NewAddWaitForPassphraseCipherStreamProviderRequest(schemas []EnumwaitForPassphraseCipherStreamProviderSchemaUrn, enabled bool, providerName string) *AddWaitForPassphraseCipherStreamProviderRequest {
 	this := AddWaitForPassphraseCipherStreamProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -46,30 +46,6 @@ func NewAddWaitForPassphraseCipherStreamProviderRequest(providerName string, sch
 func NewAddWaitForPassphraseCipherStreamProviderRequestWithDefaults() *AddWaitForPassphraseCipherStreamProviderRequest {
 	this := AddWaitForPassphraseCipherStreamProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddWaitForPassphraseCipherStreamProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -152,6 +128,30 @@ func (o *AddWaitForPassphraseCipherStreamProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddWaitForPassphraseCipherStreamProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddWaitForPassphraseCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -162,12 +162,12 @@ func (o AddWaitForPassphraseCipherStreamProviderRequest) MarshalJSON() ([]byte, 
 
 func (o AddWaitForPassphraseCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PolicyName** | **string** | Name of the new Log Retention Policy | 
 **Schemas** | [**[]EnumtimeLimitLogRetentionPolicySchemaUrn**](EnumtimeLimitLogRetentionPolicySchemaUrn.md) |  | 
 **RetainDuration** | **string** | Specifies the desired minimum length of time that each log file should be retained. | 
 **Description** | Pointer to **string** | A description for this Log Retention Policy | [optional] 
+**PolicyName** | **string** | Name of the new Log Retention Policy | 
 
 ## Methods
 
 ### NewAddTimeLimitLogRetentionPolicyRequest
 
-`func NewAddTimeLimitLogRetentionPolicyRequest(policyName string, schemas []EnumtimeLimitLogRetentionPolicySchemaUrn, retainDuration string, ) *AddTimeLimitLogRetentionPolicyRequest`
+`func NewAddTimeLimitLogRetentionPolicyRequest(schemas []EnumtimeLimitLogRetentionPolicySchemaUrn, retainDuration string, policyName string, ) *AddTimeLimitLogRetentionPolicyRequest`
 
 NewAddTimeLimitLogRetentionPolicyRequest instantiates a new AddTimeLimitLogRetentionPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,26 +27,6 @@ will change when the set of required properties is changed
 NewAddTimeLimitLogRetentionPolicyRequestWithDefaults instantiates a new AddTimeLimitLogRetentionPolicyRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPolicyName
-
-`func (o *AddTimeLimitLogRetentionPolicyRequest) GetPolicyName() string`
-
-GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
-
-### GetPolicyNameOk
-
-`func (o *AddTimeLimitLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool)`
-
-GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPolicyName
-
-`func (o *AddTimeLimitLogRetentionPolicyRequest) SetPolicyName(v string)`
-
-SetPolicyName sets PolicyName field to given value.
-
 
 ### GetSchemas
 
@@ -112,6 +92,26 @@ SetDescription sets Description field to given value.
 `func (o *AddTimeLimitLogRetentionPolicyRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetPolicyName
+
+`func (o *AddTimeLimitLogRetentionPolicyRequest) GetPolicyName() string`
+
+GetPolicyName returns the PolicyName field if non-nil, zero value otherwise.
+
+### GetPolicyNameOk
+
+`func (o *AddTimeLimitLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool)`
+
+GetPolicyNameOk returns a tuple with the PolicyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPolicyName
+
+`func (o *AddTimeLimitLogRetentionPolicyRequest) SetPolicyName(v string)`
+
+SetPolicyName sets PolicyName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

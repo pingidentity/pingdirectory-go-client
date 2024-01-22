@@ -19,8 +19,6 @@ var _ MappedNullable = &UserRestResourceTypeResponse{}
 
 // UserRestResourceTypeResponse struct for UserRestResourceTypeResponse
 type UserRestResourceTypeResponse struct {
-	// Name of the REST Resource Type
-	Id      string                              `json:"id"`
 	Schemas []EnumuserRestResourceTypeSchemaUrn `json:"schemas"`
 	// Specifies which attribute category the password belongs to.
 	PasswordAttributeCategory *string `json:"passwordAttributeCategory,omitempty"`
@@ -68,20 +66,22 @@ type UserRestResourceTypeResponse struct {
 	NonmembersColumnName                          *string                                            `json:"nonmembersColumnName,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the REST Resource Type
+	Id string `json:"id"`
 }
 
 // NewUserRestResourceTypeResponse instantiates a new UserRestResourceTypeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserRestResourceTypeResponse(id string, schemas []EnumuserRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string) *UserRestResourceTypeResponse {
+func NewUserRestResourceTypeResponse(schemas []EnumuserRestResourceTypeSchemaUrn, enabled bool, resourceEndpoint string, structuralLDAPObjectclass string, searchBaseDN string, id string) *UserRestResourceTypeResponse {
 	this := UserRestResourceTypeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.ResourceEndpoint = resourceEndpoint
 	this.StructuralLDAPObjectclass = structuralLDAPObjectclass
 	this.SearchBaseDN = searchBaseDN
+	this.Id = id
 	return &this
 }
 
@@ -91,30 +91,6 @@ func NewUserRestResourceTypeResponse(id string, schemas []EnumuserRestResourceTy
 func NewUserRestResourceTypeResponseWithDefaults() *UserRestResourceTypeResponse {
 	this := UserRestResourceTypeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *UserRestResourceTypeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UserRestResourceTypeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UserRestResourceTypeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -877,6 +853,30 @@ func (o *UserRestResourceTypeResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *UserRestResourceTypeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *UserRestResourceTypeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *UserRestResourceTypeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o UserRestResourceTypeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -887,7 +887,6 @@ func (o UserRestResourceTypeResponse) MarshalJSON() ([]byte, error) {
 
 func (o UserRestResourceTypeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PasswordAttributeCategory) {
 		toSerialize["passwordAttributeCategory"] = o.PasswordAttributeCategory
@@ -953,6 +952,7 @@ func (o UserRestResourceTypeResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

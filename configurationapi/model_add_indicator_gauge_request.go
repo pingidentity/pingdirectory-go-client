@@ -19,9 +19,7 @@ var _ MappedNullable = &AddIndicatorGaugeRequest{}
 
 // AddIndicatorGaugeRequest struct for AddIndicatorGaugeRequest
 type AddIndicatorGaugeRequest struct {
-	// Name of the new Gauge
-	GaugeName string                        `json:"gaugeName"`
-	Schemas   []EnumindicatorGaugeSchemaUrn `json:"schemas"`
+	Schemas []EnumindicatorGaugeSchemaUrn `json:"schemas"`
 	// Specifies the source of data to use in determining this Indicator Gauge's severity and status.
 	GaugeDataSource string `json:"gaugeDataSource"`
 	// A regular expression pattern that is used to determine whether the current monitored value indicates this gauge's severity should be critical.
@@ -48,17 +46,19 @@ type AddIndicatorGaugeRequest struct {
 	ExcludeResource                []string                                     `json:"excludeResource,omitempty"`
 	ServerUnavailableSeverityLevel *EnumgaugeServerUnavailableSeverityLevelProp `json:"serverUnavailableSeverityLevel,omitempty"`
 	ServerDegradedSeverityLevel    *EnumgaugeServerDegradedSeverityLevelProp    `json:"serverDegradedSeverityLevel,omitempty"`
+	// Name of the new Gauge
+	GaugeName string `json:"gaugeName"`
 }
 
 // NewAddIndicatorGaugeRequest instantiates a new AddIndicatorGaugeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddIndicatorGaugeRequest(gaugeName string, schemas []EnumindicatorGaugeSchemaUrn, gaugeDataSource string) *AddIndicatorGaugeRequest {
+func NewAddIndicatorGaugeRequest(schemas []EnumindicatorGaugeSchemaUrn, gaugeDataSource string, gaugeName string) *AddIndicatorGaugeRequest {
 	this := AddIndicatorGaugeRequest{}
-	this.GaugeName = gaugeName
 	this.Schemas = schemas
 	this.GaugeDataSource = gaugeDataSource
+	this.GaugeName = gaugeName
 	return &this
 }
 
@@ -68,30 +68,6 @@ func NewAddIndicatorGaugeRequest(gaugeName string, schemas []EnumindicatorGaugeS
 func NewAddIndicatorGaugeRequestWithDefaults() *AddIndicatorGaugeRequest {
 	this := AddIndicatorGaugeRequest{}
 	return &this
-}
-
-// GetGaugeName returns the GaugeName field value
-func (o *AddIndicatorGaugeRequest) GetGaugeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.GaugeName
-}
-
-// GetGaugeNameOk returns a tuple with the GaugeName field value
-// and a boolean to check if the value has been set.
-func (o *AddIndicatorGaugeRequest) GetGaugeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GaugeName, true
-}
-
-// SetGaugeName sets field value
-func (o *AddIndicatorGaugeRequest) SetGaugeName(v string) {
-	o.GaugeName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -590,6 +566,30 @@ func (o *AddIndicatorGaugeRequest) SetServerDegradedSeverityLevel(v EnumgaugeSer
 	o.ServerDegradedSeverityLevel = &v
 }
 
+// GetGaugeName returns the GaugeName field value
+func (o *AddIndicatorGaugeRequest) GetGaugeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.GaugeName
+}
+
+// GetGaugeNameOk returns a tuple with the GaugeName field value
+// and a boolean to check if the value has been set.
+func (o *AddIndicatorGaugeRequest) GetGaugeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GaugeName, true
+}
+
+// SetGaugeName sets field value
+func (o *AddIndicatorGaugeRequest) SetGaugeName(v string) {
+	o.GaugeName = v
+}
+
 func (o AddIndicatorGaugeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -600,7 +600,6 @@ func (o AddIndicatorGaugeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddIndicatorGaugeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["gaugeName"] = o.GaugeName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["gaugeDataSource"] = o.GaugeDataSource
 	if !IsNil(o.CriticalValue) {
@@ -645,6 +644,7 @@ func (o AddIndicatorGaugeRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ServerDegradedSeverityLevel) {
 		toSerialize["serverDegradedSeverityLevel"] = o.ServerDegradedSeverityLevel
 	}
+	toSerialize["gaugeName"] = o.GaugeName
 	return toSerialize, nil
 }
 

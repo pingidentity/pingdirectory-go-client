@@ -19,8 +19,6 @@ var _ MappedNullable = &AddDnMapperPluginRequest{}
 
 // AddDnMapperPluginRequest struct for AddDnMapperPluginRequest
 type AddDnMapperPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                        `json:"pluginName"`
 	Schemas    []EnumdnMapperPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp    `json:"pluginType,omitempty"`
 	// Specifies the source DN that may appear in client requests which should be remapped to the target DN. Note that the source DN must not be equal to the target DN.
@@ -41,19 +39,21 @@ type AddDnMapperPluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddDnMapperPluginRequest instantiates a new AddDnMapperPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDnMapperPluginRequest(pluginName string, schemas []EnumdnMapperPluginSchemaUrn, sourceDN string, targetDN string, enabled bool) *AddDnMapperPluginRequest {
+func NewAddDnMapperPluginRequest(schemas []EnumdnMapperPluginSchemaUrn, sourceDN string, targetDN string, enabled bool, pluginName string) *AddDnMapperPluginRequest {
 	this := AddDnMapperPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.SourceDN = sourceDN
 	this.TargetDN = targetDN
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewAddDnMapperPluginRequest(pluginName string, schemas []EnumdnMapperPlugin
 func NewAddDnMapperPluginRequestWithDefaults() *AddDnMapperPluginRequest {
 	this := AddDnMapperPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddDnMapperPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddDnMapperPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddDnMapperPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -409,6 +385,30 @@ func (o *AddDnMapperPluginRequest) SetInvokeForInternalOperations(v bool) {
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddDnMapperPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddDnMapperPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddDnMapperPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddDnMapperPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -419,7 +419,6 @@ func (o AddDnMapperPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddDnMapperPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
@@ -445,6 +444,7 @@ func (o AddDnMapperPluginRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

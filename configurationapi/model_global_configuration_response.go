@@ -19,7 +19,9 @@ var _ MappedNullable = &GlobalConfigurationResponse{}
 
 // GlobalConfigurationResponse struct for GlobalConfigurationResponse
 type GlobalConfigurationResponse struct {
-	Schemas []EnumglobalConfigurationSchemaUrn `json:"schemas,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumglobalConfigurationSchemaUrn                 `json:"schemas,omitempty"`
 	// Specifies a name that may be used to uniquely identify this Directory Server instance among other instances in the environment.
 	InstanceName string `json:"instanceName"`
 	// Specifies the location for this Directory Server. Operations performed which involve communication with other servers may prefer servers in the same location to help ensure low-latency responses.
@@ -131,9 +133,13 @@ type GlobalConfigurationResponse struct {
 	// Specifies the maximum number of duplicate alert messages that should be sent via the administrative alert framework in the time window specified by the duplicate-alert-time-limit property.
 	DuplicateAlertLimit int64 `json:"duplicateAlertLimit"`
 	// Specifies the length of time that must expire before duplicate messages are sent via the administrative alert framework.
-	DuplicateAlertTimeLimit        string                                                     `json:"duplicateAlertTimeLimit"`
-	WritabilityMode                *EnumglobalConfigurationWritabilityModeProp                `json:"writabilityMode,omitempty"`
-	UnrecoverableDatabaseErrorMode *EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp `json:"unrecoverableDatabaseErrorMode,omitempty"`
+	DuplicateAlertTimeLimit string                                      `json:"duplicateAlertTimeLimit"`
+	WritabilityMode         *EnumglobalConfigurationWritabilityModeProp `json:"writabilityMode,omitempty"`
+	// Indicates whether the server should use a common database cache that is shared across all local DB backends instead of maintaining a separate cache for each backend.
+	UseSharedDatabaseCacheAcrossAllLocalDBBackends *bool `json:"useSharedDatabaseCacheAcrossAllLocalDBBackends,omitempty"`
+	// Specifies the percentage of the JVM memory to allocate to the database cache that is shared across all local DB backends.
+	SharedLocalDBBackendDatabaseCachePercent *int64                                                     `json:"sharedLocalDBBackendDatabaseCachePercent,omitempty"`
+	UnrecoverableDatabaseErrorMode           *EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp `json:"unrecoverableDatabaseErrorMode,omitempty"`
 	// This setting provides data integrity options when the Directory Server is installed with a database on a network storage device. A storage device may be accessed directly by a physical server, or indirectly through a virtual machine running on a hypervisor. Enabling this setting will apply changes to all Local DB Backends, the LDAP Changelog Backend, and the replication changelog database.
 	DatabaseOnVirtualizedOrNetworkStorage *bool `json:"databaseOnVirtualizedOrNetworkStorage,omitempty"`
 	// Connection criteria that may be used to identify clients whose add requests should use entryUUID as the naming attribute.
@@ -188,9 +194,7 @@ type GlobalConfigurationResponse struct {
 	TrackedApplication []string                                     `json:"trackedApplication,omitempty"`
 	JmxValueBehavior   *EnumglobalConfigurationJmxValueBehaviorProp `json:"jmxValueBehavior,omitempty"`
 	// When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of \"Rdn1\" and \"Rdn2\" instead of the recommended \"type\" and \"name\" keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys.
-	JmxUseLegacyMbeanNames                        *bool                                              `json:"jmxUseLegacyMbeanNames,omitempty"`
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	JmxUseLegacyMbeanNames *bool `json:"jmxUseLegacyMbeanNames,omitempty"`
 }
 
 // NewGlobalConfigurationResponse instantiates a new GlobalConfigurationResponse object
@@ -221,6 +225,70 @@ func NewGlobalConfigurationResponse(instanceName string, defaultPasswordPolicy s
 func NewGlobalConfigurationResponseWithDefaults() *GlobalConfigurationResponse {
 	this := GlobalConfigurationResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *GlobalConfigurationResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *GlobalConfigurationResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -2119,6 +2187,70 @@ func (o *GlobalConfigurationResponse) SetWritabilityMode(v EnumglobalConfigurati
 	o.WritabilityMode = &v
 }
 
+// GetUseSharedDatabaseCacheAcrossAllLocalDBBackends returns the UseSharedDatabaseCacheAcrossAllLocalDBBackends field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetUseSharedDatabaseCacheAcrossAllLocalDBBackends() bool {
+	if o == nil || IsNil(o.UseSharedDatabaseCacheAcrossAllLocalDBBackends) {
+		var ret bool
+		return ret
+	}
+	return *o.UseSharedDatabaseCacheAcrossAllLocalDBBackends
+}
+
+// GetUseSharedDatabaseCacheAcrossAllLocalDBBackendsOk returns a tuple with the UseSharedDatabaseCacheAcrossAllLocalDBBackends field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetUseSharedDatabaseCacheAcrossAllLocalDBBackendsOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseSharedDatabaseCacheAcrossAllLocalDBBackends) {
+		return nil, false
+	}
+	return o.UseSharedDatabaseCacheAcrossAllLocalDBBackends, true
+}
+
+// HasUseSharedDatabaseCacheAcrossAllLocalDBBackends returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasUseSharedDatabaseCacheAcrossAllLocalDBBackends() bool {
+	if o != nil && !IsNil(o.UseSharedDatabaseCacheAcrossAllLocalDBBackends) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSharedDatabaseCacheAcrossAllLocalDBBackends gets a reference to the given bool and assigns it to the UseSharedDatabaseCacheAcrossAllLocalDBBackends field.
+func (o *GlobalConfigurationResponse) SetUseSharedDatabaseCacheAcrossAllLocalDBBackends(v bool) {
+	o.UseSharedDatabaseCacheAcrossAllLocalDBBackends = &v
+}
+
+// GetSharedLocalDBBackendDatabaseCachePercent returns the SharedLocalDBBackendDatabaseCachePercent field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetSharedLocalDBBackendDatabaseCachePercent() int64 {
+	if o == nil || IsNil(o.SharedLocalDBBackendDatabaseCachePercent) {
+		var ret int64
+		return ret
+	}
+	return *o.SharedLocalDBBackendDatabaseCachePercent
+}
+
+// GetSharedLocalDBBackendDatabaseCachePercentOk returns a tuple with the SharedLocalDBBackendDatabaseCachePercent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetSharedLocalDBBackendDatabaseCachePercentOk() (*int64, bool) {
+	if o == nil || IsNil(o.SharedLocalDBBackendDatabaseCachePercent) {
+		return nil, false
+	}
+	return o.SharedLocalDBBackendDatabaseCachePercent, true
+}
+
+// HasSharedLocalDBBackendDatabaseCachePercent returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasSharedLocalDBBackendDatabaseCachePercent() bool {
+	if o != nil && !IsNil(o.SharedLocalDBBackendDatabaseCachePercent) {
+		return true
+	}
+
+	return false
+}
+
+// SetSharedLocalDBBackendDatabaseCachePercent gets a reference to the given int64 and assigns it to the SharedLocalDBBackendDatabaseCachePercent field.
+func (o *GlobalConfigurationResponse) SetSharedLocalDBBackendDatabaseCachePercent(v int64) {
+	o.SharedLocalDBBackendDatabaseCachePercent = &v
+}
+
 // GetUnrecoverableDatabaseErrorMode returns the UnrecoverableDatabaseErrorMode field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetUnrecoverableDatabaseErrorMode() EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp {
 	if o == nil || IsNil(o.UnrecoverableDatabaseErrorMode) {
@@ -2999,70 +3131,6 @@ func (o *GlobalConfigurationResponse) SetJmxUseLegacyMbeanNames(v bool) {
 	o.JmxUseLegacyMbeanNames = &v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *GlobalConfigurationResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *GlobalConfigurationResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *GlobalConfigurationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *GlobalConfigurationResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
-}
-
 func (o GlobalConfigurationResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -3073,6 +3141,12 @@ func (o GlobalConfigurationResponse) MarshalJSON() ([]byte, error) {
 
 func (o GlobalConfigurationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -3242,6 +3316,12 @@ func (o GlobalConfigurationResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.WritabilityMode) {
 		toSerialize["writabilityMode"] = o.WritabilityMode
 	}
+	if !IsNil(o.UseSharedDatabaseCacheAcrossAllLocalDBBackends) {
+		toSerialize["useSharedDatabaseCacheAcrossAllLocalDBBackends"] = o.UseSharedDatabaseCacheAcrossAllLocalDBBackends
+	}
+	if !IsNil(o.SharedLocalDBBackendDatabaseCachePercent) {
+		toSerialize["sharedLocalDBBackendDatabaseCachePercent"] = o.SharedLocalDBBackendDatabaseCachePercent
+	}
 	if !IsNil(o.UnrecoverableDatabaseErrorMode) {
 		toSerialize["unrecoverableDatabaseErrorMode"] = o.UnrecoverableDatabaseErrorMode
 	}
@@ -3316,12 +3396,6 @@ func (o GlobalConfigurationResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.JmxUseLegacyMbeanNames) {
 		toSerialize["jmxUseLegacyMbeanNames"] = o.JmxUseLegacyMbeanNames
-	}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

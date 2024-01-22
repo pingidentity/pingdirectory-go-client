@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPasswordPolicyRequest{}
 
 // AddPasswordPolicyRequest struct for AddPasswordPolicyRequest
 type AddPasswordPolicyRequest struct {
-	// Name of the new Password Policy
-	PolicyName string                        `json:"policyName"`
-	Schemas    []EnumpasswordPolicySchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumpasswordPolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this Password Policy
 	Description *string `json:"description,omitempty"`
 	// Indicates whether users with the associated password policy are required to authenticate in a secure manner.
@@ -39,6 +37,8 @@ type AddPasswordPolicyRequest struct {
 	DefaultPasswordStorageScheme []string `json:"defaultPasswordStorageScheme"`
 	// Specifies the names of the password storage schemes that are considered deprecated for this password policy.
 	DeprecatedPasswordStorageScheme []string `json:"deprecatedPasswordStorageScheme,omitempty"`
+	// Indicates whether to re-encode passwords on authentication if the configuration for the underlying password storage scheme has changed.
+	ReEncodePasswordsOnSchemeConfigChange *bool `json:"reEncodePasswordsOnSchemeConfigChange,omitempty"`
 	// Indicates whether user entries can have multiple distinct values for the password attribute.
 	AllowMultiplePasswordValues *bool                                           `json:"allowMultiplePasswordValues,omitempty"`
 	AllowPreEncodedPasswords    *EnumpasswordPolicyAllowPreEncodedPasswordsProp `json:"allowPreEncodedPasswords,omitempty"`
@@ -115,17 +115,19 @@ type AddPasswordPolicyRequest struct {
 	LastLoginTimeFormat *string `json:"lastLoginTimeFormat,omitempty"`
 	// Specifies the format string(s) that might have been used with the last login time at any point in the past for users associated with the password policy.
 	PreviousLastLoginTimeFormat []string `json:"previousLastLoginTimeFormat,omitempty"`
+	// Name of the new Password Policy
+	PolicyName string `json:"policyName"`
 }
 
 // NewAddPasswordPolicyRequest instantiates a new AddPasswordPolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPasswordPolicyRequest(policyName string, passwordAttribute string, defaultPasswordStorageScheme []string) *AddPasswordPolicyRequest {
+func NewAddPasswordPolicyRequest(passwordAttribute string, defaultPasswordStorageScheme []string, policyName string) *AddPasswordPolicyRequest {
 	this := AddPasswordPolicyRequest{}
-	this.PolicyName = policyName
 	this.PasswordAttribute = passwordAttribute
 	this.DefaultPasswordStorageScheme = defaultPasswordStorageScheme
+	this.PolicyName = policyName
 	return &this
 }
 
@@ -135,30 +137,6 @@ func NewAddPasswordPolicyRequest(policyName string, passwordAttribute string, de
 func NewAddPasswordPolicyRequestWithDefaults() *AddPasswordPolicyRequest {
 	this := AddPasswordPolicyRequest{}
 	return &this
-}
-
-// GetPolicyName returns the PolicyName field value
-func (o *AddPasswordPolicyRequest) GetPolicyName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PolicyName
-}
-
-// GetPolicyNameOk returns a tuple with the PolicyName field value
-// and a boolean to check if the value has been set.
-func (o *AddPasswordPolicyRequest) GetPolicyNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PolicyName, true
-}
-
-// SetPolicyName sets field value
-func (o *AddPasswordPolicyRequest) SetPolicyName(v string) {
-	o.PolicyName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -463,6 +441,38 @@ func (o *AddPasswordPolicyRequest) HasDeprecatedPasswordStorageScheme() bool {
 // SetDeprecatedPasswordStorageScheme gets a reference to the given []string and assigns it to the DeprecatedPasswordStorageScheme field.
 func (o *AddPasswordPolicyRequest) SetDeprecatedPasswordStorageScheme(v []string) {
 	o.DeprecatedPasswordStorageScheme = v
+}
+
+// GetReEncodePasswordsOnSchemeConfigChange returns the ReEncodePasswordsOnSchemeConfigChange field value if set, zero value otherwise.
+func (o *AddPasswordPolicyRequest) GetReEncodePasswordsOnSchemeConfigChange() bool {
+	if o == nil || IsNil(o.ReEncodePasswordsOnSchemeConfigChange) {
+		var ret bool
+		return ret
+	}
+	return *o.ReEncodePasswordsOnSchemeConfigChange
+}
+
+// GetReEncodePasswordsOnSchemeConfigChangeOk returns a tuple with the ReEncodePasswordsOnSchemeConfigChange field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPasswordPolicyRequest) GetReEncodePasswordsOnSchemeConfigChangeOk() (*bool, bool) {
+	if o == nil || IsNil(o.ReEncodePasswordsOnSchemeConfigChange) {
+		return nil, false
+	}
+	return o.ReEncodePasswordsOnSchemeConfigChange, true
+}
+
+// HasReEncodePasswordsOnSchemeConfigChange returns a boolean if a field has been set.
+func (o *AddPasswordPolicyRequest) HasReEncodePasswordsOnSchemeConfigChange() bool {
+	if o != nil && !IsNil(o.ReEncodePasswordsOnSchemeConfigChange) {
+		return true
+	}
+
+	return false
+}
+
+// SetReEncodePasswordsOnSchemeConfigChange gets a reference to the given bool and assigns it to the ReEncodePasswordsOnSchemeConfigChange field.
+func (o *AddPasswordPolicyRequest) SetReEncodePasswordsOnSchemeConfigChange(v bool) {
+	o.ReEncodePasswordsOnSchemeConfigChange = &v
 }
 
 // GetAllowMultiplePasswordValues returns the AllowMultiplePasswordValues field value if set, zero value otherwise.
@@ -1777,6 +1787,30 @@ func (o *AddPasswordPolicyRequest) SetPreviousLastLoginTimeFormat(v []string) {
 	o.PreviousLastLoginTimeFormat = v
 }
 
+// GetPolicyName returns the PolicyName field value
+func (o *AddPasswordPolicyRequest) GetPolicyName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PolicyName
+}
+
+// GetPolicyNameOk returns a tuple with the PolicyName field value
+// and a boolean to check if the value has been set.
+func (o *AddPasswordPolicyRequest) GetPolicyNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PolicyName, true
+}
+
+// SetPolicyName sets field value
+func (o *AddPasswordPolicyRequest) SetPolicyName(v string) {
+	o.PolicyName = v
+}
+
 func (o AddPasswordPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1787,7 +1821,6 @@ func (o AddPasswordPolicyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddPasswordPolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["policyName"] = o.PolicyName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -1813,6 +1846,9 @@ func (o AddPasswordPolicyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["defaultPasswordStorageScheme"] = o.DefaultPasswordStorageScheme
 	if !IsNil(o.DeprecatedPasswordStorageScheme) {
 		toSerialize["deprecatedPasswordStorageScheme"] = o.DeprecatedPasswordStorageScheme
+	}
+	if !IsNil(o.ReEncodePasswordsOnSchemeConfigChange) {
+		toSerialize["reEncodePasswordsOnSchemeConfigChange"] = o.ReEncodePasswordsOnSchemeConfigChange
 	}
 	if !IsNil(o.AllowMultiplePasswordValues) {
 		toSerialize["allowMultiplePasswordValues"] = o.AllowMultiplePasswordValues
@@ -1937,6 +1973,7 @@ func (o AddPasswordPolicyRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PreviousLastLoginTimeFormat) {
 		toSerialize["previousLastLoginTimeFormat"] = o.PreviousLastLoginTimeFormat
 	}
+	toSerialize["policyName"] = o.PolicyName
 	return toSerialize, nil
 }
 

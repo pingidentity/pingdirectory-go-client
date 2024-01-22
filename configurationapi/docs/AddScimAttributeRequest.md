@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeName** | **string** | Name of the new SCIM Attribute | 
 **Schemas** | Pointer to [**[]EnumscimAttributeSchemaUrn**](EnumscimAttributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this SCIM Attribute | [optional] 
 **Name** | **string** | The name of the attribute. | 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **Mutability** | Pointer to [**EnumscimAttributeMutabilityProp**](EnumscimAttributeMutabilityProp.md) |  | [optional] 
 **Returned** | Pointer to [**EnumscimAttributeReturnedProp**](EnumscimAttributeReturnedProp.md) |  | [optional] 
 **ReferenceType** | Pointer to **[]string** | Specifies the SCIM resource types that may be referenced. This property is only applicable for attributes that are of type &#39;reference&#39;. Valid values are: A SCIM resource type (e.g., &#39;User&#39; or &#39;Group&#39;), &#39;external&#39; - indicating the resource is an external resource (e.g., such as a photo), or &#39;uri&#39; - indicating that the reference is to a service endpoint or an identifier (such as a schema urn). | [optional] 
+**AttributeName** | **string** | Name of the new SCIM Attribute | 
 
 ## Methods
 
 ### NewAddScimAttributeRequest
 
-`func NewAddScimAttributeRequest(attributeName string, name string, ) *AddScimAttributeRequest`
+`func NewAddScimAttributeRequest(name string, attributeName string, ) *AddScimAttributeRequest`
 
 NewAddScimAttributeRequest instantiates a new AddScimAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewAddScimAttributeRequestWithDefaults instantiates a new AddScimAttributeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAttributeName
-
-`func (o *AddScimAttributeRequest) GetAttributeName() string`
-
-GetAttributeName returns the AttributeName field if non-nil, zero value otherwise.
-
-### GetAttributeNameOk
-
-`func (o *AddScimAttributeRequest) GetAttributeNameOk() (*string, bool)`
-
-GetAttributeNameOk returns a tuple with the AttributeName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeName
-
-`func (o *AddScimAttributeRequest) SetAttributeName(v string)`
-
-SetAttributeName sets AttributeName field to given value.
-
 
 ### GetSchemas
 
@@ -325,6 +305,26 @@ SetReferenceType sets ReferenceType field to given value.
 `func (o *AddScimAttributeRequest) HasReferenceType() bool`
 
 HasReferenceType returns a boolean if a field has been set.
+
+### GetAttributeName
+
+`func (o *AddScimAttributeRequest) GetAttributeName() string`
+
+GetAttributeName returns the AttributeName field if non-nil, zero value otherwise.
+
+### GetAttributeNameOk
+
+`func (o *AddScimAttributeRequest) GetAttributeNameOk() (*string, bool)`
+
+GetAttributeNameOk returns a tuple with the AttributeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeName
+
+`func (o *AddScimAttributeRequest) SetAttributeName(v string)`
+
+SetAttributeName sets AttributeName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

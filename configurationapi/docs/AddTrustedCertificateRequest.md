@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateName** | **string** | Name of the new Trusted Certificate | 
 **Schemas** | Pointer to [**[]EnumtrustedCertificateSchemaUrn**](EnumtrustedCertificateSchemaUrn.md) |  | [optional] 
 **Certificate** | **string** | The PEM-encoded X.509v3 certificate. | 
+**CertificateName** | **string** | Name of the new Trusted Certificate | 
 
 ## Methods
 
 ### NewAddTrustedCertificateRequest
 
-`func NewAddTrustedCertificateRequest(certificateName string, certificate string, ) *AddTrustedCertificateRequest`
+`func NewAddTrustedCertificateRequest(certificate string, certificateName string, ) *AddTrustedCertificateRequest`
 
 NewAddTrustedCertificateRequest instantiates a new AddTrustedCertificateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -26,26 +26,6 @@ will change when the set of required properties is changed
 NewAddTrustedCertificateRequestWithDefaults instantiates a new AddTrustedCertificateRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCertificateName
-
-`func (o *AddTrustedCertificateRequest) GetCertificateName() string`
-
-GetCertificateName returns the CertificateName field if non-nil, zero value otherwise.
-
-### GetCertificateNameOk
-
-`func (o *AddTrustedCertificateRequest) GetCertificateNameOk() (*string, bool)`
-
-GetCertificateNameOk returns a tuple with the CertificateName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCertificateName
-
-`func (o *AddTrustedCertificateRequest) SetCertificateName(v string)`
-
-SetCertificateName sets CertificateName field to given value.
-
 
 ### GetSchemas
 
@@ -90,6 +70,26 @@ and a boolean to check if the value has been set.
 `func (o *AddTrustedCertificateRequest) SetCertificate(v string)`
 
 SetCertificate sets Certificate field to given value.
+
+
+### GetCertificateName
+
+`func (o *AddTrustedCertificateRequest) GetCertificateName() string`
+
+GetCertificateName returns the CertificateName field if non-nil, zero value otherwise.
+
+### GetCertificateNameOk
+
+`func (o *AddTrustedCertificateRequest) GetCertificateNameOk() (*string, bool)`
+
+GetCertificateNameOk returns a tuple with the CertificateName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCertificateName
+
+`func (o *AddTrustedCertificateRequest) SetCertificateName(v string)`
+
+SetCertificateName sets CertificateName field to given value.
 
 
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAmazonSecretsManagerCipherStreamProviderRequest{}
 
 // AddAmazonSecretsManagerCipherStreamProviderRequest struct for AddAmazonSecretsManagerCipherStreamProviderRequest
 type AddAmazonSecretsManagerCipherStreamProviderRequest struct {
-	// Name of the new Cipher Stream Provider
-	ProviderName string                                                  `json:"providerName"`
-	Schemas      []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The external server with information to use when interacting with the AWS Secrets Manager.
 	AwsExternalServer string `json:"awsExternalServer"`
 	// The Amazon Resource Name (ARN) or the user-friendly name of the secret to be retrieved.
@@ -40,20 +38,22 @@ type AddAmazonSecretsManagerCipherStreamProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Cipher Stream Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddAmazonSecretsManagerCipherStreamProviderRequest instantiates a new AddAmazonSecretsManagerCipherStreamProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAmazonSecretsManagerCipherStreamProviderRequest(providerName string, schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool) *AddAmazonSecretsManagerCipherStreamProviderRequest {
+func NewAddAmazonSecretsManagerCipherStreamProviderRequest(schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool, providerName string) *AddAmazonSecretsManagerCipherStreamProviderRequest {
 	this := AddAmazonSecretsManagerCipherStreamProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.AwsExternalServer = awsExternalServer
 	this.SecretID = secretID
 	this.SecretFieldName = secretFieldName
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -63,30 +63,6 @@ func NewAddAmazonSecretsManagerCipherStreamProviderRequest(providerName string, 
 func NewAddAmazonSecretsManagerCipherStreamProviderRequestWithDefaults() *AddAmazonSecretsManagerCipherStreamProviderRequest {
 	this := AddAmazonSecretsManagerCipherStreamProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -369,6 +345,30 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetEnabled(v bool) 
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddAmazonSecretsManagerCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -379,7 +379,6 @@ func (o AddAmazonSecretsManagerCipherStreamProviderRequest) MarshalJSON() ([]byt
 
 func (o AddAmazonSecretsManagerCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["awsExternalServer"] = o.AwsExternalServer
 	toSerialize["secretID"] = o.SecretID
@@ -400,6 +399,7 @@ func (o AddAmazonSecretsManagerCipherStreamProviderRequest) ToMap() (map[string]
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

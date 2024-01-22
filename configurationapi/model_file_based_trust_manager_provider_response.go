@@ -19,8 +19,6 @@ var _ MappedNullable = &FileBasedTrustManagerProviderResponse{}
 
 // FileBasedTrustManagerProviderResponse struct for FileBasedTrustManagerProviderResponse
 type FileBasedTrustManagerProviderResponse struct {
-	// Name of the Trust Manager Provider
-	Id      string                                       `json:"id"`
 	Schemas []EnumfileBasedTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root.
 	TrustStoreFile string `json:"trustStoreFile"`
@@ -38,18 +36,20 @@ type FileBasedTrustManagerProviderResponse struct {
 	IncludeJVMDefaultIssuers                      *bool                                              `json:"includeJVMDefaultIssuers,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Trust Manager Provider
+	Id string `json:"id"`
 }
 
 // NewFileBasedTrustManagerProviderResponse instantiates a new FileBasedTrustManagerProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFileBasedTrustManagerProviderResponse(id string, schemas []EnumfileBasedTrustManagerProviderSchemaUrn, trustStoreFile string, enabled bool) *FileBasedTrustManagerProviderResponse {
+func NewFileBasedTrustManagerProviderResponse(schemas []EnumfileBasedTrustManagerProviderSchemaUrn, trustStoreFile string, enabled bool, id string) *FileBasedTrustManagerProviderResponse {
 	this := FileBasedTrustManagerProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.TrustStoreFile = trustStoreFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewFileBasedTrustManagerProviderResponse(id string, schemas []EnumfileBased
 func NewFileBasedTrustManagerProviderResponseWithDefaults() *FileBasedTrustManagerProviderResponse {
 	this := FileBasedTrustManagerProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *FileBasedTrustManagerProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *FileBasedTrustManagerProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *FileBasedTrustManagerProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -381,6 +357,30 @@ func (o *FileBasedTrustManagerProviderResponse) SetUrnpingidentityschemasconfigu
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *FileBasedTrustManagerProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *FileBasedTrustManagerProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *FileBasedTrustManagerProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o FileBasedTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -391,7 +391,6 @@ func (o FileBasedTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o FileBasedTrustManagerProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["trustStoreFile"] = o.TrustStoreFile
 	if !IsNil(o.TrustStoreType) {
@@ -416,6 +415,7 @@ func (o FileBasedTrustManagerProviderResponse) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

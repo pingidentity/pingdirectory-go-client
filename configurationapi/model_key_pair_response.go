@@ -19,8 +19,6 @@ var _ MappedNullable = &KeyPairResponse{}
 
 // KeyPairResponse struct for KeyPairResponse
 type KeyPairResponse struct {
-	// Name of the Key Pair
-	Id           string                      `json:"id"`
 	Schemas      []EnumkeyPairSchemaUrn      `json:"schemas,omitempty"`
 	KeyAlgorithm EnumkeyPairKeyAlgorithmProp `json:"keyAlgorithm"`
 	// The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens.
@@ -33,16 +31,18 @@ type KeyPairResponse struct {
 	PrivateKey                                    *string                                            `json:"privateKey,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Key Pair
+	Id string `json:"id"`
 }
 
 // NewKeyPairResponse instantiates a new KeyPairResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyPairResponse(id string, keyAlgorithm EnumkeyPairKeyAlgorithmProp) *KeyPairResponse {
+func NewKeyPairResponse(keyAlgorithm EnumkeyPairKeyAlgorithmProp, id string) *KeyPairResponse {
 	this := KeyPairResponse{}
-	this.Id = id
 	this.KeyAlgorithm = keyAlgorithm
+	this.Id = id
 	return &this
 }
 
@@ -52,30 +52,6 @@ func NewKeyPairResponse(id string, keyAlgorithm EnumkeyPairKeyAlgorithmProp) *Ke
 func NewKeyPairResponseWithDefaults() *KeyPairResponse {
 	this := KeyPairResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *KeyPairResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *KeyPairResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *KeyPairResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -326,6 +302,30 @@ func (o *KeyPairResponse) SetUrnpingidentityschemasconfigurationmessages20(v Met
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *KeyPairResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *KeyPairResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *KeyPairResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o KeyPairResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -336,7 +336,6 @@ func (o KeyPairResponse) MarshalJSON() ([]byte, error) {
 
 func (o KeyPairResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -359,6 +358,7 @@ func (o KeyPairResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

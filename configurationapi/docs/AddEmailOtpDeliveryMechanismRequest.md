@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MechanismName** | **string** | Name of the new OTP Delivery Mechanism | 
 **Schemas** | [**[]EnumemailOtpDeliveryMechanismSchemaUrn**](EnumemailOtpDeliveryMechanismSchemaUrn.md) |  | 
 **EmailAddressAttributeType** | Pointer to **string** | The name or OID of the attribute that holds the email address to which the message should be sent. | [optional] 
 **EmailAddressJSONField** | Pointer to **string** | The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string. | [optional] 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **MessageTextAfterOTP** | Pointer to **string** | Any text that should appear in the message after the one-time password value. | [optional] 
 **Description** | Pointer to **string** | A description for this OTP Delivery Mechanism | [optional] 
 **Enabled** | **bool** | Indicates whether this OTP Delivery Mechanism is enabled for use in the server. | 
+**MechanismName** | **string** | Name of the new OTP Delivery Mechanism | 
 
 ## Methods
 
 ### NewAddEmailOtpDeliveryMechanismRequest
 
-`func NewAddEmailOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumemailOtpDeliveryMechanismSchemaUrn, senderAddress string, enabled bool, ) *AddEmailOtpDeliveryMechanismRequest`
+`func NewAddEmailOtpDeliveryMechanismRequest(schemas []EnumemailOtpDeliveryMechanismSchemaUrn, senderAddress string, enabled bool, mechanismName string, ) *AddEmailOtpDeliveryMechanismRequest`
 
 NewAddEmailOtpDeliveryMechanismRequest instantiates a new AddEmailOtpDeliveryMechanismRequest object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewAddEmailOtpDeliveryMechanismRequestWithDefaults instantiates a new AddEmailOtpDeliveryMechanismRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMechanismName
-
-`func (o *AddEmailOtpDeliveryMechanismRequest) GetMechanismName() string`
-
-GetMechanismName returns the MechanismName field if non-nil, zero value otherwise.
-
-### GetMechanismNameOk
-
-`func (o *AddEmailOtpDeliveryMechanismRequest) GetMechanismNameOk() (*string, bool)`
-
-GetMechanismNameOk returns a tuple with the MechanismName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMechanismName
-
-`func (o *AddEmailOtpDeliveryMechanismRequest) SetMechanismName(v string)`
-
-SetMechanismName sets MechanismName field to given value.
-
 
 ### GetSchemas
 
@@ -288,6 +268,26 @@ and a boolean to check if the value has been set.
 `func (o *AddEmailOtpDeliveryMechanismRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetMechanismName
+
+`func (o *AddEmailOtpDeliveryMechanismRequest) GetMechanismName() string`
+
+GetMechanismName returns the MechanismName field if non-nil, zero value otherwise.
+
+### GetMechanismNameOk
+
+`func (o *AddEmailOtpDeliveryMechanismRequest) GetMechanismNameOk() (*string, bool)`
+
+GetMechanismNameOk returns a tuple with the MechanismName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMechanismName
+
+`func (o *AddEmailOtpDeliveryMechanismRequest) SetMechanismName(v string)`
+
+SetMechanismName sets MechanismName field to given value.
 
 
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLdapExternalServerRequest{}
 
 // AddLdapExternalServerRequest struct for AddLdapExternalServerRequest
 type AddLdapExternalServerRequest struct {
-	// Name of the new External Server
-	ServerName string                            `json:"serverName"`
-	Schemas    []EnumldapExternalServerSchemaUrn `json:"schemas"`
+	Schemas []EnumldapExternalServerSchemaUrn `json:"schemas"`
 	// The host name or IP address of the target LDAP server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number on which the server listens for requests.
@@ -60,17 +58,19 @@ type AddLdapExternalServerRequest struct {
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	// Name of the new External Server
+	ServerName string `json:"serverName"`
 }
 
 // NewAddLdapExternalServerRequest instantiates a new AddLdapExternalServerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapExternalServerRequest(serverName string, schemas []EnumldapExternalServerSchemaUrn, serverHostName string) *AddLdapExternalServerRequest {
+func NewAddLdapExternalServerRequest(schemas []EnumldapExternalServerSchemaUrn, serverHostName string, serverName string) *AddLdapExternalServerRequest {
 	this := AddLdapExternalServerRequest{}
-	this.ServerName = serverName
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
+	this.ServerName = serverName
 	return &this
 }
 
@@ -80,30 +80,6 @@ func NewAddLdapExternalServerRequest(serverName string, schemas []EnumldapExtern
 func NewAddLdapExternalServerRequestWithDefaults() *AddLdapExternalServerRequest {
 	this := AddLdapExternalServerRequest{}
 	return &this
-}
-
-// GetServerName returns the ServerName field value
-func (o *AddLdapExternalServerRequest) GetServerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServerName
-}
-
-// GetServerNameOk returns a tuple with the ServerName field value
-// and a boolean to check if the value has been set.
-func (o *AddLdapExternalServerRequest) GetServerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServerName, true
-}
-
-// SetServerName sets field value
-func (o *AddLdapExternalServerRequest) SetServerName(v string) {
-	o.ServerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -794,6 +770,30 @@ func (o *AddLdapExternalServerRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetServerName returns the ServerName field value
+func (o *AddLdapExternalServerRequest) GetServerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ServerName
+}
+
+// GetServerNameOk returns a tuple with the ServerName field value
+// and a boolean to check if the value has been set.
+func (o *AddLdapExternalServerRequest) GetServerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ServerName, true
+}
+
+// SetServerName sets field value
+func (o *AddLdapExternalServerRequest) SetServerName(v string) {
+	o.ServerName = v
+}
+
 func (o AddLdapExternalServerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -804,7 +804,6 @@ func (o AddLdapExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLdapExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["serverName"] = o.ServerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["serverHostName"] = o.ServerHostName
 	if !IsNil(o.ServerPort) {
@@ -867,6 +866,7 @@ func (o AddLdapExternalServerRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["serverName"] = o.ServerName
 	return toSerialize, nil
 }
 

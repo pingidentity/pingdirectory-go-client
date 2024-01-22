@@ -19,9 +19,7 @@ var _ MappedNullable = &AddDeliverOtpExtendedOperationHandlerRequest{}
 
 // AddDeliverOtpExtendedOperationHandlerRequest struct for AddDeliverOtpExtendedOperationHandlerRequest
 type AddDeliverOtpExtendedOperationHandlerRequest struct {
-	// Name of the new Extended Operation Handler
-	HandlerName string                                            `json:"handlerName"`
-	Schemas     []EnumdeliverOtpExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumdeliverOtpExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the user(s) targeted by the authentication identity contained in the extended request. This will only be used for \"u:\"-style authentication identities.
 	IdentityMapper string `json:"identityMapper"`
 	// The password generator that will be used to create the one-time password values to be delivered to the end user.
@@ -32,20 +30,22 @@ type AddDeliverOtpExtendedOperationHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
 	Enabled bool `json:"enabled"`
+	// Name of the new Extended Operation Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddDeliverOtpExtendedOperationHandlerRequest instantiates a new AddDeliverOtpExtendedOperationHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDeliverOtpExtendedOperationHandlerRequest(handlerName string, schemas []EnumdeliverOtpExtendedOperationHandlerSchemaUrn, identityMapper string, passwordGenerator string, defaultOTPDeliveryMechanism []string, enabled bool) *AddDeliverOtpExtendedOperationHandlerRequest {
+func NewAddDeliverOtpExtendedOperationHandlerRequest(schemas []EnumdeliverOtpExtendedOperationHandlerSchemaUrn, identityMapper string, passwordGenerator string, defaultOTPDeliveryMechanism []string, enabled bool, handlerName string) *AddDeliverOtpExtendedOperationHandlerRequest {
 	this := AddDeliverOtpExtendedOperationHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.IdentityMapper = identityMapper
 	this.PasswordGenerator = passwordGenerator
 	this.DefaultOTPDeliveryMechanism = defaultOTPDeliveryMechanism
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -55,30 +55,6 @@ func NewAddDeliverOtpExtendedOperationHandlerRequest(handlerName string, schemas
 func NewAddDeliverOtpExtendedOperationHandlerRequestWithDefaults() *AddDeliverOtpExtendedOperationHandlerRequest {
 	this := AddDeliverOtpExtendedOperationHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddDeliverOtpExtendedOperationHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -233,6 +209,30 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddDeliverOtpExtendedOperationHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddDeliverOtpExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -243,7 +243,6 @@ func (o AddDeliverOtpExtendedOperationHandlerRequest) MarshalJSON() ([]byte, err
 
 func (o AddDeliverOtpExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["identityMapper"] = o.IdentityMapper
 	toSerialize["passwordGenerator"] = o.PasswordGenerator
@@ -252,6 +251,7 @@ func (o AddDeliverOtpExtendedOperationHandlerRequest) ToMap() (map[string]interf
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

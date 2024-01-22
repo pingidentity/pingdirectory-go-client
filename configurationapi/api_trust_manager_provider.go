@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// TrustManagerProviderApiService TrustManagerProviderApi service
-type TrustManagerProviderApiService service
+// TrustManagerProviderAPIService TrustManagerProviderAPI service
+type TrustManagerProviderAPIService service
 
 type ApiAddTrustManagerProviderRequest struct {
 	ctx                            context.Context
-	ApiService                     *TrustManagerProviderApiService
+	ApiService                     *TrustManagerProviderAPIService
 	addTrustManagerProviderRequest *AddTrustManagerProviderRequest
 }
 
@@ -44,7 +44,7 @@ AddTrustManagerProvider Add a new Trust Manager Provider to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddTrustManagerProviderRequest
 */
-func (a *TrustManagerProviderApiService) AddTrustManagerProvider(ctx context.Context) ApiAddTrustManagerProviderRequest {
+func (a *TrustManagerProviderAPIService) AddTrustManagerProvider(ctx context.Context) ApiAddTrustManagerProviderRequest {
 	return ApiAddTrustManagerProviderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *TrustManagerProviderApiService) AddTrustManagerProvider(ctx context.Con
 // Execute executes the request
 //
 //	@return AddTrustManagerProvider200Response
-func (a *TrustManagerProviderApiService) AddTrustManagerProviderExecute(r ApiAddTrustManagerProviderRequest) (*AddTrustManagerProvider200Response, *http.Response, error) {
+func (a *TrustManagerProviderAPIService) AddTrustManagerProviderExecute(r ApiAddTrustManagerProviderRequest) (*AddTrustManagerProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *TrustManagerProviderApiService) AddTrustManagerProviderExecute(r ApiAdd
 		localVarReturnValue *AddTrustManagerProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderApiService.AddTrustManagerProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderAPIService.AddTrustManagerProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *TrustManagerProviderApiService) AddTrustManagerProviderExecute(r ApiAdd
 
 type ApiDeleteTrustManagerProviderRequest struct {
 	ctx                      context.Context
-	ApiService               *TrustManagerProviderApiService
+	ApiService               *TrustManagerProviderAPIService
 	trustManagerProviderName string
 }
 
@@ -149,7 +149,7 @@ DeleteTrustManagerProvider Delete a Trust Manager Provider
 	@param trustManagerProviderName Name of the Trust Manager Provider
 	@return ApiDeleteTrustManagerProviderRequest
 */
-func (a *TrustManagerProviderApiService) DeleteTrustManagerProvider(ctx context.Context, trustManagerProviderName string) ApiDeleteTrustManagerProviderRequest {
+func (a *TrustManagerProviderAPIService) DeleteTrustManagerProvider(ctx context.Context, trustManagerProviderName string) ApiDeleteTrustManagerProviderRequest {
 	return ApiDeleteTrustManagerProviderRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -158,14 +158,14 @@ func (a *TrustManagerProviderApiService) DeleteTrustManagerProvider(ctx context.
 }
 
 // Execute executes the request
-func (a *TrustManagerProviderApiService) DeleteTrustManagerProviderExecute(r ApiDeleteTrustManagerProviderRequest) (*http.Response, error) {
+func (a *TrustManagerProviderAPIService) DeleteTrustManagerProviderExecute(r ApiDeleteTrustManagerProviderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderApiService.DeleteTrustManagerProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderAPIService.DeleteTrustManagerProvider")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *TrustManagerProviderApiService) DeleteTrustManagerProviderExecute(r Api
 
 type ApiGetTrustManagerProviderRequest struct {
 	ctx                      context.Context
-	ApiService               *TrustManagerProviderApiService
+	ApiService               *TrustManagerProviderAPIService
 	trustManagerProviderName string
 }
 
@@ -239,7 +239,7 @@ GetTrustManagerProvider Returns a single Trust Manager Provider
 	@param trustManagerProviderName Name of the Trust Manager Provider
 	@return ApiGetTrustManagerProviderRequest
 */
-func (a *TrustManagerProviderApiService) GetTrustManagerProvider(ctx context.Context, trustManagerProviderName string) ApiGetTrustManagerProviderRequest {
+func (a *TrustManagerProviderAPIService) GetTrustManagerProvider(ctx context.Context, trustManagerProviderName string) ApiGetTrustManagerProviderRequest {
 	return ApiGetTrustManagerProviderRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -250,7 +250,7 @@ func (a *TrustManagerProviderApiService) GetTrustManagerProvider(ctx context.Con
 // Execute executes the request
 //
 //	@return AddTrustManagerProvider200Response
-func (a *TrustManagerProviderApiService) GetTrustManagerProviderExecute(r ApiGetTrustManagerProviderRequest) (*AddTrustManagerProvider200Response, *http.Response, error) {
+func (a *TrustManagerProviderAPIService) GetTrustManagerProviderExecute(r ApiGetTrustManagerProviderRequest) (*AddTrustManagerProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *TrustManagerProviderApiService) GetTrustManagerProviderExecute(r ApiGet
 		localVarReturnValue *AddTrustManagerProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderApiService.GetTrustManagerProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderAPIService.GetTrustManagerProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *TrustManagerProviderApiService) GetTrustManagerProviderExecute(r ApiGet
 
 type ApiListTrustManagerProvidersRequest struct {
 	ctx        context.Context
-	ApiService *TrustManagerProviderApiService
+	ApiService *TrustManagerProviderAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListTrustManagerProviders Returns a list of all Trust Manager Provider objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListTrustManagerProvidersRequest
 */
-func (a *TrustManagerProviderApiService) ListTrustManagerProviders(ctx context.Context) ApiListTrustManagerProvidersRequest {
+func (a *TrustManagerProviderAPIService) ListTrustManagerProviders(ctx context.Context) ApiListTrustManagerProvidersRequest {
 	return ApiListTrustManagerProvidersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *TrustManagerProviderApiService) ListTrustManagerProviders(ctx context.C
 // Execute executes the request
 //
 //	@return TrustManagerProviderListResponse
-func (a *TrustManagerProviderApiService) ListTrustManagerProvidersExecute(r ApiListTrustManagerProvidersRequest) (*TrustManagerProviderListResponse, *http.Response, error) {
+func (a *TrustManagerProviderAPIService) ListTrustManagerProvidersExecute(r ApiListTrustManagerProvidersRequest) (*TrustManagerProviderListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *TrustManagerProviderApiService) ListTrustManagerProvidersExecute(r ApiL
 		localVarReturnValue *TrustManagerProviderListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderApiService.ListTrustManagerProviders")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderAPIService.ListTrustManagerProviders")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *TrustManagerProviderApiService) ListTrustManagerProvidersExecute(r ApiL
 
 type ApiUpdateTrustManagerProviderRequest struct {
 	ctx                      context.Context
-	ApiService               *TrustManagerProviderApiService
+	ApiService               *TrustManagerProviderAPIService
 	trustManagerProviderName string
 	updateRequest            *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdateTrustManagerProvider Update an existing Trust Manager Provider by name
 	@param trustManagerProviderName Name of the Trust Manager Provider
 	@return ApiUpdateTrustManagerProviderRequest
 */
-func (a *TrustManagerProviderApiService) UpdateTrustManagerProvider(ctx context.Context, trustManagerProviderName string) ApiUpdateTrustManagerProviderRequest {
+func (a *TrustManagerProviderAPIService) UpdateTrustManagerProvider(ctx context.Context, trustManagerProviderName string) ApiUpdateTrustManagerProviderRequest {
 	return ApiUpdateTrustManagerProviderRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -467,7 +467,7 @@ func (a *TrustManagerProviderApiService) UpdateTrustManagerProvider(ctx context.
 // Execute executes the request
 //
 //	@return AddTrustManagerProvider200Response
-func (a *TrustManagerProviderApiService) UpdateTrustManagerProviderExecute(r ApiUpdateTrustManagerProviderRequest) (*AddTrustManagerProvider200Response, *http.Response, error) {
+func (a *TrustManagerProviderAPIService) UpdateTrustManagerProviderExecute(r ApiUpdateTrustManagerProviderRequest) (*AddTrustManagerProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *TrustManagerProviderApiService) UpdateTrustManagerProviderExecute(r Api
 		localVarReturnValue *AddTrustManagerProvider200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderApiService.UpdateTrustManagerProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustManagerProviderAPIService.UpdateTrustManagerProvider")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

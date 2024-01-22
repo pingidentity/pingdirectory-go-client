@@ -19,8 +19,6 @@ var _ MappedNullable = &AddSubOperationTimingPluginRequest{}
 
 // AddSubOperationTimingPluginRequest struct for AddSubOperationTimingPluginRequest
 type AddSubOperationTimingPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                  `json:"pluginName"`
 	Schemas    []EnumsubOperationTimingPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp              `json:"pluginType,omitempty"`
 	// Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data.
@@ -33,17 +31,19 @@ type AddSubOperationTimingPluginRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddSubOperationTimingPluginRequest instantiates a new AddSubOperationTimingPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSubOperationTimingPluginRequest(pluginName string, schemas []EnumsubOperationTimingPluginSchemaUrn, enabled bool) *AddSubOperationTimingPluginRequest {
+func NewAddSubOperationTimingPluginRequest(schemas []EnumsubOperationTimingPluginSchemaUrn, enabled bool, pluginName string) *AddSubOperationTimingPluginRequest {
 	this := AddSubOperationTimingPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddSubOperationTimingPluginRequest(pluginName string, schemas []EnumsubO
 func NewAddSubOperationTimingPluginRequestWithDefaults() *AddSubOperationTimingPluginRequest {
 	this := AddSubOperationTimingPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddSubOperationTimingPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddSubOperationTimingPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddSubOperationTimingPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -287,6 +263,30 @@ func (o *AddSubOperationTimingPluginRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddSubOperationTimingPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddSubOperationTimingPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddSubOperationTimingPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddSubOperationTimingPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -297,7 +297,6 @@ func (o AddSubOperationTimingPluginRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddSubOperationTimingPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
@@ -315,6 +314,7 @@ func (o AddSubOperationTimingPluginRequest) ToMap() (map[string]interface{}, err
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

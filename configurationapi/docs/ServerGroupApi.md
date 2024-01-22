@@ -1,14 +1,14 @@
-# \ServerGroupApi
+# \ServerGroupAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddServerGroup**](ServerGroupApi.md#AddServerGroup) | **Post** /server-groups | Add a new Server Group to the config
-[**DeleteServerGroup**](ServerGroupApi.md#DeleteServerGroup) | **Delete** /server-groups/{server-group-name} | Delete a Server Group
-[**GetServerGroup**](ServerGroupApi.md#GetServerGroup) | **Get** /server-groups/{server-group-name} | Returns a single Server Group
-[**ListServerGroups**](ServerGroupApi.md#ListServerGroups) | **Get** /server-groups | Returns a list of all Server Group objects
-[**UpdateServerGroup**](ServerGroupApi.md#UpdateServerGroup) | **Patch** /server-groups/{server-group-name} | Update an existing Server Group by name
+[**AddServerGroup**](ServerGroupAPI.md#AddServerGroup) | **Post** /server-groups | Add a new Server Group to the config
+[**DeleteServerGroup**](ServerGroupAPI.md#DeleteServerGroup) | **Delete** /server-groups/{server-group-name} | Delete a Server Group
+[**GetServerGroup**](ServerGroupAPI.md#GetServerGroup) | **Get** /server-groups/{server-group-name} | Returns a single Server Group
+[**ListServerGroups**](ServerGroupAPI.md#ListServerGroups) | **Get** /server-groups | Returns a list of all Server Group objects
+[**UpdateServerGroup**](ServerGroupAPI.md#UpdateServerGroup) | **Patch** /server-groups/{server-group-name} | Update an existing Server Group by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.AddServerGroup(context.Background()).AddServerGroupRequest(addServerGroupRequest).Execute()
+    resp, r, err := apiClient.ServerGroupAPI.AddServerGroup(context.Background()).AddServerGroupRequest(addServerGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.AddServerGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupAPI.AddServerGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddServerGroup`: ServerGroupResponse
-    fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.AddServerGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerGroupAPI.AddServerGroup`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ServerGroupApi.DeleteServerGroup(context.Background(), serverGroupName).Execute()
+    r, err := apiClient.ServerGroupAPI.DeleteServerGroup(context.Background(), serverGroupName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.DeleteServerGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupAPI.DeleteServerGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.GetServerGroup(context.Background(), serverGroupName).Execute()
+    resp, r, err := apiClient.ServerGroupAPI.GetServerGroup(context.Background(), serverGroupName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.GetServerGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupAPI.GetServerGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetServerGroup`: ServerGroupResponse
-    fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.GetServerGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerGroupAPI.GetServerGroup`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.ListServerGroups(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.ServerGroupAPI.ListServerGroups(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.ListServerGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupAPI.ListServerGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListServerGroups`: ServerGroupListResponse
-    fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.ListServerGroups`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerGroupAPI.ListServerGroups`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.UpdateServerGroup(context.Background(), serverGroupName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.ServerGroupAPI.UpdateServerGroup(context.Background(), serverGroupName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.UpdateServerGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupAPI.UpdateServerGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateServerGroup`: ServerGroupResponse
-    fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.UpdateServerGroup`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `ServerGroupAPI.UpdateServerGroup`: %v\n", resp)
 }
 ```
 

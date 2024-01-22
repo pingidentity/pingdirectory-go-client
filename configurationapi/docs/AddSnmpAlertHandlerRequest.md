@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Alert Handler | 
 **Schemas** | [**[]EnumsnmpAlertHandlerSchemaUrn**](EnumsnmpAlertHandlerSchemaUrn.md) |  | 
 **Asynchronous** | Pointer to **bool** | Indicates whether the server should attempt to invoke this SNMP Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated. | [optional] 
 **ServerHostName** | **string** | Specifies the address of the SNMP agent to which traps will be sent. | 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **EnabledAlertSeverity** | Pointer to [**[]EnumalertHandlerEnabledAlertSeverityProp**](EnumalertHandlerEnabledAlertSeverityProp.md) |  | [optional] 
 **EnabledAlertType** | Pointer to [**[]EnumalertHandlerEnabledAlertTypeProp**](EnumalertHandlerEnabledAlertTypeProp.md) |  | [optional] 
 **DisabledAlertType** | Pointer to [**[]EnumalertHandlerDisabledAlertTypeProp**](EnumalertHandlerDisabledAlertTypeProp.md) |  | [optional] 
+**HandlerName** | **string** | Name of the new Alert Handler | 
 
 ## Methods
 
 ### NewAddSnmpAlertHandlerRequest
 
-`func NewAddSnmpAlertHandlerRequest(handlerName string, schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, enabled bool, ) *AddSnmpAlertHandlerRequest`
+`func NewAddSnmpAlertHandlerRequest(schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, enabled bool, handlerName string, ) *AddSnmpAlertHandlerRequest`
 
 NewAddSnmpAlertHandlerRequest instantiates a new AddSnmpAlertHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewAddSnmpAlertHandlerRequestWithDefaults instantiates a new AddSnmpAlertHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddSnmpAlertHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddSnmpAlertHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddSnmpAlertHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -289,6 +269,26 @@ SetDisabledAlertType sets DisabledAlertType field to given value.
 `func (o *AddSnmpAlertHandlerRequest) HasDisabledAlertType() bool`
 
 HasDisabledAlertType returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddSnmpAlertHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddSnmpAlertHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddSnmpAlertHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

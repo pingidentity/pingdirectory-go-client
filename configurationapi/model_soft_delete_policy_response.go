@@ -19,8 +19,6 @@ var _ MappedNullable = &SoftDeletePolicyResponse{}
 
 // SoftDeletePolicyResponse struct for SoftDeletePolicyResponse
 type SoftDeletePolicyResponse struct {
-	// Name of the Soft Delete Policy
-	Id      string                          `json:"id"`
 	Schemas []EnumsoftDeletePolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this Soft Delete Policy
 	Description *string `json:"description,omitempty"`
@@ -34,6 +32,8 @@ type SoftDeletePolicyResponse struct {
 	SoftDeleteRetainNumberOfEntries               *int64                                             `json:"softDeleteRetainNumberOfEntries,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Soft Delete Policy
+	Id string `json:"id"`
 }
 
 // NewSoftDeletePolicyResponse instantiates a new SoftDeletePolicyResponse object
@@ -52,30 +52,6 @@ func NewSoftDeletePolicyResponse(id string) *SoftDeletePolicyResponse {
 func NewSoftDeletePolicyResponseWithDefaults() *SoftDeletePolicyResponse {
 	this := SoftDeletePolicyResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SoftDeletePolicyResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SoftDeletePolicyResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SoftDeletePolicyResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -334,6 +310,30 @@ func (o *SoftDeletePolicyResponse) SetUrnpingidentityschemasconfigurationmessage
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SoftDeletePolicyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SoftDeletePolicyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SoftDeletePolicyResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SoftDeletePolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -344,7 +344,6 @@ func (o SoftDeletePolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o SoftDeletePolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -369,6 +368,7 @@ func (o SoftDeletePolicyResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

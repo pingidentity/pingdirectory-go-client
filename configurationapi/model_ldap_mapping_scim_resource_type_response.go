@@ -19,8 +19,6 @@ var _ MappedNullable = &LdapMappingScimResourceTypeResponse{}
 
 // LdapMappingScimResourceTypeResponse struct for LdapMappingScimResourceTypeResponse
 type LdapMappingScimResourceTypeResponse struct {
-	// Name of the SCIM Resource Type
-	Id      string                                     `json:"id"`
 	Schemas []EnumldapMappingScimResourceTypeSchemaUrn `json:"schemas"`
 	// The core schema enforced on core attributes at the top level of a SCIM resource representation exposed by thisMapping SCIM Resource Type.
 	CoreSchema string `json:"coreSchema"`
@@ -51,19 +49,21 @@ type LdapMappingScimResourceTypeResponse struct {
 	CreateDNPattern                               *string                                            `json:"createDNPattern,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the SCIM Resource Type
+	Id string `json:"id"`
 }
 
 // NewLdapMappingScimResourceTypeResponse instantiates a new LdapMappingScimResourceTypeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapMappingScimResourceTypeResponse(id string, schemas []EnumldapMappingScimResourceTypeSchemaUrn, coreSchema string, enabled bool, endpoint string) *LdapMappingScimResourceTypeResponse {
+func NewLdapMappingScimResourceTypeResponse(schemas []EnumldapMappingScimResourceTypeSchemaUrn, coreSchema string, enabled bool, endpoint string, id string) *LdapMappingScimResourceTypeResponse {
 	this := LdapMappingScimResourceTypeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.CoreSchema = coreSchema
 	this.Enabled = enabled
 	this.Endpoint = endpoint
+	this.Id = id
 	return &this
 }
 
@@ -73,30 +73,6 @@ func NewLdapMappingScimResourceTypeResponse(id string, schemas []EnumldapMapping
 func NewLdapMappingScimResourceTypeResponseWithDefaults() *LdapMappingScimResourceTypeResponse {
 	this := LdapMappingScimResourceTypeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LdapMappingScimResourceTypeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LdapMappingScimResourceTypeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LdapMappingScimResourceTypeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -611,6 +587,30 @@ func (o *LdapMappingScimResourceTypeResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LdapMappingScimResourceTypeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LdapMappingScimResourceTypeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LdapMappingScimResourceTypeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LdapMappingScimResourceTypeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -621,7 +621,6 @@ func (o LdapMappingScimResourceTypeResponse) MarshalJSON() ([]byte, error) {
 
 func (o LdapMappingScimResourceTypeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["coreSchema"] = o.CoreSchema
 	if !IsNil(o.RequiredSchemaExtension) {
@@ -665,6 +664,7 @@ func (o LdapMappingScimResourceTypeResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

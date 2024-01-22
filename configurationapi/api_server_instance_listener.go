@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// ServerInstanceListenerApiService ServerInstanceListenerApi service
-type ServerInstanceListenerApiService service
+// ServerInstanceListenerAPIService ServerInstanceListenerAPI service
+type ServerInstanceListenerAPIService service
 
 type ApiGetServerInstanceListenerRequest struct {
 	ctx                        context.Context
-	ApiService                 *ServerInstanceListenerApiService
+	ApiService                 *ServerInstanceListenerAPIService
 	serverInstanceListenerName string
 	serverInstanceName         string
 }
@@ -41,7 +41,7 @@ GetServerInstanceListener Returns a single Server Instance Listener
 	@param serverInstanceName Name of the Server Instance
 	@return ApiGetServerInstanceListenerRequest
 */
-func (a *ServerInstanceListenerApiService) GetServerInstanceListener(ctx context.Context, serverInstanceListenerName string, serverInstanceName string) ApiGetServerInstanceListenerRequest {
+func (a *ServerInstanceListenerAPIService) GetServerInstanceListener(ctx context.Context, serverInstanceListenerName string, serverInstanceName string) ApiGetServerInstanceListenerRequest {
 	return ApiGetServerInstanceListenerRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -53,7 +53,7 @@ func (a *ServerInstanceListenerApiService) GetServerInstanceListener(ctx context
 // Execute executes the request
 //
 //	@return GetServerInstanceListener200Response
-func (a *ServerInstanceListenerApiService) GetServerInstanceListenerExecute(r ApiGetServerInstanceListenerRequest) (*GetServerInstanceListener200Response, *http.Response, error) {
+func (a *ServerInstanceListenerAPIService) GetServerInstanceListenerExecute(r ApiGetServerInstanceListenerRequest) (*GetServerInstanceListener200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -61,7 +61,7 @@ func (a *ServerInstanceListenerApiService) GetServerInstanceListenerExecute(r Ap
 		localVarReturnValue *GetServerInstanceListener200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceListenerApiService.GetServerInstanceListener")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceListenerAPIService.GetServerInstanceListener")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -130,7 +130,7 @@ func (a *ServerInstanceListenerApiService) GetServerInstanceListenerExecute(r Ap
 
 type ApiListServerInstanceListenersRequest struct {
 	ctx                context.Context
-	ApiService         *ServerInstanceListenerApiService
+	ApiService         *ServerInstanceListenerAPIService
 	serverInstanceName string
 	filter             *string
 }
@@ -152,7 +152,7 @@ ListServerInstanceListeners Returns a list of all Server Instance Listener objec
 	@param serverInstanceName Name of the Server Instance
 	@return ApiListServerInstanceListenersRequest
 */
-func (a *ServerInstanceListenerApiService) ListServerInstanceListeners(ctx context.Context, serverInstanceName string) ApiListServerInstanceListenersRequest {
+func (a *ServerInstanceListenerAPIService) ListServerInstanceListeners(ctx context.Context, serverInstanceName string) ApiListServerInstanceListenersRequest {
 	return ApiListServerInstanceListenersRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -163,7 +163,7 @@ func (a *ServerInstanceListenerApiService) ListServerInstanceListeners(ctx conte
 // Execute executes the request
 //
 //	@return ServerInstanceListenerListResponse
-func (a *ServerInstanceListenerApiService) ListServerInstanceListenersExecute(r ApiListServerInstanceListenersRequest) (*ServerInstanceListenerListResponse, *http.Response, error) {
+func (a *ServerInstanceListenerAPIService) ListServerInstanceListenersExecute(r ApiListServerInstanceListenersRequest) (*ServerInstanceListenerListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -171,7 +171,7 @@ func (a *ServerInstanceListenerApiService) ListServerInstanceListenersExecute(r 
 		localVarReturnValue *ServerInstanceListenerListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceListenerApiService.ListServerInstanceListeners")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceListenerAPIService.ListServerInstanceListeners")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -242,7 +242,7 @@ func (a *ServerInstanceListenerApiService) ListServerInstanceListenersExecute(r 
 
 type ApiUpdateServerInstanceListenerRequest struct {
 	ctx                        context.Context
-	ApiService                 *ServerInstanceListenerApiService
+	ApiService                 *ServerInstanceListenerAPIService
 	serverInstanceListenerName string
 	serverInstanceName         string
 	updateRequest              *UpdateRequest
@@ -266,7 +266,7 @@ UpdateServerInstanceListener Update an existing Server Instance Listener by name
 	@param serverInstanceName Name of the Server Instance
 	@return ApiUpdateServerInstanceListenerRequest
 */
-func (a *ServerInstanceListenerApiService) UpdateServerInstanceListener(ctx context.Context, serverInstanceListenerName string, serverInstanceName string) ApiUpdateServerInstanceListenerRequest {
+func (a *ServerInstanceListenerAPIService) UpdateServerInstanceListener(ctx context.Context, serverInstanceListenerName string, serverInstanceName string) ApiUpdateServerInstanceListenerRequest {
 	return ApiUpdateServerInstanceListenerRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -278,7 +278,7 @@ func (a *ServerInstanceListenerApiService) UpdateServerInstanceListener(ctx cont
 // Execute executes the request
 //
 //	@return GetServerInstanceListener200Response
-func (a *ServerInstanceListenerApiService) UpdateServerInstanceListenerExecute(r ApiUpdateServerInstanceListenerRequest) (*GetServerInstanceListener200Response, *http.Response, error) {
+func (a *ServerInstanceListenerAPIService) UpdateServerInstanceListenerExecute(r ApiUpdateServerInstanceListenerRequest) (*GetServerInstanceListener200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -286,7 +286,7 @@ func (a *ServerInstanceListenerApiService) UpdateServerInstanceListenerExecute(r
 		localVarReturnValue *GetServerInstanceListener200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceListenerApiService.UpdateServerInstanceListener")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceListenerAPIService.UpdateServerInstanceListener")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

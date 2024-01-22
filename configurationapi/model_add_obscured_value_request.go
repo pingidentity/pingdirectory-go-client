@@ -19,23 +19,23 @@ var _ MappedNullable = &AddObscuredValueRequest{}
 
 // AddObscuredValueRequest struct for AddObscuredValueRequest
 type AddObscuredValueRequest struct {
-	// Name of the new Obscured Value
-	ValueName string                       `json:"valueName"`
-	Schemas   []EnumobscuredValueSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumobscuredValueSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Obscured Value
 	Description *string `json:"description,omitempty"`
 	// The value to be stored in an obscured form.
 	ObscuredValue string `json:"obscuredValue"`
+	// Name of the new Obscured Value
+	ValueName string `json:"valueName"`
 }
 
 // NewAddObscuredValueRequest instantiates a new AddObscuredValueRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddObscuredValueRequest(valueName string, obscuredValue string) *AddObscuredValueRequest {
+func NewAddObscuredValueRequest(obscuredValue string, valueName string) *AddObscuredValueRequest {
 	this := AddObscuredValueRequest{}
-	this.ValueName = valueName
 	this.ObscuredValue = obscuredValue
+	this.ValueName = valueName
 	return &this
 }
 
@@ -45,30 +45,6 @@ func NewAddObscuredValueRequest(valueName string, obscuredValue string) *AddObsc
 func NewAddObscuredValueRequestWithDefaults() *AddObscuredValueRequest {
 	this := AddObscuredValueRequest{}
 	return &this
-}
-
-// GetValueName returns the ValueName field value
-func (o *AddObscuredValueRequest) GetValueName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ValueName
-}
-
-// GetValueNameOk returns a tuple with the ValueName field value
-// and a boolean to check if the value has been set.
-func (o *AddObscuredValueRequest) GetValueNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ValueName, true
-}
-
-// SetValueName sets field value
-func (o *AddObscuredValueRequest) SetValueName(v string) {
-	o.ValueName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -159,6 +135,30 @@ func (o *AddObscuredValueRequest) SetObscuredValue(v string) {
 	o.ObscuredValue = v
 }
 
+// GetValueName returns the ValueName field value
+func (o *AddObscuredValueRequest) GetValueName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ValueName
+}
+
+// GetValueNameOk returns a tuple with the ValueName field value
+// and a boolean to check if the value has been set.
+func (o *AddObscuredValueRequest) GetValueNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ValueName, true
+}
+
+// SetValueName sets field value
+func (o *AddObscuredValueRequest) SetValueName(v string) {
+	o.ValueName = v
+}
+
 func (o AddObscuredValueRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -169,7 +169,6 @@ func (o AddObscuredValueRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddObscuredValueRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["valueName"] = o.ValueName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -177,6 +176,7 @@ func (o AddObscuredValueRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["obscuredValue"] = o.ObscuredValue
+	toSerialize["valueName"] = o.ValueName
 	return toSerialize, nil
 }
 

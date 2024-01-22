@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Prometheus Monitor Attribute Metric | 
 **Schemas** | Pointer to [**[]EnumprometheusMonitorAttributeMetricSchemaUrn**](EnumprometheusMonitorAttributeMetricSchemaUrn.md) |  | [optional] 
 **MetricName** | **string** | The name that will be used in the metric to be consumed by Prometheus. | 
 **MonitorAttributeName** | **string** | The name of the monitor attribute that contains the numeric value to be published. | 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **LabelNameValuePair** | Pointer to **[]string** | A set of name-value pairs for labels that should be included in the published metric for the target attribute. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Prometheus Monitor Attribute Metric | 
 
 ## Methods
 
 ### NewPrometheusMonitorAttributeMetricResponse
 
-`func NewPrometheusMonitorAttributeMetricResponse(id string, metricName string, monitorAttributeName string, monitorObjectClassName string, metricType EnumprometheusMonitorAttributeMetricMetricTypeProp, ) *PrometheusMonitorAttributeMetricResponse`
+`func NewPrometheusMonitorAttributeMetricResponse(metricName string, monitorAttributeName string, monitorObjectClassName string, metricType EnumprometheusMonitorAttributeMetricMetricTypeProp, id string, ) *PrometheusMonitorAttributeMetricResponse`
 
 NewPrometheusMonitorAttributeMetricResponse instantiates a new PrometheusMonitorAttributeMetricResponse object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewPrometheusMonitorAttributeMetricResponseWithDefaults instantiates a new PrometheusMonitorAttributeMetricResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *PrometheusMonitorAttributeMetricResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *PrometheusMonitorAttributeMetricResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *PrometheusMonitorAttributeMetricResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -284,6 +264,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *PrometheusMonitorAttributeMetricResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *PrometheusMonitorAttributeMetricResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PrometheusMonitorAttributeMetricResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PrometheusMonitorAttributeMetricResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

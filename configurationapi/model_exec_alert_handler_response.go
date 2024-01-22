@@ -19,8 +19,6 @@ var _ MappedNullable = &ExecAlertHandlerResponse{}
 
 // ExecAlertHandlerResponse struct for ExecAlertHandlerResponse
 type ExecAlertHandlerResponse struct {
-	// Name of the Alert Handler
-	Id      string                          `json:"id"`
 	Schemas []EnumexecAlertHandlerSchemaUrn `json:"schemas"`
 	// Specifies the path of the command to execute, without any arguments. It must be an absolute path for reasons of security and reliability.
 	Command string `json:"command"`
@@ -35,18 +33,20 @@ type ExecAlertHandlerResponse struct {
 	DisabledAlertType                             []EnumalertHandlerDisabledAlertTypeProp            `json:"disabledAlertType,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Alert Handler
+	Id string `json:"id"`
 }
 
 // NewExecAlertHandlerResponse instantiates a new ExecAlertHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExecAlertHandlerResponse(id string, schemas []EnumexecAlertHandlerSchemaUrn, command string, enabled bool) *ExecAlertHandlerResponse {
+func NewExecAlertHandlerResponse(schemas []EnumexecAlertHandlerSchemaUrn, command string, enabled bool, id string) *ExecAlertHandlerResponse {
 	this := ExecAlertHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Command = command
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewExecAlertHandlerResponse(id string, schemas []EnumexecAlertHandlerSchema
 func NewExecAlertHandlerResponseWithDefaults() *ExecAlertHandlerResponse {
 	this := ExecAlertHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ExecAlertHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ExecAlertHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ExecAlertHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -378,6 +354,30 @@ func (o *ExecAlertHandlerResponse) SetUrnpingidentityschemasconfigurationmessage
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ExecAlertHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ExecAlertHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ExecAlertHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ExecAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -388,7 +388,6 @@ func (o ExecAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o ExecAlertHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["command"] = o.Command
 	if !IsNil(o.Asynchronous) {
@@ -413,6 +412,7 @@ func (o ExecAlertHandlerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

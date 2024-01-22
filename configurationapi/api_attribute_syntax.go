@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// AttributeSyntaxApiService AttributeSyntaxApi service
-type AttributeSyntaxApiService service
+// AttributeSyntaxAPIService AttributeSyntaxAPI service
+type AttributeSyntaxAPIService service
 
 type ApiGetAttributeSyntaxRequest struct {
 	ctx                 context.Context
-	ApiService          *AttributeSyntaxApiService
+	ApiService          *AttributeSyntaxAPIService
 	attributeSyntaxName string
 }
 
@@ -39,7 +39,7 @@ GetAttributeSyntax Returns a single Attribute Syntax
 	@param attributeSyntaxName Name of the Attribute Syntax
 	@return ApiGetAttributeSyntaxRequest
 */
-func (a *AttributeSyntaxApiService) GetAttributeSyntax(ctx context.Context, attributeSyntaxName string) ApiGetAttributeSyntaxRequest {
+func (a *AttributeSyntaxAPIService) GetAttributeSyntax(ctx context.Context, attributeSyntaxName string) ApiGetAttributeSyntaxRequest {
 	return ApiGetAttributeSyntaxRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -50,7 +50,7 @@ func (a *AttributeSyntaxApiService) GetAttributeSyntax(ctx context.Context, attr
 // Execute executes the request
 //
 //	@return GetAttributeSyntax200Response
-func (a *AttributeSyntaxApiService) GetAttributeSyntaxExecute(r ApiGetAttributeSyntaxRequest) (*GetAttributeSyntax200Response, *http.Response, error) {
+func (a *AttributeSyntaxAPIService) GetAttributeSyntaxExecute(r ApiGetAttributeSyntaxRequest) (*GetAttributeSyntax200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -58,7 +58,7 @@ func (a *AttributeSyntaxApiService) GetAttributeSyntaxExecute(r ApiGetAttributeS
 		localVarReturnValue *GetAttributeSyntax200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeSyntaxApiService.GetAttributeSyntax")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeSyntaxAPIService.GetAttributeSyntax")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *AttributeSyntaxApiService) GetAttributeSyntaxExecute(r ApiGetAttributeS
 
 type ApiListAttributeSyntaxesRequest struct {
 	ctx        context.Context
-	ApiService *AttributeSyntaxApiService
+	ApiService *AttributeSyntaxAPIService
 	filter     *string
 }
 
@@ -146,7 +146,7 @@ ListAttributeSyntaxes Returns a list of all Attribute Syntax objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListAttributeSyntaxesRequest
 */
-func (a *AttributeSyntaxApiService) ListAttributeSyntaxes(ctx context.Context) ApiListAttributeSyntaxesRequest {
+func (a *AttributeSyntaxAPIService) ListAttributeSyntaxes(ctx context.Context) ApiListAttributeSyntaxesRequest {
 	return ApiListAttributeSyntaxesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *AttributeSyntaxApiService) ListAttributeSyntaxes(ctx context.Context) A
 // Execute executes the request
 //
 //	@return AttributeSyntaxListResponse
-func (a *AttributeSyntaxApiService) ListAttributeSyntaxesExecute(r ApiListAttributeSyntaxesRequest) (*AttributeSyntaxListResponse, *http.Response, error) {
+func (a *AttributeSyntaxAPIService) ListAttributeSyntaxesExecute(r ApiListAttributeSyntaxesRequest) (*AttributeSyntaxListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -164,7 +164,7 @@ func (a *AttributeSyntaxApiService) ListAttributeSyntaxesExecute(r ApiListAttrib
 		localVarReturnValue *AttributeSyntaxListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeSyntaxApiService.ListAttributeSyntaxes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeSyntaxAPIService.ListAttributeSyntaxes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -234,7 +234,7 @@ func (a *AttributeSyntaxApiService) ListAttributeSyntaxesExecute(r ApiListAttrib
 
 type ApiUpdateAttributeSyntaxRequest struct {
 	ctx                 context.Context
-	ApiService          *AttributeSyntaxApiService
+	ApiService          *AttributeSyntaxAPIService
 	attributeSyntaxName string
 	updateRequest       *UpdateRequest
 }
@@ -256,7 +256,7 @@ UpdateAttributeSyntax Update an existing Attribute Syntax by name
 	@param attributeSyntaxName Name of the Attribute Syntax
 	@return ApiUpdateAttributeSyntaxRequest
 */
-func (a *AttributeSyntaxApiService) UpdateAttributeSyntax(ctx context.Context, attributeSyntaxName string) ApiUpdateAttributeSyntaxRequest {
+func (a *AttributeSyntaxAPIService) UpdateAttributeSyntax(ctx context.Context, attributeSyntaxName string) ApiUpdateAttributeSyntaxRequest {
 	return ApiUpdateAttributeSyntaxRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -267,7 +267,7 @@ func (a *AttributeSyntaxApiService) UpdateAttributeSyntax(ctx context.Context, a
 // Execute executes the request
 //
 //	@return GetAttributeSyntax200Response
-func (a *AttributeSyntaxApiService) UpdateAttributeSyntaxExecute(r ApiUpdateAttributeSyntaxRequest) (*GetAttributeSyntax200Response, *http.Response, error) {
+func (a *AttributeSyntaxAPIService) UpdateAttributeSyntaxExecute(r ApiUpdateAttributeSyntaxRequest) (*GetAttributeSyntax200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -275,7 +275,7 @@ func (a *AttributeSyntaxApiService) UpdateAttributeSyntaxExecute(r ApiUpdateAttr
 		localVarReturnValue *GetAttributeSyntax200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeSyntaxApiService.UpdateAttributeSyntax")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeSyntaxAPIService.UpdateAttributeSyntax")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

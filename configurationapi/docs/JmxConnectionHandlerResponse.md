@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Connection Handler | 
 **Schemas** | [**[]EnumjmxConnectionHandlerSchemaUrn**](EnumjmxConnectionHandlerSchemaUrn.md) |  | 
 **ListenPort** | **int64** | Specifies the port number on which the JMX Connection Handler will listen for connections from clients. | 
 **UseSSL** | Pointer to **bool** | Indicates whether the JMX Connection Handler should use SSL. | [optional] 
@@ -16,12 +15,13 @@ Name | Type | Description | Notes
 **DeniedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Connection Handler | 
 
 ## Methods
 
 ### NewJmxConnectionHandlerResponse
 
-`func NewJmxConnectionHandlerResponse(id string, schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool, ) *JmxConnectionHandlerResponse`
+`func NewJmxConnectionHandlerResponse(schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool, id string, ) *JmxConnectionHandlerResponse`
 
 NewJmxConnectionHandlerResponse instantiates a new JmxConnectionHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewJmxConnectionHandlerResponseWithDefaults instantiates a new JmxConnectionHandlerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *JmxConnectionHandlerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *JmxConnectionHandlerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *JmxConnectionHandlerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -315,6 +295,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *JmxConnectionHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *JmxConnectionHandlerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *JmxConnectionHandlerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *JmxConnectionHandlerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

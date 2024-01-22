@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLdifConnectionHandlerRequest{}
 
 // AddLdifConnectionHandlerRequest struct for AddLdifConnectionHandlerRequest
 type AddLdifConnectionHandlerRequest struct {
-	// Name of the new Connection Handler
-	HandlerName string                               `json:"handlerName"`
-	Schemas     []EnumldifConnectionHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumldifConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
 	AllowedClient []string `json:"allowedClient,omitempty"`
 	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
@@ -34,17 +32,19 @@ type AddLdifConnectionHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
 	Enabled bool `json:"enabled"`
+	// Name of the new Connection Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddLdifConnectionHandlerRequest instantiates a new AddLdifConnectionHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdifConnectionHandlerRequest(handlerName string, schemas []EnumldifConnectionHandlerSchemaUrn, enabled bool) *AddLdifConnectionHandlerRequest {
+func NewAddLdifConnectionHandlerRequest(schemas []EnumldifConnectionHandlerSchemaUrn, enabled bool, handlerName string) *AddLdifConnectionHandlerRequest {
 	this := AddLdifConnectionHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -54,30 +54,6 @@ func NewAddLdifConnectionHandlerRequest(handlerName string, schemas []EnumldifCo
 func NewAddLdifConnectionHandlerRequestWithDefaults() *AddLdifConnectionHandlerRequest {
 	this := AddLdifConnectionHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddLdifConnectionHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddLdifConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddLdifConnectionHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -288,6 +264,30 @@ func (o *AddLdifConnectionHandlerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddLdifConnectionHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddLdifConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddLdifConnectionHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddLdifConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -298,7 +298,6 @@ func (o AddLdifConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLdifConnectionHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.AllowedClient) {
 		toSerialize["allowedClient"] = o.AllowedClient
@@ -316,6 +315,7 @@ func (o AddLdifConnectionHandlerRequest) ToMap() (map[string]interface{}, error)
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

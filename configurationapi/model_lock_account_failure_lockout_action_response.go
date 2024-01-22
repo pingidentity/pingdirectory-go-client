@@ -19,23 +19,23 @@ var _ MappedNullable = &LockAccountFailureLockoutActionResponse{}
 
 // LockAccountFailureLockoutActionResponse struct for LockAccountFailureLockoutActionResponse
 type LockAccountFailureLockoutActionResponse struct {
-	// Name of the Failure Lockout Action
-	Id      string                                         `json:"id"`
 	Schemas []EnumlockAccountFailureLockoutActionSchemaUrn `json:"schemas"`
 	// A description for this Failure Lockout Action
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Failure Lockout Action
+	Id string `json:"id"`
 }
 
 // NewLockAccountFailureLockoutActionResponse instantiates a new LockAccountFailureLockoutActionResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLockAccountFailureLockoutActionResponse(id string, schemas []EnumlockAccountFailureLockoutActionSchemaUrn) *LockAccountFailureLockoutActionResponse {
+func NewLockAccountFailureLockoutActionResponse(schemas []EnumlockAccountFailureLockoutActionSchemaUrn, id string) *LockAccountFailureLockoutActionResponse {
 	this := LockAccountFailureLockoutActionResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -45,30 +45,6 @@ func NewLockAccountFailureLockoutActionResponse(id string, schemas []EnumlockAcc
 func NewLockAccountFailureLockoutActionResponseWithDefaults() *LockAccountFailureLockoutActionResponse {
 	this := LockAccountFailureLockoutActionResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LockAccountFailureLockoutActionResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LockAccountFailureLockoutActionResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LockAccountFailureLockoutActionResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -191,6 +167,30 @@ func (o *LockAccountFailureLockoutActionResponse) SetUrnpingidentityschemasconfi
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LockAccountFailureLockoutActionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LockAccountFailureLockoutActionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LockAccountFailureLockoutActionResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LockAccountFailureLockoutActionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -201,7 +201,6 @@ func (o LockAccountFailureLockoutActionResponse) MarshalJSON() ([]byte, error) {
 
 func (o LockAccountFailureLockoutActionResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -212,6 +211,7 @@ func (o LockAccountFailureLockoutActionResponse) ToMap() (map[string]interface{}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

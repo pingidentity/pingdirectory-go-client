@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLdifExportRecurringTaskRequest{}
 
 // AddLdifExportRecurringTaskRequest struct for AddLdifExportRecurringTaskRequest
 type AddLdifExportRecurringTaskRequest struct {
-	// Name of the new Recurring Task
-	TaskName string                                 `json:"taskName"`
-	Schemas  []EnumldifExportRecurringTaskSchemaUrn `json:"schemas"`
+	Schemas []EnumldifExportRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which LDIF export files will be placed. The directory must already exist.
 	LdifDirectory *string `json:"ldifDirectory,omitempty"`
 	// The backend ID for a backend to be exported.
@@ -42,6 +40,8 @@ type AddLdifExportRecurringTaskRequest struct {
 	RetainPreviousLDIFExportAge *string `json:"retainPreviousLDIFExportAge,omitempty"`
 	// The maximum rate, in megabytes per second, at which LDIF exports should be written.
 	MaxMegabytesPerSecond *int64 `json:"maxMegabytesPerSecond,omitempty"`
+	// An optional set of post-LDIF-export task processors that should be invoked for the resulting LDIF export files.
+	PostLDIFExportTaskProcessor []string `json:"postLDIFExportTaskProcessor,omitempty"`
 	// A description for this Recurring Task
 	Description *string `json:"description,omitempty"`
 	// Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
@@ -58,16 +58,18 @@ type AddLdifExportRecurringTaskRequest struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	// Name of the new Recurring Task
+	TaskName string `json:"taskName"`
 }
 
 // NewAddLdifExportRecurringTaskRequest instantiates a new AddLdifExportRecurringTaskRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdifExportRecurringTaskRequest(taskName string, schemas []EnumldifExportRecurringTaskSchemaUrn) *AddLdifExportRecurringTaskRequest {
+func NewAddLdifExportRecurringTaskRequest(schemas []EnumldifExportRecurringTaskSchemaUrn, taskName string) *AddLdifExportRecurringTaskRequest {
 	this := AddLdifExportRecurringTaskRequest{}
-	this.TaskName = taskName
 	this.Schemas = schemas
+	this.TaskName = taskName
 	return &this
 }
 
@@ -77,30 +79,6 @@ func NewAddLdifExportRecurringTaskRequest(taskName string, schemas []EnumldifExp
 func NewAddLdifExportRecurringTaskRequestWithDefaults() *AddLdifExportRecurringTaskRequest {
 	this := AddLdifExportRecurringTaskRequest{}
 	return &this
-}
-
-// GetTaskName returns the TaskName field value
-func (o *AddLdifExportRecurringTaskRequest) GetTaskName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.TaskName
-}
-
-// GetTaskNameOk returns a tuple with the TaskName field value
-// and a boolean to check if the value has been set.
-func (o *AddLdifExportRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.TaskName, true
-}
-
-// SetTaskName sets field value
-func (o *AddLdifExportRecurringTaskRequest) SetTaskName(v string) {
-	o.TaskName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -447,6 +425,38 @@ func (o *AddLdifExportRecurringTaskRequest) SetMaxMegabytesPerSecond(v int64) {
 	o.MaxMegabytesPerSecond = &v
 }
 
+// GetPostLDIFExportTaskProcessor returns the PostLDIFExportTaskProcessor field value if set, zero value otherwise.
+func (o *AddLdifExportRecurringTaskRequest) GetPostLDIFExportTaskProcessor() []string {
+	if o == nil || IsNil(o.PostLDIFExportTaskProcessor) {
+		var ret []string
+		return ret
+	}
+	return o.PostLDIFExportTaskProcessor
+}
+
+// GetPostLDIFExportTaskProcessorOk returns a tuple with the PostLDIFExportTaskProcessor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddLdifExportRecurringTaskRequest) GetPostLDIFExportTaskProcessorOk() ([]string, bool) {
+	if o == nil || IsNil(o.PostLDIFExportTaskProcessor) {
+		return nil, false
+	}
+	return o.PostLDIFExportTaskProcessor, true
+}
+
+// HasPostLDIFExportTaskProcessor returns a boolean if a field has been set.
+func (o *AddLdifExportRecurringTaskRequest) HasPostLDIFExportTaskProcessor() bool {
+	if o != nil && !IsNil(o.PostLDIFExportTaskProcessor) {
+		return true
+	}
+
+	return false
+}
+
+// SetPostLDIFExportTaskProcessor gets a reference to the given []string and assigns it to the PostLDIFExportTaskProcessor field.
+func (o *AddLdifExportRecurringTaskRequest) SetPostLDIFExportTaskProcessor(v []string) {
+	o.PostLDIFExportTaskProcessor = v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddLdifExportRecurringTaskRequest) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -703,6 +713,30 @@ func (o *AddLdifExportRecurringTaskRequest) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetTaskName returns the TaskName field value
+func (o *AddLdifExportRecurringTaskRequest) GetTaskName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.TaskName
+}
+
+// GetTaskNameOk returns a tuple with the TaskName field value
+// and a boolean to check if the value has been set.
+func (o *AddLdifExportRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TaskName, true
+}
+
+// SetTaskName sets field value
+func (o *AddLdifExportRecurringTaskRequest) SetTaskName(v string) {
+	o.TaskName = v
+}
+
 func (o AddLdifExportRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -713,7 +747,6 @@ func (o AddLdifExportRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLdifExportRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["taskName"] = o.TaskName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.LdifDirectory) {
 		toSerialize["ldifDirectory"] = o.LdifDirectory
@@ -745,6 +778,9 @@ func (o AddLdifExportRecurringTaskRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.MaxMegabytesPerSecond) {
 		toSerialize["maxMegabytesPerSecond"] = o.MaxMegabytesPerSecond
 	}
+	if !IsNil(o.PostLDIFExportTaskProcessor) {
+		toSerialize["postLDIFExportTaskProcessor"] = o.PostLDIFExportTaskProcessor
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -769,6 +805,7 @@ func (o AddLdifExportRecurringTaskRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
 	}
+	toSerialize["taskName"] = o.TaskName
 	return toSerialize, nil
 }
 

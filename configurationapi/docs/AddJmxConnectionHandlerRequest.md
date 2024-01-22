@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HandlerName** | **string** | Name of the new Connection Handler | 
 **Schemas** | [**[]EnumjmxConnectionHandlerSchemaUrn**](EnumjmxConnectionHandlerSchemaUrn.md) |  | 
 **ListenPort** | **int64** | Specifies the port number on which the JMX Connection Handler will listen for connections from clients. | 
 **UseSSL** | Pointer to **bool** | Indicates whether the JMX Connection Handler should use SSL. | [optional] 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether the Connection Handler is enabled. | 
 **AllowedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler. | [optional] 
 **DeniedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler. | [optional] 
+**HandlerName** | **string** | Name of the new Connection Handler | 
 
 ## Methods
 
 ### NewAddJmxConnectionHandlerRequest
 
-`func NewAddJmxConnectionHandlerRequest(handlerName string, schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool, ) *AddJmxConnectionHandlerRequest`
+`func NewAddJmxConnectionHandlerRequest(schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool, handlerName string, ) *AddJmxConnectionHandlerRequest`
 
 NewAddJmxConnectionHandlerRequest instantiates a new AddJmxConnectionHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewAddJmxConnectionHandlerRequestWithDefaults instantiates a new AddJmxConnectionHandlerRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetHandlerName
-
-`func (o *AddJmxConnectionHandlerRequest) GetHandlerName() string`
-
-GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
-
-### GetHandlerNameOk
-
-`func (o *AddJmxConnectionHandlerRequest) GetHandlerNameOk() (*string, bool)`
-
-GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHandlerName
-
-`func (o *AddJmxConnectionHandlerRequest) SetHandlerName(v string)`
-
-SetHandlerName sets HandlerName field to given value.
-
 
 ### GetSchemas
 
@@ -263,6 +243,26 @@ SetDeniedClient sets DeniedClient field to given value.
 `func (o *AddJmxConnectionHandlerRequest) HasDeniedClient() bool`
 
 HasDeniedClient returns a boolean if a field has been set.
+
+### GetHandlerName
+
+`func (o *AddJmxConnectionHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddJmxConnectionHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddJmxConnectionHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

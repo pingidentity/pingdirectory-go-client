@@ -19,8 +19,6 @@ var _ MappedNullable = &SuccessfulBindResultCriteriaResponse{}
 
 // SuccessfulBindResultCriteriaResponse struct for SuccessfulBindResultCriteriaResponse
 type SuccessfulBindResultCriteriaResponse struct {
-	// Name of the Result Criteria
-	Id      string                                      `json:"id"`
 	Schemas []EnumsuccessfulBindResultCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for operations included in this Successful Bind Result Criteria.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
@@ -42,16 +40,18 @@ type SuccessfulBindResultCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Result Criteria
+	Id string `json:"id"`
 }
 
 // NewSuccessfulBindResultCriteriaResponse instantiates a new SuccessfulBindResultCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSuccessfulBindResultCriteriaResponse(id string, schemas []EnumsuccessfulBindResultCriteriaSchemaUrn) *SuccessfulBindResultCriteriaResponse {
+func NewSuccessfulBindResultCriteriaResponse(schemas []EnumsuccessfulBindResultCriteriaSchemaUrn, id string) *SuccessfulBindResultCriteriaResponse {
 	this := SuccessfulBindResultCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewSuccessfulBindResultCriteriaResponse(id string, schemas []Enumsuccessful
 func NewSuccessfulBindResultCriteriaResponseWithDefaults() *SuccessfulBindResultCriteriaResponse {
 	this := SuccessfulBindResultCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SuccessfulBindResultCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SuccessfulBindResultCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SuccessfulBindResultCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -463,6 +439,30 @@ func (o *SuccessfulBindResultCriteriaResponse) SetUrnpingidentityschemasconfigur
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SuccessfulBindResultCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SuccessfulBindResultCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SuccessfulBindResultCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SuccessfulBindResultCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -473,7 +473,6 @@ func (o SuccessfulBindResultCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o SuccessfulBindResultCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
@@ -508,6 +507,7 @@ func (o SuccessfulBindResultCriteriaResponse) ToMap() (map[string]interface{}, e
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

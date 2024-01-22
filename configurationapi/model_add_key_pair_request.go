@@ -19,8 +19,6 @@ var _ MappedNullable = &AddKeyPairRequest{}
 
 // AddKeyPairRequest struct for AddKeyPairRequest
 type AddKeyPairRequest struct {
-	// Name of the new Key Pair
-	PairName     string                       `json:"pairName"`
 	Schemas      []EnumkeyPairSchemaUrn       `json:"schemas,omitempty"`
 	KeyAlgorithm *EnumkeyPairKeyAlgorithmProp `json:"keyAlgorithm,omitempty"`
 	// The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens.
@@ -31,6 +29,8 @@ type AddKeyPairRequest struct {
 	CertificateChain *string `json:"certificateChain,omitempty"`
 	// The base64-encoded private key that is encrypted using the preferred encryption settings definition.
 	PrivateKey *string `json:"privateKey,omitempty"`
+	// Name of the new Key Pair
+	PairName string `json:"pairName"`
 }
 
 // NewAddKeyPairRequest instantiates a new AddKeyPairRequest object
@@ -49,30 +49,6 @@ func NewAddKeyPairRequest(pairName string) *AddKeyPairRequest {
 func NewAddKeyPairRequestWithDefaults() *AddKeyPairRequest {
 	this := AddKeyPairRequest{}
 	return &this
-}
-
-// GetPairName returns the PairName field value
-func (o *AddKeyPairRequest) GetPairName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PairName
-}
-
-// GetPairNameOk returns a tuple with the PairName field value
-// and a boolean to check if the value has been set.
-func (o *AddKeyPairRequest) GetPairNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PairName, true
-}
-
-// SetPairName sets field value
-func (o *AddKeyPairRequest) SetPairName(v string) {
-	o.PairName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -267,6 +243,30 @@ func (o *AddKeyPairRequest) SetPrivateKey(v string) {
 	o.PrivateKey = &v
 }
 
+// GetPairName returns the PairName field value
+func (o *AddKeyPairRequest) GetPairName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PairName
+}
+
+// GetPairNameOk returns a tuple with the PairName field value
+// and a boolean to check if the value has been set.
+func (o *AddKeyPairRequest) GetPairNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PairName, true
+}
+
+// SetPairName sets field value
+func (o *AddKeyPairRequest) SetPairName(v string) {
+	o.PairName = v
+}
+
 func (o AddKeyPairRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -277,7 +277,6 @@ func (o AddKeyPairRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddKeyPairRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pairName"] = o.PairName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -296,6 +295,7 @@ func (o AddKeyPairRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PrivateKey) {
 		toSerialize["privateKey"] = o.PrivateKey
 	}
+	toSerialize["pairName"] = o.PairName
 	return toSerialize, nil
 }
 

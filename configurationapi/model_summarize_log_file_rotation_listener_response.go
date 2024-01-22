@@ -19,8 +19,6 @@ var _ MappedNullable = &SummarizeLogFileRotationListenerResponse{}
 
 // SummarizeLogFileRotationListenerResponse struct for SummarizeLogFileRotationListenerResponse
 type SummarizeLogFileRotationListenerResponse struct {
-	// Name of the Log File Rotation Listener
-	Id      string                                          `json:"id"`
 	Schemas []EnumsummarizeLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The path to the directory in which the summarize-access-log output should be written. If no value is provided, the output file will be written into the same directory as the rotated log file.
 	OutputDirectory *string `json:"outputDirectory,omitempty"`
@@ -30,17 +28,19 @@ type SummarizeLogFileRotationListenerResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log File Rotation Listener
+	Id string `json:"id"`
 }
 
 // NewSummarizeLogFileRotationListenerResponse instantiates a new SummarizeLogFileRotationListenerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSummarizeLogFileRotationListenerResponse(id string, schemas []EnumsummarizeLogFileRotationListenerSchemaUrn, enabled bool) *SummarizeLogFileRotationListenerResponse {
+func NewSummarizeLogFileRotationListenerResponse(schemas []EnumsummarizeLogFileRotationListenerSchemaUrn, enabled bool, id string) *SummarizeLogFileRotationListenerResponse {
 	this := SummarizeLogFileRotationListenerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewSummarizeLogFileRotationListenerResponse(id string, schemas []Enumsummar
 func NewSummarizeLogFileRotationListenerResponseWithDefaults() *SummarizeLogFileRotationListenerResponse {
 	this := SummarizeLogFileRotationListenerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SummarizeLogFileRotationListenerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SummarizeLogFileRotationListenerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SummarizeLogFileRotationListenerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -252,6 +228,30 @@ func (o *SummarizeLogFileRotationListenerResponse) SetUrnpingidentityschemasconf
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SummarizeLogFileRotationListenerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SummarizeLogFileRotationListenerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SummarizeLogFileRotationListenerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SummarizeLogFileRotationListenerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -262,7 +262,6 @@ func (o SummarizeLogFileRotationListenerResponse) MarshalJSON() ([]byte, error) 
 
 func (o SummarizeLogFileRotationListenerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.OutputDirectory) {
 		toSerialize["outputDirectory"] = o.OutputDirectory
@@ -277,6 +276,7 @@ func (o SummarizeLogFileRotationListenerResponse) ToMap() (map[string]interface{
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

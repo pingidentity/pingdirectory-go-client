@@ -19,8 +19,6 @@ var _ MappedNullable = &PasswordPolicyStateJsonVirtualAttributeResponse{}
 
 // PasswordPolicyStateJsonVirtualAttributeResponse struct for PasswordPolicyStateJsonVirtualAttributeResponse
 type PasswordPolicyStateJsonVirtualAttributeResponse struct {
-	// Name of the Virtual Attribute
-	Id      string                                                 `json:"id"`
 	Schemas []EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn `json:"schemas"`
 	// A description for this Virtual Attribute
 	Description *string `json:"description,omitempty"`
@@ -40,17 +38,19 @@ type PasswordPolicyStateJsonVirtualAttributeResponse struct {
 	MultipleVirtualAttributeEvaluationOrderIndex  *int64                                             `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Virtual Attribute
+	Id string `json:"id"`
 }
 
 // NewPasswordPolicyStateJsonVirtualAttributeResponse instantiates a new PasswordPolicyStateJsonVirtualAttributeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPasswordPolicyStateJsonVirtualAttributeResponse(id string, schemas []EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn, enabled bool) *PasswordPolicyStateJsonVirtualAttributeResponse {
+func NewPasswordPolicyStateJsonVirtualAttributeResponse(schemas []EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn, enabled bool, id string) *PasswordPolicyStateJsonVirtualAttributeResponse {
 	this := PasswordPolicyStateJsonVirtualAttributeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewPasswordPolicyStateJsonVirtualAttributeResponse(id string, schemas []Enu
 func NewPasswordPolicyStateJsonVirtualAttributeResponseWithDefaults() *PasswordPolicyStateJsonVirtualAttributeResponse {
 	this := PasswordPolicyStateJsonVirtualAttributeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -422,6 +398,30 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetUrnpingidentitysche
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o PasswordPolicyStateJsonVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -432,7 +432,6 @@ func (o PasswordPolicyStateJsonVirtualAttributeResponse) MarshalJSON() ([]byte, 
 
 func (o PasswordPolicyStateJsonVirtualAttributeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -462,6 +461,7 @@ func (o PasswordPolicyStateJsonVirtualAttributeResponse) ToMap() (map[string]int
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

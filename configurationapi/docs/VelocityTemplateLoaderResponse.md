@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Velocity Template Loader | 
 **Schemas** | Pointer to [**[]EnumvelocityTemplateLoaderSchemaUrn**](EnumvelocityTemplateLoaderSchemaUrn.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether this Velocity Template Loader is enabled. | [optional] 
 **EvaluationOrderIndex** | **int64** | This property determines the evaluation order for determining the correct Velocity Template Loader to load a template for generating content for a particular request. | 
@@ -14,12 +13,13 @@ Name | Type | Description | Notes
 **TemplateDirectory** | Pointer to **string** | Specifies the directory in which to search for the template files. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Velocity Template Loader | 
 
 ## Methods
 
 ### NewVelocityTemplateLoaderResponse
 
-`func NewVelocityTemplateLoaderResponse(id string, evaluationOrderIndex int64, mimeTypeMatcher string, ) *VelocityTemplateLoaderResponse`
+`func NewVelocityTemplateLoaderResponse(evaluationOrderIndex int64, mimeTypeMatcher string, id string, ) *VelocityTemplateLoaderResponse`
 
 NewVelocityTemplateLoaderResponse instantiates a new VelocityTemplateLoaderResponse object
 This constructor will assign default values to properties that have it defined,
@@ -33,26 +33,6 @@ will change when the set of required properties is changed
 NewVelocityTemplateLoaderResponseWithDefaults instantiates a new VelocityTemplateLoaderResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *VelocityTemplateLoaderResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *VelocityTemplateLoaderResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *VelocityTemplateLoaderResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -268,6 +248,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *VelocityTemplateLoaderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *VelocityTemplateLoaderResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *VelocityTemplateLoaderResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *VelocityTemplateLoaderResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

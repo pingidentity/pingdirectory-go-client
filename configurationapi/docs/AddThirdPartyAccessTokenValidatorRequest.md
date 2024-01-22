@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ValidatorName** | **string** | Name of the new Access Token Validator | 
 **Schemas** | [**[]EnumthirdPartyAccessTokenValidatorSchemaUrn**](EnumthirdPartyAccessTokenValidatorSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Access Token Validator. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Access Token Validator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -13,12 +12,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Access Token Validator | [optional] 
 **Enabled** | **bool** | Indicates whether this Access Token Validator is enabled for use in Directory Server. | 
 **EvaluationOrderIndex** | **int64** | When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token. | 
+**ValidatorName** | **string** | Name of the new Access Token Validator | 
 
 ## Methods
 
 ### NewAddThirdPartyAccessTokenValidatorRequest
 
-`func NewAddThirdPartyAccessTokenValidatorRequest(validatorName string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int64, ) *AddThirdPartyAccessTokenValidatorRequest`
+`func NewAddThirdPartyAccessTokenValidatorRequest(schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int64, validatorName string, ) *AddThirdPartyAccessTokenValidatorRequest`
 
 NewAddThirdPartyAccessTokenValidatorRequest instantiates a new AddThirdPartyAccessTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,26 +32,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyAccessTokenValidatorRequestWithDefaults instantiates a new AddThirdPartyAccessTokenValidatorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetValidatorName
-
-`func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorName() string`
-
-GetValidatorName returns the ValidatorName field if non-nil, zero value otherwise.
-
-### GetValidatorNameOk
-
-`func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool)`
-
-GetValidatorNameOk returns a tuple with the ValidatorName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValidatorName
-
-`func (o *AddThirdPartyAccessTokenValidatorRequest) SetValidatorName(v string)`
-
-SetValidatorName sets ValidatorName field to given value.
-
 
 ### GetSchemas
 
@@ -231,6 +211,26 @@ and a boolean to check if the value has been set.
 `func (o *AddThirdPartyAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int64)`
 
 SetEvaluationOrderIndex sets EvaluationOrderIndex field to given value.
+
+
+### GetValidatorName
+
+`func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorName() string`
+
+GetValidatorName returns the ValidatorName field if non-nil, zero value otherwise.
+
+### GetValidatorNameOk
+
+`func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool)`
+
+GetValidatorNameOk returns a tuple with the ValidatorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidatorName
+
+`func (o *AddThirdPartyAccessTokenValidatorRequest) SetValidatorName(v string)`
+
+SetValidatorName sets ValidatorName field to given value.
 
 
 

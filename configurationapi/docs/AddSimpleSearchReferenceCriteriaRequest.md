@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaName** | **string** | Name of the new Search Reference Criteria | 
 **Schemas** | [**[]EnumsimpleSearchReferenceCriteriaSchemaUrn**](EnumsimpleSearchReferenceCriteriaSchemaUrn.md) |  | 
 **RequestCriteria** | Pointer to **string** | Specifies a request criteria object that must match the associated request for references included in this Simple Search Reference Criteria. | [optional] 
 **AllIncludedReferenceControl** | Pointer to **[]string** | Specifies the OID of a control that must be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain all of those controls. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **NotAllIncludedReferenceControl** | Pointer to **[]string** | Specifies the OID of a control that should not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain at least one of those controls (that is, it may contain zero or more of those controls, but not all of them). | [optional] 
 **NoneIncludedReferenceControl** | Pointer to **[]string** | Specifies the OID of a control that must not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain any of those controls. | [optional] 
 **Description** | Pointer to **string** | A description for this Search Reference Criteria | [optional] 
+**CriteriaName** | **string** | Name of the new Search Reference Criteria | 
 
 ## Methods
 
 ### NewAddSimpleSearchReferenceCriteriaRequest
 
-`func NewAddSimpleSearchReferenceCriteriaRequest(criteriaName string, schemas []EnumsimpleSearchReferenceCriteriaSchemaUrn, ) *AddSimpleSearchReferenceCriteriaRequest`
+`func NewAddSimpleSearchReferenceCriteriaRequest(schemas []EnumsimpleSearchReferenceCriteriaSchemaUrn, criteriaName string, ) *AddSimpleSearchReferenceCriteriaRequest`
 
 NewAddSimpleSearchReferenceCriteriaRequest instantiates a new AddSimpleSearchReferenceCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddSimpleSearchReferenceCriteriaRequestWithDefaults instantiates a new AddSimpleSearchReferenceCriteriaRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCriteriaName
-
-`func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaName() string`
-
-GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
-
-### GetCriteriaNameOk
-
-`func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
-
-GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCriteriaName
-
-`func (o *AddSimpleSearchReferenceCriteriaRequest) SetCriteriaName(v string)`
-
-SetCriteriaName sets CriteriaName field to given value.
-
 
 ### GetSchemas
 
@@ -221,6 +201,26 @@ SetDescription sets Description field to given value.
 `func (o *AddSimpleSearchReferenceCriteriaRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetCriteriaName
+
+`func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaName() string`
+
+GetCriteriaName returns the CriteriaName field if non-nil, zero value otherwise.
+
+### GetCriteriaNameOk
+
+`func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool)`
+
+GetCriteriaNameOk returns a tuple with the CriteriaName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCriteriaName
+
+`func (o *AddSimpleSearchReferenceCriteriaRequest) SetCriteriaName(v string)`
+
+SetCriteriaName sets CriteriaName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedUncachedAttributeCriteriaRequest{}
 
 // AddGroovyScriptedUncachedAttributeCriteriaRequest struct for AddGroovyScriptedUncachedAttributeCriteriaRequest
 type AddGroovyScriptedUncachedAttributeCriteriaRequest struct {
-	// Name of the new Uncached Attribute Criteria
-	CriteriaName string                                                 `json:"criteriaName"`
-	Schemas      []EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Uncached Attribute Criteria. Each configuration property should be given in the form 'name=value'.
@@ -30,18 +28,20 @@ type AddGroovyScriptedUncachedAttributeCriteriaRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Uncached Attribute Criteria
+	CriteriaName string `json:"criteriaName"`
 }
 
 // NewAddGroovyScriptedUncachedAttributeCriteriaRequest instantiates a new AddGroovyScriptedUncachedAttributeCriteriaRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedUncachedAttributeCriteriaRequest(criteriaName string, schemas []EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn, scriptClass string, enabled bool) *AddGroovyScriptedUncachedAttributeCriteriaRequest {
+func NewAddGroovyScriptedUncachedAttributeCriteriaRequest(schemas []EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn, scriptClass string, enabled bool, criteriaName string) *AddGroovyScriptedUncachedAttributeCriteriaRequest {
 	this := AddGroovyScriptedUncachedAttributeCriteriaRequest{}
-	this.CriteriaName = criteriaName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.CriteriaName = criteriaName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddGroovyScriptedUncachedAttributeCriteriaRequest(criteriaName string, s
 func NewAddGroovyScriptedUncachedAttributeCriteriaRequestWithDefaults() *AddGroovyScriptedUncachedAttributeCriteriaRequest {
 	this := AddGroovyScriptedUncachedAttributeCriteriaRequest{}
 	return &this
-}
-
-// GetCriteriaName returns the CriteriaName field value
-func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetCriteriaName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.CriteriaName
-}
-
-// GetCriteriaNameOk returns a tuple with the CriteriaName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.CriteriaName, true
-}
-
-// SetCriteriaName sets field value
-func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) SetCriteriaName(v string) {
-	o.CriteriaName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetCriteriaName returns the CriteriaName field value
+func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetCriteriaName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.CriteriaName
+}
+
+// GetCriteriaNameOk returns a tuple with the CriteriaName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.CriteriaName, true
+}
+
+// SetCriteriaName sets field value
+func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) SetCriteriaName(v string) {
+	o.CriteriaName = v
+}
+
 func (o AddGroovyScriptedUncachedAttributeCriteriaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddGroovyScriptedUncachedAttributeCriteriaRequest) MarshalJSON() ([]byte
 
 func (o AddGroovyScriptedUncachedAttributeCriteriaRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["criteriaName"] = o.CriteriaName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -233,6 +232,7 @@ func (o AddGroovyScriptedUncachedAttributeCriteriaRequest) ToMap() (map[string]i
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["criteriaName"] = o.CriteriaName
 	return toSerialize, nil
 }
 

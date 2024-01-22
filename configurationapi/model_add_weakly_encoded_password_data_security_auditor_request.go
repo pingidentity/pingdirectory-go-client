@@ -19,9 +19,7 @@ var _ MappedNullable = &AddWeaklyEncodedPasswordDataSecurityAuditorRequest{}
 
 // AddWeaklyEncodedPasswordDataSecurityAuditorRequest struct for AddWeaklyEncodedPasswordDataSecurityAuditorRequest
 type AddWeaklyEncodedPasswordDataSecurityAuditorRequest struct {
-	// Name of the new Data Security Auditor
-	AuditorName string                                                  `json:"auditorName"`
-	Schemas     []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
+	Schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile *string `json:"reportFile,omitempty"`
 	// The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
@@ -34,16 +32,18 @@ type AddWeaklyEncodedPasswordDataSecurityAuditorRequest struct {
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
+	// Name of the new Data Security Auditor
+	AuditorName string `json:"auditorName"`
 }
 
 // NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest instantiates a new AddWeaklyEncodedPasswordDataSecurityAuditorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest(auditorName string, schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn) *AddWeaklyEncodedPasswordDataSecurityAuditorRequest {
+func NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest(schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn, auditorName string) *AddWeaklyEncodedPasswordDataSecurityAuditorRequest {
 	this := AddWeaklyEncodedPasswordDataSecurityAuditorRequest{}
-	this.AuditorName = auditorName
 	this.Schemas = schemas
+	this.AuditorName = auditorName
 	return &this
 }
 
@@ -53,30 +53,6 @@ func NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest(auditorName string, s
 func NewAddWeaklyEncodedPasswordDataSecurityAuditorRequestWithDefaults() *AddWeaklyEncodedPasswordDataSecurityAuditorRequest {
 	this := AddWeaklyEncodedPasswordDataSecurityAuditorRequest{}
 	return &this
-}
-
-// GetAuditorName returns the AuditorName field value
-func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AuditorName
-}
-
-// GetAuditorNameOk returns a tuple with the AuditorName field value
-// and a boolean to check if the value has been set.
-func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AuditorName, true
-}
-
-// SetAuditorName sets field value
-func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) SetAuditorName(v string) {
-	o.AuditorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -327,6 +303,30 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) SetAuditSeverity(v 
 	o.AuditSeverity = &v
 }
 
+// GetAuditorName returns the AuditorName field value
+func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AuditorName
+}
+
+// GetAuditorNameOk returns a tuple with the AuditorName field value
+// and a boolean to check if the value has been set.
+func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AuditorName, true
+}
+
+// SetAuditorName sets field value
+func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) SetAuditorName(v string) {
+	o.AuditorName = v
+}
+
 func (o AddWeaklyEncodedPasswordDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -337,7 +337,6 @@ func (o AddWeaklyEncodedPasswordDataSecurityAuditorRequest) MarshalJSON() ([]byt
 
 func (o AddWeaklyEncodedPasswordDataSecurityAuditorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["auditorName"] = o.AuditorName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ReportFile) {
 		toSerialize["reportFile"] = o.ReportFile
@@ -360,6 +359,7 @@ func (o AddWeaklyEncodedPasswordDataSecurityAuditorRequest) ToMap() (map[string]
 	if !IsNil(o.AuditSeverity) {
 		toSerialize["auditSeverity"] = o.AuditSeverity
 	}
+	toSerialize["auditorName"] = o.AuditorName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &JmxConnectionHandlerResponse{}
 
 // JmxConnectionHandlerResponse struct for JmxConnectionHandlerResponse
 type JmxConnectionHandlerResponse struct {
-	// Name of the Connection Handler
-	Id      string                              `json:"id"`
 	Schemas []EnumjmxConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the port number on which the JMX Connection Handler will listen for connections from clients.
 	ListenPort int64 `json:"listenPort"`
@@ -40,18 +38,20 @@ type JmxConnectionHandlerResponse struct {
 	DeniedClient                                  []string                                           `json:"deniedClient,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Connection Handler
+	Id string `json:"id"`
 }
 
 // NewJmxConnectionHandlerResponse instantiates a new JmxConnectionHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJmxConnectionHandlerResponse(id string, schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool) *JmxConnectionHandlerResponse {
+func NewJmxConnectionHandlerResponse(schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool, id string) *JmxConnectionHandlerResponse {
 	this := JmxConnectionHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ListenPort = listenPort
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewJmxConnectionHandlerResponse(id string, schemas []EnumjmxConnectionHandl
 func NewJmxConnectionHandlerResponseWithDefaults() *JmxConnectionHandlerResponse {
 	this := JmxConnectionHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *JmxConnectionHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *JmxConnectionHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *JmxConnectionHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -415,6 +391,30 @@ func (o *JmxConnectionHandlerResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *JmxConnectionHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *JmxConnectionHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *JmxConnectionHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o JmxConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -425,7 +425,6 @@ func (o JmxConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o JmxConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["listenPort"] = o.ListenPort
 	if !IsNil(o.UseSSL) {
@@ -453,6 +452,7 @@ func (o JmxConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

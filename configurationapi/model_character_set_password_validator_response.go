@@ -19,8 +19,6 @@ var _ MappedNullable = &CharacterSetPasswordValidatorResponse{}
 
 // CharacterSetPasswordValidatorResponse struct for CharacterSetPasswordValidatorResponse
 type CharacterSetPasswordValidatorResponse struct {
-	// Name of the Password Validator
-	Id      string                                       `json:"id"`
 	Schemas []EnumcharacterSetPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies a character set containing characters that a password may contain and a value indicating the minimum number of characters required from that set.
 	CharacterSet []string `json:"characterSet"`
@@ -38,19 +36,21 @@ type CharacterSetPasswordValidatorResponse struct {
 	ValidatorFailureMessage                       *string                                            `json:"validatorFailureMessage,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Validator
+	Id string `json:"id"`
 }
 
 // NewCharacterSetPasswordValidatorResponse instantiates a new CharacterSetPasswordValidatorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCharacterSetPasswordValidatorResponse(id string, schemas []EnumcharacterSetPasswordValidatorSchemaUrn, characterSet []string, allowUnclassifiedCharacters bool, enabled bool) *CharacterSetPasswordValidatorResponse {
+func NewCharacterSetPasswordValidatorResponse(schemas []EnumcharacterSetPasswordValidatorSchemaUrn, characterSet []string, allowUnclassifiedCharacters bool, enabled bool, id string) *CharacterSetPasswordValidatorResponse {
 	this := CharacterSetPasswordValidatorResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.CharacterSet = characterSet
 	this.AllowUnclassifiedCharacters = allowUnclassifiedCharacters
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewCharacterSetPasswordValidatorResponse(id string, schemas []Enumcharacter
 func NewCharacterSetPasswordValidatorResponseWithDefaults() *CharacterSetPasswordValidatorResponse {
 	this := CharacterSetPasswordValidatorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *CharacterSetPasswordValidatorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CharacterSetPasswordValidatorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CharacterSetPasswordValidatorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -374,6 +350,30 @@ func (o *CharacterSetPasswordValidatorResponse) SetUrnpingidentityschemasconfigu
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *CharacterSetPasswordValidatorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CharacterSetPasswordValidatorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CharacterSetPasswordValidatorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o CharacterSetPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -384,7 +384,6 @@ func (o CharacterSetPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o CharacterSetPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["characterSet"] = o.CharacterSet
 	toSerialize["allowUnclassifiedCharacters"] = o.AllowUnclassifiedCharacters
@@ -407,6 +406,7 @@ func (o CharacterSetPasswordValidatorResponse) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

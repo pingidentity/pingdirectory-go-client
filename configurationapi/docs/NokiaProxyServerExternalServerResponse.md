@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the External Server | 
 **Schemas** | [**[]EnumnokiaProxyServerExternalServerSchemaUrn**](EnumnokiaProxyServerExternalServerSchemaUrn.md) |  | 
 **VerifyCredentialsMethod** | [**EnumexternalServerVerifyCredentialsMethodProp**](EnumexternalServerVerifyCredentialsMethodProp.md) |  | 
 **UseAdministrativeOperationControl** | Pointer to **bool** | Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients. | [optional] 
@@ -30,12 +29,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the External Server | 
 
 ## Methods
 
 ### NewNokiaProxyServerExternalServerResponse
 
-`func NewNokiaProxyServerExternalServerResponse(id string, schemas []EnumnokiaProxyServerExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerNokiaProxyServerConnectionSecurityProp, authenticationMethod EnumexternalServerNokiaProxyServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *NokiaProxyServerExternalServerResponse`
+`func NewNokiaProxyServerExternalServerResponse(schemas []EnumnokiaProxyServerExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerNokiaProxyServerConnectionSecurityProp, authenticationMethod EnumexternalServerNokiaProxyServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, id string, ) *NokiaProxyServerExternalServerResponse`
 
 NewNokiaProxyServerExternalServerResponse instantiates a new NokiaProxyServerExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -49,26 +49,6 @@ will change when the set of required properties is changed
 NewNokiaProxyServerExternalServerResponseWithDefaults instantiates a new NokiaProxyServerExternalServerResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *NokiaProxyServerExternalServerResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *NokiaProxyServerExternalServerResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *NokiaProxyServerExternalServerResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -649,6 +629,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *NokiaProxyServerExternalServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *NokiaProxyServerExternalServerResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *NokiaProxyServerExternalServerResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *NokiaProxyServerExternalServerResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAmazonKeyManagementServiceCipherStreamProviderRequest
 
 // AddAmazonKeyManagementServiceCipherStreamProviderRequest struct for AddAmazonKeyManagementServiceCipherStreamProviderRequest
 type AddAmazonKeyManagementServiceCipherStreamProviderRequest struct {
-	// Name of the new Cipher Stream Provider
-	ProviderName string                                                        `json:"providerName"`
-	Schemas      []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The path to a file that will hold the encrypted passphrase used by this cipher stream provider.
 	EncryptedPassphraseFile *string `json:"encryptedPassphraseFile,omitempty"`
 	// The external server with information to use when interacting with the Amazon Key Management Service.
@@ -40,18 +38,20 @@ type AddAmazonKeyManagementServiceCipherStreamProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Cipher Stream Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddAmazonKeyManagementServiceCipherStreamProviderRequest instantiates a new AddAmazonKeyManagementServiceCipherStreamProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAmazonKeyManagementServiceCipherStreamProviderRequest(providerName string, schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, kmsEncryptionKeyArn string, enabled bool) *AddAmazonKeyManagementServiceCipherStreamProviderRequest {
+func NewAddAmazonKeyManagementServiceCipherStreamProviderRequest(schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, kmsEncryptionKeyArn string, enabled bool, providerName string) *AddAmazonKeyManagementServiceCipherStreamProviderRequest {
 	this := AddAmazonKeyManagementServiceCipherStreamProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.KmsEncryptionKeyArn = kmsEncryptionKeyArn
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewAddAmazonKeyManagementServiceCipherStreamProviderRequest(providerName st
 func NewAddAmazonKeyManagementServiceCipherStreamProviderRequestWithDefaults() *AddAmazonKeyManagementServiceCipherStreamProviderRequest {
 	this := AddAmazonKeyManagementServiceCipherStreamProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -383,6 +359,30 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetEnabled(v 
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddAmazonKeyManagementServiceCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -393,7 +393,6 @@ func (o AddAmazonKeyManagementServiceCipherStreamProviderRequest) MarshalJSON() 
 
 func (o AddAmazonKeyManagementServiceCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.EncryptedPassphraseFile) {
 		toSerialize["encryptedPassphraseFile"] = o.EncryptedPassphraseFile
@@ -418,6 +417,7 @@ func (o AddAmazonKeyManagementServiceCipherStreamProviderRequest) ToMap() (map[s
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

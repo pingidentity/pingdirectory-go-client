@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LdapCorrelationAttributePairApiService LdapCorrelationAttributePairApi service
-type LdapCorrelationAttributePairApiService service
+// LdapCorrelationAttributePairAPIService LdapCorrelationAttributePairAPI service
+type LdapCorrelationAttributePairAPIService service
 
 type ApiAddLdapCorrelationAttributePairRequest struct {
 	ctx                                    context.Context
-	ApiService                             *LdapCorrelationAttributePairApiService
+	ApiService                             *LdapCorrelationAttributePairAPIService
 	correlatedLdapDataViewName             string
 	scimResourceTypeName                   string
 	addLdapCorrelationAttributePairRequest *AddLdapCorrelationAttributePairRequest
@@ -48,7 +48,7 @@ AddLdapCorrelationAttributePair Add a new LDAP Correlation Attribute Pair to the
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiAddLdapCorrelationAttributePairRequest
 */
-func (a *LdapCorrelationAttributePairApiService) AddLdapCorrelationAttributePair(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiAddLdapCorrelationAttributePairRequest {
+func (a *LdapCorrelationAttributePairAPIService) AddLdapCorrelationAttributePair(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiAddLdapCorrelationAttributePairRequest {
 	return ApiAddLdapCorrelationAttributePairRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -60,7 +60,7 @@ func (a *LdapCorrelationAttributePairApiService) AddLdapCorrelationAttributePair
 // Execute executes the request
 //
 //	@return LdapCorrelationAttributePairResponse
-func (a *LdapCorrelationAttributePairApiService) AddLdapCorrelationAttributePairExecute(r ApiAddLdapCorrelationAttributePairRequest) (*LdapCorrelationAttributePairResponse, *http.Response, error) {
+func (a *LdapCorrelationAttributePairAPIService) AddLdapCorrelationAttributePairExecute(r ApiAddLdapCorrelationAttributePairRequest) (*LdapCorrelationAttributePairResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -68,7 +68,7 @@ func (a *LdapCorrelationAttributePairApiService) AddLdapCorrelationAttributePair
 		localVarReturnValue *LdapCorrelationAttributePairResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairApiService.AddLdapCorrelationAttributePair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairAPIService.AddLdapCorrelationAttributePair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -142,7 +142,7 @@ func (a *LdapCorrelationAttributePairApiService) AddLdapCorrelationAttributePair
 
 type ApiDeleteLdapCorrelationAttributePairRequest struct {
 	ctx                              context.Context
-	ApiService                       *LdapCorrelationAttributePairApiService
+	ApiService                       *LdapCorrelationAttributePairAPIService
 	ldapCorrelationAttributePairName string
 	correlatedLdapDataViewName       string
 	scimResourceTypeName             string
@@ -161,7 +161,7 @@ DeleteLdapCorrelationAttributePair Delete a LDAP Correlation Attribute Pair
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiDeleteLdapCorrelationAttributePairRequest
 */
-func (a *LdapCorrelationAttributePairApiService) DeleteLdapCorrelationAttributePair(ctx context.Context, ldapCorrelationAttributePairName string, correlatedLdapDataViewName string, scimResourceTypeName string) ApiDeleteLdapCorrelationAttributePairRequest {
+func (a *LdapCorrelationAttributePairAPIService) DeleteLdapCorrelationAttributePair(ctx context.Context, ldapCorrelationAttributePairName string, correlatedLdapDataViewName string, scimResourceTypeName string) ApiDeleteLdapCorrelationAttributePairRequest {
 	return ApiDeleteLdapCorrelationAttributePairRequest{
 		ApiService:                       a,
 		ctx:                              ctx,
@@ -172,14 +172,14 @@ func (a *LdapCorrelationAttributePairApiService) DeleteLdapCorrelationAttributeP
 }
 
 // Execute executes the request
-func (a *LdapCorrelationAttributePairApiService) DeleteLdapCorrelationAttributePairExecute(r ApiDeleteLdapCorrelationAttributePairRequest) (*http.Response, error) {
+func (a *LdapCorrelationAttributePairAPIService) DeleteLdapCorrelationAttributePairExecute(r ApiDeleteLdapCorrelationAttributePairRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairApiService.DeleteLdapCorrelationAttributePair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairAPIService.DeleteLdapCorrelationAttributePair")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -240,7 +240,7 @@ func (a *LdapCorrelationAttributePairApiService) DeleteLdapCorrelationAttributeP
 
 type ApiGetLdapCorrelationAttributePairRequest struct {
 	ctx                              context.Context
-	ApiService                       *LdapCorrelationAttributePairApiService
+	ApiService                       *LdapCorrelationAttributePairAPIService
 	ldapCorrelationAttributePairName string
 	correlatedLdapDataViewName       string
 	scimResourceTypeName             string
@@ -259,7 +259,7 @@ GetLdapCorrelationAttributePair Returns a single LDAP Correlation Attribute Pair
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiGetLdapCorrelationAttributePairRequest
 */
-func (a *LdapCorrelationAttributePairApiService) GetLdapCorrelationAttributePair(ctx context.Context, ldapCorrelationAttributePairName string, correlatedLdapDataViewName string, scimResourceTypeName string) ApiGetLdapCorrelationAttributePairRequest {
+func (a *LdapCorrelationAttributePairAPIService) GetLdapCorrelationAttributePair(ctx context.Context, ldapCorrelationAttributePairName string, correlatedLdapDataViewName string, scimResourceTypeName string) ApiGetLdapCorrelationAttributePairRequest {
 	return ApiGetLdapCorrelationAttributePairRequest{
 		ApiService:                       a,
 		ctx:                              ctx,
@@ -272,7 +272,7 @@ func (a *LdapCorrelationAttributePairApiService) GetLdapCorrelationAttributePair
 // Execute executes the request
 //
 //	@return LdapCorrelationAttributePairResponse
-func (a *LdapCorrelationAttributePairApiService) GetLdapCorrelationAttributePairExecute(r ApiGetLdapCorrelationAttributePairRequest) (*LdapCorrelationAttributePairResponse, *http.Response, error) {
+func (a *LdapCorrelationAttributePairAPIService) GetLdapCorrelationAttributePairExecute(r ApiGetLdapCorrelationAttributePairRequest) (*LdapCorrelationAttributePairResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -280,7 +280,7 @@ func (a *LdapCorrelationAttributePairApiService) GetLdapCorrelationAttributePair
 		localVarReturnValue *LdapCorrelationAttributePairResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairApiService.GetLdapCorrelationAttributePair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairAPIService.GetLdapCorrelationAttributePair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -350,7 +350,7 @@ func (a *LdapCorrelationAttributePairApiService) GetLdapCorrelationAttributePair
 
 type ApiListLdapCorrelationAttributePairsRequest struct {
 	ctx                        context.Context
-	ApiService                 *LdapCorrelationAttributePairApiService
+	ApiService                 *LdapCorrelationAttributePairAPIService
 	correlatedLdapDataViewName string
 	scimResourceTypeName       string
 	filter                     *string
@@ -374,7 +374,7 @@ ListLdapCorrelationAttributePairs Returns a list of all LDAP Correlation Attribu
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiListLdapCorrelationAttributePairsRequest
 */
-func (a *LdapCorrelationAttributePairApiService) ListLdapCorrelationAttributePairs(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiListLdapCorrelationAttributePairsRequest {
+func (a *LdapCorrelationAttributePairAPIService) ListLdapCorrelationAttributePairs(ctx context.Context, correlatedLdapDataViewName string, scimResourceTypeName string) ApiListLdapCorrelationAttributePairsRequest {
 	return ApiListLdapCorrelationAttributePairsRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -386,7 +386,7 @@ func (a *LdapCorrelationAttributePairApiService) ListLdapCorrelationAttributePai
 // Execute executes the request
 //
 //	@return LdapCorrelationAttributePairListResponse
-func (a *LdapCorrelationAttributePairApiService) ListLdapCorrelationAttributePairsExecute(r ApiListLdapCorrelationAttributePairsRequest) (*LdapCorrelationAttributePairListResponse, *http.Response, error) {
+func (a *LdapCorrelationAttributePairAPIService) ListLdapCorrelationAttributePairsExecute(r ApiListLdapCorrelationAttributePairsRequest) (*LdapCorrelationAttributePairListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -394,7 +394,7 @@ func (a *LdapCorrelationAttributePairApiService) ListLdapCorrelationAttributePai
 		localVarReturnValue *LdapCorrelationAttributePairListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairApiService.ListLdapCorrelationAttributePairs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairAPIService.ListLdapCorrelationAttributePairs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -466,7 +466,7 @@ func (a *LdapCorrelationAttributePairApiService) ListLdapCorrelationAttributePai
 
 type ApiUpdateLdapCorrelationAttributePairRequest struct {
 	ctx                              context.Context
-	ApiService                       *LdapCorrelationAttributePairApiService
+	ApiService                       *LdapCorrelationAttributePairAPIService
 	ldapCorrelationAttributePairName string
 	correlatedLdapDataViewName       string
 	scimResourceTypeName             string
@@ -492,7 +492,7 @@ UpdateLdapCorrelationAttributePair Update an existing LDAP Correlation Attribute
 	@param scimResourceTypeName Name of the SCIM Resource Type
 	@return ApiUpdateLdapCorrelationAttributePairRequest
 */
-func (a *LdapCorrelationAttributePairApiService) UpdateLdapCorrelationAttributePair(ctx context.Context, ldapCorrelationAttributePairName string, correlatedLdapDataViewName string, scimResourceTypeName string) ApiUpdateLdapCorrelationAttributePairRequest {
+func (a *LdapCorrelationAttributePairAPIService) UpdateLdapCorrelationAttributePair(ctx context.Context, ldapCorrelationAttributePairName string, correlatedLdapDataViewName string, scimResourceTypeName string) ApiUpdateLdapCorrelationAttributePairRequest {
 	return ApiUpdateLdapCorrelationAttributePairRequest{
 		ApiService:                       a,
 		ctx:                              ctx,
@@ -505,7 +505,7 @@ func (a *LdapCorrelationAttributePairApiService) UpdateLdapCorrelationAttributeP
 // Execute executes the request
 //
 //	@return LdapCorrelationAttributePairResponse
-func (a *LdapCorrelationAttributePairApiService) UpdateLdapCorrelationAttributePairExecute(r ApiUpdateLdapCorrelationAttributePairRequest) (*LdapCorrelationAttributePairResponse, *http.Response, error) {
+func (a *LdapCorrelationAttributePairAPIService) UpdateLdapCorrelationAttributePairExecute(r ApiUpdateLdapCorrelationAttributePairRequest) (*LdapCorrelationAttributePairResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -513,7 +513,7 @@ func (a *LdapCorrelationAttributePairApiService) UpdateLdapCorrelationAttributeP
 		localVarReturnValue *LdapCorrelationAttributePairResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairApiService.UpdateLdapCorrelationAttributePair")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapCorrelationAttributePairAPIService.UpdateLdapCorrelationAttributePair")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

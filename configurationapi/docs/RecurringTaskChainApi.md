@@ -1,14 +1,14 @@
-# \RecurringTaskChainApi
+# \RecurringTaskChainAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddRecurringTaskChain**](RecurringTaskChainApi.md#AddRecurringTaskChain) | **Post** /recurring-task-chains | Add a new Recurring Task Chain to the config
-[**DeleteRecurringTaskChain**](RecurringTaskChainApi.md#DeleteRecurringTaskChain) | **Delete** /recurring-task-chains/{recurring-task-chain-name} | Delete a Recurring Task Chain
-[**GetRecurringTaskChain**](RecurringTaskChainApi.md#GetRecurringTaskChain) | **Get** /recurring-task-chains/{recurring-task-chain-name} | Returns a single Recurring Task Chain
-[**ListRecurringTaskChains**](RecurringTaskChainApi.md#ListRecurringTaskChains) | **Get** /recurring-task-chains | Returns a list of all Recurring Task Chain objects
-[**UpdateRecurringTaskChain**](RecurringTaskChainApi.md#UpdateRecurringTaskChain) | **Patch** /recurring-task-chains/{recurring-task-chain-name} | Update an existing Recurring Task Chain by name
+[**AddRecurringTaskChain**](RecurringTaskChainAPI.md#AddRecurringTaskChain) | **Post** /recurring-task-chains | Add a new Recurring Task Chain to the config
+[**DeleteRecurringTaskChain**](RecurringTaskChainAPI.md#DeleteRecurringTaskChain) | **Delete** /recurring-task-chains/{recurring-task-chain-name} | Delete a Recurring Task Chain
+[**GetRecurringTaskChain**](RecurringTaskChainAPI.md#GetRecurringTaskChain) | **Get** /recurring-task-chains/{recurring-task-chain-name} | Returns a single Recurring Task Chain
+[**ListRecurringTaskChains**](RecurringTaskChainAPI.md#ListRecurringTaskChains) | **Get** /recurring-task-chains | Returns a list of all Recurring Task Chain objects
+[**UpdateRecurringTaskChain**](RecurringTaskChainAPI.md#UpdateRecurringTaskChain) | **Patch** /recurring-task-chains/{recurring-task-chain-name} | Update an existing Recurring Task Chain by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addRecurringTaskChainRequest := *openapiclient.NewAddRecurringTaskChainRequest("ChainName_example", []string{"RecurringTask_example"}, openapiclient.Enumrecurring-task-chain-scheduledDateSelectionTypeProp("every-day"), []string{"ScheduledTimeOfDay_example"}) // AddRecurringTaskChainRequest | Create a new Recurring Task Chain in the config
+    addRecurringTaskChainRequest := *openapiclient.NewAddRecurringTaskChainRequest([]string{"RecurringTask_example"}, openapiclient.Enumrecurring-task-chain-scheduledDateSelectionTypeProp("every-day"), []string{"ScheduledTimeOfDay_example"}, "ChainName_example") // AddRecurringTaskChainRequest | Create a new Recurring Task Chain in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringTaskChainApi.AddRecurringTaskChain(context.Background()).AddRecurringTaskChainRequest(addRecurringTaskChainRequest).Execute()
+    resp, r, err := apiClient.RecurringTaskChainAPI.AddRecurringTaskChain(context.Background()).AddRecurringTaskChainRequest(addRecurringTaskChainRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainApi.AddRecurringTaskChain``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainAPI.AddRecurringTaskChain``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddRecurringTaskChain`: RecurringTaskChainResponse
-    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskChainApi.AddRecurringTaskChain`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskChainAPI.AddRecurringTaskChain`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.RecurringTaskChainApi.DeleteRecurringTaskChain(context.Background(), recurringTaskChainName).Execute()
+    r, err := apiClient.RecurringTaskChainAPI.DeleteRecurringTaskChain(context.Background(), recurringTaskChainName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainApi.DeleteRecurringTaskChain``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainAPI.DeleteRecurringTaskChain``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringTaskChainApi.GetRecurringTaskChain(context.Background(), recurringTaskChainName).Execute()
+    resp, r, err := apiClient.RecurringTaskChainAPI.GetRecurringTaskChain(context.Background(), recurringTaskChainName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainApi.GetRecurringTaskChain``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainAPI.GetRecurringTaskChain``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetRecurringTaskChain`: RecurringTaskChainResponse
-    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskChainApi.GetRecurringTaskChain`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskChainAPI.GetRecurringTaskChain`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringTaskChainApi.ListRecurringTaskChains(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.RecurringTaskChainAPI.ListRecurringTaskChains(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainApi.ListRecurringTaskChains``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainAPI.ListRecurringTaskChains``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListRecurringTaskChains`: RecurringTaskChainListResponse
-    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskChainApi.ListRecurringTaskChains`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskChainAPI.ListRecurringTaskChains`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringTaskChainApi.UpdateRecurringTaskChain(context.Background(), recurringTaskChainName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.RecurringTaskChainAPI.UpdateRecurringTaskChain(context.Background(), recurringTaskChainName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainApi.UpdateRecurringTaskChain``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainAPI.UpdateRecurringTaskChain``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateRecurringTaskChain`: RecurringTaskChainResponse
-    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskChainApi.UpdateRecurringTaskChain`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskChainAPI.UpdateRecurringTaskChain`: %v\n", resp)
 }
 ```
 

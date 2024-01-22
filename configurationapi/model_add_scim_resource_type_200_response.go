@@ -19,6 +19,7 @@ import (
 type AddScimResourceType200Response struct {
 	LdapMappingScimResourceTypeResponse     *LdapMappingScimResourceTypeResponse
 	LdapPassThroughScimResourceTypeResponse *LdapPassThroughScimResourceTypeResponse
+	MappingScimResourceTypeResponse         *MappingScimResourceTypeResponse
 }
 
 // LdapMappingScimResourceTypeResponseAsAddScimResourceType200Response is a convenience function that returns LdapMappingScimResourceTypeResponse wrapped in AddScimResourceType200Response
@@ -32,6 +33,13 @@ func LdapMappingScimResourceTypeResponseAsAddScimResourceType200Response(v *Ldap
 func LdapPassThroughScimResourceTypeResponseAsAddScimResourceType200Response(v *LdapPassThroughScimResourceTypeResponse) AddScimResourceType200Response {
 	return AddScimResourceType200Response{
 		LdapPassThroughScimResourceTypeResponse: v,
+	}
+}
+
+// MappingScimResourceTypeResponseAsAddScimResourceType200Response is a convenience function that returns MappingScimResourceTypeResponse wrapped in AddScimResourceType200Response
+func MappingScimResourceTypeResponseAsAddScimResourceType200Response(v *MappingScimResourceTypeResponse) AddScimResourceType200Response {
+	return AddScimResourceType200Response{
+		MappingScimResourceTypeResponse: v,
 	}
 }
 
@@ -65,10 +73,24 @@ func (dst *AddScimResourceType200Response) UnmarshalJSON(data []byte) error {
 		dst.LdapPassThroughScimResourceTypeResponse = nil
 	}
 
+	// try to unmarshal data into MappingScimResourceTypeResponse
+	err = newStrictDecoder(data).Decode(&dst.MappingScimResourceTypeResponse)
+	if err == nil {
+		jsonMappingScimResourceTypeResponse, _ := json.Marshal(dst.MappingScimResourceTypeResponse)
+		if string(jsonMappingScimResourceTypeResponse) == "{}" { // empty struct
+			dst.MappingScimResourceTypeResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.MappingScimResourceTypeResponse = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.LdapMappingScimResourceTypeResponse = nil
 		dst.LdapPassThroughScimResourceTypeResponse = nil
+		dst.MappingScimResourceTypeResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddScimResourceType200Response)")
 	} else if match == 1 {
@@ -88,6 +110,10 @@ func (src AddScimResourceType200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.LdapPassThroughScimResourceTypeResponse)
 	}
 
+	if src.MappingScimResourceTypeResponse != nil {
+		return json.Marshal(&src.MappingScimResourceTypeResponse)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -102,6 +128,10 @@ func (obj *AddScimResourceType200Response) GetActualInstance() interface{} {
 
 	if obj.LdapPassThroughScimResourceTypeResponse != nil {
 		return obj.LdapPassThroughScimResourceTypeResponse
+	}
+
+	if obj.MappingScimResourceTypeResponse != nil {
+		return obj.MappingScimResourceTypeResponse
 	}
 
 	// all schemas are nil

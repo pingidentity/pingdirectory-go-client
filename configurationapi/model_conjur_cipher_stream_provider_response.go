@@ -19,8 +19,6 @@ var _ MappedNullable = &ConjurCipherStreamProviderResponse{}
 
 // ConjurCipherStreamProviderResponse struct for ConjurCipherStreamProviderResponse
 type ConjurCipherStreamProviderResponse struct {
-	// Name of the Cipher Stream Provider
-	Id      string                                    `json:"id"`
 	Schemas []EnumconjurCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur server.
 	ConjurExternalServer string `json:"conjurExternalServer"`
@@ -36,20 +34,22 @@ type ConjurCipherStreamProviderResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Cipher Stream Provider
+	Id string `json:"id"`
 }
 
 // NewConjurCipherStreamProviderResponse instantiates a new ConjurCipherStreamProviderResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConjurCipherStreamProviderResponse(id string, schemas []EnumconjurCipherStreamProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, encryptionMetadataFile string, enabled bool) *ConjurCipherStreamProviderResponse {
+func NewConjurCipherStreamProviderResponse(schemas []EnumconjurCipherStreamProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, encryptionMetadataFile string, enabled bool, id string) *ConjurCipherStreamProviderResponse {
 	this := ConjurCipherStreamProviderResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ConjurExternalServer = conjurExternalServer
 	this.ConjurSecretRelativePath = conjurSecretRelativePath
 	this.EncryptionMetadataFile = encryptionMetadataFile
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewConjurCipherStreamProviderResponse(id string, schemas []EnumconjurCipher
 func NewConjurCipherStreamProviderResponseWithDefaults() *ConjurCipherStreamProviderResponse {
 	this := ConjurCipherStreamProviderResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ConjurCipherStreamProviderResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ConjurCipherStreamProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ConjurCipherStreamProviderResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -333,6 +309,30 @@ func (o *ConjurCipherStreamProviderResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ConjurCipherStreamProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ConjurCipherStreamProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ConjurCipherStreamProviderResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ConjurCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -343,7 +343,6 @@ func (o ConjurCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 
 func (o ConjurCipherStreamProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["conjurExternalServer"] = o.ConjurExternalServer
 	toSerialize["conjurSecretRelativePath"] = o.ConjurSecretRelativePath
@@ -361,6 +360,7 @@ func (o ConjurCipherStreamProviderResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

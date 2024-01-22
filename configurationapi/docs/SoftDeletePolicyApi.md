@@ -1,14 +1,14 @@
-# \SoftDeletePolicyApi
+# \SoftDeletePolicyAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddSoftDeletePolicy**](SoftDeletePolicyApi.md#AddSoftDeletePolicy) | **Post** /soft-delete-policies | Add a new Soft Delete Policy to the config
-[**DeleteSoftDeletePolicy**](SoftDeletePolicyApi.md#DeleteSoftDeletePolicy) | **Delete** /soft-delete-policies/{soft-delete-policy-name} | Delete a Soft Delete Policy
-[**GetSoftDeletePolicy**](SoftDeletePolicyApi.md#GetSoftDeletePolicy) | **Get** /soft-delete-policies/{soft-delete-policy-name} | Returns a single Soft Delete Policy
-[**ListSoftDeletePolicies**](SoftDeletePolicyApi.md#ListSoftDeletePolicies) | **Get** /soft-delete-policies | Returns a list of all Soft Delete Policy objects
-[**UpdateSoftDeletePolicy**](SoftDeletePolicyApi.md#UpdateSoftDeletePolicy) | **Patch** /soft-delete-policies/{soft-delete-policy-name} | Update an existing Soft Delete Policy by name
+[**AddSoftDeletePolicy**](SoftDeletePolicyAPI.md#AddSoftDeletePolicy) | **Post** /soft-delete-policies | Add a new Soft Delete Policy to the config
+[**DeleteSoftDeletePolicy**](SoftDeletePolicyAPI.md#DeleteSoftDeletePolicy) | **Delete** /soft-delete-policies/{soft-delete-policy-name} | Delete a Soft Delete Policy
+[**GetSoftDeletePolicy**](SoftDeletePolicyAPI.md#GetSoftDeletePolicy) | **Get** /soft-delete-policies/{soft-delete-policy-name} | Returns a single Soft Delete Policy
+[**ListSoftDeletePolicies**](SoftDeletePolicyAPI.md#ListSoftDeletePolicies) | **Get** /soft-delete-policies | Returns a list of all Soft Delete Policy objects
+[**UpdateSoftDeletePolicy**](SoftDeletePolicyAPI.md#UpdateSoftDeletePolicy) | **Patch** /soft-delete-policies/{soft-delete-policy-name} | Update an existing Soft Delete Policy by name
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SoftDeletePolicyApi.AddSoftDeletePolicy(context.Background()).AddSoftDeletePolicyRequest(addSoftDeletePolicyRequest).Execute()
+    resp, r, err := apiClient.SoftDeletePolicyAPI.AddSoftDeletePolicy(context.Background()).AddSoftDeletePolicyRequest(addSoftDeletePolicyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyApi.AddSoftDeletePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyAPI.AddSoftDeletePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddSoftDeletePolicy`: SoftDeletePolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `SoftDeletePolicyApi.AddSoftDeletePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SoftDeletePolicyAPI.AddSoftDeletePolicy`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SoftDeletePolicyApi.DeleteSoftDeletePolicy(context.Background(), softDeletePolicyName).Execute()
+    r, err := apiClient.SoftDeletePolicyAPI.DeleteSoftDeletePolicy(context.Background(), softDeletePolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyApi.DeleteSoftDeletePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyAPI.DeleteSoftDeletePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SoftDeletePolicyApi.GetSoftDeletePolicy(context.Background(), softDeletePolicyName).Execute()
+    resp, r, err := apiClient.SoftDeletePolicyAPI.GetSoftDeletePolicy(context.Background(), softDeletePolicyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyApi.GetSoftDeletePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyAPI.GetSoftDeletePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetSoftDeletePolicy`: SoftDeletePolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `SoftDeletePolicyApi.GetSoftDeletePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SoftDeletePolicyAPI.GetSoftDeletePolicy`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SoftDeletePolicyApi.ListSoftDeletePolicies(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.SoftDeletePolicyAPI.ListSoftDeletePolicies(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyApi.ListSoftDeletePolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyAPI.ListSoftDeletePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListSoftDeletePolicies`: SoftDeletePolicyListResponse
-    fmt.Fprintf(os.Stdout, "Response from `SoftDeletePolicyApi.ListSoftDeletePolicies`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SoftDeletePolicyAPI.ListSoftDeletePolicies`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SoftDeletePolicyApi.UpdateSoftDeletePolicy(context.Background(), softDeletePolicyName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.SoftDeletePolicyAPI.UpdateSoftDeletePolicy(context.Background(), softDeletePolicyName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyApi.UpdateSoftDeletePolicy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SoftDeletePolicyAPI.UpdateSoftDeletePolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateSoftDeletePolicy`: SoftDeletePolicyResponse
-    fmt.Fprintf(os.Stdout, "Response from `SoftDeletePolicyApi.UpdateSoftDeletePolicy`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `SoftDeletePolicyAPI.UpdateSoftDeletePolicy`: %v\n", resp)
 }
 ```
 

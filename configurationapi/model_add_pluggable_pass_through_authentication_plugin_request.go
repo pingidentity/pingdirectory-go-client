@@ -19,9 +19,7 @@ var _ MappedNullable = &AddPluggablePassThroughAuthenticationPluginRequest{}
 
 // AddPluggablePassThroughAuthenticationPluginRequest struct for AddPluggablePassThroughAuthenticationPluginRequest
 type AddPluggablePassThroughAuthenticationPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                                  `json:"pluginName"`
-	Schemas    []EnumpluggablePassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumpluggablePassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
 	// The component used to manage authentication with the external authentication service.
 	PassThroughAuthenticationHandler string `json:"passThroughAuthenticationHandler"`
 	// The base DNs for the local users whose authentication attempts may be passed through to the external authentication service.
@@ -47,18 +45,20 @@ type AddPluggablePassThroughAuthenticationPluginRequest struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddPluggablePassThroughAuthenticationPluginRequest instantiates a new AddPluggablePassThroughAuthenticationPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPluggablePassThroughAuthenticationPluginRequest(pluginName string, schemas []EnumpluggablePassThroughAuthenticationPluginSchemaUrn, passThroughAuthenticationHandler string, enabled bool) *AddPluggablePassThroughAuthenticationPluginRequest {
+func NewAddPluggablePassThroughAuthenticationPluginRequest(schemas []EnumpluggablePassThroughAuthenticationPluginSchemaUrn, passThroughAuthenticationHandler string, enabled bool, pluginName string) *AddPluggablePassThroughAuthenticationPluginRequest {
 	this := AddPluggablePassThroughAuthenticationPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.PassThroughAuthenticationHandler = passThroughAuthenticationHandler
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -68,30 +68,6 @@ func NewAddPluggablePassThroughAuthenticationPluginRequest(pluginName string, sc
 func NewAddPluggablePassThroughAuthenticationPluginRequestWithDefaults() *AddPluggablePassThroughAuthenticationPluginRequest {
 	this := AddPluggablePassThroughAuthenticationPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -518,6 +494,30 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetInvokeForInterna
 	o.InvokeForInternalOperations = &v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddPluggablePassThroughAuthenticationPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -528,7 +528,6 @@ func (o AddPluggablePassThroughAuthenticationPluginRequest) MarshalJSON() ([]byt
 
 func (o AddPluggablePassThroughAuthenticationPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["passThroughAuthenticationHandler"] = o.PassThroughAuthenticationHandler
 	if !IsNil(o.IncludedLocalEntryBaseDN) {
@@ -565,6 +564,7 @@ func (o AddPluggablePassThroughAuthenticationPluginRequest) ToMap() (map[string]
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
 	}
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

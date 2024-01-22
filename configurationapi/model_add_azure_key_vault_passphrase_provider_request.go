@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAzureKeyVaultPassphraseProviderRequest{}
 
 // AddAzureKeyVaultPassphraseProviderRequest struct for AddAzureKeyVaultPassphraseProviderRequest
 type AddAzureKeyVaultPassphraseProviderRequest struct {
-	// Name of the new Passphrase Provider
-	ProviderName string                                         `json:"providerName"`
-	Schemas      []EnumazureKeyVaultPassphraseProviderSchemaUrn `json:"schemas"`
+	Schemas []EnumazureKeyVaultPassphraseProviderSchemaUrn `json:"schemas"`
 	// The URI that identifies the Azure Key Vault from which the secret is to be retrieved.
 	KeyVaultURI string `json:"keyVaultURI"`
 	// The mechanism used to authenticate to the Azure service.
@@ -36,20 +34,22 @@ type AddAzureKeyVaultPassphraseProviderRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Passphrase Provider is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new Passphrase Provider
+	ProviderName string `json:"providerName"`
 }
 
 // NewAddAzureKeyVaultPassphraseProviderRequest instantiates a new AddAzureKeyVaultPassphraseProviderRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAzureKeyVaultPassphraseProviderRequest(providerName string, schemas []EnumazureKeyVaultPassphraseProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, enabled bool) *AddAzureKeyVaultPassphraseProviderRequest {
+func NewAddAzureKeyVaultPassphraseProviderRequest(schemas []EnumazureKeyVaultPassphraseProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, enabled bool, providerName string) *AddAzureKeyVaultPassphraseProviderRequest {
 	this := AddAzureKeyVaultPassphraseProviderRequest{}
-	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.KeyVaultURI = keyVaultURI
 	this.AzureAuthenticationMethod = azureAuthenticationMethod
 	this.SecretName = secretName
 	this.Enabled = enabled
+	this.ProviderName = providerName
 	return &this
 }
 
@@ -59,30 +59,6 @@ func NewAddAzureKeyVaultPassphraseProviderRequest(providerName string, schemas [
 func NewAddAzureKeyVaultPassphraseProviderRequestWithDefaults() *AddAzureKeyVaultPassphraseProviderRequest {
 	this := AddAzureKeyVaultPassphraseProviderRequest{}
 	return &this
-}
-
-// GetProviderName returns the ProviderName field value
-func (o *AddAzureKeyVaultPassphraseProviderRequest) GetProviderName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ProviderName
-}
-
-// GetProviderNameOk returns a tuple with the ProviderName field value
-// and a boolean to check if the value has been set.
-func (o *AddAzureKeyVaultPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ProviderName, true
-}
-
-// SetProviderName sets field value
-func (o *AddAzureKeyVaultPassphraseProviderRequest) SetProviderName(v string) {
-	o.ProviderName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -301,6 +277,30 @@ func (o *AddAzureKeyVaultPassphraseProviderRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetProviderName returns the ProviderName field value
+func (o *AddAzureKeyVaultPassphraseProviderRequest) GetProviderName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ProviderName
+}
+
+// GetProviderNameOk returns a tuple with the ProviderName field value
+// and a boolean to check if the value has been set.
+func (o *AddAzureKeyVaultPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProviderName, true
+}
+
+// SetProviderName sets field value
+func (o *AddAzureKeyVaultPassphraseProviderRequest) SetProviderName(v string) {
+	o.ProviderName = v
+}
+
 func (o AddAzureKeyVaultPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -311,7 +311,6 @@ func (o AddAzureKeyVaultPassphraseProviderRequest) MarshalJSON() ([]byte, error)
 
 func (o AddAzureKeyVaultPassphraseProviderRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["providerName"] = o.ProviderName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["keyVaultURI"] = o.KeyVaultURI
 	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
@@ -326,6 +325,7 @@ func (o AddAzureKeyVaultPassphraseProviderRequest) ToMap() (map[string]interface
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["providerName"] = o.ProviderName
 	return toSerialize, nil
 }
 

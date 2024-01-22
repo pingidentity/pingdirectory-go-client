@@ -19,8 +19,6 @@ var _ MappedNullable = &TextAccessLogFieldBehaviorResponse{}
 
 // TextAccessLogFieldBehaviorResponse struct for TextAccessLogFieldBehaviorResponse
 type TextAccessLogFieldBehaviorResponse struct {
-	// Name of the Log Field Behavior
-	Id            string                                            `json:"id"`
 	Schemas       []EnumtextAccessLogFieldBehaviorSchemaUrn         `json:"schemas"`
 	PreserveField []EnumlogFieldBehaviorTextAccessPreserveFieldProp `json:"preserveField,omitempty"`
 	// The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions).
@@ -45,16 +43,18 @@ type TextAccessLogFieldBehaviorResponse struct {
 	DefaultBehavior                               *EnumlogFieldBehaviorDefaultBehaviorProp           `json:"defaultBehavior,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Log Field Behavior
+	Id string `json:"id"`
 }
 
 // NewTextAccessLogFieldBehaviorResponse instantiates a new TextAccessLogFieldBehaviorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTextAccessLogFieldBehaviorResponse(id string, schemas []EnumtextAccessLogFieldBehaviorSchemaUrn) *TextAccessLogFieldBehaviorResponse {
+func NewTextAccessLogFieldBehaviorResponse(schemas []EnumtextAccessLogFieldBehaviorSchemaUrn, id string) *TextAccessLogFieldBehaviorResponse {
 	this := TextAccessLogFieldBehaviorResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -64,30 +64,6 @@ func NewTextAccessLogFieldBehaviorResponse(id string, schemas []EnumtextAccessLo
 func NewTextAccessLogFieldBehaviorResponseWithDefaults() *TextAccessLogFieldBehaviorResponse {
 	this := TextAccessLogFieldBehaviorResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *TextAccessLogFieldBehaviorResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *TextAccessLogFieldBehaviorResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *TextAccessLogFieldBehaviorResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -626,6 +602,30 @@ func (o *TextAccessLogFieldBehaviorResponse) SetUrnpingidentityschemasconfigurat
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *TextAccessLogFieldBehaviorResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *TextAccessLogFieldBehaviorResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *TextAccessLogFieldBehaviorResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o TextAccessLogFieldBehaviorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -636,7 +636,6 @@ func (o TextAccessLogFieldBehaviorResponse) MarshalJSON() ([]byte, error) {
 
 func (o TextAccessLogFieldBehaviorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PreserveField) {
 		toSerialize["preserveField"] = o.PreserveField
@@ -686,6 +685,7 @@ func (o TextAccessLogFieldBehaviorResponse) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

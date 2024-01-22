@@ -19,10 +19,10 @@ var _ MappedNullable = &RootDnResponse{}
 
 // RootDnResponse struct for RootDnResponse
 type RootDnResponse struct {
-	Schemas                                       []EnumrootDnSchemaUrn                              `json:"schemas,omitempty"`
-	DefaultRootPrivilegeName                      []EnumrootDnDefaultRootPrivilegeNameProp           `json:"defaultRootPrivilegeName,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumrootDnSchemaUrn                              `json:"schemas,omitempty"`
+	DefaultRootPrivilegeName                      []EnumrootDnDefaultRootPrivilegeNameProp           `json:"defaultRootPrivilegeName,omitempty"`
 }
 
 // NewRootDnResponse instantiates a new RootDnResponse object
@@ -40,70 +40,6 @@ func NewRootDnResponse() *RootDnResponse {
 func NewRootDnResponseWithDefaults() *RootDnResponse {
 	this := RootDnResponse{}
 	return &this
-}
-
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
-func (o *RootDnResponse) GetSchemas() []EnumrootDnSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
-		var ret []EnumrootDnSchemaUrn
-		return ret
-	}
-	return o.Schemas
-}
-
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RootDnResponse) GetSchemasOk() ([]EnumrootDnSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
-		return nil, false
-	}
-	return o.Schemas, true
-}
-
-// HasSchemas returns a boolean if a field has been set.
-func (o *RootDnResponse) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumrootDnSchemaUrn and assigns it to the Schemas field.
-func (o *RootDnResponse) SetSchemas(v []EnumrootDnSchemaUrn) {
-	o.Schemas = v
-}
-
-// GetDefaultRootPrivilegeName returns the DefaultRootPrivilegeName field value if set, zero value otherwise.
-func (o *RootDnResponse) GetDefaultRootPrivilegeName() []EnumrootDnDefaultRootPrivilegeNameProp {
-	if o == nil || IsNil(o.DefaultRootPrivilegeName) {
-		var ret []EnumrootDnDefaultRootPrivilegeNameProp
-		return ret
-	}
-	return o.DefaultRootPrivilegeName
-}
-
-// GetDefaultRootPrivilegeNameOk returns a tuple with the DefaultRootPrivilegeName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RootDnResponse) GetDefaultRootPrivilegeNameOk() ([]EnumrootDnDefaultRootPrivilegeNameProp, bool) {
-	if o == nil || IsNil(o.DefaultRootPrivilegeName) {
-		return nil, false
-	}
-	return o.DefaultRootPrivilegeName, true
-}
-
-// HasDefaultRootPrivilegeName returns a boolean if a field has been set.
-func (o *RootDnResponse) HasDefaultRootPrivilegeName() bool {
-	if o != nil && !IsNil(o.DefaultRootPrivilegeName) {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultRootPrivilegeName gets a reference to the given []EnumrootDnDefaultRootPrivilegeNameProp and assigns it to the DefaultRootPrivilegeName field.
-func (o *RootDnResponse) SetDefaultRootPrivilegeName(v []EnumrootDnDefaultRootPrivilegeNameProp) {
-	o.DefaultRootPrivilegeName = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
@@ -170,6 +106,70 @@ func (o *RootDnResponse) SetUrnpingidentityschemasconfigurationmessages20(v Meta
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetSchemas returns the Schemas field value if set, zero value otherwise.
+func (o *RootDnResponse) GetSchemas() []EnumrootDnSchemaUrn {
+	if o == nil || IsNil(o.Schemas) {
+		var ret []EnumrootDnSchemaUrn
+		return ret
+	}
+	return o.Schemas
+}
+
+// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RootDnResponse) GetSchemasOk() ([]EnumrootDnSchemaUrn, bool) {
+	if o == nil || IsNil(o.Schemas) {
+		return nil, false
+	}
+	return o.Schemas, true
+}
+
+// HasSchemas returns a boolean if a field has been set.
+func (o *RootDnResponse) HasSchemas() bool {
+	if o != nil && !IsNil(o.Schemas) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchemas gets a reference to the given []EnumrootDnSchemaUrn and assigns it to the Schemas field.
+func (o *RootDnResponse) SetSchemas(v []EnumrootDnSchemaUrn) {
+	o.Schemas = v
+}
+
+// GetDefaultRootPrivilegeName returns the DefaultRootPrivilegeName field value if set, zero value otherwise.
+func (o *RootDnResponse) GetDefaultRootPrivilegeName() []EnumrootDnDefaultRootPrivilegeNameProp {
+	if o == nil || IsNil(o.DefaultRootPrivilegeName) {
+		var ret []EnumrootDnDefaultRootPrivilegeNameProp
+		return ret
+	}
+	return o.DefaultRootPrivilegeName
+}
+
+// GetDefaultRootPrivilegeNameOk returns a tuple with the DefaultRootPrivilegeName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RootDnResponse) GetDefaultRootPrivilegeNameOk() ([]EnumrootDnDefaultRootPrivilegeNameProp, bool) {
+	if o == nil || IsNil(o.DefaultRootPrivilegeName) {
+		return nil, false
+	}
+	return o.DefaultRootPrivilegeName, true
+}
+
+// HasDefaultRootPrivilegeName returns a boolean if a field has been set.
+func (o *RootDnResponse) HasDefaultRootPrivilegeName() bool {
+	if o != nil && !IsNil(o.DefaultRootPrivilegeName) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultRootPrivilegeName gets a reference to the given []EnumrootDnDefaultRootPrivilegeNameProp and assigns it to the DefaultRootPrivilegeName field.
+func (o *RootDnResponse) SetDefaultRootPrivilegeName(v []EnumrootDnDefaultRootPrivilegeNameProp) {
+	o.DefaultRootPrivilegeName = v
+}
+
 func (o RootDnResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -180,17 +180,17 @@ func (o RootDnResponse) MarshalJSON() ([]byte, error) {
 
 func (o RootDnResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !IsNil(o.DefaultRootPrivilegeName) {
-		toSerialize["defaultRootPrivilegeName"] = o.DefaultRootPrivilegeName
-	}
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.DefaultRootPrivilegeName) {
+		toSerialize["defaultRootPrivilegeName"] = o.DefaultRootPrivilegeName
 	}
 	return toSerialize, nil
 }

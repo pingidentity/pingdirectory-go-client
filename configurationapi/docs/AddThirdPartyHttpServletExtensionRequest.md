@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 **Schemas** | [**[]EnumthirdPartyHttpServletExtensionSchemaUrn**](EnumthirdPartyHttpServletExtensionSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party HTTP Servlet Extension. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party HTTP Servlet Extension. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -12,12 +11,13 @@ Name | Type | Description | Notes
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
+**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 
 ## Methods
 
 ### NewAddThirdPartyHttpServletExtensionRequest
 
-`func NewAddThirdPartyHttpServletExtensionRequest(extensionName string, schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, extensionClass string, ) *AddThirdPartyHttpServletExtensionRequest`
+`func NewAddThirdPartyHttpServletExtensionRequest(schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, extensionClass string, extensionName string, ) *AddThirdPartyHttpServletExtensionRequest`
 
 NewAddThirdPartyHttpServletExtensionRequest instantiates a new AddThirdPartyHttpServletExtensionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,26 +31,6 @@ will change when the set of required properties is changed
 NewAddThirdPartyHttpServletExtensionRequestWithDefaults instantiates a new AddThirdPartyHttpServletExtensionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetExtensionName
-
-`func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionName() string`
-
-GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
-
-### GetExtensionNameOk
-
-`func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
-
-GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtensionName
-
-`func (o *AddThirdPartyHttpServletExtensionRequest) SetExtensionName(v string)`
-
-SetExtensionName sets ExtensionName field to given value.
-
 
 ### GetSchemas
 
@@ -216,6 +196,26 @@ SetCorrelationIDResponseHeader sets CorrelationIDResponseHeader field to given v
 `func (o *AddThirdPartyHttpServletExtensionRequest) HasCorrelationIDResponseHeader() bool`
 
 HasCorrelationIDResponseHeader returns a boolean if a field has been set.
+
+### GetExtensionName
+
+`func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionName() string`
+
+GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
+
+### GetExtensionNameOk
+
+`func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
+
+GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtensionName
+
+`func (o *AddThirdPartyHttpServletExtensionRequest) SetExtensionName(v string)`
+
+SetExtensionName sets ExtensionName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

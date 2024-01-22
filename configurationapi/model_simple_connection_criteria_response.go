@@ -19,8 +19,6 @@ var _ MappedNullable = &SimpleConnectionCriteriaResponse{}
 
 // SimpleConnectionCriteriaResponse struct for SimpleConnectionCriteriaResponse
 type SimpleConnectionCriteriaResponse struct {
-	// Name of the Connection Criteria
-	Id      string                                  `json:"id"`
 	Schemas []EnumsimpleConnectionCriteriaSchemaUrn `json:"schemas"`
 	// Specifies an address mask that may be used to specify a set of clients that should be included in this Simple Connection Criteria.
 	IncludedClientAddress []string `json:"includedClientAddress,omitempty"`
@@ -69,16 +67,18 @@ type SimpleConnectionCriteriaResponse struct {
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Connection Criteria
+	Id string `json:"id"`
 }
 
 // NewSimpleConnectionCriteriaResponse instantiates a new SimpleConnectionCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSimpleConnectionCriteriaResponse(id string, schemas []EnumsimpleConnectionCriteriaSchemaUrn) *SimpleConnectionCriteriaResponse {
+func NewSimpleConnectionCriteriaResponse(schemas []EnumsimpleConnectionCriteriaSchemaUrn, id string) *SimpleConnectionCriteriaResponse {
 	this := SimpleConnectionCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -88,30 +88,6 @@ func NewSimpleConnectionCriteriaResponse(id string, schemas []EnumsimpleConnecti
 func NewSimpleConnectionCriteriaResponseWithDefaults() *SimpleConnectionCriteriaResponse {
 	this := SimpleConnectionCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *SimpleConnectionCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *SimpleConnectionCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *SimpleConnectionCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -1034,6 +1010,30 @@ func (o *SimpleConnectionCriteriaResponse) SetUrnpingidentityschemasconfiguratio
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *SimpleConnectionCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *SimpleConnectionCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *SimpleConnectionCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o SimpleConnectionCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1044,7 +1044,6 @@ func (o SimpleConnectionCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o SimpleConnectionCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.IncludedClientAddress) {
 		toSerialize["includedClientAddress"] = o.IncludedClientAddress
@@ -1130,6 +1129,7 @@ func (o SimpleConnectionCriteriaResponse) ToMap() (map[string]interface{}, error
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

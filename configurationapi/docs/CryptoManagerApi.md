@@ -1,11 +1,11 @@
-# \CryptoManagerApi
+# \CryptoManagerAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCryptoManager**](CryptoManagerApi.md#GetCryptoManager) | **Get** /crypto-manager | Returns a single Crypto Manager
-[**UpdateCryptoManager**](CryptoManagerApi.md#UpdateCryptoManager) | **Patch** /crypto-manager | Update an existing Crypto Manager by name
+[**GetCryptoManager**](CryptoManagerAPI.md#GetCryptoManager) | **Get** /crypto-manager | Returns a single Crypto Manager
+[**UpdateCryptoManager**](CryptoManagerAPI.md#UpdateCryptoManager) | **Patch** /crypto-manager | Update an existing Crypto Manager by name
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CryptoManagerApi.GetCryptoManager(context.Background()).Execute()
+    resp, r, err := apiClient.CryptoManagerAPI.GetCryptoManager(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CryptoManagerApi.GetCryptoManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CryptoManagerAPI.GetCryptoManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetCryptoManager`: CryptoManagerResponse
-    fmt.Fprintf(os.Stdout, "Response from `CryptoManagerApi.GetCryptoManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CryptoManagerAPI.GetCryptoManager`: %v\n", resp)
 }
 ```
 
@@ -91,13 +91,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CryptoManagerApi.UpdateCryptoManager(context.Background()).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.CryptoManagerAPI.UpdateCryptoManager(context.Background()).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CryptoManagerApi.UpdateCryptoManager``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CryptoManagerAPI.UpdateCryptoManager``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateCryptoManager`: CryptoManagerResponse
-    fmt.Fprintf(os.Stdout, "Response from `CryptoManagerApi.UpdateCryptoManager`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `CryptoManagerAPI.UpdateCryptoManager`: %v\n", resp)
 }
 ```
 

@@ -19,11 +19,11 @@ var _ MappedNullable = &LicenseResponse{}
 
 // LicenseResponse struct for LicenseResponse
 type LicenseResponse struct {
-	Schemas []EnumlicenseSchemaUrn `json:"schemas,omitempty"`
-	// License key enabling use of Directory Server, Directory Proxy Server, Data Sync Server, and Data Metrics Server products.
-	DirectoryPlatformLicenseKey                   *string                                            `json:"directoryPlatformLicenseKey,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumlicenseSchemaUrn                             `json:"schemas,omitempty"`
+	// License key enabling use of Directory Server, Directory Proxy Server, Data Sync Server, and Data Metrics Server products.
+	DirectoryPlatformLicenseKey *string `json:"directoryPlatformLicenseKey,omitempty"`
 }
 
 // NewLicenseResponse instantiates a new LicenseResponse object
@@ -41,70 +41,6 @@ func NewLicenseResponse() *LicenseResponse {
 func NewLicenseResponseWithDefaults() *LicenseResponse {
 	this := LicenseResponse{}
 	return &this
-}
-
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
-func (o *LicenseResponse) GetSchemas() []EnumlicenseSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
-		var ret []EnumlicenseSchemaUrn
-		return ret
-	}
-	return o.Schemas
-}
-
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LicenseResponse) GetSchemasOk() ([]EnumlicenseSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
-		return nil, false
-	}
-	return o.Schemas, true
-}
-
-// HasSchemas returns a boolean if a field has been set.
-func (o *LicenseResponse) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumlicenseSchemaUrn and assigns it to the Schemas field.
-func (o *LicenseResponse) SetSchemas(v []EnumlicenseSchemaUrn) {
-	o.Schemas = v
-}
-
-// GetDirectoryPlatformLicenseKey returns the DirectoryPlatformLicenseKey field value if set, zero value otherwise.
-func (o *LicenseResponse) GetDirectoryPlatformLicenseKey() string {
-	if o == nil || IsNil(o.DirectoryPlatformLicenseKey) {
-		var ret string
-		return ret
-	}
-	return *o.DirectoryPlatformLicenseKey
-}
-
-// GetDirectoryPlatformLicenseKeyOk returns a tuple with the DirectoryPlatformLicenseKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LicenseResponse) GetDirectoryPlatformLicenseKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.DirectoryPlatformLicenseKey) {
-		return nil, false
-	}
-	return o.DirectoryPlatformLicenseKey, true
-}
-
-// HasDirectoryPlatformLicenseKey returns a boolean if a field has been set.
-func (o *LicenseResponse) HasDirectoryPlatformLicenseKey() bool {
-	if o != nil && !IsNil(o.DirectoryPlatformLicenseKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetDirectoryPlatformLicenseKey gets a reference to the given string and assigns it to the DirectoryPlatformLicenseKey field.
-func (o *LicenseResponse) SetDirectoryPlatformLicenseKey(v string) {
-	o.DirectoryPlatformLicenseKey = &v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
@@ -171,6 +107,70 @@ func (o *LicenseResponse) SetUrnpingidentityschemasconfigurationmessages20(v Met
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetSchemas returns the Schemas field value if set, zero value otherwise.
+func (o *LicenseResponse) GetSchemas() []EnumlicenseSchemaUrn {
+	if o == nil || IsNil(o.Schemas) {
+		var ret []EnumlicenseSchemaUrn
+		return ret
+	}
+	return o.Schemas
+}
+
+// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LicenseResponse) GetSchemasOk() ([]EnumlicenseSchemaUrn, bool) {
+	if o == nil || IsNil(o.Schemas) {
+		return nil, false
+	}
+	return o.Schemas, true
+}
+
+// HasSchemas returns a boolean if a field has been set.
+func (o *LicenseResponse) HasSchemas() bool {
+	if o != nil && !IsNil(o.Schemas) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchemas gets a reference to the given []EnumlicenseSchemaUrn and assigns it to the Schemas field.
+func (o *LicenseResponse) SetSchemas(v []EnumlicenseSchemaUrn) {
+	o.Schemas = v
+}
+
+// GetDirectoryPlatformLicenseKey returns the DirectoryPlatformLicenseKey field value if set, zero value otherwise.
+func (o *LicenseResponse) GetDirectoryPlatformLicenseKey() string {
+	if o == nil || IsNil(o.DirectoryPlatformLicenseKey) {
+		var ret string
+		return ret
+	}
+	return *o.DirectoryPlatformLicenseKey
+}
+
+// GetDirectoryPlatformLicenseKeyOk returns a tuple with the DirectoryPlatformLicenseKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LicenseResponse) GetDirectoryPlatformLicenseKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.DirectoryPlatformLicenseKey) {
+		return nil, false
+	}
+	return o.DirectoryPlatformLicenseKey, true
+}
+
+// HasDirectoryPlatformLicenseKey returns a boolean if a field has been set.
+func (o *LicenseResponse) HasDirectoryPlatformLicenseKey() bool {
+	if o != nil && !IsNil(o.DirectoryPlatformLicenseKey) {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectoryPlatformLicenseKey gets a reference to the given string and assigns it to the DirectoryPlatformLicenseKey field.
+func (o *LicenseResponse) SetDirectoryPlatformLicenseKey(v string) {
+	o.DirectoryPlatformLicenseKey = &v
+}
+
 func (o LicenseResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -181,17 +181,17 @@ func (o LicenseResponse) MarshalJSON() ([]byte, error) {
 
 func (o LicenseResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !IsNil(o.DirectoryPlatformLicenseKey) {
-		toSerialize["directoryPlatformLicenseKey"] = o.DirectoryPlatformLicenseKey
-	}
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.DirectoryPlatformLicenseKey) {
+		toSerialize["directoryPlatformLicenseKey"] = o.DirectoryPlatformLicenseKey
 	}
 	return toSerialize, nil
 }

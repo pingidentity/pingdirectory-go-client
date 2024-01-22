@@ -19,8 +19,6 @@ var _ MappedNullable = &LastAccessTimeUncachedEntryCriteriaResponse{}
 
 // LastAccessTimeUncachedEntryCriteriaResponse struct for LastAccessTimeUncachedEntryCriteriaResponse
 type LastAccessTimeUncachedEntryCriteriaResponse struct {
-	// Name of the Uncached Entry Criteria
-	Id      string                                             `json:"id"`
 	Schemas []EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the maximum length of time that has passed since an entry was last accessed that it should still be included in the id2entry database. Entries that have not been accessed in more than this length of time may be written into the uncached-id2entry database.
 	AccessTimeThreshold string `json:"accessTimeThreshold"`
@@ -30,18 +28,20 @@ type LastAccessTimeUncachedEntryCriteriaResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Uncached Entry Criteria
+	Id string `json:"id"`
 }
 
 // NewLastAccessTimeUncachedEntryCriteriaResponse instantiates a new LastAccessTimeUncachedEntryCriteriaResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLastAccessTimeUncachedEntryCriteriaResponse(id string, schemas []EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn, accessTimeThreshold string, enabled bool) *LastAccessTimeUncachedEntryCriteriaResponse {
+func NewLastAccessTimeUncachedEntryCriteriaResponse(schemas []EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn, accessTimeThreshold string, enabled bool, id string) *LastAccessTimeUncachedEntryCriteriaResponse {
 	this := LastAccessTimeUncachedEntryCriteriaResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AccessTimeThreshold = accessTimeThreshold
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewLastAccessTimeUncachedEntryCriteriaResponse(id string, schemas []Enumlas
 func NewLastAccessTimeUncachedEntryCriteriaResponseWithDefaults() *LastAccessTimeUncachedEntryCriteriaResponse {
 	this := LastAccessTimeUncachedEntryCriteriaResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LastAccessTimeUncachedEntryCriteriaResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -245,6 +221,30 @@ func (o *LastAccessTimeUncachedEntryCriteriaResponse) SetUrnpingidentityschemasc
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LastAccessTimeUncachedEntryCriteriaResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LastAccessTimeUncachedEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -255,7 +255,6 @@ func (o LastAccessTimeUncachedEntryCriteriaResponse) MarshalJSON() ([]byte, erro
 
 func (o LastAccessTimeUncachedEntryCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["accessTimeThreshold"] = o.AccessTimeThreshold
 	if !IsNil(o.Description) {
@@ -268,6 +267,7 @@ func (o LastAccessTimeUncachedEntryCriteriaResponse) ToMap() (map[string]interfa
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

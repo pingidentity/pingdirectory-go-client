@@ -19,9 +19,7 @@ var _ MappedNullable = &AddTopologyAdminUserRequest{}
 
 // AddTopologyAdminUserRequest struct for AddTopologyAdminUserRequest
 type AddTopologyAdminUserRequest struct {
-	// Name of the new Topology Admin User
-	UserName string                           `json:"userName"`
-	Schemas  []EnumtopologyAdminUserSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumtopologyAdminUserSchemaUrn `json:"schemas,omitempty"`
 	// Specifies one or more alternate DNs that can be used to bind to the server as this User.
 	AlternateBindDN []string `json:"alternateBindDN,omitempty"`
 	// A description for this User.
@@ -86,6 +84,8 @@ type AddTopologyAdminUserRequest struct {
 	MayProxyAsGroup []string `json:"mayProxyAsGroup,omitempty"`
 	// This restricts the set of accounts that this User can proxy as to entries that are matched by the specified LDAP URL.
 	MayProxyAsURL []string `json:"mayProxyAsURL,omitempty"`
+	// Name of the new Topology Admin User
+	UserName string `json:"userName"`
 }
 
 // NewAddTopologyAdminUserRequest instantiates a new AddTopologyAdminUserRequest object
@@ -104,30 +104,6 @@ func NewAddTopologyAdminUserRequest(userName string) *AddTopologyAdminUserReques
 func NewAddTopologyAdminUserRequestWithDefaults() *AddTopologyAdminUserRequest {
 	this := AddTopologyAdminUserRequest{}
 	return &this
-}
-
-// GetUserName returns the UserName field value
-func (o *AddTopologyAdminUserRequest) GetUserName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.UserName
-}
-
-// GetUserNameOk returns a tuple with the UserName field value
-// and a boolean to check if the value has been set.
-func (o *AddTopologyAdminUserRequest) GetUserNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserName, true
-}
-
-// SetUserName sets field value
-func (o *AddTopologyAdminUserRequest) SetUserName(v string) {
-	o.UserName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -1218,6 +1194,30 @@ func (o *AddTopologyAdminUserRequest) SetMayProxyAsURL(v []string) {
 	o.MayProxyAsURL = v
 }
 
+// GetUserName returns the UserName field value
+func (o *AddTopologyAdminUserRequest) GetUserName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.UserName
+}
+
+// GetUserNameOk returns a tuple with the UserName field value
+// and a boolean to check if the value has been set.
+func (o *AddTopologyAdminUserRequest) GetUserNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.UserName, true
+}
+
+// SetUserName sets field value
+func (o *AddTopologyAdminUserRequest) SetUserName(v string) {
+	o.UserName = v
+}
+
 func (o AddTopologyAdminUserRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1228,7 +1228,6 @@ func (o AddTopologyAdminUserRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddTopologyAdminUserRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["userName"] = o.UserName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -1331,6 +1330,7 @@ func (o AddTopologyAdminUserRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.MayProxyAsURL) {
 		toSerialize["mayProxyAsURL"] = o.MayProxyAsURL
 	}
+	toSerialize["userName"] = o.UserName
 	return toSerialize, nil
 }
 

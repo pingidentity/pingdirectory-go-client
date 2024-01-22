@@ -19,9 +19,7 @@ var _ MappedNullable = &AddCleanUpInactivePingfederatePersistentSessionsPluginRe
 
 // AddCleanUpInactivePingfederatePersistentSessionsPluginRequest struct for AddCleanUpInactivePingfederatePersistentSessionsPluginRequest
 type AddCleanUpInactivePingfederatePersistentSessionsPluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                                             `json:"pluginName"`
-	Schemas    []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn `json:"schemas"`
+	Schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn `json:"schemas"`
 	// Sessions whose last activity timestamp is older than this offset will be removed.
 	ExpirationOffset string `json:"expirationOffset"`
 	// This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
@@ -36,18 +34,20 @@ type AddCleanUpInactivePingfederatePersistentSessionsPluginRequest struct {
 	NumDeleteThreads *int64 `json:"numDeleteThreads,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequest instantiates a new AddCleanUpInactivePingfederatePersistentSessionsPluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequest(pluginName string, schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn, expirationOffset string, enabled bool) *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest {
+func NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequest(schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn, expirationOffset string, enabled bool, pluginName string) *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest {
 	this := AddCleanUpInactivePingfederatePersistentSessionsPluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.ExpirationOffset = expirationOffset
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -57,30 +57,6 @@ func NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequest(pluginName
 func NewAddCleanUpInactivePingfederatePersistentSessionsPluginRequestWithDefaults() *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest {
 	this := AddCleanUpInactivePingfederatePersistentSessionsPluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -315,6 +291,30 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetEnabl
 	o.Enabled = v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -325,7 +325,6 @@ func (o AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) MarshalJS
 
 func (o AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["expirationOffset"] = o.ExpirationOffset
 	if !IsNil(o.PollingInterval) {
@@ -344,6 +343,7 @@ func (o AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) ToMap() (
 		toSerialize["numDeleteThreads"] = o.NumDeleteThreads
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

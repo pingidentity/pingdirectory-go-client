@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AttributeType** | **string** | Specifies the name or OID of the LDAP attribute type. | 
 **Schemas** | [**[]EnumgenericDelegatedAdminAttributeSchemaUrn**](EnumgenericDelegatedAdminAttributeSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute | [optional] 
+**AttributeType** | **string** | Name of the new Delegated Admin Attribute | 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute. | 
 **Mutability** | Pointer to [**EnumdelegatedAdminAttributeMutabilityProp**](EnumdelegatedAdminAttributeMutabilityProp.md) |  | [optional] 
 **MultiValued** | Pointer to **bool** | Indicates whether this Delegated Admin Attribute may have multiple values. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddGenericDelegatedAdminAttributeRequest
 
-`func NewAddGenericDelegatedAdminAttributeRequest(attributeType string, schemas []EnumgenericDelegatedAdminAttributeSchemaUrn, displayName string, ) *AddGenericDelegatedAdminAttributeRequest`
+`func NewAddGenericDelegatedAdminAttributeRequest(schemas []EnumgenericDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, ) *AddGenericDelegatedAdminAttributeRequest`
 
 NewAddGenericDelegatedAdminAttributeRequest instantiates a new AddGenericDelegatedAdminAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,26 +35,6 @@ will change when the set of required properties is changed
 NewAddGenericDelegatedAdminAttributeRequestWithDefaults instantiates a new AddGenericDelegatedAdminAttributeRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAttributeType
-
-`func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeType() string`
-
-GetAttributeType returns the AttributeType field if non-nil, zero value otherwise.
-
-### GetAttributeTypeOk
-
-`func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeTypeOk() (*string, bool)`
-
-GetAttributeTypeOk returns a tuple with the AttributeType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAttributeType
-
-`func (o *AddGenericDelegatedAdminAttributeRequest) SetAttributeType(v string)`
-
-SetAttributeType sets AttributeType field to given value.
-
 
 ### GetSchemas
 
@@ -100,6 +80,26 @@ SetDescription sets Description field to given value.
 `func (o *AddGenericDelegatedAdminAttributeRequest) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetAttributeType
+
+`func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeType() string`
+
+GetAttributeType returns the AttributeType field if non-nil, zero value otherwise.
+
+### GetAttributeTypeOk
+
+`func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeTypeOk() (*string, bool)`
+
+GetAttributeTypeOk returns a tuple with the AttributeType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributeType
+
+`func (o *AddGenericDelegatedAdminAttributeRequest) SetAttributeType(v string)`
+
+SetAttributeType sets AttributeType field to given value.
+
 
 ### GetDisplayName
 

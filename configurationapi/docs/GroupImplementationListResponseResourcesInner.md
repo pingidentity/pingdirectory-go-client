@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Schemas** | [**[]EnumstaticGroupImplementationSchemaUrn**](EnumstaticGroupImplementationSchemaUrn.md) |  | 
+**Schemas** | [**[]EnuminvertedStaticGroupImplementationSchemaUrn**](EnuminvertedStaticGroupImplementationSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Group Implementation | 
 **Description** | Pointer to **string** | A description for this Group Implementation | [optional] 
 **Enabled** | **bool** | Indicates whether the Group Implementation is enabled. | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewGroupImplementationListResponseResourcesInner
 
-`func NewGroupImplementationListResponseResourcesInner(schemas []EnumstaticGroupImplementationSchemaUrn, id string, enabled bool, ) *GroupImplementationListResponseResourcesInner`
+`func NewGroupImplementationListResponseResourcesInner(schemas []EnuminvertedStaticGroupImplementationSchemaUrn, id string, enabled bool, ) *GroupImplementationListResponseResourcesInner`
 
 NewGroupImplementationListResponseResourcesInner instantiates a new GroupImplementationListResponseResourcesInner object
 This constructor will assign default values to properties that have it defined,
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSchemas
 
-`func (o *GroupImplementationListResponseResourcesInner) GetSchemas() []EnumstaticGroupImplementationSchemaUrn`
+`func (o *GroupImplementationListResponseResourcesInner) GetSchemas() []EnuminvertedStaticGroupImplementationSchemaUrn`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *GroupImplementationListResponseResourcesInner) GetSchemasOk() (*[]EnumstaticGroupImplementationSchemaUrn, bool)`
+`func (o *GroupImplementationListResponseResourcesInner) GetSchemasOk() (*[]EnuminvertedStaticGroupImplementationSchemaUrn, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *GroupImplementationListResponseResourcesInner) SetSchemas(v []EnumstaticGroupImplementationSchemaUrn)`
+`func (o *GroupImplementationListResponseResourcesInner) SetSchemas(v []EnuminvertedStaticGroupImplementationSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
 

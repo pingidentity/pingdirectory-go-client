@@ -1,14 +1,14 @@
-# \IdentityMapperApi
+# \IdentityMapperAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddIdentityMapper**](IdentityMapperApi.md#AddIdentityMapper) | **Post** /identity-mappers | Add a new Identity Mapper to the config
-[**DeleteIdentityMapper**](IdentityMapperApi.md#DeleteIdentityMapper) | **Delete** /identity-mappers/{identity-mapper-name} | Delete a Identity Mapper
-[**GetIdentityMapper**](IdentityMapperApi.md#GetIdentityMapper) | **Get** /identity-mappers/{identity-mapper-name} | Returns a single Identity Mapper
-[**ListIdentityMappers**](IdentityMapperApi.md#ListIdentityMappers) | **Get** /identity-mappers | Returns a list of all Identity Mapper objects
-[**UpdateIdentityMapper**](IdentityMapperApi.md#UpdateIdentityMapper) | **Patch** /identity-mappers/{identity-mapper-name} | Update an existing Identity Mapper by name
+[**AddIdentityMapper**](IdentityMapperAPI.md#AddIdentityMapper) | **Post** /identity-mappers | Add a new Identity Mapper to the config
+[**DeleteIdentityMapper**](IdentityMapperAPI.md#DeleteIdentityMapper) | **Delete** /identity-mappers/{identity-mapper-name} | Delete a Identity Mapper
+[**GetIdentityMapper**](IdentityMapperAPI.md#GetIdentityMapper) | **Get** /identity-mappers/{identity-mapper-name} | Returns a single Identity Mapper
+[**ListIdentityMappers**](IdentityMapperAPI.md#ListIdentityMappers) | **Get** /identity-mappers | Returns a list of all Identity Mapper objects
+[**UpdateIdentityMapper**](IdentityMapperAPI.md#UpdateIdentityMapper) | **Patch** /identity-mappers/{identity-mapper-name} | Update an existing Identity Mapper by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addIdentityMapperRequest := openapiclient.add_identity_mapper_request{AddAggregateIdentityMapperRequest: openapiclient.NewAddAggregateIdentityMapperRequest("MapperName_example", []openapiclient.EnumaggregateIdentityMapperSchemaUrn{openapiclient.Enumaggregate-identity-mapperSchemaUrn("urn:pingidentity:schemas:configuration:2.0:identity-mapper:aggregate")}, false)} // AddIdentityMapperRequest | Create a new Identity Mapper in the config
+    addIdentityMapperRequest := openapiclient.add_identity_mapper_request{AddAggregateIdentityMapperRequest: openapiclient.NewAddAggregateIdentityMapperRequest([]openapiclient.EnumaggregateIdentityMapperSchemaUrn{openapiclient.Enumaggregate-identity-mapperSchemaUrn("urn:pingidentity:schemas:configuration:2.0:identity-mapper:aggregate")}, false, "MapperName_example")} // AddIdentityMapperRequest | Create a new Identity Mapper in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityMapperApi.AddIdentityMapper(context.Background()).AddIdentityMapperRequest(addIdentityMapperRequest).Execute()
+    resp, r, err := apiClient.IdentityMapperAPI.AddIdentityMapper(context.Background()).AddIdentityMapperRequest(addIdentityMapperRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperApi.AddIdentityMapper``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperAPI.AddIdentityMapper``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddIdentityMapper`: AddIdentityMapper200Response
-    fmt.Fprintf(os.Stdout, "Response from `IdentityMapperApi.AddIdentityMapper`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityMapperAPI.AddIdentityMapper`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.IdentityMapperApi.DeleteIdentityMapper(context.Background(), identityMapperName).Execute()
+    r, err := apiClient.IdentityMapperAPI.DeleteIdentityMapper(context.Background(), identityMapperName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperApi.DeleteIdentityMapper``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperAPI.DeleteIdentityMapper``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityMapperApi.GetIdentityMapper(context.Background(), identityMapperName).Execute()
+    resp, r, err := apiClient.IdentityMapperAPI.GetIdentityMapper(context.Background(), identityMapperName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperApi.GetIdentityMapper``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperAPI.GetIdentityMapper``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetIdentityMapper`: AddIdentityMapper200Response
-    fmt.Fprintf(os.Stdout, "Response from `IdentityMapperApi.GetIdentityMapper`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityMapperAPI.GetIdentityMapper`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityMapperApi.ListIdentityMappers(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.IdentityMapperAPI.ListIdentityMappers(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperApi.ListIdentityMappers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperAPI.ListIdentityMappers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListIdentityMappers`: IdentityMapperListResponse
-    fmt.Fprintf(os.Stdout, "Response from `IdentityMapperApi.ListIdentityMappers`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityMapperAPI.ListIdentityMappers`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityMapperApi.UpdateIdentityMapper(context.Background(), identityMapperName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.IdentityMapperAPI.UpdateIdentityMapper(context.Background(), identityMapperName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperApi.UpdateIdentityMapper``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperAPI.UpdateIdentityMapper``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateIdentityMapper`: AddIdentityMapper200Response
-    fmt.Fprintf(os.Stdout, "Response from `IdentityMapperApi.UpdateIdentityMapper`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `IdentityMapperAPI.UpdateIdentityMapper`: %v\n", resp)
 }
 ```
 

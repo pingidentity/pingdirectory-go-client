@@ -19,8 +19,6 @@ var _ MappedNullable = &UserDefinedVirtualAttributeResponse{}
 
 // UserDefinedVirtualAttributeResponse struct for UserDefinedVirtualAttributeResponse
 type UserDefinedVirtualAttributeResponse struct {
-	// Name of the Virtual Attribute
-	Id      string                                     `json:"id"`
 	Schemas []EnumuserDefinedVirtualAttributeSchemaUrn `json:"schemas"`
 	// Specifies the values to be included in the virtual attribute.
 	Value []string `json:"value"`
@@ -48,19 +46,21 @@ type UserDefinedVirtualAttributeResponse struct {
 	AllowIndexConflicts                           *bool                                              `json:"allowIndexConflicts,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Virtual Attribute
+	Id string `json:"id"`
 }
 
 // NewUserDefinedVirtualAttributeResponse instantiates a new UserDefinedVirtualAttributeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserDefinedVirtualAttributeResponse(id string, schemas []EnumuserDefinedVirtualAttributeSchemaUrn, value []string, enabled bool, attributeType string) *UserDefinedVirtualAttributeResponse {
+func NewUserDefinedVirtualAttributeResponse(schemas []EnumuserDefinedVirtualAttributeSchemaUrn, value []string, enabled bool, attributeType string, id string) *UserDefinedVirtualAttributeResponse {
 	this := UserDefinedVirtualAttributeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.Value = value
 	this.Enabled = enabled
 	this.AttributeType = attributeType
+	this.Id = id
 	return &this
 }
 
@@ -70,30 +70,6 @@ func NewUserDefinedVirtualAttributeResponse(id string, schemas []EnumuserDefined
 func NewUserDefinedVirtualAttributeResponseWithDefaults() *UserDefinedVirtualAttributeResponse {
 	this := UserDefinedVirtualAttributeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *UserDefinedVirtualAttributeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *UserDefinedVirtualAttributeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *UserDefinedVirtualAttributeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -576,6 +552,30 @@ func (o *UserDefinedVirtualAttributeResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *UserDefinedVirtualAttributeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *UserDefinedVirtualAttributeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *UserDefinedVirtualAttributeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o UserDefinedVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -586,7 +586,6 @@ func (o UserDefinedVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 
 func (o UserDefinedVirtualAttributeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["value"] = o.Value
 	if !IsNil(o.Description) {
@@ -627,6 +626,7 @@ func (o UserDefinedVirtualAttributeResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

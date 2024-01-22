@@ -19,8 +19,6 @@ var _ MappedNullable = &AddOpenidConnectIdTokenValidatorRequest{}
 
 // AddOpenidConnectIdTokenValidatorRequest struct for AddOpenidConnectIdTokenValidatorRequest
 type AddOpenidConnectIdTokenValidatorRequest struct {
-	// Name of the new ID Token Validator
-	ValidatorName           string                                            `json:"validatorName"`
 	Schemas                 []EnumopenidConnectIdTokenValidatorSchemaUrn      `json:"schemas"`
 	AllowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys.
@@ -45,21 +43,23 @@ type AddOpenidConnectIdTokenValidatorRequest struct {
 	JwksCacheDuration *string `json:"jwksCacheDuration,omitempty"`
 	// When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
 	EvaluationOrderIndex int64 `json:"evaluationOrderIndex"`
+	// Name of the new ID Token Validator
+	ValidatorName string `json:"validatorName"`
 }
 
 // NewAddOpenidConnectIdTokenValidatorRequest instantiates a new AddOpenidConnectIdTokenValidatorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddOpenidConnectIdTokenValidatorRequest(validatorName string, schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, enabled bool, identityMapper string, issuerURL string, evaluationOrderIndex int64) *AddOpenidConnectIdTokenValidatorRequest {
+func NewAddOpenidConnectIdTokenValidatorRequest(schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, enabled bool, identityMapper string, issuerURL string, evaluationOrderIndex int64, validatorName string) *AddOpenidConnectIdTokenValidatorRequest {
 	this := AddOpenidConnectIdTokenValidatorRequest{}
-	this.ValidatorName = validatorName
 	this.Schemas = schemas
 	this.AllowedSigningAlgorithm = allowedSigningAlgorithm
 	this.Enabled = enabled
 	this.IdentityMapper = identityMapper
 	this.IssuerURL = issuerURL
 	this.EvaluationOrderIndex = evaluationOrderIndex
+	this.ValidatorName = validatorName
 	return &this
 }
 
@@ -69,30 +69,6 @@ func NewAddOpenidConnectIdTokenValidatorRequest(validatorName string, schemas []
 func NewAddOpenidConnectIdTokenValidatorRequestWithDefaults() *AddOpenidConnectIdTokenValidatorRequest {
 	this := AddOpenidConnectIdTokenValidatorRequest{}
 	return &this
-}
-
-// GetValidatorName returns the ValidatorName field value
-func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ValidatorName
-}
-
-// GetValidatorNameOk returns a tuple with the ValidatorName field value
-// and a boolean to check if the value has been set.
-func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ValidatorName, true
-}
-
-// SetValidatorName sets field value
-func (o *AddOpenidConnectIdTokenValidatorRequest) SetValidatorName(v string) {
-	o.ValidatorName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -463,6 +439,30 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetEvaluationOrderIndex(v int6
 	o.EvaluationOrderIndex = v
 }
 
+// GetValidatorName returns the ValidatorName field value
+func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ValidatorName
+}
+
+// GetValidatorNameOk returns a tuple with the ValidatorName field value
+// and a boolean to check if the value has been set.
+func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ValidatorName, true
+}
+
+// SetValidatorName sets field value
+func (o *AddOpenidConnectIdTokenValidatorRequest) SetValidatorName(v string) {
+	o.ValidatorName = v
+}
+
 func (o AddOpenidConnectIdTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -473,7 +473,6 @@ func (o AddOpenidConnectIdTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddOpenidConnectIdTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["validatorName"] = o.ValidatorName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
 	if !IsNil(o.SigningCertificate) {
@@ -501,6 +500,7 @@ func (o AddOpenidConnectIdTokenValidatorRequest) ToMap() (map[string]interface{}
 		toSerialize["jwksCacheDuration"] = o.JwksCacheDuration
 	}
 	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	toSerialize["validatorName"] = o.ValidatorName
 	return toSerialize, nil
 }
 

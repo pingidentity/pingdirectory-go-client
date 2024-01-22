@@ -19,8 +19,6 @@ var _ MappedNullable = &ConjurPasswordStorageSchemeResponse{}
 
 // ConjurPasswordStorageSchemeResponse struct for ConjurPasswordStorageSchemeResponse
 type ConjurPasswordStorageSchemeResponse struct {
-	// Name of the Password Storage Scheme
-	Id      string                                     `json:"id"`
 	Schemas []EnumconjurPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur instance containing user passwords.
 	ConjurExternalServer string `json:"conjurExternalServer"`
@@ -30,18 +28,20 @@ type ConjurPasswordStorageSchemeResponse struct {
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Password Storage Scheme
+	Id string `json:"id"`
 }
 
 // NewConjurPasswordStorageSchemeResponse instantiates a new ConjurPasswordStorageSchemeResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConjurPasswordStorageSchemeResponse(id string, schemas []EnumconjurPasswordStorageSchemeSchemaUrn, conjurExternalServer string, enabled bool) *ConjurPasswordStorageSchemeResponse {
+func NewConjurPasswordStorageSchemeResponse(schemas []EnumconjurPasswordStorageSchemeSchemaUrn, conjurExternalServer string, enabled bool, id string) *ConjurPasswordStorageSchemeResponse {
 	this := ConjurPasswordStorageSchemeResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.ConjurExternalServer = conjurExternalServer
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewConjurPasswordStorageSchemeResponse(id string, schemas []EnumconjurPassw
 func NewConjurPasswordStorageSchemeResponseWithDefaults() *ConjurPasswordStorageSchemeResponse {
 	this := ConjurPasswordStorageSchemeResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *ConjurPasswordStorageSchemeResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ConjurPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ConjurPasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -245,6 +221,30 @@ func (o *ConjurPasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigura
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *ConjurPasswordStorageSchemeResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ConjurPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ConjurPasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o ConjurPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -255,7 +255,6 @@ func (o ConjurPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 
 func (o ConjurPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["conjurExternalServer"] = o.ConjurExternalServer
 	if !IsNil(o.Description) {
@@ -268,6 +267,7 @@ func (o ConjurPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

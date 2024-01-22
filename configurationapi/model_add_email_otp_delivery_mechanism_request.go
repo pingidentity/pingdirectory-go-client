@@ -19,9 +19,7 @@ var _ MappedNullable = &AddEmailOtpDeliveryMechanismRequest{}
 
 // AddEmailOtpDeliveryMechanismRequest struct for AddEmailOtpDeliveryMechanismRequest
 type AddEmailOtpDeliveryMechanismRequest struct {
-	// Name of the new OTP Delivery Mechanism
-	MechanismName string                                   `json:"mechanismName"`
-	Schemas       []EnumemailOtpDeliveryMechanismSchemaUrn `json:"schemas"`
+	Schemas []EnumemailOtpDeliveryMechanismSchemaUrn `json:"schemas"`
 	// The name or OID of the attribute that holds the email address to which the message should be sent.
 	EmailAddressAttributeType *string `json:"emailAddressAttributeType,omitempty"`
 	// The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string.
@@ -40,18 +38,20 @@ type AddEmailOtpDeliveryMechanismRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this OTP Delivery Mechanism is enabled for use in the server.
 	Enabled bool `json:"enabled"`
+	// Name of the new OTP Delivery Mechanism
+	MechanismName string `json:"mechanismName"`
 }
 
 // NewAddEmailOtpDeliveryMechanismRequest instantiates a new AddEmailOtpDeliveryMechanismRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddEmailOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumemailOtpDeliveryMechanismSchemaUrn, senderAddress string, enabled bool) *AddEmailOtpDeliveryMechanismRequest {
+func NewAddEmailOtpDeliveryMechanismRequest(schemas []EnumemailOtpDeliveryMechanismSchemaUrn, senderAddress string, enabled bool, mechanismName string) *AddEmailOtpDeliveryMechanismRequest {
 	this := AddEmailOtpDeliveryMechanismRequest{}
-	this.MechanismName = mechanismName
 	this.Schemas = schemas
 	this.SenderAddress = senderAddress
 	this.Enabled = enabled
+	this.MechanismName = mechanismName
 	return &this
 }
 
@@ -61,30 +61,6 @@ func NewAddEmailOtpDeliveryMechanismRequest(mechanismName string, schemas []Enum
 func NewAddEmailOtpDeliveryMechanismRequestWithDefaults() *AddEmailOtpDeliveryMechanismRequest {
 	this := AddEmailOtpDeliveryMechanismRequest{}
 	return &this
-}
-
-// GetMechanismName returns the MechanismName field value
-func (o *AddEmailOtpDeliveryMechanismRequest) GetMechanismName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MechanismName
-}
-
-// GetMechanismNameOk returns a tuple with the MechanismName field value
-// and a boolean to check if the value has been set.
-func (o *AddEmailOtpDeliveryMechanismRequest) GetMechanismNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MechanismName, true
-}
-
-// SetMechanismName sets field value
-func (o *AddEmailOtpDeliveryMechanismRequest) SetMechanismName(v string) {
-	o.MechanismName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -383,6 +359,30 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMechanismName returns the MechanismName field value
+func (o *AddEmailOtpDeliveryMechanismRequest) GetMechanismName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MechanismName
+}
+
+// GetMechanismNameOk returns a tuple with the MechanismName field value
+// and a boolean to check if the value has been set.
+func (o *AddEmailOtpDeliveryMechanismRequest) GetMechanismNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MechanismName, true
+}
+
+// SetMechanismName sets field value
+func (o *AddEmailOtpDeliveryMechanismRequest) SetMechanismName(v string) {
+	o.MechanismName = v
+}
+
 func (o AddEmailOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -393,7 +393,6 @@ func (o AddEmailOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddEmailOtpDeliveryMechanismRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["mechanismName"] = o.MechanismName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.EmailAddressAttributeType) {
 		toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
@@ -418,6 +417,7 @@ func (o AddEmailOtpDeliveryMechanismRequest) ToMap() (map[string]interface{}, er
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["mechanismName"] = o.MechanismName
 	return toSerialize, nil
 }
 

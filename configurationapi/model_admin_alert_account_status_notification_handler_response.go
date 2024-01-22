@@ -19,8 +19,6 @@ var _ MappedNullable = &AdminAlertAccountStatusNotificationHandlerResponse{}
 
 // AdminAlertAccountStatusNotificationHandlerResponse struct for AdminAlertAccountStatusNotificationHandlerResponse
 type AdminAlertAccountStatusNotificationHandlerResponse struct {
-	// Name of the Account Status Notification Handler
-	Id                            string                                                                  `json:"id"`
 	Schemas                       []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn               `json:"schemas"`
 	AccountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp `json:"accountStatusNotificationType"`
 	// A description for this Account Status Notification Handler
@@ -39,18 +37,20 @@ type AdminAlertAccountStatusNotificationHandlerResponse struct {
 	AccountUpdateNotificationRequestCriteria      *string                                            `json:"accountUpdateNotificationRequestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Account Status Notification Handler
+	Id string `json:"id"`
 }
 
 // NewAdminAlertAccountStatusNotificationHandlerResponse instantiates a new AdminAlertAccountStatusNotificationHandlerResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdminAlertAccountStatusNotificationHandlerResponse(id string, schemas []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn, accountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, enabled bool) *AdminAlertAccountStatusNotificationHandlerResponse {
+func NewAdminAlertAccountStatusNotificationHandlerResponse(schemas []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn, accountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, enabled bool, id string) *AdminAlertAccountStatusNotificationHandlerResponse {
 	this := AdminAlertAccountStatusNotificationHandlerResponse{}
-	this.Id = id
 	this.Schemas = schemas
 	this.AccountStatusNotificationType = accountStatusNotificationType
 	this.Enabled = enabled
+	this.Id = id
 	return &this
 }
 
@@ -60,30 +60,6 @@ func NewAdminAlertAccountStatusNotificationHandlerResponse(id string, schemas []
 func NewAdminAlertAccountStatusNotificationHandlerResponseWithDefaults() *AdminAlertAccountStatusNotificationHandlerResponse {
 	this := AdminAlertAccountStatusNotificationHandlerResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *AdminAlertAccountStatusNotificationHandlerResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AdminAlertAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AdminAlertAccountStatusNotificationHandlerResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -414,6 +390,30 @@ func (o *AdminAlertAccountStatusNotificationHandlerResponse) SetUrnpingidentitys
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *AdminAlertAccountStatusNotificationHandlerResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *AdminAlertAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *AdminAlertAccountStatusNotificationHandlerResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o AdminAlertAccountStatusNotificationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -424,7 +424,6 @@ func (o AdminAlertAccountStatusNotificationHandlerResponse) MarshalJSON() ([]byt
 
 func (o AdminAlertAccountStatusNotificationHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["accountStatusNotificationType"] = o.AccountStatusNotificationType
 	if !IsNil(o.Description) {
@@ -452,6 +451,7 @@ func (o AdminAlertAccountStatusNotificationHandlerResponse) ToMap() (map[string]
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

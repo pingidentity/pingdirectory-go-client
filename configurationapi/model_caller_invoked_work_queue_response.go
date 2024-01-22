@@ -19,9 +19,9 @@ var _ MappedNullable = &CallerInvokedWorkQueueResponse{}
 
 // CallerInvokedWorkQueueResponse struct for CallerInvokedWorkQueueResponse
 type CallerInvokedWorkQueueResponse struct {
-	Schemas                                       []EnumcallerInvokedWorkQueueSchemaUrn              `json:"schemas"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumcallerInvokedWorkQueueSchemaUrn              `json:"schemas"`
 }
 
 // NewCallerInvokedWorkQueueResponse instantiates a new CallerInvokedWorkQueueResponse object
@@ -40,30 +40,6 @@ func NewCallerInvokedWorkQueueResponse(schemas []EnumcallerInvokedWorkQueueSchem
 func NewCallerInvokedWorkQueueResponseWithDefaults() *CallerInvokedWorkQueueResponse {
 	this := CallerInvokedWorkQueueResponse{}
 	return &this
-}
-
-// GetSchemas returns the Schemas field value
-func (o *CallerInvokedWorkQueueResponse) GetSchemas() []EnumcallerInvokedWorkQueueSchemaUrn {
-	if o == nil {
-		var ret []EnumcallerInvokedWorkQueueSchemaUrn
-		return ret
-	}
-
-	return o.Schemas
-}
-
-// GetSchemasOk returns a tuple with the Schemas field value
-// and a boolean to check if the value has been set.
-func (o *CallerInvokedWorkQueueResponse) GetSchemasOk() ([]EnumcallerInvokedWorkQueueSchemaUrn, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Schemas, true
-}
-
-// SetSchemas sets field value
-func (o *CallerInvokedWorkQueueResponse) SetSchemas(v []EnumcallerInvokedWorkQueueSchemaUrn) {
-	o.Schemas = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
@@ -130,6 +106,30 @@ func (o *CallerInvokedWorkQueueResponse) SetUrnpingidentityschemasconfigurationm
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetSchemas returns the Schemas field value
+func (o *CallerInvokedWorkQueueResponse) GetSchemas() []EnumcallerInvokedWorkQueueSchemaUrn {
+	if o == nil {
+		var ret []EnumcallerInvokedWorkQueueSchemaUrn
+		return ret
+	}
+
+	return o.Schemas
+}
+
+// GetSchemasOk returns a tuple with the Schemas field value
+// and a boolean to check if the value has been set.
+func (o *CallerInvokedWorkQueueResponse) GetSchemasOk() ([]EnumcallerInvokedWorkQueueSchemaUrn, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Schemas, true
+}
+
+// SetSchemas sets field value
+func (o *CallerInvokedWorkQueueResponse) SetSchemas(v []EnumcallerInvokedWorkQueueSchemaUrn) {
+	o.Schemas = v
+}
+
 func (o CallerInvokedWorkQueueResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -140,13 +140,13 @@ func (o CallerInvokedWorkQueueResponse) MarshalJSON() ([]byte, error) {
 
 func (o CallerInvokedWorkQueueResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["schemas"] = o.Schemas
 	return toSerialize, nil
 }
 

@@ -19,26 +19,26 @@ var _ MappedNullable = &AddConstructedAttributeRequest{}
 
 // AddConstructedAttributeRequest struct for AddConstructedAttributeRequest
 type AddConstructedAttributeRequest struct {
-	// Name of the new Constructed Attribute
-	AttributeName string                              `json:"attributeName"`
-	Schemas       []EnumconstructedAttributeSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumconstructedAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Constructed Attribute
 	Description *string `json:"description,omitempty"`
 	// Specifies the attribute type for the attribute whose values are to be constructed.
 	AttributeType string `json:"attributeType"`
 	// Specifies a pattern for constructing the attribute value using fixed text and attribute values from the entry.
 	ValuePattern []string `json:"valuePattern"`
+	// Name of the new Constructed Attribute
+	AttributeName string `json:"attributeName"`
 }
 
 // NewAddConstructedAttributeRequest instantiates a new AddConstructedAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConstructedAttributeRequest(attributeName string, attributeType string, valuePattern []string) *AddConstructedAttributeRequest {
+func NewAddConstructedAttributeRequest(attributeType string, valuePattern []string, attributeName string) *AddConstructedAttributeRequest {
 	this := AddConstructedAttributeRequest{}
-	this.AttributeName = attributeName
 	this.AttributeType = attributeType
 	this.ValuePattern = valuePattern
+	this.AttributeName = attributeName
 	return &this
 }
 
@@ -48,30 +48,6 @@ func NewAddConstructedAttributeRequest(attributeName string, attributeType strin
 func NewAddConstructedAttributeRequestWithDefaults() *AddConstructedAttributeRequest {
 	this := AddConstructedAttributeRequest{}
 	return &this
-}
-
-// GetAttributeName returns the AttributeName field value
-func (o *AddConstructedAttributeRequest) GetAttributeName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AttributeName
-}
-
-// GetAttributeNameOk returns a tuple with the AttributeName field value
-// and a boolean to check if the value has been set.
-func (o *AddConstructedAttributeRequest) GetAttributeNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.AttributeName, true
-}
-
-// SetAttributeName sets field value
-func (o *AddConstructedAttributeRequest) SetAttributeName(v string) {
-	o.AttributeName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -186,6 +162,30 @@ func (o *AddConstructedAttributeRequest) SetValuePattern(v []string) {
 	o.ValuePattern = v
 }
 
+// GetAttributeName returns the AttributeName field value
+func (o *AddConstructedAttributeRequest) GetAttributeName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.AttributeName
+}
+
+// GetAttributeNameOk returns a tuple with the AttributeName field value
+// and a boolean to check if the value has been set.
+func (o *AddConstructedAttributeRequest) GetAttributeNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.AttributeName, true
+}
+
+// SetAttributeName sets field value
+func (o *AddConstructedAttributeRequest) SetAttributeName(v string) {
+	o.AttributeName = v
+}
+
 func (o AddConstructedAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -196,7 +196,6 @@ func (o AddConstructedAttributeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddConstructedAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["attributeName"] = o.AttributeName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -205,6 +204,7 @@ func (o AddConstructedAttributeRequest) ToMap() (map[string]interface{}, error) 
 	}
 	toSerialize["attributeType"] = o.AttributeType
 	toSerialize["valuePattern"] = o.ValuePattern
+	toSerialize["attributeName"] = o.AttributeName
 	return toSerialize, nil
 }
 

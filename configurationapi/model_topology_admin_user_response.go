@@ -19,8 +19,6 @@ var _ MappedNullable = &TopologyAdminUserResponse{}
 
 // TopologyAdminUserResponse struct for TopologyAdminUserResponse
 type TopologyAdminUserResponse struct {
-	// Name of the Topology Admin User
-	Id      string                           `json:"id"`
 	Schemas []EnumtopologyAdminUserSchemaUrn `json:"schemas,omitempty"`
 	// Specifies one or more alternate DNs that can be used to bind to the server as this User.
 	AlternateBindDN []string `json:"alternateBindDN,omitempty"`
@@ -88,15 +86,16 @@ type TopologyAdminUserResponse struct {
 	MayProxyAsURL                                 []string                                           `json:"mayProxyAsURL,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Topology Admin User
+	Id string `json:"id"`
 }
 
 // NewTopologyAdminUserResponse instantiates a new TopologyAdminUserResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTopologyAdminUserResponse(id string, inheritDefaultRootPrivileges bool, searchResultEntryLimit int64, timeLimitSeconds int64, lookThroughEntryLimit int64, idleTimeLimitSeconds int64, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool) *TopologyAdminUserResponse {
+func NewTopologyAdminUserResponse(inheritDefaultRootPrivileges bool, searchResultEntryLimit int64, timeLimitSeconds int64, lookThroughEntryLimit int64, idleTimeLimitSeconds int64, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool, id string) *TopologyAdminUserResponse {
 	this := TopologyAdminUserResponse{}
-	this.Id = id
 	this.InheritDefaultRootPrivileges = inheritDefaultRootPrivileges
 	this.SearchResultEntryLimit = searchResultEntryLimit
 	this.TimeLimitSeconds = timeLimitSeconds
@@ -105,6 +104,7 @@ func NewTopologyAdminUserResponse(id string, inheritDefaultRootPrivileges bool, 
 	this.PasswordPolicy = passwordPolicy
 	this.RequireSecureAuthentication = requireSecureAuthentication
 	this.RequireSecureConnections = requireSecureConnections
+	this.Id = id
 	return &this
 }
 
@@ -114,30 +114,6 @@ func NewTopologyAdminUserResponse(id string, inheritDefaultRootPrivileges bool, 
 func NewTopologyAdminUserResponseWithDefaults() *TopologyAdminUserResponse {
 	this := TopologyAdminUserResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *TopologyAdminUserResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *TopologyAdminUserResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *TopologyAdminUserResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -1228,6 +1204,30 @@ func (o *TopologyAdminUserResponse) SetUrnpingidentityschemasconfigurationmessag
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *TopologyAdminUserResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *TopologyAdminUserResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o TopologyAdminUserResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1238,7 +1238,6 @@ func (o TopologyAdminUserResponse) MarshalJSON() ([]byte, error) {
 
 func (o TopologyAdminUserResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -1331,6 +1330,7 @@ func (o TopologyAdminUserResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

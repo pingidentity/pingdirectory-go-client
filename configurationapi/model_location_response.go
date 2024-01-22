@@ -19,13 +19,13 @@ var _ MappedNullable = &LocationResponse{}
 
 // LocationResponse struct for LocationResponse
 type LocationResponse struct {
-	// Name of the Location
-	Id      string                  `json:"id"`
 	Schemas []EnumlocationSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Location
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the Location
+	Id string `json:"id"`
 }
 
 // NewLocationResponse instantiates a new LocationResponse object
@@ -44,30 +44,6 @@ func NewLocationResponse(id string) *LocationResponse {
 func NewLocationResponseWithDefaults() *LocationResponse {
 	this := LocationResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *LocationResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LocationResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LocationResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -198,6 +174,30 @@ func (o *LocationResponse) SetUrnpingidentityschemasconfigurationmessages20(v Me
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *LocationResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *LocationResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *LocationResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o LocationResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -208,7 +208,6 @@ func (o LocationResponse) MarshalJSON() ([]byte, error) {
 
 func (o LocationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -221,6 +220,7 @@ func (o LocationResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &JsonFieldConstraintsResponse{}
 
 // JsonFieldConstraintsResponse struct for JsonFieldConstraintsResponse
 type JsonFieldConstraintsResponse struct {
-	// Name of the JSON Field Constraints
-	Id      string                              `json:"id"`
 	Schemas []EnumjsonFieldConstraintsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this JSON Field Constraints
 	Description *string `json:"description,omitempty"`
@@ -61,17 +59,19 @@ type JsonFieldConstraintsResponse struct {
 	MaximumValueCount                             *int64                                             `json:"maximumValueCount,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	// Name of the JSON Field Constraints
+	Id string `json:"id"`
 }
 
 // NewJsonFieldConstraintsResponse instantiates a new JsonFieldConstraintsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJsonFieldConstraintsResponse(id string, jsonField string, valueType EnumjsonFieldConstraintsValueTypeProp) *JsonFieldConstraintsResponse {
+func NewJsonFieldConstraintsResponse(jsonField string, valueType EnumjsonFieldConstraintsValueTypeProp, id string) *JsonFieldConstraintsResponse {
 	this := JsonFieldConstraintsResponse{}
-	this.Id = id
 	this.JsonField = jsonField
 	this.ValueType = valueType
+	this.Id = id
 	return &this
 }
 
@@ -81,30 +81,6 @@ func NewJsonFieldConstraintsResponse(id string, jsonField string, valueType Enum
 func NewJsonFieldConstraintsResponseWithDefaults() *JsonFieldConstraintsResponse {
 	this := JsonFieldConstraintsResponse{}
 	return &this
-}
-
-// GetId returns the Id field value
-func (o *JsonFieldConstraintsResponse) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *JsonFieldConstraintsResponse) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *JsonFieldConstraintsResponse) SetId(v string) {
-	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -827,6 +803,30 @@ func (o *JsonFieldConstraintsResponse) SetUrnpingidentityschemasconfigurationmes
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
+// GetId returns the Id field value
+func (o *JsonFieldConstraintsResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *JsonFieldConstraintsResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *JsonFieldConstraintsResponse) SetId(v string) {
+	o.Id = v
+}
+
 func (o JsonFieldConstraintsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -837,7 +837,6 @@ func (o JsonFieldConstraintsResponse) MarshalJSON() ([]byte, error) {
 
 func (o JsonFieldConstraintsResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -903,6 +902,7 @@ func (o JsonFieldConstraintsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
+	toSerialize["id"] = o.Id
 	return toSerialize, nil
 }
 

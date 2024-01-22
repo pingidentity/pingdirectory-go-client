@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MetricName** | **string** | The name that will be used in the metric to be consumed by Prometheus. | 
 **Schemas** | Pointer to [**[]EnumprometheusMonitorAttributeMetricSchemaUrn**](EnumprometheusMonitorAttributeMetricSchemaUrn.md) |  | [optional] 
+**MetricName** | **string** | Name of the new Prometheus Monitor Attribute Metric | 
 **MonitorAttributeName** | **string** | The name of the monitor attribute that contains the numeric value to be published. | 
 **MonitorObjectClassName** | **string** | The name of the object class for monitor entries that contain the monitor attribute. | 
 **MetricType** | [**EnumprometheusMonitorAttributeMetricMetricTypeProp**](EnumprometheusMonitorAttributeMetricMetricTypeProp.md) |  | 
@@ -32,26 +32,6 @@ NewAddPrometheusMonitorAttributeMetricRequestWithDefaults instantiates a new Add
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetMetricName
-
-`func (o *AddPrometheusMonitorAttributeMetricRequest) GetMetricName() string`
-
-GetMetricName returns the MetricName field if non-nil, zero value otherwise.
-
-### GetMetricNameOk
-
-`func (o *AddPrometheusMonitorAttributeMetricRequest) GetMetricNameOk() (*string, bool)`
-
-GetMetricNameOk returns a tuple with the MetricName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMetricName
-
-`func (o *AddPrometheusMonitorAttributeMetricRequest) SetMetricName(v string)`
-
-SetMetricName sets MetricName field to given value.
-
-
 ### GetSchemas
 
 `func (o *AddPrometheusMonitorAttributeMetricRequest) GetSchemas() []EnumprometheusMonitorAttributeMetricSchemaUrn`
@@ -76,6 +56,26 @@ SetSchemas sets Schemas field to given value.
 `func (o *AddPrometheusMonitorAttributeMetricRequest) HasSchemas() bool`
 
 HasSchemas returns a boolean if a field has been set.
+
+### GetMetricName
+
+`func (o *AddPrometheusMonitorAttributeMetricRequest) GetMetricName() string`
+
+GetMetricName returns the MetricName field if non-nil, zero value otherwise.
+
+### GetMetricNameOk
+
+`func (o *AddPrometheusMonitorAttributeMetricRequest) GetMetricNameOk() (*string, bool)`
+
+GetMetricNameOk returns a tuple with the MetricName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetricName
+
+`func (o *AddPrometheusMonitorAttributeMetricRequest) SetMetricName(v string)`
+
+SetMetricName sets MetricName field to given value.
+
 
 ### GetMonitorAttributeName
 

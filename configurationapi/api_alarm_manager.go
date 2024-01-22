@@ -18,12 +18,12 @@ import (
 	"net/url"
 )
 
-// AlarmManagerApiService AlarmManagerApi service
-type AlarmManagerApiService service
+// AlarmManagerAPIService AlarmManagerAPI service
+type AlarmManagerAPIService service
 
 type ApiGetAlarmManagerRequest struct {
 	ctx        context.Context
-	ApiService *AlarmManagerApiService
+	ApiService *AlarmManagerAPIService
 }
 
 func (r ApiGetAlarmManagerRequest) Execute() (*AlarmManagerResponse, *http.Response, error) {
@@ -36,7 +36,7 @@ GetAlarmManager Returns a single Alarm Manager
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlarmManagerRequest
 */
-func (a *AlarmManagerApiService) GetAlarmManager(ctx context.Context) ApiGetAlarmManagerRequest {
+func (a *AlarmManagerAPIService) GetAlarmManager(ctx context.Context) ApiGetAlarmManagerRequest {
 	return ApiGetAlarmManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -46,7 +46,7 @@ func (a *AlarmManagerApiService) GetAlarmManager(ctx context.Context) ApiGetAlar
 // Execute executes the request
 //
 //	@return AlarmManagerResponse
-func (a *AlarmManagerApiService) GetAlarmManagerExecute(r ApiGetAlarmManagerRequest) (*AlarmManagerResponse, *http.Response, error) {
+func (a *AlarmManagerAPIService) GetAlarmManagerExecute(r ApiGetAlarmManagerRequest) (*AlarmManagerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -54,7 +54,7 @@ func (a *AlarmManagerApiService) GetAlarmManagerExecute(r ApiGetAlarmManagerRequ
 		localVarReturnValue *AlarmManagerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlarmManagerApiService.GetAlarmManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlarmManagerAPIService.GetAlarmManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -121,7 +121,7 @@ func (a *AlarmManagerApiService) GetAlarmManagerExecute(r ApiGetAlarmManagerRequ
 
 type ApiUpdateAlarmManagerRequest struct {
 	ctx           context.Context
-	ApiService    *AlarmManagerApiService
+	ApiService    *AlarmManagerAPIService
 	updateRequest *UpdateRequest
 }
 
@@ -141,7 +141,7 @@ UpdateAlarmManager Update an existing Alarm Manager by name
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlarmManagerRequest
 */
-func (a *AlarmManagerApiService) UpdateAlarmManager(ctx context.Context) ApiUpdateAlarmManagerRequest {
+func (a *AlarmManagerAPIService) UpdateAlarmManager(ctx context.Context) ApiUpdateAlarmManagerRequest {
 	return ApiUpdateAlarmManagerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -151,7 +151,7 @@ func (a *AlarmManagerApiService) UpdateAlarmManager(ctx context.Context) ApiUpda
 // Execute executes the request
 //
 //	@return AlarmManagerResponse
-func (a *AlarmManagerApiService) UpdateAlarmManagerExecute(r ApiUpdateAlarmManagerRequest) (*AlarmManagerResponse, *http.Response, error) {
+func (a *AlarmManagerAPIService) UpdateAlarmManagerExecute(r ApiUpdateAlarmManagerRequest) (*AlarmManagerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -159,7 +159,7 @@ func (a *AlarmManagerApiService) UpdateAlarmManagerExecute(r ApiUpdateAlarmManag
 		localVarReturnValue *AlarmManagerResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlarmManagerApiService.UpdateAlarmManager")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlarmManagerAPIService.UpdateAlarmManager")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

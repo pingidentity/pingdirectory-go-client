@@ -19,9 +19,7 @@ var _ MappedNullable = &AddQuickstartHttpServletExtensionRequest{}
 
 // AddQuickstartHttpServletExtensionRequest struct for AddQuickstartHttpServletExtensionRequest
 type AddQuickstartHttpServletExtensionRequest struct {
-	// Name of the new HTTP Servlet Extension
-	ExtensionName string                                        `json:"extensionName"`
-	Schemas       []EnumquickstartHttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas []EnumquickstartHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the PingFederate server to be configured.
 	Server *string `json:"server,omitempty"`
 	// A description for this HTTP Servlet Extension
@@ -32,16 +30,18 @@ type AddQuickstartHttpServletExtensionRequest struct {
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`
+	// Name of the new HTTP Servlet Extension
+	ExtensionName string `json:"extensionName"`
 }
 
 // NewAddQuickstartHttpServletExtensionRequest instantiates a new AddQuickstartHttpServletExtensionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddQuickstartHttpServletExtensionRequest(extensionName string, schemas []EnumquickstartHttpServletExtensionSchemaUrn) *AddQuickstartHttpServletExtensionRequest {
+func NewAddQuickstartHttpServletExtensionRequest(schemas []EnumquickstartHttpServletExtensionSchemaUrn, extensionName string) *AddQuickstartHttpServletExtensionRequest {
 	this := AddQuickstartHttpServletExtensionRequest{}
-	this.ExtensionName = extensionName
 	this.Schemas = schemas
+	this.ExtensionName = extensionName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddQuickstartHttpServletExtensionRequest(extensionName string, schemas [
 func NewAddQuickstartHttpServletExtensionRequestWithDefaults() *AddQuickstartHttpServletExtensionRequest {
 	this := AddQuickstartHttpServletExtensionRequest{}
 	return &this
-}
-
-// GetExtensionName returns the ExtensionName field value
-func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ExtensionName
-}
-
-// GetExtensionNameOk returns a tuple with the ExtensionName field value
-// and a boolean to check if the value has been set.
-func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ExtensionName, true
-}
-
-// SetExtensionName sets field value
-func (o *AddQuickstartHttpServletExtensionRequest) SetExtensionName(v string) {
-	o.ExtensionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -261,6 +237,30 @@ func (o *AddQuickstartHttpServletExtensionRequest) SetCorrelationIDResponseHeade
 	o.CorrelationIDResponseHeader = &v
 }
 
+// GetExtensionName returns the ExtensionName field value
+func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ExtensionName
+}
+
+// GetExtensionNameOk returns a tuple with the ExtensionName field value
+// and a boolean to check if the value has been set.
+func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ExtensionName, true
+}
+
+// SetExtensionName sets field value
+func (o *AddQuickstartHttpServletExtensionRequest) SetExtensionName(v string) {
+	o.ExtensionName = v
+}
+
 func (o AddQuickstartHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -271,7 +271,6 @@ func (o AddQuickstartHttpServletExtensionRequest) MarshalJSON() ([]byte, error) 
 
 func (o AddQuickstartHttpServletExtensionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["extensionName"] = o.ExtensionName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Server) {
 		toSerialize["server"] = o.Server
@@ -288,6 +287,7 @@ func (o AddQuickstartHttpServletExtensionRequest) ToMap() (map[string]interface{
 	if !IsNil(o.CorrelationIDResponseHeader) {
 		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
 	}
+	toSerialize["extensionName"] = o.ExtensionName
 	return toSerialize, nil
 }
 

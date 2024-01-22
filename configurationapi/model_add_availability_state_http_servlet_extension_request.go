@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAvailabilityStateHttpServletExtensionRequest{}
 
 // AddAvailabilityStateHttpServletExtensionRequest struct for AddAvailabilityStateHttpServletExtensionRequest
 type AddAvailabilityStateHttpServletExtensionRequest struct {
-	// Name of the new HTTP Servlet Extension
-	ExtensionName string                                               `json:"extensionName"`
-	Schemas       []EnumavailabilityStateHttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
 	// Specifies the HTTP status code that the servlet should return if the server considers itself to be available.
@@ -44,20 +42,22 @@ type AddAvailabilityStateHttpServletExtensionRequest struct {
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`
+	// Name of the new HTTP Servlet Extension
+	ExtensionName string `json:"extensionName"`
 }
 
 // NewAddAvailabilityStateHttpServletExtensionRequest instantiates a new AddAvailabilityStateHttpServletExtensionRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAvailabilityStateHttpServletExtensionRequest(extensionName string, schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn, baseContextPath string, availableStatusCode int64, degradedStatusCode int64, unavailableStatusCode int64) *AddAvailabilityStateHttpServletExtensionRequest {
+func NewAddAvailabilityStateHttpServletExtensionRequest(schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn, baseContextPath string, availableStatusCode int64, degradedStatusCode int64, unavailableStatusCode int64, extensionName string) *AddAvailabilityStateHttpServletExtensionRequest {
 	this := AddAvailabilityStateHttpServletExtensionRequest{}
-	this.ExtensionName = extensionName
 	this.Schemas = schemas
 	this.BaseContextPath = baseContextPath
 	this.AvailableStatusCode = availableStatusCode
 	this.DegradedStatusCode = degradedStatusCode
 	this.UnavailableStatusCode = unavailableStatusCode
+	this.ExtensionName = extensionName
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewAddAvailabilityStateHttpServletExtensionRequest(extensionName string, sc
 func NewAddAvailabilityStateHttpServletExtensionRequestWithDefaults() *AddAvailabilityStateHttpServletExtensionRequest {
 	this := AddAvailabilityStateHttpServletExtensionRequest{}
 	return &this
-}
-
-// GetExtensionName returns the ExtensionName field value
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetExtensionName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ExtensionName
-}
-
-// GetExtensionNameOk returns a tuple with the ExtensionName field value
-// and a boolean to check if the value has been set.
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ExtensionName, true
-}
-
-// SetExtensionName sets field value
-func (o *AddAvailabilityStateHttpServletExtensionRequest) SetExtensionName(v string) {
-	o.ExtensionName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -437,6 +413,30 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetCorrelationIDRespon
 	o.CorrelationIDResponseHeader = &v
 }
 
+// GetExtensionName returns the ExtensionName field value
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetExtensionName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ExtensionName
+}
+
+// GetExtensionNameOk returns a tuple with the ExtensionName field value
+// and a boolean to check if the value has been set.
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ExtensionName, true
+}
+
+// SetExtensionName sets field value
+func (o *AddAvailabilityStateHttpServletExtensionRequest) SetExtensionName(v string) {
+	o.ExtensionName = v
+}
+
 func (o AddAvailabilityStateHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -447,7 +447,6 @@ func (o AddAvailabilityStateHttpServletExtensionRequest) MarshalJSON() ([]byte, 
 
 func (o AddAvailabilityStateHttpServletExtensionRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["extensionName"] = o.ExtensionName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["baseContextPath"] = o.BaseContextPath
 	toSerialize["availableStatusCode"] = o.AvailableStatusCode
@@ -474,6 +473,7 @@ func (o AddAvailabilityStateHttpServletExtensionRequest) ToMap() (map[string]int
 	if !IsNil(o.CorrelationIDResponseHeader) {
 		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
 	}
+	toSerialize["extensionName"] = o.ExtensionName
 	return toSerialize, nil
 }
 

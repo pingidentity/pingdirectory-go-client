@@ -1,14 +1,14 @@
-# \GaugeApi
+# \GaugeAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddGauge**](GaugeApi.md#AddGauge) | **Post** /gauges | Add a new Gauge to the config
-[**DeleteGauge**](GaugeApi.md#DeleteGauge) | **Delete** /gauges/{gauge-name} | Delete a Gauge
-[**GetGauge**](GaugeApi.md#GetGauge) | **Get** /gauges/{gauge-name} | Returns a single Gauge
-[**ListGauges**](GaugeApi.md#ListGauges) | **Get** /gauges | Returns a list of all Gauge objects
-[**UpdateGauge**](GaugeApi.md#UpdateGauge) | **Patch** /gauges/{gauge-name} | Update an existing Gauge by name
+[**AddGauge**](GaugeAPI.md#AddGauge) | **Post** /gauges | Add a new Gauge to the config
+[**DeleteGauge**](GaugeAPI.md#DeleteGauge) | **Delete** /gauges/{gauge-name} | Delete a Gauge
+[**GetGauge**](GaugeAPI.md#GetGauge) | **Get** /gauges/{gauge-name} | Returns a single Gauge
+[**ListGauges**](GaugeAPI.md#ListGauges) | **Get** /gauges | Returns a list of all Gauge objects
+[**UpdateGauge**](GaugeAPI.md#UpdateGauge) | **Patch** /gauges/{gauge-name} | Update an existing Gauge by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addGaugeRequest := openapiclient.add_gauge_request{AddIndicatorGaugeRequest: openapiclient.NewAddIndicatorGaugeRequest("GaugeName_example", []openapiclient.EnumindicatorGaugeSchemaUrn{openapiclient.Enumindicator-gaugeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:gauge:indicator")}, "GaugeDataSource_example")} // AddGaugeRequest | Create a new Gauge in the config
+    addGaugeRequest := openapiclient.add_gauge_request{AddIndicatorGaugeRequest: openapiclient.NewAddIndicatorGaugeRequest([]openapiclient.EnumindicatorGaugeSchemaUrn{openapiclient.Enumindicator-gaugeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:gauge:indicator")}, "GaugeDataSource_example", "GaugeName_example")} // AddGaugeRequest | Create a new Gauge in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GaugeApi.AddGauge(context.Background()).AddGaugeRequest(addGaugeRequest).Execute()
+    resp, r, err := apiClient.GaugeAPI.AddGauge(context.Background()).AddGaugeRequest(addGaugeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeApi.AddGauge``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeAPI.AddGauge``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddGauge`: AddGauge200Response
-    fmt.Fprintf(os.Stdout, "Response from `GaugeApi.AddGauge`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GaugeAPI.AddGauge`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GaugeApi.DeleteGauge(context.Background(), gaugeName).Execute()
+    r, err := apiClient.GaugeAPI.DeleteGauge(context.Background(), gaugeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeApi.DeleteGauge``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeAPI.DeleteGauge``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GaugeApi.GetGauge(context.Background(), gaugeName).Execute()
+    resp, r, err := apiClient.GaugeAPI.GetGauge(context.Background(), gaugeName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeApi.GetGauge``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeAPI.GetGauge``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetGauge`: AddGauge200Response
-    fmt.Fprintf(os.Stdout, "Response from `GaugeApi.GetGauge`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GaugeAPI.GetGauge`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GaugeApi.ListGauges(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.GaugeAPI.ListGauges(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeApi.ListGauges``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeAPI.ListGauges``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListGauges`: GaugeListResponse
-    fmt.Fprintf(os.Stdout, "Response from `GaugeApi.ListGauges`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GaugeAPI.ListGauges`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GaugeApi.UpdateGauge(context.Background(), gaugeName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.GaugeAPI.UpdateGauge(context.Background(), gaugeName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `GaugeApi.UpdateGauge``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeAPI.UpdateGauge``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateGauge`: AddGauge200Response
-    fmt.Fprintf(os.Stdout, "Response from `GaugeApi.UpdateGauge`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `GaugeAPI.UpdateGauge`: %v\n", resp)
 }
 ```
 

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddModifiablePasswordPolicyStatePluginRequest{}
 
 // AddModifiablePasswordPolicyStatePluginRequest struct for AddModifiablePasswordPolicyStatePluginRequest
 type AddModifiablePasswordPolicyStatePluginRequest struct {
-	// Name of the new Plugin
-	PluginName string                                             `json:"pluginName"`
-	Schemas    []EnummodifiablePasswordPolicyStatePluginSchemaUrn `json:"schemas"`
+	Schemas []EnummodifiablePasswordPolicyStatePluginSchemaUrn `json:"schemas"`
 	// A base DN that may be used to identify entries that should support the ds-pwp-modifiable-state-json operational attribute.
 	BaseDN []string `json:"baseDN,omitempty"`
 	// A filter that may be used to identify entries that should support the ds-pwp-modifiable-state-json operational attribute.
@@ -30,17 +28,19 @@ type AddModifiablePasswordPolicyStatePluginRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Name of the new Plugin
+	PluginName string `json:"pluginName"`
 }
 
 // NewAddModifiablePasswordPolicyStatePluginRequest instantiates a new AddModifiablePasswordPolicyStatePluginRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddModifiablePasswordPolicyStatePluginRequest(pluginName string, schemas []EnummodifiablePasswordPolicyStatePluginSchemaUrn, enabled bool) *AddModifiablePasswordPolicyStatePluginRequest {
+func NewAddModifiablePasswordPolicyStatePluginRequest(schemas []EnummodifiablePasswordPolicyStatePluginSchemaUrn, enabled bool, pluginName string) *AddModifiablePasswordPolicyStatePluginRequest {
 	this := AddModifiablePasswordPolicyStatePluginRequest{}
-	this.PluginName = pluginName
 	this.Schemas = schemas
 	this.Enabled = enabled
+	this.PluginName = pluginName
 	return &this
 }
 
@@ -50,30 +50,6 @@ func NewAddModifiablePasswordPolicyStatePluginRequest(pluginName string, schemas
 func NewAddModifiablePasswordPolicyStatePluginRequestWithDefaults() *AddModifiablePasswordPolicyStatePluginRequest {
 	this := AddModifiablePasswordPolicyStatePluginRequest{}
 	return &this
-}
-
-// GetPluginName returns the PluginName field value
-func (o *AddModifiablePasswordPolicyStatePluginRequest) GetPluginName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.PluginName
-}
-
-// GetPluginNameOk returns a tuple with the PluginName field value
-// and a boolean to check if the value has been set.
-func (o *AddModifiablePasswordPolicyStatePluginRequest) GetPluginNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PluginName, true
-}
-
-// SetPluginName sets field value
-func (o *AddModifiablePasswordPolicyStatePluginRequest) SetPluginName(v string) {
-	o.PluginName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -220,6 +196,30 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetPluginName returns the PluginName field value
+func (o *AddModifiablePasswordPolicyStatePluginRequest) GetPluginName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PluginName
+}
+
+// GetPluginNameOk returns a tuple with the PluginName field value
+// and a boolean to check if the value has been set.
+func (o *AddModifiablePasswordPolicyStatePluginRequest) GetPluginNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PluginName, true
+}
+
+// SetPluginName sets field value
+func (o *AddModifiablePasswordPolicyStatePluginRequest) SetPluginName(v string) {
+	o.PluginName = v
+}
+
 func (o AddModifiablePasswordPolicyStatePluginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -230,7 +230,6 @@ func (o AddModifiablePasswordPolicyStatePluginRequest) MarshalJSON() ([]byte, er
 
 func (o AddModifiablePasswordPolicyStatePluginRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["pluginName"] = o.PluginName
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.BaseDN) {
 		toSerialize["baseDN"] = o.BaseDN
@@ -242,6 +241,7 @@ func (o AddModifiablePasswordPolicyStatePluginRequest) ToMap() (map[string]inter
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	toSerialize["pluginName"] = o.PluginName
 	return toSerialize, nil
 }
 

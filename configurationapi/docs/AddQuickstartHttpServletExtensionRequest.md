@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 **Schemas** | [**[]EnumquickstartHttpServletExtensionSchemaUrn**](EnumquickstartHttpServletExtensionSchemaUrn.md) |  | 
 **Server** | Pointer to **string** | Specifies the PingFederate server to be configured. | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Extension | [optional] 
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
+**ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 
 ## Methods
 
 ### NewAddQuickstartHttpServletExtensionRequest
 
-`func NewAddQuickstartHttpServletExtensionRequest(extensionName string, schemas []EnumquickstartHttpServletExtensionSchemaUrn, ) *AddQuickstartHttpServletExtensionRequest`
+`func NewAddQuickstartHttpServletExtensionRequest(schemas []EnumquickstartHttpServletExtensionSchemaUrn, extensionName string, ) *AddQuickstartHttpServletExtensionRequest`
 
 NewAddQuickstartHttpServletExtensionRequest instantiates a new AddQuickstartHttpServletExtensionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,26 +30,6 @@ will change when the set of required properties is changed
 NewAddQuickstartHttpServletExtensionRequestWithDefaults instantiates a new AddQuickstartHttpServletExtensionRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetExtensionName
-
-`func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionName() string`
-
-GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
-
-### GetExtensionNameOk
-
-`func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
-
-GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtensionName
-
-`func (o *AddQuickstartHttpServletExtensionRequest) SetExtensionName(v string)`
-
-SetExtensionName sets ExtensionName field to given value.
-
 
 ### GetSchemas
 
@@ -195,6 +175,26 @@ SetCorrelationIDResponseHeader sets CorrelationIDResponseHeader field to given v
 `func (o *AddQuickstartHttpServletExtensionRequest) HasCorrelationIDResponseHeader() bool`
 
 HasCorrelationIDResponseHeader returns a boolean if a field has been set.
+
+### GetExtensionName
+
+`func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionName() string`
+
+GetExtensionName returns the ExtensionName field if non-nil, zero value otherwise.
+
+### GetExtensionNameOk
+
+`func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool)`
+
+GetExtensionNameOk returns a tuple with the ExtensionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtensionName
+
+`func (o *AddQuickstartHttpServletExtensionRequest) SetExtensionName(v string)`
+
+SetExtensionName sets ExtensionName field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -19,9 +19,7 @@ var _ MappedNullable = &AddGroovyScriptedAlertHandlerRequest{}
 
 // AddGroovyScriptedAlertHandlerRequest struct for AddGroovyScriptedAlertHandlerRequest
 type AddGroovyScriptedAlertHandlerRequest struct {
-	// Name of the new Alert Handler
-	HandlerName string                                    `json:"handlerName"`
-	Schemas     []EnumgroovyScriptedAlertHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumgroovyScriptedAlertHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Alert Handler.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Alert Handler. Each configuration property should be given in the form 'name=value'.
@@ -35,18 +33,20 @@ type AddGroovyScriptedAlertHandlerRequest struct {
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
 	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
 	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
+	// Name of the new Alert Handler
+	HandlerName string `json:"handlerName"`
 }
 
 // NewAddGroovyScriptedAlertHandlerRequest instantiates a new AddGroovyScriptedAlertHandlerRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddGroovyScriptedAlertHandlerRequest(handlerName string, schemas []EnumgroovyScriptedAlertHandlerSchemaUrn, scriptClass string, enabled bool) *AddGroovyScriptedAlertHandlerRequest {
+func NewAddGroovyScriptedAlertHandlerRequest(schemas []EnumgroovyScriptedAlertHandlerSchemaUrn, scriptClass string, enabled bool, handlerName string) *AddGroovyScriptedAlertHandlerRequest {
 	this := AddGroovyScriptedAlertHandlerRequest{}
-	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ScriptClass = scriptClass
 	this.Enabled = enabled
+	this.HandlerName = handlerName
 	return &this
 }
 
@@ -56,30 +56,6 @@ func NewAddGroovyScriptedAlertHandlerRequest(handlerName string, schemas []Enumg
 func NewAddGroovyScriptedAlertHandlerRequestWithDefaults() *AddGroovyScriptedAlertHandlerRequest {
 	this := AddGroovyScriptedAlertHandlerRequest{}
 	return &this
-}
-
-// GetHandlerName returns the HandlerName field value
-func (o *AddGroovyScriptedAlertHandlerRequest) GetHandlerName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.HandlerName
-}
-
-// GetHandlerNameOk returns a tuple with the HandlerName field value
-// and a boolean to check if the value has been set.
-func (o *AddGroovyScriptedAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.HandlerName, true
-}
-
-// SetHandlerName sets field value
-func (o *AddGroovyScriptedAlertHandlerRequest) SetHandlerName(v string) {
-	o.HandlerName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -346,6 +322,30 @@ func (o *AddGroovyScriptedAlertHandlerRequest) SetDisabledAlertType(v []Enumaler
 	o.DisabledAlertType = v
 }
 
+// GetHandlerName returns the HandlerName field value
+func (o *AddGroovyScriptedAlertHandlerRequest) GetHandlerName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.HandlerName
+}
+
+// GetHandlerNameOk returns a tuple with the HandlerName field value
+// and a boolean to check if the value has been set.
+func (o *AddGroovyScriptedAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.HandlerName, true
+}
+
+// SetHandlerName sets field value
+func (o *AddGroovyScriptedAlertHandlerRequest) SetHandlerName(v string) {
+	o.HandlerName = v
+}
+
 func (o AddGroovyScriptedAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -356,7 +356,6 @@ func (o AddGroovyScriptedAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddGroovyScriptedAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["handlerName"] = o.HandlerName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["scriptClass"] = o.ScriptClass
 	if !IsNil(o.ScriptArgument) {
@@ -378,6 +377,7 @@ func (o AddGroovyScriptedAlertHandlerRequest) ToMap() (map[string]interface{}, e
 	if !IsNil(o.DisabledAlertType) {
 		toSerialize["disabledAlertType"] = o.DisabledAlertType
 	}
+	toSerialize["handlerName"] = o.HandlerName
 	return toSerialize, nil
 }
 

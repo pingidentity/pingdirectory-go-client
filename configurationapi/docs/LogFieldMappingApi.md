@@ -1,14 +1,14 @@
-# \LogFieldMappingApi
+# \LogFieldMappingAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLogFieldMapping**](LogFieldMappingApi.md#AddLogFieldMapping) | **Post** /log-field-mappings | Add a new Log Field Mapping to the config
-[**DeleteLogFieldMapping**](LogFieldMappingApi.md#DeleteLogFieldMapping) | **Delete** /log-field-mappings/{log-field-mapping-name} | Delete a Log Field Mapping
-[**GetLogFieldMapping**](LogFieldMappingApi.md#GetLogFieldMapping) | **Get** /log-field-mappings/{log-field-mapping-name} | Returns a single Log Field Mapping
-[**ListLogFieldMappings**](LogFieldMappingApi.md#ListLogFieldMappings) | **Get** /log-field-mappings | Returns a list of all Log Field Mapping objects
-[**UpdateLogFieldMapping**](LogFieldMappingApi.md#UpdateLogFieldMapping) | **Patch** /log-field-mappings/{log-field-mapping-name} | Update an existing Log Field Mapping by name
+[**AddLogFieldMapping**](LogFieldMappingAPI.md#AddLogFieldMapping) | **Post** /log-field-mappings | Add a new Log Field Mapping to the config
+[**DeleteLogFieldMapping**](LogFieldMappingAPI.md#DeleteLogFieldMapping) | **Delete** /log-field-mappings/{log-field-mapping-name} | Delete a Log Field Mapping
+[**GetLogFieldMapping**](LogFieldMappingAPI.md#GetLogFieldMapping) | **Get** /log-field-mappings/{log-field-mapping-name} | Returns a single Log Field Mapping
+[**ListLogFieldMappings**](LogFieldMappingAPI.md#ListLogFieldMappings) | **Get** /log-field-mappings | Returns a list of all Log Field Mapping objects
+[**UpdateLogFieldMapping**](LogFieldMappingAPI.md#UpdateLogFieldMapping) | **Patch** /log-field-mappings/{log-field-mapping-name} | Update an existing Log Field Mapping by name
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    addLogFieldMappingRequest := openapiclient.add_log_field_mapping_request{AddAccessLogFieldMappingRequest: openapiclient.NewAddAccessLogFieldMappingRequest("MappingName_example", []openapiclient.EnumaccessLogFieldMappingSchemaUrn{openapiclient.Enumaccess-log-field-mappingSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-field-mapping:access")})} // AddLogFieldMappingRequest | Create a new Log Field Mapping in the config
+    addLogFieldMappingRequest := openapiclient.add_log_field_mapping_request{AddAccessLogFieldMappingRequest: openapiclient.NewAddAccessLogFieldMappingRequest([]openapiclient.EnumaccessLogFieldMappingSchemaUrn{openapiclient.Enumaccess-log-field-mappingSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-field-mapping:access")}, "MappingName_example")} // AddLogFieldMappingRequest | Create a new Log Field Mapping in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldMappingApi.AddLogFieldMapping(context.Background()).AddLogFieldMappingRequest(addLogFieldMappingRequest).Execute()
+    resp, r, err := apiClient.LogFieldMappingAPI.AddLogFieldMapping(context.Background()).AddLogFieldMappingRequest(addLogFieldMappingRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingApi.AddLogFieldMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingAPI.AddLogFieldMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `AddLogFieldMapping`: AddLogFieldMapping200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldMappingApi.AddLogFieldMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldMappingAPI.AddLogFieldMapping`: %v\n", resp)
 }
 ```
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LogFieldMappingApi.DeleteLogFieldMapping(context.Background(), logFieldMappingName).Execute()
+    r, err := apiClient.LogFieldMappingAPI.DeleteLogFieldMapping(context.Background(), logFieldMappingName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingApi.DeleteLogFieldMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingAPI.DeleteLogFieldMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -165,13 +165,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldMappingApi.GetLogFieldMapping(context.Background(), logFieldMappingName).Execute()
+    resp, r, err := apiClient.LogFieldMappingAPI.GetLogFieldMapping(context.Background(), logFieldMappingName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingApi.GetLogFieldMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingAPI.GetLogFieldMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetLogFieldMapping`: AddLogFieldMapping200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldMappingApi.GetLogFieldMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldMappingAPI.GetLogFieldMapping`: %v\n", resp)
 }
 ```
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldMappingApi.ListLogFieldMappings(context.Background()).Filter(filter).Execute()
+    resp, r, err := apiClient.LogFieldMappingAPI.ListLogFieldMappings(context.Background()).Filter(filter).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingApi.ListLogFieldMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingAPI.ListLogFieldMappings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ListLogFieldMappings`: LogFieldMappingListResponse
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldMappingApi.ListLogFieldMappings`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldMappingAPI.ListLogFieldMappings`: %v\n", resp)
 }
 ```
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogFieldMappingApi.UpdateLogFieldMapping(context.Background(), logFieldMappingName).UpdateRequest(updateRequest).Execute()
+    resp, r, err := apiClient.LogFieldMappingAPI.UpdateLogFieldMapping(context.Background(), logFieldMappingName).UpdateRequest(updateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingApi.UpdateLogFieldMapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingAPI.UpdateLogFieldMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UpdateLogFieldMapping`: AddLogFieldMapping200Response
-    fmt.Fprintf(os.Stdout, "Response from `LogFieldMappingApi.UpdateLogFieldMapping`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldMappingAPI.UpdateLogFieldMapping`: %v\n", resp)
 }
 ```
 

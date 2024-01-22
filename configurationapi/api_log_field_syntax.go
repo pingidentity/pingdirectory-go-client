@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// LogFieldSyntaxApiService LogFieldSyntaxApi service
-type LogFieldSyntaxApiService service
+// LogFieldSyntaxAPIService LogFieldSyntaxAPI service
+type LogFieldSyntaxAPIService service
 
 type ApiGetLogFieldSyntaxRequest struct {
 	ctx                context.Context
-	ApiService         *LogFieldSyntaxApiService
+	ApiService         *LogFieldSyntaxAPIService
 	logFieldSyntaxName string
 }
 
@@ -39,7 +39,7 @@ GetLogFieldSyntax Returns a single Log Field Syntax
 	@param logFieldSyntaxName Name of the Log Field Syntax
 	@return ApiGetLogFieldSyntaxRequest
 */
-func (a *LogFieldSyntaxApiService) GetLogFieldSyntax(ctx context.Context, logFieldSyntaxName string) ApiGetLogFieldSyntaxRequest {
+func (a *LogFieldSyntaxAPIService) GetLogFieldSyntax(ctx context.Context, logFieldSyntaxName string) ApiGetLogFieldSyntaxRequest {
 	return ApiGetLogFieldSyntaxRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -50,7 +50,7 @@ func (a *LogFieldSyntaxApiService) GetLogFieldSyntax(ctx context.Context, logFie
 // Execute executes the request
 //
 //	@return GetLogFieldSyntax200Response
-func (a *LogFieldSyntaxApiService) GetLogFieldSyntaxExecute(r ApiGetLogFieldSyntaxRequest) (*GetLogFieldSyntax200Response, *http.Response, error) {
+func (a *LogFieldSyntaxAPIService) GetLogFieldSyntaxExecute(r ApiGetLogFieldSyntaxRequest) (*GetLogFieldSyntax200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -58,7 +58,7 @@ func (a *LogFieldSyntaxApiService) GetLogFieldSyntaxExecute(r ApiGetLogFieldSynt
 		localVarReturnValue *GetLogFieldSyntax200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldSyntaxApiService.GetLogFieldSyntax")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldSyntaxAPIService.GetLogFieldSyntax")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,7 +126,7 @@ func (a *LogFieldSyntaxApiService) GetLogFieldSyntaxExecute(r ApiGetLogFieldSynt
 
 type ApiListLogFieldSyntaxesRequest struct {
 	ctx        context.Context
-	ApiService *LogFieldSyntaxApiService
+	ApiService *LogFieldSyntaxAPIService
 	filter     *string
 }
 
@@ -146,7 +146,7 @@ ListLogFieldSyntaxes Returns a list of all Log Field Syntax objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListLogFieldSyntaxesRequest
 */
-func (a *LogFieldSyntaxApiService) ListLogFieldSyntaxes(ctx context.Context) ApiListLogFieldSyntaxesRequest {
+func (a *LogFieldSyntaxAPIService) ListLogFieldSyntaxes(ctx context.Context) ApiListLogFieldSyntaxesRequest {
 	return ApiListLogFieldSyntaxesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *LogFieldSyntaxApiService) ListLogFieldSyntaxes(ctx context.Context) Api
 // Execute executes the request
 //
 //	@return LogFieldSyntaxListResponse
-func (a *LogFieldSyntaxApiService) ListLogFieldSyntaxesExecute(r ApiListLogFieldSyntaxesRequest) (*LogFieldSyntaxListResponse, *http.Response, error) {
+func (a *LogFieldSyntaxAPIService) ListLogFieldSyntaxesExecute(r ApiListLogFieldSyntaxesRequest) (*LogFieldSyntaxListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -164,7 +164,7 @@ func (a *LogFieldSyntaxApiService) ListLogFieldSyntaxesExecute(r ApiListLogField
 		localVarReturnValue *LogFieldSyntaxListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldSyntaxApiService.ListLogFieldSyntaxes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldSyntaxAPIService.ListLogFieldSyntaxes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -234,7 +234,7 @@ func (a *LogFieldSyntaxApiService) ListLogFieldSyntaxesExecute(r ApiListLogField
 
 type ApiUpdateLogFieldSyntaxRequest struct {
 	ctx                context.Context
-	ApiService         *LogFieldSyntaxApiService
+	ApiService         *LogFieldSyntaxAPIService
 	logFieldSyntaxName string
 	updateRequest      *UpdateRequest
 }
@@ -256,7 +256,7 @@ UpdateLogFieldSyntax Update an existing Log Field Syntax by name
 	@param logFieldSyntaxName Name of the Log Field Syntax
 	@return ApiUpdateLogFieldSyntaxRequest
 */
-func (a *LogFieldSyntaxApiService) UpdateLogFieldSyntax(ctx context.Context, logFieldSyntaxName string) ApiUpdateLogFieldSyntaxRequest {
+func (a *LogFieldSyntaxAPIService) UpdateLogFieldSyntax(ctx context.Context, logFieldSyntaxName string) ApiUpdateLogFieldSyntaxRequest {
 	return ApiUpdateLogFieldSyntaxRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -267,7 +267,7 @@ func (a *LogFieldSyntaxApiService) UpdateLogFieldSyntax(ctx context.Context, log
 // Execute executes the request
 //
 //	@return GetLogFieldSyntax200Response
-func (a *LogFieldSyntaxApiService) UpdateLogFieldSyntaxExecute(r ApiUpdateLogFieldSyntaxRequest) (*GetLogFieldSyntax200Response, *http.Response, error) {
+func (a *LogFieldSyntaxAPIService) UpdateLogFieldSyntaxExecute(r ApiUpdateLogFieldSyntaxRequest) (*GetLogFieldSyntax200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -275,7 +275,7 @@ func (a *LogFieldSyntaxApiService) UpdateLogFieldSyntaxExecute(r ApiUpdateLogFie
 		localVarReturnValue *GetLogFieldSyntax200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldSyntaxApiService.UpdateLogFieldSyntax")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldSyntaxAPIService.UpdateLogFieldSyntax")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

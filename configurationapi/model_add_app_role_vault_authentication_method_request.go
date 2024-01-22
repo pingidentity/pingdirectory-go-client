@@ -19,9 +19,7 @@ var _ MappedNullable = &AddAppRoleVaultAuthenticationMethodRequest{}
 
 // AddAppRoleVaultAuthenticationMethodRequest struct for AddAppRoleVaultAuthenticationMethodRequest
 type AddAppRoleVaultAuthenticationMethodRequest struct {
-	// Name of the new Vault Authentication Method
-	MethodName string                                          `json:"methodName"`
-	Schemas    []EnumappRoleVaultAuthenticationMethodSchemaUrn `json:"schemas"`
+	Schemas []EnumappRoleVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The role ID for the AppRole to authenticate.
 	VaultRoleID string `json:"vaultRoleID"`
 	// The secret ID for the AppRole to authenticate.
@@ -30,18 +28,20 @@ type AddAppRoleVaultAuthenticationMethodRequest struct {
 	LoginMechanismName *string `json:"loginMechanismName,omitempty"`
 	// A description for this Vault Authentication Method
 	Description *string `json:"description,omitempty"`
+	// Name of the new Vault Authentication Method
+	MethodName string `json:"methodName"`
 }
 
 // NewAddAppRoleVaultAuthenticationMethodRequest instantiates a new AddAppRoleVaultAuthenticationMethodRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAppRoleVaultAuthenticationMethodRequest(methodName string, schemas []EnumappRoleVaultAuthenticationMethodSchemaUrn, vaultRoleID string, vaultSecretID string) *AddAppRoleVaultAuthenticationMethodRequest {
+func NewAddAppRoleVaultAuthenticationMethodRequest(schemas []EnumappRoleVaultAuthenticationMethodSchemaUrn, vaultRoleID string, vaultSecretID string, methodName string) *AddAppRoleVaultAuthenticationMethodRequest {
 	this := AddAppRoleVaultAuthenticationMethodRequest{}
-	this.MethodName = methodName
 	this.Schemas = schemas
 	this.VaultRoleID = vaultRoleID
 	this.VaultSecretID = vaultSecretID
+	this.MethodName = methodName
 	return &this
 }
 
@@ -51,30 +51,6 @@ func NewAddAppRoleVaultAuthenticationMethodRequest(methodName string, schemas []
 func NewAddAppRoleVaultAuthenticationMethodRequestWithDefaults() *AddAppRoleVaultAuthenticationMethodRequest {
 	this := AddAppRoleVaultAuthenticationMethodRequest{}
 	return &this
-}
-
-// GetMethodName returns the MethodName field value
-func (o *AddAppRoleVaultAuthenticationMethodRequest) GetMethodName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MethodName
-}
-
-// GetMethodNameOk returns a tuple with the MethodName field value
-// and a boolean to check if the value has been set.
-func (o *AddAppRoleVaultAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MethodName, true
-}
-
-// SetMethodName sets field value
-func (o *AddAppRoleVaultAuthenticationMethodRequest) SetMethodName(v string) {
-	o.MethodName = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -213,6 +189,30 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMethodName returns the MethodName field value
+func (o *AddAppRoleVaultAuthenticationMethodRequest) GetMethodName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.MethodName
+}
+
+// GetMethodNameOk returns a tuple with the MethodName field value
+// and a boolean to check if the value has been set.
+func (o *AddAppRoleVaultAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.MethodName, true
+}
+
+// SetMethodName sets field value
+func (o *AddAppRoleVaultAuthenticationMethodRequest) SetMethodName(v string) {
+	o.MethodName = v
+}
+
 func (o AddAppRoleVaultAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -223,7 +223,6 @@ func (o AddAppRoleVaultAuthenticationMethodRequest) MarshalJSON() ([]byte, error
 
 func (o AddAppRoleVaultAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["methodName"] = o.MethodName
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["vaultRoleID"] = o.VaultRoleID
 	toSerialize["vaultSecretID"] = o.VaultSecretID
@@ -233,6 +232,7 @@ func (o AddAppRoleVaultAuthenticationMethodRequest) ToMap() (map[string]interfac
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	toSerialize["methodName"] = o.MethodName
 	return toSerialize, nil
 }
 

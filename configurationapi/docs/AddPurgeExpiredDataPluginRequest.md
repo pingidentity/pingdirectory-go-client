@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumpurgeExpiredDataPluginSchemaUrn**](EnumpurgeExpiredDataPluginSchemaUrn.md) |  | 
 **DatetimeAttribute** | **string** | The LDAP attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted. | 
 **DatetimeJSONField** | Pointer to **string** | The top-level JSON field within the configured datetime-attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted. | [optional] 
@@ -21,12 +20,13 @@ Name | Type | Description | Notes
 **NumDeleteThreads** | Pointer to **int64** | The number of threads used to delete expired entries. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**PluginName** | **string** | Name of the new Plugin | 
 
 ## Methods
 
 ### NewAddPurgeExpiredDataPluginRequest
 
-`func NewAddPurgeExpiredDataPluginRequest(pluginName string, schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, expirationOffset string, enabled bool, ) *AddPurgeExpiredDataPluginRequest`
+`func NewAddPurgeExpiredDataPluginRequest(schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, expirationOffset string, enabled bool, pluginName string, ) *AddPurgeExpiredDataPluginRequest`
 
 NewAddPurgeExpiredDataPluginRequest instantiates a new AddPurgeExpiredDataPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -40,26 +40,6 @@ will change when the set of required properties is changed
 NewAddPurgeExpiredDataPluginRequestWithDefaults instantiates a new AddPurgeExpiredDataPluginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPluginName
-
-`func (o *AddPurgeExpiredDataPluginRequest) GetPluginName() string`
-
-GetPluginName returns the PluginName field if non-nil, zero value otherwise.
-
-### GetPluginNameOk
-
-`func (o *AddPurgeExpiredDataPluginRequest) GetPluginNameOk() (*string, bool)`
-
-GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPluginName
-
-`func (o *AddPurgeExpiredDataPluginRequest) SetPluginName(v string)`
-
-SetPluginName sets PluginName field to given value.
-
 
 ### GetSchemas
 
@@ -439,6 +419,26 @@ and a boolean to check if the value has been set.
 `func (o *AddPurgeExpiredDataPluginRequest) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
+
+
+### GetPluginName
+
+`func (o *AddPurgeExpiredDataPluginRequest) GetPluginName() string`
+
+GetPluginName returns the PluginName field if non-nil, zero value otherwise.
+
+### GetPluginNameOk
+
+`func (o *AddPurgeExpiredDataPluginRequest) GetPluginNameOk() (*string, bool)`
+
+GetPluginNameOk returns a tuple with the PluginName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPluginName
+
+`func (o *AddPurgeExpiredDataPluginRequest) SetPluginName(v string)`
+
+SetPluginName sets PluginName field to given value.
 
 
 

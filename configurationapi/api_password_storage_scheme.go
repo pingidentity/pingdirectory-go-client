@@ -19,12 +19,12 @@ import (
 	"strings"
 )
 
-// PasswordStorageSchemeApiService PasswordStorageSchemeApi service
-type PasswordStorageSchemeApiService service
+// PasswordStorageSchemeAPIService PasswordStorageSchemeAPI service
+type PasswordStorageSchemeAPIService service
 
 type ApiAddPasswordStorageSchemeRequest struct {
 	ctx                             context.Context
-	ApiService                      *PasswordStorageSchemeApiService
+	ApiService                      *PasswordStorageSchemeAPIService
 	addPasswordStorageSchemeRequest *AddPasswordStorageSchemeRequest
 }
 
@@ -44,7 +44,7 @@ AddPasswordStorageScheme Add a new Password Storage Scheme to the config
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiAddPasswordStorageSchemeRequest
 */
-func (a *PasswordStorageSchemeApiService) AddPasswordStorageScheme(ctx context.Context) ApiAddPasswordStorageSchemeRequest {
+func (a *PasswordStorageSchemeAPIService) AddPasswordStorageScheme(ctx context.Context) ApiAddPasswordStorageSchemeRequest {
 	return ApiAddPasswordStorageSchemeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -54,7 +54,7 @@ func (a *PasswordStorageSchemeApiService) AddPasswordStorageScheme(ctx context.C
 // Execute executes the request
 //
 //	@return AddPasswordStorageScheme200Response
-func (a *PasswordStorageSchemeApiService) AddPasswordStorageSchemeExecute(r ApiAddPasswordStorageSchemeRequest) (*AddPasswordStorageScheme200Response, *http.Response, error) {
+func (a *PasswordStorageSchemeAPIService) AddPasswordStorageSchemeExecute(r ApiAddPasswordStorageSchemeRequest) (*AddPasswordStorageScheme200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
@@ -62,7 +62,7 @@ func (a *PasswordStorageSchemeApiService) AddPasswordStorageSchemeExecute(r ApiA
 		localVarReturnValue *AddPasswordStorageScheme200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeApiService.AddPasswordStorageScheme")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeAPIService.AddPasswordStorageScheme")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -134,7 +134,7 @@ func (a *PasswordStorageSchemeApiService) AddPasswordStorageSchemeExecute(r ApiA
 
 type ApiDeletePasswordStorageSchemeRequest struct {
 	ctx                       context.Context
-	ApiService                *PasswordStorageSchemeApiService
+	ApiService                *PasswordStorageSchemeAPIService
 	passwordStorageSchemeName string
 }
 
@@ -149,7 +149,7 @@ DeletePasswordStorageScheme Delete a Password Storage Scheme
 	@param passwordStorageSchemeName Name of the Password Storage Scheme
 	@return ApiDeletePasswordStorageSchemeRequest
 */
-func (a *PasswordStorageSchemeApiService) DeletePasswordStorageScheme(ctx context.Context, passwordStorageSchemeName string) ApiDeletePasswordStorageSchemeRequest {
+func (a *PasswordStorageSchemeAPIService) DeletePasswordStorageScheme(ctx context.Context, passwordStorageSchemeName string) ApiDeletePasswordStorageSchemeRequest {
 	return ApiDeletePasswordStorageSchemeRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -158,14 +158,14 @@ func (a *PasswordStorageSchemeApiService) DeletePasswordStorageScheme(ctx contex
 }
 
 // Execute executes the request
-func (a *PasswordStorageSchemeApiService) DeletePasswordStorageSchemeExecute(r ApiDeletePasswordStorageSchemeRequest) (*http.Response, error) {
+func (a *PasswordStorageSchemeAPIService) DeletePasswordStorageSchemeExecute(r ApiDeletePasswordStorageSchemeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeApiService.DeletePasswordStorageScheme")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeAPIService.DeletePasswordStorageScheme")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -224,7 +224,7 @@ func (a *PasswordStorageSchemeApiService) DeletePasswordStorageSchemeExecute(r A
 
 type ApiGetPasswordStorageSchemeRequest struct {
 	ctx                       context.Context
-	ApiService                *PasswordStorageSchemeApiService
+	ApiService                *PasswordStorageSchemeAPIService
 	passwordStorageSchemeName string
 }
 
@@ -239,7 +239,7 @@ GetPasswordStorageScheme Returns a single Password Storage Scheme
 	@param passwordStorageSchemeName Name of the Password Storage Scheme
 	@return ApiGetPasswordStorageSchemeRequest
 */
-func (a *PasswordStorageSchemeApiService) GetPasswordStorageScheme(ctx context.Context, passwordStorageSchemeName string) ApiGetPasswordStorageSchemeRequest {
+func (a *PasswordStorageSchemeAPIService) GetPasswordStorageScheme(ctx context.Context, passwordStorageSchemeName string) ApiGetPasswordStorageSchemeRequest {
 	return ApiGetPasswordStorageSchemeRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -250,7 +250,7 @@ func (a *PasswordStorageSchemeApiService) GetPasswordStorageScheme(ctx context.C
 // Execute executes the request
 //
 //	@return GetPasswordStorageScheme200Response
-func (a *PasswordStorageSchemeApiService) GetPasswordStorageSchemeExecute(r ApiGetPasswordStorageSchemeRequest) (*GetPasswordStorageScheme200Response, *http.Response, error) {
+func (a *PasswordStorageSchemeAPIService) GetPasswordStorageSchemeExecute(r ApiGetPasswordStorageSchemeRequest) (*GetPasswordStorageScheme200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -258,7 +258,7 @@ func (a *PasswordStorageSchemeApiService) GetPasswordStorageSchemeExecute(r ApiG
 		localVarReturnValue *GetPasswordStorageScheme200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeApiService.GetPasswordStorageScheme")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeAPIService.GetPasswordStorageScheme")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -326,7 +326,7 @@ func (a *PasswordStorageSchemeApiService) GetPasswordStorageSchemeExecute(r ApiG
 
 type ApiListPasswordStorageSchemesRequest struct {
 	ctx        context.Context
-	ApiService *PasswordStorageSchemeApiService
+	ApiService *PasswordStorageSchemeAPIService
 	filter     *string
 }
 
@@ -346,7 +346,7 @@ ListPasswordStorageSchemes Returns a list of all Password Storage Scheme objects
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListPasswordStorageSchemesRequest
 */
-func (a *PasswordStorageSchemeApiService) ListPasswordStorageSchemes(ctx context.Context) ApiListPasswordStorageSchemesRequest {
+func (a *PasswordStorageSchemeAPIService) ListPasswordStorageSchemes(ctx context.Context) ApiListPasswordStorageSchemesRequest {
 	return ApiListPasswordStorageSchemesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -356,7 +356,7 @@ func (a *PasswordStorageSchemeApiService) ListPasswordStorageSchemes(ctx context
 // Execute executes the request
 //
 //	@return PasswordStorageSchemeListResponse
-func (a *PasswordStorageSchemeApiService) ListPasswordStorageSchemesExecute(r ApiListPasswordStorageSchemesRequest) (*PasswordStorageSchemeListResponse, *http.Response, error) {
+func (a *PasswordStorageSchemeAPIService) ListPasswordStorageSchemesExecute(r ApiListPasswordStorageSchemesRequest) (*PasswordStorageSchemeListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,7 +364,7 @@ func (a *PasswordStorageSchemeApiService) ListPasswordStorageSchemesExecute(r Ap
 		localVarReturnValue *PasswordStorageSchemeListResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeApiService.ListPasswordStorageSchemes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeAPIService.ListPasswordStorageSchemes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -434,7 +434,7 @@ func (a *PasswordStorageSchemeApiService) ListPasswordStorageSchemesExecute(r Ap
 
 type ApiUpdatePasswordStorageSchemeRequest struct {
 	ctx                       context.Context
-	ApiService                *PasswordStorageSchemeApiService
+	ApiService                *PasswordStorageSchemeAPIService
 	passwordStorageSchemeName string
 	updateRequest             *UpdateRequest
 }
@@ -456,7 +456,7 @@ UpdatePasswordStorageScheme Update an existing Password Storage Scheme by name
 	@param passwordStorageSchemeName Name of the Password Storage Scheme
 	@return ApiUpdatePasswordStorageSchemeRequest
 */
-func (a *PasswordStorageSchemeApiService) UpdatePasswordStorageScheme(ctx context.Context, passwordStorageSchemeName string) ApiUpdatePasswordStorageSchemeRequest {
+func (a *PasswordStorageSchemeAPIService) UpdatePasswordStorageScheme(ctx context.Context, passwordStorageSchemeName string) ApiUpdatePasswordStorageSchemeRequest {
 	return ApiUpdatePasswordStorageSchemeRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -467,7 +467,7 @@ func (a *PasswordStorageSchemeApiService) UpdatePasswordStorageScheme(ctx contex
 // Execute executes the request
 //
 //	@return GetPasswordStorageScheme200Response
-func (a *PasswordStorageSchemeApiService) UpdatePasswordStorageSchemeExecute(r ApiUpdatePasswordStorageSchemeRequest) (*GetPasswordStorageScheme200Response, *http.Response, error) {
+func (a *PasswordStorageSchemeAPIService) UpdatePasswordStorageSchemeExecute(r ApiUpdatePasswordStorageSchemeRequest) (*GetPasswordStorageScheme200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
@@ -475,7 +475,7 @@ func (a *PasswordStorageSchemeApiService) UpdatePasswordStorageSchemeExecute(r A
 		localVarReturnValue *GetPasswordStorageScheme200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeApiService.UpdatePasswordStorageScheme")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordStorageSchemeAPIService.UpdatePasswordStorageScheme")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

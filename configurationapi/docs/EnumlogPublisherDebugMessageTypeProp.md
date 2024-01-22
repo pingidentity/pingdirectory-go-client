@@ -27,6 +27,8 @@
 
 * `POLICY_REQUEST_AND_RESPONSE` (value: `"policy-request-and-response"`)
 
+* `POLICY_QUERY_REQUEST_AND_RESPONSE` (value: `"policy-query-request-and-response"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

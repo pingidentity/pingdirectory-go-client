@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Local DB VLV Index | 
 **Schemas** | Pointer to [**[]EnumlocalDbVlvIndexSchemaUrn**](EnumlocalDbVlvIndexSchemaUrn.md) |  | [optional] 
 **BaseDN** | **string** | Specifies the base DN used in the search query that is being indexed. | 
 **Scope** | [**EnumlocalDbVlvIndexScopeProp**](EnumlocalDbVlvIndexScopeProp.md) |  | 
@@ -15,12 +14,13 @@ Name | Type | Description | Notes
 **CacheMode** | Pointer to [**EnumlocalDbVlvIndexCacheModeProp**](EnumlocalDbVlvIndexCacheModeProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**Id** | **string** | Name of the Local DB VLV Index | 
 
 ## Methods
 
 ### NewLocalDbVlvIndexResponse
 
-`func NewLocalDbVlvIndexResponse(id string, baseDN string, scope EnumlocalDbVlvIndexScopeProp, filter string, sortOrder string, name string, ) *LocalDbVlvIndexResponse`
+`func NewLocalDbVlvIndexResponse(baseDN string, scope EnumlocalDbVlvIndexScopeProp, filter string, sortOrder string, name string, id string, ) *LocalDbVlvIndexResponse`
 
 NewLocalDbVlvIndexResponse instantiates a new LocalDbVlvIndexResponse object
 This constructor will assign default values to properties that have it defined,
@@ -34,26 +34,6 @@ will change when the set of required properties is changed
 NewLocalDbVlvIndexResponseWithDefaults instantiates a new LocalDbVlvIndexResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetId
-
-`func (o *LocalDbVlvIndexResponse) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *LocalDbVlvIndexResponse) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *LocalDbVlvIndexResponse) SetId(v string)`
-
-SetId sets Id field to given value.
-
 
 ### GetSchemas
 
@@ -279,6 +259,26 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *LocalDbVlvIndexResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *LocalDbVlvIndexResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *LocalDbVlvIndexResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *LocalDbVlvIndexResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

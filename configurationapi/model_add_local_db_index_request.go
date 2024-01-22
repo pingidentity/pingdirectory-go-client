@@ -19,9 +19,7 @@ var _ MappedNullable = &AddLocalDbIndexRequest{}
 
 // AddLocalDbIndexRequest struct for AddLocalDbIndexRequest
 type AddLocalDbIndexRequest struct {
-	// Name of the new Local DB Index
-	IndexName string                      `json:"indexName"`
-	Schemas   []EnumlocalDbIndexSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumlocalDbIndexSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the name of the attribute for which the index is to be maintained.
 	Attribute string `json:"attribute"`
 	// Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained.
@@ -42,17 +40,19 @@ type AddLocalDbIndexRequest struct {
 	// Indicates whether to maintain a separate equality index for the associated attribute without any filter, in addition to maintaining an index for each equality index filter that is defined. If this is false, then the attribute will not be indexed for equality by itself but only in conjunction with the defined equality index filters.
 	MaintainEqualityIndexWithoutFilter *bool                          `json:"maintainEqualityIndexWithoutFilter,omitempty"`
 	CacheMode                          *EnumlocalDbIndexCacheModeProp `json:"cacheMode,omitempty"`
+	// Name of the new Local DB Index
+	IndexName string `json:"indexName"`
 }
 
 // NewAddLocalDbIndexRequest instantiates a new AddLocalDbIndexRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLocalDbIndexRequest(indexName string, attribute string, indexType []EnumlocalDbIndexIndexTypeProp) *AddLocalDbIndexRequest {
+func NewAddLocalDbIndexRequest(attribute string, indexType []EnumlocalDbIndexIndexTypeProp, indexName string) *AddLocalDbIndexRequest {
 	this := AddLocalDbIndexRequest{}
-	this.IndexName = indexName
 	this.Attribute = attribute
 	this.IndexType = indexType
+	this.IndexName = indexName
 	return &this
 }
 
@@ -62,30 +62,6 @@ func NewAddLocalDbIndexRequest(indexName string, attribute string, indexType []E
 func NewAddLocalDbIndexRequestWithDefaults() *AddLocalDbIndexRequest {
 	this := AddLocalDbIndexRequest{}
 	return &this
-}
-
-// GetIndexName returns the IndexName field value
-func (o *AddLocalDbIndexRequest) GetIndexName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.IndexName
-}
-
-// GetIndexNameOk returns a tuple with the IndexName field value
-// and a boolean to check if the value has been set.
-func (o *AddLocalDbIndexRequest) GetIndexNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.IndexName, true
-}
-
-// SetIndexName sets field value
-func (o *AddLocalDbIndexRequest) SetIndexName(v string) {
-	o.IndexName = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -456,6 +432,30 @@ func (o *AddLocalDbIndexRequest) SetCacheMode(v EnumlocalDbIndexCacheModeProp) {
 	o.CacheMode = &v
 }
 
+// GetIndexName returns the IndexName field value
+func (o *AddLocalDbIndexRequest) GetIndexName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.IndexName
+}
+
+// GetIndexNameOk returns a tuple with the IndexName field value
+// and a boolean to check if the value has been set.
+func (o *AddLocalDbIndexRequest) GetIndexNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.IndexName, true
+}
+
+// SetIndexName sets field value
+func (o *AddLocalDbIndexRequest) SetIndexName(v string) {
+	o.IndexName = v
+}
+
 func (o AddLocalDbIndexRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -466,7 +466,6 @@ func (o AddLocalDbIndexRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddLocalDbIndexRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["indexName"] = o.IndexName
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -499,6 +498,7 @@ func (o AddLocalDbIndexRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CacheMode) {
 		toSerialize["cacheMode"] = o.CacheMode
 	}
+	toSerialize["indexName"] = o.IndexName
 	return toSerialize, nil
 }
 

@@ -19,8 +19,6 @@ var _ MappedNullable = &AddMemberVirtualAttributeRequest{}
 
 // AddMemberVirtualAttributeRequest struct for AddMemberVirtualAttributeRequest
 type AddMemberVirtualAttributeRequest struct {
-	// Name of the new Virtual Attribute
-	Name             string                                    `json:"name"`
 	Schemas          []EnummemberVirtualAttributeSchemaUrn     `json:"schemas"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Indicates whether to handle requests that request all values for the virtual attribute.
@@ -46,18 +44,20 @@ type AddMemberVirtualAttributeRequest struct {
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
 	MultipleVirtualAttributeEvaluationOrderIndex *int64                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
 	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
+	// Name of the new Virtual Attribute
+	Name string `json:"name"`
 }
 
 // NewAddMemberVirtualAttributeRequest instantiates a new AddMemberVirtualAttributeRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddMemberVirtualAttributeRequest(name string, schemas []EnummemberVirtualAttributeSchemaUrn, enabled bool, attributeType string) *AddMemberVirtualAttributeRequest {
+func NewAddMemberVirtualAttributeRequest(schemas []EnummemberVirtualAttributeSchemaUrn, enabled bool, attributeType string, name string) *AddMemberVirtualAttributeRequest {
 	this := AddMemberVirtualAttributeRequest{}
-	this.Name = name
 	this.Schemas = schemas
 	this.Enabled = enabled
 	this.AttributeType = attributeType
+	this.Name = name
 	return &this
 }
 
@@ -67,30 +67,6 @@ func NewAddMemberVirtualAttributeRequest(name string, schemas []EnummemberVirtua
 func NewAddMemberVirtualAttributeRequestWithDefaults() *AddMemberVirtualAttributeRequest {
 	this := AddMemberVirtualAttributeRequest{}
 	return &this
-}
-
-// GetName returns the Name field value
-func (o *AddMemberVirtualAttributeRequest) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *AddMemberVirtualAttributeRequest) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *AddMemberVirtualAttributeRequest) SetName(v string) {
-	o.Name = v
 }
 
 // GetSchemas returns the Schemas field value
@@ -517,6 +493,30 @@ func (o *AddMemberVirtualAttributeRequest) SetMultipleVirtualAttributeMergeBehav
 	o.MultipleVirtualAttributeMergeBehavior = &v
 }
 
+// GetName returns the Name field value
+func (o *AddMemberVirtualAttributeRequest) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *AddMemberVirtualAttributeRequest) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *AddMemberVirtualAttributeRequest) SetName(v string) {
+	o.Name = v
+}
+
 func (o AddMemberVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -527,7 +527,6 @@ func (o AddMemberVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 
 func (o AddMemberVirtualAttributeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.ConflictBehavior) {
 		toSerialize["conflictBehavior"] = o.ConflictBehavior
@@ -564,6 +563,7 @@ func (o AddMemberVirtualAttributeRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
 	}
+	toSerialize["name"] = o.Name
 	return toSerialize, nil
 }
 
