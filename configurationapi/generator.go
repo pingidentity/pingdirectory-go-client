@@ -4,3 +4,4 @@ package configurationapi
 
 //go:generate ../scripts/generateEnumConversionFunctions.py
 //go:generate ../scripts/setUserPrivilegeEnumNames.py
+//go:generate ../scripts/updateClient.py
