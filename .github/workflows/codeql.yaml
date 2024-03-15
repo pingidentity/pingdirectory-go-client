@@ -37,8 +37,13 @@ jobs:
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
 
     steps:
-    - name: Maximize build space
-      uses: easimon/maximize-build-space@master
+    - name: Free up build space
+      # Free space as indicated here : https://github.com/actions/runner-images/issues/2840#issuecomment-790492173
+      run: |
+        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf /opt/ghc
+        sudo rm -rf "/usr/local/share/boost"
+        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
 
     - name: Checkout repository
       uses: actions/checkout@v3
