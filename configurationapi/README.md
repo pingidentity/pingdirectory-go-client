@@ -353,6 +353,11 @@ Class | Method | HTTP request | Description
 *LogPublisherAPI* | [**GetLogPublisher**](docs/LogPublisherAPI.md#getlogpublisher) | **Get** /log-publishers/{log-publisher-name} | Returns a single Log Publisher
 *LogPublisherAPI* | [**ListLogPublishers**](docs/LogPublisherAPI.md#listlogpublishers) | **Get** /log-publishers | Returns a list of all Log Publisher objects
 *LogPublisherAPI* | [**UpdateLogPublisher**](docs/LogPublisherAPI.md#updatelogpublisher) | **Patch** /log-publishers/{log-publisher-name} | Update an existing Log Publisher by name
+*LogPublisherMessageExclusionPolicyAPI* | [**AddLogPublisherMessageExclusionPolicy**](docs/LogPublisherMessageExclusionPolicyAPI.md#addlogpublishermessageexclusionpolicy) | **Post** /log-publisher-message-exclusion-policies | Add a new Log Publisher Message Exclusion Policy to the config
+*LogPublisherMessageExclusionPolicyAPI* | [**DeleteLogPublisherMessageExclusionPolicy**](docs/LogPublisherMessageExclusionPolicyAPI.md#deletelogpublishermessageexclusionpolicy) | **Delete** /log-publisher-message-exclusion-policies/{log-publisher-message-exclusion-policy-name} | Delete a Log Publisher Message Exclusion Policy
+*LogPublisherMessageExclusionPolicyAPI* | [**GetLogPublisherMessageExclusionPolicy**](docs/LogPublisherMessageExclusionPolicyAPI.md#getlogpublishermessageexclusionpolicy) | **Get** /log-publisher-message-exclusion-policies/{log-publisher-message-exclusion-policy-name} | Returns a single Log Publisher Message Exclusion Policy
+*LogPublisherMessageExclusionPolicyAPI* | [**ListLogPublisherMessageExclusionPolicies**](docs/LogPublisherMessageExclusionPolicyAPI.md#listlogpublishermessageexclusionpolicies) | **Get** /log-publisher-message-exclusion-policies | Returns a list of all Log Publisher Message Exclusion Policy objects
+*LogPublisherMessageExclusionPolicyAPI* | [**UpdateLogPublisherMessageExclusionPolicy**](docs/LogPublisherMessageExclusionPolicyAPI.md#updatelogpublishermessageexclusionpolicy) | **Patch** /log-publisher-message-exclusion-policies/{log-publisher-message-exclusion-policy-name} | Update an existing Log Publisher Message Exclusion Policy by name
 *LogRetentionPolicyAPI* | [**AddLogRetentionPolicy**](docs/LogRetentionPolicyAPI.md#addlogretentionpolicy) | **Post** /log-retention-policies | Add a new Log Retention Policy to the config
 *LogRetentionPolicyAPI* | [**DeleteLogRetentionPolicy**](docs/LogRetentionPolicyAPI.md#deletelogretentionpolicy) | **Delete** /log-retention-policies/{log-retention-policy-name} | Delete a Log Retention Policy
 *LogRetentionPolicyAPI* | [**GetLogRetentionPolicy**](docs/LogRetentionPolicyAPI.md#getlogretentionpolicy) | **Get** /log-retention-policies/{log-retention-policy-name} | Returns a single Log Retention Policy
@@ -753,6 +758,7 @@ Class | Method | HTTP request | Description
  - [AddErrorLogAccountStatusNotificationHandlerRequest](docs/AddErrorLogAccountStatusNotificationHandlerRequest.md)
  - [AddErrorLogAlertHandlerRequest](docs/AddErrorLogAlertHandlerRequest.md)
  - [AddErrorLogFieldMappingRequest](docs/AddErrorLogFieldMappingRequest.md)
+ - [AddErrorLogPublisherMessageExclusionPolicyRequest](docs/AddErrorLogPublisherMessageExclusionPolicyRequest.md)
  - [AddExactMatchIdentityMapperRequest](docs/AddExactMatchIdentityMapperRequest.md)
  - [AddExecAlertHandlerRequest](docs/AddExecAlertHandlerRequest.md)
  - [AddExecRecurringTaskRequest](docs/AddExecRecurringTaskRequest.md)
@@ -1098,6 +1104,7 @@ Class | Method | HTTP request | Description
  - [AddVelocityContextProviderRequest](docs/AddVelocityContextProviderRequest.md)
  - [AddVelocityTemplateLoaderRequest](docs/AddVelocityTemplateLoaderRequest.md)
  - [AddVelocityToolsVelocityContextProviderRequest](docs/AddVelocityToolsVelocityContextProviderRequest.md)
+ - [AddVerifyPasswordExtendedOperationHandlerRequest](docs/AddVerifyPasswordExtendedOperationHandlerRequest.md)
  - [AddVirtualAttribute200Response](docs/AddVirtualAttribute200Response.md)
  - [AddVirtualAttributeRequest](docs/AddVirtualAttributeRequest.md)
  - [AddWaitForPassphraseCipherStreamProviderRequest](docs/AddWaitForPassphraseCipherStreamProviderRequest.md)
@@ -1609,6 +1616,7 @@ Class | Method | HTTP request | Description
  - [EnumerrorLogAccountStatusNotificationHandlerSchemaUrn](docs/EnumerrorLogAccountStatusNotificationHandlerSchemaUrn.md)
  - [EnumerrorLogAlertHandlerSchemaUrn](docs/EnumerrorLogAlertHandlerSchemaUrn.md)
  - [EnumerrorLogFieldMappingSchemaUrn](docs/EnumerrorLogFieldMappingSchemaUrn.md)
+ - [EnumerrorLogPublisherMessageExclusionPolicySchemaUrn](docs/EnumerrorLogPublisherMessageExclusionPolicySchemaUrn.md)
  - [EnumexactMatchIdentityMapperSchemaUrn](docs/EnumexactMatchIdentityMapperSchemaUrn.md)
  - [EnumexecAlertHandlerSchemaUrn](docs/EnumexecAlertHandlerSchemaUrn.md)
  - [EnumexecRecurringTaskSchemaUrn](docs/EnumexecRecurringTaskSchemaUrn.md)
@@ -1869,6 +1877,8 @@ Class | Method | HTTP request | Description
  - [EnumlogPublisherLogResponseHeadersProp](docs/EnumlogPublisherLogResponseHeadersProp.md)
  - [EnumlogPublisherLoggedMessageTypeProp](docs/EnumlogPublisherLoggedMessageTypeProp.md)
  - [EnumlogPublisherLoggingErrorBehaviorProp](docs/EnumlogPublisherLoggingErrorBehaviorProp.md)
+ - [EnumlogPublisherMessageExclusionPolicyLogMessageCategoryProp](docs/EnumlogPublisherMessageExclusionPolicyLogMessageCategoryProp.md)
+ - [EnumlogPublisherMessageExclusionPolicyLogMessageSeverityProp](docs/EnumlogPublisherMessageExclusionPolicyLogMessageSeverityProp.md)
  - [EnumlogPublisherOutputLocationProp](docs/EnumlogPublisherOutputLocationProp.md)
  - [EnumlogPublisherPolicyMessageTypeProp](docs/EnumlogPublisherPolicyMessageTypeProp.md)
  - [EnumlogPublisherScimMessageTypeProp](docs/EnumlogPublisherScimMessageTypeProp.md)
@@ -2220,6 +2230,7 @@ Class | Method | HTTP request | Description
  - [EnumthirdPartyPasswordStorageSchemeSchemaUrn](docs/EnumthirdPartyPasswordStorageSchemeSchemaUrn.md)
  - [EnumthirdPartyPasswordValidatorSchemaUrn](docs/EnumthirdPartyPasswordValidatorSchemaUrn.md)
  - [EnumthirdPartyPluginSchemaUrn](docs/EnumthirdPartyPluginSchemaUrn.md)
+ - [EnumthirdPartyPolicyDecisionLogPublisherSchemaUrn](docs/EnumthirdPartyPolicyDecisionLogPublisherSchemaUrn.md)
  - [EnumthirdPartyPostLdifExportTaskProcessorSchemaUrn](docs/EnumthirdPartyPostLdifExportTaskProcessorSchemaUrn.md)
  - [EnumthirdPartyProxiedExtendedOperationHandlerSchemaUrn](docs/EnumthirdPartyProxiedExtendedOperationHandlerSchemaUrn.md)
  - [EnumthirdPartyRecurringTaskSchemaUrn](docs/EnumthirdPartyRecurringTaskSchemaUrn.md)
@@ -2273,6 +2284,7 @@ Class | Method | HTTP request | Description
  - [EnumvelocityHttpServletExtensionSchemaUrn](docs/EnumvelocityHttpServletExtensionSchemaUrn.md)
  - [EnumvelocityTemplateLoaderSchemaUrn](docs/EnumvelocityTemplateLoaderSchemaUrn.md)
  - [EnumvelocityToolsVelocityContextProviderSchemaUrn](docs/EnumvelocityToolsVelocityContextProviderSchemaUrn.md)
+ - [EnumverifyPasswordExtendedOperationHandlerSchemaUrn](docs/EnumverifyPasswordExtendedOperationHandlerSchemaUrn.md)
  - [EnumversionMonitorProviderSchemaUrn](docs/EnumversionMonitorProviderSchemaUrn.md)
  - [EnumvirtualAttributeConflictBehaviorProp](docs/EnumvirtualAttributeConflictBehaviorProp.md)
  - [EnumvirtualAttributeJoinBaseDNTypeProp](docs/EnumvirtualAttributeJoinBaseDNTypeProp.md)
@@ -2296,6 +2308,8 @@ Class | Method | HTTP request | Description
  - [ErrorLogAlertHandlerShared](docs/ErrorLogAlertHandlerShared.md)
  - [ErrorLogFieldMappingResponse](docs/ErrorLogFieldMappingResponse.md)
  - [ErrorLogFieldMappingShared](docs/ErrorLogFieldMappingShared.md)
+ - [ErrorLogPublisherMessageExclusionPolicyResponse](docs/ErrorLogPublisherMessageExclusionPolicyResponse.md)
+ - [ErrorLogPublisherMessageExclusionPolicyShared](docs/ErrorLogPublisherMessageExclusionPolicyShared.md)
  - [ExactMatchIdentityMapperResponse](docs/ExactMatchIdentityMapperResponse.md)
  - [ExactMatchIdentityMapperShared](docs/ExactMatchIdentityMapperShared.md)
  - [ExecAlertHandlerResponse](docs/ExecAlertHandlerResponse.md)
@@ -2591,6 +2605,7 @@ Class | Method | HTTP request | Description
  - [LogFileRotationListenerListResponse](docs/LogFileRotationListenerListResponse.md)
  - [LogPublisherListResponse](docs/LogPublisherListResponse.md)
  - [LogPublisherListResponseResourcesInner](docs/LogPublisherListResponseResourcesInner.md)
+ - [LogPublisherMessageExclusionPolicyListResponse](docs/LogPublisherMessageExclusionPolicyListResponse.md)
  - [LogRetentionPolicyListResponse](docs/LogRetentionPolicyListResponse.md)
  - [LogRotationPolicyListResponse](docs/LogRotationPolicyListResponse.md)
  - [LoggingChangeSubscriptionHandlerResponse](docs/LoggingChangeSubscriptionHandlerResponse.md)
@@ -3002,6 +3017,7 @@ Class | Method | HTTP request | Description
  - [ThirdPartyPasswordValidatorShared](docs/ThirdPartyPasswordValidatorShared.md)
  - [ThirdPartyPluginResponse](docs/ThirdPartyPluginResponse.md)
  - [ThirdPartyPluginShared](docs/ThirdPartyPluginShared.md)
+ - [ThirdPartyPolicyDecisionLogPublisherResponse](docs/ThirdPartyPolicyDecisionLogPublisherResponse.md)
  - [ThirdPartyPostLdifExportTaskProcessorResponse](docs/ThirdPartyPostLdifExportTaskProcessorResponse.md)
  - [ThirdPartyPostLdifExportTaskProcessorShared](docs/ThirdPartyPostLdifExportTaskProcessorShared.md)
  - [ThirdPartyProxiedExtendedOperationHandlerResponse](docs/ThirdPartyProxiedExtendedOperationHandlerResponse.md)
@@ -3101,6 +3117,8 @@ Class | Method | HTTP request | Description
  - [VelocityTemplateLoaderShared](docs/VelocityTemplateLoaderShared.md)
  - [VelocityToolsVelocityContextProviderResponse](docs/VelocityToolsVelocityContextProviderResponse.md)
  - [VelocityToolsVelocityContextProviderShared](docs/VelocityToolsVelocityContextProviderShared.md)
+ - [VerifyPasswordExtendedOperationHandlerResponse](docs/VerifyPasswordExtendedOperationHandlerResponse.md)
+ - [VerifyPasswordExtendedOperationHandlerShared](docs/VerifyPasswordExtendedOperationHandlerShared.md)
  - [VersionMonitorProviderResponse](docs/VersionMonitorProviderResponse.md)
  - [VirtualAttributeListResponse](docs/VirtualAttributeListResponse.md)
  - [VirtualAttributeListResponseResourcesInner](docs/VirtualAttributeListResponseResourcesInner.md)

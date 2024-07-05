@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
 tags:
 - description: Access data-security-auditors
   name: data-security-auditor
@@ -558,6 +558,7 @@ components:
       - "collect-support-data"
       - "file-servlet-access"
       - "permit-replace-certificate-request"
+      - "permit-verify-password-request"
       description: >-
           If defined, only entries with the specified privileges will be reported. By default, entries with any privilege assigned will be reported.
     add-privilege-data-security-auditor-request:

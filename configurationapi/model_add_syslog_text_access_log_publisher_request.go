@@ -95,6 +95,8 @@ type AddSyslogTextAccessLogPublisherRequest struct {
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
 	MaxStringLength    *int64                                  `json:"maxStringLength,omitempty"`
 	TimestampPrecision *EnumlogPublisherTimestampPrecisionProp `json:"timestampPrecision,omitempty"`
+	// Indicates whether to log connection details in request messages, including, where applicable, the client IP address and port, the server IP address and port, and the communication protocol.
+	IncludeConnectionDetailsInRequestMessages *bool `json:"includeConnectionDetailsInRequestMessages,omitempty"`
 	// Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values.
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
 	// Indicates whether the Writer Based Access Log Publisher will publish records asynchronously.
@@ -1407,6 +1409,38 @@ func (o *AddSyslogTextAccessLogPublisherRequest) SetTimestampPrecision(v Enumlog
 	o.TimestampPrecision = &v
 }
 
+// GetIncludeConnectionDetailsInRequestMessages returns the IncludeConnectionDetailsInRequestMessages field value if set, zero value otherwise.
+func (o *AddSyslogTextAccessLogPublisherRequest) GetIncludeConnectionDetailsInRequestMessages() bool {
+	if o == nil || IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeConnectionDetailsInRequestMessages
+}
+
+// GetIncludeConnectionDetailsInRequestMessagesOk returns a tuple with the IncludeConnectionDetailsInRequestMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddSyslogTextAccessLogPublisherRequest) GetIncludeConnectionDetailsInRequestMessagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		return nil, false
+	}
+	return o.IncludeConnectionDetailsInRequestMessages, true
+}
+
+// HasIncludeConnectionDetailsInRequestMessages returns a boolean if a field has been set.
+func (o *AddSyslogTextAccessLogPublisherRequest) HasIncludeConnectionDetailsInRequestMessages() bool {
+	if o != nil && !IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeConnectionDetailsInRequestMessages gets a reference to the given bool and assigns it to the IncludeConnectionDetailsInRequestMessages field.
+func (o *AddSyslogTextAccessLogPublisherRequest) SetIncludeConnectionDetailsInRequestMessages(v bool) {
+	o.IncludeConnectionDetailsInRequestMessages = &v
+}
+
 // GetGenerifyMessageStringsWhenPossible returns the GenerifyMessageStringsWhenPossible field value if set, zero value otherwise.
 func (o *AddSyslogTextAccessLogPublisherRequest) GetGenerifyMessageStringsWhenPossible() bool {
 	if o == nil || IsNil(o.GenerifyMessageStringsWhenPossible) {
@@ -1932,6 +1966,9 @@ func (o AddSyslogTextAccessLogPublisherRequest) ToMap() (map[string]interface{},
 	}
 	if !IsNil(o.TimestampPrecision) {
 		toSerialize["timestampPrecision"] = o.TimestampPrecision
+	}
+	if !IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		toSerialize["includeConnectionDetailsInRequestMessages"] = o.IncludeConnectionDetailsInRequestMessages
 	}
 	if !IsNil(o.GenerifyMessageStringsWhenPossible) {
 		toSerialize["generifyMessageStringsWhenPossible"] = o.GenerifyMessageStringsWhenPossible

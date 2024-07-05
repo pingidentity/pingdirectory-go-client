@@ -38,6 +38,7 @@ type GetExtendedOperationHandler200Response struct {
 	StartTlsExtendedOperationHandlerResponse                          *StartTlsExtendedOperationHandlerResponse
 	ThirdPartyExtendedOperationHandlerResponse                        *ThirdPartyExtendedOperationHandlerResponse
 	ValidateTotpPasswordExtendedOperationHandlerResponse              *ValidateTotpPasswordExtendedOperationHandlerResponse
+	VerifyPasswordExtendedOperationHandlerResponse                    *VerifyPasswordExtendedOperationHandlerResponse
 	WhoAmIExtendedOperationHandlerResponse                            *WhoAmIExtendedOperationHandlerResponse
 }
 
@@ -185,6 +186,13 @@ func ThirdPartyExtendedOperationHandlerResponseAsGetExtendedOperationHandler200R
 func ValidateTotpPasswordExtendedOperationHandlerResponseAsGetExtendedOperationHandler200Response(v *ValidateTotpPasswordExtendedOperationHandlerResponse) GetExtendedOperationHandler200Response {
 	return GetExtendedOperationHandler200Response{
 		ValidateTotpPasswordExtendedOperationHandlerResponse: v,
+	}
+}
+
+// VerifyPasswordExtendedOperationHandlerResponseAsGetExtendedOperationHandler200Response is a convenience function that returns VerifyPasswordExtendedOperationHandlerResponse wrapped in GetExtendedOperationHandler200Response
+func VerifyPasswordExtendedOperationHandlerResponseAsGetExtendedOperationHandler200Response(v *VerifyPasswordExtendedOperationHandlerResponse) GetExtendedOperationHandler200Response {
+	return GetExtendedOperationHandler200Response{
+		VerifyPasswordExtendedOperationHandlerResponse: v,
 	}
 }
 
@@ -472,6 +480,19 @@ func (dst *GetExtendedOperationHandler200Response) UnmarshalJSON(data []byte) er
 		dst.ValidateTotpPasswordExtendedOperationHandlerResponse = nil
 	}
 
+	// try to unmarshal data into VerifyPasswordExtendedOperationHandlerResponse
+	err = newStrictDecoder(data).Decode(&dst.VerifyPasswordExtendedOperationHandlerResponse)
+	if err == nil {
+		jsonVerifyPasswordExtendedOperationHandlerResponse, _ := json.Marshal(dst.VerifyPasswordExtendedOperationHandlerResponse)
+		if string(jsonVerifyPasswordExtendedOperationHandlerResponse) == "{}" { // empty struct
+			dst.VerifyPasswordExtendedOperationHandlerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.VerifyPasswordExtendedOperationHandlerResponse = nil
+	}
+
 	// try to unmarshal data into WhoAmIExtendedOperationHandlerResponse
 	err = newStrictDecoder(data).Decode(&dst.WhoAmIExtendedOperationHandlerResponse)
 	if err == nil {
@@ -508,6 +529,7 @@ func (dst *GetExtendedOperationHandler200Response) UnmarshalJSON(data []byte) er
 		dst.StartTlsExtendedOperationHandlerResponse = nil
 		dst.ThirdPartyExtendedOperationHandlerResponse = nil
 		dst.ValidateTotpPasswordExtendedOperationHandlerResponse = nil
+		dst.VerifyPasswordExtendedOperationHandlerResponse = nil
 		dst.WhoAmIExtendedOperationHandlerResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(GetExtendedOperationHandler200Response)")
@@ -604,6 +626,10 @@ func (src GetExtendedOperationHandler200Response) MarshalJSON() ([]byte, error) 
 		return json.Marshal(&src.ValidateTotpPasswordExtendedOperationHandlerResponse)
 	}
 
+	if src.VerifyPasswordExtendedOperationHandlerResponse != nil {
+		return json.Marshal(&src.VerifyPasswordExtendedOperationHandlerResponse)
+	}
+
 	if src.WhoAmIExtendedOperationHandlerResponse != nil {
 		return json.Marshal(&src.WhoAmIExtendedOperationHandlerResponse)
 	}
@@ -698,6 +724,10 @@ func (obj *GetExtendedOperationHandler200Response) GetActualInstance() interface
 
 	if obj.ValidateTotpPasswordExtendedOperationHandlerResponse != nil {
 		return obj.ValidateTotpPasswordExtendedOperationHandlerResponse
+	}
+
+	if obj.VerifyPasswordExtendedOperationHandlerResponse != nil {
+		return obj.VerifyPasswordExtendedOperationHandlerResponse
 	}
 
 	if obj.WhoAmIExtendedOperationHandlerResponse != nil {

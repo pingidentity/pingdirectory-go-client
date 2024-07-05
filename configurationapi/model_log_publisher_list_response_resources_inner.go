@@ -65,6 +65,7 @@ type LogPublisherListResponseResourcesInner struct {
 	ThirdPartyFileBasedAccessLogPublisherResponse     *ThirdPartyFileBasedAccessLogPublisherResponse
 	ThirdPartyFileBasedErrorLogPublisherResponse      *ThirdPartyFileBasedErrorLogPublisherResponse
 	ThirdPartyHttpOperationLogPublisherResponse       *ThirdPartyHttpOperationLogPublisherResponse
+	ThirdPartyPolicyDecisionLogPublisherResponse      *ThirdPartyPolicyDecisionLogPublisherResponse
 }
 
 // AdminAlertAccessLogPublisherResponseAsLogPublisherListResponseResourcesInner is a convenience function that returns AdminAlertAccessLogPublisherResponse wrapped in LogPublisherListResponseResourcesInner
@@ -400,6 +401,13 @@ func ThirdPartyFileBasedErrorLogPublisherResponseAsLogPublisherListResponseResou
 func ThirdPartyHttpOperationLogPublisherResponseAsLogPublisherListResponseResourcesInner(v *ThirdPartyHttpOperationLogPublisherResponse) LogPublisherListResponseResourcesInner {
 	return LogPublisherListResponseResourcesInner{
 		ThirdPartyHttpOperationLogPublisherResponse: v,
+	}
+}
+
+// ThirdPartyPolicyDecisionLogPublisherResponseAsLogPublisherListResponseResourcesInner is a convenience function that returns ThirdPartyPolicyDecisionLogPublisherResponse wrapped in LogPublisherListResponseResourcesInner
+func ThirdPartyPolicyDecisionLogPublisherResponseAsLogPublisherListResponseResourcesInner(v *ThirdPartyPolicyDecisionLogPublisherResponse) LogPublisherListResponseResourcesInner {
+	return LogPublisherListResponseResourcesInner{
+		ThirdPartyPolicyDecisionLogPublisherResponse: v,
 	}
 }
 
@@ -1031,6 +1039,19 @@ func (dst *LogPublisherListResponseResourcesInner) UnmarshalJSON(data []byte) er
 		dst.ThirdPartyHttpOperationLogPublisherResponse = nil
 	}
 
+	// try to unmarshal data into ThirdPartyPolicyDecisionLogPublisherResponse
+	err = newStrictDecoder(data).Decode(&dst.ThirdPartyPolicyDecisionLogPublisherResponse)
+	if err == nil {
+		jsonThirdPartyPolicyDecisionLogPublisherResponse, _ := json.Marshal(dst.ThirdPartyPolicyDecisionLogPublisherResponse)
+		if string(jsonThirdPartyPolicyDecisionLogPublisherResponse) == "{}" { // empty struct
+			dst.ThirdPartyPolicyDecisionLogPublisherResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.ThirdPartyPolicyDecisionLogPublisherResponse = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AdminAlertAccessLogPublisherResponse = nil
@@ -1081,6 +1102,7 @@ func (dst *LogPublisherListResponseResourcesInner) UnmarshalJSON(data []byte) er
 		dst.ThirdPartyFileBasedAccessLogPublisherResponse = nil
 		dst.ThirdPartyFileBasedErrorLogPublisherResponse = nil
 		dst.ThirdPartyHttpOperationLogPublisherResponse = nil
+		dst.ThirdPartyPolicyDecisionLogPublisherResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(LogPublisherListResponseResourcesInner)")
 	} else if match == 1 {
@@ -1284,6 +1306,10 @@ func (src LogPublisherListResponseResourcesInner) MarshalJSON() ([]byte, error) 
 		return json.Marshal(&src.ThirdPartyHttpOperationLogPublisherResponse)
 	}
 
+	if src.ThirdPartyPolicyDecisionLogPublisherResponse != nil {
+		return json.Marshal(&src.ThirdPartyPolicyDecisionLogPublisherResponse)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -1482,6 +1508,10 @@ func (obj *LogPublisherListResponseResourcesInner) GetActualInstance() interface
 
 	if obj.ThirdPartyHttpOperationLogPublisherResponse != nil {
 		return obj.ThirdPartyHttpOperationLogPublisherResponse
+	}
+
+	if obj.ThirdPartyPolicyDecisionLogPublisherResponse != nil {
+		return obj.ThirdPartyPolicyDecisionLogPublisherResponse
 	}
 
 	// all schemas are nil

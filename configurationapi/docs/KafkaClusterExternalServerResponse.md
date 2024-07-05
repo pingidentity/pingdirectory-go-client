@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the External Server | 
 **BootstrapServer** | **[]string** | List of Kafka brokers to use for this Kafka Cluster External Server, following the host:port format. | 
 **ProducerProperty** | Pointer to **[]string** | Specifies extra properties to use when constructing the KafkaProducer for sending messages. | [optional] 
+**SensitiveProducerProperty** | Pointer to **[]string** | Specifies extra properties to use when constructing the KafkaProducer for sending messages. The sensitive values associated with this property will be obscured. | [optional] 
 **UseSSL** | Pointer to **bool** | If enabled, the Kafka Cluster External Server will use SSL to encrypt communication with the Kafka brokers. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | Specifies the file-based trust manager that should be used with the Kafka Cluster External Server for connecting to the Kafka cluster over SSL. | [optional] 
 **KeyManagerProvider** | Pointer to **string** | Specifies the file-based key manager that should be used with the Kafka Cluster External Server for connecting to the Kafka cluster over SSL. | [optional] 
@@ -168,6 +169,31 @@ SetProducerProperty sets ProducerProperty field to given value.
 `func (o *KafkaClusterExternalServerResponse) HasProducerProperty() bool`
 
 HasProducerProperty returns a boolean if a field has been set.
+
+### GetSensitiveProducerProperty
+
+`func (o *KafkaClusterExternalServerResponse) GetSensitiveProducerProperty() []string`
+
+GetSensitiveProducerProperty returns the SensitiveProducerProperty field if non-nil, zero value otherwise.
+
+### GetSensitiveProducerPropertyOk
+
+`func (o *KafkaClusterExternalServerResponse) GetSensitiveProducerPropertyOk() (*[]string, bool)`
+
+GetSensitiveProducerPropertyOk returns a tuple with the SensitiveProducerProperty field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSensitiveProducerProperty
+
+`func (o *KafkaClusterExternalServerResponse) SetSensitiveProducerProperty(v []string)`
+
+SetSensitiveProducerProperty sets SensitiveProducerProperty field to given value.
+
+### HasSensitiveProducerProperty
+
+`func (o *KafkaClusterExternalServerResponse) HasSensitiveProducerProperty() bool`
+
+HasSensitiveProducerProperty returns a boolean if a field has been set.
 
 ### GetUseSSL
 

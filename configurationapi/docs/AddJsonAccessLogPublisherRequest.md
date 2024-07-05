@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **IncludeRequestDetailsInSearchEntryMessages** | Pointer to **bool** | Indicates whether log messages for search result entries should include information about the associated search request. | [optional] 
 **IncludeRequestDetailsInSearchReferenceMessages** | Pointer to **bool** | Indicates whether log messages for search result references should include information about the associated search request. | [optional] 
 **IncludeRequestDetailsInIntermediateResponseMessages** | Pointer to **bool** | Indicates whether log messages for intermediate responses should include information about the associated operation request. | [optional] 
+**IncludeConnectionDetailsInRequestMessages** | Pointer to **bool** | Indicates whether to log connection details in request messages, including, where applicable, the client IP address and port, the server IP address and port, and the communication protocol. | [optional] 
 **IncludeResultCodeNames** | Pointer to **bool** | Indicates whether result log messages should include human-readable names for result codes in addition to their numeric values. | [optional] 
 **IncludeExtendedSearchRequestDetails** | Pointer to **bool** | Indicates whether log messages for search requests should include extended information from the request, including the requested size limit, time limit, alias dereferencing behavior, and types only behavior. | [optional] 
 **IncludeAddAttributeNames** | Pointer to **bool** | Indicates whether log messages for add requests should include a list of the names of the attributes included in the entry to add. | [optional] 
@@ -848,6 +849,31 @@ SetIncludeRequestDetailsInIntermediateResponseMessages sets IncludeRequestDetail
 `func (o *AddJsonAccessLogPublisherRequest) HasIncludeRequestDetailsInIntermediateResponseMessages() bool`
 
 HasIncludeRequestDetailsInIntermediateResponseMessages returns a boolean if a field has been set.
+
+### GetIncludeConnectionDetailsInRequestMessages
+
+`func (o *AddJsonAccessLogPublisherRequest) GetIncludeConnectionDetailsInRequestMessages() bool`
+
+GetIncludeConnectionDetailsInRequestMessages returns the IncludeConnectionDetailsInRequestMessages field if non-nil, zero value otherwise.
+
+### GetIncludeConnectionDetailsInRequestMessagesOk
+
+`func (o *AddJsonAccessLogPublisherRequest) GetIncludeConnectionDetailsInRequestMessagesOk() (*bool, bool)`
+
+GetIncludeConnectionDetailsInRequestMessagesOk returns a tuple with the IncludeConnectionDetailsInRequestMessages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeConnectionDetailsInRequestMessages
+
+`func (o *AddJsonAccessLogPublisherRequest) SetIncludeConnectionDetailsInRequestMessages(v bool)`
+
+SetIncludeConnectionDetailsInRequestMessages sets IncludeConnectionDetailsInRequestMessages field to given value.
+
+### HasIncludeConnectionDetailsInRequestMessages
+
+`func (o *AddJsonAccessLogPublisherRequest) HasIncludeConnectionDetailsInRequestMessages() bool`
+
+HasIncludeConnectionDetailsInRequestMessages returns a boolean if a field has been set.
 
 ### GetIncludeResultCodeNames
 

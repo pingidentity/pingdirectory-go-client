@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **GlobalACI** | Pointer to **[]string** | Defines global access control rules. | [optional] 
 **AllowedBindControl** | Pointer to [**[]EnumaccessControlHandlerAllowedBindControlProp**](EnumaccessControlHandlerAllowedBindControlProp.md) |  | [optional] 
 **AllowedBindControlOID** | Pointer to **[]string** | Specifies the OIDs of any additional controls (not covered by the allowed-bind-control property) that should be permitted in bind requests. | [optional] 
+**EvaluateTargetAttributeRightsForAddOperations** | Pointer to **bool** | Indicates whether the server should ensure that the requester has the \&quot;add\&quot; right for each attribute included in an add request, and is not denied \&quot;add\&quot; rights for any attributes in the request. Historically, any user who has been granted the \&quot;add\&quot; right has been allowed to create an entry of any type, even for add requests that include attributes for which they do not have the \&quot;add\&quot; right (that is, the \&quot;targetattr\&quot; portion of an access control rule was not considered when evaluating access control rights for add operations). This is still the default behavior in order to preserve backward compatibility, but setting the value of this property to true will cause the server to only permit add operations in which the requester has the \&quot;add\&quot; right for each of the attributes included in the add request, and deny add operations if the requester is denied \&quot;add\&quot; rights for any attributes included in the add request. It is strongly recommended that you thoroughly test your existing access control configuration before enabling this setting in a production environment to identify any cases in which you may need to add or augment access control rules to ensure that authorized users are allowed to add the entries they need to be able to create. | [optional] 
 **Enabled** | **bool** | Indicates whether this Access Control Handler is enabled. If set to FALSE, then no access control is enforced, and any client (including unauthenticated or anonymous clients) could be allowed to perform any operation if not subject to other restrictions, such as those enforced by the privilege subsystem. | 
 
 ## Methods
@@ -175,6 +176,31 @@ SetAllowedBindControlOID sets AllowedBindControlOID field to given value.
 `func (o *DseeCompatAccessControlHandlerResponse) HasAllowedBindControlOID() bool`
 
 HasAllowedBindControlOID returns a boolean if a field has been set.
+
+### GetEvaluateTargetAttributeRightsForAddOperations
+
+`func (o *DseeCompatAccessControlHandlerResponse) GetEvaluateTargetAttributeRightsForAddOperations() bool`
+
+GetEvaluateTargetAttributeRightsForAddOperations returns the EvaluateTargetAttributeRightsForAddOperations field if non-nil, zero value otherwise.
+
+### GetEvaluateTargetAttributeRightsForAddOperationsOk
+
+`func (o *DseeCompatAccessControlHandlerResponse) GetEvaluateTargetAttributeRightsForAddOperationsOk() (*bool, bool)`
+
+GetEvaluateTargetAttributeRightsForAddOperationsOk returns a tuple with the EvaluateTargetAttributeRightsForAddOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEvaluateTargetAttributeRightsForAddOperations
+
+`func (o *DseeCompatAccessControlHandlerResponse) SetEvaluateTargetAttributeRightsForAddOperations(v bool)`
+
+SetEvaluateTargetAttributeRightsForAddOperations sets EvaluateTargetAttributeRightsForAddOperations field to given value.
+
+### HasEvaluateTargetAttributeRightsForAddOperations
+
+`func (o *DseeCompatAccessControlHandlerResponse) HasEvaluateTargetAttributeRightsForAddOperations() bool`
+
+HasEvaluateTargetAttributeRightsForAddOperations returns a boolean if a field has been set.
 
 ### GetEnabled
 

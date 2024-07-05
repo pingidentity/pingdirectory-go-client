@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
 tags:
 - description: Access backends
   name: backend
@@ -1802,6 +1802,10 @@ components:
           $ref: '#/components/schemas/Enumbackend-id2subtreeCacheModeProp'
         dn2uriCacheMode:
           $ref: '#/components/schemas/Enumbackend-dn2uriCacheModeProp'
+        simplePagedResultsIDSetCacheDuration:
+          type: string
+          description: >-
+              Specifies the length of time to cache the candidate ID set used for indexed search operations including the simple paged results control.
         primeMethod:
           type: array
           items:
@@ -1874,6 +1878,10 @@ components:
           $ref: '#/components/schemas/Enumbackend-externalTxnDefaultBackendLockBehaviorProp'
         singleWriterLockBehavior:
           $ref: '#/components/schemas/Enumbackend-singleWriterLockBehaviorProp'
+        subtreeModifyDNSizeLimit:
+          type: integer
+          description: >-
+              Specifies the maximum number of entries that may exist below an entry targeted by a modify DN operation. This includes both direct and indirect subordinates (to any depth), although the entry at the top of the subtree (the one directly targeted by the modify DN operation) is not included in this count.
         subtreeDeleteSizeLimit:
           type: integer
           description: >-
@@ -2283,6 +2291,7 @@ components:
       - "health-check-degraded-to-unavailable"
       - "health-check-unavailable-to-available"
       - "health-check-unavailable-to-degraded"
+      - "high-attribute-index-entry-limit"
       - "http-connection-handler-duplicate-context-path"
       - "http-connection-handler-duplicate-servlet-extension"
       - "index-corrupt"
@@ -2740,6 +2749,10 @@ components:
             $ref: '#/components/schemas/Enumbackend-id2subtreeCacheModeProp'
           dn2uriCacheMode:
             $ref: '#/components/schemas/Enumbackend-dn2uriCacheModeProp'
+          simplePagedResultsIDSetCacheDuration:
+            type: string
+            description: >-
+                Specifies the length of time to cache the candidate ID set used for indexed search operations including the simple paged results control.
           primeMethod:
             type: array
             items:
@@ -2812,6 +2825,10 @@ components:
             $ref: '#/components/schemas/Enumbackend-externalTxnDefaultBackendLockBehaviorProp'
           singleWriterLockBehavior:
             $ref: '#/components/schemas/Enumbackend-singleWriterLockBehaviorProp'
+          subtreeModifyDNSizeLimit:
+            type: integer
+            description: >-
+                Specifies the maximum number of entries that may exist below an entry targeted by a modify DN operation. This includes both direct and indirect subordinates (to any depth), although the entry at the top of the subtree (the one directly targeted by the modify DN operation) is not included in this count.
           subtreeDeleteSizeLimit:
             type: integer
             description: >-

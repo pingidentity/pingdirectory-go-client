@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **Id2childrenCacheMode** | Pointer to [**EnumbackendId2childrenCacheModeProp**](EnumbackendId2childrenCacheModeProp.md) |  | [optional] 
 **Id2subtreeCacheMode** | Pointer to [**EnumbackendId2subtreeCacheModeProp**](EnumbackendId2subtreeCacheModeProp.md) |  | [optional] 
 **Dn2uriCacheMode** | Pointer to [**EnumbackendDn2uriCacheModeProp**](EnumbackendDn2uriCacheModeProp.md) |  | [optional] 
+**SimplePagedResultsIDSetCacheDuration** | Pointer to **string** | Specifies the length of time to cache the candidate ID set used for indexed search operations including the simple paged results control. | [optional] 
 **PrimeMethod** | Pointer to [**[]EnumbackendPrimeMethodProp**](EnumbackendPrimeMethodProp.md) |  | [optional] 
 **PrimeThreadCount** | Pointer to **int64** | Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods. | [optional] 
 **PrimeTimeLimit** | Pointer to **string** | Specifies the maximum length of time that the backend prime should be allowed to run. A duration of zero seconds indicates that there should not be a time limit. | [optional] 
@@ -52,6 +53,7 @@ Name | Type | Description | Notes
 **DeadlockRetryLimit** | Pointer to **int64** | Specifies the number of times that the server should retry an attempted operation in the backend if a deadlock results from two concurrent requests that interfere with each other in a conflicting manner. | [optional] 
 **ExternalTxnDefaultBackendLockBehavior** | Pointer to [**EnumbackendExternalTxnDefaultBackendLockBehaviorProp**](EnumbackendExternalTxnDefaultBackendLockBehaviorProp.md) |  | [optional] 
 **SingleWriterLockBehavior** | Pointer to [**EnumbackendSingleWriterLockBehaviorProp**](EnumbackendSingleWriterLockBehaviorProp.md) |  | [optional] 
+**SubtreeModifyDNSizeLimit** | Pointer to **int64** | Specifies the maximum number of entries that may exist below an entry targeted by a modify DN operation. This includes both direct and indirect subordinates (to any depth), although the entry at the top of the subtree (the one directly targeted by the modify DN operation) is not included in this count. | [optional] 
 **SubtreeDeleteSizeLimit** | Pointer to **int64** | Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control. | [optional] 
 **NumRecentChanges** | Pointer to **int64** | Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput. | [optional] 
 **OfflineProcessDatabaseOpenTimeout** | Pointer to **string** | Specifies a timeout duration which will be used for opening the database environment by an offline process, such as export-ldif. | [optional] 
@@ -775,6 +777,31 @@ SetDn2uriCacheMode sets Dn2uriCacheMode field to given value.
 
 HasDn2uriCacheMode returns a boolean if a field has been set.
 
+### GetSimplePagedResultsIDSetCacheDuration
+
+`func (o *LargeAttributeBackendResponse) GetSimplePagedResultsIDSetCacheDuration() string`
+
+GetSimplePagedResultsIDSetCacheDuration returns the SimplePagedResultsIDSetCacheDuration field if non-nil, zero value otherwise.
+
+### GetSimplePagedResultsIDSetCacheDurationOk
+
+`func (o *LargeAttributeBackendResponse) GetSimplePagedResultsIDSetCacheDurationOk() (*string, bool)`
+
+GetSimplePagedResultsIDSetCacheDurationOk returns a tuple with the SimplePagedResultsIDSetCacheDuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSimplePagedResultsIDSetCacheDuration
+
+`func (o *LargeAttributeBackendResponse) SetSimplePagedResultsIDSetCacheDuration(v string)`
+
+SetSimplePagedResultsIDSetCacheDuration sets SimplePagedResultsIDSetCacheDuration field to given value.
+
+### HasSimplePagedResultsIDSetCacheDuration
+
+`func (o *LargeAttributeBackendResponse) HasSimplePagedResultsIDSetCacheDuration() bool`
+
+HasSimplePagedResultsIDSetCacheDuration returns a boolean if a field has been set.
+
 ### GetPrimeMethod
 
 `func (o *LargeAttributeBackendResponse) GetPrimeMethod() []EnumbackendPrimeMethodProp`
@@ -1244,6 +1271,31 @@ SetSingleWriterLockBehavior sets SingleWriterLockBehavior field to given value.
 `func (o *LargeAttributeBackendResponse) HasSingleWriterLockBehavior() bool`
 
 HasSingleWriterLockBehavior returns a boolean if a field has been set.
+
+### GetSubtreeModifyDNSizeLimit
+
+`func (o *LargeAttributeBackendResponse) GetSubtreeModifyDNSizeLimit() int64`
+
+GetSubtreeModifyDNSizeLimit returns the SubtreeModifyDNSizeLimit field if non-nil, zero value otherwise.
+
+### GetSubtreeModifyDNSizeLimitOk
+
+`func (o *LargeAttributeBackendResponse) GetSubtreeModifyDNSizeLimitOk() (*int64, bool)`
+
+GetSubtreeModifyDNSizeLimitOk returns a tuple with the SubtreeModifyDNSizeLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubtreeModifyDNSizeLimit
+
+`func (o *LargeAttributeBackendResponse) SetSubtreeModifyDNSizeLimit(v int64)`
+
+SetSubtreeModifyDNSizeLimit sets SubtreeModifyDNSizeLimit field to given value.
+
+### HasSubtreeModifyDNSizeLimit
+
+`func (o *LargeAttributeBackendResponse) HasSubtreeModifyDNSizeLimit() bool`
+
+HasSubtreeModifyDNSizeLimit returns a boolean if a field has been set.
 
 ### GetSubtreeDeleteSizeLimit
 

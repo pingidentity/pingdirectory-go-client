@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **AllowedOperation** | Pointer to [**[]EnumextendedOperationHandlerAllowedOperationProp**](EnumextendedOperationHandlerAllowedOperationProp.md) |  | [optional] 
 **ConnectionCriteria** | Pointer to **string** | A set of criteria that client connections must satisfy before they will be allowed to request the associated extended operations. | [optional] 
 **RequestCriteria** | Pointer to **string** | A set of criteria that the extended requests must satisfy before they will be processed by the server. | [optional] 
+**RejectInsecureRequests** | Pointer to **bool** | Indicates whether the server should reject attempts to use this extended operation over an insecure connection. | [optional] 
 **PasswordGenerator** | **string** | The password generator that will be used to create the one-time password values to be delivered to the end user. | 
 **DefaultOTPDeliveryMechanism** | **[]string** | The set of delivery mechanisms that may be used to deliver one-time passwords to users in requests that do not specify one or more preferred delivery mechanisms. | 
 **DefaultSingleUseTokenValidityDuration** | Pointer to **string** | The default length of time that a single-use token will be considered valid by the server if the client doesn&#39;t specify a duration in the deliver single-use token request. | [optional] 
@@ -380,6 +381,31 @@ SetRequestCriteria sets RequestCriteria field to given value.
 `func (o *AddExtendedOperationHandler200Response) HasRequestCriteria() bool`
 
 HasRequestCriteria returns a boolean if a field has been set.
+
+### GetRejectInsecureRequests
+
+`func (o *AddExtendedOperationHandler200Response) GetRejectInsecureRequests() bool`
+
+GetRejectInsecureRequests returns the RejectInsecureRequests field if non-nil, zero value otherwise.
+
+### GetRejectInsecureRequestsOk
+
+`func (o *AddExtendedOperationHandler200Response) GetRejectInsecureRequestsOk() (*bool, bool)`
+
+GetRejectInsecureRequestsOk returns a tuple with the RejectInsecureRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRejectInsecureRequests
+
+`func (o *AddExtendedOperationHandler200Response) SetRejectInsecureRequests(v bool)`
+
+SetRejectInsecureRequests sets RejectInsecureRequests field to given value.
+
+### HasRejectInsecureRequests
+
+`func (o *AddExtendedOperationHandler200Response) HasRejectInsecureRequests() bool`
+
+HasRejectInsecureRequests returns a boolean if a field has been set.
 
 ### GetPasswordGenerator
 

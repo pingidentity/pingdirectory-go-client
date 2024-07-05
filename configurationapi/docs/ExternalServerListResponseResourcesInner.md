@@ -70,6 +70,7 @@ Name | Type | Description | Notes
 **BasicAuthenticationPassphraseProvider** | Pointer to **string** | A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server. | [optional] 
 **BootstrapServer** | **[]string** | List of Kafka brokers to use for this Kafka Cluster External Server, following the host:port format. | 
 **ProducerProperty** | Pointer to **[]string** | Specifies extra properties to use when constructing the KafkaProducer for sending messages. | [optional] 
+**SensitiveProducerProperty** | Pointer to **[]string** | Specifies extra properties to use when constructing the KafkaProducer for sending messages. The sensitive values associated with this property will be obscured. | [optional] 
 **BaseDN** | **[]string** | Specifies the base DN stored in this mock resource. | 
 **ConjurServerBaseURI** | **[]string** | The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://conjur.example.com:8443/\&quot;. | 
 **ConjurAuthenticationMethod** | **string** | The mechanism used to authenticate to the Conjur server. | 
@@ -1628,6 +1629,31 @@ SetProducerProperty sets ProducerProperty field to given value.
 `func (o *ExternalServerListResponseResourcesInner) HasProducerProperty() bool`
 
 HasProducerProperty returns a boolean if a field has been set.
+
+### GetSensitiveProducerProperty
+
+`func (o *ExternalServerListResponseResourcesInner) GetSensitiveProducerProperty() []string`
+
+GetSensitiveProducerProperty returns the SensitiveProducerProperty field if non-nil, zero value otherwise.
+
+### GetSensitiveProducerPropertyOk
+
+`func (o *ExternalServerListResponseResourcesInner) GetSensitiveProducerPropertyOk() (*[]string, bool)`
+
+GetSensitiveProducerPropertyOk returns a tuple with the SensitiveProducerProperty field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSensitiveProducerProperty
+
+`func (o *ExternalServerListResponseResourcesInner) SetSensitiveProducerProperty(v []string)`
+
+SetSensitiveProducerProperty sets SensitiveProducerProperty field to given value.
+
+### HasSensitiveProducerProperty
+
+`func (o *ExternalServerListResponseResourcesInner) HasSensitiveProducerProperty() bool`
+
+HasSensitiveProducerProperty returns a boolean if a field has been set.
 
 ### GetBaseDN
 

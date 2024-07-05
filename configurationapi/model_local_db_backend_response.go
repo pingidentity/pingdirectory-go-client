@@ -70,7 +70,9 @@ type LocalDbBackendResponse struct {
 	Id2childrenCacheMode *EnumbackendId2childrenCacheModeProp `json:"id2childrenCacheMode,omitempty"`
 	Id2subtreeCacheMode  *EnumbackendId2subtreeCacheModeProp  `json:"id2subtreeCacheMode,omitempty"`
 	Dn2uriCacheMode      *EnumbackendDn2uriCacheModeProp      `json:"dn2uriCacheMode,omitempty"`
-	PrimeMethod          []EnumbackendPrimeMethodProp         `json:"primeMethod,omitempty"`
+	// Specifies the length of time to cache the candidate ID set used for indexed search operations including the simple paged results control.
+	SimplePagedResultsIDSetCacheDuration *string                      `json:"simplePagedResultsIDSetCacheDuration,omitempty"`
+	PrimeMethod                          []EnumbackendPrimeMethodProp `json:"primeMethod,omitempty"`
 	// Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods.
 	PrimeThreadCount *int64 `json:"primeThreadCount,omitempty"`
 	// Specifies the maximum length of time that the backend prime should be allowed to run. A duration of zero seconds indicates that there should not be a time limit.
@@ -103,6 +105,8 @@ type LocalDbBackendResponse struct {
 	DeadlockRetryLimit                    *int64                                                `json:"deadlockRetryLimit,omitempty"`
 	ExternalTxnDefaultBackendLockBehavior *EnumbackendExternalTxnDefaultBackendLockBehaviorProp `json:"externalTxnDefaultBackendLockBehavior,omitempty"`
 	SingleWriterLockBehavior              *EnumbackendSingleWriterLockBehaviorProp              `json:"singleWriterLockBehavior,omitempty"`
+	// Specifies the maximum number of entries that may exist below an entry targeted by a modify DN operation. This includes both direct and indirect subordinates (to any depth), although the entry at the top of the subtree (the one directly targeted by the modify DN operation) is not included in this count.
+	SubtreeModifyDNSizeLimit *int64 `json:"subtreeModifyDNSizeLimit,omitempty"`
 	// Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control.
 	SubtreeDeleteSizeLimit *int64 `json:"subtreeDeleteSizeLimit,omitempty"`
 	// Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput.
@@ -1090,6 +1094,38 @@ func (o *LocalDbBackendResponse) SetDn2uriCacheMode(v EnumbackendDn2uriCacheMode
 	o.Dn2uriCacheMode = &v
 }
 
+// GetSimplePagedResultsIDSetCacheDuration returns the SimplePagedResultsIDSetCacheDuration field value if set, zero value otherwise.
+func (o *LocalDbBackendResponse) GetSimplePagedResultsIDSetCacheDuration() string {
+	if o == nil || IsNil(o.SimplePagedResultsIDSetCacheDuration) {
+		var ret string
+		return ret
+	}
+	return *o.SimplePagedResultsIDSetCacheDuration
+}
+
+// GetSimplePagedResultsIDSetCacheDurationOk returns a tuple with the SimplePagedResultsIDSetCacheDuration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LocalDbBackendResponse) GetSimplePagedResultsIDSetCacheDurationOk() (*string, bool) {
+	if o == nil || IsNil(o.SimplePagedResultsIDSetCacheDuration) {
+		return nil, false
+	}
+	return o.SimplePagedResultsIDSetCacheDuration, true
+}
+
+// HasSimplePagedResultsIDSetCacheDuration returns a boolean if a field has been set.
+func (o *LocalDbBackendResponse) HasSimplePagedResultsIDSetCacheDuration() bool {
+	if o != nil && !IsNil(o.SimplePagedResultsIDSetCacheDuration) {
+		return true
+	}
+
+	return false
+}
+
+// SetSimplePagedResultsIDSetCacheDuration gets a reference to the given string and assigns it to the SimplePagedResultsIDSetCacheDuration field.
+func (o *LocalDbBackendResponse) SetSimplePagedResultsIDSetCacheDuration(v string) {
+	o.SimplePagedResultsIDSetCacheDuration = &v
+}
+
 // GetPrimeMethod returns the PrimeMethod field value if set, zero value otherwise.
 func (o *LocalDbBackendResponse) GetPrimeMethod() []EnumbackendPrimeMethodProp {
 	if o == nil || IsNil(o.PrimeMethod) {
@@ -1690,6 +1726,38 @@ func (o *LocalDbBackendResponse) SetSingleWriterLockBehavior(v EnumbackendSingle
 	o.SingleWriterLockBehavior = &v
 }
 
+// GetSubtreeModifyDNSizeLimit returns the SubtreeModifyDNSizeLimit field value if set, zero value otherwise.
+func (o *LocalDbBackendResponse) GetSubtreeModifyDNSizeLimit() int64 {
+	if o == nil || IsNil(o.SubtreeModifyDNSizeLimit) {
+		var ret int64
+		return ret
+	}
+	return *o.SubtreeModifyDNSizeLimit
+}
+
+// GetSubtreeModifyDNSizeLimitOk returns a tuple with the SubtreeModifyDNSizeLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LocalDbBackendResponse) GetSubtreeModifyDNSizeLimitOk() (*int64, bool) {
+	if o == nil || IsNil(o.SubtreeModifyDNSizeLimit) {
+		return nil, false
+	}
+	return o.SubtreeModifyDNSizeLimit, true
+}
+
+// HasSubtreeModifyDNSizeLimit returns a boolean if a field has been set.
+func (o *LocalDbBackendResponse) HasSubtreeModifyDNSizeLimit() bool {
+	if o != nil && !IsNil(o.SubtreeModifyDNSizeLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubtreeModifyDNSizeLimit gets a reference to the given int64 and assigns it to the SubtreeModifyDNSizeLimit field.
+func (o *LocalDbBackendResponse) SetSubtreeModifyDNSizeLimit(v int64) {
+	o.SubtreeModifyDNSizeLimit = &v
+}
+
 // GetSubtreeDeleteSizeLimit returns the SubtreeDeleteSizeLimit field value if set, zero value otherwise.
 func (o *LocalDbBackendResponse) GetSubtreeDeleteSizeLimit() int64 {
 	if o == nil || IsNil(o.SubtreeDeleteSizeLimit) {
@@ -2168,6 +2236,9 @@ func (o LocalDbBackendResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Dn2uriCacheMode) {
 		toSerialize["dn2uriCacheMode"] = o.Dn2uriCacheMode
 	}
+	if !IsNil(o.SimplePagedResultsIDSetCacheDuration) {
+		toSerialize["simplePagedResultsIDSetCacheDuration"] = o.SimplePagedResultsIDSetCacheDuration
+	}
 	if !IsNil(o.PrimeMethod) {
 		toSerialize["primeMethod"] = o.PrimeMethod
 	}
@@ -2222,6 +2293,9 @@ func (o LocalDbBackendResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SingleWriterLockBehavior) {
 		toSerialize["singleWriterLockBehavior"] = o.SingleWriterLockBehavior
+	}
+	if !IsNil(o.SubtreeModifyDNSizeLimit) {
+		toSerialize["subtreeModifyDNSizeLimit"] = o.SubtreeModifyDNSizeLimit
 	}
 	if !IsNil(o.SubtreeDeleteSizeLimit) {
 		toSerialize["subtreeDeleteSizeLimit"] = o.SubtreeDeleteSizeLimit

@@ -60,6 +60,7 @@ const (
 	ENUMROOTDNDEFAULTROOTPRIVILEGENAMEPROP_COLLECT_SUPPORT_DATA                       EnumrootDnDefaultRootPrivilegeNameProp = "collect-support-data"
 	ENUMROOTDNDEFAULTROOTPRIVILEGENAMEPROP_FILE_SERVLET_ACCESS                        EnumrootDnDefaultRootPrivilegeNameProp = "file-servlet-access"
 	ENUMROOTDNDEFAULTROOTPRIVILEGENAMEPROP_PERMIT_REPLACE_CERTIFICATE_REQUEST         EnumrootDnDefaultRootPrivilegeNameProp = "permit-replace-certificate-request"
+	ENUMROOTDNDEFAULTROOTPRIVILEGENAMEPROP_PERMIT_VERIFY_PASSWORD_REQUEST             EnumrootDnDefaultRootPrivilegeNameProp = "permit-verify-password-request"
 )
 
 // All allowed values of EnumrootDnDefaultRootPrivilegeNameProp enum
@@ -104,6 +105,7 @@ var AllowedEnumrootDnDefaultRootPrivilegeNamePropEnumValues = []EnumrootDnDefaul
 	"collect-support-data",
 	"file-servlet-access",
 	"permit-replace-certificate-request",
+	"permit-verify-password-request",
 }
 
 func (v *EnumrootDnDefaultRootPrivilegeNameProp) UnmarshalJSON(src []byte) error {

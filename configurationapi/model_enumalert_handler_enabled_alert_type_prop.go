@@ -91,6 +91,7 @@ const (
 	ENUMALERTHANDLERENABLEDALERTTYPEPROP_HEALTH_CHECK_DEGRADED_TO_UNAVAILABLE                        EnumalertHandlerEnabledAlertTypeProp = "health-check-degraded-to-unavailable"
 	ENUMALERTHANDLERENABLEDALERTTYPEPROP_HEALTH_CHECK_UNAVAILABLE_TO_AVAILABLE                       EnumalertHandlerEnabledAlertTypeProp = "health-check-unavailable-to-available"
 	ENUMALERTHANDLERENABLEDALERTTYPEPROP_HEALTH_CHECK_UNAVAILABLE_TO_DEGRADED                        EnumalertHandlerEnabledAlertTypeProp = "health-check-unavailable-to-degraded"
+	ENUMALERTHANDLERENABLEDALERTTYPEPROP_HIGH_ATTRIBUTE_INDEX_ENTRY_LIMIT                            EnumalertHandlerEnabledAlertTypeProp = "high-attribute-index-entry-limit"
 	ENUMALERTHANDLERENABLEDALERTTYPEPROP_HTTP_CONNECTION_HANDLER_DUPLICATE_CONTEXT_PATH              EnumalertHandlerEnabledAlertTypeProp = "http-connection-handler-duplicate-context-path"
 	ENUMALERTHANDLERENABLEDALERTTYPEPROP_HTTP_CONNECTION_HANDLER_DUPLICATE_SERVLET_EXTENSION         EnumalertHandlerEnabledAlertTypeProp = "http-connection-handler-duplicate-servlet-extension"
 	ENUMALERTHANDLERENABLEDALERTTYPEPROP_INDEX_CORRUPT                                               EnumalertHandlerEnabledAlertTypeProp = "index-corrupt"
@@ -291,6 +292,7 @@ var AllowedEnumalertHandlerEnabledAlertTypePropEnumValues = []EnumalertHandlerEn
 	"health-check-degraded-to-unavailable",
 	"health-check-unavailable-to-available",
 	"health-check-unavailable-to-degraded",
+	"high-attribute-index-entry-limit",
 	"http-connection-handler-duplicate-context-path",
 	"http-connection-handler-duplicate-servlet-extension",
 	"index-corrupt",

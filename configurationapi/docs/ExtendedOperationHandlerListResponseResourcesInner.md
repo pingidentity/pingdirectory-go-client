@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Proxied Extended Operation Handler. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Proxied Extended Operation Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **RouteToBackendSetBehavior** | Pointer to [**EnumextendedOperationHandlerRouteToBackendSetBehaviorProp**](EnumextendedOperationHandlerRouteToBackendSetBehaviorProp.md) |  | [optional] 
+**RejectInsecureRequests** | Pointer to **bool** | Indicates whether the server should reject attempts to use this extended operation over an insecure connection. | [optional] 
 **DefaultPasswordPolicy** | Pointer to **string** | The default password policy that should be used when generating and validating passwords if the request does not specify an alternate policy. If this is not provided, then this Generate Password Extended Operation Handler will use the default password policy defined in the global configuration. | [optional] 
 **DefaultPasswordGenerator** | **string** | The default password generator that will be used if the selected password policy is not configured with a password generator. | 
 **MaximumPasswordsPerRequest** | Pointer to **int64** | The maximum number of passwords that may be generated and returned to the client for a single request. | [optional] 
@@ -665,6 +666,31 @@ SetRouteToBackendSetBehavior sets RouteToBackendSetBehavior field to given value
 `func (o *ExtendedOperationHandlerListResponseResourcesInner) HasRouteToBackendSetBehavior() bool`
 
 HasRouteToBackendSetBehavior returns a boolean if a field has been set.
+
+### GetRejectInsecureRequests
+
+`func (o *ExtendedOperationHandlerListResponseResourcesInner) GetRejectInsecureRequests() bool`
+
+GetRejectInsecureRequests returns the RejectInsecureRequests field if non-nil, zero value otherwise.
+
+### GetRejectInsecureRequestsOk
+
+`func (o *ExtendedOperationHandlerListResponseResourcesInner) GetRejectInsecureRequestsOk() (*bool, bool)`
+
+GetRejectInsecureRequestsOk returns a tuple with the RejectInsecureRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRejectInsecureRequests
+
+`func (o *ExtendedOperationHandlerListResponseResourcesInner) SetRejectInsecureRequests(v bool)`
+
+SetRejectInsecureRequests sets RejectInsecureRequests field to given value.
+
+### HasRejectInsecureRequests
+
+`func (o *ExtendedOperationHandlerListResponseResourcesInner) HasRejectInsecureRequests() bool`
+
+HasRejectInsecureRequests returns a boolean if a field has been set.
 
 ### GetDefaultPasswordPolicy
 

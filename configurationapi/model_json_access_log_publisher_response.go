@@ -79,6 +79,8 @@ type JsonAccessLogPublisherResponse struct {
 	IncludeRequestDetailsInSearchReferenceMessages *bool `json:"includeRequestDetailsInSearchReferenceMessages,omitempty"`
 	// Indicates whether log messages for intermediate responses should include information about the associated operation request.
 	IncludeRequestDetailsInIntermediateResponseMessages *bool `json:"includeRequestDetailsInIntermediateResponseMessages,omitempty"`
+	// Indicates whether to log connection details in request messages, including, where applicable, the client IP address and port, the server IP address and port, and the communication protocol.
+	IncludeConnectionDetailsInRequestMessages *bool `json:"includeConnectionDetailsInRequestMessages,omitempty"`
 	// Indicates whether result log messages should include human-readable names for result codes in addition to their numeric values.
 	IncludeResultCodeNames *bool `json:"includeResultCodeNames,omitempty"`
 	// Indicates whether log messages for search requests should include extended information from the request, including the requested size limit, time limit, alias dereferencing behavior, and types only behavior.
@@ -1107,6 +1109,38 @@ func (o *JsonAccessLogPublisherResponse) HasIncludeRequestDetailsInIntermediateR
 // SetIncludeRequestDetailsInIntermediateResponseMessages gets a reference to the given bool and assigns it to the IncludeRequestDetailsInIntermediateResponseMessages field.
 func (o *JsonAccessLogPublisherResponse) SetIncludeRequestDetailsInIntermediateResponseMessages(v bool) {
 	o.IncludeRequestDetailsInIntermediateResponseMessages = &v
+}
+
+// GetIncludeConnectionDetailsInRequestMessages returns the IncludeConnectionDetailsInRequestMessages field value if set, zero value otherwise.
+func (o *JsonAccessLogPublisherResponse) GetIncludeConnectionDetailsInRequestMessages() bool {
+	if o == nil || IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeConnectionDetailsInRequestMessages
+}
+
+// GetIncludeConnectionDetailsInRequestMessagesOk returns a tuple with the IncludeConnectionDetailsInRequestMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JsonAccessLogPublisherResponse) GetIncludeConnectionDetailsInRequestMessagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		return nil, false
+	}
+	return o.IncludeConnectionDetailsInRequestMessages, true
+}
+
+// HasIncludeConnectionDetailsInRequestMessages returns a boolean if a field has been set.
+func (o *JsonAccessLogPublisherResponse) HasIncludeConnectionDetailsInRequestMessages() bool {
+	if o != nil && !IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeConnectionDetailsInRequestMessages gets a reference to the given bool and assigns it to the IncludeConnectionDetailsInRequestMessages field.
+func (o *JsonAccessLogPublisherResponse) SetIncludeConnectionDetailsInRequestMessages(v bool) {
+	o.IncludeConnectionDetailsInRequestMessages = &v
 }
 
 // GetIncludeResultCodeNames returns the IncludeResultCodeNames field value if set, zero value otherwise.
@@ -2175,6 +2209,9 @@ func (o JsonAccessLogPublisherResponse) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.IncludeRequestDetailsInIntermediateResponseMessages) {
 		toSerialize["includeRequestDetailsInIntermediateResponseMessages"] = o.IncludeRequestDetailsInIntermediateResponseMessages
+	}
+	if !IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		toSerialize["includeConnectionDetailsInRequestMessages"] = o.IncludeConnectionDetailsInRequestMessages
 	}
 	if !IsNil(o.IncludeResultCodeNames) {
 		toSerialize["includeResultCodeNames"] = o.IncludeResultCodeNames

@@ -4622,6 +4622,26 @@ func StringPointerEnumerrorLogFieldMappingSchemaUrn(value *EnumerrorLogFieldMapp
 	return &s
 }
 
+func (e EnumerrorLogPublisherMessageExclusionPolicySchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumerrorLogPublisherMessageExclusionPolicySchemaUrn(values []EnumerrorLogPublisherMessageExclusionPolicySchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumerrorLogPublisherMessageExclusionPolicySchemaUrn(value *EnumerrorLogPublisherMessageExclusionPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumexactMatchIdentityMapperSchemaUrn) String() string {
 	return string(e)
 }
@@ -9875,6 +9895,46 @@ func StringSliceEnumlogPublisherLoggingErrorBehaviorProp(values []EnumlogPublish
 }
 
 func StringPointerEnumlogPublisherLoggingErrorBehaviorProp(value *EnumlogPublisherLoggingErrorBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogPublisherMessageExclusionPolicyLogMessageCategoryProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogPublisherMessageExclusionPolicyLogMessageCategoryProp(values []EnumlogPublisherMessageExclusionPolicyLogMessageCategoryProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogPublisherMessageExclusionPolicyLogMessageCategoryProp(value *EnumlogPublisherMessageExclusionPolicyLogMessageCategoryProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogPublisherMessageExclusionPolicyLogMessageSeverityProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogPublisherMessageExclusionPolicyLogMessageSeverityProp(values []EnumlogPublisherMessageExclusionPolicyLogMessageSeverityProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogPublisherMessageExclusionPolicyLogMessageSeverityProp(value *EnumlogPublisherMessageExclusionPolicyLogMessageSeverityProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -16922,6 +16982,26 @@ func StringPointerEnumthirdPartyPluginSchemaUrn(value *EnumthirdPartyPluginSchem
 	return &s
 }
 
+func (e EnumthirdPartyPolicyDecisionLogPublisherSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumthirdPartyPolicyDecisionLogPublisherSchemaUrn(values []EnumthirdPartyPolicyDecisionLogPublisherSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumthirdPartyPolicyDecisionLogPublisherSchemaUrn(value *EnumthirdPartyPolicyDecisionLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyPostLdifExportTaskProcessorSchemaUrn) String() string {
 	return string(e)
 }
@@ -17975,6 +18055,26 @@ func StringSliceEnumvelocityToolsVelocityContextProviderSchemaUrn(values []Enumv
 }
 
 func StringPointerEnumvelocityToolsVelocityContextProviderSchemaUrn(value *EnumvelocityToolsVelocityContextProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumverifyPasswordExtendedOperationHandlerSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumverifyPasswordExtendedOperationHandlerSchemaUrn(values []EnumverifyPasswordExtendedOperationHandlerSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumverifyPasswordExtendedOperationHandlerSchemaUrn(value *EnumverifyPasswordExtendedOperationHandlerSchemaUrn) *string {
 	if value == nil {
 		return nil
 	}

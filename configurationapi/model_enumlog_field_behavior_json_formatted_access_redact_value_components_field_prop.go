@@ -103,14 +103,17 @@ const (
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_ENTRY_REBALANCING_TARGET_SERVER_PORT                                       EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "entry-rebalancing-target-server-port"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_BACKEND_ID                                     EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-backend-id"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENCRYPTION_SETTINGS_DEFINITION_ID              EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-encryption-settings-definition-id"
+	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_NOT_MATCHING_BASE_DN          EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-entries-excluded-not-matching-base-dn"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_NOT_MATCHING_FILTER           EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-entries-excluded-not-matching-filter"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_WITHOUT_PASSWORDS             EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-entries-excluded-without-passwords"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITH_NON_REVERSIBLE_PASSWORDS EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-entries-exported-with-non-reversible-passwords"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITH_REVERSIBLE_PASSWORDS     EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-entries-exported-with-reversible-passwords"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITHOUT_PASSWORDS             EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-entries-exported-without-passwords"
+	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_EXCLUDE_BASE_DN                                EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-exclude-base-dn"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_EXPORT_NON_REVERSIBLE_PASSWORDS                EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-export-non-reversible-passwords"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_EXPORT_ONLY_ENTRIES_WITH_PASSWORDS             EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-export-only-entries-with-passwords"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_FILTER                                         EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-filter"
+	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_INCLUDE_BASE_DN                                EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-include-base-dn"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_INCLUDE_VIRTUAL_ATTRIBUTES                     EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-include-virtual-attributes"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_OUTPUT_FILE                                    EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-output-file"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_TOTAL_ENTRIES_EXAMINED                         EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "export-reversible-passwords-total-entries-examined"
@@ -306,6 +309,7 @@ const (
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_SINGLE_USE_TOKEN_UNSUCCESSFUL_DELIVERY_MECHANISMS                          EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "single-use-token-unsuccessful-delivery-mechanisms"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_SINGLE_USE_TOKEN_USER_DN                                                   EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "single-use-token-user-dn"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_STARTUP_ID                                                                 EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "startup-id"
+	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_STREAMED_ENTRIES_FROM_INDEX                                                EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "streamed-entries-from-index"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_TARGET_HOST                                                                EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "target-host"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_TARGET_PORT                                                                EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "target-port"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_TARGET_PROTOCOL                                                            EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "target-protocol"
@@ -317,8 +321,10 @@ const (
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_TRIGGERED_BY_OPERATION_ID                                                  EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "triggered-by-operation-id"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_UNCACHED_DATA_ACCESSED                                                     EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "uncached-data-accessed"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_UNIQUENESS_REQUEST_CONTROL                                                 EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "uniqueness-request-control"
+	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_USED_CACHED_PAGED_RESULTS_ID_SET                                           EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "used-cached-paged-results-id-set"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_USED_PRIVILEGES                                                            EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "used-privileges"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_USING_ADMIN_SESSION_WORKER_THREAD                                          EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "using-admin-session-worker-thread"
+	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_VERIFY_PASSWORD_REQUEST_USER_DN                                            EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "verify-password-request-user-dn"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_WORK_QUEUE_WAIT_TIME_MILLIS                                                EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "work-queue-wait-time-millis"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_YUBIKEY_OTP_BIND_AUTHENTICATION_ID                                         EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "yubikey-otp-bind-authentication-id"
 	ENUMLOGFIELDBEHAVIORJSONFORMATTEDACCESSREDACTVALUECOMPONENTSFIELDPROP_YUBIKEY_OTP_BIND_AUTHORIZATION_ID                                          EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp = "yubikey-otp-bind-authorization-id"
@@ -412,14 +418,17 @@ var AllowedEnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp
 	"entry-rebalancing-target-server-port",
 	"export-reversible-passwords-backend-id",
 	"export-reversible-passwords-encryption-settings-definition-id",
+	"export-reversible-passwords-entries-excluded-not-matching-base-dn",
 	"export-reversible-passwords-entries-excluded-not-matching-filter",
 	"export-reversible-passwords-entries-excluded-without-passwords",
 	"export-reversible-passwords-entries-exported-with-non-reversible-passwords",
 	"export-reversible-passwords-entries-exported-with-reversible-passwords",
 	"export-reversible-passwords-entries-exported-without-passwords",
+	"export-reversible-passwords-exclude-base-dn",
 	"export-reversible-passwords-export-non-reversible-passwords",
 	"export-reversible-passwords-export-only-entries-with-passwords",
 	"export-reversible-passwords-filter",
+	"export-reversible-passwords-include-base-dn",
 	"export-reversible-passwords-include-virtual-attributes",
 	"export-reversible-passwords-output-file",
 	"export-reversible-passwords-total-entries-examined",
@@ -615,6 +624,7 @@ var AllowedEnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp
 	"single-use-token-unsuccessful-delivery-mechanisms",
 	"single-use-token-user-dn",
 	"startup-id",
+	"streamed-entries-from-index",
 	"target-host",
 	"target-port",
 	"target-protocol",
@@ -626,8 +636,10 @@ var AllowedEnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp
 	"triggered-by-operation-id",
 	"uncached-data-accessed",
 	"uniqueness-request-control",
+	"used-cached-paged-results-id-set",
 	"used-privileges",
 	"using-admin-session-worker-thread",
+	"verify-password-request-user-dn",
 	"work-queue-wait-time-millis",
 	"yubikey-otp-bind-authentication-id",
 	"yubikey-otp-bind-authorization-id",

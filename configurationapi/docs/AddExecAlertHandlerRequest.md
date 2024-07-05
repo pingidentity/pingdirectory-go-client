@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumexecAlertHandlerSchemaUrn**](EnumexecAlertHandlerSchemaUrn.md) |  | 
 **Command** | **string** | Specifies the path of the command to execute, without any arguments. It must be an absolute path for reasons of security and reliability. | 
+**CommandTimeout** | Pointer to **string** | The maximum length of time this server will wait for the executed command to finish executing before forcibly terminating it. | [optional] 
 **Asynchronous** | Pointer to **bool** | Indicates whether the server should attempt to invoke this Exec Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated. | [optional] 
 **Description** | Pointer to **string** | A description for this Alert Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Alert Handler is enabled. | 
@@ -72,6 +73,31 @@ and a boolean to check if the value has been set.
 
 SetCommand sets Command field to given value.
 
+
+### GetCommandTimeout
+
+`func (o *AddExecAlertHandlerRequest) GetCommandTimeout() string`
+
+GetCommandTimeout returns the CommandTimeout field if non-nil, zero value otherwise.
+
+### GetCommandTimeoutOk
+
+`func (o *AddExecAlertHandlerRequest) GetCommandTimeoutOk() (*string, bool)`
+
+GetCommandTimeoutOk returns a tuple with the CommandTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCommandTimeout
+
+`func (o *AddExecAlertHandlerRequest) SetCommandTimeout(v string)`
+
+SetCommandTimeout sets CommandTimeout field to given value.
+
+### HasCommandTimeout
+
+`func (o *AddExecAlertHandlerRequest) HasCommandTimeout() bool`
+
+HasCommandTimeout returns a boolean if a field has been set.
 
 ### GetAsynchronous
 

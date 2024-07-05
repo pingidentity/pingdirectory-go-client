@@ -149,6 +149,8 @@
 
 * `EXPORT_REVERSIBLE_PASSWORDS_ENCRYPTION_SETTINGS_DEFINITION_ID` (value: `"export-reversible-passwords-encryption-settings-definition-id"`)
 
+* `EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_NOT_MATCHING_BASE_DN` (value: `"export-reversible-passwords-entries-excluded-not-matching-base-dn"`)
+
 * `EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_NOT_MATCHING_FILTER` (value: `"export-reversible-passwords-entries-excluded-not-matching-filter"`)
 
 * `EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_WITHOUT_PASSWORDS` (value: `"export-reversible-passwords-entries-excluded-without-passwords"`)
@@ -159,11 +161,15 @@
 
 * `EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITHOUT_PASSWORDS` (value: `"export-reversible-passwords-entries-exported-without-passwords"`)
 
+* `EXPORT_REVERSIBLE_PASSWORDS_EXCLUDE_BASE_DN` (value: `"export-reversible-passwords-exclude-base-dn"`)
+
 * `EXPORT_REVERSIBLE_PASSWORDS_EXPORT_NON_REVERSIBLE_PASSWORDS` (value: `"export-reversible-passwords-export-non-reversible-passwords"`)
 
 * `EXPORT_REVERSIBLE_PASSWORDS_EXPORT_ONLY_ENTRIES_WITH_PASSWORDS` (value: `"export-reversible-passwords-export-only-entries-with-passwords"`)
 
 * `EXPORT_REVERSIBLE_PASSWORDS_FILTER` (value: `"export-reversible-passwords-filter"`)
+
+* `EXPORT_REVERSIBLE_PASSWORDS_INCLUDE_BASE_DN` (value: `"export-reversible-passwords-include-base-dn"`)
 
 * `EXPORT_REVERSIBLE_PASSWORDS_INCLUDE_VIRTUAL_ATTRIBUTES` (value: `"export-reversible-passwords-include-virtual-attributes"`)
 
@@ -477,6 +483,8 @@
 
 * `STARTUP_ID` (value: `"startup-id"`)
 
+* `STREAMED_ENTRIES_FROM_INDEX` (value: `"streamed-entries-from-index"`)
+
 * `TARGET_HOST` (value: `"target-host"`)
 
 * `TARGET_PORT` (value: `"target-port"`)
@@ -497,9 +505,13 @@
 
 * `UNIQUENESS_REQUEST_CONTROL` (value: `"uniqueness-request-control"`)
 
+* `USED_CACHED_PAGED_RESULTS_ID_SET` (value: `"used-cached-paged-results-id-set"`)
+
 * `USED_PRIVILEGES` (value: `"used-privileges"`)
 
 * `USING_ADMIN_SESSION_WORKER_THREAD` (value: `"using-admin-session-worker-thread"`)
+
+* `VERIFY_PASSWORD_REQUEST_USER_DN` (value: `"verify-password-request-user-dn"`)
 
 * `WORK_QUEUE_WAIT_TIME_MILLIS` (value: `"work-queue-wait-time-millis"`)
 

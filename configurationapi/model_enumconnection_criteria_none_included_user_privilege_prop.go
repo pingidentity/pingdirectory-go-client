@@ -60,6 +60,7 @@ const (
 	ENUMCONNECTIONCRITERIANONEINCLUDEDUSERPRIVILEGEPROP_COLLECT_SUPPORT_DATA                       EnumconnectionCriteriaNoneIncludedUserPrivilegeProp = "collect-support-data"
 	ENUMCONNECTIONCRITERIANONEINCLUDEDUSERPRIVILEGEPROP_FILE_SERVLET_ACCESS                        EnumconnectionCriteriaNoneIncludedUserPrivilegeProp = "file-servlet-access"
 	ENUMCONNECTIONCRITERIANONEINCLUDEDUSERPRIVILEGEPROP_PERMIT_REPLACE_CERTIFICATE_REQUEST         EnumconnectionCriteriaNoneIncludedUserPrivilegeProp = "permit-replace-certificate-request"
+	ENUMCONNECTIONCRITERIANONEINCLUDEDUSERPRIVILEGEPROP_PERMIT_VERIFY_PASSWORD_REQUEST             EnumconnectionCriteriaNoneIncludedUserPrivilegeProp = "permit-verify-password-request"
 )
 
 // All allowed values of EnumconnectionCriteriaNoneIncludedUserPrivilegeProp enum
@@ -104,6 +105,7 @@ var AllowedEnumconnectionCriteriaNoneIncludedUserPrivilegePropEnumValues = []Enu
 	"collect-support-data",
 	"file-servlet-access",
 	"permit-replace-certificate-request",
+	"permit-verify-password-request",
 }
 
 func (v *EnumconnectionCriteriaNoneIncludedUserPrivilegeProp) UnmarshalJSON(src []byte) error {

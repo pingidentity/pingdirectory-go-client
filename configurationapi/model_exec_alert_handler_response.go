@@ -22,6 +22,8 @@ type ExecAlertHandlerResponse struct {
 	Schemas []EnumexecAlertHandlerSchemaUrn `json:"schemas"`
 	// Specifies the path of the command to execute, without any arguments. It must be an absolute path for reasons of security and reliability.
 	Command string `json:"command"`
+	// The maximum length of time this server will wait for the executed command to finish executing before forcibly terminating it.
+	CommandTimeout *string `json:"commandTimeout,omitempty"`
 	// Indicates whether the server should attempt to invoke this Exec Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
 	// A description for this Alert Handler
@@ -104,6 +106,38 @@ func (o *ExecAlertHandlerResponse) GetCommandOk() (*string, bool) {
 // SetCommand sets field value
 func (o *ExecAlertHandlerResponse) SetCommand(v string) {
 	o.Command = v
+}
+
+// GetCommandTimeout returns the CommandTimeout field value if set, zero value otherwise.
+func (o *ExecAlertHandlerResponse) GetCommandTimeout() string {
+	if o == nil || IsNil(o.CommandTimeout) {
+		var ret string
+		return ret
+	}
+	return *o.CommandTimeout
+}
+
+// GetCommandTimeoutOk returns a tuple with the CommandTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExecAlertHandlerResponse) GetCommandTimeoutOk() (*string, bool) {
+	if o == nil || IsNil(o.CommandTimeout) {
+		return nil, false
+	}
+	return o.CommandTimeout, true
+}
+
+// HasCommandTimeout returns a boolean if a field has been set.
+func (o *ExecAlertHandlerResponse) HasCommandTimeout() bool {
+	if o != nil && !IsNil(o.CommandTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetCommandTimeout gets a reference to the given string and assigns it to the CommandTimeout field.
+func (o *ExecAlertHandlerResponse) SetCommandTimeout(v string) {
+	o.CommandTimeout = &v
 }
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
@@ -390,6 +424,9 @@ func (o ExecAlertHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["command"] = o.Command
+	if !IsNil(o.CommandTimeout) {
+		toSerialize["commandTimeout"] = o.CommandTimeout
+	}
 	if !IsNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
 	}

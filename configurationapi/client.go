@@ -170,6 +170,8 @@ type APIClient struct {
 
 	LogPublisherAPI *LogPublisherAPIService
 
+	LogPublisherMessageExclusionPolicyAPI *LogPublisherMessageExclusionPolicyAPIService
+
 	LogRetentionPolicyAPI *LogRetentionPolicyAPIService
 
 	LogRotationPolicyAPI *LogRotationPolicyAPIService
@@ -365,6 +367,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LogFieldSyntaxAPI = (*LogFieldSyntaxAPIService)(&c.common)
 	c.LogFileRotationListenerAPI = (*LogFileRotationListenerAPIService)(&c.common)
 	c.LogPublisherAPI = (*LogPublisherAPIService)(&c.common)
+	c.LogPublisherMessageExclusionPolicyAPI = (*LogPublisherMessageExclusionPolicyAPIService)(&c.common)
 	c.LogRetentionPolicyAPI = (*LogRetentionPolicyAPIService)(&c.common)
 	c.LogRotationPolicyAPI = (*LogRotationPolicyAPIService)(&c.common)
 	c.MacSecretKeyAPI = (*MacSecretKeyAPIService)(&c.common)

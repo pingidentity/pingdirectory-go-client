@@ -25,6 +25,7 @@ type AddExtendedOperationHandlerRequest struct {
 	AddSingleUseTokensExtendedOperationHandlerRequest           *AddSingleUseTokensExtendedOperationHandlerRequest
 	AddThirdPartyExtendedOperationHandlerRequest                *AddThirdPartyExtendedOperationHandlerRequest
 	AddValidateTotpPasswordExtendedOperationHandlerRequest      *AddValidateTotpPasswordExtendedOperationHandlerRequest
+	AddVerifyPasswordExtendedOperationHandlerRequest            *AddVerifyPasswordExtendedOperationHandlerRequest
 }
 
 // AddCollectSupportDataExtendedOperationHandlerRequestAsAddExtendedOperationHandlerRequest is a convenience function that returns AddCollectSupportDataExtendedOperationHandlerRequest wrapped in AddExtendedOperationHandlerRequest
@@ -80,6 +81,13 @@ func AddThirdPartyExtendedOperationHandlerRequestAsAddExtendedOperationHandlerRe
 func AddValidateTotpPasswordExtendedOperationHandlerRequestAsAddExtendedOperationHandlerRequest(v *AddValidateTotpPasswordExtendedOperationHandlerRequest) AddExtendedOperationHandlerRequest {
 	return AddExtendedOperationHandlerRequest{
 		AddValidateTotpPasswordExtendedOperationHandlerRequest: v,
+	}
+}
+
+// AddVerifyPasswordExtendedOperationHandlerRequestAsAddExtendedOperationHandlerRequest is a convenience function that returns AddVerifyPasswordExtendedOperationHandlerRequest wrapped in AddExtendedOperationHandlerRequest
+func AddVerifyPasswordExtendedOperationHandlerRequestAsAddExtendedOperationHandlerRequest(v *AddVerifyPasswordExtendedOperationHandlerRequest) AddExtendedOperationHandlerRequest {
+	return AddExtendedOperationHandlerRequest{
+		AddVerifyPasswordExtendedOperationHandlerRequest: v,
 	}
 }
 
@@ -191,6 +199,19 @@ func (dst *AddExtendedOperationHandlerRequest) UnmarshalJSON(data []byte) error 
 		dst.AddValidateTotpPasswordExtendedOperationHandlerRequest = nil
 	}
 
+	// try to unmarshal data into AddVerifyPasswordExtendedOperationHandlerRequest
+	err = newStrictDecoder(data).Decode(&dst.AddVerifyPasswordExtendedOperationHandlerRequest)
+	if err == nil {
+		jsonAddVerifyPasswordExtendedOperationHandlerRequest, _ := json.Marshal(dst.AddVerifyPasswordExtendedOperationHandlerRequest)
+		if string(jsonAddVerifyPasswordExtendedOperationHandlerRequest) == "{}" { // empty struct
+			dst.AddVerifyPasswordExtendedOperationHandlerRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddVerifyPasswordExtendedOperationHandlerRequest = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AddCollectSupportDataExtendedOperationHandlerRequest = nil
@@ -201,6 +222,7 @@ func (dst *AddExtendedOperationHandlerRequest) UnmarshalJSON(data []byte) error 
 		dst.AddSingleUseTokensExtendedOperationHandlerRequest = nil
 		dst.AddThirdPartyExtendedOperationHandlerRequest = nil
 		dst.AddValidateTotpPasswordExtendedOperationHandlerRequest = nil
+		dst.AddVerifyPasswordExtendedOperationHandlerRequest = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddExtendedOperationHandlerRequest)")
 	} else if match == 1 {
@@ -244,6 +266,10 @@ func (src AddExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AddValidateTotpPasswordExtendedOperationHandlerRequest)
 	}
 
+	if src.AddVerifyPasswordExtendedOperationHandlerRequest != nil {
+		return json.Marshal(&src.AddVerifyPasswordExtendedOperationHandlerRequest)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -282,6 +308,10 @@ func (obj *AddExtendedOperationHandlerRequest) GetActualInstance() interface{} {
 
 	if obj.AddValidateTotpPasswordExtendedOperationHandlerRequest != nil {
 		return obj.AddValidateTotpPasswordExtendedOperationHandlerRequest
+	}
+
+	if obj.AddVerifyPasswordExtendedOperationHandlerRequest != nil {
+		return obj.AddVerifyPasswordExtendedOperationHandlerRequest
 	}
 
 	// all schemas are nil

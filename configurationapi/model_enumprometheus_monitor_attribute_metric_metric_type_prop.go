@@ -22,12 +22,14 @@ type EnumprometheusMonitorAttributeMetricMetricTypeProp string
 const (
 	ENUMPROMETHEUSMONITORATTRIBUTEMETRICMETRICTYPEPROP_COUNTER EnumprometheusMonitorAttributeMetricMetricTypeProp = "counter"
 	ENUMPROMETHEUSMONITORATTRIBUTEMETRICMETRICTYPEPROP_GAUGE   EnumprometheusMonitorAttributeMetricMetricTypeProp = "gauge"
+	ENUMPROMETHEUSMONITORATTRIBUTEMETRICMETRICTYPEPROP_BOOLEAN EnumprometheusMonitorAttributeMetricMetricTypeProp = "boolean"
 )
 
 // All allowed values of EnumprometheusMonitorAttributeMetricMetricTypeProp enum
 var AllowedEnumprometheusMonitorAttributeMetricMetricTypePropEnumValues = []EnumprometheusMonitorAttributeMetricMetricTypeProp{
 	"counter",
 	"gauge",
+	"boolean",
 }
 
 func (v *EnumprometheusMonitorAttributeMetricMetricTypeProp) UnmarshalJSON(src []byte) error {

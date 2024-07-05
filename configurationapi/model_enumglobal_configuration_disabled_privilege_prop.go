@@ -60,6 +60,7 @@ const (
 	ENUMGLOBALCONFIGURATIONDISABLEDPRIVILEGEPROP_COLLECT_SUPPORT_DATA                       EnumglobalConfigurationDisabledPrivilegeProp = "collect-support-data"
 	ENUMGLOBALCONFIGURATIONDISABLEDPRIVILEGEPROP_FILE_SERVLET_ACCESS                        EnumglobalConfigurationDisabledPrivilegeProp = "file-servlet-access"
 	ENUMGLOBALCONFIGURATIONDISABLEDPRIVILEGEPROP_PERMIT_REPLACE_CERTIFICATE_REQUEST         EnumglobalConfigurationDisabledPrivilegeProp = "permit-replace-certificate-request"
+	ENUMGLOBALCONFIGURATIONDISABLEDPRIVILEGEPROP_PERMIT_VERIFY_PASSWORD_REQUEST             EnumglobalConfigurationDisabledPrivilegeProp = "permit-verify-password-request"
 )
 
 // All allowed values of EnumglobalConfigurationDisabledPrivilegeProp enum
@@ -104,6 +105,7 @@ var AllowedEnumglobalConfigurationDisabledPrivilegePropEnumValues = []Enumglobal
 	"collect-support-data",
 	"file-servlet-access",
 	"permit-replace-certificate-request",
+	"permit-verify-password-request",
 }
 
 func (v *EnumglobalConfigurationDisabledPrivilegeProp) UnmarshalJSON(src []byte) error {

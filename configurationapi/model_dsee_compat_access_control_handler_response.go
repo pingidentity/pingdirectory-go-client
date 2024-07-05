@@ -27,6 +27,8 @@ type DseeCompatAccessControlHandlerResponse struct {
 	AllowedBindControl []EnumaccessControlHandlerAllowedBindControlProp `json:"allowedBindControl,omitempty"`
 	// Specifies the OIDs of any additional controls (not covered by the allowed-bind-control property) that should be permitted in bind requests.
 	AllowedBindControlOID []string `json:"allowedBindControlOID,omitempty"`
+	// Indicates whether the server should ensure that the requester has the \"add\" right for each attribute included in an add request, and is not denied \"add\" rights for any attributes in the request. Historically, any user who has been granted the \"add\" right has been allowed to create an entry of any type, even for add requests that include attributes for which they do not have the \"add\" right (that is, the \"targetattr\" portion of an access control rule was not considered when evaluating access control rights for add operations). This is still the default behavior in order to preserve backward compatibility, but setting the value of this property to true will cause the server to only permit add operations in which the requester has the \"add\" right for each of the attributes included in the add request, and deny add operations if the requester is denied \"add\" rights for any attributes included in the add request. It is strongly recommended that you thoroughly test your existing access control configuration before enabling this setting in a production environment to identify any cases in which you may need to add or augment access control rules to ensure that authorized users are allowed to add the entries they need to be able to create.
+	EvaluateTargetAttributeRightsForAddOperations *bool `json:"evaluateTargetAttributeRightsForAddOperations,omitempty"`
 	// Indicates whether this Access Control Handler is enabled. If set to FALSE, then no access control is enforced, and any client (including unauthenticated or anonymous clients) could be allowed to perform any operation if not subject to other restrictions, such as those enforced by the privilege subsystem.
 	Enabled bool `json:"enabled"`
 }
@@ -234,6 +236,38 @@ func (o *DseeCompatAccessControlHandlerResponse) SetAllowedBindControlOID(v []st
 	o.AllowedBindControlOID = v
 }
 
+// GetEvaluateTargetAttributeRightsForAddOperations returns the EvaluateTargetAttributeRightsForAddOperations field value if set, zero value otherwise.
+func (o *DseeCompatAccessControlHandlerResponse) GetEvaluateTargetAttributeRightsForAddOperations() bool {
+	if o == nil || IsNil(o.EvaluateTargetAttributeRightsForAddOperations) {
+		var ret bool
+		return ret
+	}
+	return *o.EvaluateTargetAttributeRightsForAddOperations
+}
+
+// GetEvaluateTargetAttributeRightsForAddOperationsOk returns a tuple with the EvaluateTargetAttributeRightsForAddOperations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DseeCompatAccessControlHandlerResponse) GetEvaluateTargetAttributeRightsForAddOperationsOk() (*bool, bool) {
+	if o == nil || IsNil(o.EvaluateTargetAttributeRightsForAddOperations) {
+		return nil, false
+	}
+	return o.EvaluateTargetAttributeRightsForAddOperations, true
+}
+
+// HasEvaluateTargetAttributeRightsForAddOperations returns a boolean if a field has been set.
+func (o *DseeCompatAccessControlHandlerResponse) HasEvaluateTargetAttributeRightsForAddOperations() bool {
+	if o != nil && !IsNil(o.EvaluateTargetAttributeRightsForAddOperations) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvaluateTargetAttributeRightsForAddOperations gets a reference to the given bool and assigns it to the EvaluateTargetAttributeRightsForAddOperations field.
+func (o *DseeCompatAccessControlHandlerResponse) SetEvaluateTargetAttributeRightsForAddOperations(v bool) {
+	o.EvaluateTargetAttributeRightsForAddOperations = &v
+}
+
 // GetEnabled returns the Enabled field value
 func (o *DseeCompatAccessControlHandlerResponse) GetEnabled() bool {
 	if o == nil {
@@ -283,6 +317,9 @@ func (o DseeCompatAccessControlHandlerResponse) ToMap() (map[string]interface{},
 	}
 	if !IsNil(o.AllowedBindControlOID) {
 		toSerialize["allowedBindControlOID"] = o.AllowedBindControlOID
+	}
+	if !IsNil(o.EvaluateTargetAttributeRightsForAddOperations) {
+		toSerialize["evaluateTargetAttributeRightsForAddOperations"] = o.EvaluateTargetAttributeRightsForAddOperations
 	}
 	toSerialize["enabled"] = o.Enabled
 	return toSerialize, nil

@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **KeyStorePinEnvironmentVariable** | Pointer to **string** | The name of an environment variable whose value is the user PIN needed to interact with the PKCS #11 token. The environment variable must be defined and must contain a clear-text representation of the PIN. | [optional] 
 **Pkcs11KeyStoreType** | Pointer to **string** | The key store type to use when obtaining an instance of a key store for interacting with a PKCS #11 token. | [optional] 
 **SslCertNickname** | **string** | The alias for the certificate in the PKCS #11 token that will be used to wrap the encryption key. The target certificate must exist in the PKCS #11 token, and it must have an RSA key pair because the JVM does not currently provide adequate key wrapping support for elliptic curve key pairs.  If you have also configured the server to use a PKCS #11 token for accessing listener certificates, we strongly recommend that you use a different certificate to protect the contents of the encryption settings database than you use for negotiating TLS sessions with clients. It is imperative that the certificate used by this PKCS11 Cipher Stream Provider remain constant for the life of the provider because if the certificate were to be replaced, then the contents of the encryption settings database could become inaccessible. Unlike with listener certificates used for TLS negotiation that need to be replaced on a regular basis, this PKCS11 Cipher Stream Provider does not consider the validity period for the associated certificate, and it will continue to function even after the certificate has expired.  If you need to rotate the certificate used to protect the server&#39;s encryption settings database, you should first install the desired new certificate in the PKCS #11 token under a different alias. Then, you should create a new instance of this PKCS11 Cipher Stream Provider that is configured to use that certificate, and that also uses a different value for the encryption-metadata-file because the information in that file is tied to the certificate used to generate it. Finally, you will need to update the global configuration so that the encryption-settings-cipher-stream-provider property references the new cipher stream provider rather than this one. The update to the global configuration must be done with the server online so that it can properly re-encrypt the contents of the encryption settings database with the correct key tied to the new certificate. | 
+**KeyWrappingTransformation** | Pointer to **string** | The cipher transformation that will be used to wrap and unwrap the encryption key. If no key wrapping transformation is defined, then the server will select a transformation based on the type of certificate being used. | [optional] 
 **VaultExternalServer** | Pointer to **string** | An external server definition with information needed to connect and authenticate to the Vault server. | [optional] 
 **VaultServerBaseURI** | Pointer to **[]string** | The base URL needed to access the Vault server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://vault.example.com:8200/\&quot;. | [optional] 
 **VaultAuthenticationMethod** | Pointer to **string** | The mechanism used to authenticate to the Vault server. | [optional] 
@@ -812,6 +813,31 @@ and a boolean to check if the value has been set.
 
 SetSslCertNickname sets SslCertNickname field to given value.
 
+
+### GetKeyWrappingTransformation
+
+`func (o *CipherStreamProviderListResponseResourcesInner) GetKeyWrappingTransformation() string`
+
+GetKeyWrappingTransformation returns the KeyWrappingTransformation field if non-nil, zero value otherwise.
+
+### GetKeyWrappingTransformationOk
+
+`func (o *CipherStreamProviderListResponseResourcesInner) GetKeyWrappingTransformationOk() (*string, bool)`
+
+GetKeyWrappingTransformationOk returns a tuple with the KeyWrappingTransformation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyWrappingTransformation
+
+`func (o *CipherStreamProviderListResponseResourcesInner) SetKeyWrappingTransformation(v string)`
+
+SetKeyWrappingTransformation sets KeyWrappingTransformation field to given value.
+
+### HasKeyWrappingTransformation
+
+`func (o *CipherStreamProviderListResponseResourcesInner) HasKeyWrappingTransformation() bool`
+
+HasKeyWrappingTransformation returns a boolean if a field has been set.
 
 ### GetVaultExternalServer
 

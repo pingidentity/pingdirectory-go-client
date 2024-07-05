@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **TimestampPrecision** | Pointer to [**EnumlogPublisherTimestampPrecisionProp**](EnumlogPublisherTimestampPrecisionProp.md) |  | [optional] 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **OverrideSeverity** | Pointer to **[]string** | Specifies the override severity levels for the logger based on the category of the messages. | [optional] 
+**LogMessageExclusionPolicy** | Pointer to **[]string** | Policy to determine whether the Error Log Publisher should print a message to the log. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
@@ -641,6 +642,31 @@ SetOverrideSeverity sets OverrideSeverity field to given value.
 `func (o *AddFileBasedErrorLogPublisherRequest) HasOverrideSeverity() bool`
 
 HasOverrideSeverity returns a boolean if a field has been set.
+
+### GetLogMessageExclusionPolicy
+
+`func (o *AddFileBasedErrorLogPublisherRequest) GetLogMessageExclusionPolicy() []string`
+
+GetLogMessageExclusionPolicy returns the LogMessageExclusionPolicy field if non-nil, zero value otherwise.
+
+### GetLogMessageExclusionPolicyOk
+
+`func (o *AddFileBasedErrorLogPublisherRequest) GetLogMessageExclusionPolicyOk() (*[]string, bool)`
+
+GetLogMessageExclusionPolicyOk returns a tuple with the LogMessageExclusionPolicy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogMessageExclusionPolicy
+
+`func (o *AddFileBasedErrorLogPublisherRequest) SetLogMessageExclusionPolicy(v []string)`
+
+SetLogMessageExclusionPolicy sets LogMessageExclusionPolicy field to given value.
+
+### HasLogMessageExclusionPolicy
+
+`func (o *AddFileBasedErrorLogPublisherRequest) HasLogMessageExclusionPolicy() bool`
+
+HasLogMessageExclusionPolicy returns a boolean if a field has been set.
 
 ### GetDescription
 

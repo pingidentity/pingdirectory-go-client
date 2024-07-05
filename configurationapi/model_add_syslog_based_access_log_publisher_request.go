@@ -74,6 +74,8 @@ type AddSyslogBasedAccessLogPublisherRequest struct {
 	IncludeResponseControls *bool `json:"includeResponseControls,omitempty"`
 	// Indicates whether to log information about the replication change ID.
 	IncludeReplicationChangeID *bool `json:"includeReplicationChangeID,omitempty"`
+	// Indicates whether to log connection details in request messages, including, where applicable, the client IP address and port, the server IP address and port, and the communication protocol.
+	IncludeConnectionDetailsInRequestMessages *bool `json:"includeConnectionDetailsInRequestMessages,omitempty"`
 	// Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values.
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
 	// Indicates whether the Writer Based Access Log Publisher will publish records asynchronously.
@@ -1019,6 +1021,38 @@ func (o *AddSyslogBasedAccessLogPublisherRequest) SetIncludeReplicationChangeID(
 	o.IncludeReplicationChangeID = &v
 }
 
+// GetIncludeConnectionDetailsInRequestMessages returns the IncludeConnectionDetailsInRequestMessages field value if set, zero value otherwise.
+func (o *AddSyslogBasedAccessLogPublisherRequest) GetIncludeConnectionDetailsInRequestMessages() bool {
+	if o == nil || IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeConnectionDetailsInRequestMessages
+}
+
+// GetIncludeConnectionDetailsInRequestMessagesOk returns a tuple with the IncludeConnectionDetailsInRequestMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddSyslogBasedAccessLogPublisherRequest) GetIncludeConnectionDetailsInRequestMessagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		return nil, false
+	}
+	return o.IncludeConnectionDetailsInRequestMessages, true
+}
+
+// HasIncludeConnectionDetailsInRequestMessages returns a boolean if a field has been set.
+func (o *AddSyslogBasedAccessLogPublisherRequest) HasIncludeConnectionDetailsInRequestMessages() bool {
+	if o != nil && !IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeConnectionDetailsInRequestMessages gets a reference to the given bool and assigns it to the IncludeConnectionDetailsInRequestMessages field.
+func (o *AddSyslogBasedAccessLogPublisherRequest) SetIncludeConnectionDetailsInRequestMessages(v bool) {
+	o.IncludeConnectionDetailsInRequestMessages = &v
+}
+
 // GetGenerifyMessageStringsWhenPossible returns the GenerifyMessageStringsWhenPossible field value if set, zero value otherwise.
 func (o *AddSyslogBasedAccessLogPublisherRequest) GetGenerifyMessageStringsWhenPossible() bool {
 	if o == nil || IsNil(o.GenerifyMessageStringsWhenPossible) {
@@ -1804,6 +1838,9 @@ func (o AddSyslogBasedAccessLogPublisherRequest) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.IncludeReplicationChangeID) {
 		toSerialize["includeReplicationChangeID"] = o.IncludeReplicationChangeID
+	}
+	if !IsNil(o.IncludeConnectionDetailsInRequestMessages) {
+		toSerialize["includeConnectionDetailsInRequestMessages"] = o.IncludeConnectionDetailsInRequestMessages
 	}
 	if !IsNil(o.GenerifyMessageStringsWhenPossible) {
 		toSerialize["generifyMessageStringsWhenPossible"] = o.GenerifyMessageStringsWhenPossible

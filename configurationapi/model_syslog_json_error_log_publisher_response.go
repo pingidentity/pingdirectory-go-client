@@ -43,6 +43,8 @@ type SyslogJsonErrorLogPublisherResponse struct {
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
+	// Policy to determine whether the Error Log Publisher should print a message to the log.
+	LogMessageExclusionPolicy []string `json:"logMessageExclusionPolicy,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
@@ -500,6 +502,38 @@ func (o *SyslogJsonErrorLogPublisherResponse) SetOverrideSeverity(v []string) {
 	o.OverrideSeverity = v
 }
 
+// GetLogMessageExclusionPolicy returns the LogMessageExclusionPolicy field value if set, zero value otherwise.
+func (o *SyslogJsonErrorLogPublisherResponse) GetLogMessageExclusionPolicy() []string {
+	if o == nil || IsNil(o.LogMessageExclusionPolicy) {
+		var ret []string
+		return ret
+	}
+	return o.LogMessageExclusionPolicy
+}
+
+// GetLogMessageExclusionPolicyOk returns a tuple with the LogMessageExclusionPolicy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SyslogJsonErrorLogPublisherResponse) GetLogMessageExclusionPolicyOk() ([]string, bool) {
+	if o == nil || IsNil(o.LogMessageExclusionPolicy) {
+		return nil, false
+	}
+	return o.LogMessageExclusionPolicy, true
+}
+
+// HasLogMessageExclusionPolicy returns a boolean if a field has been set.
+func (o *SyslogJsonErrorLogPublisherResponse) HasLogMessageExclusionPolicy() bool {
+	if o != nil && !IsNil(o.LogMessageExclusionPolicy) {
+		return true
+	}
+
+	return false
+}
+
+// SetLogMessageExclusionPolicy gets a reference to the given []string and assigns it to the LogMessageExclusionPolicy field.
+func (o *SyslogJsonErrorLogPublisherResponse) SetLogMessageExclusionPolicy(v []string) {
+	o.LogMessageExclusionPolicy = v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SyslogJsonErrorLogPublisherResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -721,6 +755,9 @@ func (o SyslogJsonErrorLogPublisherResponse) ToMap() (map[string]interface{}, er
 	}
 	if !IsNil(o.OverrideSeverity) {
 		toSerialize["overrideSeverity"] = o.OverrideSeverity
+	}
+	if !IsNil(o.LogMessageExclusionPolicy) {
+		toSerialize["logMessageExclusionPolicy"] = o.LogMessageExclusionPolicy
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// EnumlogPublisherOutputLocationProp Specifies the output stream to which JSON-formatted error log messages should be written.
+// EnumlogPublisherOutputLocationProp Specifies the output stream to which JSON-formatted Sync Failed Ops log messages should be written.
 type EnumlogPublisherOutputLocationProp string
 
 // List of Enumlog-publisher-outputLocationProp

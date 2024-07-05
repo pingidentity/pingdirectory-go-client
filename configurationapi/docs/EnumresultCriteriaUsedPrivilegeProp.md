@@ -83,6 +83,8 @@
 
 * `PERMIT_REPLACE_CERTIFICATE_REQUEST` (value: `"permit-replace-certificate-request"`)
 
+* `PERMIT_VERIFY_PASSWORD_REQUEST` (value: `"permit-verify-password-request"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

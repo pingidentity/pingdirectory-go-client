@@ -34,6 +34,8 @@ type AddPkcs11CipherStreamProviderRequest struct {
 	Pkcs11KeyStoreType *string `json:"pkcs11KeyStoreType,omitempty"`
 	// The alias for the certificate in the PKCS #11 token that will be used to wrap the encryption key. The target certificate must exist in the PKCS #11 token, and it must have an RSA key pair because the JVM does not currently provide adequate key wrapping support for elliptic curve key pairs.  If you have also configured the server to use a PKCS #11 token for accessing listener certificates, we strongly recommend that you use a different certificate to protect the contents of the encryption settings database than you use for negotiating TLS sessions with clients. It is imperative that the certificate used by this PKCS11 Cipher Stream Provider remain constant for the life of the provider because if the certificate were to be replaced, then the contents of the encryption settings database could become inaccessible. Unlike with listener certificates used for TLS negotiation that need to be replaced on a regular basis, this PKCS11 Cipher Stream Provider does not consider the validity period for the associated certificate, and it will continue to function even after the certificate has expired.  If you need to rotate the certificate used to protect the server's encryption settings database, you should first install the desired new certificate in the PKCS #11 token under a different alias. Then, you should create a new instance of this PKCS11 Cipher Stream Provider that is configured to use that certificate, and that also uses a different value for the encryption-metadata-file because the information in that file is tied to the certificate used to generate it. Finally, you will need to update the global configuration so that the encryption-settings-cipher-stream-provider property references the new cipher stream provider rather than this one. The update to the global configuration must be done with the server online so that it can properly re-encrypt the contents of the encryption settings database with the correct key tied to the new certificate.
 	SslCertNickname string `json:"sslCertNickname"`
+	// The cipher transformation that will be used to wrap and unwrap the encryption key. If no key wrapping transformation is defined, then the server will select a transformation based on the type of certificate being used.
+	KeyWrappingTransformation *string `json:"keyWrappingTransformation,omitempty"`
 	// The path to a file that will hold metadata about the encryption performed by this PKCS11 Cipher Stream Provider.
 	EncryptionMetadataFile *string `json:"encryptionMetadataFile,omitempty"`
 	// The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
@@ -307,6 +309,38 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetSslCertNickname(v string) {
 	o.SslCertNickname = v
 }
 
+// GetKeyWrappingTransformation returns the KeyWrappingTransformation field value if set, zero value otherwise.
+func (o *AddPkcs11CipherStreamProviderRequest) GetKeyWrappingTransformation() string {
+	if o == nil || IsNil(o.KeyWrappingTransformation) {
+		var ret string
+		return ret
+	}
+	return *o.KeyWrappingTransformation
+}
+
+// GetKeyWrappingTransformationOk returns a tuple with the KeyWrappingTransformation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPkcs11CipherStreamProviderRequest) GetKeyWrappingTransformationOk() (*string, bool) {
+	if o == nil || IsNil(o.KeyWrappingTransformation) {
+		return nil, false
+	}
+	return o.KeyWrappingTransformation, true
+}
+
+// HasKeyWrappingTransformation returns a boolean if a field has been set.
+func (o *AddPkcs11CipherStreamProviderRequest) HasKeyWrappingTransformation() bool {
+	if o != nil && !IsNil(o.KeyWrappingTransformation) {
+		return true
+	}
+
+	return false
+}
+
+// SetKeyWrappingTransformation gets a reference to the given string and assigns it to the KeyWrappingTransformation field.
+func (o *AddPkcs11CipherStreamProviderRequest) SetKeyWrappingTransformation(v string) {
+	o.KeyWrappingTransformation = &v
+}
+
 // GetEncryptionMetadataFile returns the EncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetEncryptionMetadataFile() string {
 	if o == nil || IsNil(o.EncryptionMetadataFile) {
@@ -481,6 +515,9 @@ func (o AddPkcs11CipherStreamProviderRequest) ToMap() (map[string]interface{}, e
 		toSerialize["pkcs11KeyStoreType"] = o.Pkcs11KeyStoreType
 	}
 	toSerialize["sslCertNickname"] = o.SslCertNickname
+	if !IsNil(o.KeyWrappingTransformation) {
+		toSerialize["keyWrappingTransformation"] = o.KeyWrappingTransformation
+	}
 	if !IsNil(o.EncryptionMetadataFile) {
 		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
 	}

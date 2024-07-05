@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
 tags:
 - description: Access the Access Control Handler
   name: access-control-handler
@@ -110,6 +110,10 @@ components:
               type: string
             description: >-
                 Specifies the OIDs of any additional controls (not covered by the allowed-bind-control property) that should be permitted in bind requests.
+          evaluateTargetAttributeRightsForAddOperations:
+            type: boolean
+            description: >-
+                Indicates whether the server should ensure that the requester has the "add" right for each attribute included in an add request, and is not denied "add" rights for any attributes in the request. Historically, any user who has been granted the "add" right has been allowed to create an entry of any type, even for add requests that include attributes for which they do not have the "add" right (that is, the "targetattr" portion of an access control rule was not considered when evaluating access control rights for add operations). This is still the default behavior in order to preserve backward compatibility, but setting the value of this property to true will cause the server to only permit add operations in which the requester has the "add" right for each of the attributes included in the add request, and deny add operations if the requester is denied "add" rights for any attributes included in the add request. It is strongly recommended that you thoroughly test your existing access control configuration before enabling this setting in a production environment to identify any cases in which you may need to add or augment access control rules to ensure that authorized users are allowed to add the entries they need to be able to create.
           enabled:
             type: boolean
             description: >-

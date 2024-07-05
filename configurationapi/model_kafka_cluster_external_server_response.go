@@ -28,6 +28,8 @@ type KafkaClusterExternalServerResponse struct {
 	BootstrapServer []string `json:"bootstrapServer"`
 	// Specifies extra properties to use when constructing the KafkaProducer for sending messages.
 	ProducerProperty []string `json:"producerProperty,omitempty"`
+	// Specifies extra properties to use when constructing the KafkaProducer for sending messages. The sensitive values associated with this property will be obscured.
+	SensitiveProducerProperty []string `json:"sensitiveProducerProperty,omitempty"`
 	// If enabled, the Kafka Cluster External Server will use SSL to encrypt communication with the Kafka brokers.
 	UseSSL *bool `json:"useSSL,omitempty"`
 	// Specifies the file-based trust manager that should be used with the Kafka Cluster External Server for connecting to the Kafka cluster over SSL.
@@ -226,6 +228,38 @@ func (o *KafkaClusterExternalServerResponse) SetProducerProperty(v []string) {
 	o.ProducerProperty = v
 }
 
+// GetSensitiveProducerProperty returns the SensitiveProducerProperty field value if set, zero value otherwise.
+func (o *KafkaClusterExternalServerResponse) GetSensitiveProducerProperty() []string {
+	if o == nil || IsNil(o.SensitiveProducerProperty) {
+		var ret []string
+		return ret
+	}
+	return o.SensitiveProducerProperty
+}
+
+// GetSensitiveProducerPropertyOk returns a tuple with the SensitiveProducerProperty field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaClusterExternalServerResponse) GetSensitiveProducerPropertyOk() ([]string, bool) {
+	if o == nil || IsNil(o.SensitiveProducerProperty) {
+		return nil, false
+	}
+	return o.SensitiveProducerProperty, true
+}
+
+// HasSensitiveProducerProperty returns a boolean if a field has been set.
+func (o *KafkaClusterExternalServerResponse) HasSensitiveProducerProperty() bool {
+	if o != nil && !IsNil(o.SensitiveProducerProperty) {
+		return true
+	}
+
+	return false
+}
+
+// SetSensitiveProducerProperty gets a reference to the given []string and assigns it to the SensitiveProducerProperty field.
+func (o *KafkaClusterExternalServerResponse) SetSensitiveProducerProperty(v []string) {
+	o.SensitiveProducerProperty = v
+}
+
 // GetUseSSL returns the UseSSL field value if set, zero value otherwise.
 func (o *KafkaClusterExternalServerResponse) GetUseSSL() bool {
 	if o == nil || IsNil(o.UseSSL) {
@@ -375,6 +409,9 @@ func (o KafkaClusterExternalServerResponse) ToMap() (map[string]interface{}, err
 	toSerialize["bootstrapServer"] = o.BootstrapServer
 	if !IsNil(o.ProducerProperty) {
 		toSerialize["producerProperty"] = o.ProducerProperty
+	}
+	if !IsNil(o.SensitiveProducerProperty) {
+		toSerialize["sensitiveProducerProperty"] = o.SensitiveProducerProperty
 	}
 	if !IsNil(o.UseSSL) {
 		toSerialize["useSSL"] = o.UseSSL

@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **RecipientPhoneNumber** | **[]string** | The phone number to which alert notifications should be delivered. | 
 **LongMessageBehavior** | Pointer to [**EnumalertHandlerLongMessageBehaviorProp**](EnumalertHandlerLongMessageBehaviorProp.md) |  | [optional] 
 **Command** | **string** | Specifies the path of the command to execute, without any arguments. It must be an absolute path for reasons of security and reliability. | 
+**CommandTimeout** | Pointer to **string** | The maximum length of time this server will wait for the executed command to finish executing before forcibly terminating it. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Alert Handler. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Alert Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -646,6 +647,31 @@ and a boolean to check if the value has been set.
 
 SetCommand sets Command field to given value.
 
+
+### GetCommandTimeout
+
+`func (o *AddAlertHandlerRequest) GetCommandTimeout() string`
+
+GetCommandTimeout returns the CommandTimeout field if non-nil, zero value otherwise.
+
+### GetCommandTimeoutOk
+
+`func (o *AddAlertHandlerRequest) GetCommandTimeoutOk() (*string, bool)`
+
+GetCommandTimeoutOk returns a tuple with the CommandTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCommandTimeout
+
+`func (o *AddAlertHandlerRequest) SetCommandTimeout(v string)`
+
+SetCommandTimeout sets CommandTimeout field to given value.
+
+### HasCommandTimeout
+
+`func (o *AddAlertHandlerRequest) HasCommandTimeout() bool`
+
+HasCommandTimeout returns a boolean if a field has been set.
 
 ### GetExtensionClass
 

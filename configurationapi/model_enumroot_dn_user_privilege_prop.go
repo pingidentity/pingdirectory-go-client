@@ -100,6 +100,8 @@ const (
 	ENUMROOTDNUSERPRIVILEGEPROP_REVOKE_FILE_SERVLET_ACCESS2                        EnumrootDnUserPrivilegeProp = "-file-servlet-access"
 	ENUMROOTDNUSERPRIVILEGEPROP_PERMIT_REPLACE_CERTIFICATE_REQUEST                 EnumrootDnUserPrivilegeProp = "permit-replace-certificate-request"
 	ENUMROOTDNUSERPRIVILEGEPROP_REVOKE_PERMIT_REPLACE_CERTIFICATE_REQUEST2         EnumrootDnUserPrivilegeProp = "-permit-replace-certificate-request"
+	ENUMROOTDNUSERPRIVILEGEPROP_PERMIT_VERIFY_PASSWORD_REQUEST                     EnumrootDnUserPrivilegeProp = "permit-verify-password-request"
+	ENUMROOTDNUSERPRIVILEGEPROP_REVOKE_PERMIT_VERIFY_PASSWORD_REQUEST2             EnumrootDnUserPrivilegeProp = "-permit-verify-password-request"
 )
 
 // All allowed values of EnumrootDnUserPrivilegeProp enum
@@ -184,6 +186,8 @@ var AllowedEnumrootDnUserPrivilegePropEnumValues = []EnumrootDnUserPrivilegeProp
 	"-file-servlet-access",
 	"permit-replace-certificate-request",
 	"-permit-replace-certificate-request",
+	"permit-verify-password-request",
+	"-permit-verify-password-request",
 }
 
 func (v *EnumrootDnUserPrivilegeProp) UnmarshalJSON(src []byte) error {

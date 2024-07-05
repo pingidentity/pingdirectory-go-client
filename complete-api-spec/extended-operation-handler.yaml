@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
 tags:
 - description: Access extended-operation-handlers
   name: extended-operation-handler
@@ -50,6 +50,7 @@ paths:
               - $ref: '#/components/schemas/add-replace-certificate-extended-operation-handler-request'
               - $ref: '#/components/schemas/add-collect-support-data-extended-operation-handler-request'
               - $ref: '#/components/schemas/add-export-reversible-passwords-extended-operation-handler-request'
+              - $ref: '#/components/schemas/add-verify-password-extended-operation-handler-request'
               - $ref: '#/components/schemas/add-single-use-tokens-extended-operation-handler-request'
               - $ref: '#/components/schemas/add-deliver-password-reset-token-extended-operation-handler-request'
               - $ref: '#/components/schemas/add-deliver-otp-extended-operation-handler-request'
@@ -67,6 +68,7 @@ paths:
                 - $ref: '#/components/schemas/replace-certificate-extended-operation-handler-response'
                 - $ref: '#/components/schemas/collect-support-data-extended-operation-handler-response'
                 - $ref: '#/components/schemas/export-reversible-passwords-extended-operation-handler-response'
+                - $ref: '#/components/schemas/verify-password-extended-operation-handler-response'
                 - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-response'
                 - $ref: '#/components/schemas/deliver-password-reset-token-extended-operation-handler-response'
                 - $ref: '#/components/schemas/deliver-otp-extended-operation-handler-response'
@@ -143,6 +145,7 @@ paths:
                 - $ref: '#/components/schemas/batched-transactions-extended-operation-handler-response'
                 - $ref: '#/components/schemas/get-changelog-batch-extended-operation-handler-response'
                 - $ref: '#/components/schemas/get-supported-otp-delivery-mechanisms-extended-operation-handler-response'
+                - $ref: '#/components/schemas/verify-password-extended-operation-handler-response'
                 - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-response'
                 - $ref: '#/components/schemas/generate-password-extended-operation-handler-response'
                 - $ref: '#/components/schemas/who-am-i-extended-operation-handler-response'
@@ -201,6 +204,7 @@ paths:
                 - $ref: '#/components/schemas/batched-transactions-extended-operation-handler-response'
                 - $ref: '#/components/schemas/get-changelog-batch-extended-operation-handler-response'
                 - $ref: '#/components/schemas/get-supported-otp-delivery-mechanisms-extended-operation-handler-response'
+                - $ref: '#/components/schemas/verify-password-extended-operation-handler-response'
                 - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-response'
                 - $ref: '#/components/schemas/generate-password-extended-operation-handler-response'
                 - $ref: '#/components/schemas/who-am-i-extended-operation-handler-response'
@@ -1273,6 +1277,57 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-supported-otp-delivery-mechanisms"
+    add-verify-password-extended-operation-handler-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            type: string
+            description: >-
+                Name of the new Extended Operation Handler
+      - $ref: '#/components/schemas/verify-password-extended-operation-handler-shared'
+      required:
+      - handlerName
+    verify-password-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+      - $ref: '#/components/schemas/verify-password-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    verify-password-extended-operation-handler-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumverify-password-extended-operation-handlerSchemaUrn'
+        rejectInsecureRequests:
+          type: boolean
+          description: >-
+              Indicates whether the server should reject attempts to use this extended operation over an insecure connection.
+        description:
+          type: string
+          description: >-
+              A description for this Extended Operation Handler
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      required:
+      - schemas
+      - enabled
+    Enumverify-password-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:verify-password"
     generate-password-extended-operation-handler-response:
       allOf:
       - type: object
@@ -1554,6 +1609,7 @@ components:
             - $ref: '#/components/schemas/export-reversible-passwords-extended-operation-handler-response'
             - $ref: '#/components/schemas/get-changelog-batch-extended-operation-handler-response'
             - $ref: '#/components/schemas/get-supported-otp-delivery-mechanisms-extended-operation-handler-response'
+            - $ref: '#/components/schemas/verify-password-extended-operation-handler-response'
             - $ref: '#/components/schemas/generate-password-extended-operation-handler-response'
             - $ref: '#/components/schemas/who-am-i-extended-operation-handler-response'
             - $ref: '#/components/schemas/deliver-password-reset-token-extended-operation-handler-response'

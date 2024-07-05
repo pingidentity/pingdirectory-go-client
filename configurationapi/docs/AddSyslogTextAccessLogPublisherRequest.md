@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **IncludeReplicationChangeID** | Pointer to **bool** | Indicates whether to log information about the replication change ID. | [optional] 
 **MaxStringLength** | Pointer to **int64** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
 **TimestampPrecision** | Pointer to [**EnumlogPublisherTimestampPrecisionProp**](EnumlogPublisherTimestampPrecisionProp.md) |  | [optional] 
+**IncludeConnectionDetailsInRequestMessages** | Pointer to **bool** | Indicates whether to log connection details in request messages, including, where applicable, the client IP address and port, the server IP address and port, and the communication protocol. | [optional] 
 **GenerifyMessageStringsWhenPossible** | Pointer to **bool** | Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values. | [optional] 
 **Asynchronous** | Pointer to **bool** | Indicates whether the Writer Based Access Log Publisher will publish records asynchronously. | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
@@ -1066,6 +1067,31 @@ SetTimestampPrecision sets TimestampPrecision field to given value.
 `func (o *AddSyslogTextAccessLogPublisherRequest) HasTimestampPrecision() bool`
 
 HasTimestampPrecision returns a boolean if a field has been set.
+
+### GetIncludeConnectionDetailsInRequestMessages
+
+`func (o *AddSyslogTextAccessLogPublisherRequest) GetIncludeConnectionDetailsInRequestMessages() bool`
+
+GetIncludeConnectionDetailsInRequestMessages returns the IncludeConnectionDetailsInRequestMessages field if non-nil, zero value otherwise.
+
+### GetIncludeConnectionDetailsInRequestMessagesOk
+
+`func (o *AddSyslogTextAccessLogPublisherRequest) GetIncludeConnectionDetailsInRequestMessagesOk() (*bool, bool)`
+
+GetIncludeConnectionDetailsInRequestMessagesOk returns a tuple with the IncludeConnectionDetailsInRequestMessages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeConnectionDetailsInRequestMessages
+
+`func (o *AddSyslogTextAccessLogPublisherRequest) SetIncludeConnectionDetailsInRequestMessages(v bool)`
+
+SetIncludeConnectionDetailsInRequestMessages sets IncludeConnectionDetailsInRequestMessages field to given value.
+
+### HasIncludeConnectionDetailsInRequestMessages
+
+`func (o *AddSyslogTextAccessLogPublisherRequest) HasIncludeConnectionDetailsInRequestMessages() bool`
+
+HasIncludeConnectionDetailsInRequestMessages returns a boolean if a field has been set.
 
 ### GetGenerifyMessageStringsWhenPossible
 

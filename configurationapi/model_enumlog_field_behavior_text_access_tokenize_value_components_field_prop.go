@@ -93,14 +93,17 @@ const (
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_ENTRY_REBALANCING_TARGET_SERVER_ALTERED                                    EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "entry-rebalancing-target-server-altered"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_BACKEND_ID                                     EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-backend-id"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENCRYPTION_SETTINGS_DEFINITION_ID              EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-encryption-settings-definition-id"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_NOT_MATCHING_BASE_DN          EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-entries-excluded-not-matching-base-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_NOT_MATCHING_FILTER           EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-entries-excluded-not-matching-filter"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_WITHOUT_PASSWORDS             EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-entries-excluded-without-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITH_NON_REVERSIBLE_PASSWORDS EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-entries-exported-with-non-reversible-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITH_REVERSIBLE_PASSWORDS     EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-entries-exported-with-reversible-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITHOUT_PASSWORDS             EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-entries-exported-without-passwords"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_EXCLUDE_BASE_DN                                EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-exclude-base-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_EXPORT_NON_REVERSIBLE_PASSWORDS                EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-export-non-reversible-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_EXPORT_ONLY_ENTRIES_WITH_PASSWORDS             EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-export-only-entries-with-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_FILTER                                         EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-filter"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_INCLUDE_BASE_DN                                EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-include-base-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_INCLUDE_VIRTUAL_ATTRIBUTES                     EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-include-virtual-attributes"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_OUTPUT_FILE                                    EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-output-file"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_TOTAL_ENTRIES_EXAMINED                         EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "export-reversible-passwords-total-entries-examined"
@@ -257,6 +260,7 @@ const (
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_SINGLE_USE_TOKEN_UNSUCCESSFUL_DELIVERY_MECHANISMS                          EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "single-use-token-unsuccessful-delivery-mechanisms"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_SINGLE_USE_TOKEN_USER_DN                                                   EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "single-use-token-user-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_STARTUP_ID                                                                 EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "startup-id"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_STREAMED_ENTRIES_FROM_INDEX                                                EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "streamed-entries-from-index"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_TARGET_HOST                                                                EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "target-host"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_TARGET_PORT                                                                EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "target-port"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_TARGET_PROTOCOL                                                            EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "target-protocol"
@@ -267,8 +271,10 @@ const (
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_TRIGGERED_BY_OPERATION_ID                                                  EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "triggered-by-operation-id"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_UNCACHED_DATA_ACCESSED                                                     EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "uncached-data-accessed"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_UNIQUENESS_REQUEST_CONTROL                                                 EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "uniqueness-request-control"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_USED_CACHED_PAGED_RESULTS_ID_SET                                           EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "used-cached-paged-results-id-set"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_USED_PRIVILEGES                                                            EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "used-privileges"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_USING_ADMIN_SESSION_WORKER_THREAD                                          EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "using-admin-session-worker-thread"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_VERIFY_PASSWORD_REQUEST_USER_DN                                            EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "verify-password-request-user-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_WORK_QUEUE_WAIT_TIME_MILLIS                                                EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "work-queue-wait-time-millis"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_YUBIKEY_OTP_BIND_AUTHENTICATION_ID                                         EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "yubikey-otp-bind-authentication-id"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSTOKENIZEVALUECOMPONENTSFIELDPROP_YUBIKEY_OTP_BIND_AUTHORIZATION_ID                                          EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp = "yubikey-otp-bind-authorization-id"
@@ -352,14 +358,17 @@ var AllowedEnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldPropEnumVal
 	"entry-rebalancing-target-server-altered",
 	"export-reversible-passwords-backend-id",
 	"export-reversible-passwords-encryption-settings-definition-id",
+	"export-reversible-passwords-entries-excluded-not-matching-base-dn",
 	"export-reversible-passwords-entries-excluded-not-matching-filter",
 	"export-reversible-passwords-entries-excluded-without-passwords",
 	"export-reversible-passwords-entries-exported-with-non-reversible-passwords",
 	"export-reversible-passwords-entries-exported-with-reversible-passwords",
 	"export-reversible-passwords-entries-exported-without-passwords",
+	"export-reversible-passwords-exclude-base-dn",
 	"export-reversible-passwords-export-non-reversible-passwords",
 	"export-reversible-passwords-export-only-entries-with-passwords",
 	"export-reversible-passwords-filter",
+	"export-reversible-passwords-include-base-dn",
 	"export-reversible-passwords-include-virtual-attributes",
 	"export-reversible-passwords-output-file",
 	"export-reversible-passwords-total-entries-examined",
@@ -516,6 +525,7 @@ var AllowedEnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldPropEnumVal
 	"single-use-token-unsuccessful-delivery-mechanisms",
 	"single-use-token-user-dn",
 	"startup-id",
+	"streamed-entries-from-index",
 	"target-host",
 	"target-port",
 	"target-protocol",
@@ -526,8 +536,10 @@ var AllowedEnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldPropEnumVal
 	"triggered-by-operation-id",
 	"uncached-data-accessed",
 	"uniqueness-request-control",
+	"used-cached-paged-results-id-set",
 	"used-privileges",
 	"using-admin-session-worker-thread",
+	"verify-password-request-user-dn",
 	"work-queue-wait-time-millis",
 	"yubikey-otp-bind-authentication-id",
 	"yubikey-otp-bind-authorization-id",

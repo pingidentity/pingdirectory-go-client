@@ -25,6 +25,7 @@ type AddExtendedOperationHandler200Response struct {
 	SingleUseTokensExtendedOperationHandlerResponse           *SingleUseTokensExtendedOperationHandlerResponse
 	ThirdPartyExtendedOperationHandlerResponse                *ThirdPartyExtendedOperationHandlerResponse
 	ValidateTotpPasswordExtendedOperationHandlerResponse      *ValidateTotpPasswordExtendedOperationHandlerResponse
+	VerifyPasswordExtendedOperationHandlerResponse            *VerifyPasswordExtendedOperationHandlerResponse
 }
 
 // CollectSupportDataExtendedOperationHandlerResponseAsAddExtendedOperationHandler200Response is a convenience function that returns CollectSupportDataExtendedOperationHandlerResponse wrapped in AddExtendedOperationHandler200Response
@@ -80,6 +81,13 @@ func ThirdPartyExtendedOperationHandlerResponseAsAddExtendedOperationHandler200R
 func ValidateTotpPasswordExtendedOperationHandlerResponseAsAddExtendedOperationHandler200Response(v *ValidateTotpPasswordExtendedOperationHandlerResponse) AddExtendedOperationHandler200Response {
 	return AddExtendedOperationHandler200Response{
 		ValidateTotpPasswordExtendedOperationHandlerResponse: v,
+	}
+}
+
+// VerifyPasswordExtendedOperationHandlerResponseAsAddExtendedOperationHandler200Response is a convenience function that returns VerifyPasswordExtendedOperationHandlerResponse wrapped in AddExtendedOperationHandler200Response
+func VerifyPasswordExtendedOperationHandlerResponseAsAddExtendedOperationHandler200Response(v *VerifyPasswordExtendedOperationHandlerResponse) AddExtendedOperationHandler200Response {
+	return AddExtendedOperationHandler200Response{
+		VerifyPasswordExtendedOperationHandlerResponse: v,
 	}
 }
 
@@ -191,6 +199,19 @@ func (dst *AddExtendedOperationHandler200Response) UnmarshalJSON(data []byte) er
 		dst.ValidateTotpPasswordExtendedOperationHandlerResponse = nil
 	}
 
+	// try to unmarshal data into VerifyPasswordExtendedOperationHandlerResponse
+	err = newStrictDecoder(data).Decode(&dst.VerifyPasswordExtendedOperationHandlerResponse)
+	if err == nil {
+		jsonVerifyPasswordExtendedOperationHandlerResponse, _ := json.Marshal(dst.VerifyPasswordExtendedOperationHandlerResponse)
+		if string(jsonVerifyPasswordExtendedOperationHandlerResponse) == "{}" { // empty struct
+			dst.VerifyPasswordExtendedOperationHandlerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.VerifyPasswordExtendedOperationHandlerResponse = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.CollectSupportDataExtendedOperationHandlerResponse = nil
@@ -201,6 +222,7 @@ func (dst *AddExtendedOperationHandler200Response) UnmarshalJSON(data []byte) er
 		dst.SingleUseTokensExtendedOperationHandlerResponse = nil
 		dst.ThirdPartyExtendedOperationHandlerResponse = nil
 		dst.ValidateTotpPasswordExtendedOperationHandlerResponse = nil
+		dst.VerifyPasswordExtendedOperationHandlerResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddExtendedOperationHandler200Response)")
 	} else if match == 1 {
@@ -244,6 +266,10 @@ func (src AddExtendedOperationHandler200Response) MarshalJSON() ([]byte, error) 
 		return json.Marshal(&src.ValidateTotpPasswordExtendedOperationHandlerResponse)
 	}
 
+	if src.VerifyPasswordExtendedOperationHandlerResponse != nil {
+		return json.Marshal(&src.VerifyPasswordExtendedOperationHandlerResponse)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -282,6 +308,10 @@ func (obj *AddExtendedOperationHandler200Response) GetActualInstance() interface
 
 	if obj.ValidateTotpPasswordExtendedOperationHandlerResponse != nil {
 		return obj.ValidateTotpPasswordExtendedOperationHandlerResponse
+	}
+
+	if obj.VerifyPasswordExtendedOperationHandlerResponse != nil {
+		return obj.VerifyPasswordExtendedOperationHandlerResponse
 	}
 
 	// all schemas are nil

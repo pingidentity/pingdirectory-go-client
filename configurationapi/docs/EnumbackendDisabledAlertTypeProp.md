@@ -145,6 +145,8 @@
 
 * `HEALTH_CHECK_UNAVAILABLE_TO_DEGRADED` (value: `"health-check-unavailable-to-degraded"`)
 
+* `HIGH_ATTRIBUTE_INDEX_ENTRY_LIMIT` (value: `"high-attribute-index-entry-limit"`)
+
 * `HTTP_CONNECTION_HANDLER_DUPLICATE_CONTEXT_PATH` (value: `"http-connection-handler-duplicate-context-path"`)
 
 * `HTTP_CONNECTION_HANDLER_DUPLICATE_SERVLET_EXTENSION` (value: `"http-connection-handler-duplicate-servlet-extension"`)

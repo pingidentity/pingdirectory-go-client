@@ -60,6 +60,7 @@ const (
 	ENUMRESULTCRITERIAMISSINGPRIVILEGEPROP_COLLECT_SUPPORT_DATA                       EnumresultCriteriaMissingPrivilegeProp = "collect-support-data"
 	ENUMRESULTCRITERIAMISSINGPRIVILEGEPROP_FILE_SERVLET_ACCESS                        EnumresultCriteriaMissingPrivilegeProp = "file-servlet-access"
 	ENUMRESULTCRITERIAMISSINGPRIVILEGEPROP_PERMIT_REPLACE_CERTIFICATE_REQUEST         EnumresultCriteriaMissingPrivilegeProp = "permit-replace-certificate-request"
+	ENUMRESULTCRITERIAMISSINGPRIVILEGEPROP_PERMIT_VERIFY_PASSWORD_REQUEST             EnumresultCriteriaMissingPrivilegeProp = "permit-verify-password-request"
 )
 
 // All allowed values of EnumresultCriteriaMissingPrivilegeProp enum
@@ -104,6 +105,7 @@ var AllowedEnumresultCriteriaMissingPrivilegePropEnumValues = []EnumresultCriter
 	"collect-support-data",
 	"file-servlet-access",
 	"permit-replace-certificate-request",
+	"permit-verify-password-request",
 }
 
 func (v *EnumresultCriteriaMissingPrivilegeProp) UnmarshalJSON(src []byte) error {

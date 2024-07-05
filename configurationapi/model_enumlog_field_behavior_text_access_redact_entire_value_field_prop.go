@@ -93,14 +93,17 @@ const (
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_ENTRY_REBALANCING_TARGET_SERVER_ALTERED                                    EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "entry-rebalancing-target-server-altered"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_BACKEND_ID                                     EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-backend-id"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENCRYPTION_SETTINGS_DEFINITION_ID              EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-encryption-settings-definition-id"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_NOT_MATCHING_BASE_DN          EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-entries-excluded-not-matching-base-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_NOT_MATCHING_FILTER           EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-entries-excluded-not-matching-filter"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXCLUDED_WITHOUT_PASSWORDS             EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-entries-excluded-without-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITH_NON_REVERSIBLE_PASSWORDS EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-entries-exported-with-non-reversible-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITH_REVERSIBLE_PASSWORDS     EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-entries-exported-with-reversible-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_ENTRIES_EXPORTED_WITHOUT_PASSWORDS             EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-entries-exported-without-passwords"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_EXCLUDE_BASE_DN                                EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-exclude-base-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_EXPORT_NON_REVERSIBLE_PASSWORDS                EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-export-non-reversible-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_EXPORT_ONLY_ENTRIES_WITH_PASSWORDS             EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-export-only-entries-with-passwords"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_FILTER                                         EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-filter"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_INCLUDE_BASE_DN                                EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-include-base-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_INCLUDE_VIRTUAL_ATTRIBUTES                     EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-include-virtual-attributes"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_OUTPUT_FILE                                    EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-output-file"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_EXPORT_REVERSIBLE_PASSWORDS_TOTAL_ENTRIES_EXAMINED                         EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "export-reversible-passwords-total-entries-examined"
@@ -257,6 +260,7 @@ const (
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_SINGLE_USE_TOKEN_UNSUCCESSFUL_DELIVERY_MECHANISMS                          EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "single-use-token-unsuccessful-delivery-mechanisms"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_SINGLE_USE_TOKEN_USER_DN                                                   EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "single-use-token-user-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_STARTUP_ID                                                                 EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "startup-id"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_STREAMED_ENTRIES_FROM_INDEX                                                EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "streamed-entries-from-index"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_TARGET_HOST                                                                EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "target-host"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_TARGET_PORT                                                                EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "target-port"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_TARGET_PROTOCOL                                                            EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "target-protocol"
@@ -267,8 +271,10 @@ const (
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_TRIGGERED_BY_OPERATION_ID                                                  EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "triggered-by-operation-id"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_UNCACHED_DATA_ACCESSED                                                     EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "uncached-data-accessed"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_UNIQUENESS_REQUEST_CONTROL                                                 EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "uniqueness-request-control"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_USED_CACHED_PAGED_RESULTS_ID_SET                                           EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "used-cached-paged-results-id-set"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_USED_PRIVILEGES                                                            EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "used-privileges"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_USING_ADMIN_SESSION_WORKER_THREAD                                          EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "using-admin-session-worker-thread"
+	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_VERIFY_PASSWORD_REQUEST_USER_DN                                            EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "verify-password-request-user-dn"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_WORK_QUEUE_WAIT_TIME_MILLIS                                                EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "work-queue-wait-time-millis"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_YUBIKEY_OTP_BIND_AUTHENTICATION_ID                                         EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "yubikey-otp-bind-authentication-id"
 	ENUMLOGFIELDBEHAVIORTEXTACCESSREDACTENTIREVALUEFIELDPROP_YUBIKEY_OTP_BIND_AUTHORIZATION_ID                                          EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp = "yubikey-otp-bind-authorization-id"
@@ -352,14 +358,17 @@ var AllowedEnumlogFieldBehaviorTextAccessRedactEntireValueFieldPropEnumValues = 
 	"entry-rebalancing-target-server-altered",
 	"export-reversible-passwords-backend-id",
 	"export-reversible-passwords-encryption-settings-definition-id",
+	"export-reversible-passwords-entries-excluded-not-matching-base-dn",
 	"export-reversible-passwords-entries-excluded-not-matching-filter",
 	"export-reversible-passwords-entries-excluded-without-passwords",
 	"export-reversible-passwords-entries-exported-with-non-reversible-passwords",
 	"export-reversible-passwords-entries-exported-with-reversible-passwords",
 	"export-reversible-passwords-entries-exported-without-passwords",
+	"export-reversible-passwords-exclude-base-dn",
 	"export-reversible-passwords-export-non-reversible-passwords",
 	"export-reversible-passwords-export-only-entries-with-passwords",
 	"export-reversible-passwords-filter",
+	"export-reversible-passwords-include-base-dn",
 	"export-reversible-passwords-include-virtual-attributes",
 	"export-reversible-passwords-output-file",
 	"export-reversible-passwords-total-entries-examined",
@@ -516,6 +525,7 @@ var AllowedEnumlogFieldBehaviorTextAccessRedactEntireValueFieldPropEnumValues = 
 	"single-use-token-unsuccessful-delivery-mechanisms",
 	"single-use-token-user-dn",
 	"startup-id",
+	"streamed-entries-from-index",
 	"target-host",
 	"target-port",
 	"target-protocol",
@@ -526,8 +536,10 @@ var AllowedEnumlogFieldBehaviorTextAccessRedactEntireValueFieldPropEnumValues = 
 	"triggered-by-operation-id",
 	"uncached-data-accessed",
 	"uniqueness-request-control",
+	"used-cached-paged-results-id-set",
 	"used-privileges",
 	"using-admin-session-worker-thread",
+	"verify-password-request-user-dn",
 	"work-queue-wait-time-millis",
 	"yubikey-otp-bind-authentication-id",
 	"yubikey-otp-bind-authorization-id",

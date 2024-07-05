@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-100/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
 tags:
 - description: Access alert-handlers
   name: alert-handler
@@ -303,6 +303,7 @@ components:
       - "health-check-degraded-to-unavailable"
       - "health-check-unavailable-to-available"
       - "health-check-unavailable-to-degraded"
+      - "high-attribute-index-entry-limit"
       - "http-connection-handler-duplicate-context-path"
       - "http-connection-handler-duplicate-servlet-extension"
       - "index-corrupt"
@@ -504,6 +505,7 @@ components:
       - "health-check-degraded-to-unavailable"
       - "health-check-unavailable-to-available"
       - "health-check-unavailable-to-degraded"
+      - "high-attribute-index-entry-limit"
       - "http-connection-handler-duplicate-context-path"
       - "http-connection-handler-duplicate-servlet-extension"
       - "index-corrupt"
@@ -1300,6 +1302,10 @@ components:
           type: string
           description: >-
               Specifies the path of the command to execute, without any arguments. It must be an absolute path for reasons of security and reliability.
+        commandTimeout:
+          type: string
+          description: >-
+              The maximum length of time this server will wait for the executed command to finish executing before forcibly terminating it.
         asynchronous:
           type: boolean
           description: >-
