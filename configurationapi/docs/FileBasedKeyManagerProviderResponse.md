@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **PrivateKeyPin** | Pointer to **string** | Specifies the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN. | [optional] 
 **PrivateKeyPinFile** | Pointer to **string** | Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN. | [optional] 
 **PrivateKeyPinPassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN. | [optional] 
+**EnableKeyManagerCaching** | Pointer to **bool** | Indicates whether key manager providers should cache key managers. | [optional] 
 **Description** | Pointer to **string** | A description for this Key Manager Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Key Manager Provider is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -252,6 +253,31 @@ SetPrivateKeyPinPassphraseProvider sets PrivateKeyPinPassphraseProvider field to
 `func (o *FileBasedKeyManagerProviderResponse) HasPrivateKeyPinPassphraseProvider() bool`
 
 HasPrivateKeyPinPassphraseProvider returns a boolean if a field has been set.
+
+### GetEnableKeyManagerCaching
+
+`func (o *FileBasedKeyManagerProviderResponse) GetEnableKeyManagerCaching() bool`
+
+GetEnableKeyManagerCaching returns the EnableKeyManagerCaching field if non-nil, zero value otherwise.
+
+### GetEnableKeyManagerCachingOk
+
+`func (o *FileBasedKeyManagerProviderResponse) GetEnableKeyManagerCachingOk() (*bool, bool)`
+
+GetEnableKeyManagerCachingOk returns a tuple with the EnableKeyManagerCaching field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableKeyManagerCaching
+
+`func (o *FileBasedKeyManagerProviderResponse) SetEnableKeyManagerCaching(v bool)`
+
+SetEnableKeyManagerCaching sets EnableKeyManagerCaching field to given value.
+
+### HasEnableKeyManagerCaching
+
+`func (o *FileBasedKeyManagerProviderResponse) HasEnableKeyManagerCaching() bool`
+
+HasEnableKeyManagerCaching returns a boolean if a field has been set.
 
 ### GetDescription
 

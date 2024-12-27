@@ -98,6 +98,7 @@ Name | Type | Description | Notes
 **TrackedApplication** | Pointer to **[]string** | Specifies criteria for identifying specific applications that access the server to enable tracking throughput and latency of LDAP operations issued by an application. | [optional] 
 **JmxValueBehavior** | Pointer to [**EnumglobalConfigurationJmxValueBehaviorProp**](EnumglobalConfigurationJmxValueBehaviorProp.md) |  | [optional] 
 **JmxUseLegacyMbeanNames** | Pointer to **bool** | When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of \&quot;Rdn1\&quot; and \&quot;Rdn2\&quot; instead of the recommended \&quot;type\&quot; and \&quot;name\&quot; keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys. | [optional] 
+**SystemProperty** | Pointer to **[]string** | Specifies the name and value of a system property to set in the JVM. | [optional] 
 
 ## Methods
 
@@ -2402,6 +2403,31 @@ SetJmxUseLegacyMbeanNames sets JmxUseLegacyMbeanNames field to given value.
 `func (o *GlobalConfigurationResponse) HasJmxUseLegacyMbeanNames() bool`
 
 HasJmxUseLegacyMbeanNames returns a boolean if a field has been set.
+
+### GetSystemProperty
+
+`func (o *GlobalConfigurationResponse) GetSystemProperty() []string`
+
+GetSystemProperty returns the SystemProperty field if non-nil, zero value otherwise.
+
+### GetSystemPropertyOk
+
+`func (o *GlobalConfigurationResponse) GetSystemPropertyOk() (*[]string, bool)`
+
+GetSystemPropertyOk returns a tuple with the SystemProperty field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSystemProperty
+
+`func (o *GlobalConfigurationResponse) SetSystemProperty(v []string)`
+
+SetSystemProperty sets SystemProperty field to given value.
+
+### HasSystemProperty
+
+`func (o *GlobalConfigurationResponse) HasSystemProperty() bool`
+
+HasSystemProperty returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

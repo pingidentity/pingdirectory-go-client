@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **BasicAuthenticationPassphraseProvider** | Pointer to **string** | A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server. | [optional] 
 **HostnameVerificationMethod** | Pointer to [**EnumexternalServerHttpHostnameVerificationMethodProp**](EnumexternalServerHttpHostnameVerificationMethodProp.md) |  | [optional] 
 **ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server. | [optional] 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the AWS service. | [optional] 
 **BaseURL** | **string** | The base URL of the external server, optionally including port number, for example \&quot;https://externalService:9031\&quot;. | 
 **SslCertNickname** | Pointer to **string** | The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **ConjurServerBaseURI** | **[]string** | The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://conjur.example.com:8443/\&quot;. | 
@@ -54,7 +55,6 @@ Name | Type | Description | Notes
 **TrustStoreFile** | Pointer to **string** | The path to a file containing the information needed to trust the certificate presented by the Vault servers. | [optional] 
 **TrustStorePin** | Pointer to **string** | The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents. | [optional] 
 **TrustStoreType** | Pointer to **string** | The store type for the specified trust store file. The value should likely be one of \&quot;JKS\&quot;, \&quot;PKCS12\&quot;, or \&quot;BCFKS\&quot;. | [optional] 
-**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the AWS service. | [optional] 
 **AwsAccessKeyID** | Pointer to **string** | The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided. | [optional] 
 **AwsSecretAccessKey** | Pointer to **string** | The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided. | [optional] 
 **AwsRegionName** | **string** | The name of the AWS region containing the resources that will be accessed. | 
@@ -1050,6 +1050,31 @@ SetResponseTimeout sets ResponseTimeout field to given value.
 
 HasResponseTimeout returns a boolean if a field has been set.
 
+### GetHttpProxyExternalServer
+
+`func (o *AddExternalServerRequest) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *AddExternalServerRequest) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *AddExternalServerRequest) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *AddExternalServerRequest) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
+
 ### GetBaseURL
 
 `func (o *AddExternalServerRequest) GetBaseURL() string`
@@ -1279,31 +1304,6 @@ SetTrustStoreType sets TrustStoreType field to given value.
 `func (o *AddExternalServerRequest) HasTrustStoreType() bool`
 
 HasTrustStoreType returns a boolean if a field has been set.
-
-### GetHttpProxyExternalServer
-
-`func (o *AddExternalServerRequest) GetHttpProxyExternalServer() string`
-
-GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
-
-### GetHttpProxyExternalServerOk
-
-`func (o *AddExternalServerRequest) GetHttpProxyExternalServerOk() (*string, bool)`
-
-GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHttpProxyExternalServer
-
-`func (o *AddExternalServerRequest) SetHttpProxyExternalServer(v string)`
-
-SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
-
-### HasHttpProxyExternalServer
-
-`func (o *AddExternalServerRequest) HasHttpProxyExternalServer() bool`
-
-HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetAwsAccessKeyID
 

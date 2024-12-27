@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumbcryptPasswordStorageSchemeSchemaUrn**](EnumbcryptPasswordStorageSchemeSchemaUrn.md) |  | 
 **BcryptCostFactor** | Pointer to **int64** | Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive. | [optional] 
+**EncodedPasswordCacheSize** | Pointer to **int64** | The maximum number of Bcrypt-encoded passwords to cache for faster verification. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -75,6 +76,31 @@ SetBcryptCostFactor sets BcryptCostFactor field to given value.
 `func (o *BcryptPasswordStorageSchemeResponse) HasBcryptCostFactor() bool`
 
 HasBcryptCostFactor returns a boolean if a field has been set.
+
+### GetEncodedPasswordCacheSize
+
+`func (o *BcryptPasswordStorageSchemeResponse) GetEncodedPasswordCacheSize() int64`
+
+GetEncodedPasswordCacheSize returns the EncodedPasswordCacheSize field if non-nil, zero value otherwise.
+
+### GetEncodedPasswordCacheSizeOk
+
+`func (o *BcryptPasswordStorageSchemeResponse) GetEncodedPasswordCacheSizeOk() (*int64, bool)`
+
+GetEncodedPasswordCacheSizeOk returns a tuple with the EncodedPasswordCacheSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncodedPasswordCacheSize
+
+`func (o *BcryptPasswordStorageSchemeResponse) SetEncodedPasswordCacheSize(v int64)`
+
+SetEncodedPasswordCacheSize sets EncodedPasswordCacheSize field to given value.
+
+### HasEncodedPasswordCacheSize
+
+`func (o *BcryptPasswordStorageSchemeResponse) HasEncodedPasswordCacheSize() bool`
+
+HasEncodedPasswordCacheSize returns a boolean if a field has been set.
 
 ### GetDescription
 

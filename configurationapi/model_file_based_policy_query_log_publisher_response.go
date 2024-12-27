@@ -53,6 +53,8 @@ type FileBasedPolicyQueryLogPublisherResponse struct {
 	Append *bool `json:"append,omitempty"`
 	// Specifies whether Policy Query messages recorded by the log publisher will include full responses from the PDP.
 	IncludeQueryResponse *bool `json:"includeQueryResponse,omitempty"`
+	// Specifies whether messages recorded by the file-based Policy Query log publisher will include query permutations.
+	IncludeQueryPermutations *bool `json:"includeQueryPermutations,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
@@ -637,6 +639,38 @@ func (o *FileBasedPolicyQueryLogPublisherResponse) SetIncludeQueryResponse(v boo
 	o.IncludeQueryResponse = &v
 }
 
+// GetIncludeQueryPermutations returns the IncludeQueryPermutations field value if set, zero value otherwise.
+func (o *FileBasedPolicyQueryLogPublisherResponse) GetIncludeQueryPermutations() bool {
+	if o == nil || IsNil(o.IncludeQueryPermutations) {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeQueryPermutations
+}
+
+// GetIncludeQueryPermutationsOk returns a tuple with the IncludeQueryPermutations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileBasedPolicyQueryLogPublisherResponse) GetIncludeQueryPermutationsOk() (*bool, bool) {
+	if o == nil || IsNil(o.IncludeQueryPermutations) {
+		return nil, false
+	}
+	return o.IncludeQueryPermutations, true
+}
+
+// HasIncludeQueryPermutations returns a boolean if a field has been set.
+func (o *FileBasedPolicyQueryLogPublisherResponse) HasIncludeQueryPermutations() bool {
+	if o != nil && !IsNil(o.IncludeQueryPermutations) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeQueryPermutations gets a reference to the given bool and assigns it to the IncludeQueryPermutations field.
+func (o *FileBasedPolicyQueryLogPublisherResponse) SetIncludeQueryPermutations(v bool) {
+	o.IncludeQueryPermutations = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *FileBasedPolicyQueryLogPublisherResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -777,6 +811,9 @@ func (o FileBasedPolicyQueryLogPublisherResponse) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.IncludeQueryResponse) {
 		toSerialize["includeQueryResponse"] = o.IncludeQueryResponse
+	}
+	if !IsNil(o.IncludeQueryPermutations) {
+		toSerialize["includeQueryPermutations"] = o.IncludeQueryPermutations
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

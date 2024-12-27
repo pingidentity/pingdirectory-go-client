@@ -112,6 +112,8 @@ type APIClient struct {
 
 	EntryCacheAPI *EntryCacheAPIService
 
+	EntryCounterPluginCriteriaAPI *EntryCounterPluginCriteriaAPIService
+
 	ExtendedOperationHandlerAPI *ExtendedOperationHandlerAPIService
 
 	ExternalServerAPI *ExternalServerAPIService
@@ -338,6 +340,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DelegatedAdminRightsAPI = (*DelegatedAdminRightsAPIService)(&c.common)
 	c.DnMapAPI = (*DnMapAPIService)(&c.common)
 	c.EntryCacheAPI = (*EntryCacheAPIService)(&c.common)
+	c.EntryCounterPluginCriteriaAPI = (*EntryCounterPluginCriteriaAPIService)(&c.common)
 	c.ExtendedOperationHandlerAPI = (*ExtendedOperationHandlerAPIService)(&c.common)
 	c.ExternalServerAPI = (*ExternalServerAPIService)(&c.common)
 	c.FailureLockoutActionAPI = (*FailureLockoutActionAPIService)(&c.common)

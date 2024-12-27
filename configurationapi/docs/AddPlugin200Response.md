@@ -6,14 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn**](EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn.md) |  | 
-**TraditionalStaticGroupObjectClass** | Pointer to [**EnumpluginTraditionalStaticGroupObjectClassProp**](EnumpluginTraditionalStaticGroupObjectClassProp.md) |  | [optional] 
-**MaximumMembershipUpdatesPerModify** | Pointer to **int64** | An integer property that specifies the maximum number of membership changes that will be supported in a single modify operation. A value of zero indicates that modify operations targeting the group entry should not be permitted to alter the set of members for the group. | [optional] 
-**ReadOperationSupport** | Pointer to [**EnumpluginReadOperationSupportProp**](EnumpluginReadOperationSupportProp.md) |  | [optional] 
+**TimeBetweenSearches** | **string** | The length of time between internal searches used to identify entries that match the sets of search criteria. | 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**TraditionalStaticGroupObjectClass** | Pointer to [**EnumpluginTraditionalStaticGroupObjectClassProp**](EnumpluginTraditionalStaticGroupObjectClassProp.md) |  | [optional] 
+**MaximumMembershipUpdatesPerModify** | Pointer to **int64** | An integer property that specifies the maximum number of membership changes that will be supported in a single modify operation. A value of zero indicates that modify operations targeting the group entry should not be permitted to alter the set of members for the group. | [optional] 
+**ReadOperationSupport** | Pointer to [**EnumpluginReadOperationSupportProp**](EnumpluginReadOperationSupportProp.md) |  | [optional] 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **NumThreads** | **int64** | Specifies the number of concurrent threads that should be used to process the search operations. | 
 **BaseDN** | **[]string** | Specifies a base DN within which the attribute must be unique. | 
@@ -145,7 +146,7 @@ Name | Type | Description | Notes
 
 ### NewAddPlugin200Response
 
-`func NewAddPlugin200Response(id string, schemas []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, enabled bool, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, requestCriteria string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPlugin200Response`
+`func NewAddPlugin200Response(id string, schemas []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, timeBetweenSearches string, enabled bool, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, requestCriteria string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPlugin200Response`
 
 NewAddPlugin200Response instantiates a new AddPlugin200Response object
 This constructor will assign default values to properties that have it defined,
@@ -200,80 +201,25 @@ and a boolean to check if the value has been set.
 SetSchemas sets Schemas field to given value.
 
 
-### GetTraditionalStaticGroupObjectClass
+### GetTimeBetweenSearches
 
-`func (o *AddPlugin200Response) GetTraditionalStaticGroupObjectClass() EnumpluginTraditionalStaticGroupObjectClassProp`
+`func (o *AddPlugin200Response) GetTimeBetweenSearches() string`
 
-GetTraditionalStaticGroupObjectClass returns the TraditionalStaticGroupObjectClass field if non-nil, zero value otherwise.
+GetTimeBetweenSearches returns the TimeBetweenSearches field if non-nil, zero value otherwise.
 
-### GetTraditionalStaticGroupObjectClassOk
+### GetTimeBetweenSearchesOk
 
-`func (o *AddPlugin200Response) GetTraditionalStaticGroupObjectClassOk() (*EnumpluginTraditionalStaticGroupObjectClassProp, bool)`
+`func (o *AddPlugin200Response) GetTimeBetweenSearchesOk() (*string, bool)`
 
-GetTraditionalStaticGroupObjectClassOk returns a tuple with the TraditionalStaticGroupObjectClass field if it's non-nil, zero value otherwise
+GetTimeBetweenSearchesOk returns a tuple with the TimeBetweenSearches field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTraditionalStaticGroupObjectClass
+### SetTimeBetweenSearches
 
-`func (o *AddPlugin200Response) SetTraditionalStaticGroupObjectClass(v EnumpluginTraditionalStaticGroupObjectClassProp)`
+`func (o *AddPlugin200Response) SetTimeBetweenSearches(v string)`
 
-SetTraditionalStaticGroupObjectClass sets TraditionalStaticGroupObjectClass field to given value.
+SetTimeBetweenSearches sets TimeBetweenSearches field to given value.
 
-### HasTraditionalStaticGroupObjectClass
-
-`func (o *AddPlugin200Response) HasTraditionalStaticGroupObjectClass() bool`
-
-HasTraditionalStaticGroupObjectClass returns a boolean if a field has been set.
-
-### GetMaximumMembershipUpdatesPerModify
-
-`func (o *AddPlugin200Response) GetMaximumMembershipUpdatesPerModify() int64`
-
-GetMaximumMembershipUpdatesPerModify returns the MaximumMembershipUpdatesPerModify field if non-nil, zero value otherwise.
-
-### GetMaximumMembershipUpdatesPerModifyOk
-
-`func (o *AddPlugin200Response) GetMaximumMembershipUpdatesPerModifyOk() (*int64, bool)`
-
-GetMaximumMembershipUpdatesPerModifyOk returns a tuple with the MaximumMembershipUpdatesPerModify field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaximumMembershipUpdatesPerModify
-
-`func (o *AddPlugin200Response) SetMaximumMembershipUpdatesPerModify(v int64)`
-
-SetMaximumMembershipUpdatesPerModify sets MaximumMembershipUpdatesPerModify field to given value.
-
-### HasMaximumMembershipUpdatesPerModify
-
-`func (o *AddPlugin200Response) HasMaximumMembershipUpdatesPerModify() bool`
-
-HasMaximumMembershipUpdatesPerModify returns a boolean if a field has been set.
-
-### GetReadOperationSupport
-
-`func (o *AddPlugin200Response) GetReadOperationSupport() EnumpluginReadOperationSupportProp`
-
-GetReadOperationSupport returns the ReadOperationSupport field if non-nil, zero value otherwise.
-
-### GetReadOperationSupportOk
-
-`func (o *AddPlugin200Response) GetReadOperationSupportOk() (*EnumpluginReadOperationSupportProp, bool)`
-
-GetReadOperationSupportOk returns a tuple with the ReadOperationSupport field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReadOperationSupport
-
-`func (o *AddPlugin200Response) SetReadOperationSupport(v EnumpluginReadOperationSupportProp)`
-
-SetReadOperationSupport sets ReadOperationSupport field to given value.
-
-### HasReadOperationSupport
-
-`func (o *AddPlugin200Response) HasReadOperationSupport() bool`
-
-HasReadOperationSupport returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -394,6 +340,81 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *AddPlugin200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetTraditionalStaticGroupObjectClass
+
+`func (o *AddPlugin200Response) GetTraditionalStaticGroupObjectClass() EnumpluginTraditionalStaticGroupObjectClassProp`
+
+GetTraditionalStaticGroupObjectClass returns the TraditionalStaticGroupObjectClass field if non-nil, zero value otherwise.
+
+### GetTraditionalStaticGroupObjectClassOk
+
+`func (o *AddPlugin200Response) GetTraditionalStaticGroupObjectClassOk() (*EnumpluginTraditionalStaticGroupObjectClassProp, bool)`
+
+GetTraditionalStaticGroupObjectClassOk returns a tuple with the TraditionalStaticGroupObjectClass field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTraditionalStaticGroupObjectClass
+
+`func (o *AddPlugin200Response) SetTraditionalStaticGroupObjectClass(v EnumpluginTraditionalStaticGroupObjectClassProp)`
+
+SetTraditionalStaticGroupObjectClass sets TraditionalStaticGroupObjectClass field to given value.
+
+### HasTraditionalStaticGroupObjectClass
+
+`func (o *AddPlugin200Response) HasTraditionalStaticGroupObjectClass() bool`
+
+HasTraditionalStaticGroupObjectClass returns a boolean if a field has been set.
+
+### GetMaximumMembershipUpdatesPerModify
+
+`func (o *AddPlugin200Response) GetMaximumMembershipUpdatesPerModify() int64`
+
+GetMaximumMembershipUpdatesPerModify returns the MaximumMembershipUpdatesPerModify field if non-nil, zero value otherwise.
+
+### GetMaximumMembershipUpdatesPerModifyOk
+
+`func (o *AddPlugin200Response) GetMaximumMembershipUpdatesPerModifyOk() (*int64, bool)`
+
+GetMaximumMembershipUpdatesPerModifyOk returns a tuple with the MaximumMembershipUpdatesPerModify field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumMembershipUpdatesPerModify
+
+`func (o *AddPlugin200Response) SetMaximumMembershipUpdatesPerModify(v int64)`
+
+SetMaximumMembershipUpdatesPerModify sets MaximumMembershipUpdatesPerModify field to given value.
+
+### HasMaximumMembershipUpdatesPerModify
+
+`func (o *AddPlugin200Response) HasMaximumMembershipUpdatesPerModify() bool`
+
+HasMaximumMembershipUpdatesPerModify returns a boolean if a field has been set.
+
+### GetReadOperationSupport
+
+`func (o *AddPlugin200Response) GetReadOperationSupport() EnumpluginReadOperationSupportProp`
+
+GetReadOperationSupport returns the ReadOperationSupport field if non-nil, zero value otherwise.
+
+### GetReadOperationSupportOk
+
+`func (o *AddPlugin200Response) GetReadOperationSupportOk() (*EnumpluginReadOperationSupportProp, bool)`
+
+GetReadOperationSupportOk returns a tuple with the ReadOperationSupport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReadOperationSupport
+
+`func (o *AddPlugin200Response) SetReadOperationSupport(v EnumpluginReadOperationSupportProp)`
+
+SetReadOperationSupport sets ReadOperationSupport field to given value.
+
+### HasReadOperationSupport
+
+`func (o *AddPlugin200Response) HasReadOperationSupport() bool`
+
+HasReadOperationSupport returns a boolean if a field has been set.
 
 ### GetPluginType
 

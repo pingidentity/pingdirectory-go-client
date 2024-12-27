@@ -36,6 +36,8 @@ type AddFileBasedKeyManagerProviderRequest struct {
 	PrivateKeyPinFile *string `json:"privateKeyPinFile,omitempty"`
 	// The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN.
 	PrivateKeyPinPassphraseProvider *string `json:"privateKeyPinPassphraseProvider,omitempty"`
+	// Indicates whether key manager providers should cache key managers.
+	EnableKeyManagerCaching *bool `json:"enableKeyManagerCaching,omitempty"`
 	// A description for this Key Manager Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Key Manager Provider is enabled for use.
@@ -337,6 +339,38 @@ func (o *AddFileBasedKeyManagerProviderRequest) SetPrivateKeyPinPassphraseProvid
 	o.PrivateKeyPinPassphraseProvider = &v
 }
 
+// GetEnableKeyManagerCaching returns the EnableKeyManagerCaching field value if set, zero value otherwise.
+func (o *AddFileBasedKeyManagerProviderRequest) GetEnableKeyManagerCaching() bool {
+	if o == nil || IsNil(o.EnableKeyManagerCaching) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableKeyManagerCaching
+}
+
+// GetEnableKeyManagerCachingOk returns a tuple with the EnableKeyManagerCaching field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddFileBasedKeyManagerProviderRequest) GetEnableKeyManagerCachingOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableKeyManagerCaching) {
+		return nil, false
+	}
+	return o.EnableKeyManagerCaching, true
+}
+
+// HasEnableKeyManagerCaching returns a boolean if a field has been set.
+func (o *AddFileBasedKeyManagerProviderRequest) HasEnableKeyManagerCaching() bool {
+	if o != nil && !IsNil(o.EnableKeyManagerCaching) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableKeyManagerCaching gets a reference to the given bool and assigns it to the EnableKeyManagerCaching field.
+func (o *AddFileBasedKeyManagerProviderRequest) SetEnableKeyManagerCaching(v bool) {
+	o.EnableKeyManagerCaching = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddFileBasedKeyManagerProviderRequest) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -449,6 +483,9 @@ func (o AddFileBasedKeyManagerProviderRequest) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.PrivateKeyPinPassphraseProvider) {
 		toSerialize["privateKeyPinPassphraseProvider"] = o.PrivateKeyPinPassphraseProvider
+	}
+	if !IsNil(o.EnableKeyManagerCaching) {
+		toSerialize["enableKeyManagerCaching"] = o.EnableKeyManagerCaching
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

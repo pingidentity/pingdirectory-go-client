@@ -195,6 +195,8 @@ type GlobalConfigurationResponse struct {
 	JmxValueBehavior   *EnumglobalConfigurationJmxValueBehaviorProp `json:"jmxValueBehavior,omitempty"`
 	// When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of \"Rdn1\" and \"Rdn2\" instead of the recommended \"type\" and \"name\" keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys.
 	JmxUseLegacyMbeanNames *bool `json:"jmxUseLegacyMbeanNames,omitempty"`
+	// Specifies the name and value of a system property to set in the JVM.
+	SystemProperty []string `json:"systemProperty,omitempty"`
 }
 
 // NewGlobalConfigurationResponse instantiates a new GlobalConfigurationResponse object
@@ -3131,6 +3133,38 @@ func (o *GlobalConfigurationResponse) SetJmxUseLegacyMbeanNames(v bool) {
 	o.JmxUseLegacyMbeanNames = &v
 }
 
+// GetSystemProperty returns the SystemProperty field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetSystemProperty() []string {
+	if o == nil || IsNil(o.SystemProperty) {
+		var ret []string
+		return ret
+	}
+	return o.SystemProperty
+}
+
+// GetSystemPropertyOk returns a tuple with the SystemProperty field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetSystemPropertyOk() ([]string, bool) {
+	if o == nil || IsNil(o.SystemProperty) {
+		return nil, false
+	}
+	return o.SystemProperty, true
+}
+
+// HasSystemProperty returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasSystemProperty() bool {
+	if o != nil && !IsNil(o.SystemProperty) {
+		return true
+	}
+
+	return false
+}
+
+// SetSystemProperty gets a reference to the given []string and assigns it to the SystemProperty field.
+func (o *GlobalConfigurationResponse) SetSystemProperty(v []string) {
+	o.SystemProperty = v
+}
+
 func (o GlobalConfigurationResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -3396,6 +3430,9 @@ func (o GlobalConfigurationResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.JmxUseLegacyMbeanNames) {
 		toSerialize["jmxUseLegacyMbeanNames"] = o.JmxUseLegacyMbeanNames
+	}
+	if !IsNil(o.SystemProperty) {
+		toSerialize["systemProperty"] = o.SystemProperty
 	}
 	return toSerialize, nil
 }

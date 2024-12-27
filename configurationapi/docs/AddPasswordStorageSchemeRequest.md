@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **MemoryUsageKb** | **int64** | The number of kilobytes of memory that must be used in the course of encoding each password. | 
 **SaltLengthBytes** | **int64** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | 
 **DerivedKeyLengthBytes** | **int64** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | 
+**EncodedPasswordCacheSize** | Pointer to **int64** | The maximum number of scrypt-encoded passwords to cache for faster verification. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **PasswordEncodingMechanism** | Pointer to [**EnumpasswordStorageSchemePasswordEncodingMechanismProp**](EnumpasswordStorageSchemePasswordEncodingMechanismProp.md) |  | [optional] 
@@ -190,6 +191,31 @@ and a boolean to check if the value has been set.
 
 SetDerivedKeyLengthBytes sets DerivedKeyLengthBytes field to given value.
 
+
+### GetEncodedPasswordCacheSize
+
+`func (o *AddPasswordStorageSchemeRequest) GetEncodedPasswordCacheSize() int64`
+
+GetEncodedPasswordCacheSize returns the EncodedPasswordCacheSize field if non-nil, zero value otherwise.
+
+### GetEncodedPasswordCacheSizeOk
+
+`func (o *AddPasswordStorageSchemeRequest) GetEncodedPasswordCacheSizeOk() (*int64, bool)`
+
+GetEncodedPasswordCacheSizeOk returns a tuple with the EncodedPasswordCacheSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncodedPasswordCacheSize
+
+`func (o *AddPasswordStorageSchemeRequest) SetEncodedPasswordCacheSize(v int64)`
+
+SetEncodedPasswordCacheSize sets EncodedPasswordCacheSize field to given value.
+
+### HasEncodedPasswordCacheSize
+
+`func (o *AddPasswordStorageSchemeRequest) HasEncodedPasswordCacheSize() bool`
+
+HasEncodedPasswordCacheSize returns a boolean if a field has been set.
 
 ### GetDescription
 

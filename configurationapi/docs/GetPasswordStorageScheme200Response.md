@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ParallelismFactor** | **int64** | The number of concurrent threads that will be used in the course of encoding each password. | 
 **MemoryUsageKb** | **int64** | The number of kilobytes of memory that must be used in the course of encoding each password. | 
 **DerivedKeyLengthBytes** | **int64** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | 
+**EncodedPasswordCacheSize** | Pointer to **int64** | The maximum number of scrypt-encoded passwords to cache for faster verification. | [optional] 
 **PasswordEncodingMechanism** | Pointer to [**EnumpasswordStorageSchemePasswordEncodingMechanismProp**](EnumpasswordStorageSchemePasswordEncodingMechanismProp.md) |  | [optional] 
 **NumDigestRounds** | Pointer to **int64** | Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings. | [optional] 
 **MaxPasswordLength** | Pointer to **int64** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
@@ -287,6 +288,31 @@ and a boolean to check if the value has been set.
 
 SetDerivedKeyLengthBytes sets DerivedKeyLengthBytes field to given value.
 
+
+### GetEncodedPasswordCacheSize
+
+`func (o *GetPasswordStorageScheme200Response) GetEncodedPasswordCacheSize() int64`
+
+GetEncodedPasswordCacheSize returns the EncodedPasswordCacheSize field if non-nil, zero value otherwise.
+
+### GetEncodedPasswordCacheSizeOk
+
+`func (o *GetPasswordStorageScheme200Response) GetEncodedPasswordCacheSizeOk() (*int64, bool)`
+
+GetEncodedPasswordCacheSizeOk returns a tuple with the EncodedPasswordCacheSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncodedPasswordCacheSize
+
+`func (o *GetPasswordStorageScheme200Response) SetEncodedPasswordCacheSize(v int64)`
+
+SetEncodedPasswordCacheSize sets EncodedPasswordCacheSize field to given value.
+
+### HasEncodedPasswordCacheSize
+
+`func (o *GetPasswordStorageScheme200Response) HasEncodedPasswordCacheSize() bool`
+
+HasEncodedPasswordCacheSize returns a boolean if a field has been set.
 
 ### GetPasswordEncodingMechanism
 

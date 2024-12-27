@@ -29,6 +29,8 @@ type Pbkdf2PasswordStorageSchemeResponse struct {
 	DerivedKeyLengthBytes int64 `json:"derivedKeyLengthBytes"`
 	// Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords.
 	MaxPasswordLength *int64 `json:"maxPasswordLength,omitempty"`
+	// The maximum number of PBKDF2-encoded passwords to cache for faster verification.
+	EncodedPasswordCacheSize *int64 `json:"encodedPasswordCacheSize,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
@@ -222,6 +224,38 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) SetMaxPasswordLength(v int64) {
 	o.MaxPasswordLength = &v
 }
 
+// GetEncodedPasswordCacheSize returns the EncodedPasswordCacheSize field value if set, zero value otherwise.
+func (o *Pbkdf2PasswordStorageSchemeResponse) GetEncodedPasswordCacheSize() int64 {
+	if o == nil || IsNil(o.EncodedPasswordCacheSize) {
+		var ret int64
+		return ret
+	}
+	return *o.EncodedPasswordCacheSize
+}
+
+// GetEncodedPasswordCacheSizeOk returns a tuple with the EncodedPasswordCacheSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Pbkdf2PasswordStorageSchemeResponse) GetEncodedPasswordCacheSizeOk() (*int64, bool) {
+	if o == nil || IsNil(o.EncodedPasswordCacheSize) {
+		return nil, false
+	}
+	return o.EncodedPasswordCacheSize, true
+}
+
+// HasEncodedPasswordCacheSize returns a boolean if a field has been set.
+func (o *Pbkdf2PasswordStorageSchemeResponse) HasEncodedPasswordCacheSize() bool {
+	if o != nil && !IsNil(o.EncodedPasswordCacheSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetEncodedPasswordCacheSize gets a reference to the given int64 and assigns it to the EncodedPasswordCacheSize field.
+func (o *Pbkdf2PasswordStorageSchemeResponse) SetEncodedPasswordCacheSize(v int64) {
+	o.EncodedPasswordCacheSize = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -385,6 +419,9 @@ func (o Pbkdf2PasswordStorageSchemeResponse) ToMap() (map[string]interface{}, er
 	toSerialize["derivedKeyLengthBytes"] = o.DerivedKeyLengthBytes
 	if !IsNil(o.MaxPasswordLength) {
 		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
+	}
+	if !IsNil(o.EncodedPasswordCacheSize) {
+		toSerialize["encodedPasswordCacheSize"] = o.EncodedPasswordCacheSize
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

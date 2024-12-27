@@ -25,6 +25,7 @@ type AddPlugin200Response struct {
 	ComposedAttributePluginResponse                                    *ComposedAttributePluginResponse
 	DelayPluginResponse                                                *DelayPluginResponse
 	DnMapperPluginResponse                                             *DnMapperPluginResponse
+	EntryCounterPluginResponse                                         *EntryCounterPluginResponse
 	GroovyScriptedPluginResponse                                       *GroovyScriptedPluginResponse
 	InternalSearchRatePluginResponse                                   *InternalSearchRatePluginResponse
 	InvertedStaticGroupReferentialIntegrityPluginResponse              *InvertedStaticGroupReferentialIntegrityPluginResponse
@@ -100,6 +101,13 @@ func DelayPluginResponseAsAddPlugin200Response(v *DelayPluginResponse) AddPlugin
 func DnMapperPluginResponseAsAddPlugin200Response(v *DnMapperPluginResponse) AddPlugin200Response {
 	return AddPlugin200Response{
 		DnMapperPluginResponse: v,
+	}
+}
+
+// EntryCounterPluginResponseAsAddPlugin200Response is a convenience function that returns EntryCounterPluginResponse wrapped in AddPlugin200Response
+func EntryCounterPluginResponseAsAddPlugin200Response(v *EntryCounterPluginResponse) AddPlugin200Response {
+	return AddPlugin200Response{
+		EntryCounterPluginResponse: v,
 	}
 }
 
@@ -349,6 +357,19 @@ func (dst *AddPlugin200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.DnMapperPluginResponse = nil
+	}
+
+	// try to unmarshal data into EntryCounterPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.EntryCounterPluginResponse)
+	if err == nil {
+		jsonEntryCounterPluginResponse, _ := json.Marshal(dst.EntryCounterPluginResponse)
+		if string(jsonEntryCounterPluginResponse) == "{}" { // empty struct
+			dst.EntryCounterPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.EntryCounterPluginResponse = nil
 	}
 
 	// try to unmarshal data into GroovyScriptedPluginResponse
@@ -621,6 +642,7 @@ func (dst *AddPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.ComposedAttributePluginResponse = nil
 		dst.DelayPluginResponse = nil
 		dst.DnMapperPluginResponse = nil
+		dst.EntryCounterPluginResponse = nil
 		dst.GroovyScriptedPluginResponse = nil
 		dst.InternalSearchRatePluginResponse = nil
 		dst.InvertedStaticGroupReferentialIntegrityPluginResponse = nil
@@ -682,6 +704,10 @@ func (src AddPlugin200Response) MarshalJSON() ([]byte, error) {
 
 	if src.DnMapperPluginResponse != nil {
 		return json.Marshal(&src.DnMapperPluginResponse)
+	}
+
+	if src.EntryCounterPluginResponse != nil {
+		return json.Marshal(&src.EntryCounterPluginResponse)
 	}
 
 	if src.GroovyScriptedPluginResponse != nil {
@@ -802,6 +828,10 @@ func (obj *AddPlugin200Response) GetActualInstance() interface{} {
 
 	if obj.DnMapperPluginResponse != nil {
 		return obj.DnMapperPluginResponse
+	}
+
+	if obj.EntryCounterPluginResponse != nil {
+		return obj.EntryCounterPluginResponse
 	}
 
 	if obj.GroovyScriptedPluginResponse != nil {

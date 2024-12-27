@@ -30,6 +30,8 @@ type Argon2iPasswordStorageSchemeResponse struct {
 	SaltLengthBytes int64 `json:"saltLengthBytes"`
 	// The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512.
 	DerivedKeyLengthBytes int64 `json:"derivedKeyLengthBytes"`
+	// The maximum number of Argon2-encoded passwords to cache for faster verification.
+	EncodedPasswordCacheSize *int64 `json:"encodedPasswordCacheSize,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
@@ -209,6 +211,38 @@ func (o *Argon2iPasswordStorageSchemeResponse) SetDerivedKeyLengthBytes(v int64)
 	o.DerivedKeyLengthBytes = v
 }
 
+// GetEncodedPasswordCacheSize returns the EncodedPasswordCacheSize field value if set, zero value otherwise.
+func (o *Argon2iPasswordStorageSchemeResponse) GetEncodedPasswordCacheSize() int64 {
+	if o == nil || IsNil(o.EncodedPasswordCacheSize) {
+		var ret int64
+		return ret
+	}
+	return *o.EncodedPasswordCacheSize
+}
+
+// GetEncodedPasswordCacheSizeOk returns a tuple with the EncodedPasswordCacheSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Argon2iPasswordStorageSchemeResponse) GetEncodedPasswordCacheSizeOk() (*int64, bool) {
+	if o == nil || IsNil(o.EncodedPasswordCacheSize) {
+		return nil, false
+	}
+	return o.EncodedPasswordCacheSize, true
+}
+
+// HasEncodedPasswordCacheSize returns a boolean if a field has been set.
+func (o *Argon2iPasswordStorageSchemeResponse) HasEncodedPasswordCacheSize() bool {
+	if o != nil && !IsNil(o.EncodedPasswordCacheSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetEncodedPasswordCacheSize gets a reference to the given int64 and assigns it to the EncodedPasswordCacheSize field.
+func (o *Argon2iPasswordStorageSchemeResponse) SetEncodedPasswordCacheSize(v int64) {
+	o.EncodedPasswordCacheSize = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Argon2iPasswordStorageSchemeResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -369,6 +403,9 @@ func (o Argon2iPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, e
 	toSerialize["memoryUsageKb"] = o.MemoryUsageKb
 	toSerialize["saltLengthBytes"] = o.SaltLengthBytes
 	toSerialize["derivedKeyLengthBytes"] = o.DerivedKeyLengthBytes
+	if !IsNil(o.EncodedPasswordCacheSize) {
+		toSerialize["encodedPasswordCacheSize"] = o.EncodedPasswordCacheSize
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}

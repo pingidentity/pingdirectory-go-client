@@ -67,6 +67,8 @@
 
 * `CANNOT_WRITE_TASK_BACKING_FILE` (value: `"cannot-write-task-backing-file"`)
 
+* `COMPOSITE_INDEX_PAGE_METADATA_INCONSISTENCY` (value: `"composite-index-page-metadata-inconsistency"`)
+
 * `CONFIG_CHANGE` (value: `"config-change"`)
 
 * `CONSOLE_LOGGER_WITHOUT_NO_DETACH` (value: `"console-logger-without-no-detach"`)
@@ -101,7 +103,13 @@
 
 * `ENTERING_LOCKDOWN_MODE` (value: `"entering-lockdown-mode"`)
 
+* `ENTRY_COUNTER_ERROR_THRESHOLD_REACHED` (value: `"entry-counter-error-threshold-reached"`)
+
+* `ENTRY_COUNTER_WARNING_THRESHOLD_REACHED` (value: `"entry-counter-warning-threshold-reached"`)
+
 * `ENTRY_REFERENCES_REMOVED_ATTRIBUTE_TYPE` (value: `"entry-references-removed-attribute-type"`)
+
+* `ERROR_REMOVING_TO_BE_DELETED_SUBTREE_ACCESSIBILITY_RESTRICTION` (value: `"error-removing-to-be-deleted-subtree-accessibility-restriction"`)
 
 * `EXEC_TASK_LAUNCHING_COMMAND` (value: `"exec-task-launching-command"`)
 

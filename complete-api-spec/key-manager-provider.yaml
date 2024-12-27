@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/pingdirectory/latest/pd_ds_landing_page.html
 tags:
 - description: Access key-manager-providers
   name: key-manager-provider
@@ -320,6 +320,10 @@ components:
           type: string
           description: >-
               The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN.
+        enableKeyManagerCaching:
+          type: boolean
+          description: >-
+              Indicates whether key manager providers should cache key managers.
         description:
           type: string
           description: >-

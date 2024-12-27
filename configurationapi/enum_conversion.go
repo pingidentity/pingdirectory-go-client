@@ -4442,6 +4442,46 @@ func StringPointerEnumentryChecksumVirtualAttributeSchemaUrn(value *EnumentryChe
 	return &s
 }
 
+func (e EnumentryCounterPluginCriteriaSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumentryCounterPluginCriteriaSchemaUrn(values []EnumentryCounterPluginCriteriaSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumentryCounterPluginCriteriaSchemaUrn(value *EnumentryCounterPluginCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumentryCounterPluginSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumentryCounterPluginSchemaUrn(values []EnumentryCounterPluginSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumentryCounterPluginSchemaUrn(value *EnumentryCounterPluginSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumentryDnVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }

@@ -226,6 +226,11 @@ Class | Method | HTTP request | Description
 *EntryCacheAPI* | [**GetEntryCache**](docs/EntryCacheAPI.md#getentrycache) | **Get** /entry-caches/{entry-cache-name} | Returns a single Entry Cache
 *EntryCacheAPI* | [**ListEntryCaches**](docs/EntryCacheAPI.md#listentrycaches) | **Get** /entry-caches | Returns a list of all Entry Cache objects
 *EntryCacheAPI* | [**UpdateEntryCache**](docs/EntryCacheAPI.md#updateentrycache) | **Patch** /entry-caches/{entry-cache-name} | Update an existing Entry Cache by name
+*EntryCounterPluginCriteriaAPI* | [**AddEntryCounterPluginCriteria**](docs/EntryCounterPluginCriteriaAPI.md#addentrycounterplugincriteria) | **Post** /plugin-root/plugins/{plugin-name}/entry-counter-criteria | Add a new Entry Counter Plugin Criteria to the config
+*EntryCounterPluginCriteriaAPI* | [**DeleteEntryCounterPluginCriteria**](docs/EntryCounterPluginCriteriaAPI.md#deleteentrycounterplugincriteria) | **Delete** /plugin-root/plugins/{plugin-name}/entry-counter-criteria/{entry-counter-plugin-criteria-name} | Delete a Entry Counter Plugin Criteria
+*EntryCounterPluginCriteriaAPI* | [**GetEntryCounterPluginCriteria**](docs/EntryCounterPluginCriteriaAPI.md#getentrycounterplugincriteria) | **Get** /plugin-root/plugins/{plugin-name}/entry-counter-criteria/{entry-counter-plugin-criteria-name} | Returns a single Entry Counter Plugin Criteria
+*EntryCounterPluginCriteriaAPI* | [**ListEntryCounterCriteria**](docs/EntryCounterPluginCriteriaAPI.md#listentrycountercriteria) | **Get** /plugin-root/plugins/{plugin-name}/entry-counter-criteria | Returns a list of all Entry Counter Plugin Criteria objects
+*EntryCounterPluginCriteriaAPI* | [**UpdateEntryCounterPluginCriteria**](docs/EntryCounterPluginCriteriaAPI.md#updateentrycounterplugincriteria) | **Patch** /plugin-root/plugins/{plugin-name}/entry-counter-criteria/{entry-counter-plugin-criteria-name} | Update an existing Entry Counter Plugin Criteria by name
 *ExtendedOperationHandlerAPI* | [**AddExtendedOperationHandler**](docs/ExtendedOperationHandlerAPI.md#addextendedoperationhandler) | **Post** /extended-operation-handlers | Add a new Extended Operation Handler to the config
 *ExtendedOperationHandlerAPI* | [**DeleteExtendedOperationHandler**](docs/ExtendedOperationHandlerAPI.md#deleteextendedoperationhandler) | **Delete** /extended-operation-handlers/{extended-operation-handler-name} | Delete a Extended Operation Handler
 *ExtendedOperationHandlerAPI* | [**GetExtendedOperationHandler**](docs/ExtendedOperationHandlerAPI.md#getextendedoperationhandler) | **Get** /extended-operation-handlers/{extended-operation-handler-name} | Returns a single Extended Operation Handler
@@ -752,6 +757,8 @@ Class | Method | HTTP request | Description
  - [AddEmailOtpDeliveryMechanismRequest](docs/AddEmailOtpDeliveryMechanismRequest.md)
  - [AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest](docs/AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest.md)
  - [AddEnterLockdownModeRecurringTaskRequest](docs/AddEnterLockdownModeRecurringTaskRequest.md)
+ - [AddEntryCounterPluginCriteriaRequest](docs/AddEntryCounterPluginCriteriaRequest.md)
+ - [AddEntryCounterPluginRequest](docs/AddEntryCounterPluginRequest.md)
  - [AddEntryDnVirtualAttributeRequest](docs/AddEntryDnVirtualAttributeRequest.md)
  - [AddEnvironmentVariablePassphraseProviderRequest](docs/AddEnvironmentVariablePassphraseProviderRequest.md)
  - [AddEqualityJoinVirtualAttributeRequest](docs/AddEqualityJoinVirtualAttributeRequest.md)
@@ -1381,6 +1388,11 @@ Class | Method | HTTP request | Description
  - [EntryCacheListResponseResourcesInner](docs/EntryCacheListResponseResourcesInner.md)
  - [EntryCacheMonitorProviderResponse](docs/EntryCacheMonitorProviderResponse.md)
  - [EntryChecksumVirtualAttributeResponse](docs/EntryChecksumVirtualAttributeResponse.md)
+ - [EntryCounterPluginCriteriaListResponse](docs/EntryCounterPluginCriteriaListResponse.md)
+ - [EntryCounterPluginCriteriaResponse](docs/EntryCounterPluginCriteriaResponse.md)
+ - [EntryCounterPluginCriteriaShared](docs/EntryCounterPluginCriteriaShared.md)
+ - [EntryCounterPluginResponse](docs/EntryCounterPluginResponse.md)
+ - [EntryCounterPluginShared](docs/EntryCounterPluginShared.md)
  - [EntryDnVirtualAttributeResponse](docs/EntryDnVirtualAttributeResponse.md)
  - [EntryDnVirtualAttributeShared](docs/EntryDnVirtualAttributeShared.md)
  - [EntryUuidPluginResponse](docs/EntryUuidPluginResponse.md)
@@ -1607,6 +1619,8 @@ Class | Method | HTTP request | Description
  - [EnumentryCacheCacheTypeProp](docs/EnumentryCacheCacheTypeProp.md)
  - [EnumentryCacheMonitorProviderSchemaUrn](docs/EnumentryCacheMonitorProviderSchemaUrn.md)
  - [EnumentryChecksumVirtualAttributeSchemaUrn](docs/EnumentryChecksumVirtualAttributeSchemaUrn.md)
+ - [EnumentryCounterPluginCriteriaSchemaUrn](docs/EnumentryCounterPluginCriteriaSchemaUrn.md)
+ - [EnumentryCounterPluginSchemaUrn](docs/EnumentryCounterPluginSchemaUrn.md)
  - [EnumentryDnVirtualAttributeSchemaUrn](docs/EnumentryDnVirtualAttributeSchemaUrn.md)
  - [EnumentryUuidPluginSchemaUrn](docs/EnumentryUuidPluginSchemaUrn.md)
  - [EnumentryUuidVirtualAttributeSchemaUrn](docs/EnumentryUuidVirtualAttributeSchemaUrn.md)

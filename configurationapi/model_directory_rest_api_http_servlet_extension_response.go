@@ -24,7 +24,7 @@ type DirectoryRestApiHttpServletExtensionResponse struct {
 	Schemas                                       []EnumdirectoryRestApiHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Name of the HTTP Servlet Extension
 	Id string `json:"id"`
-	// Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+	// Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
 	BasicAuthEnabled *bool `json:"basicAuthEnabled,omitempty"`
 	// Specifies the Identity Mapper that is to be used for associating user entries with basic authentication usernames.
 	IdentityMapper *string `json:"identityMapper,omitempty"`

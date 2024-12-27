@@ -128,6 +128,7 @@ Name | Type | Description | Notes
 **MinIncludedOperationProcessingTime** | Pointer to **string** | The minimum processing time (i.e., \&quot;etime\&quot;) for operations that should be logged by this Operation Timing Access Log Publisher | [optional] 
 **MinIncludedPhaseTimeNanos** | Pointer to **int64** | The minimum length of time in nanoseconds that an operation phase should take before it is included in a log message. | [optional] 
 **IncludeQueryResponse** | Pointer to **bool** | Specifies whether Policy Query messages recorded by the log publisher will include full responses from the PDP. | [optional] 
+**IncludeQueryPermutations** | Pointer to **bool** | Specifies whether messages recorded by the file-based Policy Query log publisher will include query permutations. | [optional] 
 
 ## Methods
 
@@ -3152,6 +3153,31 @@ SetIncludeQueryResponse sets IncludeQueryResponse field to given value.
 `func (o *LogPublisherListResponseResourcesInner) HasIncludeQueryResponse() bool`
 
 HasIncludeQueryResponse returns a boolean if a field has been set.
+
+### GetIncludeQueryPermutations
+
+`func (o *LogPublisherListResponseResourcesInner) GetIncludeQueryPermutations() bool`
+
+GetIncludeQueryPermutations returns the IncludeQueryPermutations field if non-nil, zero value otherwise.
+
+### GetIncludeQueryPermutationsOk
+
+`func (o *LogPublisherListResponseResourcesInner) GetIncludeQueryPermutationsOk() (*bool, bool)`
+
+GetIncludeQueryPermutationsOk returns a tuple with the IncludeQueryPermutations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeQueryPermutations
+
+`func (o *LogPublisherListResponseResourcesInner) SetIncludeQueryPermutations(v bool)`
+
+SetIncludeQueryPermutations sets IncludeQueryPermutations field to given value.
+
+### HasIncludeQueryPermutations
+
+`func (o *LogPublisherListResponseResourcesInner) HasIncludeQueryPermutations() bool`
+
+HasIncludeQueryPermutations returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

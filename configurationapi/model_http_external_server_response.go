@@ -33,6 +33,8 @@ type HttpExternalServerResponse struct {
 	ConnectTimeout *string `json:"connectTimeout,omitempty"`
 	// Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
 	ResponseTimeout *string `json:"responseTimeout,omitempty"`
+	// A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
+	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
 	// A description for this External Server
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -301,6 +303,38 @@ func (o *HttpExternalServerResponse) SetResponseTimeout(v string) {
 	o.ResponseTimeout = &v
 }
 
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *HttpExternalServerResponse) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpExternalServerResponse) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *HttpExternalServerResponse) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *HttpExternalServerResponse) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *HttpExternalServerResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -450,6 +484,9 @@ func (o HttpExternalServerResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ResponseTimeout) {
 		toSerialize["responseTimeout"] = o.ResponseTimeout
+	}
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

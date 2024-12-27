@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/pingdirectory/latest/pd_ds_landing_page.html
 tags:
 - description: Access the Plugin Root
   name: plugin-root
@@ -96,6 +96,7 @@ paths:
           application/json:
             schema:
               oneOf:
+              - $ref: '#/components/schemas/add-entry-counter-plugin-request'
               - $ref: '#/components/schemas/add-traditional-static-group-support-for-inverted-static-groups-plugin-request'
               - $ref: '#/components/schemas/add-internal-search-rate-plugin-request'
               - $ref: '#/components/schemas/add-modifiable-password-policy-state-plugin-request'
@@ -133,6 +134,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/entry-counter-plugin-response'
                 - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
                 - $ref: '#/components/schemas/internal-search-rate-plugin-response'
                 - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
@@ -220,6 +222,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/entry-counter-plugin-response'
                 - $ref: '#/components/schemas/last-access-time-plugin-response'
                 - $ref: '#/components/schemas/stats-collector-plugin-response'
                 - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
@@ -296,6 +299,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/entry-counter-plugin-response'
                 - $ref: '#/components/schemas/last-access-time-plugin-response'
                 - $ref: '#/components/schemas/stats-collector-plugin-response'
                 - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
@@ -348,6 +352,199 @@ paths:
       - basicAuth: []
       tags:
       - plugin
+  /plugin-root/plugins/{plugin-name}/entry-counter-criteria:
+    get:
+      summary: Returns a list of all Entry Counter Plugin Criteria objects
+      operationId: list-entry-counter-criteria
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-counter-plugin-criteriaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
+    post:
+      summary: Add a new Entry Counter Plugin Criteria to the config
+      operationId: add-entry-counter-plugin-criteria
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-entry-counter-plugin-criteria-request'
+        description: Create a new Entry Counter Plugin Criteria in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-counter-plugin-criteria-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Entry Counter Plugin Criteria already exists
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
+  /plugin-root/plugins/{plugin-name}/entry-counter-criteria/{entry-counter-plugin-criteria-name}:
+    delete:
+      summary: Delete a Entry Counter Plugin Criteria
+      operationId: delete-entry-counter-plugin-criteria
+      parameters:
+      - description: Name of the Entry Counter Plugin Criteria
+        explode: false
+        in: path
+        name: entry-counter-plugin-criteria-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Entry Counter Plugin Criteria does not exist
+        "409":
+          description: The Entry Counter Plugin Criteria cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
+    get:
+      summary: Returns a single Entry Counter Plugin Criteria
+      operationId: get-entry-counter-plugin-criteria
+      parameters:
+      - description: Name of the Entry Counter Plugin Criteria
+        explode: false
+        in: path
+        name: entry-counter-plugin-criteria-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-counter-plugin-criteria-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Entry Counter Plugin Criteria does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
+    patch:
+      summary: Update an existing Entry Counter Plugin Criteria by name
+      operationId: update-entry-counter-plugin-criteria
+      parameters:
+      - description: Name of the Entry Counter Plugin Criteria
+        explode: false
+        in: path
+        name: entry-counter-plugin-criteria-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Entry Counter Plugin Criteria
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-counter-plugin-criteria-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Entry Counter Plugin Criteria does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
   /plugin-root/plugins/{plugin-name}/custom-logged-stats:
     get:
       summary: Returns a list of all Custom Logged Stats objects
@@ -758,6 +955,62 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin-root"
+    add-entry-counter-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            type: string
+            description: >-
+                Name of the new Plugin
+      - $ref: '#/components/schemas/entry-counter-plugin-shared'
+      required:
+      - pluginName
+    entry-counter-plugin-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Plugin
+      - $ref: '#/components/schemas/entry-counter-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - timeBetweenSearches
+    entry-counter-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumentry-counter-pluginSchemaUrn'
+        timeBetweenSearches:
+          type: string
+          description: >-
+              The length of time between internal searches used to identify entries that match the sets of search criteria.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - enabled
+    Enumentry-counter-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:entry-counter"
     Enumplugin-operationTypeProp:
       type: string
       enum:
@@ -4455,6 +4708,72 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:inverted-static-group-referential-integrity"
+    add-entry-counter-plugin-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            type: string
+            description: >-
+                Name of the new Entry Counter Plugin Criteria
+      - $ref: '#/components/schemas/entry-counter-plugin-criteria-shared'
+      required:
+      - criteriaName
+    entry-counter-plugin-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Entry Counter Plugin Criteria
+      - $ref: '#/components/schemas/entry-counter-plugin-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    entry-counter-plugin-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumentry-counter-plugin-criteriaSchemaUrn'
+        baseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              The base DNs for entries that are eligible to match this criteria. If no base DNs are specified, then the set of public naming contexts will be used.
+        filter:
+          type: string
+          description: >-
+              The filter to use to identify entries that are eligible to match this criteria.
+        namedSubCategoryFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              An optional set of named filters that can be used to divide entries that match the base DN and filter criteria into additional sub-categories.
+        warningThresholdMinimumCount:
+          type: integer
+          description: >-
+              The minimum number of entries in the server that must match this criteria before the server will raise a warning alarm.
+        errorThresholdMinimumCount:
+          type: integer
+          description: >-
+              The minimum number of entries in the server that must match this criteria before the server will raise an error alarm.
+        trackMatchingEntrySize:
+          type: boolean
+          description: >-
+              Indicates whether to track information about the size of each matching entry.
+      required:
+      - filter
+    Enumentry-counter-plugin-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:entry-counter-plugin-criteria"
     Enumcustom-logged-stats-statisticTypeProp:
       type: string
       enum:
@@ -4587,6 +4906,7 @@ components:
           type: array
           items:
             oneOf:
+            - $ref: '#/components/schemas/entry-counter-plugin-response'
             - $ref: '#/components/schemas/last-access-time-plugin-response'
             - $ref: '#/components/schemas/stats-collector-plugin-response'
             - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
@@ -4634,6 +4954,21 @@ components:
             - $ref: '#/components/schemas/unique-attribute-plugin-response'
             - $ref: '#/components/schemas/snmp-master-agent-plugin-response'
             - $ref: '#/components/schemas/inverted-static-group-referential-integrity-plugin-response'
+    entry-counter-plugin-criteriaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/entry-counter-plugin-criteria-response'
     custom-logged-statsListResponse:
       type: object
       properties:

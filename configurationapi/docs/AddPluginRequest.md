@@ -6,12 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn**](EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn.md) |  | 
-**TraditionalStaticGroupObjectClass** | Pointer to [**EnumpluginTraditionalStaticGroupObjectClassProp**](EnumpluginTraditionalStaticGroupObjectClassProp.md) |  | [optional] 
-**MaximumMembershipUpdatesPerModify** | Pointer to **int64** | An integer property that specifies the maximum number of membership changes that will be supported in a single modify operation. A value of zero indicates that modify operations targeting the group entry should not be permitted to alter the set of members for the group. | [optional] 
-**ReadOperationSupport** | Pointer to [**EnumpluginReadOperationSupportProp**](EnumpluginReadOperationSupportProp.md) |  | [optional] 
+**TimeBetweenSearches** | Pointer to **string** | The length of time between internal searches used to identify entries that match the sets of search criteria. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**TraditionalStaticGroupObjectClass** | Pointer to [**EnumpluginTraditionalStaticGroupObjectClassProp**](EnumpluginTraditionalStaticGroupObjectClassProp.md) |  | [optional] 
+**MaximumMembershipUpdatesPerModify** | Pointer to **int64** | An integer property that specifies the maximum number of membership changes that will be supported in a single modify operation. A value of zero indicates that modify operations targeting the group entry should not be permitted to alter the set of members for the group. | [optional] 
+**ReadOperationSupport** | Pointer to [**EnumpluginReadOperationSupportProp**](EnumpluginReadOperationSupportProp.md) |  | [optional] 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **NumThreads** | Pointer to **int64** | Specifies the number of concurrent threads that should be used to process the search operations. | [optional] 
 **BaseDN** | **[]string** | Specifies a base DN within which the attribute must be unique. | 
@@ -198,6 +199,101 @@ and a boolean to check if the value has been set.
 SetSchemas sets Schemas field to given value.
 
 
+### GetTimeBetweenSearches
+
+`func (o *AddPluginRequest) GetTimeBetweenSearches() string`
+
+GetTimeBetweenSearches returns the TimeBetweenSearches field if non-nil, zero value otherwise.
+
+### GetTimeBetweenSearchesOk
+
+`func (o *AddPluginRequest) GetTimeBetweenSearchesOk() (*string, bool)`
+
+GetTimeBetweenSearchesOk returns a tuple with the TimeBetweenSearches field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimeBetweenSearches
+
+`func (o *AddPluginRequest) SetTimeBetweenSearches(v string)`
+
+SetTimeBetweenSearches sets TimeBetweenSearches field to given value.
+
+### HasTimeBetweenSearches
+
+`func (o *AddPluginRequest) HasTimeBetweenSearches() bool`
+
+HasTimeBetweenSearches returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *AddPluginRequest) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *AddPluginRequest) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *AddPluginRequest) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *AddPluginRequest) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetEnabled
+
+`func (o *AddPluginRequest) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *AddPluginRequest) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *AddPluginRequest) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+
+### GetInvokeForInternalOperations
+
+`func (o *AddPluginRequest) GetInvokeForInternalOperations() bool`
+
+GetInvokeForInternalOperations returns the InvokeForInternalOperations field if non-nil, zero value otherwise.
+
+### GetInvokeForInternalOperationsOk
+
+`func (o *AddPluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool)`
+
+GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvokeForInternalOperations
+
+`func (o *AddPluginRequest) SetInvokeForInternalOperations(v bool)`
+
+SetInvokeForInternalOperations sets InvokeForInternalOperations field to given value.
+
+### HasInvokeForInternalOperations
+
+`func (o *AddPluginRequest) HasInvokeForInternalOperations() bool`
+
+HasInvokeForInternalOperations returns a boolean if a field has been set.
+
 ### GetTraditionalStaticGroupObjectClass
 
 `func (o *AddPluginRequest) GetTraditionalStaticGroupObjectClass() EnumpluginTraditionalStaticGroupObjectClassProp`
@@ -272,76 +368,6 @@ SetReadOperationSupport sets ReadOperationSupport field to given value.
 `func (o *AddPluginRequest) HasReadOperationSupport() bool`
 
 HasReadOperationSupport returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *AddPluginRequest) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *AddPluginRequest) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *AddPluginRequest) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *AddPluginRequest) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetEnabled
-
-`func (o *AddPluginRequest) GetEnabled() bool`
-
-GetEnabled returns the Enabled field if non-nil, zero value otherwise.
-
-### GetEnabledOk
-
-`func (o *AddPluginRequest) GetEnabledOk() (*bool, bool)`
-
-GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnabled
-
-`func (o *AddPluginRequest) SetEnabled(v bool)`
-
-SetEnabled sets Enabled field to given value.
-
-
-### GetInvokeForInternalOperations
-
-`func (o *AddPluginRequest) GetInvokeForInternalOperations() bool`
-
-GetInvokeForInternalOperations returns the InvokeForInternalOperations field if non-nil, zero value otherwise.
-
-### GetInvokeForInternalOperationsOk
-
-`func (o *AddPluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool)`
-
-GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvokeForInternalOperations
-
-`func (o *AddPluginRequest) SetInvokeForInternalOperations(v bool)`
-
-SetInvokeForInternalOperations sets InvokeForInternalOperations field to given value.
-
-### HasInvokeForInternalOperations
-
-`func (o *AddPluginRequest) HasInvokeForInternalOperations() bool`
-
-HasInvokeForInternalOperations returns a boolean if a field has been set.
 
 ### GetPluginType
 

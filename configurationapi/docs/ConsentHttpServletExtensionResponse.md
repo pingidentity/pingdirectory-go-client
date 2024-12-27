@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumconsentHttpServletExtensionSchemaUrn**](EnumconsentHttpServletExtensionSchemaUrn.md) |  | 
 **Id** | **string** | Name of the HTTP Servlet Extension | 
 **BearerTokenAuthEnabled** | Pointer to **bool** | Enables HTTP bearer token authentication. | [optional] 
-**BasicAuthEnabled** | Pointer to **bool** | Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN. | [optional] 
+**BasicAuthEnabled** | Pointer to **bool** | Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication. | [optional] 
 **IdentityMapper** | Pointer to **string** | Specifies the Identity Mapper that is to be used for associating basic authentication usernames with DNs. | [optional] 
 **AccessTokenValidator** | Pointer to **[]string** | If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Consent HTTP Servlet Extension. | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Extension | [optional] 

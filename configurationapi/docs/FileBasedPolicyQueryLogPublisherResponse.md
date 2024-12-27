@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **EncryptionSettingsDefinitionID** | Pointer to **string** | Specifies the ID of the encryption settings definition that should be used to encrypt the data. If this is not provided, the server&#39;s preferred encryption settings definition will be used. The \&quot;encryption-settings list\&quot; command can be used to obtain a list of the encryption settings definitions available in the server. | [optional] 
 **Append** | Pointer to **bool** | Specifies whether to append to existing log files. | [optional] 
 **IncludeQueryResponse** | Pointer to **bool** | Specifies whether Policy Query messages recorded by the log publisher will include full responses from the PDP. | [optional] 
+**IncludeQueryPermutations** | Pointer to **bool** | Specifies whether messages recorded by the file-based Policy Query log publisher will include query permutations. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
@@ -485,6 +486,31 @@ SetIncludeQueryResponse sets IncludeQueryResponse field to given value.
 `func (o *FileBasedPolicyQueryLogPublisherResponse) HasIncludeQueryResponse() bool`
 
 HasIncludeQueryResponse returns a boolean if a field has been set.
+
+### GetIncludeQueryPermutations
+
+`func (o *FileBasedPolicyQueryLogPublisherResponse) GetIncludeQueryPermutations() bool`
+
+GetIncludeQueryPermutations returns the IncludeQueryPermutations field if non-nil, zero value otherwise.
+
+### GetIncludeQueryPermutationsOk
+
+`func (o *FileBasedPolicyQueryLogPublisherResponse) GetIncludeQueryPermutationsOk() (*bool, bool)`
+
+GetIncludeQueryPermutationsOk returns a tuple with the IncludeQueryPermutations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeQueryPermutations
+
+`func (o *FileBasedPolicyQueryLogPublisherResponse) SetIncludeQueryPermutations(v bool)`
+
+SetIncludeQueryPermutations sets IncludeQueryPermutations field to given value.
+
+### HasIncludeQueryPermutations
+
+`func (o *FileBasedPolicyQueryLogPublisherResponse) HasIncludeQueryPermutations() bool`
+
+HasIncludeQueryPermutations returns a boolean if a field has been set.
 
 ### GetDescription
 

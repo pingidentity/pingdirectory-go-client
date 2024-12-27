@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **IncludeJVMDefaultIssuers** | Pointer to **bool** | Indicates whether certificates issued by an authority included in the JVM&#39;s set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider. | [optional] 
 **TrustStoreFile** | **string** | Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root. | 
 **TrustStoreType** | Pointer to **string** | Specifies the format for the data in the trust store file. | [optional] 
+**EnableTrustManagerCaching** | Pointer to **bool** | Indicates whether trust manager providers should cache trust managers. | [optional] 
 **TrustStorePin** | Pointer to **string** | Specifies the clear-text PIN needed to access the File Based Trust Manager Provider. | [optional] 
 **TrustStorePinFile** | Pointer to **string** | Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Trust Manager Provider. | [optional] 
 **TrustStorePinPassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Trust Manager Provider. | [optional] 
@@ -164,6 +165,31 @@ SetTrustStoreType sets TrustStoreType field to given value.
 `func (o *AddTrustManagerProviderRequest) HasTrustStoreType() bool`
 
 HasTrustStoreType returns a boolean if a field has been set.
+
+### GetEnableTrustManagerCaching
+
+`func (o *AddTrustManagerProviderRequest) GetEnableTrustManagerCaching() bool`
+
+GetEnableTrustManagerCaching returns the EnableTrustManagerCaching field if non-nil, zero value otherwise.
+
+### GetEnableTrustManagerCachingOk
+
+`func (o *AddTrustManagerProviderRequest) GetEnableTrustManagerCachingOk() (*bool, bool)`
+
+GetEnableTrustManagerCachingOk returns a tuple with the EnableTrustManagerCaching field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableTrustManagerCaching
+
+`func (o *AddTrustManagerProviderRequest) SetEnableTrustManagerCaching(v bool)`
+
+SetEnableTrustManagerCaching sets EnableTrustManagerCaching field to given value.
+
+### HasEnableTrustManagerCaching
+
+`func (o *AddTrustManagerProviderRequest) HasEnableTrustManagerCaching() bool`
+
+HasEnableTrustManagerCaching returns a boolean if a field has been set.
 
 ### GetTrustStorePin
 

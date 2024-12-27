@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ListenAddress** | Pointer to **[]string** | Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients. | [optional] 
 **ListenPort** | **int64** | Specifies the port number on which the LDAP Connection Handler will listen for connections from clients. | 
 **UseSSL** | Pointer to **bool** | Indicates whether the LDAP Connection Handler should use SSL. | [optional] 
-**SslCertNickname** | Pointer to **string** | Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL communication. | [optional] 
+**SslCertNickname** | Pointer to **string** | Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL or StartTLS communication. | [optional] 
 **HttpServletExtension** | Pointer to **[]string** | Specifies information about servlets that will be provided via this connection handler. | [optional] 
 **WebApplicationExtension** | Pointer to **[]string** | Specifies information about web applications that will be provided via this connection handler. | [optional] 
 **HttpOperationLogPublisher** | Pointer to **[]string** | Specifies the set of HTTP operation loggers that should be used to log information about requests and responses for operations processed through this HTTP Connection Handler. | [optional] 

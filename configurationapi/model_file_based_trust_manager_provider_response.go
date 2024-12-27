@@ -24,6 +24,8 @@ type FileBasedTrustManagerProviderResponse struct {
 	TrustStoreFile string `json:"trustStoreFile"`
 	// Specifies the format for the data in the trust store file.
 	TrustStoreType *string `json:"trustStoreType,omitempty"`
+	// Indicates whether trust manager providers should cache trust managers.
+	EnableTrustManagerCaching *bool `json:"enableTrustManagerCaching,omitempty"`
 	// Specifies the clear-text PIN needed to access the File Based Trust Manager Provider.
 	TrustStorePin *string `json:"trustStorePin,omitempty"`
 	// Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Trust Manager Provider.
@@ -139,6 +141,38 @@ func (o *FileBasedTrustManagerProviderResponse) HasTrustStoreType() bool {
 // SetTrustStoreType gets a reference to the given string and assigns it to the TrustStoreType field.
 func (o *FileBasedTrustManagerProviderResponse) SetTrustStoreType(v string) {
 	o.TrustStoreType = &v
+}
+
+// GetEnableTrustManagerCaching returns the EnableTrustManagerCaching field value if set, zero value otherwise.
+func (o *FileBasedTrustManagerProviderResponse) GetEnableTrustManagerCaching() bool {
+	if o == nil || IsNil(o.EnableTrustManagerCaching) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableTrustManagerCaching
+}
+
+// GetEnableTrustManagerCachingOk returns a tuple with the EnableTrustManagerCaching field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileBasedTrustManagerProviderResponse) GetEnableTrustManagerCachingOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableTrustManagerCaching) {
+		return nil, false
+	}
+	return o.EnableTrustManagerCaching, true
+}
+
+// HasEnableTrustManagerCaching returns a boolean if a field has been set.
+func (o *FileBasedTrustManagerProviderResponse) HasEnableTrustManagerCaching() bool {
+	if o != nil && !IsNil(o.EnableTrustManagerCaching) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableTrustManagerCaching gets a reference to the given bool and assigns it to the EnableTrustManagerCaching field.
+func (o *FileBasedTrustManagerProviderResponse) SetEnableTrustManagerCaching(v bool) {
+	o.EnableTrustManagerCaching = &v
 }
 
 // GetTrustStorePin returns the TrustStorePin field value if set, zero value otherwise.
@@ -395,6 +429,9 @@ func (o FileBasedTrustManagerProviderResponse) ToMap() (map[string]interface{}, 
 	toSerialize["trustStoreFile"] = o.TrustStoreFile
 	if !IsNil(o.TrustStoreType) {
 		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.EnableTrustManagerCaching) {
+		toSerialize["enableTrustManagerCaching"] = o.EnableTrustManagerCaching
 	}
 	if !IsNil(o.TrustStorePin) {
 		toSerialize["trustStorePin"] = o.TrustStorePin

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ScryptBlockSize** | Pointer to **int64** | Specifies the block size for the digest that will be used in the course of encoding passwords. Increasing the block size while keeping the CPU/memory cost factor constant will increase the amount of memory required to encode a password, but it also increases the ratio of sequential memory access to random memory access (and sequential memory access is generally faster than random memory access). | [optional] 
 **ScryptParallelizationParameter** | Pointer to **int64** | Specifies the number of times that scrypt has to perform the entire encoding process to produce the final result. | [optional] 
 **MaxPasswordLength** | Pointer to **int64** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
+**EncodedPasswordCacheSize** | Pointer to **int64** | The maximum number of scrypt-encoded passwords to cache for faster verification. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **SchemeName** | **string** | Name of the new Password Storage Scheme | 
@@ -151,6 +152,31 @@ SetMaxPasswordLength sets MaxPasswordLength field to given value.
 `func (o *AddScryptPasswordStorageSchemeRequest) HasMaxPasswordLength() bool`
 
 HasMaxPasswordLength returns a boolean if a field has been set.
+
+### GetEncodedPasswordCacheSize
+
+`func (o *AddScryptPasswordStorageSchemeRequest) GetEncodedPasswordCacheSize() int64`
+
+GetEncodedPasswordCacheSize returns the EncodedPasswordCacheSize field if non-nil, zero value otherwise.
+
+### GetEncodedPasswordCacheSizeOk
+
+`func (o *AddScryptPasswordStorageSchemeRequest) GetEncodedPasswordCacheSizeOk() (*int64, bool)`
+
+GetEncodedPasswordCacheSizeOk returns a tuple with the EncodedPasswordCacheSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncodedPasswordCacheSize
+
+`func (o *AddScryptPasswordStorageSchemeRequest) SetEncodedPasswordCacheSize(v int64)`
+
+SetEncodedPasswordCacheSize sets EncodedPasswordCacheSize field to given value.
+
+### HasEncodedPasswordCacheSize
+
+`func (o *AddScryptPasswordStorageSchemeRequest) HasEncodedPasswordCacheSize() bool`
+
+HasEncodedPasswordCacheSize returns a boolean if a field has been set.
 
 ### GetDescription
 

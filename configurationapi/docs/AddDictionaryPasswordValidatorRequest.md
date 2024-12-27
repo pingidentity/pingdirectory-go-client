@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumdictionaryPasswordValidatorSchemaUrn**](EnumdictionaryPasswordValidatorSchemaUrn.md) |  | 
-**DictionaryFile** | Pointer to **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | [optional] 
+**DictionaryFile** | **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | 
 **CaseSensitiveValidation** | Pointer to **bool** | Indicates whether this password validator is to treat password characters in a case-sensitive manner. | [optional] 
 **TestReversedPassword** | Pointer to **bool** | Indicates whether this password validator is to test the reversed value of the provided password as well as the order in which it was given. | [optional] 
 **IgnoreLeadingNonAlphabeticCharacters** | Pointer to **bool** | Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the beginning of a proposed password. | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewAddDictionaryPasswordValidatorRequest
 
-`func NewAddDictionaryPasswordValidatorRequest(schemas []EnumdictionaryPasswordValidatorSchemaUrn, enabled bool, validatorName string, ) *AddDictionaryPasswordValidatorRequest`
+`func NewAddDictionaryPasswordValidatorRequest(schemas []EnumdictionaryPasswordValidatorSchemaUrn, dictionaryFile string, enabled bool, validatorName string, ) *AddDictionaryPasswordValidatorRequest`
 
 NewAddDictionaryPasswordValidatorRequest instantiates a new AddDictionaryPasswordValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -77,11 +77,6 @@ and a boolean to check if the value has been set.
 
 SetDictionaryFile sets DictionaryFile field to given value.
 
-### HasDictionaryFile
-
-`func (o *AddDictionaryPasswordValidatorRequest) HasDictionaryFile() bool`
-
-HasDictionaryFile returns a boolean if a field has been set.
 
 ### GetCaseSensitiveValidation
 

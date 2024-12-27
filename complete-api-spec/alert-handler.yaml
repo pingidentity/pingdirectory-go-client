@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/pingdirectory/latest/pd_ds_landing_page.html
 tags:
 - description: Access alert-handlers
   name: alert-handler
@@ -264,6 +264,7 @@ components:
       - "cannot-write-new-schema-files"
       - "cannot-write-server-state-file"
       - "cannot-write-task-backing-file"
+      - "composite-index-page-metadata-inconsistency"
       - "config-change"
       - "console-logger-without-no-detach"
       - "crypto-manager-error"
@@ -281,7 +282,10 @@ components:
       - "encryption-settings-database-inaccessible"
       - "encryption-settings-database-prolonged-outage"
       - "entering-lockdown-mode"
+      - "entry-counter-error-threshold-reached"
+      - "entry-counter-warning-threshold-reached"
       - "entry-references-removed-attribute-type"
+      - "error-removing-to-be-deleted-subtree-accessibility-restriction"
       - "exec-task-launching-command"
       - "exploded-index-background-delete-cleanup-failed"
       - "exploded-index-background-delete-failed"
@@ -466,6 +470,7 @@ components:
       - "cannot-write-new-schema-files"
       - "cannot-write-server-state-file"
       - "cannot-write-task-backing-file"
+      - "composite-index-page-metadata-inconsistency"
       - "config-change"
       - "console-logger-without-no-detach"
       - "crypto-manager-error"
@@ -483,7 +488,10 @@ components:
       - "encryption-settings-database-inaccessible"
       - "encryption-settings-database-prolonged-outage"
       - "entering-lockdown-mode"
+      - "entry-counter-error-threshold-reached"
+      - "entry-counter-warning-threshold-reached"
       - "entry-references-removed-attribute-type"
+      - "error-removing-to-be-deleted-subtree-accessibility-restriction"
       - "exec-task-launching-command"
       - "exploded-index-background-delete-cleanup-failed"
       - "exploded-index-background-delete-failed"

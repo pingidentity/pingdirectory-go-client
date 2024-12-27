@@ -29,6 +29,7 @@ type PluginListResponseResourcesInner struct {
 	DelayPluginResponse                                                *DelayPluginResponse
 	DnMapperPluginResponse                                             *DnMapperPluginResponse
 	EncryptAttributeValuesPluginResponse                               *EncryptAttributeValuesPluginResponse
+	EntryCounterPluginResponse                                         *EntryCounterPluginResponse
 	EntryUuidPluginResponse                                            *EntryUuidPluginResponse
 	GlobalReferentialIntegrityPluginResponse                           *GlobalReferentialIntegrityPluginResponse
 	GloballyUniqueAttributePluginResponse                              *GloballyUniqueAttributePluginResponse
@@ -147,6 +148,13 @@ func DnMapperPluginResponseAsPluginListResponseResourcesInner(v *DnMapperPluginR
 func EncryptAttributeValuesPluginResponseAsPluginListResponseResourcesInner(v *EncryptAttributeValuesPluginResponse) PluginListResponseResourcesInner {
 	return PluginListResponseResourcesInner{
 		EncryptAttributeValuesPluginResponse: v,
+	}
+}
+
+// EntryCounterPluginResponseAsPluginListResponseResourcesInner is a convenience function that returns EntryCounterPluginResponse wrapped in PluginListResponseResourcesInner
+func EntryCounterPluginResponseAsPluginListResponseResourcesInner(v *EntryCounterPluginResponse) PluginListResponseResourcesInner {
+	return PluginListResponseResourcesInner{
+		EntryCounterPluginResponse: v,
 	}
 }
 
@@ -553,6 +561,19 @@ func (dst *PluginListResponseResourcesInner) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.EncryptAttributeValuesPluginResponse = nil
+	}
+
+	// try to unmarshal data into EntryCounterPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.EntryCounterPluginResponse)
+	if err == nil {
+		jsonEntryCounterPluginResponse, _ := json.Marshal(dst.EntryCounterPluginResponse)
+		if string(jsonEntryCounterPluginResponse) == "{}" { // empty struct
+			dst.EntryCounterPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.EntryCounterPluginResponse = nil
 	}
 
 	// try to unmarshal data into EntryUuidPluginResponse
@@ -1024,6 +1045,7 @@ func (dst *PluginListResponseResourcesInner) UnmarshalJSON(data []byte) error {
 		dst.DelayPluginResponse = nil
 		dst.DnMapperPluginResponse = nil
 		dst.EncryptAttributeValuesPluginResponse = nil
+		dst.EntryCounterPluginResponse = nil
 		dst.EntryUuidPluginResponse = nil
 		dst.GlobalReferentialIntegrityPluginResponse = nil
 		dst.GloballyUniqueAttributePluginResponse = nil
@@ -1116,6 +1138,10 @@ func (src PluginListResponseResourcesInner) MarshalJSON() ([]byte, error) {
 
 	if src.EncryptAttributeValuesPluginResponse != nil {
 		return json.Marshal(&src.EncryptAttributeValuesPluginResponse)
+	}
+
+	if src.EntryCounterPluginResponse != nil {
+		return json.Marshal(&src.EntryCounterPluginResponse)
 	}
 
 	if src.EntryUuidPluginResponse != nil {
@@ -1312,6 +1338,10 @@ func (obj *PluginListResponseResourcesInner) GetActualInstance() interface{} {
 
 	if obj.EncryptAttributeValuesPluginResponse != nil {
 		return obj.EncryptAttributeValuesPluginResponse
+	}
+
+	if obj.EntryCounterPluginResponse != nil {
+		return obj.EntryCounterPluginResponse
 	}
 
 	if obj.EntryUuidPluginResponse != nil {

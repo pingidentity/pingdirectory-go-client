@@ -21,7 +21,7 @@ var _ MappedNullable = &AddDictionaryPasswordValidatorRequest{}
 type AddDictionaryPasswordValidatorRequest struct {
 	Schemas []EnumdictionaryPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the path to the file containing a list of words that cannot be used as passwords.
-	DictionaryFile *string `json:"dictionaryFile,omitempty"`
+	DictionaryFile string `json:"dictionaryFile"`
 	// Indicates whether this password validator is to treat password characters in a case-sensitive manner.
 	CaseSensitiveValidation *bool `json:"caseSensitiveValidation,omitempty"`
 	// Indicates whether this password validator is to test the reversed value of the provided password as well as the order in which it was given.
@@ -52,9 +52,10 @@ type AddDictionaryPasswordValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDictionaryPasswordValidatorRequest(schemas []EnumdictionaryPasswordValidatorSchemaUrn, enabled bool, validatorName string) *AddDictionaryPasswordValidatorRequest {
+func NewAddDictionaryPasswordValidatorRequest(schemas []EnumdictionaryPasswordValidatorSchemaUrn, dictionaryFile string, enabled bool, validatorName string) *AddDictionaryPasswordValidatorRequest {
 	this := AddDictionaryPasswordValidatorRequest{}
 	this.Schemas = schemas
+	this.DictionaryFile = dictionaryFile
 	this.Enabled = enabled
 	this.ValidatorName = validatorName
 	return &this
@@ -92,36 +93,28 @@ func (o *AddDictionaryPasswordValidatorRequest) SetSchemas(v []EnumdictionaryPas
 	o.Schemas = v
 }
 
-// GetDictionaryFile returns the DictionaryFile field value if set, zero value otherwise.
+// GetDictionaryFile returns the DictionaryFile field value
 func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFile() string {
-	if o == nil || IsNil(o.DictionaryFile) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DictionaryFile
+
+	return o.DictionaryFile
 }
 
-// GetDictionaryFileOk returns a tuple with the DictionaryFile field value if set, nil otherwise
+// GetDictionaryFileOk returns a tuple with the DictionaryFile field value
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFileOk() (*string, bool) {
-	if o == nil || IsNil(o.DictionaryFile) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DictionaryFile, true
+	return &o.DictionaryFile, true
 }
 
-// HasDictionaryFile returns a boolean if a field has been set.
-func (o *AddDictionaryPasswordValidatorRequest) HasDictionaryFile() bool {
-	if o != nil && !IsNil(o.DictionaryFile) {
-		return true
-	}
-
-	return false
-}
-
-// SetDictionaryFile gets a reference to the given string and assigns it to the DictionaryFile field.
+// SetDictionaryFile sets field value
 func (o *AddDictionaryPasswordValidatorRequest) SetDictionaryFile(v string) {
-	o.DictionaryFile = &v
+	o.DictionaryFile = v
 }
 
 // GetCaseSensitiveValidation returns the CaseSensitiveValidation field value if set, zero value otherwise.
@@ -503,9 +496,7 @@ func (o AddDictionaryPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
 func (o AddDictionaryPasswordValidatorRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["schemas"] = o.Schemas
-	if !IsNil(o.DictionaryFile) {
-		toSerialize["dictionaryFile"] = o.DictionaryFile
-	}
+	toSerialize["dictionaryFile"] = o.DictionaryFile
 	if !IsNil(o.CaseSensitiveValidation) {
 		toSerialize["caseSensitiveValidation"] = o.CaseSensitiveValidation
 	}

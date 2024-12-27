@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/pingdirectory/latest/pd_ds_landing_page.html
 tags:
 - description: Access external-servers
   name: external-server
@@ -288,6 +288,10 @@ components:
             type: string
             description: >-
                 Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
+          httpProxyExternalServer:
+            type: string
+            description: >-
+                A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
           description:
             type: string
             description: >-
@@ -1857,6 +1861,10 @@ components:
           type: string
           description: >-
               Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne.
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
         description:
           type: string
           description: >-
@@ -1929,6 +1937,10 @@ components:
             type: string
             description: >-
                 Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
+          httpProxyExternalServer:
+            type: string
+            description: >-
+                A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
           description:
             type: string
             description: >-
@@ -2342,6 +2354,10 @@ components:
             type: string
             description: >-
                 Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
+          httpProxyExternalServer:
+            type: string
+            description: >-
+                A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
           description:
             type: string
             description: >-
@@ -2900,6 +2916,10 @@ components:
           type: string
           description: >-
               Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
         description:
           type: string
           description: >-

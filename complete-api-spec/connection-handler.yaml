@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/pingdirectory/latest/pd_ds_landing_page.html
 tags:
 - description: Access connection-handlers
   name: connection-handler
@@ -485,7 +485,7 @@ components:
         sslCertNickname:
           type: string
           description: >-
-              Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL communication.
+              Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL or StartTLS communication.
         keyManagerProvider:
           type: string
           description: >-

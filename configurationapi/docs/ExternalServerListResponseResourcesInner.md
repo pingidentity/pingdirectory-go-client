@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **SslCertNickname** | Pointer to **string** | The nickname (alias) of the entry in the associated key store that holds the client certificate chain to present to the SCIMv2 server during TLS negotiation. | [optional] 
 **ConnectTimeout** | **string** | Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. | 
 **ResponseTimeout** | Pointer to **string** | The maximum length of time to wait for a response from the SCIMv2 server when processing operations. | [optional] 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the SCIMv2 service. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
@@ -23,7 +24,6 @@ Name | Type | Description | Notes
 **Location** | Pointer to **string** | Specifies the location for the LDAP External Server. | [optional] 
 **ConnectionSecurity** | [**EnumexternalServerOracleUnifiedDirectoryConnectionSecurityProp**](EnumexternalServerOracleUnifiedDirectoryConnectionSecurityProp.md) |  | 
 **AuthenticationMethod** | [**EnumexternalServerAmazonAwsAuthenticationMethodProp**](EnumexternalServerAmazonAwsAuthenticationMethodProp.md) |  | 
-**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the SCIMv2 service. | [optional] 
 **OAuthTokenType** | Pointer to [**EnumexternalServerOAuthTokenTypeProp**](EnumexternalServerOAuthTokenTypeProp.md) |  | [optional] 
 **OAuthToken** | Pointer to **string** | The token to use in conjunction with the OAuth authentication-method and the chosen oauth-token-type. | [optional] 
 **VerifyCredentialsMethod** | [**EnumexternalServerVerifyCredentialsMethodProp**](EnumexternalServerVerifyCredentialsMethodProp.md) |  | 
@@ -340,6 +340,31 @@ SetResponseTimeout sets ResponseTimeout field to given value.
 
 HasResponseTimeout returns a boolean if a field has been set.
 
+### GetHttpProxyExternalServer
+
+`func (o *ExternalServerListResponseResourcesInner) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *ExternalServerListResponseResourcesInner) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *ExternalServerListResponseResourcesInner) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *ExternalServerListResponseResourcesInner) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *ExternalServerListResponseResourcesInner) GetDescription() string`
@@ -524,31 +549,6 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationMethod sets AuthenticationMethod field to given value.
 
-
-### GetHttpProxyExternalServer
-
-`func (o *ExternalServerListResponseResourcesInner) GetHttpProxyExternalServer() string`
-
-GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
-
-### GetHttpProxyExternalServerOk
-
-`func (o *ExternalServerListResponseResourcesInner) GetHttpProxyExternalServerOk() (*string, bool)`
-
-GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHttpProxyExternalServer
-
-`func (o *ExternalServerListResponseResourcesInner) SetHttpProxyExternalServer(v string)`
-
-SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
-
-### HasHttpProxyExternalServer
-
-`func (o *ExternalServerListResponseResourcesInner) HasHttpProxyExternalServer() bool`
-
-HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetOAuthTokenType
 

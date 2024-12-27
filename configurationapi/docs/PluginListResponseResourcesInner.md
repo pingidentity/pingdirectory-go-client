@@ -4,18 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Schemas** | [**[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn**](EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Plugin | 
+**Schemas** | [**[]EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn**](EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn.md) |  | 
+**TimeBetweenSearches** | **string** | The length of time between internal searches used to identify entries that match the sets of search criteria. | 
+**Description** | Pointer to **string** | A description for this Plugin | [optional] 
+**Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **MaxUpdateFrequency** | Pointer to **string** | Specifies the maximum frequency with which last access time values should be written for an entry. This may help limit the rate of internal write operations processed in the server. | [optional] 
 **OperationType** | Pointer to [**[]EnumpluginOperationTypeProp**](EnumpluginOperationTypeProp.md) |  | [optional] 
 **InvokeForFailedBinds** | Pointer to **bool** | Indicates whether to update the last access time for an entry targeted by a bind operation if the bind is unsuccessful. | [optional] 
 **MaxSearchResultEntriesToUpdate** | Pointer to **int64** | Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated. | [optional] 
 **RequestCriteria** | **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | 
-**InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
-**Description** | Pointer to **string** | A description for this Plugin | [optional] 
-**Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **SampleInterval** | **string** | The duration between statistics collections. Setting this value too small can have an impact on performance. This value should be a multiple of collection-interval. | 
 **CollectionInterval** | **string** | Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered. It should be a multiple of the log-interval. | 
 **LdapInfo** | Pointer to [**EnumpluginLdapInfoProp**](EnumpluginLdapInfoProp.md) |  | [optional] 
@@ -186,7 +187,7 @@ Name | Type | Description | Notes
 
 ### NewPluginListResponseResourcesInner
 
-`func NewPluginListResponseResourcesInner(schemas []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, id string, requestCriteria string, enabled bool, sampleInterval string, collectionInterval string, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, type_ []string, subtreeView []string, histogramCategoryBoundary []string, scope EnumpluginScopeProp, outputFile string, logInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, numWorkerThreads int64, profileSampleInterval string, profileDirectory string, enableProfilingOnStartup bool, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, listenAddress string, listenPort int64, agentxTransport EnumpluginAgentxTransportProp, agentxListenAddress string, agentxListenPort int64, agentSNMPVersion []EnumpluginAgentSNMPVersionProp, communityName string, ) *PluginListResponseResourcesInner`
+`func NewPluginListResponseResourcesInner(id string, schemas []EnuminvertedStaticGroupReferentialIntegrityPluginSchemaUrn, timeBetweenSearches string, enabled bool, requestCriteria string, sampleInterval string, collectionInterval string, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, type_ []string, subtreeView []string, histogramCategoryBoundary []string, scope EnumpluginScopeProp, outputFile string, logInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, numWorkerThreads int64, profileSampleInterval string, profileDirectory string, enableProfilingOnStartup bool, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, listenAddress string, listenPort int64, agentxTransport EnumpluginAgentxTransportProp, agentxListenAddress string, agentxListenPort int64, agentSNMPVersion []EnumpluginAgentSNMPVersionProp, communityName string, ) *PluginListResponseResourcesInner`
 
 NewPluginListResponseResourcesInner instantiates a new PluginListResponseResourcesInner object
 This constructor will assign default values to properties that have it defined,
@@ -200,6 +201,26 @@ will change when the set of required properties is changed
 NewPluginListResponseResourcesInnerWithDefaults instantiates a new PluginListResponseResourcesInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *PluginListResponseResourcesInner) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PluginListResponseResourcesInner) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PluginListResponseResourcesInner) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 ### GetSchemas
 
@@ -221,25 +242,145 @@ and a boolean to check if the value has been set.
 SetSchemas sets Schemas field to given value.
 
 
-### GetId
+### GetTimeBetweenSearches
 
-`func (o *PluginListResponseResourcesInner) GetId() string`
+`func (o *PluginListResponseResourcesInner) GetTimeBetweenSearches() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetTimeBetweenSearches returns the TimeBetweenSearches field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetTimeBetweenSearchesOk
 
-`func (o *PluginListResponseResourcesInner) GetIdOk() (*string, bool)`
+`func (o *PluginListResponseResourcesInner) GetTimeBetweenSearchesOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetTimeBetweenSearchesOk returns a tuple with the TimeBetweenSearches field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetTimeBetweenSearches
 
-`func (o *PluginListResponseResourcesInner) SetId(v string)`
+`func (o *PluginListResponseResourcesInner) SetTimeBetweenSearches(v string)`
 
-SetId sets Id field to given value.
+SetTimeBetweenSearches sets TimeBetweenSearches field to given value.
 
+
+### GetDescription
+
+`func (o *PluginListResponseResourcesInner) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *PluginListResponseResourcesInner) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *PluginListResponseResourcesInner) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *PluginListResponseResourcesInner) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetEnabled
+
+`func (o *PluginListResponseResourcesInner) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *PluginListResponseResourcesInner) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *PluginListResponseResourcesInner) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+
+### GetInvokeForInternalOperations
+
+`func (o *PluginListResponseResourcesInner) GetInvokeForInternalOperations() bool`
+
+GetInvokeForInternalOperations returns the InvokeForInternalOperations field if non-nil, zero value otherwise.
+
+### GetInvokeForInternalOperationsOk
+
+`func (o *PluginListResponseResourcesInner) GetInvokeForInternalOperationsOk() (*bool, bool)`
+
+GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvokeForInternalOperations
+
+`func (o *PluginListResponseResourcesInner) SetInvokeForInternalOperations(v bool)`
+
+SetInvokeForInternalOperations sets InvokeForInternalOperations field to given value.
+
+### HasInvokeForInternalOperations
+
+`func (o *PluginListResponseResourcesInner) HasInvokeForInternalOperations() bool`
+
+HasInvokeForInternalOperations returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *PluginListResponseResourcesInner) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *PluginListResponseResourcesInner) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *PluginListResponseResourcesInner) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *PluginListResponseResourcesInner) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *PluginListResponseResourcesInner) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *PluginListResponseResourcesInner) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *PluginListResponseResourcesInner) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *PluginListResponseResourcesInner) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetMaxUpdateFrequency
 
@@ -360,126 +501,6 @@ and a boolean to check if the value has been set.
 
 SetRequestCriteria sets RequestCriteria field to given value.
 
-
-### GetInvokeForInternalOperations
-
-`func (o *PluginListResponseResourcesInner) GetInvokeForInternalOperations() bool`
-
-GetInvokeForInternalOperations returns the InvokeForInternalOperations field if non-nil, zero value otherwise.
-
-### GetInvokeForInternalOperationsOk
-
-`func (o *PluginListResponseResourcesInner) GetInvokeForInternalOperationsOk() (*bool, bool)`
-
-GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvokeForInternalOperations
-
-`func (o *PluginListResponseResourcesInner) SetInvokeForInternalOperations(v bool)`
-
-SetInvokeForInternalOperations sets InvokeForInternalOperations field to given value.
-
-### HasInvokeForInternalOperations
-
-`func (o *PluginListResponseResourcesInner) HasInvokeForInternalOperations() bool`
-
-HasInvokeForInternalOperations returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *PluginListResponseResourcesInner) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *PluginListResponseResourcesInner) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *PluginListResponseResourcesInner) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *PluginListResponseResourcesInner) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetEnabled
-
-`func (o *PluginListResponseResourcesInner) GetEnabled() bool`
-
-GetEnabled returns the Enabled field if non-nil, zero value otherwise.
-
-### GetEnabledOk
-
-`func (o *PluginListResponseResourcesInner) GetEnabledOk() (*bool, bool)`
-
-GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnabled
-
-`func (o *PluginListResponseResourcesInner) SetEnabled(v bool)`
-
-SetEnabled sets Enabled field to given value.
-
-
-### GetMeta
-
-`func (o *PluginListResponseResourcesInner) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *PluginListResponseResourcesInner) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *PluginListResponseResourcesInner) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *PluginListResponseResourcesInner) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *PluginListResponseResourcesInner) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *PluginListResponseResourcesInner) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *PluginListResponseResourcesInner) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *PluginListResponseResourcesInner) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetSampleInterval
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **MemoryUsageKb** | **int64** | The number of kilobytes of memory that must be used in the course of encoding each password. | 
 **SaltLengthBytes** | **int64** | The number of bytes to use for the generated salt. | 
 **DerivedKeyLengthBytes** | **int64** | The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512. | 
+**EncodedPasswordCacheSize** | Pointer to **int64** | The maximum number of Argon2-encoded passwords to cache for faster verification. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **SchemeName** | **string** | Name of the new Password Storage Scheme | 
@@ -152,6 +153,31 @@ and a boolean to check if the value has been set.
 
 SetDerivedKeyLengthBytes sets DerivedKeyLengthBytes field to given value.
 
+
+### GetEncodedPasswordCacheSize
+
+`func (o *AddArgon2idPasswordStorageSchemeRequest) GetEncodedPasswordCacheSize() int64`
+
+GetEncodedPasswordCacheSize returns the EncodedPasswordCacheSize field if non-nil, zero value otherwise.
+
+### GetEncodedPasswordCacheSizeOk
+
+`func (o *AddArgon2idPasswordStorageSchemeRequest) GetEncodedPasswordCacheSizeOk() (*int64, bool)`
+
+GetEncodedPasswordCacheSizeOk returns a tuple with the EncodedPasswordCacheSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncodedPasswordCacheSize
+
+`func (o *AddArgon2idPasswordStorageSchemeRequest) SetEncodedPasswordCacheSize(v int64)`
+
+SetEncodedPasswordCacheSize sets EncodedPasswordCacheSize field to given value.
+
+### HasEncodedPasswordCacheSize
+
+`func (o *AddArgon2idPasswordStorageSchemeRequest) HasEncodedPasswordCacheSize() bool`
+
+HasEncodedPasswordCacheSize returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **TestReversedPassword** | **bool** | Indicates whether this password validator is to test the reversed value of the provided password as well as the order in which it was given. | 
 **MaxConsecutiveLength** | **int64** | Specifies the maximum number of times that any character can appear consecutively in a password value. | 
 **CaseSensitiveValidation** | **bool** | Indicates whether this password validator should treat password characters in a case-sensitive manner. | 
-**DictionaryFile** | Pointer to **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | [optional] 
+**DictionaryFile** | **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | 
 **IgnoreLeadingNonAlphabeticCharacters** | Pointer to **bool** | Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the beginning of a proposed password. | [optional] 
 **IgnoreTrailingNonAlphabeticCharacters** | Pointer to **bool** | Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the end of a proposed password. | [optional] 
 **StripDiacriticalMarks** | Pointer to **bool** | Indicates whether to strip characters of any diacritical marks (like accents, cedillas, circumflexes, diaereses, tildes, and umlauts) they may contain. Any characters with a diacritical mark would be replaced with a base version | [optional] 
@@ -59,7 +59,7 @@ Name | Type | Description | Notes
 
 ### NewAddPasswordValidatorRequest
 
-`func NewAddPasswordValidatorRequest(validatorName string, schemas []EnumthirdPartyPasswordValidatorSchemaUrn, characterSet []string, allowUnclassifiedCharacters bool, enabled bool, minPasswordDifference int64, testReversedPassword bool, maxConsecutiveLength int64, caseSensitiveValidation bool, scriptClass string, matchPattern string, matchBehavior EnumpasswordValidatorMatchBehaviorProp, minUniqueCharacters int64, extensionClass string, ) *AddPasswordValidatorRequest`
+`func NewAddPasswordValidatorRequest(validatorName string, schemas []EnumthirdPartyPasswordValidatorSchemaUrn, characterSet []string, allowUnclassifiedCharacters bool, enabled bool, minPasswordDifference int64, testReversedPassword bool, maxConsecutiveLength int64, caseSensitiveValidation bool, dictionaryFile string, scriptClass string, matchPattern string, matchBehavior EnumpasswordValidatorMatchBehaviorProp, minUniqueCharacters int64, extensionClass string, ) *AddPasswordValidatorRequest`
 
 NewAddPasswordValidatorRequest instantiates a new AddPasswordValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -473,11 +473,6 @@ and a boolean to check if the value has been set.
 
 SetDictionaryFile sets DictionaryFile field to given value.
 
-### HasDictionaryFile
-
-`func (o *AddPasswordValidatorRequest) HasDictionaryFile() bool`
-
-HasDictionaryFile returns a boolean if a field has been set.
 
 ### GetIgnoreLeadingNonAlphabeticCharacters
 

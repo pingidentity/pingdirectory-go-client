@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This script should be run from the root of the repository (./scripts/generateClient.sh)
+
 set -x
 set -e
 
@@ -8,18 +10,19 @@ set -e
 # rm ./model_*.go
 # rm -r docs/
 
-cd configurationapi
-
-openapi-generator generate \
-    -i ../complete-api-spec/openapi.yaml \
+docker run --rm \
+    -v "$PWD:/local" openapitools/openapi-generator-cli:v7.0.1 generate \
+    -i /local/complete-api-spec/openapi.yaml \
     -g go \
+    -o /local/configurationapi \
     --git-host github.com \
     --git-repo-id pingdirectory-go-client \
     --git-user-id pingidentity \
     --type-mappings=integer=int64,number=float64 \
-    --additional-properties=enumClassPrefix=true,packageName=configurationapi
+    --additional-properties=enumClassPrefix=true,packageName=configurationapi \
+    --skip-validate-spec
 
-rm -r test/
+rm -r configurationapi/test/
 
 # Run any code generators
 go mod tidy

@@ -29,6 +29,7 @@ type GetPlugin200Response struct {
 	DelayPluginResponse                                                *DelayPluginResponse
 	DnMapperPluginResponse                                             *DnMapperPluginResponse
 	EncryptAttributeValuesPluginResponse                               *EncryptAttributeValuesPluginResponse
+	EntryCounterPluginResponse                                         *EntryCounterPluginResponse
 	GroovyScriptedPluginResponse                                       *GroovyScriptedPluginResponse
 	InternalSearchRatePluginResponse                                   *InternalSearchRatePluginResponse
 	InvertedStaticGroupReferentialIntegrityPluginResponse              *InvertedStaticGroupReferentialIntegrityPluginResponse
@@ -140,6 +141,13 @@ func DnMapperPluginResponseAsGetPlugin200Response(v *DnMapperPluginResponse) Get
 func EncryptAttributeValuesPluginResponseAsGetPlugin200Response(v *EncryptAttributeValuesPluginResponse) GetPlugin200Response {
 	return GetPlugin200Response{
 		EncryptAttributeValuesPluginResponse: v,
+	}
+}
+
+// EntryCounterPluginResponseAsGetPlugin200Response is a convenience function that returns EntryCounterPluginResponse wrapped in GetPlugin200Response
+func EntryCounterPluginResponseAsGetPlugin200Response(v *EntryCounterPluginResponse) GetPlugin200Response {
+	return GetPlugin200Response{
+		EntryCounterPluginResponse: v,
 	}
 }
 
@@ -497,6 +505,19 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.EncryptAttributeValuesPluginResponse = nil
+	}
+
+	// try to unmarshal data into EntryCounterPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.EntryCounterPluginResponse)
+	if err == nil {
+		jsonEntryCounterPluginResponse, _ := json.Marshal(dst.EntryCounterPluginResponse)
+		if string(jsonEntryCounterPluginResponse) == "{}" { // empty struct
+			dst.EntryCounterPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.EntryCounterPluginResponse = nil
 	}
 
 	// try to unmarshal data into GroovyScriptedPluginResponse
@@ -877,6 +898,7 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.DelayPluginResponse = nil
 		dst.DnMapperPluginResponse = nil
 		dst.EncryptAttributeValuesPluginResponse = nil
+		dst.EntryCounterPluginResponse = nil
 		dst.GroovyScriptedPluginResponse = nil
 		dst.InternalSearchRatePluginResponse = nil
 		dst.InvertedStaticGroupReferentialIntegrityPluginResponse = nil
@@ -962,6 +984,10 @@ func (src GetPlugin200Response) MarshalJSON() ([]byte, error) {
 
 	if src.EncryptAttributeValuesPluginResponse != nil {
 		return json.Marshal(&src.EncryptAttributeValuesPluginResponse)
+	}
+
+	if src.EntryCounterPluginResponse != nil {
+		return json.Marshal(&src.EntryCounterPluginResponse)
 	}
 
 	if src.GroovyScriptedPluginResponse != nil {
@@ -1130,6 +1156,10 @@ func (obj *GetPlugin200Response) GetActualInstance() interface{} {
 
 	if obj.EncryptAttributeValuesPluginResponse != nil {
 		return obj.EncryptAttributeValuesPluginResponse
+	}
+
+	if obj.EntryCounterPluginResponse != nil {
+		return obj.EntryCounterPluginResponse
 	}
 
 	if obj.GroovyScriptedPluginResponse != nil {

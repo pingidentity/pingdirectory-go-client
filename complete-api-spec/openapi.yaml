@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/pingdirectory/latest/pd_ds_landing_page.html
 tags:
 - description: Access the Global Configuration
   name: global-configuration
@@ -697,6 +697,7 @@ paths:
           application/json:
             schema:
               oneOf:
+              - $ref: '#/components/schemas/add-entry-counter-plugin-request'
               - $ref: '#/components/schemas/add-traditional-static-group-support-for-inverted-static-groups-plugin-request'
               - $ref: '#/components/schemas/add-internal-search-rate-plugin-request'
               - $ref: '#/components/schemas/add-modifiable-password-policy-state-plugin-request'
@@ -734,6 +735,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/entry-counter-plugin-response'
                 - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
                 - $ref: '#/components/schemas/internal-search-rate-plugin-response'
                 - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
@@ -821,6 +823,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/entry-counter-plugin-response'
                 - $ref: '#/components/schemas/last-access-time-plugin-response'
                 - $ref: '#/components/schemas/stats-collector-plugin-response'
                 - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
@@ -897,6 +900,7 @@ paths:
             application/json:
               schema:
                 oneOf:
+                - $ref: '#/components/schemas/entry-counter-plugin-response'
                 - $ref: '#/components/schemas/last-access-time-plugin-response'
                 - $ref: '#/components/schemas/stats-collector-plugin-response'
                 - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
@@ -949,6 +953,199 @@ paths:
       - basicAuth: []
       tags:
       - plugin
+  /plugin-root/plugins/{plugin-name}/entry-counter-criteria:
+    get:
+      summary: Returns a list of all Entry Counter Plugin Criteria objects
+      operationId: list-entry-counter-criteria
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-counter-plugin-criteriaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
+    post:
+      summary: Add a new Entry Counter Plugin Criteria to the config
+      operationId: add-entry-counter-plugin-criteria
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-entry-counter-plugin-criteria-request'
+        description: Create a new Entry Counter Plugin Criteria in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-counter-plugin-criteria-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Entry Counter Plugin Criteria already exists
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
+  /plugin-root/plugins/{plugin-name}/entry-counter-criteria/{entry-counter-plugin-criteria-name}:
+    delete:
+      summary: Delete a Entry Counter Plugin Criteria
+      operationId: delete-entry-counter-plugin-criteria
+      parameters:
+      - description: Name of the Entry Counter Plugin Criteria
+        explode: false
+        in: path
+        name: entry-counter-plugin-criteria-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Entry Counter Plugin Criteria does not exist
+        "409":
+          description: The Entry Counter Plugin Criteria cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
+    get:
+      summary: Returns a single Entry Counter Plugin Criteria
+      operationId: get-entry-counter-plugin-criteria
+      parameters:
+      - description: Name of the Entry Counter Plugin Criteria
+        explode: false
+        in: path
+        name: entry-counter-plugin-criteria-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-counter-plugin-criteria-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Entry Counter Plugin Criteria does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
+    patch:
+      summary: Update an existing Entry Counter Plugin Criteria by name
+      operationId: update-entry-counter-plugin-criteria
+      parameters:
+      - description: Name of the Entry Counter Plugin Criteria
+        explode: false
+        in: path
+        name: entry-counter-plugin-criteria-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Entry Counter Plugin Criteria
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-counter-plugin-criteria-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Entry Counter Plugin Criteria does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - entry-counter-plugin-criteria
   /plugin-root/plugins/{plugin-name}/custom-logged-stats:
     get:
       summary: Returns a list of all Custom Logged Stats objects
@@ -19714,6 +19911,12 @@ components:
             type: boolean
             description: >-
                 When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of "Rdn1" and "Rdn2" instead of the recommended "type" and "name" keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys.
+          systemProperty:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the name and value of a system property to set in the JVM.
       - $ref: '#/components/schemas/meta'
       required:
       - instanceName
@@ -20340,6 +20543,62 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin-root"
+    add-entry-counter-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            type: string
+            description: >-
+                Name of the new Plugin
+      - $ref: '#/components/schemas/entry-counter-plugin-shared'
+      required:
+      - pluginName
+    entry-counter-plugin-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Plugin
+      - $ref: '#/components/schemas/entry-counter-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - timeBetweenSearches
+    entry-counter-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumentry-counter-pluginSchemaUrn'
+        timeBetweenSearches:
+          type: string
+          description: >-
+              The length of time between internal searches used to identify entries that match the sets of search criteria.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - enabled
+    Enumentry-counter-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:entry-counter"
     Enumplugin-operationTypeProp:
       type: string
       enum:
@@ -24037,6 +24296,72 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:inverted-static-group-referential-integrity"
+    add-entry-counter-plugin-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            type: string
+            description: >-
+                Name of the new Entry Counter Plugin Criteria
+      - $ref: '#/components/schemas/entry-counter-plugin-criteria-shared'
+      required:
+      - criteriaName
+    entry-counter-plugin-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Entry Counter Plugin Criteria
+      - $ref: '#/components/schemas/entry-counter-plugin-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    entry-counter-plugin-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumentry-counter-plugin-criteriaSchemaUrn'
+        baseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              The base DNs for entries that are eligible to match this criteria. If no base DNs are specified, then the set of public naming contexts will be used.
+        filter:
+          type: string
+          description: >-
+              The filter to use to identify entries that are eligible to match this criteria.
+        namedSubCategoryFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              An optional set of named filters that can be used to divide entries that match the base DN and filter criteria into additional sub-categories.
+        warningThresholdMinimumCount:
+          type: integer
+          description: >-
+              The minimum number of entries in the server that must match this criteria before the server will raise a warning alarm.
+        errorThresholdMinimumCount:
+          type: integer
+          description: >-
+              The minimum number of entries in the server that must match this criteria before the server will raise an error alarm.
+        trackMatchingEntrySize:
+          type: boolean
+          description: >-
+              Indicates whether to track information about the size of each matching entry.
+      required:
+      - filter
+    Enumentry-counter-plugin-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:entry-counter-plugin-criteria"
     Enumcustom-logged-stats-statisticTypeProp:
       type: string
       enum:
@@ -24169,6 +24494,7 @@ components:
           type: array
           items:
             oneOf:
+            - $ref: '#/components/schemas/entry-counter-plugin-response'
             - $ref: '#/components/schemas/last-access-time-plugin-response'
             - $ref: '#/components/schemas/stats-collector-plugin-response'
             - $ref: '#/components/schemas/traditional-static-group-support-for-inverted-static-groups-plugin-response'
@@ -24216,6 +24542,21 @@ components:
             - $ref: '#/components/schemas/unique-attribute-plugin-response'
             - $ref: '#/components/schemas/snmp-master-agent-plugin-response'
             - $ref: '#/components/schemas/inverted-static-group-referential-integrity-plugin-response'
+    entry-counter-plugin-criteriaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/entry-counter-plugin-criteria-response'
     custom-logged-statsListResponse:
       type: object
       properties:
@@ -32766,6 +33107,10 @@ components:
           type: string
           description: >-
               Specifies the format for the data in the trust store file.
+        enableTrustManagerCaching:
+          type: boolean
+          description: >-
+              Indicates whether trust manager providers should cache trust managers.
         trustStorePin:
           type: string
           format: password
@@ -37898,6 +38243,7 @@ components:
       - "cannot-write-new-schema-files"
       - "cannot-write-server-state-file"
       - "cannot-write-task-backing-file"
+      - "composite-index-page-metadata-inconsistency"
       - "config-change"
       - "console-logger-without-no-detach"
       - "crypto-manager-error"
@@ -37915,7 +38261,10 @@ components:
       - "encryption-settings-database-inaccessible"
       - "encryption-settings-database-prolonged-outage"
       - "entering-lockdown-mode"
+      - "entry-counter-error-threshold-reached"
+      - "entry-counter-warning-threshold-reached"
       - "entry-references-removed-attribute-type"
+      - "error-removing-to-be-deleted-subtree-accessibility-restriction"
       - "exec-task-launching-command"
       - "exploded-index-background-delete-cleanup-failed"
       - "exploded-index-background-delete-failed"
@@ -38100,6 +38449,7 @@ components:
       - "cannot-write-new-schema-files"
       - "cannot-write-server-state-file"
       - "cannot-write-task-backing-file"
+      - "composite-index-page-metadata-inconsistency"
       - "config-change"
       - "console-logger-without-no-detach"
       - "crypto-manager-error"
@@ -38117,7 +38467,10 @@ components:
       - "encryption-settings-database-inaccessible"
       - "encryption-settings-database-prolonged-outage"
       - "entering-lockdown-mode"
+      - "entry-counter-error-threshold-reached"
+      - "entry-counter-warning-threshold-reached"
       - "entry-references-removed-attribute-type"
+      - "error-removing-to-be-deleted-subtree-accessibility-restriction"
       - "exec-task-launching-command"
       - "exploded-index-background-delete-cleanup-failed"
       - "exploded-index-background-delete-failed"
@@ -42258,7 +42611,6 @@ components:
       - $ref: '#/components/schemas/meta'
       required:
       - id
-      - dictionaryFile
       - caseSensitiveValidation
       - testReversedPassword
     dictionary-password-validator-shared:
@@ -42322,6 +42674,7 @@ components:
               Specifies a message that may be provided to the end user in the event that a proposed password is rejected by this validator. If a value is provided for this property, then it will override any failure message that may have otherwise been generated by the validator.
       required:
       - schemas
+      - dictionaryFile
       - enabled
     Enumdictionary-password-validatorSchemaUrn:
       type: string
@@ -43358,7 +43711,7 @@ components:
         sslCertNickname:
           type: string
           description: >-
-              Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL communication.
+              Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL or StartTLS communication.
         keyManagerProvider:
           type: string
           description: >-
@@ -49558,6 +49911,10 @@ components:
             type: boolean
             description: >-
                 Specifies whether Policy Query messages recorded by the log publisher will include full responses from the PDP.
+          includeQueryPermutations:
+            type: boolean
+            description: >-
+                Specifies whether messages recorded by the file-based Policy Query log publisher will include query permutations.
           description:
             type: string
             description: >-
@@ -52384,6 +52741,10 @@ components:
           type: string
           description: >-
               The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN.
+        enableKeyManagerCaching:
+          type: boolean
+          description: >-
+              Indicates whether key manager providers should cache key managers.
         description:
           type: string
           description: >-
@@ -52564,6 +52925,10 @@ components:
             type: string
             description: >-
                 Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
+          httpProxyExternalServer:
+            type: string
+            description: >-
+                A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
           description:
             type: string
             description: >-
@@ -54133,6 +54498,10 @@ components:
           type: string
           description: >-
               Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne.
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
         description:
           type: string
           description: >-
@@ -54205,6 +54574,10 @@ components:
             type: string
             description: >-
                 Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
+          httpProxyExternalServer:
+            type: string
+            description: >-
+                A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
           description:
             type: string
             description: >-
@@ -54618,6 +54991,10 @@ components:
             type: string
             description: >-
                 Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
+          httpProxyExternalServer:
+            type: string
+            description: >-
+                A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
           description:
             type: string
             description: >-
@@ -55176,6 +55553,10 @@ components:
           type: string
           description: >-
               Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
         description:
           type: string
           description: >-
@@ -58426,6 +58807,7 @@ components:
       - "cannot-write-new-schema-files"
       - "cannot-write-server-state-file"
       - "cannot-write-task-backing-file"
+      - "composite-index-page-metadata-inconsistency"
       - "config-change"
       - "console-logger-without-no-detach"
       - "crypto-manager-error"
@@ -58443,7 +58825,10 @@ components:
       - "encryption-settings-database-inaccessible"
       - "encryption-settings-database-prolonged-outage"
       - "entering-lockdown-mode"
+      - "entry-counter-error-threshold-reached"
+      - "entry-counter-warning-threshold-reached"
       - "entry-references-removed-attribute-type"
+      - "error-removing-to-be-deleted-subtree-accessibility-restriction"
       - "exec-task-launching-command"
       - "exploded-index-background-delete-cleanup-failed"
       - "exploded-index-background-delete-failed"
@@ -60589,7 +60974,7 @@ components:
           basicAuthEnabled:
             type: boolean
             description: >-
-                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
           identityMapper:
             type: string
             description: >-
@@ -61000,7 +61385,7 @@ components:
           basicAuthEnabled:
             type: boolean
             description: >-
-                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
           identityMapper:
             type: string
             description: >-
@@ -61102,7 +61487,7 @@ components:
         basicAuthEnabled:
           type: boolean
           description: >-
-              Enables HTTP Basic authentication, using a username and password.
+              Enables HTTP Basic authentication, using a username and password.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
         identityMapper:
           type: string
           description: >-
@@ -61789,7 +62174,7 @@ components:
           basicAuthEnabled:
             type: boolean
             description: >-
-                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
           identityMapper:
             type: string
             description: >-
@@ -70902,6 +71287,10 @@ components:
           type: integer
           description: >-
               The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512.
+        encodedPasswordCacheSize:
+          type: integer
+          description: >-
+              The maximum number of Argon2-encoded passwords to cache for faster verification.
         description:
           type: string
           description: >-
@@ -71040,6 +71429,10 @@ components:
           type: integer
           description: >-
               The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512.
+        encodedPasswordCacheSize:
+          type: integer
+          description: >-
+              The maximum number of Argon2-encoded passwords to cache for faster verification.
         description:
           type: string
           description: >-
@@ -71209,6 +71602,10 @@ components:
           type: integer
           description: >-
               The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512.
+        encodedPasswordCacheSize:
+          type: integer
+          description: >-
+              The maximum number of Argon2-encoded passwords to cache for faster verification.
         description:
           type: string
           description: >-
@@ -71395,6 +71792,10 @@ components:
           type: integer
           description: >-
               The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512.
+        encodedPasswordCacheSize:
+          type: integer
+          description: >-
+              The maximum number of Argon2-encoded passwords to cache for faster verification.
         description:
           type: string
           description: >-
@@ -71535,6 +71936,10 @@ components:
           type: integer
           description: >-
               Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords.
+        encodedPasswordCacheSize:
+          type: integer
+          description: >-
+              The maximum number of PBKDF2-encoded passwords to cache for faster verification.
         description:
           type: string
           description: >-
@@ -71765,6 +72170,10 @@ components:
           type: integer
           description: >-
               Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive.
+        encodedPasswordCacheSize:
+          type: integer
+          description: >-
+              The maximum number of Bcrypt-encoded passwords to cache for faster verification.
         description:
           type: string
           description: >-
@@ -72129,6 +72538,10 @@ components:
           type: integer
           description: >-
               Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords.
+        encodedPasswordCacheSize:
+          type: integer
+          description: >-
+              The maximum number of scrypt-encoded passwords to cache for faster verification.
         description:
           type: string
           description: >-

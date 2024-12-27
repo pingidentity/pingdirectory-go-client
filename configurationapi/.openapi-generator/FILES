@@ -34,6 +34,7 @@ api_delegated_admin_resource_rights.go
 api_delegated_admin_rights.go
 api_dn_map.go
 api_entry_cache.go
+api_entry_counter_plugin_criteria.go
 api_extended_operation_handler.go
 api_external_server.go
 api_failure_lockout_action.go
@@ -249,6 +250,8 @@ docs/AddDnMapperPluginRequest.md
 docs/AddEmailOtpDeliveryMechanismRequest.md
 docs/AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest.md
 docs/AddEnterLockdownModeRecurringTaskRequest.md
+docs/AddEntryCounterPluginCriteriaRequest.md
+docs/AddEntryCounterPluginRequest.md
 docs/AddEntryDnVirtualAttributeRequest.md
 docs/AddEnvironmentVariablePassphraseProviderRequest.md
 docs/AddEqualityJoinVirtualAttributeRequest.md
@@ -823,6 +826,10 @@ docs/EntryCacheListResponse.md
 docs/EntryCacheListResponseResourcesInner.md
 docs/EntryCacheMonitorProviderResponse.md
 docs/EntryChecksumVirtualAttributeResponse.md
+docs/EntryCounterPluginCriteriaAPI.md
+docs/EntryCounterPluginCriteriaListResponse.md
+docs/EntryCounterPluginCriteriaResponse.md
+docs/EntryCounterPluginResponse.md
 docs/EntryDnVirtualAttributeResponse.md
 docs/EntryUuidPluginResponse.md
 docs/EntryUuidVirtualAttributeResponse.md
@@ -1048,6 +1055,8 @@ docs/EnumenterLockdownModeRecurringTaskSchemaUrn.md
 docs/EnumentryCacheCacheTypeProp.md
 docs/EnumentryCacheMonitorProviderSchemaUrn.md
 docs/EnumentryChecksumVirtualAttributeSchemaUrn.md
+docs/EnumentryCounterPluginCriteriaSchemaUrn.md
+docs/EnumentryCounterPluginSchemaUrn.md
 docs/EnumentryDnVirtualAttributeSchemaUrn.md
 docs/EnumentryUuidPluginSchemaUrn.md
 docs/EnumentryUuidVirtualAttributeSchemaUrn.md
@@ -2505,6 +2514,8 @@ model_add_dn_mapper_plugin_request.go
 model_add_email_otp_delivery_mechanism_request.go
 model_add_encryption_settings_database_accessibility_monitor_provider_request.go
 model_add_enter_lockdown_mode_recurring_task_request.go
+model_add_entry_counter_plugin_criteria_request.go
+model_add_entry_counter_plugin_request.go
 model_add_entry_dn_virtual_attribute_request.go
 model_add_environment_variable_passphrase_provider_request.go
 model_add_equality_join_virtual_attribute_request.go
@@ -3049,6 +3060,9 @@ model_entry_cache_list_response.go
 model_entry_cache_list_response_resources_inner.go
 model_entry_cache_monitor_provider_response.go
 model_entry_checksum_virtual_attribute_response.go
+model_entry_counter_plugin_criteria_list_response.go
+model_entry_counter_plugin_criteria_response.go
+model_entry_counter_plugin_response.go
 model_entry_dn_virtual_attribute_response.go
 model_entry_uuid_plugin_response.go
 model_entry_uuid_virtual_attribute_response.go
@@ -3274,6 +3288,8 @@ model_enumenter_lockdown_mode_recurring_task_schema_urn.go
 model_enumentry_cache_cache_type_prop.go
 model_enumentry_cache_monitor_provider_schema_urn.go
 model_enumentry_checksum_virtual_attribute_schema_urn.go
+model_enumentry_counter_plugin_criteria_schema_urn.go
+model_enumentry_counter_plugin_schema_urn.go
 model_enumentry_dn_virtual_attribute_schema_urn.go
 model_enumentry_uuid_plugin_schema_urn.go
 model_enumentry_uuid_virtual_attribute_schema_urn.go
@@ -4554,6 +4570,7 @@ test/api_delegated_admin_resource_rights_test.go
 test/api_delegated_admin_rights_test.go
 test/api_dn_map_test.go
 test/api_entry_cache_test.go
+test/api_entry_counter_plugin_criteria_test.go
 test/api_extended_operation_handler_test.go
 test/api_external_server_test.go
 test/api_failure_lockout_action_test.go

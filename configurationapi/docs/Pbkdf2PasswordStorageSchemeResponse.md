@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **SaltLengthBytes** | **int64** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | 
 **DerivedKeyLengthBytes** | **int64** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | 
 **MaxPasswordLength** | Pointer to **int64** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
+**EncodedPasswordCacheSize** | Pointer to **int64** | The maximum number of PBKDF2-encoded passwords to cache for faster verification. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -164,6 +165,31 @@ SetMaxPasswordLength sets MaxPasswordLength field to given value.
 `func (o *Pbkdf2PasswordStorageSchemeResponse) HasMaxPasswordLength() bool`
 
 HasMaxPasswordLength returns a boolean if a field has been set.
+
+### GetEncodedPasswordCacheSize
+
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetEncodedPasswordCacheSize() int64`
+
+GetEncodedPasswordCacheSize returns the EncodedPasswordCacheSize field if non-nil, zero value otherwise.
+
+### GetEncodedPasswordCacheSizeOk
+
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetEncodedPasswordCacheSizeOk() (*int64, bool)`
+
+GetEncodedPasswordCacheSizeOk returns a tuple with the EncodedPasswordCacheSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncodedPasswordCacheSize
+
+`func (o *Pbkdf2PasswordStorageSchemeResponse) SetEncodedPasswordCacheSize(v int64)`
+
+SetEncodedPasswordCacheSize sets EncodedPasswordCacheSize field to given value.
+
+### HasEncodedPasswordCacheSize
+
+`func (o *Pbkdf2PasswordStorageSchemeResponse) HasEncodedPasswordCacheSize() bool`
+
+HasEncodedPasswordCacheSize returns a boolean if a field has been set.
 
 ### GetDescription
 

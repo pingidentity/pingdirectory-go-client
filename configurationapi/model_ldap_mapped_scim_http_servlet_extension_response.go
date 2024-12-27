@@ -22,7 +22,7 @@ type LdapMappedScimHttpServletExtensionResponse struct {
 	Schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request.
 	OAuthTokenHandler *string `json:"OAuthTokenHandler,omitempty"`
-	// Enables HTTP Basic authentication, using a username and password.
+	// Enables HTTP Basic authentication, using a username and password.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
 	BasicAuthEnabled *bool `json:"basicAuthEnabled,omitempty"`
 	// Specifies the name of the identity mapper that is to be used to match the username included in the HTTP Basic authentication header to the corresponding user in the directory.
 	IdentityMapper *string `json:"identityMapper,omitempty"`

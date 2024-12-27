@@ -25,6 +25,7 @@ type AddPluginRequest struct {
 	AddComposedAttributePluginRequest                                    *AddComposedAttributePluginRequest
 	AddDelayPluginRequest                                                *AddDelayPluginRequest
 	AddDnMapperPluginRequest                                             *AddDnMapperPluginRequest
+	AddEntryCounterPluginRequest                                         *AddEntryCounterPluginRequest
 	AddGroovyScriptedPluginRequest                                       *AddGroovyScriptedPluginRequest
 	AddInternalSearchRatePluginRequest                                   *AddInternalSearchRatePluginRequest
 	AddInvertedStaticGroupReferentialIntegrityPluginRequest              *AddInvertedStaticGroupReferentialIntegrityPluginRequest
@@ -100,6 +101,13 @@ func AddDelayPluginRequestAsAddPluginRequest(v *AddDelayPluginRequest) AddPlugin
 func AddDnMapperPluginRequestAsAddPluginRequest(v *AddDnMapperPluginRequest) AddPluginRequest {
 	return AddPluginRequest{
 		AddDnMapperPluginRequest: v,
+	}
+}
+
+// AddEntryCounterPluginRequestAsAddPluginRequest is a convenience function that returns AddEntryCounterPluginRequest wrapped in AddPluginRequest
+func AddEntryCounterPluginRequestAsAddPluginRequest(v *AddEntryCounterPluginRequest) AddPluginRequest {
+	return AddPluginRequest{
+		AddEntryCounterPluginRequest: v,
 	}
 }
 
@@ -349,6 +357,19 @@ func (dst *AddPluginRequest) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddDnMapperPluginRequest = nil
+	}
+
+	// try to unmarshal data into AddEntryCounterPluginRequest
+	err = newStrictDecoder(data).Decode(&dst.AddEntryCounterPluginRequest)
+	if err == nil {
+		jsonAddEntryCounterPluginRequest, _ := json.Marshal(dst.AddEntryCounterPluginRequest)
+		if string(jsonAddEntryCounterPluginRequest) == "{}" { // empty struct
+			dst.AddEntryCounterPluginRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddEntryCounterPluginRequest = nil
 	}
 
 	// try to unmarshal data into AddGroovyScriptedPluginRequest
@@ -621,6 +642,7 @@ func (dst *AddPluginRequest) UnmarshalJSON(data []byte) error {
 		dst.AddComposedAttributePluginRequest = nil
 		dst.AddDelayPluginRequest = nil
 		dst.AddDnMapperPluginRequest = nil
+		dst.AddEntryCounterPluginRequest = nil
 		dst.AddGroovyScriptedPluginRequest = nil
 		dst.AddInternalSearchRatePluginRequest = nil
 		dst.AddInvertedStaticGroupReferentialIntegrityPluginRequest = nil
@@ -682,6 +704,10 @@ func (src AddPluginRequest) MarshalJSON() ([]byte, error) {
 
 	if src.AddDnMapperPluginRequest != nil {
 		return json.Marshal(&src.AddDnMapperPluginRequest)
+	}
+
+	if src.AddEntryCounterPluginRequest != nil {
+		return json.Marshal(&src.AddEntryCounterPluginRequest)
 	}
 
 	if src.AddGroovyScriptedPluginRequest != nil {
@@ -802,6 +828,10 @@ func (obj *AddPluginRequest) GetActualInstance() interface{} {
 
 	if obj.AddDnMapperPluginRequest != nil {
 		return obj.AddDnMapperPluginRequest
+	}
+
+	if obj.AddEntryCounterPluginRequest != nil {
+		return obj.AddEntryCounterPluginRequest
 	}
 
 	if obj.AddGroovyScriptedPluginRequest != nil {

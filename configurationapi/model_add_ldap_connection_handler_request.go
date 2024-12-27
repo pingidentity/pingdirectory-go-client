@@ -28,7 +28,7 @@ type AddLdapConnectionHandlerRequest struct {
 	UseSSL *bool `json:"useSSL,omitempty"`
 	// Indicates whether clients are allowed to use StartTLS.
 	AllowStartTLS *bool `json:"allowStartTLS,omitempty"`
-	// Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL communication.
+	// Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL or StartTLS communication.
 	SslCertNickname *string `json:"sslCertNickname,omitempty"`
 	// Specifies the name of the key manager that should be used with this LDAP Connection Handler .
 	KeyManagerProvider *string `json:"keyManagerProvider,omitempty"`

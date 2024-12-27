@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/pingdirectory/latest/pd_ds_landing_page.html
 tags:
 - description: Access http-servlet-extensions
   name: http-servlet-extension
@@ -850,7 +850,7 @@ components:
           basicAuthEnabled:
             type: boolean
             description: >-
-                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
           identityMapper:
             type: string
             description: >-
@@ -1261,7 +1261,7 @@ components:
           basicAuthEnabled:
             type: boolean
             description: >-
-                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
           identityMapper:
             type: string
             description: >-
@@ -1363,7 +1363,7 @@ components:
         basicAuthEnabled:
           type: boolean
           description: >-
-              Enables HTTP Basic authentication, using a username and password.
+              Enables HTTP Basic authentication, using a username and password.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
         identityMapper:
           type: string
           description: >-
@@ -2050,7 +2050,7 @@ components:
           basicAuthEnabled:
             type: boolean
             description: >-
-                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+                Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.  NOTE: Basic authentication is considered less secure than OAuth2 bearer token authentication.
           identityMapper:
             type: string
             description: >-

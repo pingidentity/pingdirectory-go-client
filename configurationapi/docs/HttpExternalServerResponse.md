@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **SslCertNickname** | Pointer to **string** | The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **ConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established before aborting a request to the server. | [optional] 
 **ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server. | [optional] 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
@@ -225,6 +226,31 @@ SetResponseTimeout sets ResponseTimeout field to given value.
 `func (o *HttpExternalServerResponse) HasResponseTimeout() bool`
 
 HasResponseTimeout returns a boolean if a field has been set.
+
+### GetHttpProxyExternalServer
+
+`func (o *HttpExternalServerResponse) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *HttpExternalServerResponse) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *HttpExternalServerResponse) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *HttpExternalServerResponse) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **PrivateKeyPin** | Pointer to **string** | Specifies the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN. | [optional] 
 **PrivateKeyPinFile** | Pointer to **string** | Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN. | [optional] 
 **PrivateKeyPinPassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN. | [optional] 
+**EnableKeyManagerCaching** | Pointer to **bool** | Indicates whether key manager providers should cache key managers. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Key Manager Provider. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Key Manager Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -473,6 +474,31 @@ SetPrivateKeyPinPassphraseProvider sets PrivateKeyPinPassphraseProvider field to
 `func (o *KeyManagerProviderListResponseResourcesInner) HasPrivateKeyPinPassphraseProvider() bool`
 
 HasPrivateKeyPinPassphraseProvider returns a boolean if a field has been set.
+
+### GetEnableKeyManagerCaching
+
+`func (o *KeyManagerProviderListResponseResourcesInner) GetEnableKeyManagerCaching() bool`
+
+GetEnableKeyManagerCaching returns the EnableKeyManagerCaching field if non-nil, zero value otherwise.
+
+### GetEnableKeyManagerCachingOk
+
+`func (o *KeyManagerProviderListResponseResourcesInner) GetEnableKeyManagerCachingOk() (*bool, bool)`
+
+GetEnableKeyManagerCachingOk returns a tuple with the EnableKeyManagerCaching field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableKeyManagerCaching
+
+`func (o *KeyManagerProviderListResponseResourcesInner) SetEnableKeyManagerCaching(v bool)`
+
+SetEnableKeyManagerCaching sets EnableKeyManagerCaching field to given value.
+
+### HasEnableKeyManagerCaching
+
+`func (o *KeyManagerProviderListResponseResourcesInner) HasEnableKeyManagerCaching() bool`
+
+HasEnableKeyManagerCaching returns a boolean if a field has been set.
 
 ### GetExtensionClass
 

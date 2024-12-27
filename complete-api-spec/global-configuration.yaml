@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-101/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/pingdirectory/latest/pd_ds_landing_page.html
 tags:
 - description: Access the Global Configuration
   name: global-configuration
@@ -545,6 +545,12 @@ components:
             type: boolean
             description: >-
                 When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of "Rdn1" and "Rdn2" instead of the recommended "type" and "name" keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys.
+          systemProperty:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the name and value of a system property to set in the JVM.
       - $ref: '#/components/schemas/meta'
       required:
       - instanceName
