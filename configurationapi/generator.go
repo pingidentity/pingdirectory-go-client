@@ -1,3 +1,5 @@
+// Copyright © 2025 Ping Identity Corporation
+
 package configurationapi
 
 // This file contains any go generate comments used by the client
@@ -5,3 +7,4 @@ package configurationapi
 //go:generate ../scripts/generateEnumConversionFunctions.py
 //go:generate ../scripts/setUserPrivilegeEnumNames.py
 //go:generate ../scripts/updateClient.py
+//go:generate ../scripts/addCopyrightHeader.py

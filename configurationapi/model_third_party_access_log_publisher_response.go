@@ -1,3 +1,5 @@
+// Copyright © 2025 Ping Identity Corporation
+
 /*
 PingData Config - OpenAPI 3.0
 
