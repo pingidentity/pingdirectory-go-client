@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **SslCertNickname** | Pointer to **string** | Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL or StartTLS communication. | [optional] 
 **KeyManagerProvider** | Pointer to **string** | Specifies the name of the key manager that should be used with this LDAP Connection Handler . | [optional] 
 **TrustManagerProvider** | Pointer to **string** | Specifies the name of the trust manager that should be used with the LDAP Connection Handler . | [optional] 
+**UseHaproxyProxyProtocol** | Pointer to **bool** | Indicates whether client connections established to this connection handler will pass through a software proxy that uses the HAProxy PROXY protocol to preserve the original end address of the client system. The Directory Server supports versions 1 and 2 of the HAProxy PROXY protocol. | [optional] 
 **AllowLDAPV2** | Pointer to **bool** | Indicates whether connections from LDAPv2 clients are allowed. | [optional] 
 **UseTCPKeepAlive** | Pointer to **bool** | Indicates whether the LDAP Connection Handler should use TCP keep-alive. | [optional] 
 **SendRejectionNotice** | Pointer to **bool** | Indicates whether the LDAP Connection Handler should send a notice of disconnection extended response message to the client if a new connection is rejected for some reason. | [optional] 
@@ -243,6 +244,31 @@ SetTrustManagerProvider sets TrustManagerProvider field to given value.
 `func (o *AddLdapConnectionHandlerRequest) HasTrustManagerProvider() bool`
 
 HasTrustManagerProvider returns a boolean if a field has been set.
+
+### GetUseHaproxyProxyProtocol
+
+`func (o *AddLdapConnectionHandlerRequest) GetUseHaproxyProxyProtocol() bool`
+
+GetUseHaproxyProxyProtocol returns the UseHaproxyProxyProtocol field if non-nil, zero value otherwise.
+
+### GetUseHaproxyProxyProtocolOk
+
+`func (o *AddLdapConnectionHandlerRequest) GetUseHaproxyProxyProtocolOk() (*bool, bool)`
+
+GetUseHaproxyProxyProtocolOk returns a tuple with the UseHaproxyProxyProtocol field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseHaproxyProxyProtocol
+
+`func (o *AddLdapConnectionHandlerRequest) SetUseHaproxyProxyProtocol(v bool)`
+
+SetUseHaproxyProxyProtocol sets UseHaproxyProxyProtocol field to given value.
+
+### HasUseHaproxyProxyProtocol
+
+`func (o *AddLdapConnectionHandlerRequest) HasUseHaproxyProxyProtocol() bool`
+
+HasUseHaproxyProxyProtocol returns a boolean if a field has been set.
 
 ### GetAllowLDAPV2
 

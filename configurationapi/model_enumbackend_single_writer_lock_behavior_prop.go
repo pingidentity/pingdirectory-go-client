@@ -22,14 +22,16 @@ type EnumbackendSingleWriterLockBehaviorProp string
 
 // List of Enumbackend-singleWriterLockBehaviorProp
 const (
-	ENUMBACKENDSINGLEWRITERLOCKBEHAVIORPROP_NEVER_ACQUIRE    EnumbackendSingleWriterLockBehaviorProp = "never-acquire"
-	ENUMBACKENDSINGLEWRITERLOCKBEHAVIORPROP_ACQUIRE_ON_RETRY EnumbackendSingleWriterLockBehaviorProp = "acquire-on-retry"
-	ENUMBACKENDSINGLEWRITERLOCKBEHAVIORPROP_ALWAYS_ACQUIRE   EnumbackendSingleWriterLockBehaviorProp = "always-acquire"
+	ENUMBACKENDSINGLEWRITERLOCKBEHAVIORPROP_NEVER_ACQUIRE         EnumbackendSingleWriterLockBehaviorProp = "never-acquire"
+	ENUMBACKENDSINGLEWRITERLOCKBEHAVIORPROP_ACQUIRE_AFTER_RETRIES EnumbackendSingleWriterLockBehaviorProp = "acquire-after-retries"
+	ENUMBACKENDSINGLEWRITERLOCKBEHAVIORPROP_ACQUIRE_ON_RETRY      EnumbackendSingleWriterLockBehaviorProp = "acquire-on-retry"
+	ENUMBACKENDSINGLEWRITERLOCKBEHAVIORPROP_ALWAYS_ACQUIRE        EnumbackendSingleWriterLockBehaviorProp = "always-acquire"
 )
 
 // All allowed values of EnumbackendSingleWriterLockBehaviorProp enum
 var AllowedEnumbackendSingleWriterLockBehaviorPropEnumValues = []EnumbackendSingleWriterLockBehaviorProp{
 	"never-acquire",
+	"acquire-after-retries",
 	"acquire-on-retry",
 	"always-acquire",
 }

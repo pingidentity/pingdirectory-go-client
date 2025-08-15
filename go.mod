@@ -1,3 +1,3 @@
-module github.com/pingidentity/pingdirectory-go-client/v10200
+module github.com/pingidentity/pingdirectory-go-client/v10300
 
 go 1.23

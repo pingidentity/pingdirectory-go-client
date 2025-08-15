@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this SCIM Resource Type | [optional] 
 **Enabled** | **bool** | Indicates whether the SCIM Resource Type is enabled. | 
 **Endpoint** | **string** | The HTTP addressable endpoint of this SCIM Resource Type relative to the &#39;/scim/v2&#39; base URL. Do not include a leading &#39;/&#39;. | 
+**IdAttribute** | Pointer to **string** | Specifies the primary attribute to use as the value for the SCIM object ID. The object ID should be a unique, immutable identifier for fetch, update and delete operations on an object. | [optional] 
 **LookthroughLimit** | Pointer to **int64** | The maximum number of resources that the SCIM Resource Type should \&quot;look through\&quot; in the course of processing a search request. | [optional] 
 **SchemaCheckingOption** | Pointer to [**[]EnumscimResourceTypeSchemaCheckingOptionProp**](EnumscimResourceTypeSchemaCheckingOptionProp.md) |  | [optional] 
 **StructuralLDAPObjectclass** | Pointer to **string** | Specifies the LDAP structural object class that should be exposed by this SCIM Resource Type. | [optional] 
@@ -194,6 +195,31 @@ and a boolean to check if the value has been set.
 
 SetEndpoint sets Endpoint field to given value.
 
+
+### GetIdAttribute
+
+`func (o *AddMappingScimResourceTypeRequest) GetIdAttribute() string`
+
+GetIdAttribute returns the IdAttribute field if non-nil, zero value otherwise.
+
+### GetIdAttributeOk
+
+`func (o *AddMappingScimResourceTypeRequest) GetIdAttributeOk() (*string, bool)`
+
+GetIdAttributeOk returns a tuple with the IdAttribute field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdAttribute
+
+`func (o *AddMappingScimResourceTypeRequest) SetIdAttribute(v string)`
+
+SetIdAttribute sets IdAttribute field to given value.
+
+### HasIdAttribute
+
+`func (o *AddMappingScimResourceTypeRequest) HasIdAttribute() bool`
+
+HasIdAttribute returns a boolean if a field has been set.
 
 ### GetLookthroughLimit
 

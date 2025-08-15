@@ -20455,6 +20455,10 @@ components:
               \ for each application defined in the Global Configuration's tracked-application\
               \ property."
             type: boolean
+          includeParseableAttributeNames:
+            description: Indicates whether attribute names in monitor entries should
+              be formatted to be easily parseable by monitoring applications.
+            type: boolean
           description:
             description: A description for this Plugin
             type: string
@@ -20717,6 +20721,11 @@ components:
           $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
         gaugeInfo:
           $ref: '#/components/schemas/Enumplugin-gaugeInfoProp'
+        includeHTTPMetrics:
+          description: "Specifies whether to log moving averages (1, 5, and 15-minute\
+            \ intervals) for HTTP socket, connection, queue, request, and response\
+            \ durations."
+          type: boolean
         logFileFormat:
           $ref: '#/components/schemas/Enumplugin-logFileFormatProp'
         logFile:
@@ -30077,6 +30086,13 @@ components:
           description: The maximum age of failed authentication attempts to include
             in the recent login history for each account.
           type: string
+        suppressRecentLoginHistoryUpdatesForUnusableAccounts:
+          description: "Indicates whether the server should suppress updates to a\
+            \ user's recent login history as a result of authentication attempts that\
+            \ fail because the account is in an unusable state (e.g., if the account\
+            \ is administratively disabled, if the account is locked, or if the password\
+            \ is expired)."
+          type: boolean
         recentLoginHistorySimilarAttemptBehavior:
           $ref: '#/components/schemas/Enumpassword-policy-recentLoginHistorySimilarAttemptBehaviorProp'
         lastLoginIPAddressAttribute:
@@ -33154,6 +33170,7 @@ components:
       - $ref: '#/components/schemas/meta'
       required:
       - id
+      - idAttribute
     ldap-pass-through-scim-resource-type-shared:
       properties:
         schemas:
@@ -33171,6 +33188,11 @@ components:
         endpoint:
           description: The HTTP addressable endpoint of this SCIM Resource Type relative
             to the '/scim/v2' base URL. Do not include a leading '/'.
+          type: string
+        idAttribute:
+          description: "Specifies the primary attribute to use as the value for the\
+            \ SCIM object ID. The object ID should be a unique, immutable identifier\
+            \ for fetch, update and delete operations on an object."
           type: string
         lookthroughLimit:
           description: The maximum number of resources that the SCIM Resource Type
@@ -33240,6 +33262,7 @@ components:
       - $ref: '#/components/schemas/meta'
       required:
       - id
+      - idAttribute
     mapping-scim-resource-type-shared:
       properties:
         schemas:
@@ -33274,6 +33297,11 @@ components:
         endpoint:
           description: The HTTP addressable endpoint of this SCIM Resource Type relative
             to the '/scim/v2' base URL. Do not include a leading '/'.
+          type: string
+        idAttribute:
+          description: "Specifies the primary attribute to use as the value for the\
+            \ SCIM object ID. The object ID should be a unique, immutable identifier\
+            \ for fetch, update and delete operations on an object."
           type: string
         lookthroughLimit:
           description: The maximum number of resources that the SCIM Resource Type
@@ -33344,6 +33372,7 @@ components:
       - $ref: '#/components/schemas/meta'
       required:
       - id
+      - idAttribute
     ldap-mapping-scim-resource-type-shared:
       properties:
         schemas:
@@ -33378,6 +33407,11 @@ components:
         endpoint:
           description: The HTTP addressable endpoint of this SCIM Resource Type relative
             to the '/scim/v2' base URL. Do not include a leading '/'.
+          type: string
+        idAttribute:
+          description: "Specifies the primary attribute to use as the value for the\
+            \ SCIM object ID. The object ID should be a unique, immutable identifier\
+            \ for fetch, update and delete operations on an object."
           type: string
         lookthroughLimit:
           description: The maximum number of resources that the SCIM Resource Type
@@ -33449,6 +33483,11 @@ components:
             description: The HTTP addressable endpoint of this SCIM Resource Type
               relative to the '/scim/v2' base URL. Do not include a leading '/'.
             type: string
+          idAttribute:
+            description: "Specifies the primary attribute to use as the value for\
+              \ the SCIM object ID. The object ID should be a unique, immutable identifier\
+              \ for fetch, update and delete operations on an object."
+            type: string
           lookthroughLimit:
             description: The maximum number of resources that the SCIM Resource Type
               should "look through" in the course of processing a search request.
@@ -33493,6 +33532,7 @@ components:
       - enabled
       - endpoint
       - id
+      - idAttribute
       - schemas
     Enumpass-through-scim-resource-typeSchemaUrn:
       enum:
@@ -41162,6 +41202,7 @@ components:
       - asn1
       - coding-error
       - connect
+      - connection-pool
       - exception
       - ldap
       - ldif
@@ -42782,6 +42823,35 @@ components:
           description: Requires SNI hostnames to match or else throw an Invalid SNI
             error.
           type: boolean
+        expensiveThreadCheckInterval:
+          description: "The duration the HTTP Connection Handler waits before checking\
+            \ for potentially expensive operations. If at least N HTTP Connection\
+            \ Handler threads (as defined by expensive-thread-minimum-concurrent-count)\
+            \ are processing the same HTTP requests for two consecutive polls, the\
+            \ server writes stack traces for all threads to a file in /logs/thread-dumps.\
+            \ Use this file to help identify performance bottlenecks."
+          type: string
+        expensiveThreadMinimumConcurrentCount:
+          description: "The minimum number of HTTP Connection Handler threads concurrently\
+            \ processing the same HTTP request that triggers a full thread dump. If\
+            \ at least this many worker threads are processing the same HTTP request\
+            \ for two consecutive polls, the server writes stack traces for all threads\
+            \ to a file in /logs/thread-dumps. Use this file to help identify performance\
+            \ bottlenecks."
+          type: integer
+        expensiveThreadHoldOffInterval:
+          description: The duration the server waits after generating a full thread
+            dump before creating another. This interval helps prevent excessive disk
+            usage from frequent dumps. Use this property to help identify performance
+            bottlenecks.
+          type: string
+        includeAdditionalMetrics:
+          description: "Tracks moving average durations (1, 5, and 15-minute intervals)\
+            \ for the entire HTTP request lifecycle, including socket, connection,\
+            \ queue, request, and response times. Warning: This feature is experimental\
+            \ and can negatively affect performance when enabled. It should be reserved\
+            \ for performance tuning or troubleshooting."
+          type: boolean
         description:
           description: A description for this Connection Handler
           type: string
@@ -42928,6 +42998,12 @@ components:
           description: Specifies the name of the trust manager that should be used
             with the LDAP Connection Handler .
           type: string
+        useHaproxyProxyProtocol:
+          description: Indicates whether client connections established to this connection
+            handler will pass through a software proxy that uses the HAProxy PROXY
+            protocol to preserve the original end address of the client system. The
+            Directory Server supports versions 1 and 2 of the HAProxy PROXY protocol.
+          type: boolean
         allowLDAPV2:
           description: Indicates whether connections from LDAPv2 clients are allowed.
           type: boolean
@@ -43227,6 +43303,9 @@ components:
             type: string
           complexity:
             $ref: '#/components/schemas/Enumweb-application-extension-complexityProp'
+          applicationTitle:
+            description: Specifies the title of the console application.
+            type: string
           description:
             description: A description for this Web Application Extension
             type: string
@@ -44723,6 +44802,14 @@ components:
       - notice
       - info
       type: string
+    Enumlog-publisher-httpEventProp:
+      description: Specifies the HTTP event types to include in the log.
+      enum:
+      - socket
+      - connection
+      - channel
+      - request-processing
+      type: string
     add-file-based-trace-log-publisher-request:
       allOf:
       - properties:
@@ -44855,6 +44942,10 @@ components:
         extensionMessageType:
           items:
             $ref: '#/components/schemas/Enumlog-publisher-extensionMessageTypeProp'
+          type: array
+        httpEvent:
+          items:
+            $ref: '#/components/schemas/Enumlog-publisher-httpEventProp'
           type: array
         includePathPattern:
           description: "Specifies a set of HTTP request URL paths to determine whether\
@@ -46659,6 +46750,10 @@ components:
         useReversibleForm:
           description: Indicates whether the audit log should be written in reversible
             form so that it is possible to revert the changes if desired.
+          type: boolean
+        suppressVirtualAttributesInDeleteRecords:
+          description: Indicates whether to suppress virtual attributes from delete
+            audit log messages.
           type: boolean
         softDeleteEntryAuditBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-file-based-audit-softDeleteEntryAuditBehaviorProp'
@@ -52904,11 +52999,21 @@ components:
           description: The trust manager provider to use if SSL or StartTLS is to
             be used for connection-level security.
           type: string
+        allowInitiallyEmptyConnectionPools:
+          description: "Specifies whether an initial-connections value of zero should\
+            \ cause the connection pool to be created without any initial connections,\
+            \ requiring all connections to be created on demand. By default, an initial-connections\
+            \ value of zero indicates that the number of connections should be dynamically\
+            \ based on the number of available worker threads. This will be ignored\
+            \ when using a thread-local connection pool."
+          type: boolean
         initialConnections:
-          description: The number of connections to initially establish to the LDAP
-            external server. A value of zero indicates that the number of connections
-            should be dynamically based on the number of available worker threads.
-            This will be ignored when using a thread-local connection pool.
+          description: "The number of connections to initially establish to the LDAP\
+            \ external server. A value of zero indicates that either the number of\
+            \ connections should be dynamically based on the number of available worker\
+            \ threads, or that the pool will be initially empty, based on the value\
+            \ of the allow-initially-empty-connection-pools property. This will be\
+            \ ignored when using a thread-local connection pool."
           type: integer
         maxConnections:
           description: The maximum number of concurrent connections to maintain for
@@ -53061,11 +53166,21 @@ components:
           description: The trust manager provider to use if SSL or StartTLS is to
             be used for connection-level security.
           type: string
+        allowInitiallyEmptyConnectionPools:
+          description: "Specifies whether an initial-connections value of zero should\
+            \ cause the connection pool to be created without any initial connections,\
+            \ requiring all connections to be created on demand. By default, an initial-connections\
+            \ value of zero indicates that the number of connections should be dynamically\
+            \ based on the number of available worker threads. This will be ignored\
+            \ when using a thread-local connection pool."
+          type: boolean
         initialConnections:
-          description: The number of connections to initially establish to the LDAP
-            external server. A value of zero indicates that the number of connections
-            should be dynamically based on the number of available worker threads.
-            This will be ignored when using a thread-local connection pool.
+          description: "The number of connections to initially establish to the LDAP\
+            \ external server. A value of zero indicates that either the number of\
+            \ connections should be dynamically based on the number of available worker\
+            \ threads, or that the pool will be initially empty, based on the value\
+            \ of the allow-initially-empty-connection-pools property. This will be\
+            \ ignored when using a thread-local connection pool."
           type: integer
         maxConnections:
           description: The maximum number of concurrent connections to maintain for
@@ -53189,11 +53304,21 @@ components:
             description: The trust manager provider to use if SSL or StartTLS is to
               be used for connection-level security.
             type: string
+          allowInitiallyEmptyConnectionPools:
+            description: "Specifies whether an initial-connections value of zero should\
+              \ cause the connection pool to be created without any initial connections,\
+              \ requiring all connections to be created on demand. By default, an\
+              \ initial-connections value of zero indicates that the number of connections\
+              \ should be dynamically based on the number of available worker threads.\
+              \ This will be ignored when using a thread-local connection pool."
+            type: boolean
           initialConnections:
-            description: The number of connections to initially establish to the LDAP
-              external server. A value of zero indicates that the number of connections
-              should be dynamically based on the number of available worker threads.
-              This will be ignored when using a thread-local connection pool.
+            description: "The number of connections to initially establish to the\
+              \ LDAP external server. A value of zero indicates that either the number\
+              \ of connections should be dynamically based on the number of available\
+              \ worker threads, or that the pool will be initially empty, based on\
+              \ the value of the allow-initially-empty-connection-pools property.\
+              \ This will be ignored when using a thread-local connection pool."
             type: integer
           maxConnections:
             description: The maximum number of concurrent connections to maintain
@@ -53542,11 +53667,21 @@ components:
           description: The trust manager provider to use if SSL or StartTLS is to
             be used for connection-level security.
           type: string
+        allowInitiallyEmptyConnectionPools:
+          description: "Specifies whether an initial-connections value of zero should\
+            \ cause the connection pool to be created without any initial connections,\
+            \ requiring all connections to be created on demand. By default, an initial-connections\
+            \ value of zero indicates that the number of connections should be dynamically\
+            \ based on the number of available worker threads. This will be ignored\
+            \ when using a thread-local connection pool."
+          type: boolean
         initialConnections:
-          description: The number of connections to initially establish to the LDAP
-            external server. A value of zero indicates that the number of connections
-            should be dynamically based on the number of available worker threads.
-            This will be ignored when using a thread-local connection pool.
+          description: "The number of connections to initially establish to the LDAP\
+            \ external server. A value of zero indicates that either the number of\
+            \ connections should be dynamically based on the number of available worker\
+            \ threads, or that the pool will be initially empty, based on the value\
+            \ of the allow-initially-empty-connection-pools property. This will be\
+            \ ignored when using a thread-local connection pool."
           type: integer
         maxConnections:
           description: The maximum number of concurrent connections to maintain for
@@ -53699,11 +53834,21 @@ components:
           description: The trust manager provider to use if SSL or StartTLS is to
             be used for connection-level security.
           type: string
+        allowInitiallyEmptyConnectionPools:
+          description: "Specifies whether an initial-connections value of zero should\
+            \ cause the connection pool to be created without any initial connections,\
+            \ requiring all connections to be created on demand. By default, an initial-connections\
+            \ value of zero indicates that the number of connections should be dynamically\
+            \ based on the number of available worker threads. This will be ignored\
+            \ when using a thread-local connection pool."
+          type: boolean
         initialConnections:
-          description: The number of connections to initially establish to the LDAP
-            external server. A value of zero indicates that the number of connections
-            should be dynamically based on the number of available worker threads.
-            This will be ignored when using a thread-local connection pool.
+          description: "The number of connections to initially establish to the LDAP\
+            \ external server. A value of zero indicates that either the number of\
+            \ connections should be dynamically based on the number of available worker\
+            \ threads, or that the pool will be initially empty, based on the value\
+            \ of the allow-initially-empty-connection-pools property. This will be\
+            \ ignored when using a thread-local connection pool."
           type: integer
         maxConnections:
           description: The maximum number of concurrent connections to maintain for
@@ -53827,11 +53972,21 @@ components:
             description: The trust manager provider to use if SSL or StartTLS is to
               be used for connection-level security.
             type: string
+          allowInitiallyEmptyConnectionPools:
+            description: "Specifies whether an initial-connections value of zero should\
+              \ cause the connection pool to be created without any initial connections,\
+              \ requiring all connections to be created on demand. By default, an\
+              \ initial-connections value of zero indicates that the number of connections\
+              \ should be dynamically based on the number of available worker threads.\
+              \ This will be ignored when using a thread-local connection pool."
+            type: boolean
           initialConnections:
-            description: The number of connections to initially establish to the LDAP
-              external server. A value of zero indicates that the number of connections
-              should be dynamically based on the number of available worker threads.
-              This will be ignored when using a thread-local connection pool.
+            description: "The number of connections to initially establish to the\
+              \ LDAP external server. A value of zero indicates that either the number\
+              \ of connections should be dynamically based on the number of available\
+              \ worker threads, or that the pool will be initially empty, based on\
+              \ the value of the allow-initially-empty-connection-pools property.\
+              \ This will be ignored when using a thread-local connection pool."
             type: integer
           maxConnections:
             description: The maximum number of concurrent connections to maintain
@@ -53988,11 +54143,21 @@ components:
           description: The trust manager provider to use if SSL or StartTLS is to
             be used for connection-level security.
           type: string
+        allowInitiallyEmptyConnectionPools:
+          description: "Specifies whether an initial-connections value of zero should\
+            \ cause the connection pool to be created without any initial connections,\
+            \ requiring all connections to be created on demand. By default, an initial-connections\
+            \ value of zero indicates that the number of connections should be dynamically\
+            \ based on the number of available worker threads. This will be ignored\
+            \ when using a thread-local connection pool."
+          type: boolean
         initialConnections:
-          description: The number of connections to initially establish to the LDAP
-            external server. A value of zero indicates that the number of connections
-            should be dynamically based on the number of available worker threads.
-            This will be ignored when using a thread-local connection pool.
+          description: "The number of connections to initially establish to the LDAP\
+            \ external server. A value of zero indicates that either the number of\
+            \ connections should be dynamically based on the number of available worker\
+            \ threads, or that the pool will be initially empty, based on the value\
+            \ of the allow-initially-empty-connection-pools property. This will be\
+            \ ignored when using a thread-local connection pool."
           type: integer
         maxConnections:
           description: The maximum number of concurrent connections to maintain for
@@ -54139,11 +54304,21 @@ components:
           description: The trust manager provider to use if SSL or StartTLS is to
             be used for connection-level security.
           type: string
+        allowInitiallyEmptyConnectionPools:
+          description: "Specifies whether an initial-connections value of zero should\
+            \ cause the connection pool to be created without any initial connections,\
+            \ requiring all connections to be created on demand. By default, an initial-connections\
+            \ value of zero indicates that the number of connections should be dynamically\
+            \ based on the number of available worker threads. This will be ignored\
+            \ when using a thread-local connection pool."
+          type: boolean
         initialConnections:
-          description: The number of connections to initially establish to the LDAP
-            external server. A value of zero indicates that the number of connections
-            should be dynamically based on the number of available worker threads.
-            This will be ignored when using a thread-local connection pool.
+          description: "The number of connections to initially establish to the LDAP\
+            \ external server. A value of zero indicates that either the number of\
+            \ connections should be dynamically based on the number of available worker\
+            \ threads, or that the pool will be initially empty, based on the value\
+            \ of the allow-initially-empty-connection-pools property. This will be\
+            \ ignored when using a thread-local connection pool."
           type: integer
         maxConnections:
           description: The maximum number of concurrent connections to maintain for
@@ -54422,11 +54597,21 @@ components:
             description: The trust manager provider to use if SSL or StartTLS is to
               be used for connection-level security.
             type: string
+          allowInitiallyEmptyConnectionPools:
+            description: "Specifies whether an initial-connections value of zero should\
+              \ cause the connection pool to be created without any initial connections,\
+              \ requiring all connections to be created on demand. By default, an\
+              \ initial-connections value of zero indicates that the number of connections\
+              \ should be dynamically based on the number of available worker threads.\
+              \ This will be ignored when using a thread-local connection pool."
+            type: boolean
           initialConnections:
-            description: The number of connections to initially establish to the LDAP
-              external server. A value of zero indicates that the number of connections
-              should be dynamically based on the number of available worker threads.
-              This will be ignored when using a thread-local connection pool.
+            description: "The number of connections to initially establish to the\
+              \ LDAP external server. A value of zero indicates that either the number\
+              \ of connections should be dynamically based on the number of available\
+              \ worker threads, or that the pool will be initially empty, based on\
+              \ the value of the allow-initially-empty-connection-pools property.\
+              \ This will be ignored when using a thread-local connection pool."
             type: integer
           maxConnections:
             description: The maximum number of concurrent connections to maintain
@@ -54564,11 +54749,21 @@ components:
             description: The trust manager provider to use if SSL or StartTLS is to
               be used for connection-level security.
             type: string
+          allowInitiallyEmptyConnectionPools:
+            description: "Specifies whether an initial-connections value of zero should\
+              \ cause the connection pool to be created without any initial connections,\
+              \ requiring all connections to be created on demand. By default, an\
+              \ initial-connections value of zero indicates that the number of connections\
+              \ should be dynamically based on the number of available worker threads.\
+              \ This will be ignored when using a thread-local connection pool."
+            type: boolean
           initialConnections:
-            description: The number of connections to initially establish to the LDAP
-              external server. A value of zero indicates that the number of connections
-              should be dynamically based on the number of available worker threads.
-              This will be ignored when using a thread-local connection pool.
+            description: "The number of connections to initially establish to the\
+              \ LDAP external server. A value of zero indicates that either the number\
+              \ of connections should be dynamically based on the number of available\
+              \ worker threads, or that the pool will be initially empty, based on\
+              \ the value of the allow-initially-empty-connection-pools property.\
+              \ This will be ignored when using a thread-local connection pool."
             type: integer
           maxConnections:
             description: The maximum number of concurrent connections to maintain
@@ -54971,11 +55166,21 @@ components:
           description: The trust manager provider to use if SSL or StartTLS is to
             be used for connection-level security.
           type: string
+        allowInitiallyEmptyConnectionPools:
+          description: "Specifies whether an initial-connections value of zero should\
+            \ cause the connection pool to be created without any initial connections,\
+            \ requiring all connections to be created on demand. By default, an initial-connections\
+            \ value of zero indicates that the number of connections should be dynamically\
+            \ based on the number of available worker threads. This will be ignored\
+            \ when using a thread-local connection pool."
+          type: boolean
         initialConnections:
-          description: The number of connections to initially establish to the LDAP
-            external server. A value of zero indicates that the number of connections
-            should be dynamically based on the number of available worker threads.
-            This will be ignored when using a thread-local connection pool.
+          description: "The number of connections to initially establish to the LDAP\
+            \ external server. A value of zero indicates that either the number of\
+            \ connections should be dynamically based on the number of available worker\
+            \ threads, or that the pool will be initially empty, based on the value\
+            \ of the allow-initially-empty-connection-pools property. This will be\
+            \ ignored when using a thread-local connection pool."
           type: integer
         maxConnections:
           description: The maximum number of concurrent connections to maintain for
@@ -55106,11 +55311,21 @@ components:
             description: The trust manager provider to use if SSL or StartTLS is to
               be used for connection-level security.
             type: string
+          allowInitiallyEmptyConnectionPools:
+            description: "Specifies whether an initial-connections value of zero should\
+              \ cause the connection pool to be created without any initial connections,\
+              \ requiring all connections to be created on demand. By default, an\
+              \ initial-connections value of zero indicates that the number of connections\
+              \ should be dynamically based on the number of available worker threads.\
+              \ This will be ignored when using a thread-local connection pool."
+            type: boolean
           initialConnections:
-            description: The number of connections to initially establish to the LDAP
-              external server. A value of zero indicates that the number of connections
-              should be dynamically based on the number of available worker threads.
-              This will be ignored when using a thread-local connection pool.
+            description: "The number of connections to initially establish to the\
+              \ LDAP external server. A value of zero indicates that either the number\
+              \ of connections should be dynamically based on the number of available\
+              \ worker threads, or that the pool will be initially empty, based on\
+              \ the value of the allow-initially-empty-connection-pools property.\
+              \ This will be ignored when using a thread-local connection pool."
             type: integer
           maxConnections:
             description: The maximum number of concurrent connections to maintain
@@ -55497,11 +55712,21 @@ components:
           description: The trust manager provider to use if SSL or StartTLS is to
             be used for connection-level security.
           type: string
+        allowInitiallyEmptyConnectionPools:
+          description: "Specifies whether an initial-connections value of zero should\
+            \ cause the connection pool to be created without any initial connections,\
+            \ requiring all connections to be created on demand. By default, an initial-connections\
+            \ value of zero indicates that the number of connections should be dynamically\
+            \ based on the number of available worker threads. This will be ignored\
+            \ when using a thread-local connection pool."
+          type: boolean
         initialConnections:
-          description: The number of connections to initially establish to the LDAP
-            external server. A value of zero indicates that the number of connections
-            should be dynamically based on the number of available worker threads.
-            This will be ignored when using a thread-local connection pool.
+          description: "The number of connections to initially establish to the LDAP\
+            \ external server. A value of zero indicates that either the number of\
+            \ connections should be dynamically based on the number of available worker\
+            \ threads, or that the pool will be initially empty, based on the value\
+            \ of the allow-initially-empty-connection-pools property. This will be\
+            \ ignored when using a thread-local connection pool."
           type: integer
         maxConnections:
           description: The maximum number of concurrent connections to maintain for
@@ -57964,6 +58189,7 @@ components:
         effect on the read operations processed while the write is in progress.
       enum:
       - never-acquire
+      - acquire-after-retries
       - acquire-on-retry
       - always-acquire
       type: string
@@ -60433,10 +60659,11 @@ components:
           numWriteWorkerThreads:
             description: "Specifies the number of worker threads that should be used\
               \ within the server to process write (add, delete, modify, and modify\
-              \ DN) operations. If this is specified, then separate sets of worker\
-              \ threads will be used for processing read and write operations, and\
-              \ the value of the num-worker-threads property will reflect the number\
-              \ of threads to use to process read operations."
+              \ DN) operations, as well as some types of extended operations that\
+              \ are known to perform writes. If this is specified, then separate sets\
+              \ of worker threads will be used for processing read and write operations,\
+              \ and the value of the num-worker-threads property will reflect the\
+              \ number of threads to use to process read operations."
             type: integer
           numAdministrativeSessionWorkerThreads:
             description: "Specifies the number of worker threads that should be used\
@@ -62078,6 +62305,7 @@ components:
       - get-password-policy-state-issues
       - get-recent-login-history
       - get-user-resource-limits
+      - hard-delete
       - ignore-no-user-modification
       - intermediate-client
       - join
@@ -62099,7 +62327,10 @@ components:
       - real-attributes-only
       - reject-unindexed-search
       - retire-password
+      - soft-delete
+      - soft-deleted-entry-access
       - suppress-referential-integrity
+      - undelete
       - uniqueness
       - virtual-attributes-only
       type: string

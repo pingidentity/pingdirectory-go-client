@@ -34,6 +34,8 @@ type AddLdapMappingScimResourceTypeRequest struct {
 	Enabled bool `json:"enabled"`
 	// The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
 	Endpoint string `json:"endpoint"`
+	// Specifies the primary attribute to use as the value for the SCIM object ID. The object ID should be a unique, immutable identifier for fetch, update and delete operations on an object.
+	IdAttribute *string `json:"idAttribute,omitempty"`
 	// The maximum number of resources that the SCIM Resource Type should \"look through\" in the course of processing a search request.
 	LookthroughLimit     *int64                                         `json:"lookthroughLimit,omitempty"`
 	SchemaCheckingOption []EnumscimResourceTypeSchemaCheckingOptionProp `json:"schemaCheckingOption,omitempty"`
@@ -265,6 +267,38 @@ func (o *AddLdapMappingScimResourceTypeRequest) GetEndpointOk() (*string, bool) 
 // SetEndpoint sets field value
 func (o *AddLdapMappingScimResourceTypeRequest) SetEndpoint(v string) {
 	o.Endpoint = v
+}
+
+// GetIdAttribute returns the IdAttribute field value if set, zero value otherwise.
+func (o *AddLdapMappingScimResourceTypeRequest) GetIdAttribute() string {
+	if o == nil || IsNil(o.IdAttribute) {
+		var ret string
+		return ret
+	}
+	return *o.IdAttribute
+}
+
+// GetIdAttributeOk returns a tuple with the IdAttribute field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddLdapMappingScimResourceTypeRequest) GetIdAttributeOk() (*string, bool) {
+	if o == nil || IsNil(o.IdAttribute) {
+		return nil, false
+	}
+	return o.IdAttribute, true
+}
+
+// HasIdAttribute returns a boolean if a field has been set.
+func (o *AddLdapMappingScimResourceTypeRequest) HasIdAttribute() bool {
+	if o != nil && !IsNil(o.IdAttribute) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdAttribute gets a reference to the given string and assigns it to the IdAttribute field.
+func (o *AddLdapMappingScimResourceTypeRequest) SetIdAttribute(v string) {
+	o.IdAttribute = &v
 }
 
 // GetLookthroughLimit returns the LookthroughLimit field value if set, zero value otherwise.
@@ -570,6 +604,9 @@ func (o AddLdapMappingScimResourceTypeRequest) ToMap() (map[string]interface{}, 
 	}
 	toSerialize["enabled"] = o.Enabled
 	toSerialize["endpoint"] = o.Endpoint
+	if !IsNil(o.IdAttribute) {
+		toSerialize["idAttribute"] = o.IdAttribute
+	}
 	if !IsNil(o.LookthroughLimit) {
 		toSerialize["lookthroughLimit"] = o.LookthroughLimit
 	}

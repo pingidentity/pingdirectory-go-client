@@ -107,8 +107,10 @@ type PasswordPolicyResponse struct {
 	// The maximum number of failed authentication attempts to include in the recent login history for each account.
 	MaximumRecentLoginHistoryFailedAuthenticationCount *int64 `json:"maximumRecentLoginHistoryFailedAuthenticationCount,omitempty"`
 	// The maximum age of failed authentication attempts to include in the recent login history for each account.
-	MaximumRecentLoginHistoryFailedAuthenticationDuration *string                                                         `json:"maximumRecentLoginHistoryFailedAuthenticationDuration,omitempty"`
-	RecentLoginHistorySimilarAttemptBehavior              *EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp `json:"recentLoginHistorySimilarAttemptBehavior,omitempty"`
+	MaximumRecentLoginHistoryFailedAuthenticationDuration *string `json:"maximumRecentLoginHistoryFailedAuthenticationDuration,omitempty"`
+	// Indicates whether the server should suppress updates to a user's recent login history as a result of authentication attempts that fail because the account is in an unusable state (e.g., if the account is administratively disabled, if the account is locked, or if the password is expired).
+	SuppressRecentLoginHistoryUpdatesForUnusableAccounts *bool                                                           `json:"suppressRecentLoginHistoryUpdatesForUnusableAccounts,omitempty"`
+	RecentLoginHistorySimilarAttemptBehavior             *EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp `json:"recentLoginHistorySimilarAttemptBehavior,omitempty"`
 	// Specifies the name or OID of the attribute type that is used to hold the IP address of the client from which the user last authenticated.
 	LastLoginIPAddressAttribute *string `json:"lastLoginIPAddressAttribute,omitempty"`
 	// Specifies the name or OID of the attribute type that is used to hold the last login time for users with the associated password policy.
@@ -1631,6 +1633,38 @@ func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistoryFailedAuthenticatio
 	o.MaximumRecentLoginHistoryFailedAuthenticationDuration = &v
 }
 
+// GetSuppressRecentLoginHistoryUpdatesForUnusableAccounts returns the SuppressRecentLoginHistoryUpdatesForUnusableAccounts field value if set, zero value otherwise.
+func (o *PasswordPolicyResponse) GetSuppressRecentLoginHistoryUpdatesForUnusableAccounts() bool {
+	if o == nil || IsNil(o.SuppressRecentLoginHistoryUpdatesForUnusableAccounts) {
+		var ret bool
+		return ret
+	}
+	return *o.SuppressRecentLoginHistoryUpdatesForUnusableAccounts
+}
+
+// GetSuppressRecentLoginHistoryUpdatesForUnusableAccountsOk returns a tuple with the SuppressRecentLoginHistoryUpdatesForUnusableAccounts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PasswordPolicyResponse) GetSuppressRecentLoginHistoryUpdatesForUnusableAccountsOk() (*bool, bool) {
+	if o == nil || IsNil(o.SuppressRecentLoginHistoryUpdatesForUnusableAccounts) {
+		return nil, false
+	}
+	return o.SuppressRecentLoginHistoryUpdatesForUnusableAccounts, true
+}
+
+// HasSuppressRecentLoginHistoryUpdatesForUnusableAccounts returns a boolean if a field has been set.
+func (o *PasswordPolicyResponse) HasSuppressRecentLoginHistoryUpdatesForUnusableAccounts() bool {
+	if o != nil && !IsNil(o.SuppressRecentLoginHistoryUpdatesForUnusableAccounts) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressRecentLoginHistoryUpdatesForUnusableAccounts gets a reference to the given bool and assigns it to the SuppressRecentLoginHistoryUpdatesForUnusableAccounts field.
+func (o *PasswordPolicyResponse) SetSuppressRecentLoginHistoryUpdatesForUnusableAccounts(v bool) {
+	o.SuppressRecentLoginHistoryUpdatesForUnusableAccounts = &v
+}
+
 // GetRecentLoginHistorySimilarAttemptBehavior returns the RecentLoginHistorySimilarAttemptBehavior field value if set, zero value otherwise.
 func (o *PasswordPolicyResponse) GetRecentLoginHistorySimilarAttemptBehavior() EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp {
 	if o == nil || IsNil(o.RecentLoginHistorySimilarAttemptBehavior) {
@@ -2025,6 +2059,9 @@ func (o PasswordPolicyResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MaximumRecentLoginHistoryFailedAuthenticationDuration) {
 		toSerialize["maximumRecentLoginHistoryFailedAuthenticationDuration"] = o.MaximumRecentLoginHistoryFailedAuthenticationDuration
+	}
+	if !IsNil(o.SuppressRecentLoginHistoryUpdatesForUnusableAccounts) {
+		toSerialize["suppressRecentLoginHistoryUpdatesForUnusableAccounts"] = o.SuppressRecentLoginHistoryUpdatesForUnusableAccounts
 	}
 	if !IsNil(o.RecentLoginHistorySimilarAttemptBehavior) {
 		toSerialize["recentLoginHistorySimilarAttemptBehavior"] = o.RecentLoginHistorySimilarAttemptBehavior

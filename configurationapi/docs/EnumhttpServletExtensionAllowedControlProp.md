@@ -21,6 +21,8 @@
 
 * `GET_USER_RESOURCE_LIMITS` (value: `"get-user-resource-limits"`)
 
+* `HARD_DELETE` (value: `"hard-delete"`)
+
 * `IGNORE_NO_USER_MODIFICATION` (value: `"ignore-no-user-modification"`)
 
 * `INTERMEDIATE_CLIENT` (value: `"intermediate-client"`)
@@ -63,7 +65,13 @@
 
 * `RETIRE_PASSWORD` (value: `"retire-password"`)
 
+* `SOFT_DELETE` (value: `"soft-delete"`)
+
+* `SOFT_DELETED_ENTRY_ACCESS` (value: `"soft-deleted-entry-access"`)
+
 * `SUPPRESS_REFERENTIAL_INTEGRITY` (value: `"suppress-referential-integrity"`)
+
+* `UNDELETE` (value: `"undelete"`)
 
 * `UNIQUENESS` (value: `"uniqueness"`)
 

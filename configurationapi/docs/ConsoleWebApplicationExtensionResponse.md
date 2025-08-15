@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **TrustStorePinPassphraseProvider** | Pointer to **string** | The passphrase provider that may be used to obtain the PIN for the trust store used with managed LDAP servers. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents. | [optional] 
 **LogFile** | Pointer to **string** | The path to the log file for the web application. | [optional] 
 **Complexity** | Pointer to [**EnumwebApplicationExtensionComplexityProp**](EnumwebApplicationExtensionComplexityProp.md) |  | [optional] 
+**ApplicationTitle** | Pointer to **string** | Specifies the title of the console application. | [optional] 
 **Description** | Pointer to **string** | A description for this Web Application Extension | [optional] 
 **BaseContextPath** | **string** | Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and at least one additional character and must represent a valid HTTP context path. | 
 **WarFile** | Pointer to **string** | Specifies the path to a standard web application archive (WAR) file. | [optional] 
@@ -540,6 +541,31 @@ SetComplexity sets Complexity field to given value.
 `func (o *ConsoleWebApplicationExtensionResponse) HasComplexity() bool`
 
 HasComplexity returns a boolean if a field has been set.
+
+### GetApplicationTitle
+
+`func (o *ConsoleWebApplicationExtensionResponse) GetApplicationTitle() string`
+
+GetApplicationTitle returns the ApplicationTitle field if non-nil, zero value otherwise.
+
+### GetApplicationTitleOk
+
+`func (o *ConsoleWebApplicationExtensionResponse) GetApplicationTitleOk() (*string, bool)`
+
+GetApplicationTitleOk returns a tuple with the ApplicationTitle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationTitle
+
+`func (o *ConsoleWebApplicationExtensionResponse) SetApplicationTitle(v string)`
+
+SetApplicationTitle sets ApplicationTitle field to given value.
+
+### HasApplicationTitle
+
+`func (o *ConsoleWebApplicationExtensionResponse) HasApplicationTitle() bool`
+
+HasApplicationTitle returns a boolean if a field has been set.
 
 ### GetDescription
 

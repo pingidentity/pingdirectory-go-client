@@ -1659,6 +1659,7 @@ components:
       type: string
       enum:
       - "never-acquire"
+      - "acquire-after-retries"
       - "acquire-on-retry"
       - "always-acquire"
       description: >-

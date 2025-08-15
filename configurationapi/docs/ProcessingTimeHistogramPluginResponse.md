@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **HistogramCategoryBoundary** | **[]string** | Specifies the boundary values that will be used to separate the processing times into categories. Values should be specified as durations, and all values must be greater than zero. | 
 **IncludeQueueTime** | Pointer to **bool** | Indicates whether operation processing times should include the time spent waiting on the work queue. This will only be available if the work queue is configured to monitor the queue time. | [optional] 
 **SeparateMonitorEntryPerTrackedApplication** | Pointer to **bool** | When enabled, separate monitor entries will be included for each application defined in the Global Configuration&#39;s tracked-application property. | [optional] 
+**IncludeParseableAttributeNames** | Pointer to **bool** | Indicates whether attribute names in monitor entries should be formatted to be easily parseable by monitoring applications. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
@@ -214,6 +215,31 @@ SetSeparateMonitorEntryPerTrackedApplication sets SeparateMonitorEntryPerTracked
 `func (o *ProcessingTimeHistogramPluginResponse) HasSeparateMonitorEntryPerTrackedApplication() bool`
 
 HasSeparateMonitorEntryPerTrackedApplication returns a boolean if a field has been set.
+
+### GetIncludeParseableAttributeNames
+
+`func (o *ProcessingTimeHistogramPluginResponse) GetIncludeParseableAttributeNames() bool`
+
+GetIncludeParseableAttributeNames returns the IncludeParseableAttributeNames field if non-nil, zero value otherwise.
+
+### GetIncludeParseableAttributeNamesOk
+
+`func (o *ProcessingTimeHistogramPluginResponse) GetIncludeParseableAttributeNamesOk() (*bool, bool)`
+
+GetIncludeParseableAttributeNamesOk returns a tuple with the IncludeParseableAttributeNames field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeParseableAttributeNames
+
+`func (o *ProcessingTimeHistogramPluginResponse) SetIncludeParseableAttributeNames(v bool)`
+
+SetIncludeParseableAttributeNames sets IncludeParseableAttributeNames field to given value.
+
+### HasIncludeParseableAttributeNames
+
+`func (o *ProcessingTimeHistogramPluginResponse) HasIncludeParseableAttributeNames() bool`
+
+HasIncludeParseableAttributeNames returns a boolean if a field has been set.
 
 ### GetDescription
 

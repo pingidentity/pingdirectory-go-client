@@ -75,6 +75,14 @@ type HttpConnectionHandlerResponse struct {
 	SslClientAuthPolicy        *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// Requires SNI hostnames to match or else throw an Invalid SNI error.
 	EnableSniHostnameChecks *bool `json:"enableSniHostnameChecks,omitempty"`
+	// The duration the HTTP Connection Handler waits before checking for potentially expensive operations. If at least N HTTP Connection Handler threads (as defined by expensive-thread-minimum-concurrent-count) are processing the same HTTP requests for two consecutive polls, the server writes stack traces for all threads to a file in /logs/thread-dumps. Use this file to help identify performance bottlenecks.
+	ExpensiveThreadCheckInterval *string `json:"expensiveThreadCheckInterval,omitempty"`
+	// The minimum number of HTTP Connection Handler threads concurrently processing the same HTTP request that triggers a full thread dump. If at least this many worker threads are processing the same HTTP request for two consecutive polls, the server writes stack traces for all threads to a file in /logs/thread-dumps. Use this file to help identify performance bottlenecks.
+	ExpensiveThreadMinimumConcurrentCount *int64 `json:"expensiveThreadMinimumConcurrentCount,omitempty"`
+	// The duration the server waits after generating a full thread dump before creating another. This interval helps prevent excessive disk usage from frequent dumps. Use this property to help identify performance bottlenecks.
+	ExpensiveThreadHoldOffInterval *string `json:"expensiveThreadHoldOffInterval,omitempty"`
+	// Tracks moving average durations (1, 5, and 15-minute intervals) for the entire HTTP request lifecycle, including socket, connection, queue, request, and response times. Warning: This feature is experimental and can negatively affect performance when enabled. It should be reserved for performance tuning or troubleshooting.
+	IncludeAdditionalMetrics *bool `json:"includeAdditionalMetrics,omitempty"`
 	// A description for this Connection Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
@@ -986,6 +994,134 @@ func (o *HttpConnectionHandlerResponse) SetEnableSniHostnameChecks(v bool) {
 	o.EnableSniHostnameChecks = &v
 }
 
+// GetExpensiveThreadCheckInterval returns the ExpensiveThreadCheckInterval field value if set, zero value otherwise.
+func (o *HttpConnectionHandlerResponse) GetExpensiveThreadCheckInterval() string {
+	if o == nil || IsNil(o.ExpensiveThreadCheckInterval) {
+		var ret string
+		return ret
+	}
+	return *o.ExpensiveThreadCheckInterval
+}
+
+// GetExpensiveThreadCheckIntervalOk returns a tuple with the ExpensiveThreadCheckInterval field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpConnectionHandlerResponse) GetExpensiveThreadCheckIntervalOk() (*string, bool) {
+	if o == nil || IsNil(o.ExpensiveThreadCheckInterval) {
+		return nil, false
+	}
+	return o.ExpensiveThreadCheckInterval, true
+}
+
+// HasExpensiveThreadCheckInterval returns a boolean if a field has been set.
+func (o *HttpConnectionHandlerResponse) HasExpensiveThreadCheckInterval() bool {
+	if o != nil && !IsNil(o.ExpensiveThreadCheckInterval) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpensiveThreadCheckInterval gets a reference to the given string and assigns it to the ExpensiveThreadCheckInterval field.
+func (o *HttpConnectionHandlerResponse) SetExpensiveThreadCheckInterval(v string) {
+	o.ExpensiveThreadCheckInterval = &v
+}
+
+// GetExpensiveThreadMinimumConcurrentCount returns the ExpensiveThreadMinimumConcurrentCount field value if set, zero value otherwise.
+func (o *HttpConnectionHandlerResponse) GetExpensiveThreadMinimumConcurrentCount() int64 {
+	if o == nil || IsNil(o.ExpensiveThreadMinimumConcurrentCount) {
+		var ret int64
+		return ret
+	}
+	return *o.ExpensiveThreadMinimumConcurrentCount
+}
+
+// GetExpensiveThreadMinimumConcurrentCountOk returns a tuple with the ExpensiveThreadMinimumConcurrentCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpConnectionHandlerResponse) GetExpensiveThreadMinimumConcurrentCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.ExpensiveThreadMinimumConcurrentCount) {
+		return nil, false
+	}
+	return o.ExpensiveThreadMinimumConcurrentCount, true
+}
+
+// HasExpensiveThreadMinimumConcurrentCount returns a boolean if a field has been set.
+func (o *HttpConnectionHandlerResponse) HasExpensiveThreadMinimumConcurrentCount() bool {
+	if o != nil && !IsNil(o.ExpensiveThreadMinimumConcurrentCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpensiveThreadMinimumConcurrentCount gets a reference to the given int64 and assigns it to the ExpensiveThreadMinimumConcurrentCount field.
+func (o *HttpConnectionHandlerResponse) SetExpensiveThreadMinimumConcurrentCount(v int64) {
+	o.ExpensiveThreadMinimumConcurrentCount = &v
+}
+
+// GetExpensiveThreadHoldOffInterval returns the ExpensiveThreadHoldOffInterval field value if set, zero value otherwise.
+func (o *HttpConnectionHandlerResponse) GetExpensiveThreadHoldOffInterval() string {
+	if o == nil || IsNil(o.ExpensiveThreadHoldOffInterval) {
+		var ret string
+		return ret
+	}
+	return *o.ExpensiveThreadHoldOffInterval
+}
+
+// GetExpensiveThreadHoldOffIntervalOk returns a tuple with the ExpensiveThreadHoldOffInterval field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpConnectionHandlerResponse) GetExpensiveThreadHoldOffIntervalOk() (*string, bool) {
+	if o == nil || IsNil(o.ExpensiveThreadHoldOffInterval) {
+		return nil, false
+	}
+	return o.ExpensiveThreadHoldOffInterval, true
+}
+
+// HasExpensiveThreadHoldOffInterval returns a boolean if a field has been set.
+func (o *HttpConnectionHandlerResponse) HasExpensiveThreadHoldOffInterval() bool {
+	if o != nil && !IsNil(o.ExpensiveThreadHoldOffInterval) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpensiveThreadHoldOffInterval gets a reference to the given string and assigns it to the ExpensiveThreadHoldOffInterval field.
+func (o *HttpConnectionHandlerResponse) SetExpensiveThreadHoldOffInterval(v string) {
+	o.ExpensiveThreadHoldOffInterval = &v
+}
+
+// GetIncludeAdditionalMetrics returns the IncludeAdditionalMetrics field value if set, zero value otherwise.
+func (o *HttpConnectionHandlerResponse) GetIncludeAdditionalMetrics() bool {
+	if o == nil || IsNil(o.IncludeAdditionalMetrics) {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeAdditionalMetrics
+}
+
+// GetIncludeAdditionalMetricsOk returns a tuple with the IncludeAdditionalMetrics field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpConnectionHandlerResponse) GetIncludeAdditionalMetricsOk() (*bool, bool) {
+	if o == nil || IsNil(o.IncludeAdditionalMetrics) {
+		return nil, false
+	}
+	return o.IncludeAdditionalMetrics, true
+}
+
+// HasIncludeAdditionalMetrics returns a boolean if a field has been set.
+func (o *HttpConnectionHandlerResponse) HasIncludeAdditionalMetrics() bool {
+	if o != nil && !IsNil(o.IncludeAdditionalMetrics) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeAdditionalMetrics gets a reference to the given bool and assigns it to the IncludeAdditionalMetrics field.
+func (o *HttpConnectionHandlerResponse) SetIncludeAdditionalMetrics(v bool) {
+	o.IncludeAdditionalMetrics = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -1219,6 +1355,18 @@ func (o HttpConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EnableSniHostnameChecks) {
 		toSerialize["enableSniHostnameChecks"] = o.EnableSniHostnameChecks
+	}
+	if !IsNil(o.ExpensiveThreadCheckInterval) {
+		toSerialize["expensiveThreadCheckInterval"] = o.ExpensiveThreadCheckInterval
+	}
+	if !IsNil(o.ExpensiveThreadMinimumConcurrentCount) {
+		toSerialize["expensiveThreadMinimumConcurrentCount"] = o.ExpensiveThreadMinimumConcurrentCount
+	}
+	if !IsNil(o.ExpensiveThreadHoldOffInterval) {
+		toSerialize["expensiveThreadHoldOffInterval"] = o.ExpensiveThreadHoldOffInterval
+	}
+	if !IsNil(o.IncludeAdditionalMetrics) {
+		toSerialize["includeAdditionalMetrics"] = o.IncludeAdditionalMetrics
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

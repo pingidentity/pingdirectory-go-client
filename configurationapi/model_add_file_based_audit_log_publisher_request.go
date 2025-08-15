@@ -58,8 +58,10 @@ type AddFileBasedAuditLogPublisherRequest struct {
 	// Indicates whether to log information about the replication change ID.
 	IncludeReplicationChangeID *bool `json:"includeReplicationChangeID,omitempty"`
 	// Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
-	UseReversibleForm            *bool                                                           `json:"useReversibleForm,omitempty"`
-	SoftDeleteEntryAuditBehavior *EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp `json:"softDeleteEntryAuditBehavior,omitempty"`
+	UseReversibleForm *bool `json:"useReversibleForm,omitempty"`
+	// Indicates whether to suppress virtual attributes from delete audit log messages.
+	SuppressVirtualAttributesInDeleteRecords *bool                                                           `json:"suppressVirtualAttributesInDeleteRecords,omitempty"`
+	SoftDeleteEntryAuditBehavior             *EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp `json:"softDeleteEntryAuditBehavior,omitempty"`
 	// Indicates whether log messages for operation requests should include a list of the OIDs of any controls included in the request.
 	IncludeRequestControls *bool `json:"includeRequestControls,omitempty"`
 	// Indicates whether to include information about any operation purpose request control that may have been included in the request.
@@ -745,6 +747,38 @@ func (o *AddFileBasedAuditLogPublisherRequest) HasUseReversibleForm() bool {
 // SetUseReversibleForm gets a reference to the given bool and assigns it to the UseReversibleForm field.
 func (o *AddFileBasedAuditLogPublisherRequest) SetUseReversibleForm(v bool) {
 	o.UseReversibleForm = &v
+}
+
+// GetSuppressVirtualAttributesInDeleteRecords returns the SuppressVirtualAttributesInDeleteRecords field value if set, zero value otherwise.
+func (o *AddFileBasedAuditLogPublisherRequest) GetSuppressVirtualAttributesInDeleteRecords() bool {
+	if o == nil || IsNil(o.SuppressVirtualAttributesInDeleteRecords) {
+		var ret bool
+		return ret
+	}
+	return *o.SuppressVirtualAttributesInDeleteRecords
+}
+
+// GetSuppressVirtualAttributesInDeleteRecordsOk returns a tuple with the SuppressVirtualAttributesInDeleteRecords field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddFileBasedAuditLogPublisherRequest) GetSuppressVirtualAttributesInDeleteRecordsOk() (*bool, bool) {
+	if o == nil || IsNil(o.SuppressVirtualAttributesInDeleteRecords) {
+		return nil, false
+	}
+	return o.SuppressVirtualAttributesInDeleteRecords, true
+}
+
+// HasSuppressVirtualAttributesInDeleteRecords returns a boolean if a field has been set.
+func (o *AddFileBasedAuditLogPublisherRequest) HasSuppressVirtualAttributesInDeleteRecords() bool {
+	if o != nil && !IsNil(o.SuppressVirtualAttributesInDeleteRecords) {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressVirtualAttributesInDeleteRecords gets a reference to the given bool and assigns it to the SuppressVirtualAttributesInDeleteRecords field.
+func (o *AddFileBasedAuditLogPublisherRequest) SetSuppressVirtualAttributesInDeleteRecords(v bool) {
+	o.SuppressVirtualAttributesInDeleteRecords = &v
 }
 
 // GetSoftDeleteEntryAuditBehavior returns the SoftDeleteEntryAuditBehavior field value if set, zero value otherwise.
@@ -1500,6 +1534,9 @@ func (o AddFileBasedAuditLogPublisherRequest) ToMap() (map[string]interface{}, e
 	}
 	if !IsNil(o.UseReversibleForm) {
 		toSerialize["useReversibleForm"] = o.UseReversibleForm
+	}
+	if !IsNil(o.SuppressVirtualAttributesInDeleteRecords) {
+		toSerialize["suppressVirtualAttributesInDeleteRecords"] = o.SuppressVirtualAttributesInDeleteRecords
 	}
 	if !IsNil(o.SoftDeleteEntryAuditBehavior) {
 		toSerialize["softDeleteEntryAuditBehavior"] = o.SoftDeleteEntryAuditBehavior

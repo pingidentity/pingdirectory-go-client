@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **ListenAddress** | Pointer to **string** | Specifies the address on which to listen for connections from HTTP clients. If no value is defined, the server will listen on all addresses on all interfaces. | [optional] 
 **AllowStartTLS** | Pointer to **bool** | Indicates whether clients are allowed to use StartTLS. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | Specifies the trust manager provider that will be used to validate any certificates presented by HTTPS clients. | [optional] 
+**UseHaproxyProxyProtocol** | Pointer to **bool** | Indicates whether client connections established to this connection handler will pass through a software proxy that uses the HAProxy PROXY protocol to preserve the original end address of the client system. The Directory Server supports versions 1 and 2 of the HAProxy PROXY protocol. | [optional] 
 **AllowLDAPV2** | Pointer to **bool** | Indicates whether connections from LDAPv2 clients are allowed. | [optional] 
 **UseTCPKeepAlive** | Pointer to **bool** | Indicates whether the LDAP Connection Handler should use TCP keep-alive. | [optional] 
 **SendRejectionNotice** | Pointer to **bool** | Indicates whether the LDAP Connection Handler should send a notice of disconnection extended response message to the client if a new connection is rejected for some reason. | [optional] 
@@ -54,6 +55,10 @@ Name | Type | Description | Notes
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **CorrelationIDRequestHeader** | Pointer to **[]string** | Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **EnableSniHostnameChecks** | Pointer to **bool** | Requires SNI hostnames to match or else throw an Invalid SNI error. | [optional] 
+**ExpensiveThreadCheckInterval** | Pointer to **string** | The duration the HTTP Connection Handler waits before checking for potentially expensive operations. If at least N HTTP Connection Handler threads (as defined by expensive-thread-minimum-concurrent-count) are processing the same HTTP requests for two consecutive polls, the server writes stack traces for all threads to a file in /logs/thread-dumps. Use this file to help identify performance bottlenecks. | [optional] 
+**ExpensiveThreadMinimumConcurrentCount** | Pointer to **int64** | The minimum number of HTTP Connection Handler threads concurrently processing the same HTTP request that triggers a full thread dump. If at least this many worker threads are processing the same HTTP request for two consecutive polls, the server writes stack traces for all threads to a file in /logs/thread-dumps. Use this file to help identify performance bottlenecks. | [optional] 
+**ExpensiveThreadHoldOffInterval** | Pointer to **string** | The duration the server waits after generating a full thread dump before creating another. This interval helps prevent excessive disk usage from frequent dumps. Use this property to help identify performance bottlenecks. | [optional] 
+**IncludeAdditionalMetrics** | Pointer to **bool** | Tracks moving average durations (1, 5, and 15-minute intervals) for the entire HTTP request lifecycle, including socket, connection, queue, request, and response times. Warning: This feature is experimental and can negatively affect performance when enabled. It should be reserved for performance tuning or troubleshooting. | [optional] 
 
 ## Methods
 
@@ -428,6 +433,31 @@ SetTrustManagerProvider sets TrustManagerProvider field to given value.
 `func (o *AddConnectionHandler200Response) HasTrustManagerProvider() bool`
 
 HasTrustManagerProvider returns a boolean if a field has been set.
+
+### GetUseHaproxyProxyProtocol
+
+`func (o *AddConnectionHandler200Response) GetUseHaproxyProxyProtocol() bool`
+
+GetUseHaproxyProxyProtocol returns the UseHaproxyProxyProtocol field if non-nil, zero value otherwise.
+
+### GetUseHaproxyProxyProtocolOk
+
+`func (o *AddConnectionHandler200Response) GetUseHaproxyProxyProtocolOk() (*bool, bool)`
+
+GetUseHaproxyProxyProtocolOk returns a tuple with the UseHaproxyProxyProtocol field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseHaproxyProxyProtocol
+
+`func (o *AddConnectionHandler200Response) SetUseHaproxyProxyProtocol(v bool)`
+
+SetUseHaproxyProxyProtocol sets UseHaproxyProxyProtocol field to given value.
+
+### HasUseHaproxyProxyProtocol
+
+`func (o *AddConnectionHandler200Response) HasUseHaproxyProxyProtocol() bool`
+
+HasUseHaproxyProxyProtocol returns a boolean if a field has been set.
 
 ### GetAllowLDAPV2
 
@@ -1293,6 +1323,106 @@ SetEnableSniHostnameChecks sets EnableSniHostnameChecks field to given value.
 `func (o *AddConnectionHandler200Response) HasEnableSniHostnameChecks() bool`
 
 HasEnableSniHostnameChecks returns a boolean if a field has been set.
+
+### GetExpensiveThreadCheckInterval
+
+`func (o *AddConnectionHandler200Response) GetExpensiveThreadCheckInterval() string`
+
+GetExpensiveThreadCheckInterval returns the ExpensiveThreadCheckInterval field if non-nil, zero value otherwise.
+
+### GetExpensiveThreadCheckIntervalOk
+
+`func (o *AddConnectionHandler200Response) GetExpensiveThreadCheckIntervalOk() (*string, bool)`
+
+GetExpensiveThreadCheckIntervalOk returns a tuple with the ExpensiveThreadCheckInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpensiveThreadCheckInterval
+
+`func (o *AddConnectionHandler200Response) SetExpensiveThreadCheckInterval(v string)`
+
+SetExpensiveThreadCheckInterval sets ExpensiveThreadCheckInterval field to given value.
+
+### HasExpensiveThreadCheckInterval
+
+`func (o *AddConnectionHandler200Response) HasExpensiveThreadCheckInterval() bool`
+
+HasExpensiveThreadCheckInterval returns a boolean if a field has been set.
+
+### GetExpensiveThreadMinimumConcurrentCount
+
+`func (o *AddConnectionHandler200Response) GetExpensiveThreadMinimumConcurrentCount() int64`
+
+GetExpensiveThreadMinimumConcurrentCount returns the ExpensiveThreadMinimumConcurrentCount field if non-nil, zero value otherwise.
+
+### GetExpensiveThreadMinimumConcurrentCountOk
+
+`func (o *AddConnectionHandler200Response) GetExpensiveThreadMinimumConcurrentCountOk() (*int64, bool)`
+
+GetExpensiveThreadMinimumConcurrentCountOk returns a tuple with the ExpensiveThreadMinimumConcurrentCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpensiveThreadMinimumConcurrentCount
+
+`func (o *AddConnectionHandler200Response) SetExpensiveThreadMinimumConcurrentCount(v int64)`
+
+SetExpensiveThreadMinimumConcurrentCount sets ExpensiveThreadMinimumConcurrentCount field to given value.
+
+### HasExpensiveThreadMinimumConcurrentCount
+
+`func (o *AddConnectionHandler200Response) HasExpensiveThreadMinimumConcurrentCount() bool`
+
+HasExpensiveThreadMinimumConcurrentCount returns a boolean if a field has been set.
+
+### GetExpensiveThreadHoldOffInterval
+
+`func (o *AddConnectionHandler200Response) GetExpensiveThreadHoldOffInterval() string`
+
+GetExpensiveThreadHoldOffInterval returns the ExpensiveThreadHoldOffInterval field if non-nil, zero value otherwise.
+
+### GetExpensiveThreadHoldOffIntervalOk
+
+`func (o *AddConnectionHandler200Response) GetExpensiveThreadHoldOffIntervalOk() (*string, bool)`
+
+GetExpensiveThreadHoldOffIntervalOk returns a tuple with the ExpensiveThreadHoldOffInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpensiveThreadHoldOffInterval
+
+`func (o *AddConnectionHandler200Response) SetExpensiveThreadHoldOffInterval(v string)`
+
+SetExpensiveThreadHoldOffInterval sets ExpensiveThreadHoldOffInterval field to given value.
+
+### HasExpensiveThreadHoldOffInterval
+
+`func (o *AddConnectionHandler200Response) HasExpensiveThreadHoldOffInterval() bool`
+
+HasExpensiveThreadHoldOffInterval returns a boolean if a field has been set.
+
+### GetIncludeAdditionalMetrics
+
+`func (o *AddConnectionHandler200Response) GetIncludeAdditionalMetrics() bool`
+
+GetIncludeAdditionalMetrics returns the IncludeAdditionalMetrics field if non-nil, zero value otherwise.
+
+### GetIncludeAdditionalMetricsOk
+
+`func (o *AddConnectionHandler200Response) GetIncludeAdditionalMetricsOk() (*bool, bool)`
+
+GetIncludeAdditionalMetricsOk returns a tuple with the IncludeAdditionalMetrics field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeAdditionalMetrics
+
+`func (o *AddConnectionHandler200Response) SetIncludeAdditionalMetrics(v bool)`
+
+SetIncludeAdditionalMetrics sets IncludeAdditionalMetrics field to given value.
+
+### HasIncludeAdditionalMetrics
+
+`func (o *AddConnectionHandler200Response) HasIncludeAdditionalMetrics() bool`
+
+HasIncludeAdditionalMetrics returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

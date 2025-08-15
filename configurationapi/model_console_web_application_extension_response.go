@@ -57,6 +57,8 @@ type ConsoleWebApplicationExtensionResponse struct {
 	// The path to the log file for the web application.
 	LogFile    *string                                    `json:"logFile,omitempty"`
 	Complexity *EnumwebApplicationExtensionComplexityProp `json:"complexity,omitempty"`
+	// Specifies the title of the console application.
+	ApplicationTitle *string `json:"applicationTitle,omitempty"`
 	// A description for this Web Application Extension
 	Description *string `json:"description,omitempty"`
 	// Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and at least one additional character and must represent a valid HTTP context path.
@@ -717,6 +719,38 @@ func (o *ConsoleWebApplicationExtensionResponse) SetComplexity(v EnumwebApplicat
 	o.Complexity = &v
 }
 
+// GetApplicationTitle returns the ApplicationTitle field value if set, zero value otherwise.
+func (o *ConsoleWebApplicationExtensionResponse) GetApplicationTitle() string {
+	if o == nil || IsNil(o.ApplicationTitle) {
+		var ret string
+		return ret
+	}
+	return *o.ApplicationTitle
+}
+
+// GetApplicationTitleOk returns a tuple with the ApplicationTitle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConsoleWebApplicationExtensionResponse) GetApplicationTitleOk() (*string, bool) {
+	if o == nil || IsNil(o.ApplicationTitle) {
+		return nil, false
+	}
+	return o.ApplicationTitle, true
+}
+
+// HasApplicationTitle returns a boolean if a field has been set.
+func (o *ConsoleWebApplicationExtensionResponse) HasApplicationTitle() bool {
+	if o != nil && !IsNil(o.ApplicationTitle) {
+		return true
+	}
+
+	return false
+}
+
+// SetApplicationTitle gets a reference to the given string and assigns it to the ApplicationTitle field.
+func (o *ConsoleWebApplicationExtensionResponse) SetApplicationTitle(v string) {
+	o.ApplicationTitle = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -998,6 +1032,9 @@ func (o ConsoleWebApplicationExtensionResponse) ToMap() (map[string]interface{},
 	}
 	if !IsNil(o.Complexity) {
 		toSerialize["complexity"] = o.Complexity
+	}
+	if !IsNil(o.ApplicationTitle) {
+		toSerialize["applicationTitle"] = o.ApplicationTitle
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

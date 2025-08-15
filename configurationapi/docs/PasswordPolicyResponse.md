@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **MaximumRecentLoginHistorySuccessfulAuthenticationDuration** | Pointer to **string** | The maximum age of successful authentication attempts to include in the recent login history for each account. | [optional] 
 **MaximumRecentLoginHistoryFailedAuthenticationCount** | Pointer to **int64** | The maximum number of failed authentication attempts to include in the recent login history for each account. | [optional] 
 **MaximumRecentLoginHistoryFailedAuthenticationDuration** | Pointer to **string** | The maximum age of failed authentication attempts to include in the recent login history for each account. | [optional] 
+**SuppressRecentLoginHistoryUpdatesForUnusableAccounts** | Pointer to **bool** | Indicates whether the server should suppress updates to a user&#39;s recent login history as a result of authentication attempts that fail because the account is in an unusable state (e.g., if the account is administratively disabled, if the account is locked, or if the password is expired). | [optional] 
 **RecentLoginHistorySimilarAttemptBehavior** | Pointer to [**EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp**](EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp.md) |  | [optional] 
 **LastLoginIPAddressAttribute** | Pointer to **string** | Specifies the name or OID of the attribute type that is used to hold the IP address of the client from which the user last authenticated. | [optional] 
 **LastLoginTimeAttribute** | Pointer to **string** | Specifies the name or OID of the attribute type that is used to hold the last login time for users with the associated password policy. | [optional] 
@@ -1243,6 +1244,31 @@ SetMaximumRecentLoginHistoryFailedAuthenticationDuration sets MaximumRecentLogin
 `func (o *PasswordPolicyResponse) HasMaximumRecentLoginHistoryFailedAuthenticationDuration() bool`
 
 HasMaximumRecentLoginHistoryFailedAuthenticationDuration returns a boolean if a field has been set.
+
+### GetSuppressRecentLoginHistoryUpdatesForUnusableAccounts
+
+`func (o *PasswordPolicyResponse) GetSuppressRecentLoginHistoryUpdatesForUnusableAccounts() bool`
+
+GetSuppressRecentLoginHistoryUpdatesForUnusableAccounts returns the SuppressRecentLoginHistoryUpdatesForUnusableAccounts field if non-nil, zero value otherwise.
+
+### GetSuppressRecentLoginHistoryUpdatesForUnusableAccountsOk
+
+`func (o *PasswordPolicyResponse) GetSuppressRecentLoginHistoryUpdatesForUnusableAccountsOk() (*bool, bool)`
+
+GetSuppressRecentLoginHistoryUpdatesForUnusableAccountsOk returns a tuple with the SuppressRecentLoginHistoryUpdatesForUnusableAccounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuppressRecentLoginHistoryUpdatesForUnusableAccounts
+
+`func (o *PasswordPolicyResponse) SetSuppressRecentLoginHistoryUpdatesForUnusableAccounts(v bool)`
+
+SetSuppressRecentLoginHistoryUpdatesForUnusableAccounts sets SuppressRecentLoginHistoryUpdatesForUnusableAccounts field to given value.
+
+### HasSuppressRecentLoginHistoryUpdatesForUnusableAccounts
+
+`func (o *PasswordPolicyResponse) HasSuppressRecentLoginHistoryUpdatesForUnusableAccounts() bool`
+
+HasSuppressRecentLoginHistoryUpdatesForUnusableAccounts returns a boolean if a field has been set.
 
 ### GetRecentLoginHistorySimilarAttemptBehavior
 

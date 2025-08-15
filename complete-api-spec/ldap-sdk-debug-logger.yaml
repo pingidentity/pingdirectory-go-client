@@ -80,6 +80,7 @@ components:
       - "asn1"
       - "coding-error"
       - "connect"
+      - "connection-pool"
       - "exception"
       - "ldap"
       - "ldif"

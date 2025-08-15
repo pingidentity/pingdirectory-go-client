@@ -35,7 +35,8 @@ Name | Type | Description | Notes
 **MaxConnectionAge** | **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | 
 **MinExpiredConnectionDisconnectInterval** | Pointer to **string** | Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age. | [optional] 
 **MaxResponseSize** | **string** | Specifies the maximum response size that should be supported for messages received from the LDAP external server. | 
-**InitialConnections** | Pointer to **int64** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**AllowInitiallyEmptyConnectionPools** | Pointer to **bool** | Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**InitialConnections** | Pointer to **int64** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool. | [optional] 
 **MaxConnections** | Pointer to **int64** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
 **DefunctConnectionResultCode** | Pointer to [**[]EnumexternalServerDefunctConnectionResultCodeProp**](EnumexternalServerDefunctConnectionResultCodeProp.md) |  | [optional] 
 **AbandonOnTimeout** | Pointer to **bool** | Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server. | [optional] 
@@ -799,6 +800,31 @@ and a boolean to check if the value has been set.
 
 SetMaxResponseSize sets MaxResponseSize field to given value.
 
+
+### GetAllowInitiallyEmptyConnectionPools
+
+`func (o *ExternalServerListResponseResourcesInner) GetAllowInitiallyEmptyConnectionPools() bool`
+
+GetAllowInitiallyEmptyConnectionPools returns the AllowInitiallyEmptyConnectionPools field if non-nil, zero value otherwise.
+
+### GetAllowInitiallyEmptyConnectionPoolsOk
+
+`func (o *ExternalServerListResponseResourcesInner) GetAllowInitiallyEmptyConnectionPoolsOk() (*bool, bool)`
+
+GetAllowInitiallyEmptyConnectionPoolsOk returns a tuple with the AllowInitiallyEmptyConnectionPools field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowInitiallyEmptyConnectionPools
+
+`func (o *ExternalServerListResponseResourcesInner) SetAllowInitiallyEmptyConnectionPools(v bool)`
+
+SetAllowInitiallyEmptyConnectionPools sets AllowInitiallyEmptyConnectionPools field to given value.
+
+### HasAllowInitiallyEmptyConnectionPools
+
+`func (o *ExternalServerListResponseResourcesInner) HasAllowInitiallyEmptyConnectionPools() bool`
+
+HasAllowInitiallyEmptyConnectionPools returns a boolean if a field has been set.
 
 ### GetInitialConnections
 

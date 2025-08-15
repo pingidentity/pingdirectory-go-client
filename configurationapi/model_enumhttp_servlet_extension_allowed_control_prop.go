@@ -31,6 +31,7 @@ const (
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GET_PASSWORD_POLICY_STATE_ISSUES EnumhttpServletExtensionAllowedControlProp = "get-password-policy-state-issues"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GET_RECENT_LOGIN_HISTORY         EnumhttpServletExtensionAllowedControlProp = "get-recent-login-history"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_GET_USER_RESOURCE_LIMITS         EnumhttpServletExtensionAllowedControlProp = "get-user-resource-limits"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_HARD_DELETE                      EnumhttpServletExtensionAllowedControlProp = "hard-delete"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_IGNORE_NO_USER_MODIFICATION      EnumhttpServletExtensionAllowedControlProp = "ignore-no-user-modification"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_INTERMEDIATE_CLIENT              EnumhttpServletExtensionAllowedControlProp = "intermediate-client"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_JOIN                             EnumhttpServletExtensionAllowedControlProp = "join"
@@ -52,7 +53,10 @@ const (
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_REAL_ATTRIBUTES_ONLY             EnumhttpServletExtensionAllowedControlProp = "real-attributes-only"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_REJECT_UNINDEXED_SEARCH          EnumhttpServletExtensionAllowedControlProp = "reject-unindexed-search"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_RETIRE_PASSWORD                  EnumhttpServletExtensionAllowedControlProp = "retire-password"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_SOFT_DELETE                      EnumhttpServletExtensionAllowedControlProp = "soft-delete"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_SOFT_DELETED_ENTRY_ACCESS        EnumhttpServletExtensionAllowedControlProp = "soft-deleted-entry-access"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_SUPPRESS_REFERENTIAL_INTEGRITY   EnumhttpServletExtensionAllowedControlProp = "suppress-referential-integrity"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_UNDELETE                         EnumhttpServletExtensionAllowedControlProp = "undelete"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_UNIQUENESS                       EnumhttpServletExtensionAllowedControlProp = "uniqueness"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDCONTROLPROP_VIRTUAL_ATTRIBUTES_ONLY          EnumhttpServletExtensionAllowedControlProp = "virtual-attributes-only"
 )
@@ -68,6 +72,7 @@ var AllowedEnumhttpServletExtensionAllowedControlPropEnumValues = []EnumhttpServ
 	"get-password-policy-state-issues",
 	"get-recent-login-history",
 	"get-user-resource-limits",
+	"hard-delete",
 	"ignore-no-user-modification",
 	"intermediate-client",
 	"join",
@@ -89,7 +94,10 @@ var AllowedEnumhttpServletExtensionAllowedControlPropEnumValues = []EnumhttpServ
 	"real-attributes-only",
 	"reject-unindexed-search",
 	"retire-password",
+	"soft-delete",
+	"soft-deleted-entry-access",
 	"suppress-referential-integrity",
+	"undelete",
 	"uniqueness",
 	"virtual-attributes-only",
 }

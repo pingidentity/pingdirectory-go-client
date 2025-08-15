@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **IncludeRequesterDN** | Pointer to **bool** | Indicates whether log messages for operation requests should include the DN of the authenticated user for the client connection on which the operation was requested. | [optional] 
 **IncludeReplicationChangeID** | Pointer to **bool** | Indicates whether to log information about the replication change ID. | [optional] 
 **UseReversibleForm** | Pointer to **bool** | Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired. | [optional] 
+**SuppressVirtualAttributesInDeleteRecords** | Pointer to **bool** | Indicates whether to suppress virtual attributes from delete audit log messages. | [optional] 
 **SoftDeleteEntryAuditBehavior** | Pointer to [**EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp**](EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp.md) |  | [optional] 
 **IncludeRequestControls** | Pointer to **bool** | Indicates whether log messages for operation requests should include a list of the OIDs of any controls included in the request. | [optional] 
 **IncludeOperationPurposeRequestControl** | Pointer to **bool** | Indicates whether to include information about any operation purpose request control that may have been included in the request. | [optional] 
@@ -542,6 +543,31 @@ SetUseReversibleForm sets UseReversibleForm field to given value.
 `func (o *FileBasedAuditLogPublisherResponse) HasUseReversibleForm() bool`
 
 HasUseReversibleForm returns a boolean if a field has been set.
+
+### GetSuppressVirtualAttributesInDeleteRecords
+
+`func (o *FileBasedAuditLogPublisherResponse) GetSuppressVirtualAttributesInDeleteRecords() bool`
+
+GetSuppressVirtualAttributesInDeleteRecords returns the SuppressVirtualAttributesInDeleteRecords field if non-nil, zero value otherwise.
+
+### GetSuppressVirtualAttributesInDeleteRecordsOk
+
+`func (o *FileBasedAuditLogPublisherResponse) GetSuppressVirtualAttributesInDeleteRecordsOk() (*bool, bool)`
+
+GetSuppressVirtualAttributesInDeleteRecordsOk returns a tuple with the SuppressVirtualAttributesInDeleteRecords field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuppressVirtualAttributesInDeleteRecords
+
+`func (o *FileBasedAuditLogPublisherResponse) SetSuppressVirtualAttributesInDeleteRecords(v bool)`
+
+SetSuppressVirtualAttributesInDeleteRecords sets SuppressVirtualAttributesInDeleteRecords field to given value.
+
+### HasSuppressVirtualAttributesInDeleteRecords
+
+`func (o *FileBasedAuditLogPublisherResponse) HasSuppressVirtualAttributesInDeleteRecords() bool`
+
+HasSuppressVirtualAttributesInDeleteRecords returns a boolean if a field has been set.
 
 ### GetSoftDeleteEntryAuditBehavior
 

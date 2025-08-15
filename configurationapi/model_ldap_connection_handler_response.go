@@ -36,6 +36,8 @@ type LdapConnectionHandlerResponse struct {
 	KeyManagerProvider *string `json:"keyManagerProvider,omitempty"`
 	// Specifies the name of the trust manager that should be used with the LDAP Connection Handler .
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
+	// Indicates whether client connections established to this connection handler will pass through a software proxy that uses the HAProxy PROXY protocol to preserve the original end address of the client system. The Directory Server supports versions 1 and 2 of the HAProxy PROXY protocol.
+	UseHaproxyProxyProtocol *bool `json:"useHaproxyProxyProtocol,omitempty"`
 	// Indicates whether connections from LDAPv2 clients are allowed.
 	AllowLDAPV2 *bool `json:"allowLDAPV2,omitempty"`
 	// Indicates whether the LDAP Connection Handler should use TCP keep-alive.
@@ -342,6 +344,38 @@ func (o *LdapConnectionHandlerResponse) HasTrustManagerProvider() bool {
 // SetTrustManagerProvider gets a reference to the given string and assigns it to the TrustManagerProvider field.
 func (o *LdapConnectionHandlerResponse) SetTrustManagerProvider(v string) {
 	o.TrustManagerProvider = &v
+}
+
+// GetUseHaproxyProxyProtocol returns the UseHaproxyProxyProtocol field value if set, zero value otherwise.
+func (o *LdapConnectionHandlerResponse) GetUseHaproxyProxyProtocol() bool {
+	if o == nil || IsNil(o.UseHaproxyProxyProtocol) {
+		var ret bool
+		return ret
+	}
+	return *o.UseHaproxyProxyProtocol
+}
+
+// GetUseHaproxyProxyProtocolOk returns a tuple with the UseHaproxyProxyProtocol field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapConnectionHandlerResponse) GetUseHaproxyProxyProtocolOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseHaproxyProxyProtocol) {
+		return nil, false
+	}
+	return o.UseHaproxyProxyProtocol, true
+}
+
+// HasUseHaproxyProxyProtocol returns a boolean if a field has been set.
+func (o *LdapConnectionHandlerResponse) HasUseHaproxyProxyProtocol() bool {
+	if o != nil && !IsNil(o.UseHaproxyProxyProtocol) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseHaproxyProxyProtocol gets a reference to the given bool and assigns it to the UseHaproxyProxyProtocol field.
+func (o *LdapConnectionHandlerResponse) SetUseHaproxyProxyProtocol(v bool) {
+	o.UseHaproxyProxyProtocol = &v
 }
 
 // GetAllowLDAPV2 returns the AllowLDAPV2 field value if set, zero value otherwise.
@@ -1125,6 +1159,9 @@ func (o LdapConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TrustManagerProvider) {
 		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.UseHaproxyProxyProtocol) {
+		toSerialize["useHaproxyProxyProtocol"] = o.UseHaproxyProxyProtocol
 	}
 	if !IsNil(o.AllowLDAPV2) {
 		toSerialize["allowLDAPV2"] = o.AllowLDAPV2

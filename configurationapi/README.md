@@ -1884,6 +1884,7 @@ Class | Method | HTTP request | Description
  - [EnumlogPublisherExtensionMessageTypeProp](docs/EnumlogPublisherExtensionMessageTypeProp.md)
  - [EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp](docs/EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp.md)
  - [EnumlogPublisherFileBasedJsonAuditSoftDeleteEntryAuditBehaviorProp](docs/EnumlogPublisherFileBasedJsonAuditSoftDeleteEntryAuditBehaviorProp.md)
+ - [EnumlogPublisherHttpEventProp](docs/EnumlogPublisherHttpEventProp.md)
  - [EnumlogPublisherHttpMessageTypeProp](docs/EnumlogPublisherHttpMessageTypeProp.md)
  - [EnumlogPublisherIdTokenValidatorMessageTypeProp](docs/EnumlogPublisherIdTokenValidatorMessageTypeProp.md)
  - [EnumlogPublisherLogRequestHeadersProp](docs/EnumlogPublisherLogRequestHeadersProp.md)

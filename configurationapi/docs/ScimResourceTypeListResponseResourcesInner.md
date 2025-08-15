@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this SCIM Resource Type | [optional] 
 **Enabled** | **bool** | Indicates whether the SCIM Resource Type is enabled. | 
 **Endpoint** | **string** | The HTTP addressable endpoint of this SCIM Resource Type relative to the &#39;/scim/v2&#39; base URL. Do not include a leading &#39;/&#39;. | 
+**IdAttribute** | **string** | Specifies the primary attribute to use as the value for the SCIM object ID. The object ID should be a unique, immutable identifier for fetch, update and delete operations on an object. | 
 **LookthroughLimit** | Pointer to **int64** | The maximum number of resources that the SCIM Resource Type should \&quot;look through\&quot; in the course of processing a search request. | [optional] 
 **SchemaCheckingOption** | Pointer to [**[]EnumscimResourceTypeSchemaCheckingOptionProp**](EnumscimResourceTypeSchemaCheckingOptionProp.md) |  | [optional] 
 **StructuralLDAPObjectclass** | Pointer to **string** | Specifies the LDAP structural object class that should be exposed by this SCIM Resource Type. | [optional] 
@@ -27,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewScimResourceTypeListResponseResourcesInner
 
-`func NewScimResourceTypeListResponseResourcesInner(id string, schemas []EnumpassThroughScimResourceTypeSchemaUrn, enabled bool, endpoint string, coreSchema string, ) *ScimResourceTypeListResponseResourcesInner`
+`func NewScimResourceTypeListResponseResourcesInner(id string, schemas []EnumpassThroughScimResourceTypeSchemaUrn, enabled bool, endpoint string, idAttribute string, coreSchema string, ) *ScimResourceTypeListResponseResourcesInner`
 
 NewScimResourceTypeListResponseResourcesInner instantiates a new ScimResourceTypeListResponseResourcesInner object
 This constructor will assign default values to properties that have it defined,
@@ -145,6 +146,26 @@ and a boolean to check if the value has been set.
 `func (o *ScimResourceTypeListResponseResourcesInner) SetEndpoint(v string)`
 
 SetEndpoint sets Endpoint field to given value.
+
+
+### GetIdAttribute
+
+`func (o *ScimResourceTypeListResponseResourcesInner) GetIdAttribute() string`
+
+GetIdAttribute returns the IdAttribute field if non-nil, zero value otherwise.
+
+### GetIdAttributeOk
+
+`func (o *ScimResourceTypeListResponseResourcesInner) GetIdAttributeOk() (*string, bool)`
+
+GetIdAttributeOk returns a tuple with the IdAttribute field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdAttribute
+
+`func (o *ScimResourceTypeListResponseResourcesInner) SetIdAttribute(v string)`
+
+SetIdAttribute sets IdAttribute field to given value.
 
 
 ### GetLookthroughLimit

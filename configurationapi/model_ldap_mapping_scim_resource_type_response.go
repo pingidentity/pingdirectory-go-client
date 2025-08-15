@@ -34,6 +34,8 @@ type LdapMappingScimResourceTypeResponse struct {
 	Enabled bool `json:"enabled"`
 	// The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
 	Endpoint string `json:"endpoint"`
+	// Specifies the primary attribute to use as the value for the SCIM object ID. The object ID should be a unique, immutable identifier for fetch, update and delete operations on an object.
+	IdAttribute string `json:"idAttribute"`
 	// The maximum number of resources that the SCIM Resource Type should \"look through\" in the course of processing a search request.
 	LookthroughLimit     *int64                                         `json:"lookthroughLimit,omitempty"`
 	SchemaCheckingOption []EnumscimResourceTypeSchemaCheckingOptionProp `json:"schemaCheckingOption,omitempty"`
@@ -59,12 +61,13 @@ type LdapMappingScimResourceTypeResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapMappingScimResourceTypeResponse(schemas []EnumldapMappingScimResourceTypeSchemaUrn, coreSchema string, enabled bool, endpoint string, id string) *LdapMappingScimResourceTypeResponse {
+func NewLdapMappingScimResourceTypeResponse(schemas []EnumldapMappingScimResourceTypeSchemaUrn, coreSchema string, enabled bool, endpoint string, idAttribute string, id string) *LdapMappingScimResourceTypeResponse {
 	this := LdapMappingScimResourceTypeResponse{}
 	this.Schemas = schemas
 	this.CoreSchema = coreSchema
 	this.Enabled = enabled
 	this.Endpoint = endpoint
+	this.IdAttribute = idAttribute
 	this.Id = id
 	return &this
 }
@@ -267,6 +270,30 @@ func (o *LdapMappingScimResourceTypeResponse) GetEndpointOk() (*string, bool) {
 // SetEndpoint sets field value
 func (o *LdapMappingScimResourceTypeResponse) SetEndpoint(v string) {
 	o.Endpoint = v
+}
+
+// GetIdAttribute returns the IdAttribute field value
+func (o *LdapMappingScimResourceTypeResponse) GetIdAttribute() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.IdAttribute
+}
+
+// GetIdAttributeOk returns a tuple with the IdAttribute field value
+// and a boolean to check if the value has been set.
+func (o *LdapMappingScimResourceTypeResponse) GetIdAttributeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.IdAttribute, true
+}
+
+// SetIdAttribute sets field value
+func (o *LdapMappingScimResourceTypeResponse) SetIdAttribute(v string) {
+	o.IdAttribute = v
 }
 
 // GetLookthroughLimit returns the LookthroughLimit field value if set, zero value otherwise.
@@ -636,6 +663,7 @@ func (o LdapMappingScimResourceTypeResponse) ToMap() (map[string]interface{}, er
 	}
 	toSerialize["enabled"] = o.Enabled
 	toSerialize["endpoint"] = o.Endpoint
+	toSerialize["idAttribute"] = o.IdAttribute
 	if !IsNil(o.LookthroughLimit) {
 		toSerialize["lookthroughLimit"] = o.LookthroughLimit
 	}

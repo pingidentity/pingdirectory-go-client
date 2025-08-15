@@ -59,6 +59,7 @@ type FileBasedTraceLogPublisherResponse struct {
 	ConsentMessageType              []EnumlogPublisherConsentMessageTypeProp              `json:"consentMessageType,omitempty"`
 	DirectoryRESTAPIMessageType     []EnumlogPublisherDirectoryRESTAPIMessageTypeProp     `json:"directoryRESTAPIMessageType,omitempty"`
 	ExtensionMessageType            []EnumlogPublisherExtensionMessageTypeProp            `json:"extensionMessageType,omitempty"`
+	HttpEvent                       []EnumlogPublisherHttpEventProp                       `json:"httpEvent,omitempty"`
 	// Specifies a set of HTTP request URL paths to determine whether log messages are included for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified).
 	IncludePathPattern []string `json:"includePathPattern,omitempty"`
 	// Specifies a set of HTTP request URL paths to determine whether log messages are excluded for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified).
@@ -819,6 +820,38 @@ func (o *FileBasedTraceLogPublisherResponse) SetExtensionMessageType(v []Enumlog
 	o.ExtensionMessageType = v
 }
 
+// GetHttpEvent returns the HttpEvent field value if set, zero value otherwise.
+func (o *FileBasedTraceLogPublisherResponse) GetHttpEvent() []EnumlogPublisherHttpEventProp {
+	if o == nil || IsNil(o.HttpEvent) {
+		var ret []EnumlogPublisherHttpEventProp
+		return ret
+	}
+	return o.HttpEvent
+}
+
+// GetHttpEventOk returns a tuple with the HttpEvent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileBasedTraceLogPublisherResponse) GetHttpEventOk() ([]EnumlogPublisherHttpEventProp, bool) {
+	if o == nil || IsNil(o.HttpEvent) {
+		return nil, false
+	}
+	return o.HttpEvent, true
+}
+
+// HasHttpEvent returns a boolean if a field has been set.
+func (o *FileBasedTraceLogPublisherResponse) HasHttpEvent() bool {
+	if o != nil && !IsNil(o.HttpEvent) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpEvent gets a reference to the given []EnumlogPublisherHttpEventProp and assigns it to the HttpEvent field.
+func (o *FileBasedTraceLogPublisherResponse) SetHttpEvent(v []EnumlogPublisherHttpEventProp) {
+	o.HttpEvent = v
+}
+
 // GetIncludePathPattern returns the IncludePathPattern field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetIncludePathPattern() []string {
 	if o == nil || IsNil(o.IncludePathPattern) {
@@ -1128,6 +1161,9 @@ func (o FileBasedTraceLogPublisherResponse) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.ExtensionMessageType) {
 		toSerialize["extensionMessageType"] = o.ExtensionMessageType
+	}
+	if !IsNil(o.HttpEvent) {
+		toSerialize["httpEvent"] = o.HttpEvent
 	}
 	if !IsNil(o.IncludePathPattern) {
 		toSerialize["includePathPattern"] = o.IncludePathPattern

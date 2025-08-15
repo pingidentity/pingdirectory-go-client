@@ -2007,6 +2007,7 @@ components:
       - "get-password-policy-state-issues"
       - "get-recent-login-history"
       - "get-user-resource-limits"
+      - "hard-delete"
       - "ignore-no-user-modification"
       - "intermediate-client"
       - "join"
@@ -2028,7 +2029,10 @@ components:
       - "real-attributes-only"
       - "reject-unindexed-search"
       - "retire-password"
+      - "soft-delete"
+      - "soft-deleted-entry-access"
       - "suppress-referential-integrity"
+      - "undelete"
       - "uniqueness"
       - "virtual-attributes-only"
       description: >-

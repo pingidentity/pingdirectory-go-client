@@ -79,6 +79,7 @@ Name | Type | Description | Notes
 **HistogramCategoryBoundary** | **[]string** | Specifies the boundary values that will be used to separate the processing times into categories. Values should be specified as durations, and all values must be greater than zero. | 
 **IncludeQueueTime** | Pointer to **bool** | Indicates whether operation processing times should include the time spent waiting on the work queue. This will only be available if the work queue is configured to monitor the queue time. | [optional] 
 **SeparateMonitorEntryPerTrackedApplication** | Pointer to **bool** | When enabled, separate monitor entries will be included for each application defined in the Global Configuration&#39;s tracked-application property. | [optional] 
+**IncludeParseableAttributeNames** | Pointer to **bool** | Indicates whether attribute names in monitor entries should be formatted to be easily parseable by monitoring applications. | [optional] 
 **Scope** | [**EnumpluginScopeProp**](EnumpluginScopeProp.md) |  | 
 **IncludeAttribute** | Pointer to **[]string** | Specifies the name or OID of an attribute type that must be updated in order for the modifiersName and modifyTimestamp attributes to be updated in the target entry. | [optional] 
 **OutputFile** | **string** | The path of an LDIF file that should be created with the results of the search. | 
@@ -93,6 +94,7 @@ Name | Type | Description | Notes
 **HistogramFormat** | [**EnumpluginHistogramFormatProp**](EnumpluginHistogramFormatProp.md) |  | 
 **HistogramOpType** | Pointer to [**[]EnumpluginHistogramOpTypeProp**](EnumpluginHistogramOpTypeProp.md) |  | [optional] 
 **GaugeInfo** | Pointer to [**EnumpluginGaugeInfoProp**](EnumpluginGaugeInfoProp.md) |  | [optional] 
+**IncludeHTTPMetrics** | Pointer to **bool** | Specifies whether to log moving averages (1, 5, and 15-minute intervals) for HTTP socket, connection, queue, request, and response durations. | [optional] 
 **LogFileFormat** | Pointer to [**EnumpluginLogFileFormatProp**](EnumpluginLogFileFormatProp.md) |  | [optional] 
 **LogFile** | **string** | Specifies the log file location where the update records are written when the plug-in is in background-mode processing. | 
 **LogFilePermissions** | **string** | The UNIX permissions of the log files created by this Monitor History Plugin. | 
@@ -1932,6 +1934,31 @@ SetSeparateMonitorEntryPerTrackedApplication sets SeparateMonitorEntryPerTracked
 
 HasSeparateMonitorEntryPerTrackedApplication returns a boolean if a field has been set.
 
+### GetIncludeParseableAttributeNames
+
+`func (o *PluginListResponseResourcesInner) GetIncludeParseableAttributeNames() bool`
+
+GetIncludeParseableAttributeNames returns the IncludeParseableAttributeNames field if non-nil, zero value otherwise.
+
+### GetIncludeParseableAttributeNamesOk
+
+`func (o *PluginListResponseResourcesInner) GetIncludeParseableAttributeNamesOk() (*bool, bool)`
+
+GetIncludeParseableAttributeNamesOk returns a tuple with the IncludeParseableAttributeNames field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeParseableAttributeNames
+
+`func (o *PluginListResponseResourcesInner) SetIncludeParseableAttributeNames(v bool)`
+
+SetIncludeParseableAttributeNames sets IncludeParseableAttributeNames field to given value.
+
+### HasIncludeParseableAttributeNames
+
+`func (o *PluginListResponseResourcesInner) HasIncludeParseableAttributeNames() bool`
+
+HasIncludeParseableAttributeNames returns a boolean if a field has been set.
+
 ### GetScope
 
 `func (o *PluginListResponseResourcesInner) GetScope() EnumpluginScopeProp`
@@ -2251,6 +2278,31 @@ SetGaugeInfo sets GaugeInfo field to given value.
 `func (o *PluginListResponseResourcesInner) HasGaugeInfo() bool`
 
 HasGaugeInfo returns a boolean if a field has been set.
+
+### GetIncludeHTTPMetrics
+
+`func (o *PluginListResponseResourcesInner) GetIncludeHTTPMetrics() bool`
+
+GetIncludeHTTPMetrics returns the IncludeHTTPMetrics field if non-nil, zero value otherwise.
+
+### GetIncludeHTTPMetricsOk
+
+`func (o *PluginListResponseResourcesInner) GetIncludeHTTPMetricsOk() (*bool, bool)`
+
+GetIncludeHTTPMetricsOk returns a tuple with the IncludeHTTPMetrics field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeHTTPMetrics
+
+`func (o *PluginListResponseResourcesInner) SetIncludeHTTPMetrics(v bool)`
+
+SetIncludeHTTPMetrics sets IncludeHTTPMetrics field to given value.
+
+### HasIncludeHTTPMetrics
+
+`func (o *PluginListResponseResourcesInner) HasIncludeHTTPMetrics() bool`
+
+HasIncludeHTTPMetrics returns a boolean if a field has been set.
 
 ### GetLogFileFormat
 

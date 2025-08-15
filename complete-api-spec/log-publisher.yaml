@@ -992,6 +992,15 @@ components:
       - "info"
       description: >-
           Specifies the Server SDK extension message types that can be logged.
+    Enumlog-publisher-httpEventProp:
+      type: string
+      enum:
+      - "socket"
+      - "connection"
+      - "channel"
+      - "request-processing"
+      description: >-
+          Specifies the HTTP event types to include in the log.
     add-file-based-trace-log-publisher-request:
       allOf:
       - type: object
@@ -1124,6 +1133,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-publisher-extensionMessageTypeProp'
+        httpEvent:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumlog-publisher-httpEventProp'
         includePathPattern:
           type: array
           items:
@@ -2854,6 +2867,10 @@ components:
           type: boolean
           description: >-
               Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
+        suppressVirtualAttributesInDeleteRecords:
+          type: boolean
+          description: >-
+              Indicates whether to suppress virtual attributes from delete audit log messages.
         softDeleteEntryAuditBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-file-based-audit-softDeleteEntryAuditBehaviorProp'
         includeRequestControls:

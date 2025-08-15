@@ -2087,6 +2087,10 @@ components:
             type: boolean
             description: >-
                 When enabled, separate monitor entries will be included for each application defined in the Global Configuration's tracked-application property.
+          includeParseableAttributeNames:
+            type: boolean
+            description: >-
+                Indicates whether attribute names in monitor entries should be formatted to be easily parseable by monitoring applications.
           description:
             type: string
             description: >-
@@ -2346,6 +2350,10 @@ components:
           $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
         gaugeInfo:
           $ref: '#/components/schemas/Enumplugin-gaugeInfoProp'
+        includeHTTPMetrics:
+          type: boolean
+          description: >-
+              Specifies whether to log moving averages (1, 5, and 15-minute intervals) for HTTP socket, connection, queue, request, and response durations.
         logFileFormat:
           $ref: '#/components/schemas/Enumplugin-logFileFormatProp'
         logFile:

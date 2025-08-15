@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **ConsentMessageType** | Pointer to [**[]EnumlogPublisherConsentMessageTypeProp**](EnumlogPublisherConsentMessageTypeProp.md) |  | [optional] 
 **DirectoryRESTAPIMessageType** | Pointer to [**[]EnumlogPublisherDirectoryRESTAPIMessageTypeProp**](EnumlogPublisherDirectoryRESTAPIMessageTypeProp.md) |  | [optional] 
 **ExtensionMessageType** | Pointer to [**[]EnumlogPublisherExtensionMessageTypeProp**](EnumlogPublisherExtensionMessageTypeProp.md) |  | [optional] 
+**HttpEvent** | Pointer to [**[]EnumlogPublisherHttpEventProp**](EnumlogPublisherHttpEventProp.md) |  | [optional] 
 **IncludePathPattern** | Pointer to **[]string** | Specifies a set of HTTP request URL paths to determine whether log messages are included for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified). | [optional] 
 **ExcludePathPattern** | Pointer to **[]string** | Specifies a set of HTTP request URL paths to determine whether log messages are excluded for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified). | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
@@ -625,6 +626,31 @@ SetExtensionMessageType sets ExtensionMessageType field to given value.
 `func (o *FileBasedTraceLogPublisherResponse) HasExtensionMessageType() bool`
 
 HasExtensionMessageType returns a boolean if a field has been set.
+
+### GetHttpEvent
+
+`func (o *FileBasedTraceLogPublisherResponse) GetHttpEvent() []EnumlogPublisherHttpEventProp`
+
+GetHttpEvent returns the HttpEvent field if non-nil, zero value otherwise.
+
+### GetHttpEventOk
+
+`func (o *FileBasedTraceLogPublisherResponse) GetHttpEventOk() (*[]EnumlogPublisherHttpEventProp, bool)`
+
+GetHttpEventOk returns a tuple with the HttpEvent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpEvent
+
+`func (o *FileBasedTraceLogPublisherResponse) SetHttpEvent(v []EnumlogPublisherHttpEventProp)`
+
+SetHttpEvent sets HttpEvent field to given value.
+
+### HasHttpEvent
+
+`func (o *FileBasedTraceLogPublisherResponse) HasHttpEvent() bool`
+
+HasHttpEvent returns a boolean if a field has been set.
 
 ### GetIncludePathPattern
 

@@ -55,7 +55,9 @@ type RedHatDsExternalServerResponse struct {
 	KeyManagerProvider *string `json:"keyManagerProvider,omitempty"`
 	// The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
-	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+	// Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+	AllowInitiallyEmptyConnectionPools *bool `json:"allowInitiallyEmptyConnectionPools,omitempty"`
+	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
 	InitialConnections *int64 `json:"initialConnections,omitempty"`
 	// The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
 	MaxConnections              *int64                                              `json:"maxConnections,omitempty"`
@@ -653,6 +655,38 @@ func (o *RedHatDsExternalServerResponse) SetTrustManagerProvider(v string) {
 	o.TrustManagerProvider = &v
 }
 
+// GetAllowInitiallyEmptyConnectionPools returns the AllowInitiallyEmptyConnectionPools field value if set, zero value otherwise.
+func (o *RedHatDsExternalServerResponse) GetAllowInitiallyEmptyConnectionPools() bool {
+	if o == nil || IsNil(o.AllowInitiallyEmptyConnectionPools) {
+		var ret bool
+		return ret
+	}
+	return *o.AllowInitiallyEmptyConnectionPools
+}
+
+// GetAllowInitiallyEmptyConnectionPoolsOk returns a tuple with the AllowInitiallyEmptyConnectionPools field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RedHatDsExternalServerResponse) GetAllowInitiallyEmptyConnectionPoolsOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllowInitiallyEmptyConnectionPools) {
+		return nil, false
+	}
+	return o.AllowInitiallyEmptyConnectionPools, true
+}
+
+// HasAllowInitiallyEmptyConnectionPools returns a boolean if a field has been set.
+func (o *RedHatDsExternalServerResponse) HasAllowInitiallyEmptyConnectionPools() bool {
+	if o != nil && !IsNil(o.AllowInitiallyEmptyConnectionPools) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowInitiallyEmptyConnectionPools gets a reference to the given bool and assigns it to the AllowInitiallyEmptyConnectionPools field.
+func (o *RedHatDsExternalServerResponse) SetAllowInitiallyEmptyConnectionPools(v bool) {
+	o.AllowInitiallyEmptyConnectionPools = &v
+}
+
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
 func (o *RedHatDsExternalServerResponse) GetInitialConnections() int64 {
 	if o == nil || IsNil(o.InitialConnections) {
@@ -862,6 +896,9 @@ func (o RedHatDsExternalServerResponse) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.TrustManagerProvider) {
 		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.AllowInitiallyEmptyConnectionPools) {
+		toSerialize["allowInitiallyEmptyConnectionPools"] = o.AllowInitiallyEmptyConnectionPools
 	}
 	if !IsNil(o.InitialConnections) {
 		toSerialize["initialConnections"] = o.InitialConnections

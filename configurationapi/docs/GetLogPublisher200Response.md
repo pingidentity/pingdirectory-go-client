@@ -95,6 +95,7 @@ Name | Type | Description | Notes
 **ConsentMessageType** | Pointer to [**[]EnumlogPublisherConsentMessageTypeProp**](EnumlogPublisherConsentMessageTypeProp.md) |  | [optional] 
 **DirectoryRESTAPIMessageType** | Pointer to [**[]EnumlogPublisherDirectoryRESTAPIMessageTypeProp**](EnumlogPublisherDirectoryRESTAPIMessageTypeProp.md) |  | [optional] 
 **ExtensionMessageType** | Pointer to [**[]EnumlogPublisherExtensionMessageTypeProp**](EnumlogPublisherExtensionMessageTypeProp.md) |  | [optional] 
+**HttpEvent** | Pointer to [**[]EnumlogPublisherHttpEventProp**](EnumlogPublisherHttpEventProp.md) |  | [optional] 
 **IncludePathPattern** | Pointer to **[]string** | Specifies a set of HTTP request URL paths to determine whether log messages are included for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified). | [optional] 
 **ExcludePathPattern** | Pointer to **[]string** | Specifies a set of HTTP request URL paths to determine whether log messages are excluded for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified). | [optional] 
 **Server** | **string** | The JDBC-based Database Server to use for a connection. | 
@@ -121,6 +122,7 @@ Name | Type | Description | Notes
 **LogRedirectURI** | Pointer to **bool** | Indicates whether the redirect URI (i.e., the value of the \&quot;Location\&quot; header from responses) should be included in response log messages. | [optional] 
 **ObscureSensitiveContent** | Pointer to **bool** | Indicates whether the resulting log file should attempt to obscure content that may be considered sensitive. This primarily includes the credentials for bind requests, the values of password modify extended requests and responses, and the values of any attributes specified in the obscure-attribute property. Note that the use of this option does not guarantee no sensitive information will be exposed, so the log output should still be carefully guarded. | [optional] 
 **DebugACIEnabled** | Pointer to **bool** | Indicates whether to include debugging information about ACIs being used by the operations being logged. | [optional] 
+**SuppressVirtualAttributesInDeleteRecords** | Pointer to **bool** | Indicates whether to suppress virtual attributes from delete audit log messages. | [optional] 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Operation Log Publisher. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted HTTP Operation Log Publisher. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -2348,6 +2350,31 @@ SetExtensionMessageType sets ExtensionMessageType field to given value.
 
 HasExtensionMessageType returns a boolean if a field has been set.
 
+### GetHttpEvent
+
+`func (o *GetLogPublisher200Response) GetHttpEvent() []EnumlogPublisherHttpEventProp`
+
+GetHttpEvent returns the HttpEvent field if non-nil, zero value otherwise.
+
+### GetHttpEventOk
+
+`func (o *GetLogPublisher200Response) GetHttpEventOk() (*[]EnumlogPublisherHttpEventProp, bool)`
+
+GetHttpEventOk returns a tuple with the HttpEvent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpEvent
+
+`func (o *GetLogPublisher200Response) SetHttpEvent(v []EnumlogPublisherHttpEventProp)`
+
+SetHttpEvent sets HttpEvent field to given value.
+
+### HasHttpEvent
+
+`func (o *GetLogPublisher200Response) HasHttpEvent() bool`
+
+HasHttpEvent returns a boolean if a field has been set.
+
 ### GetIncludePathPattern
 
 `func (o *GetLogPublisher200Response) GetIncludePathPattern() []string`
@@ -2977,6 +3004,31 @@ SetDebugACIEnabled sets DebugACIEnabled field to given value.
 `func (o *GetLogPublisher200Response) HasDebugACIEnabled() bool`
 
 HasDebugACIEnabled returns a boolean if a field has been set.
+
+### GetSuppressVirtualAttributesInDeleteRecords
+
+`func (o *GetLogPublisher200Response) GetSuppressVirtualAttributesInDeleteRecords() bool`
+
+GetSuppressVirtualAttributesInDeleteRecords returns the SuppressVirtualAttributesInDeleteRecords field if non-nil, zero value otherwise.
+
+### GetSuppressVirtualAttributesInDeleteRecordsOk
+
+`func (o *GetLogPublisher200Response) GetSuppressVirtualAttributesInDeleteRecordsOk() (*bool, bool)`
+
+GetSuppressVirtualAttributesInDeleteRecordsOk returns a tuple with the SuppressVirtualAttributesInDeleteRecords field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuppressVirtualAttributesInDeleteRecords
+
+`func (o *GetLogPublisher200Response) SetSuppressVirtualAttributesInDeleteRecords(v bool)`
+
+SetSuppressVirtualAttributesInDeleteRecords sets SuppressVirtualAttributesInDeleteRecords field to given value.
+
+### HasSuppressVirtualAttributesInDeleteRecords
+
+`func (o *GetLogPublisher200Response) HasSuppressVirtualAttributesInDeleteRecords() bool`
+
+HasSuppressVirtualAttributesInDeleteRecords returns a boolean if a field has been set.
 
 ### GetScriptClass
 

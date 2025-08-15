@@ -619,10 +619,14 @@ components:
           type: string
           description: >-
               The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        allowInitiallyEmptyConnectionPools:
+          type: boolean
+          description: >-
+              Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
         initialConnections:
           type: integer
           description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
         maxConnections:
           type: integer
           description: >-
@@ -765,10 +769,14 @@ components:
           type: string
           description: >-
               The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        allowInitiallyEmptyConnectionPools:
+          type: boolean
+          description: >-
+              Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
         initialConnections:
           type: integer
           description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
         maxConnections:
           type: integer
           description: >-
@@ -882,10 +890,14 @@ components:
             type: string
             description: >-
                 The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+          allowInitiallyEmptyConnectionPools:
+            type: boolean
+            description: >-
+                Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
           initialConnections:
             type: integer
             description: >-
-                The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+                The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
           maxConnections:
             type: integer
             description: >-
@@ -1225,10 +1237,14 @@ components:
           type: string
           description: >-
               The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        allowInitiallyEmptyConnectionPools:
+          type: boolean
+          description: >-
+              Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
         initialConnections:
           type: integer
           description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
         maxConnections:
           type: integer
           description: >-
@@ -1371,10 +1387,14 @@ components:
           type: string
           description: >-
               The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        allowInitiallyEmptyConnectionPools:
+          type: boolean
+          description: >-
+              Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
         initialConnections:
           type: integer
           description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
         maxConnections:
           type: integer
           description: >-
@@ -1488,10 +1508,14 @@ components:
             type: string
             description: >-
                 The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+          allowInitiallyEmptyConnectionPools:
+            type: boolean
+            description: >-
+                Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
           initialConnections:
             type: integer
             description: >-
-                The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+                The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
           maxConnections:
             type: integer
             description: >-
@@ -1639,10 +1663,14 @@ components:
           type: string
           description: >-
               The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        allowInitiallyEmptyConnectionPools:
+          type: boolean
+          description: >-
+              Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
         initialConnections:
           type: integer
           description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
         maxConnections:
           type: integer
           description: >-
@@ -1781,10 +1809,14 @@ components:
           type: string
           description: >-
               The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        allowInitiallyEmptyConnectionPools:
+          type: boolean
+          description: >-
+              Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
         initialConnections:
           type: integer
           description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
         maxConnections:
           type: integer
           description: >-
@@ -2044,10 +2076,14 @@ components:
             type: string
             description: >-
                 The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+          allowInitiallyEmptyConnectionPools:
+            type: boolean
+            description: >-
+                Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
           initialConnections:
             type: integer
             description: >-
-                The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+                The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
           maxConnections:
             type: integer
             description: >-
@@ -2174,10 +2210,14 @@ components:
             type: string
             description: >-
                 The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+          allowInitiallyEmptyConnectionPools:
+            type: boolean
+            description: >-
+                Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
           initialConnections:
             type: integer
             description: >-
-                The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+                The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
           maxConnections:
             type: integer
             description: >-
@@ -2572,10 +2612,14 @@ components:
           type: string
           description: >-
               The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        allowInitiallyEmptyConnectionPools:
+          type: boolean
+          description: >-
+              Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
         initialConnections:
           type: integer
           description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
         maxConnections:
           type: integer
           description: >-
@@ -2697,10 +2741,14 @@ components:
             type: string
             description: >-
                 The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+          allowInitiallyEmptyConnectionPools:
+            type: boolean
+            description: >-
+                Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
           initialConnections:
             type: integer
             description: >-
-                The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+                The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
           maxConnections:
             type: integer
             description: >-
@@ -3079,10 +3127,14 @@ components:
           type: string
           description: >-
               The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        allowInitiallyEmptyConnectionPools:
+          type: boolean
+          description: >-
+              Specifies whether an initial-connections value of zero should cause the connection pool to be created without any initial connections, requiring all connections to be created on demand. By default, an initial-connections value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
         initialConnections:
           type: integer
           description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that either the number of connections should be dynamically based on the number of available worker threads, or that the pool will be initially empty, based on the value of the allow-initially-empty-connection-pools property. This will be ignored when using a thread-local connection pool.
         maxConnections:
           type: integer
           description: >-

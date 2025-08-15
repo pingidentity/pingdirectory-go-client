@@ -32,6 +32,10 @@ Name | Type | Description | Notes
 **CorrelationIDRequestHeader** | Pointer to **[]string** | Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **SslClientAuthPolicy** | Pointer to [**EnumconnectionHandlerSslClientAuthPolicyProp**](EnumconnectionHandlerSslClientAuthPolicyProp.md) |  | [optional] 
 **EnableSniHostnameChecks** | Pointer to **bool** | Requires SNI hostnames to match or else throw an Invalid SNI error. | [optional] 
+**ExpensiveThreadCheckInterval** | Pointer to **string** | The duration the HTTP Connection Handler waits before checking for potentially expensive operations. If at least N HTTP Connection Handler threads (as defined by expensive-thread-minimum-concurrent-count) are processing the same HTTP requests for two consecutive polls, the server writes stack traces for all threads to a file in /logs/thread-dumps. Use this file to help identify performance bottlenecks. | [optional] 
+**ExpensiveThreadMinimumConcurrentCount** | Pointer to **int64** | The minimum number of HTTP Connection Handler threads concurrently processing the same HTTP request that triggers a full thread dump. If at least this many worker threads are processing the same HTTP request for two consecutive polls, the server writes stack traces for all threads to a file in /logs/thread-dumps. Use this file to help identify performance bottlenecks. | [optional] 
+**ExpensiveThreadHoldOffInterval** | Pointer to **string** | The duration the server waits after generating a full thread dump before creating another. This interval helps prevent excessive disk usage from frequent dumps. Use this property to help identify performance bottlenecks. | [optional] 
+**IncludeAdditionalMetrics** | Pointer to **bool** | Tracks moving average durations (1, 5, and 15-minute intervals) for the entire HTTP request lifecycle, including socket, connection, queue, request, and response times. Warning: This feature is experimental and can negatively affect performance when enabled. It should be reserved for performance tuning or troubleshooting. | [optional] 
 **Description** | Pointer to **string** | A description for this Connection Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Connection Handler is enabled. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -746,6 +750,106 @@ SetEnableSniHostnameChecks sets EnableSniHostnameChecks field to given value.
 `func (o *HttpConnectionHandlerResponse) HasEnableSniHostnameChecks() bool`
 
 HasEnableSniHostnameChecks returns a boolean if a field has been set.
+
+### GetExpensiveThreadCheckInterval
+
+`func (o *HttpConnectionHandlerResponse) GetExpensiveThreadCheckInterval() string`
+
+GetExpensiveThreadCheckInterval returns the ExpensiveThreadCheckInterval field if non-nil, zero value otherwise.
+
+### GetExpensiveThreadCheckIntervalOk
+
+`func (o *HttpConnectionHandlerResponse) GetExpensiveThreadCheckIntervalOk() (*string, bool)`
+
+GetExpensiveThreadCheckIntervalOk returns a tuple with the ExpensiveThreadCheckInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpensiveThreadCheckInterval
+
+`func (o *HttpConnectionHandlerResponse) SetExpensiveThreadCheckInterval(v string)`
+
+SetExpensiveThreadCheckInterval sets ExpensiveThreadCheckInterval field to given value.
+
+### HasExpensiveThreadCheckInterval
+
+`func (o *HttpConnectionHandlerResponse) HasExpensiveThreadCheckInterval() bool`
+
+HasExpensiveThreadCheckInterval returns a boolean if a field has been set.
+
+### GetExpensiveThreadMinimumConcurrentCount
+
+`func (o *HttpConnectionHandlerResponse) GetExpensiveThreadMinimumConcurrentCount() int64`
+
+GetExpensiveThreadMinimumConcurrentCount returns the ExpensiveThreadMinimumConcurrentCount field if non-nil, zero value otherwise.
+
+### GetExpensiveThreadMinimumConcurrentCountOk
+
+`func (o *HttpConnectionHandlerResponse) GetExpensiveThreadMinimumConcurrentCountOk() (*int64, bool)`
+
+GetExpensiveThreadMinimumConcurrentCountOk returns a tuple with the ExpensiveThreadMinimumConcurrentCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpensiveThreadMinimumConcurrentCount
+
+`func (o *HttpConnectionHandlerResponse) SetExpensiveThreadMinimumConcurrentCount(v int64)`
+
+SetExpensiveThreadMinimumConcurrentCount sets ExpensiveThreadMinimumConcurrentCount field to given value.
+
+### HasExpensiveThreadMinimumConcurrentCount
+
+`func (o *HttpConnectionHandlerResponse) HasExpensiveThreadMinimumConcurrentCount() bool`
+
+HasExpensiveThreadMinimumConcurrentCount returns a boolean if a field has been set.
+
+### GetExpensiveThreadHoldOffInterval
+
+`func (o *HttpConnectionHandlerResponse) GetExpensiveThreadHoldOffInterval() string`
+
+GetExpensiveThreadHoldOffInterval returns the ExpensiveThreadHoldOffInterval field if non-nil, zero value otherwise.
+
+### GetExpensiveThreadHoldOffIntervalOk
+
+`func (o *HttpConnectionHandlerResponse) GetExpensiveThreadHoldOffIntervalOk() (*string, bool)`
+
+GetExpensiveThreadHoldOffIntervalOk returns a tuple with the ExpensiveThreadHoldOffInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpensiveThreadHoldOffInterval
+
+`func (o *HttpConnectionHandlerResponse) SetExpensiveThreadHoldOffInterval(v string)`
+
+SetExpensiveThreadHoldOffInterval sets ExpensiveThreadHoldOffInterval field to given value.
+
+### HasExpensiveThreadHoldOffInterval
+
+`func (o *HttpConnectionHandlerResponse) HasExpensiveThreadHoldOffInterval() bool`
+
+HasExpensiveThreadHoldOffInterval returns a boolean if a field has been set.
+
+### GetIncludeAdditionalMetrics
+
+`func (o *HttpConnectionHandlerResponse) GetIncludeAdditionalMetrics() bool`
+
+GetIncludeAdditionalMetrics returns the IncludeAdditionalMetrics field if non-nil, zero value otherwise.
+
+### GetIncludeAdditionalMetricsOk
+
+`func (o *HttpConnectionHandlerResponse) GetIncludeAdditionalMetricsOk() (*bool, bool)`
+
+GetIncludeAdditionalMetricsOk returns a tuple with the IncludeAdditionalMetrics field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeAdditionalMetrics
+
+`func (o *HttpConnectionHandlerResponse) SetIncludeAdditionalMetrics(v bool)`
+
+SetIncludeAdditionalMetrics sets IncludeAdditionalMetrics field to given value.
+
+### HasIncludeAdditionalMetrics
+
+`func (o *HttpConnectionHandlerResponse) HasIncludeAdditionalMetrics() bool`
+
+HasIncludeAdditionalMetrics returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -825,6 +825,7 @@ components:
       - $ref: '#/components/schemas/meta'
       required:
       - id
+      - idAttribute
     ldap-pass-through-scim-resource-type-shared:
       type: object
       properties:
@@ -846,6 +847,10 @@ components:
           type: string
           description: >-
               The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
+        idAttribute:
+          type: string
+          description: >-
+              Specifies the primary attribute to use as the value for the SCIM object ID. The object ID should be a unique, immutable identifier for fetch, update and delete operations on an object.
         lookthroughLimit:
           type: integer
           description: >-
@@ -915,6 +920,7 @@ components:
       - $ref: '#/components/schemas/meta'
       required:
       - id
+      - idAttribute
     mapping-scim-resource-type-shared:
       type: object
       properties:
@@ -952,6 +958,10 @@ components:
           type: string
           description: >-
               The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
+        idAttribute:
+          type: string
+          description: >-
+              Specifies the primary attribute to use as the value for the SCIM object ID. The object ID should be a unique, immutable identifier for fetch, update and delete operations on an object.
         lookthroughLimit:
           type: integer
           description: >-
@@ -1022,6 +1032,7 @@ components:
       - $ref: '#/components/schemas/meta'
       required:
       - id
+      - idAttribute
     ldap-mapping-scim-resource-type-shared:
       type: object
       properties:
@@ -1059,6 +1070,10 @@ components:
           type: string
           description: >-
               The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
+        idAttribute:
+          type: string
+          description: >-
+              Specifies the primary attribute to use as the value for the SCIM object ID. The object ID should be a unique, immutable identifier for fetch, update and delete operations on an object.
         lookthroughLimit:
           type: integer
           description: >-
@@ -1132,6 +1147,10 @@ components:
             type: string
             description: >-
                 The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
+          idAttribute:
+            type: string
+            description: >-
+                Specifies the primary attribute to use as the value for the SCIM object ID. The object ID should be a unique, immutable identifier for fetch, update and delete operations on an object.
           lookthroughLimit:
             type: integer
             description: >-
@@ -1176,6 +1195,7 @@ components:
       - schemas
       - enabled
       - endpoint
+      - idAttribute
     Enumpass-through-scim-resource-typeSchemaUrn:
       type: string
       enum:

@@ -22,14 +22,15 @@ type EnumldapSdkDebugLoggerDebugTypeProp string
 
 // List of Enumldap-sdk-debug-logger-debugTypeProp
 const (
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_ASN1         EnumldapSdkDebugLoggerDebugTypeProp = "asn1"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CODING_ERROR EnumldapSdkDebugLoggerDebugTypeProp = "coding-error"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CONNECT      EnumldapSdkDebugLoggerDebugTypeProp = "connect"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_EXCEPTION    EnumldapSdkDebugLoggerDebugTypeProp = "exception"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDAP         EnumldapSdkDebugLoggerDebugTypeProp = "ldap"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDIF         EnumldapSdkDebugLoggerDebugTypeProp = "ldif"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_MONITOR      EnumldapSdkDebugLoggerDebugTypeProp = "monitor"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_OTHER        EnumldapSdkDebugLoggerDebugTypeProp = "other"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_ASN1            EnumldapSdkDebugLoggerDebugTypeProp = "asn1"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CODING_ERROR    EnumldapSdkDebugLoggerDebugTypeProp = "coding-error"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CONNECT         EnumldapSdkDebugLoggerDebugTypeProp = "connect"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CONNECTION_POOL EnumldapSdkDebugLoggerDebugTypeProp = "connection-pool"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_EXCEPTION       EnumldapSdkDebugLoggerDebugTypeProp = "exception"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDAP            EnumldapSdkDebugLoggerDebugTypeProp = "ldap"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDIF            EnumldapSdkDebugLoggerDebugTypeProp = "ldif"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_MONITOR         EnumldapSdkDebugLoggerDebugTypeProp = "monitor"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_OTHER           EnumldapSdkDebugLoggerDebugTypeProp = "other"
 )
 
 // All allowed values of EnumldapSdkDebugLoggerDebugTypeProp enum
@@ -37,6 +38,7 @@ var AllowedEnumldapSdkDebugLoggerDebugTypePropEnumValues = []EnumldapSdkDebugLog
 	"asn1",
 	"coding-error",
 	"connect",
+	"connection-pool",
 	"exception",
 	"ldap",
 	"ldif",

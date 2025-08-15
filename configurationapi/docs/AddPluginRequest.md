@@ -67,6 +67,7 @@ Name | Type | Description | Notes
 **StatusSummaryInfo** | Pointer to [**EnumpluginStatusSummaryInfoProp**](EnumpluginStatusSummaryInfoProp.md) |  | [optional] 
 **LdapChangelogInfo** | Pointer to [**EnumpluginLdapChangelogInfoProp**](EnumpluginLdapChangelogInfoProp.md) |  | [optional] 
 **GaugeInfo** | Pointer to [**EnumpluginGaugeInfoProp**](EnumpluginGaugeInfoProp.md) |  | [optional] 
+**IncludeHTTPMetrics** | Pointer to **bool** | Specifies whether to log moving averages (1, 5, and 15-minute intervals) for HTTP socket, connection, queue, request, and response durations. | [optional] 
 **LogFileFormat** | Pointer to [**EnumpluginLogFileFormatProp**](EnumpluginLogFileFormatProp.md) |  | [optional] 
 **LogFile** | **string** | Specifies the log file location where the update records are written when the plug-in is in background-mode processing. | 
 **LogFilePermissions** | Pointer to **string** | The UNIX permissions of the log files created by this Periodic Stats Logger Plugin. | [optional] 
@@ -1643,6 +1644,31 @@ SetGaugeInfo sets GaugeInfo field to given value.
 `func (o *AddPluginRequest) HasGaugeInfo() bool`
 
 HasGaugeInfo returns a boolean if a field has been set.
+
+### GetIncludeHTTPMetrics
+
+`func (o *AddPluginRequest) GetIncludeHTTPMetrics() bool`
+
+GetIncludeHTTPMetrics returns the IncludeHTTPMetrics field if non-nil, zero value otherwise.
+
+### GetIncludeHTTPMetricsOk
+
+`func (o *AddPluginRequest) GetIncludeHTTPMetricsOk() (*bool, bool)`
+
+GetIncludeHTTPMetricsOk returns a tuple with the IncludeHTTPMetrics field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeHTTPMetrics
+
+`func (o *AddPluginRequest) SetIncludeHTTPMetrics(v bool)`
+
+SetIncludeHTTPMetrics sets IncludeHTTPMetrics field to given value.
+
+### HasIncludeHTTPMetrics
+
+`func (o *AddPluginRequest) HasIncludeHTTPMetrics() bool`
+
+HasIncludeHTTPMetrics returns a boolean if a field has been set.
 
 ### GetLogFileFormat
 

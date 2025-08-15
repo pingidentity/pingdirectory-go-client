@@ -9804,6 +9804,26 @@ func StringPointerEnumlogPublisherFileBasedJsonAuditSoftDeleteEntryAuditBehavior
 	return &s
 }
 
+func (e EnumlogPublisherHttpEventProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogPublisherHttpEventProp(values []EnumlogPublisherHttpEventProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogPublisherHttpEventProp(value *EnumlogPublisherHttpEventProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherHttpMessageTypeProp) String() string {
 	return string(e)
 }

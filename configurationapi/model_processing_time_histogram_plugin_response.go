@@ -33,6 +33,8 @@ type ProcessingTimeHistogramPluginResponse struct {
 	IncludeQueueTime *bool `json:"includeQueueTime,omitempty"`
 	// When enabled, separate monitor entries will be included for each application defined in the Global Configuration's tracked-application property.
 	SeparateMonitorEntryPerTrackedApplication *bool `json:"separateMonitorEntryPerTrackedApplication,omitempty"`
+	// Indicates whether attribute names in monitor entries should be formatted to be easily parseable by monitoring applications.
+	IncludeParseableAttributeNames *bool `json:"includeParseableAttributeNames,omitempty"`
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
@@ -287,6 +289,38 @@ func (o *ProcessingTimeHistogramPluginResponse) SetSeparateMonitorEntryPerTracke
 	o.SeparateMonitorEntryPerTrackedApplication = &v
 }
 
+// GetIncludeParseableAttributeNames returns the IncludeParseableAttributeNames field value if set, zero value otherwise.
+func (o *ProcessingTimeHistogramPluginResponse) GetIncludeParseableAttributeNames() bool {
+	if o == nil || IsNil(o.IncludeParseableAttributeNames) {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeParseableAttributeNames
+}
+
+// GetIncludeParseableAttributeNamesOk returns a tuple with the IncludeParseableAttributeNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProcessingTimeHistogramPluginResponse) GetIncludeParseableAttributeNamesOk() (*bool, bool) {
+	if o == nil || IsNil(o.IncludeParseableAttributeNames) {
+		return nil, false
+	}
+	return o.IncludeParseableAttributeNames, true
+}
+
+// HasIncludeParseableAttributeNames returns a boolean if a field has been set.
+func (o *ProcessingTimeHistogramPluginResponse) HasIncludeParseableAttributeNames() bool {
+	if o != nil && !IsNil(o.IncludeParseableAttributeNames) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeParseableAttributeNames gets a reference to the given bool and assigns it to the IncludeParseableAttributeNames field.
+func (o *ProcessingTimeHistogramPluginResponse) SetIncludeParseableAttributeNames(v bool) {
+	o.IncludeParseableAttributeNames = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ProcessingTimeHistogramPluginResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -400,6 +434,9 @@ func (o ProcessingTimeHistogramPluginResponse) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.SeparateMonitorEntryPerTrackedApplication) {
 		toSerialize["separateMonitorEntryPerTrackedApplication"] = o.SeparateMonitorEntryPerTrackedApplication
+	}
+	if !IsNil(o.IncludeParseableAttributeNames) {
+		toSerialize["includeParseableAttributeNames"] = o.IncludeParseableAttributeNames
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

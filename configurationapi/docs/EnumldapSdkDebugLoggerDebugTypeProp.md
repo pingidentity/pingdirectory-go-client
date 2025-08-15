@@ -9,6 +9,8 @@
 
 * `CONNECT` (value: `"connect"`)
 
+* `CONNECTION_POOL` (value: `"connection-pool"`)
+
 * `EXCEPTION` (value: `"exception"`)
 
 * `LDAP` (value: `"ldap"`)

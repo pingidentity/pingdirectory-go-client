@@ -5,6 +5,8 @@
 
 * `NEVER_ACQUIRE` (value: `"never-acquire"`)
 
+* `ACQUIRE_AFTER_RETRIES` (value: `"acquire-after-retries"`)
+
 * `ACQUIRE_ON_RETRY` (value: `"acquire-on-retry"`)
 
 * `ALWAYS_ACQUIRE` (value: `"always-acquire"`)
